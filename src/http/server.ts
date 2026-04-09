@@ -20,6 +20,7 @@ export async function main(): Promise<void> {
     app,
     statefulSessions: config.statefulSessions,
     enableWrites: config.enableWrites,
+    allowedHosts: config.allowedHosts,
     sessions,
   });
 

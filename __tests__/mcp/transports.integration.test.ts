@@ -160,6 +160,46 @@ describe("MCP transport integration", () => {
     }
   });
 
+  test("stateless HTTP transport works without GET SSE or session IDs", async () => {
+    const port = await findFreePort();
+    const server = startBunCommand(["bin/mcp-http.ts"], {
+      HOST: "127.0.0.1",
+      PORT: String(port),
+      KB_STATEFUL_SESSIONS: "false",
+      KB_ENABLE_WRITES: "false",
+    });
+
+    try {
+      await waitForHttp(`http://127.0.0.1:${port}/health`);
+
+      const getRes = await fetch(`http://127.0.0.1:${port}/mcp`, {
+        headers: { Accept: "text/event-stream" },
+      });
+      expect(getRes.status).toBe(405);
+
+      const transport = new StreamableHTTPClientTransport(new URL(`http://127.0.0.1:${port}/mcp`));
+      const client = new Client({ name: "kb-http-stateless", version: "0.0.0" });
+
+      try {
+        await client.connect(transport);
+        expect(transport.sessionId).toBeUndefined();
+
+        const tools = await client.listTools();
+        expect(tools.tools.some((tool) => tool.name === "kb_search")).toBe(true);
+
+        const search = await client.callTool({
+          name: "kb_search",
+          arguments: { query: "managed agents", top: 1 },
+        });
+        expect(toolText(search)).toContain("Query: managed agents");
+      } finally {
+        await transport.close();
+      }
+    } finally {
+      await server.stop();
+    }
+  });
+
   test("streamable HTTP session termination does not crash the server", async () => {
     const port = await findFreePort();
     const server = startBunCommand(["bin/mcp-http.ts"], {

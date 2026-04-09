@@ -18,7 +18,7 @@ This repository now supports both:
 
 - `HOST`: bind address for the HTTP server. Default: `127.0.0.1`
 - `PORT`: listen port. Default: `3000`
-- `KB_STATEFUL_SESSIONS`: `true` or `false`. Default: `true`
+- `KB_STATEFUL_SESSIONS`: `true` or `false`. Default: `false`
 - `KB_ENABLE_WRITES`: `true` or `false`. Default: `false`
 - `KB_CACHE_DIR`: writable directory for the derived index on hosted deployments
 - `KB_ALLOWED_HOSTS`: optional comma-separated allowlist for host-header validation
@@ -43,7 +43,7 @@ docker run --rm -p 3000:3000 \
   -e HOST=0.0.0.0 \
   -e PORT=3000 \
   -e KB_CACHE_DIR=/home/bun/.cache/ai-research-kb \
-  -e KB_STATEFUL_SESSIONS=true \
+  -e KB_STATEFUL_SESSIONS=false \
   -e KB_ENABLE_WRITES=false \
   ai-research-kb
 ```
@@ -77,3 +77,4 @@ That lets each client keep:
 - Prefer read/query access over direct remote writes.
 - If you enable writes, treat the deployment as an editor against a git checkout and add a review workflow around it.
 - On Railway, the default and safest model is read-only shared retrieval. Image filesystem writes are not your canonical source of truth.
+- For read-only hosted KB access, prefer stateless HTTP sessions. They avoid in-memory session loss and SSE edge timeouts on platforms like Railway.

@@ -74,14 +74,14 @@ describe("http handlers", () => {
       error: { message: "Bad Request: Server not initialized" },
     });
 
-    // GET without session ID → transport rejects before session lookup
+    // GET is intentionally disabled for this server's hosted HTTP mode
     const getRes = await app.request("/mcp", {
       method: "GET",
       headers: { Accept: "text/event-stream" },
     });
-    expect(getRes.status).toBe(400);
+    expect(getRes.status).toBe(405);
     expect(await getRes.json()).toMatchObject({
-      error: { message: "Bad Request: Server not initialized" },
+      error: { message: "Method not allowed." },
     });
 
     // DELETE with missing session
@@ -149,7 +149,37 @@ describe("http handlers", () => {
       headers: mcpHeaders,
       body: initializeBody,
     });
-    // Transport handles initialize and returns 200 with SSE or JSON
+    // Stateless hosted mode returns plain JSON and avoids server-held sessions.
     expect(res.status).toBe(200);
+    expect(res.headers.get("content-type")).toContain("application/json");
+    expect(res.headers.get("mcp-session-id")).toBeNull();
+  });
+
+  test("registerMcpRoutes rejects stateless GET and DELETE requests", async () => {
+    const app = new Hono();
+    registerMcpRoutes({
+      app,
+      statefulSessions: false,
+      enableWrites: false,
+      sessions: new Map(),
+    });
+
+    const getRes = await app.request("/mcp", {
+      method: "GET",
+      headers: { Accept: "text/event-stream" },
+    });
+    expect(getRes.status).toBe(405);
+    expect(await getRes.json()).toMatchObject({
+      error: { message: "Method not allowed." },
+    });
+
+    const deleteRes = await app.request("/mcp", {
+      method: "DELETE",
+      headers: mcpHeaders,
+    });
+    expect(deleteRes.status).toBe(405);
+    expect(await deleteRes.json()).toMatchObject({
+      error: { message: "Method not allowed." },
+    });
   });
 });
