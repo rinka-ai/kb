@@ -1,6 +1,5 @@
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
-import invariant from "tiny-invariant";
 import { ACTIVE_STATUSES, STATUS_SUPERSEDED } from "../constants";
 import { buildIndex, loadIndex, newestMarkdownMtime, writeIndex } from "../indexer";
 import { tokenize } from "../markdown";
@@ -55,6 +54,18 @@ export function topTermsFromFile(filePath: string, limit = 12): string[] {
     .map(([term]) => term);
 }
 
+export function topTermsFromText(text: string, limit = 12): string[] {
+  const tokens = tokenize(text.slice(0, 20000));
+  const counts = tokens
+    .filter((t) => !STOPWORDS.has(t) && t.length > 2)
+    .reduce<Map<string, number>>((acc, t) => acc.set(t, (acc.get(t) ?? 0) + 1), new Map());
+
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, limit)
+    .map(([term]) => term);
+}
+
 export function ensureIndex(rebuildIfStale: boolean): KbIndex {
   if (!existsSync(OUTPUT_FILE)) {
     const index = buildIndex();
@@ -83,6 +94,12 @@ function buildQuery(args: SearchArgs): { queryText: string; queryTerms: string[]
     const filePath = resolve(args.file);
     parts.push(filePath.split("/").at(-1) ?? filePath);
     parts.push(...topTermsFromFile(filePath));
+  }
+  if (args.text) {
+    if (args.contextLabel) {
+      parts.push(args.contextLabel);
+    }
+    parts.push(...topTermsFromText(args.text));
   }
   const queryText = parts.join(" ").trim();
   const queryTerms = tokenize(queryText).filter((t) => !STOPWORDS.has(t));
@@ -172,7 +189,9 @@ export function searchIndex(
 }
 
 export function searchKb(args: SearchArgs): SearchResponse {
-  invariant(args.query || args.file, "Provide --query or --file.");
+  if (!args.query && !args.file && !args.text) {
+    throw new Error("Provide a query, file path, or raw text context.");
+  }
 
   const index = ensureIndex(args.rebuildIfStale);
   const { queryText, queryTerms } = buildQuery(args);
@@ -181,6 +200,7 @@ export function searchKb(args: SearchArgs): SearchResponse {
     query: queryText,
     queryTerms,
     file: args.file,
+    contextLabel: args.contextLabel,
     includeSuperseded: args.includeSuperseded,
     results: searchIndex(index, queryTerms, args.top, {
       includeSuperseded: args.includeSuperseded,
@@ -206,6 +226,7 @@ export function formatSearchResults(response: SearchResponse): string {
   const header = [
     `Query: ${response.query}`,
     ...(response.file ? [`File context: ${response.file}`] : []),
+    ...(!response.file && response.contextLabel ? [`Context: ${response.contextLabel}`] : []),
     ...(response.includeSuperseded ? ["Including superseded notes: yes"] : []),
   ];
 

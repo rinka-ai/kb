@@ -24,6 +24,7 @@ This matters because Railway deploys an image from the repo. It is excellent for
 2. Railway should detect the root `Dockerfile`. Keep that builder path.
 3. In service variables, set:
    - `HOST=0.0.0.0`
+   - `KB_CACHE_DIR=/home/bun/.cache/ai-research-kb`
    - `KB_STATEFUL_SESSIONS=true`
    - `KB_ENABLE_WRITES=false`
 4. Do not set `PORT` manually unless you have a special reason. Railway injects it.
@@ -55,6 +56,7 @@ Keep the local stdio server too:
 
 - Public Networking gives the service an HTTPS Railway domain.
 - The health check path is `/health`.
+- The derived index should live in `KB_CACHE_DIR`, not the repo root, so hosted refreshes can safely rewrite cache files.
 - Restarts are configured in [railway.toml](../railway.toml).
 - Each merge to the tracked branch should trigger a new deploy with the latest KB content.
 

@@ -20,6 +20,7 @@ This repository now supports both:
 - `PORT`: listen port. Default: `3000`
 - `KB_STATEFUL_SESSIONS`: `true` or `false`. Default: `true`
 - `KB_ENABLE_WRITES`: `true` or `false`. Default: `false`
+- `KB_CACHE_DIR`: writable directory for the derived index on hosted deployments
 - `KB_ALLOWED_HOSTS`: optional comma-separated allowlist for host-header validation
 
 ## Local HTTP Run
@@ -41,6 +42,7 @@ docker build -t ai-research-kb .
 docker run --rm -p 3000:3000 \
   -e HOST=0.0.0.0 \
   -e PORT=3000 \
+  -e KB_CACHE_DIR=/home/bun/.cache/ai-research-kb \
   -e KB_STATEFUL_SESSIONS=true \
   -e KB_ENABLE_WRITES=false \
   ai-research-kb

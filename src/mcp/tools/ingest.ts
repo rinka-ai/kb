@@ -1,10 +1,9 @@
 import { relative } from "node:path";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
-import invariant from "tiny-invariant";
 import * as z from "zod/v4";
 import { ingestSource } from "../../core/ingest";
 import { ROOT } from "../../core/paths";
-import { toolResponse } from "./shared";
+import { toolErrorResponse, toolResponse } from "./shared";
 
 export function registerIngestTool(server: McpServer, enableWrites: boolean): void {
   server.registerTool(
@@ -41,44 +40,54 @@ export function registerIngestTool(server: McpServer, enableWrites: boolean): vo
       noRefresh = false,
       dryRun = false,
     }) => {
-      invariant(
-        enableWrites,
-        "kb_ingest is disabled on this MCP server. Enable writes explicitly or use the git/PR workflow for shared KB updates.",
-      );
-      invariant(url || filePath, "Provide either url or filePath.");
+      if (!enableWrites) {
+        return toolErrorResponse(
+          "kb_ingest is disabled on this MCP server. Shared HTTP deployments should stay read-only; use the git/PR workflow or a local writable MCP server for ingestion.",
+          { enableWrites },
+        );
+      }
 
-      const result = await ingestSource({
-        url,
-        file: filePath,
-        collection,
-        tags,
-        title,
-        author,
-        publisher,
-        published,
-        dryRun,
-        stdout: false,
-        noRefresh,
-      });
+      if (!url && !filePath) {
+        return toolErrorResponse("Provide either url or filePath.");
+      }
 
-      const text = [
-        `Title: ${result.source.title}`,
-        `Author: ${result.source.author || "Unknown"}`,
-        `Publisher: ${result.source.publisher || "Unknown"}`,
-        ...(result.outputPath ? [`Output path: ${result.outputPath}`] : []),
-        ...(result.refreshed && result.chunkCount !== undefined
-          ? [`KB chunks after refresh: ${result.chunkCount}`]
-          : []),
-        "",
-        result.markdown,
-      ].join("\n");
+      try {
+        const result = await ingestSource({
+          url,
+          file: filePath,
+          collection,
+          tags,
+          title,
+          author,
+          publisher,
+          published,
+          dryRun,
+          stdout: false,
+          noRefresh,
+        });
 
-      return toolResponse(text, {
-        outputPath: result.outputPath ? relative(ROOT, result.outputPath) : undefined,
-        refreshed: result.refreshed,
-        chunkCount: result.chunkCount,
-        source: result.source,
-      });
+        const text = [
+          `Title: ${result.source.title}`,
+          `Author: ${result.source.author || "Unknown"}`,
+          `Publisher: ${result.source.publisher || "Unknown"}`,
+          ...(result.outputPath ? [`Output path: ${result.outputPath}`] : []),
+          ...(result.refreshed && result.chunkCount !== undefined
+            ? [`KB chunks after refresh: ${result.chunkCount}`]
+            : []),
+          "",
+          result.markdown,
+        ].join("\n");
+
+        return toolResponse(text, {
+          outputPath: result.outputPath ? relative(ROOT, result.outputPath) : undefined,
+          refreshed: result.refreshed,
+          chunkCount: result.chunkCount,
+          source: result.source,
+        });
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error);
+        return toolErrorResponse(`KB ingest failed: ${message}`, { message });
+      }
     },
   );
 }
