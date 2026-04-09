@@ -13,6 +13,6 @@
     }
   },
   "files": {
-    "include": ["scripts/**/*.ts", "package.json", "tsconfig.json"]
+    "include": ["bin/**/*.ts", "src/**/*.ts", "__tests__/**/*.ts", "package.json", "tsconfig.json"]
   }
 }

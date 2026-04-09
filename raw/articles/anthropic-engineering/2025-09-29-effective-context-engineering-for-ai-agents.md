@@ -2,6 +2,7 @@
 id: article-2025-09-29-effective-context-engineering
 type: source
 title: "Effective context engineering for AI agents"
+path: raw/articles/anthropic-engineering/2025-09-29-effective-context-engineering-for-ai-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
@@ -18,6 +19,7 @@ related: [context-engineering, long-context, context-rot, mcp]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-09-29-effective-context-engineering-for-ai-agents.md
 - Author: Anthropic
 - Published: 2025-09-29
 - Publisher: Anthropic

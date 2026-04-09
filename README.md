@@ -1,5 +1,7 @@
 # AI Research KB
 
+[![CI](https://github.com/rinka-ai/kb/actions/workflows/ci.yml/badge.svg)](https://github.com/rinka-ai/kb/actions/workflows/ci.yml)
+
 This repository is a markdown-first knowledge base for articles, papers, repos, datasets, and derived research notes about building with AI.
 
 It supports two operating modes:
@@ -7,14 +9,28 @@ It supports two operating modes:
 - personal/local use through filesystem workflows and a local stdio MCP server
 - shared/team use through git, pull requests, and a hosted Streamable HTTP MCP server
 
+## Why This Exists
+
+This repo treats AI research as a durable system rather than a chat transcript:
+
+- `raw/` stores source material and provenance
+- `wiki/` stores synthesized understanding
+- `.kb/` stores a rebuildable retrieval index
+- MCP exposes the KB to Codex, Claude Code, and other compatible clients
+
 ## What This Repo Is
 
 - `raw/articles/`: source notes and imported material
+  Source notes include a canonical repo-relative `path` in frontmatter for agent-readable provenance.
 - `raw/images/`: local images related to source material
 - `wiki/concepts/`: concept pages synthesized across many sources
 - `wiki/summaries/`: multi-source summaries, memos, and reports
 - `wiki/index/`: maps of content and navigation pages
-- `scripts/`: Bun + TypeScript KB tooling
+- `bin/`: executable entrypoints like `search.ts` and `mcp-http.ts`
+- `src/core/`: indexing, ingest, lint, refresh, and search internals
+- `src/mcp/`: MCP server construction and stdio transport
+- `src/http/`: HTTP server, config, and route handlers
+- `__tests__/`: test suites organized by subsystem
 - `.kb/`: derived search index built from markdown files
 
 ## Core Workflow
@@ -26,6 +42,10 @@ It supports two operating modes:
 5. Keep the current canonical view active and mark older contradictory notes `status: superseded`.
 
 ## Local Usage
+
+Install dependencies:
+
+`bun install`
 
 Refresh the KB:
 
@@ -60,33 +80,65 @@ Railway is the recommended first host for the shared/team HTTP server:
 - keep `KB_ENABLE_WRITES=false`
 - expose the service with Railway Public Networking
 
-For shared deployment details, see [mcp-deployment.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/mcp-deployment.md).
-For the Railway-specific path, see [railway.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/railway.md).
+For shared deployment details, see [docs/mcp-deployment.md](./docs/mcp-deployment.md).
+For the Railway-specific path, see [docs/railway.md](./docs/railway.md).
 
 ## MCP Surface
 
 Tools:
 
+- `kb_build_context`
+- `kb_find_gaps`
+- `kb_list_catalog`
+- `kb_make_handoff`
 - `kb_search`
 - `kb_search_file`
 - `kb_read_note`
 - `kb_refresh`
+- `kb_trace_claim`
 - `kb_ingest`
 
 Resources:
 
 - `kb://stats`
 - `kb://catalog`
+- `kb://catalog/page/{page}`
 
-By default, search excludes notes marked `status: superseded`. Include them only when you intentionally want historical contradictions.
+`kb://catalog` is an overview resource, not a full corpus dump. Use `kb_list_catalog` or `kb://catalog/page/{page}` when you need to browse at scale.
+
+The higher-level tools are intentionally grounded in this repo's own wiki model:
+
+- `kb_build_context` compiles a task-specific context pack from concept pages and source notes.
+- `kb_find_gaps` runs wiki health checks for orphan notes, thin concepts, uncovered tags, and unreviewed ingests.
+- `kb_trace_claim` traces a claim through synthesis notes and primary source paths.
+- `kb_make_handoff` turns the current wiki view into a reusable long-running-agent handoff artifact.
+
+By default, search and catalog browsing exclude notes marked `status: superseded`. Include them only when you intentionally want historical contradictions.
+
+## Quality Gate
+
+Run the full repo quality check before opening a PR:
+
+`bun run check`
+
+This runs:
+
+- Biome formatting and lint checks
+- TypeScript typechecking
+- Bun tests from `__tests__/`
+- KB refresh and linting
 
 ## Documentation
 
-- Repo workflow and authoring rules: [AGENTS.md](/Users/josemanuelcerqueira/Desktop/ai-research/AGENTS.md)
-- Claude Code usage: [CLAUDE.md](/Users/josemanuelcerqueira/Desktop/ai-research/CLAUDE.md)
-- MCP setup and commands: [mcp-server.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/mcp-server.md)
-- Shared deployment: [mcp-deployment.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/mcp-deployment.md)
-- Cross-repo access: [external-agent-access.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/external-agent-access.md)
+- Repo workflow and authoring rules: [AGENTS.md](./AGENTS.md)
+- Claude Code usage: [CLAUDE.md](./CLAUDE.md)
+- Contributing guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Security policy: [SECURITY.md](./SECURITY.md)
+- Code of conduct: [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)
+- MCP setup and commands: [docs/mcp-server.md](./docs/mcp-server.md)
+- Shared deployment: [docs/mcp-deployment.md](./docs/mcp-deployment.md)
+- Cross-repo access: [docs/external-agent-access.md](./docs/external-agent-access.md)
+- Release checklist: [docs/release-checklist.md](./docs/release-checklist.md)
 
 ## Current Rule On Contradictions
 

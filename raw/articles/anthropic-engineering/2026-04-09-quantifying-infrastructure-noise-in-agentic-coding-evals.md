@@ -2,6 +2,7 @@
 id: article-2026-04-09-infrastructure-noise
 type: source
 title: "Quantifying infrastructure noise in agentic coding evals"
+path: raw/articles/anthropic-engineering/2026-04-09-quantifying-infrastructure-noise-in-agentic-coding-evals.md
 author: Gian Segato
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/infrastructure-noise
@@ -18,6 +19,7 @@ related: [ai-agent-evals, agentic-coding, infrastructure, benchmarking]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-04-09-quantifying-infrastructure-noise-in-agentic-coding-evals.md
 - Author: Gian Segato
 - Published: Unknown
 - Publisher: Anthropic

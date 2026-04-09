@@ -2,6 +2,7 @@
 id: article-2026-03-25-claude-code-auto-mode
 type: source
 title: "Claude Code auto mode: a safer way to skip permissions"
+path: raw/articles/anthropic-engineering/2026-03-25-claude-code-auto-mode.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/claude-code-auto-mode
@@ -18,6 +19,7 @@ related: [claude-code, agent-safety, permissions, sandboxing]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-03-25-claude-code-auto-mode.md
 - Author: Anthropic
 - Published: 2026-03-25
 - Publisher: Anthropic

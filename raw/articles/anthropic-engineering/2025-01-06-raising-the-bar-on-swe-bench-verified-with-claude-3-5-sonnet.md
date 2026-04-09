@@ -2,6 +2,7 @@
 id: article-2025-01-06-swe-bench-sonnet
 type: source
 title: "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet"
+path: raw/articles/anthropic-engineering/2025-01-06-raising-the-bar-on-swe-bench-verified-with-claude-3-5-sonnet.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/swe-bench-sonnet
@@ -18,6 +19,7 @@ related: [ai-agent-evals, swe-bench, agentic-coding, harnesses]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-01-06-raising-the-bar-on-swe-bench-verified-with-claude-3-5-sonnet.md
 - Author: Anthropic
 - Published: 2025-01-06
 - Publisher: Anthropic

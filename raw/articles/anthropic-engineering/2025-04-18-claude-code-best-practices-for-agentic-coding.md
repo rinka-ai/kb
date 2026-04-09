@@ -2,6 +2,7 @@
 id: article-2025-04-18-claude-code-best-practices
 type: source
 title: "Claude Code: Best practices for agentic coding"
+path: raw/articles/anthropic-engineering/2025-04-18-claude-code-best-practices-for-agentic-coding.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/claude-code-best-practices
@@ -18,6 +19,7 @@ related: [claude-code, agentic-coding, workflows, context-engineering]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-04-18-claude-code-best-practices-for-agentic-coding.md
 - Author: Anthropic
 - Published: 2025-04-18
 - Publisher: Anthropic

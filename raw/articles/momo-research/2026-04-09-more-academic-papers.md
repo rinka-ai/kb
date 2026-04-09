@@ -2,6 +2,7 @@
 id: article-2026-04-09-more-academic-papers
 type: source
 title: More Academic Papers
+path: raw/articles/momo-research/2026-04-09-more-academic-papers.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/More%20Academic%20Papers.md
@@ -18,6 +19,7 @@ related: [retrieval, persistent-memory, academic-papers, reading-list]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-more-academic-papers.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

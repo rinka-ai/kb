@@ -2,6 +2,7 @@
 id: article-2024-12-19-building-effective-agents
 type: source
 title: "Building effective agents"
+path: raw/articles/anthropic-engineering/2024-12-19-building-effective-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/building-effective-agents
@@ -18,6 +19,7 @@ related: [agents, workflows, scaffolding, context-engineering]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2024-12-19-building-effective-agents.md
 - Author: Anthropic
 - Published: 2024-12-19
 - Publisher: Anthropic

@@ -15,16 +15,20 @@ Point the other repo's MCP-capable agent client at this entrypoint:
 ```json
 {
   "command": "bun",
-  "args": ["/Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp.ts"]
+  "args": ["/path/to/ai-research/bin/mcp.ts"]
 }
 ```
 
 Useful MCP tools once attached:
 
+- `kb_build_context`
+- `kb_find_gaps`
+- `kb_make_handoff`
 - `kb_search`
 - `kb_search_file`
 - `kb_read_note`
 - `kb_refresh`
+- `kb_trace_claim`
 - `kb_ingest`
 
 For a team-hosted deployment, use a second server name and an HTTP endpoint instead:
@@ -40,11 +44,11 @@ claude mcp add --transport http --scope user ai-research-kb-shared https://<your
 Tested local registration commands:
 
 ```bash
-codex mcp add ai-research-kb -- bun /Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp.ts
+codex mcp add ai-research-kb -- bun /path/to/ai-research/bin/mcp.ts
 ```
 
 ```bash
-claude mcp add --scope user ai-research-kb -- bun /Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp.ts
+claude mcp add --scope user ai-research-kb -- bun /path/to/ai-research/bin/mcp.ts
 ```
 
 ## Fallback Pattern
@@ -54,20 +58,20 @@ If you cannot mount MCP in that client yet, add a short section like this to the
 ```md
 ## External Knowledge Base
 
-For AI agent architecture, evals, tool use, MCP, context engineering, retrieval, and research workflow questions, consult the shared KB at `/Users/josemanuelcerqueira/Desktop/ai-research`.
+For AI agent architecture, evals, tool use, MCP, context engineering, retrieval, and research workflow questions, consult the shared KB at `/path/to/ai-research`.
 
 Useful commands:
 
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:search --query "<topic>"`
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:search --file /absolute/path/to/current/file.ts`
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:refresh`
+- `bun --cwd /path/to/ai-research run kb:search --query "<topic>"`
+- `bun --cwd /path/to/ai-research run kb:search --file /absolute/path/to/current/file.ts`
+- `bun --cwd /path/to/ai-research run kb:refresh`
 ```
 
 ## Example Queries
 
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:search --query "managed agents harness design sandboxing"`
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:search --query "context rot retrieval long context"`
-- `bun --cwd /Users/josemanuelcerqueira/Desktop/ai-research run kb:search --file /Users/josemanuelcerqueira/Desktop/some-other-repo/src/agent.ts`
+- `bun --cwd /path/to/ai-research run kb:search --query "managed agents harness design sandboxing"`
+- `bun --cwd /path/to/ai-research run kb:search --query "context rot retrieval long context"`
+- `bun --cwd /path/to/ai-research run kb:search --file /path/to/some-other-repo/src/agent.ts`
 
 ## When This Is Enough
 

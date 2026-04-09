@@ -2,6 +2,7 @@
 id: article-2026-03-06-eval-awareness-browsecomp
 type: source
 title: "Eval awareness in Claude Opus 4.6's BrowseComp performance"
+path: raw/articles/anthropic-engineering/2026-03-06-eval-awareness-in-claude-opus-4-6-browsecomp-performance.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/eval-awareness-browsecomp
@@ -18,6 +19,7 @@ related: [ai-agent-evals, benchmark-integrity, web-agents, contamination]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-03-06-eval-awareness-in-claude-opus-4-6-browsecomp-performance.md
 - Author: Anthropic
 - Published: 2026-03-06
 - Publisher: Anthropic

@@ -2,6 +2,7 @@
 id: article-2025-11-26-effective-harnesses-for-long-running-agents
 type: source
 title: "Effective harnesses for long-running agents"
+path: raw/articles/anthropic-engineering/2025-11-26-effective-harnesses-for-long-running-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents
@@ -18,6 +19,7 @@ related: [harnesses, long-running-agents, context-engineering, coding-agents]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-11-26-effective-harnesses-for-long-running-agents.md
 - Author: Anthropic
 - Published: 2025-11-26
 - Publisher: Anthropic

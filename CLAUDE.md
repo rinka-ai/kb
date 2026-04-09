@@ -1,6 +1,6 @@
 # Claude Code Bootstrap
 
-Stop and read [AGENTS.md](/Users/josemanuelcerqueira/Desktop/ai-research/AGENTS.md) in full before doing any work in this repository.
+Stop and read [AGENTS.md](./AGENTS.md) in full before doing any work in this repository.
 
 Rules:
 

@@ -2,6 +2,7 @@
 id: article-2026-04-09-gam-vs-context-rot
 type: source
 title: GAM vs Context Rot
+path: raw/articles/momo-research/2026-04-09-gam-vs-context-rot.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/GAM%20vs.%20Context%20Rot.md
@@ -18,6 +19,7 @@ related: [agent-memory, context-rot, deep-research, retrieval]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-gam-vs-context-rot.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

@@ -2,6 +2,7 @@
 id: article-2026-04-09-agentic-file-system
 type: source
 title: Agentic File System
+path: raw/articles/momo-research/2026-04-09-agentic-file-system.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/Agentic%20File%20System.md
@@ -18,6 +19,7 @@ related: [context-engineering, agentic-file-systems, provenance, persistent-memo
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-agentic-file-system.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

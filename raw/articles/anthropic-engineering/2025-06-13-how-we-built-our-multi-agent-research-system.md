@@ -2,6 +2,7 @@
 id: article-2025-06-13-multi-agent-research-system
 type: source
 title: "How we built our multi-agent research system"
+path: raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/multi-agent-research-system
@@ -18,6 +19,7 @@ related: [multi-agent, research-agents, parallel-agents, tool-use]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md
 - Author: Anthropic
 - Published: 2025-06-13
 - Publisher: Anthropic

@@ -2,6 +2,7 @@
 id: article-2026-04-09-longllmlingua
 type: source
 title: LongLLMLingua
+path: raw/articles/momo-research/2026-04-09-longllmlingua.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/LongLLMLingua.md
@@ -18,6 +19,7 @@ related: [compression, long-context, context-rot, retrieval]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-longllmlingua.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

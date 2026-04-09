@@ -2,6 +2,7 @@
 id: article-2025-09-17-postmortem-three-recent-issues
 type: source
 title: "A postmortem of three recent issues"
+path: raw/articles/anthropic-engineering/2025-09-17-a-postmortem-of-three-recent-issues.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues
@@ -18,6 +19,7 @@ related: [reliability, infrastructure, ai-agent-evals, model-serving]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-09-17-a-postmortem-of-three-recent-issues.md
 - Author: Anthropic
 - Published: 2025-09-17
 - Publisher: Anthropic

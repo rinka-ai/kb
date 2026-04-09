@@ -2,6 +2,7 @@
 id: article-2026-04-09-agentic-context-engineering
 type: source
 title: Agentic Context Engineering
+path: raw/articles/momo-research/2026-04-09-agentic-context-engineering.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/Agentic%20Context%20Engineering.md
@@ -18,6 +19,7 @@ related: [context-engineering, agent-memory, context-rot, evolving-contexts]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-agentic-context-engineering.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

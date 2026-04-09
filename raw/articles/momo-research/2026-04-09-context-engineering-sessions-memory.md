@@ -2,6 +2,7 @@
 id: article-2026-04-09-context-engineering-sessions-memory
 type: source
 title: Context Engineering Sessions Memory
+path: raw/articles/momo-research/2026-04-09-context-engineering-sessions-memory.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/Context%20Engineering:%20Sessions,%20Memory.md
@@ -18,6 +19,7 @@ related: [context-engineering, sessions, agent-memory, memory-as-a-tool]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-context-engineering-sessions-memory.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

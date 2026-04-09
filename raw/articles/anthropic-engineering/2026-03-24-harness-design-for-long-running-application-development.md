@@ -2,6 +2,7 @@
 id: article-2026-03-24-harness-design-long-running-apps
 type: source
 title: "Harness design for long-running application development"
+path: raw/articles/anthropic-engineering/2026-03-24-harness-design-for-long-running-application-development.md
 author: Prithvi Rajasekaran
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/harness-design-long-running-apps
@@ -18,6 +19,7 @@ related: [harnesses, long-running-agents, agentic-coding, context-engineering]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-03-24-harness-design-for-long-running-application-development.md
 - Author: Prithvi Rajasekaran
 - Published: 2026-03-24
 - Publisher: Anthropic

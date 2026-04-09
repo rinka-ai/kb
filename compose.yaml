@@ -11,4 +11,10 @@ services:
       PORT: 3000
       KB_STATEFUL_SESSIONS: "true"
       KB_ENABLE_WRITES: "false"
+    healthcheck:
+      test: ["CMD", "bun", "-e", "const res = await fetch('http://127.0.0.1:3000/health'); if (!res.ok) process.exit(1);"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
     restart: unless-stopped

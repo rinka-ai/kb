@@ -2,6 +2,7 @@
 id: article-2025-11-24-advanced-tool-use
 type: source
 title: "Introducing advanced tool use on the Claude Developer Platform"
+path: raw/articles/anthropic-engineering/2025-11-24-introducing-advanced-tool-use-on-the-claude-developer-platform.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/advanced-tool-use
@@ -10,7 +11,7 @@ date_added: 2026-04-09
 tags: [tool-use, claude-platform, mcp, code-execution]
 status: processed
 quality: high
-summary: Anthropic introduces three tool-use features for large tool ecosystems: Tool Search Tool, Programmatic Tool Calling, and Tool Use Examples, all aimed at reducing context load and improving tool accuracy.
+summary: "Anthropic introduces three tool-use features for large tool ecosystems: Tool Search Tool, Programmatic Tool Calling, and Tool Use Examples, all aimed at reducing context load and improving tool accuracy."
 related: [tool-use, mcp, code-execution, context-engineering]
 ---
 
@@ -18,6 +19,7 @@ related: [tool-use, mcp, code-execution, context-engineering]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-11-24-introducing-advanced-tool-use-on-the-claude-developer-platform.md
 - Author: Anthropic
 - Published: 2025-11-24
 - Publisher: Anthropic

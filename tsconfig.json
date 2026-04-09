@@ -9,5 +9,5 @@
     "allowJs": false,
     "types": ["bun-types"]
   },
-  "include": ["scripts/**/*.ts"]
+  "include": ["bin/**/*.ts", "src/**/*.ts", "__tests__/**/*.ts"]
 }

@@ -2,6 +2,7 @@
 id: article-2026-02-05-building-c-compiler
 type: source
 title: "Building a C compiler with a team of parallel Claudes"
+path: raw/articles/anthropic-engineering/2026-02-05-building-a-c-compiler-with-a-team-of-parallel-claudes.md
 author: Nicholas Carlini
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/building-c-compiler
@@ -18,6 +19,7 @@ related: [agent-teams, parallel-agents, agentic-coding, harnesses]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-02-05-building-a-c-compiler-with-a-team-of-parallel-claudes.md
 - Author: Nicholas Carlini
 - Published: 2026-02-05
 - Publisher: Anthropic

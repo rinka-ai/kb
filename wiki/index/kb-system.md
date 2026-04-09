@@ -34,10 +34,10 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
 - Work-context-driven:
   - `bun run kb:search --file /absolute/path/to/current/file`
 - MCP-driven:
-  - attach `/Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp.ts`
+  - attach `bin/mcp.ts`
   - use `kb_search`, `kb_search_file`, `kb_read_note`, and `kb_refresh`
 - Team-hosted MCP:
-  - deploy `/Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp-http.ts`
+  - deploy `bin/mcp-http.ts`
   - register clients against `https://<your-host>/mcp`
 - Ingestion:
   - `bun run kb:ingest --url https://example.com/post --tags agents,evals`

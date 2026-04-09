@@ -1,26 +1,41 @@
 {
   "name": "ai-research-kb",
+  "description": "A markdown-first AI research knowledge base with local and hosted MCP access.",
   "private": true,
+  "packageManager": "bun@1.3.5",
   "type": "module",
   "scripts": {
-    "kb:build": "bun scripts/kb-build.ts",
-    "kb:search": "bun scripts/kb-search.ts",
-    "kb:lint": "bun scripts/kb-lint.ts",
-    "kb:refresh": "bun scripts/kb-refresh.ts",
-    "kb:ingest": "bun scripts/kb-ingest.ts",
-    "kb:mcp": "bun scripts/kb-mcp.ts",
-    "kb:mcp:http": "bun scripts/kb-mcp-http.ts",
-    "kb:watch": "bun scripts/kb-watch.ts",
+    "kb:build": "bun bin/build.ts",
+    "kb:search": "bun bin/search.ts",
+    "kb:lint": "bun bin/lint.ts",
+    "kb:refresh": "bun bin/refresh.ts",
+    "kb:ingest": "bun bin/ingest.ts",
+    "kb:mcp": "bun bin/mcp.ts",
+    "kb:mcp:http": "bun bin/mcp-http.ts",
+    "kb:watch": "bun bin/watch.ts",
+    "typecheck": "bunx tsc --noEmit",
+    "test": "bun test __tests__",
+    "check": "bun run biome:check && bun run typecheck && bun run test && bun run kb:refresh",
     "biome:check": "biome check .",
     "biome:write": "biome check --write ."
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/bun": "^1.3.11",
-    "@types/express": "^5.0.6"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
+    "@mozilla/readability": "^0.6.0",
+    "cheerio": "^1.2.0",
+    "commander": "^14.0.3",
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3",
+    "linkedom": "^0.18.12",
+    "tiny-invariant": "^1.3.3",
     "zod": "^4.3.6"
+  },
+  "engines": {
+    "bun": ">=1.3.5"
   }
 }

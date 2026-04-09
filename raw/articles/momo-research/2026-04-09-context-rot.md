@@ -2,6 +2,7 @@
 id: article-2026-04-09-context-rot
 type: source
 title: Context Rot
+path: raw/articles/momo-research/2026-04-09-context-rot.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/Context%20Rot.md
@@ -18,6 +19,7 @@ related: [context-rot, context-engineering, long-context, evaluations]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-context-rot.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

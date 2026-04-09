@@ -2,6 +2,7 @@
 id: article-2024-09-19-contextual-retrieval
 type: source
 title: "Introducing Contextual Retrieval"
+path: raw/articles/anthropic-engineering/2024-09-19-introducing-contextual-retrieval.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/contextual-retrieval
@@ -18,6 +19,7 @@ related: [retrieval, rag, contextual-retrieval, embeddings]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2024-09-19-introducing-contextual-retrieval.md
 - Author: Anthropic
 - Published: 2024-09-19
 - Publisher: Anthropic

@@ -48,9 +48,9 @@ docker run --rm -p 3000:3000 \
 
 ## Railway
 
-This repo includes a root [railway.toml](/Users/josemanuelcerqueira/Desktop/ai-research/railway.toml) and a Dockerfile that prebuilds the KB index during image build. Railway should be pointed at this repository as a Dockerfile-backed web service.
+This repo includes a root [railway.toml](../railway.toml) and a Dockerfile that prebuilds the KB index during image build. Railway should be pointed at this repository as a Dockerfile-backed web service.
 
-For the full Railway setup flow, see [railway.md](/Users/josemanuelcerqueira/Desktop/ai-research/docs/railway.md).
+For the full Railway setup flow, see [railway.md](./railway.md).
 
 ## Team Client Registration
 

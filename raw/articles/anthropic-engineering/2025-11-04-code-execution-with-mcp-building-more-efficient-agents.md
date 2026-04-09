@@ -2,6 +2,7 @@
 id: article-2025-11-04-code-execution-with-mcp
 type: source
 title: "Code execution with MCP: Building more efficient agents"
+path: raw/articles/anthropic-engineering/2025-11-04-code-execution-with-mcp-building-more-efficient-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/code-execution-with-mcp
@@ -18,6 +19,7 @@ related: [mcp, tool-use, context-engineering, programmatic-tool-calling]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-11-04-code-execution-with-mcp-building-more-efficient-agents.md
 - Author: Anthropic
 - Published: 2025-11-04
 - Publisher: Anthropic

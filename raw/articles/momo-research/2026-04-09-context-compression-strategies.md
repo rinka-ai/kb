@@ -2,6 +2,7 @@
 id: article-2026-04-09-context-compression-strategies
 type: source
 title: Context Compression Strategies
+path: raw/articles/momo-research/2026-04-09-context-compression-strategies.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/Context%20compression%20strategies.md
@@ -18,6 +19,7 @@ related: [context-engineering, compression, kv-cache, context-rot]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-context-compression-strategies.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

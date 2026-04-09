@@ -1,7 +1,8 @@
 ---
 id: article-2026-04-09-scaling-managed-agents
 type: source
-title: Scaling Managed Agents: Decoupling the brain from the hands
+title: "Scaling Managed Agents: Decoupling the brain from the hands"
+path: raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md
 author: Lance Martin, Gabe Cemaj, Michael Cohen
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/managed-agents
@@ -10,7 +11,7 @@ date_added: 2026-04-09
 tags: [agents, managed-agents, context-engineering, sessions, sandboxes, architecture]
 status: processed
 quality: high
-summary: Anthropic describes Managed Agents as a hosted long-horizon agent system built around stable interfaces for sessions, harnesses, and sandboxes, so the underlying implementation can evolve as models improve.
+summary: "Anthropic describes Managed Agents as a hosted long-horizon agent system built around stable interfaces for sessions, harnesses, and sandboxes, so the underlying implementation can evolve as models improve."
 related: [managed-agents, context-engineering, agent-memory, sandboxes, sessions]
 ---
 
@@ -18,6 +19,7 @@ related: [managed-agents, context-engineering, agent-memory, sandboxes, sessions
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md
 - Author: Lance Martin, Gabe Cemaj, Michael Cohen
 - Published: Unknown
 - Publisher: Anthropic

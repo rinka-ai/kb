@@ -2,6 +2,7 @@
 id: article-2025-10-20-claude-code-sandboxing
 type: source
 title: "Beyond permission prompts: making Claude Code more secure and autonomous"
+path: raw/articles/anthropic-engineering/2025-10-20-beyond-permission-prompts-making-claude-code-more-secure-and-autonomous.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/claude-code-sandboxing
@@ -18,6 +19,7 @@ related: [claude-code, sandboxing, security, auto-mode]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-10-20-beyond-permission-prompts-making-claude-code-more-secure-and-autonomous.md
 - Author: Anthropic
 - Published: 2025-10-20
 - Publisher: Anthropic

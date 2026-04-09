@@ -2,6 +2,7 @@
 id: article-2025-03-20-claude-think-tool
 type: source
 title: "The 'think' tool: Enabling Claude to stop and think in complex tool use situations"
+path: raw/articles/anthropic-engineering/2025-03-20-the-think-tool-enabling-claude-to-stop-and-think.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/claude-think-tool
@@ -18,6 +19,7 @@ related: [tool-use, reasoning, extended-thinking, policies]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-03-20-the-think-tool-enabling-claude-to-stop-and-think.md
 - Author: Anthropic
 - Published: 2025-03-20
 - Publisher: Anthropic

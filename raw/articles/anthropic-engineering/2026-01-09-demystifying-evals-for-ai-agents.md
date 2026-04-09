@@ -2,6 +2,7 @@
 id: article-2026-01-09-demystifying-evals-for-ai-agents
 type: source
 title: "Demystifying evals for AI agents"
+path: raw/articles/anthropic-engineering/2026-01-09-demystifying-evals-for-ai-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents
@@ -18,6 +19,7 @@ related: [ai-agent-evals, harnesses, transcripts, grading]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-01-09-demystifying-evals-for-ai-agents.md
 - Author: Anthropic
 - Published: 2026-01-09
 - Publisher: Anthropic

@@ -2,6 +2,7 @@
 id: article-2026-04-08-llm-knowledge-bases
 type: source
 title: LLM Knowledge Bases
+path: raw/articles/2026-04-08-llm-knowledge-bases.md
 author: Andrej Karpathy
 publisher: X
 url: https://x.com/karpathy
@@ -18,6 +19,7 @@ related: [personal-knowledge-bases, obsidian, llm-agents, research-workflows]
 
 ## Source Metadata
 
+- Path: raw/articles/2026-04-08-llm-knowledge-bases.md
 - Author: Andrej Karpathy
 - Published: 2026-04-08
 - Publisher: X

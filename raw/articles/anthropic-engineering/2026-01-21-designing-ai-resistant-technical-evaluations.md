@@ -2,6 +2,7 @@
 id: article-2026-01-21-ai-resistant-technical-evaluations
 type: source
 title: "Designing AI-resistant technical evaluations"
+path: raw/articles/anthropic-engineering/2026-01-21-designing-ai-resistant-technical-evaluations.md
 author: Tristan Hume
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/AI-resistant-technical-evaluations
@@ -18,6 +19,7 @@ related: [ai-agent-evals, ai-resistant-evaluations, hiring, technical-interviews
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2026-01-21-designing-ai-resistant-technical-evaluations.md
 - Author: Tristan Hume
 - Published: 2026-01-21
 - Publisher: Anthropic

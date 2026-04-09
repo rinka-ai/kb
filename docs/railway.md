@@ -4,9 +4,9 @@ This is the recommended first shared host for the team HTTP MCP server.
 
 ## What Gets Deployed
 
-- Railway deploys the HTTP MCP server from [kb-mcp-http.ts](/Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp-http.ts).
-- The root [Dockerfile](/Users/josemanuelcerqueira/Desktop/ai-research/Dockerfile) installs dependencies and runs `bun run kb:refresh` during image build.
-- The root [railway.toml](/Users/josemanuelcerqueira/Desktop/ai-research/railway.toml) tells Railway to use the Dockerfile and health-check `/health`.
+- Railway deploys the HTTP MCP server from [bin/mcp-http.ts](../bin/mcp-http.ts).
+- The root [Dockerfile](../Dockerfile) installs dependencies and runs `bun run kb:refresh` during image build.
+- The root [railway.toml](../railway.toml) tells Railway to use the Dockerfile and health-check `/health`.
 
 ## Recommended Model
 
@@ -55,8 +55,7 @@ Keep the local stdio server too:
 
 - Public Networking gives the service an HTTPS Railway domain.
 - The health check path is `/health`.
-- `/healthz` remains available as a compatibility alias.
-- Restarts are configured in [railway.toml](/Users/josemanuelcerqueira/Desktop/ai-research/railway.toml).
+- Restarts are configured in [railway.toml](../railway.toml).
 - Each merge to the tracked branch should trigger a new deploy with the latest KB content.
 
 ## If You Ever Want Remote Writes

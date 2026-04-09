@@ -2,6 +2,7 @@
 id: article-2025-09-11-writing-tools-for-agents
 type: source
 title: "Writing effective tools for agents — with agents"
+path: raw/articles/anthropic-engineering/2025-09-11-writing-effective-tools-for-agents-with-agents.md
 author: Anthropic
 publisher: Anthropic
 url: https://www.anthropic.com/engineering/writing-tools-for-agents
@@ -18,6 +19,7 @@ related: [tool-use, mcp, claude-code, ai-agent-evals]
 
 ## Source Metadata
 
+- Path: raw/articles/anthropic-engineering/2025-09-11-writing-effective-tools-for-agents-with-agents.md
 - Author: Anthropic
 - Published: 2025-09-11
 - Publisher: Anthropic

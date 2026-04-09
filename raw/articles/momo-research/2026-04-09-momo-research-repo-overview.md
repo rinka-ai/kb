@@ -2,6 +2,7 @@
 id: article-2026-04-09-momo-research-repo-overview
 type: source
 title: momo-research repo overview
+path: raw/articles/momo-research/2026-04-09-momo-research-repo-overview.md
 author: momo personal assistant
 publisher: GitHub
 url: https://github.com/momo-personal-assistant/momo-research/blob/main/README.md
@@ -18,6 +19,7 @@ related: [context-engineering, persistent-memory, agent-memory, momo-research]
 
 ## Source Metadata
 
+- Path: raw/articles/momo-research/2026-04-09-momo-research-repo-overview.md
 - Author: momo personal assistant
 - Published: Unknown
 - Publisher: GitHub

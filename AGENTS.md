@@ -20,6 +20,10 @@ This repository stores an LLM-assisted research knowledge base built from markdo
 - `wiki/concepts/`: concept pages
 - `wiki/summaries/`: cross-source summaries and reports
 - `wiki/index/`: navigation pages and maps of content
+- `bin/`: executable KB command entrypoints
+- `src/core/`: KB internals shared by CLI and MCP
+- `src/mcp/`: MCP server construction and stdio transport
+- `src/http/`: HTTP server, config, and handlers
 
 ## Source Article Format
 
@@ -43,6 +47,7 @@ Use these keys for source articles unless a field is unknown:
 - `id`
 - `type`
 - `title`
+- `path`
 - `author`
 - `publisher`
 - `url`
@@ -58,6 +63,7 @@ Use these keys for source articles unless a field is unknown:
 ## Authoring Rules
 
 - Keep one source article per file.
+- Set `path` to the canonical repo-relative markdown path, for example `raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md`.
 - Preserve exact source text inside `## Source Text` when the goal is archival fidelity.
 - Separate extracted claims from personal interpretation.
 - Keep quotes and copied material clearly attributed.
@@ -107,7 +113,7 @@ When working in this repository as an agent:
 2. Rebuild the index after adding or changing markdown files.
 3. Use concept pages in `wiki/` for synthesis and source notes in `raw/articles/` for provenance.
 4. Run `bun run kb:lint` before wrapping up substantial KB edits.
-5. If the `ai-research-kb` MCP server is attached, prefer `kb_search`, `kb_search_file`, and `kb_read_note` over ad hoc shell lookups.
+5. If the `ai-research-kb` MCP server is attached, prefer `kb_build_context`, `kb_find_gaps`, `kb_trace_claim`, `kb_make_handoff`, `kb_search`, `kb_search_file`, `kb_list_catalog`, and `kb_read_note` over ad hoc shell lookups.
 6. When contradictory knowledge appears, update the canonical note and mark the older source note `status: superseded` so it drops out of default retrieval.
 
 ## Codex And Claude Code Awareness
@@ -115,5 +121,5 @@ When working in this repository as an agent:
 - Codex uses `AGENTS.md` as the main repo instruction file, so keep the KB workflow documented here.
 - `CLAUDE.md` exists only to direct Claude Code back to `AGENTS.md`.
 - Both agents should treat KB lookup as part of the default workflow for research, architecture, eval, tool-use, and agent-systems tasks.
-- When configuring external repos, point them at `/Users/josemanuelcerqueira/Desktop/ai-research/scripts/kb-mcp.ts` through their MCP client config rather than relying only on shell snippets.
+- When configuring external repos, point them at `bin/mcp.ts` in this repository through their MCP client config rather than relying only on shell snippets.
 - For team-shared access, prefer the hosted HTTP MCP endpoint while keeping local stdio for personal use.
