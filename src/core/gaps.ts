@@ -1,5 +1,5 @@
 import { slugify } from "./markdown";
-import { type KbNote, createKbNoteLookup, listKbNotes, sourcePathsForNote } from "./notes";
+import { createKbNoteLookup, type KbNote, listKbNotes, sourcePathsForNote } from "./notes";
 
 export interface FindGapsArgs {
   limit: number;
@@ -40,22 +40,6 @@ export interface GapReport {
   sourceCountMismatches: ThinConcept[];
   uncoveredTags: UncoveredTag[];
   suggestedActions: string[];
-}
-
-function uniqueStrings(items: string[]): string[] {
-  const seen = new Set<string>();
-  const result: string[] = [];
-
-  for (const item of items.map((value) => value.trim()).filter(Boolean)) {
-    const key = item.toLowerCase();
-    if (seen.has(key)) {
-      continue;
-    }
-    seen.add(key);
-    result.push(item);
-  }
-
-  return result;
 }
 
 function asGapNote(note: KbNote): GapNote {

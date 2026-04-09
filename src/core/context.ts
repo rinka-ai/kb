@@ -1,14 +1,13 @@
 import {
-  type KbNote,
   createKbNoteLookup,
   extractBulletItems,
   findSection,
+  type KbNote,
   listKbNotes,
   sourcePathsForNote,
 } from "./notes";
 import { type SearchResponse, type SearchResult, searchKb } from "./search";
 
-const SUMMARY_HEADINGS = ["summary", "tl;dr", "overview"];
 const KEY_POINT_HEADINGS = [
   "key claims",
   "important details",

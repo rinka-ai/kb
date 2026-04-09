@@ -109,7 +109,7 @@ export async function findFreePort(): Promise<number> {
 
 export async function waitForHttp(url: string, timeoutMs = 10_000): Promise<Response> {
   const deadline = Date.now() + timeoutMs;
-  let lastError: unknown = undefined;
+  let lastError: unknown;
 
   while (Date.now() < deadline) {
     try {
