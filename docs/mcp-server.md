@@ -21,7 +21,7 @@ Tools:
 - `kb_list_catalog`: browse the KB catalog page by page with optional filters
 - `kb_make_handoff`: turn the current wiki view into a reusable handoff packet for another agent or future session
 - `kb_search`: search the KB by free-text query
-- `kb_search_file`: search the KB using a local file as retrieval context
+- `kb_search_file`: search the KB using either a host-local file path or raw text as retrieval context
 - `kb_read_note`: read a markdown note by KB path, basename slug, or absolute path
 - `kb_refresh`: rebuild the index and run lint checks
 - `kb_trace_claim`: trace a claim through synthesis notes and primary source paths
@@ -95,9 +95,11 @@ claude mcp remove "ai-research-kb" -s user
 - Prefer `kb_search` when you already know the topic or question.
 - Prefer `kb_list_catalog` when you need to browse many notes or inspect a collection.
 - Treat `kb://catalog` as a lightweight overview resource; it intentionally avoids returning the full corpus in one payload.
-- `kb_search` and `kb_search_file` auto-refresh the index when markdown files are newer than `.kb/index.json`.
+- `kb_search` and `kb_search_file` auto-refresh the index when markdown files are newer than the derived index in `.kb/` or `KB_CACHE_DIR`.
+- For shared HTTP MCP, prefer passing `text` to `kb_search_file` because your laptop path usually will not exist on the server host.
 - Both search tools exclude notes with `status: superseded` by default; pass `includeSuperseded=true` only when you intentionally want historical contradictions.
 - Catalog browsing also excludes `status: superseded` by default unless you opt in.
-- `kb_refresh` is still useful after larger KB editing passes.
+- `kb_refresh` is still useful after larger KB editing passes. On hosted deployments it only rewrites the derived cache, not the source markdown corpus.
 - `kb_watch` remains optional for background maintenance, but the MCP server does not require it to stay correct.
 - The hosted HTTP server defaults to `KB_ENABLE_WRITES=false`, so shared deployments are read/query-first unless you opt into remote writes.
+- Set `KB_CACHE_DIR` to a writable path on hosted deployments so refresh and auto-rebuild can update the derived index safely.

@@ -164,16 +164,49 @@ describe("mcp tools", () => {
     expect((result?.structuredContent.fileCount as number | undefined) ?? 0).toBeGreaterThan(0);
   });
 
+  test("kb_search_file accepts raw text context for remote MCP use", async () => {
+    const server = new FakeMcpServer();
+    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+
+    const result = (await server.tools.get("kb_search_file")?.handler({
+      text: "managed agents sandbox durable sessions context engineering",
+      contextLabel: "managed-agents-brief.md",
+      top: 3,
+      includeSuperseded: false,
+      rebuildIfStale: false,
+    })) as ToolResult | undefined;
+
+    expect(result?.structuredContent.contextLabel).toBe("managed-agents-brief.md");
+    expect(result?.content[0].text).toContain("Context: managed-agents-brief.md");
+  });
+
+  test("kb_search_file returns a clear remote-host hint for missing file paths", async () => {
+    const server = new FakeMcpServer();
+    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+
+    const result = (await server.tools.get("kb_search_file")?.handler({
+      filePath: "/definitely/not/on/the/server.ts",
+      top: 3,
+      includeSuperseded: false,
+      rebuildIfStale: false,
+    })) as { content: Array<{ text: string }>; isError?: boolean } | undefined;
+
+    expect(result?.isError).toBe(true);
+    expect(result?.content[0].text).toContain("File not found on MCP host");
+    expect(result?.content[0].text).toContain("Pass text instead");
+  });
+
   test("kb_ingest is blocked when writes are disabled", async () => {
     const server = new FakeMcpServer();
     registerKbTools(server as unknown as McpServer, { enableWrites: false });
 
-    await expect(
-      server.tools.get("kb_ingest")?.handler({
-        filePath: "/tmp/example.md",
-        dryRun: true,
-      }) as Promise<unknown>,
-    ).rejects.toThrow("kb_ingest is disabled on this MCP server");
+    const result = (await server.tools.get("kb_ingest")?.handler({
+      filePath: "/tmp/example.md",
+      dryRun: true,
+    })) as { content: Array<{ text: string }>; isError?: boolean } | undefined;
+
+    expect(result?.isError).toBe(true);
+    expect(result?.content[0].text).toContain("kb_ingest is disabled on this MCP server");
   });
 
   test("kb_ingest supports dry-run when writes are enabled", async () => {

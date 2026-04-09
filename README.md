@@ -15,7 +15,7 @@ This repo treats AI research as a durable system rather than a chat transcript:
 
 - `raw/` stores source material and provenance
 - `wiki/` stores synthesized understanding
-- `.kb/` stores a rebuildable retrieval index
+- `.kb/` or `KB_CACHE_DIR` stores a rebuildable retrieval index
 - MCP exposes the KB to Codex, Claude Code, and other compatible clients
 
 ## What This Repo Is
@@ -112,6 +112,7 @@ The higher-level tools are intentionally grounded in this repo's own wiki model:
 - `kb_find_gaps` runs wiki health checks for orphan notes, thin concepts, uncovered tags, and unreviewed ingests.
 - `kb_trace_claim` traces a claim through synthesis notes and primary source paths.
 - `kb_make_handoff` turns the current wiki view into a reusable long-running-agent handoff artifact.
+- `kb_search_file` accepts either a host-local `filePath` or raw `text`, which makes it usable both locally and over shared HTTP MCP.
 
 By default, search and catalog browsing exclude notes marked `status: superseded`. Include them only when you intentionally want historical contradictions.
 
