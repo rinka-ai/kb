@@ -80,6 +80,28 @@ Railway is the recommended first host for the shared/team HTTP server:
 - keep `KB_ENABLE_WRITES=false`
 - expose the service with Railway Public Networking
 
+Current shared MCP endpoint:
+
+- `https://kb-production-1c43.up.railway.app/mcp`
+
+Attach it in Codex:
+
+```bash
+codex mcp add ai-research-kb-shared --url https://kb-production-1c43.up.railway.app/mcp
+```
+
+Attach it in Claude Code:
+
+```bash
+claude mcp add --transport http --scope user ai-research-kb-shared https://kb-production-1c43.up.railway.app/mcp
+```
+
+Sanity-check the deployed service:
+
+- root: `https://kb-production-1c43.up.railway.app/`
+- health: `https://kb-production-1c43.up.railway.app/health`
+- MCP: `https://kb-production-1c43.up.railway.app/mcp`
+
 For shared deployment details, see [docs/mcp-deployment.md](./docs/mcp-deployment.md).
 For the Railway-specific path, see [docs/railway.md](./docs/railway.md).
 
