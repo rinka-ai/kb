@@ -154,6 +154,19 @@ describe("mcp tools", () => {
     expect(result?.content[0].text).toContain("Title: LLM Knowledge Bases");
   });
 
+  test("kb_read_note allows small maxChars values for cheap previews", async () => {
+    const server = new FakeMcpServer();
+    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+
+    const result = (await server.tools.get("kb_read_note")?.handler({
+      path: "2026-04-08-llm-knowledge-bases",
+      maxChars: 100,
+    })) as ToolResult | undefined;
+
+    expect(result?.content[0].text).toContain("Title: LLM Knowledge Bases");
+    expect(result?.structuredContent.truncated).toBe(true);
+  });
+
   test("kb_refresh returns current index stats", async () => {
     const server = new FakeMcpServer();
     registerKbTools(server as unknown as McpServer, { enableWrites: false });
