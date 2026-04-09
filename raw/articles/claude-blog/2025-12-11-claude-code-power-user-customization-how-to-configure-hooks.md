@@ -1,0 +1,279 @@
+---
+id: article-2026-04-09-claude-code-power-user-customization-how-to-configure-hooks
+type: source
+title: "Claude Code power user customization: How to configure hooks"
+path: raw/articles/claude-blog/2025-12-11-claude-code-power-user-customization-how-to-configure-hooks.md
+author: Unknown
+publisher: Claude
+url: https://claude.com/blog/how-to-configure-hooks
+date_published: 2025-12-11
+date_added: 2026-04-09
+tags: [claude-code, hooks, customization, workflows]
+status: ingested
+quality: medium
+summary: Learn how to configure Claude Code hooks to automate repetitive tasks, enforce project rules, and inject dynamic context into your coding sessions.
+related: [claude-code, hooks, customization, workflows]
+---
+
+# Claude Code power user customization: How to configure hooks
+
+## Source Metadata
+
+- Path: raw/articles/claude-blog/2025-12-11-claude-code-power-user-customization-how-to-configure-hooks.md
+- Author: Unknown
+- Published: 2025-12-11
+- Publisher: Claude
+- URL: https://claude.com/blog/how-to-configure-hooks
+
+## TL;DR
+
+Learn how to configure Claude Code hooks to automate repetitive tasks, enforce project rules, and inject dynamic context into your coding sessions.
+
+## Key Claims
+
+- Learn how to configure Claude Code hooks to automate repetitive tasks, enforce project rules, and inject dynamic context into your coding sessions.
+- Even a smooth Claude Code workflow accumulates friction points over time.
+- Hook
+          When it fires
+          Common uses
+- PreToolUse
+          Before a tool executes
+          Block dangerous commands, validate file paths, auto-approve safe operations
+
+## Important Details
+
+- Source captured from claude.com.
+- Published date detected as 2025-12-11.
+- Section heading: What is a hook?
+- Section heading: Why use hooks in Claude Code?
+- Section heading: Claude Code hook types and when to use them
+- Section heading: PreToolUse
+- Section heading: PermissionRequest
+
+## Entities
+
+- People: Unknown
+- Companies: Unknown
+- Tools: Unknown
+- Concepts: Unknown
+
+## My Notes
+
+- Imported automatically by `bun run kb:ingest`.
+- Review and refine the structured sections before relying on this note heavily.
+
+## Open Questions
+
+- What claims in this source matter most for the current knowledge base?
+- Which concept pages should link back to this note?
+
+## Related
+
+- [[claude-code]]
+- [[hooks]]
+- [[customization]]
+- [[workflows]]
+
+## Source Text
+
+Even a smooth Claude Code workflow accumulates friction points over time. Every time Claude writes a file, Prettier needs to run manually. Every time it runs npm test, the same permission prompt appears. Every session starts with pasting the same boilerplate project context into the first message.The good news? Hooks eliminate these friction points. They act as triggers you can configure to fire before or after certain actions, allowing you to inject custom logic, scripts, and commands directly into Claude's operations. This article covers advanced configuration for developers already familiar with Claude Code basics. By the end of this article, you'll understand the eight hook types, when to use each one, how to configure them, and how to debug them when things go wrong.Let’s dive in.What is a hook?A hook is a custom shell command that you create to execute automatically when a targeted event occurs in your Claude Code session, such as when Claude is about to write a file or when you submit a prompt. You can designate hooks for a huge range of things: intercepting actions before they execute, injecting agent context, automating approvals, or blocking operations before they happen.Hooks are configured in your settings files using a JSON structure with event names, matchers (to filter which tools trigger the hook), and the commands to run. They execute in your local environment with your user permissions, receiving information about the triggering event via stdin and communicating back through exit codes and stdout. This gives you precise control over Claude Code behavior without modifying the tool itself.Why use hooks in Claude Code?Hooks solve three categories of problems.First, they eliminate repetitive manual steps. Instead of running your formatter after every file change, a PostToolUse hook handles it automatically. Instead of approving npm test for the hundredth time, a PermissionRequest hook auto-approves it.Second, hooks enforce project-specific rules automatically. You can block dangerous commands before they execute, validate file paths before writes, or ensure naming conventions are followed. These guardrails run every time, not only when you remember to check.Third, hooks inject dynamic context without manual effort. A SessionStart hook can feed Claude your current git status and TODO list. A UserPromptSubmit hook can append your sprint priorities to every request. Claude stays informed without you repeating yourself.Claude Code hook types and when to use themClaude Code provides eight hook events that cover the full lifecycle of a session, from startup through tool execution to completion. Each fires at a specific moment, giving you precise control over when your automation runs. Choosing the right hook depends on what you want to accomplish.Hooks at a glance
+
+Hook
+          When it fires
+          Common uses
+
+PreToolUse
+          Before a tool executes
+          Block dangerous commands, validate file paths, auto-approve safe operations
+
+PermissionRequest
+          Before a permission dialog appears
+          Auto-approve test commands, block access to sensitive files
+
+PostToolUse
+          After a tool completes
+          Run formatters, trigger linters, log file changes
+
+PreCompact
+          Before context compaction
+          Back up transcripts, preserve important decisions
+
+SessionStart
+          When a session begins or resumes
+          Inject git status, load TODO lists, set environment context
+
+Stop
+          When Claude finishes responding
+          Verify task completion, run tests, generate summaries
+
+SubagentStop
+          When a subagent completes
+          Validate subagent output, trigger follow-up actions
+
+UserPromptSubmit
+          When you submit a prompt
+          Inject sprint context, validate requests, add dynamic context
+
+You can remove this line if a caption isn't needed
+PreToolUseThis is the most commonly used hook, firing after Claude chooses a tool to use but before the tool actually executes. Your script can inspect the planned action and approve it, block it, request user confirmation, or modify the parameters, using a matcher to filter which tools trigger this hook.This PreToolUse hook example evaluates file writes before they execute. Claude reviews the planned action against the specified criteria and can approve, block, or flag concerns based on the prompt logic.{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/path/to/validate-file-path.sh"
+          }
+        ]
+      }
+    ]
+  }
+}When to use PreToolUse:Blocking dangerous Bash commands like rm -rf or force pushesAuto-approving safe, repetitive operations to reduce prompt fatigueValidating file paths before writes to prevent accidental overwritesModifying tool inputs to inject project-specific defaultsPermissionRequestThis hook fires when Claude would normally show a permission dialog. This hook intercepts the moment before you would see a confirmation prompt, letting your script decide whether to allow, deny, or still ask the user.{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "matcher": "Bash(npm test*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/path/to/validate-test-command.sh"
+          }
+        ]
+      }
+    ]
+  }
+}This example auto-approves any Bash command starting with npm test. The matcher pattern can include arguments for finer control.When to use PermissionRequest:Auto-approving test commands you run dozens of times per sessionBlocking write access to production configuration filesAllowing read operations on specific directories without promptsDenying any command that matches a dangerous patternPostToolUseFires immediately after a tool completes successfully. Your script receives information about what happened, including the tool output, using matchers to filter which tools trigger it.This example of PostToolUse runs Prettier on any file Claude writes or edits. The pipe syntax in the matcher means it triggers for both Write and Edit tools.{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "prettier --write \"$CLAUDE_TOOL_INPUT_FILE_PATH\""
+          }
+        ]
+      }
+    ]
+  }
+}When to use PostToolUse:Running Prettier, Black, or gofmt after every file write to enforce formattingLogging all file modifications to an audit trailTriggering linters and showing warnings after code changesSending notifications when certain operations completePreCompactFires before Claude compacts the conversation context to free up space. Compaction summarizes older parts of the conversation, which means some details get lost. This hook gives you a chance to preserve information before that happens.This PreCompact example backs up the transcript before automatic compaction. The matcher can be "auto" or "manual" so you can distinguish between automatic compaction and user-triggered compaction events.{
+  "hooks": {
+    "PreCompact": [
+      {
+        "matcher": "auto",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/path/to/backup-transcript.sh"
+          }
+        ]
+      }
+    ]
+  }
+}When to use PreCompact:Backing up the full transcript to a file before summarizationExtracting and saving important decisions or code snippetsLogging session milestones for later reviewSessionStartFires when Claude Code starts a new session or resumes an existing one. Whatever your script outputs gets added to the conversation context, so Claude starts with that information already loaded.{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git status --short && echo '---' && cat TODO.md"
+          }
+        ]
+      }
+    ]
+  }
+}Every session starts with Claude knowing your current git status and TODO list. Stdout automatically becomes context.When to use SessionStart:Feeding Claude your current git branch and recent commitsLoading the contents of your TODO list or sprint backlogInjecting environment-specific configuration detailsStopFires when Claude finishes responding and would normally wait for your next input. Your script can inspect what Claude produced and decide whether the task is truly complete.The script can return JSON with "continue": true to make Claude continue working, which is useful for multi-step workflows:{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Review whether the task is complete. If all requirements are met, respond with 'complete'. If work remains, respond with 'continue' and specify what still needs to be done."
+          }
+        ]
+      }
+    ]
+  }
+}When to use Stop:Forcing Claude to continue until all items in a checklist are doneVerifying that tests pass before considering a task completeTriggering summary generation at the end of a sessionChecking that generated code compiles before stoppingSubagentStopThis hook fires whenever a subagent created via the Task tool finishes. Works the same way as Stop, but triggers specifically when a subagent completes its action (rather than the main agent). The configuration of SubagentStop mirrors the Stop hook structure:{
+  "hooks": {
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "Evaluate the subagent's output. Verify the task was completed correctly and the results meet quality standards. If the output is satisfactory, respond with 'accept'. If issues exist, respond with 'reject' and explain what needs to be fixed."
+          }
+        ]
+      }
+          ]
+  }
+}
+When to use SubagentStop:Validating that subagent output meets quality criteriaTriggering follow-up actions based on subagent resultsLogging subagent activity for debugging or auditingUserPromptSubmitFires when you submit a prompt, before Claude processes it. Whatever your script outputs via stdout gets added to Claude's context along with your prompt, which makes UserPromptSubmit useful for dynamically injecting information that Claude should consider.In this example, every time you submit a prompt, Claude receives the contents of your sprint context file. This keeps Claude informed about current priorities without you needing to restate them.{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat ./current-sprint-context.md"
+          }
+        ]
+      }
+    ]
+  }
+}When to use UserPromptSubmit:Injecting current sprint context or project priorities with every promptValidating prompts before they reach ClaudeBlocking certain types of requests based on contentAdding dynamic context like recent error logs or test resultsConfiguration and file locationsHooks live in JSON settings files at three levels. Project-level hooks go in .claude/settings.json within your repository, making them shareable with your team. User-level hooks go in ~/.claude/settings.json and apply across all your projects. Local project hooks go in .claude/settings.local.json for personal configuration you don't want to commit.Project-level settings take precedence over user-level settings. There are also enterprise-managed policy settings available for organizational control. For complete details, see the Claude Code settings information.Pro tip: This is the same file where you can set granular permissions for Claude actions, at the project, user, or local levels. For example, you can explicitly allow Claude to read all files in a directory so that you don't have to approve it every time, or block any modification of sensitive files.Matcher syntaxMatchers are how you filter which tools can trigger your hook. They only apply to PreToolUse, PostToolUse, and PermissionRequest hooks.Simple string matching works exactly as you'd expect: "Write" matches only the Write tool.For example:{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "your-command-here"
+          }
+        ]
+      }
+    ]
+  }
+}The pipe syntax lets you match multiple tools: "Write|Edit" triggers for either, whereas wildcards match everything: "*" or an empty string matches all tools.Note: Matchers are case sensitive, so "bash" won't be matched to the Bash tool.For finer control, argument patterns like "Bash(npm test*)" can match specific command arguments. MCP tool patterns follow the format "mcp__memory__.*" for Model Context Protocol tools.Input, output, and structured responsesWhat hooks receiveAll hooks receive JSON via stdin containing session information and event-specific data. Common fields include: session_id, transcript_path, cwd, permission_mode, and hook_event_name.Additionally, tool-related hooks also receive tool_name and tool_input. This data lets your scripts make informed decisions about how to respond.How hooks respondExit codes determine the basic outcome. Exit code 0 means success, and stdout either gets processed for JSON or added to context. Exit code 2 means a blocking error: stderr becomes the error message and the action gets prevented.Other exit codes indicate non-blocking errors, with stderr shown in verbose mode.Beyond exit codes, hooks can return structured JSON for more control. Fields include: decision (approve, block, allow, or deny), reason (explanation shown to Claude), continue (for Stop hooks to force continuation), and updatedInput (to modify tool parameters before execution).Environment and executionHooks have access to environment variables, including: CLAUDE_PROJECT_DIR for the project root path, CLAUDE_CODE_REMOTE which is true for web environments, and CLAUDE_ENV_FILE for SessionStart hooks to persist variables. Standard environment variables from your shell are also accessible.Also of note: Hooks have a 60-second default timeout, configurable per hook. When multiple hooks match an event, they run in parallel. Identical commands are automatically deduplicated.Security considerationsHooks execute arbitrary shell commands with your user permissions. Claude Code includes a safeguard: direct edits to hook configuration files require review in the /hooks menu before taking effect. This prevents malicious code from silently adding hooks to your configuration.However, if you configure and approve hooks, they will execute at your permission levels.Pro tip: Before you run any commands in an environment, consider the risks. If you're going to run commands with hooks, consider good practices like: validating and sanitizing inputs from stdin, quoting shell variables to prevent injection, using absolute paths for scripts, and avoiding processing sensitive files like .env or credentials.Debugging and testingClaude Code logs everything to transcript files, which provides visibility into tool calls and responses without any setup. Every hook receives a transcript_path field pointing to a JSONL file containing the full session history. You can use a SessionStart hook to log where each transcript lives:{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '\"Session: \" + .transcript_path' >> ~/.claude/sessions.log"
+          }
+        ]
+      }
+    ]
+  }
+}Then tail that transcript to watch Claude work in real time: tail -f /path/to/transcript.jsonl | jq . Hook-specific debuggingFor hook-specific debugging, add logging to your hook scripts. The transcript files will show what Claude did, but not why your hook took the action to approve or block something.With a little extra effort you can add a small bash script that will wrap your tools and log the additional information. For example, log-wrapper.sh:#!/bin/bash
+LOG=~/.claude/hooks.log
+INPUT=$(cat)
+
+TOOL=$(echo "$INPUT" |
+ jq -r '.tool_name // "n/a"')
+EVENT=$(echo "$INPUT" | jq -r '.hook_event_name // "n/a"')
+
+echo "=== $(date) | $EVENT | $TOOL ===" >> "$LOG"
+
+echo "Exit: $CODE" >> "$LOG"
+exit $CODEThis small wrapper script captures stdin into a variable, logs the timestamp and tool name, then pipes the input to your actual tool.Once you have log-wrapper.sh written, you would then prepend it to the tool call in the hook:{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "log-wrapper.sh your-tool-command.py"
+          }
+        ]
+      }
+    ]
+  }
+}Pro tip: For more debugging tips, check out the Claude Code debugging documentation.Building your own hooksStart with one simple hook that solves an actual friction point in your workflow. The PostToolUse formatter hook is a good first choice since the feedback is immediate and visible. Once that works, expand based on what you learn.For complete reference documentation including all available fields and advanced patterns, see the official hooks documentation.Hooks let you shape Claude Code to match your workflow rather than adapting your workflow to the tool. When you invest in configuring hooks, it pays off every session.Start using hooks to customize your Claude Code workflows today.
