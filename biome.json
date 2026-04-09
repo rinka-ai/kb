@@ -11,14 +11,5 @@
     "rules": {
       "recommended": true
     }
-  },
-  "files": {
-    "include": [
-      "**/bin/**/*.ts",
-      "**/src/**/*.ts",
-      "**/__tests__/**/*.ts",
-      "**/package.json",
-      "**/tsconfig.json"
-    ]
   }
 }
