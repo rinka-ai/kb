@@ -1,8 +1,8 @@
 import { tokenize } from "./markdown";
 import {
+  type KbNote,
   createKbNoteLookup,
   findSection,
-  type KbNote,
   listKbNotes,
   sourcePathsForNote,
 } from "./notes";

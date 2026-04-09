@@ -115,21 +115,24 @@ describe("http handlers", () => {
 
     const sessionId = initRes.headers.get("mcp-session-id");
     expect(sessionId).toBeTruthy();
-    expect(sessions.has(sessionId!)).toBe(true);
+    if (!sessionId) {
+      throw new Error("Expected MCP initialize response to include a session ID.");
+    }
+    expect(sessions.has(sessionId)).toBe(true);
 
     const deleteRes = await app.request("/mcp", {
       method: "DELETE",
       headers: {
         Accept: "application/json, text/event-stream",
         "mcp-protocol-version": "2025-03-26",
-        "mcp-session-id": sessionId!,
+        "mcp-session-id": sessionId,
       },
     });
     expect(deleteRes.status).toBe(200);
 
     await Bun.sleep(0);
 
-    expect(sessions.has(sessionId!)).toBe(false);
+    expect(sessions.has(sessionId)).toBe(false);
   });
 
   test("registerMcpRoutes handles stateless initialize POST", async () => {

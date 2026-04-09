@@ -13,7 +13,7 @@
     }
   },
   "files": {
-    "includes": [
+    "include": [
       "**/bin/**/*.ts",
       "**/src/**/*.ts",
       "**/__tests__/**/*.ts",

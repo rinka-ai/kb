@@ -1,5 +1,5 @@
 import { slugify } from "./markdown";
-import { createKbNoteLookup, type KbNote, listKbNotes, sourcePathsForNote } from "./notes";
+import { type KbNote, createKbNoteLookup, listKbNotes, sourcePathsForNote } from "./notes";
 
 export interface FindGapsArgs {
   limit: number;

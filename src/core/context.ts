@@ -1,8 +1,8 @@
 import {
+  type KbNote,
   createKbNoteLookup,
   extractBulletItems,
   findSection,
-  type KbNote,
   listKbNotes,
   sourcePathsForNote,
 } from "./notes";
