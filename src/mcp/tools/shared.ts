@@ -1,16 +1,16 @@
 import * as z from "zod/v4";
 
-export function toolResponse<T extends object>(text: string, structured: T) {
+export function toolResponse<T extends Record<string, unknown>>(text: string, structured: T) {
   return {
     content: [{ type: "text" as const, text }],
     structuredContent: structured,
   };
 }
 
-export function toolErrorResponse<T extends object>(text: string, structured?: T) {
+export function toolErrorResponse<T extends Record<string, unknown>>(text: string, structured?: T) {
   return {
     content: [{ type: "text" as const, text }],
-    structuredContent: (structured ?? {}) as T | Record<string, never>,
+    structuredContent: (structured ?? {}) as T | Record<string, unknown>,
     isError: true,
   };
 }
