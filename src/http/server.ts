@@ -30,15 +30,15 @@ export async function main(): Promise<void> {
     fetch: app.fetch,
   });
 
-  console.error(
+  console.log(
     `${KB_MCP_SERVER_NAME} ${KB_MCP_SERVER_VERSION} listening on http://${server.hostname}:${server.port}/mcp`,
   );
-  console.error(`KB root: ${ROOT}`);
-  console.error(`Stateful sessions: ${config.statefulSessions}`);
-  console.error(`Writes enabled: ${config.enableWrites}`);
+  console.log(`KB root: ${ROOT}`);
+  console.log(`Stateful sessions: ${config.statefulSessions}`);
+  console.log(`Writes enabled: ${config.enableWrites}`);
 
   const shutdown = async () => {
-    console.error("Shutting down KB MCP HTTP server...");
+    console.log("Shutting down KB MCP HTTP server...");
     const activeSessions = [...sessions.values()];
     await Promise.allSettled(activeSessions.map(({ server }) => server.close()));
     sessions.clear();
