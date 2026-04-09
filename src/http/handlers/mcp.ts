@@ -20,21 +20,21 @@ async function createStatefulSession(
   enableWrites: boolean,
 ): Promise<SessionState> {
   const server = createKbMcpServer({ enableWrites });
+  const cleanupSession = (sessionId?: string) => {
+    if (sessionId) sessions.delete(sessionId);
+  };
   const transport = new WebStandardStreamableHTTPServerTransport({
     sessionIdGenerator: () => randomUUID(),
     onsessioninitialized: (sessionId) => {
       sessions.set(sessionId, { server, transport });
     },
     onsessionclosed: (sessionId) => {
-      sessions.delete(sessionId);
-      void server.close();
+      cleanupSession(sessionId);
     },
   });
 
   transport.onclose = () => {
-    const id = transport.sessionId;
-    if (id) sessions.delete(id);
-    void server.close();
+    cleanupSession(transport.sessionId);
   };
 
   await server.connect(transport);
@@ -48,7 +48,7 @@ async function handleStateless(req: Request, enableWrites: boolean): Promise<Res
   });
   await server.connect(transport);
   const response = await transport.handleRequest(req);
-  void transport.close().then(() => server.close());
+  void server.close();
   return response;
 }
 

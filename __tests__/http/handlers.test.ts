@@ -5,6 +5,22 @@ import { registerMcpRoutes } from "../../src/http/handlers/mcp";
 import { createRootHandler } from "../../src/http/handlers/root";
 
 describe("http handlers", () => {
+  const mcpHeaders = {
+    "Content-Type": "application/json",
+    Accept: "application/json, text/event-stream",
+  };
+
+  const initializeBody = JSON.stringify({
+    jsonrpc: "2.0",
+    method: "initialize",
+    params: {
+      protocolVersion: "2025-03-26",
+      capabilities: {},
+      clientInfo: { name: "test", version: "1.0" },
+    },
+    id: 1,
+  });
+
   test("createHealthHandler returns the expected payload", async () => {
     const app = new Hono();
     app.get(
@@ -47,11 +63,6 @@ describe("http handlers", () => {
       sessions: new Map(),
     });
 
-    const mcpHeaders = {
-      "Content-Type": "application/json",
-      Accept: "application/json, text/event-stream",
-    };
-
     // POST without session ID and non-initialize body → transport rejects
     const postRes = await app.request("/mcp", {
       method: "POST",
@@ -85,6 +96,42 @@ describe("http handlers", () => {
     });
   });
 
+  test("registerMcpRoutes closes a stateful session without recursive shutdown", async () => {
+    const app = new Hono();
+    const sessions = new Map();
+    registerMcpRoutes({
+      app,
+      statefulSessions: true,
+      enableWrites: false,
+      sessions,
+    });
+
+    const initRes = await app.request("/mcp", {
+      method: "POST",
+      headers: mcpHeaders,
+      body: initializeBody,
+    });
+    expect(initRes.status).toBe(200);
+
+    const sessionId = initRes.headers.get("mcp-session-id");
+    expect(sessionId).toBeTruthy();
+    expect(sessions.has(sessionId!)).toBe(true);
+
+    const deleteRes = await app.request("/mcp", {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json, text/event-stream",
+        "mcp-protocol-version": "2025-03-26",
+        "mcp-session-id": sessionId!,
+      },
+    });
+    expect(deleteRes.status).toBe(200);
+
+    await Bun.sleep(0);
+
+    expect(sessions.has(sessionId!)).toBe(false);
+  });
+
   test("registerMcpRoutes handles stateless initialize POST", async () => {
     const app = new Hono();
     registerMcpRoutes({
@@ -96,20 +143,8 @@ describe("http handlers", () => {
 
     const res = await app.request("/mcp", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json, text/event-stream",
-      },
-      body: JSON.stringify({
-        jsonrpc: "2.0",
-        method: "initialize",
-        params: {
-          protocolVersion: "2025-03-26",
-          capabilities: {},
-          clientInfo: { name: "test", version: "1.0" },
-        },
-        id: 1,
-      }),
+      headers: mcpHeaders,
+      body: initializeBody,
     });
     // Transport handles initialize and returns 200 with SSE or JSON
     expect(res.status).toBe(200);
