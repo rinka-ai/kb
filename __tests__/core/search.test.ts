@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { searchIndex } from "../../src/core/search";
+import { searchIndex, topTermsFromText } from "../../src/core/search";
 import type { KbIndex } from "../../src/core/types";
 
 const baseIndex: KbIndex = {
@@ -94,5 +94,11 @@ describe("searchIndex", () => {
       "raw/articles/current.md",
       "raw/articles/old.md",
     ]);
+  });
+
+  test("topTermsFromText supports remote-safe text context", () => {
+    expect(
+      topTermsFromText("managed agents durable sessions sandbox context engineering", 5),
+    ).toEqual(["managed", "agents", "durable", "sessions", "sandbox"]);
   });
 });

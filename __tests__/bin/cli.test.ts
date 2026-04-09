@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { runBunCommand } from "../helpers/bun-process";
@@ -26,6 +26,22 @@ describe("CLI integration", () => {
     const lint = await runBunCommand(["bin/lint.ts"]);
     expect(lint.code).toBe(0);
     expect(`${lint.stdout}${lint.stderr}`).toContain("KB lint passed with no warnings.");
+  });
+
+  test("refresh respects KB_CACHE_DIR for hosted-style writable caches", async () => {
+    const cacheDir = mkdtempSync(join(tmpdir(), "ai-research-kb-cache-"));
+
+    try {
+      const refresh = await runBunCommand(["bin/refresh.ts"], {
+        KB_CACHE_DIR: cacheDir,
+      });
+
+      expect(refresh.code).toBe(0);
+      expect(`${refresh.stdout}${refresh.stderr}`).toContain("Built KB index with");
+      expect(existsSync(join(cacheDir, "index.json"))).toBe(true);
+    } finally {
+      rmSync(cacheDir, { recursive: true, force: true });
+    }
   });
 
   test("search returns relevant results for query and file context", async () => {

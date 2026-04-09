@@ -19,19 +19,22 @@ COPY --chown=bun:bun src ./src
 COPY --chown=bun:bun raw ./raw
 COPY --chown=bun:bun wiki ./wiki
 
-RUN bun run kb:refresh
-
 ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
+ENV KB_CACHE_DIR=/home/bun/.cache/ai-research-kb
 ENV KB_STATEFUL_SESSIONS=true
 ENV KB_ENABLE_WRITES=false
+
+RUN mkdir -p /home/bun/.cache/ai-research-kb && chown -R bun:bun /home/bun/.cache
+
+USER bun
+
+RUN bun run kb:refresh
 
 EXPOSE 3000
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
   CMD ["bun", "-e", "const res = await fetch('http://127.0.0.1:3000/health'); if (!res.ok) process.exit(1);"]
-
-USER bun
 
 CMD ["bun", "run", "kb:mcp:http"]

@@ -7,6 +7,7 @@ export {
   searchIndex,
   searchKb,
   topTermsFromFile,
+  topTermsFromText,
 } from "./engine";
 import { formatSearchResults, searchKb } from "./engine";
 

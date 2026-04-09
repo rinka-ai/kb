@@ -7,6 +7,14 @@ export function toolResponse(text: string, structured: Record<string, unknown>) 
   };
 }
 
+export function toolErrorResponse(text: string, structured: Record<string, unknown> = {}) {
+  return {
+    content: [{ type: "text" as const, text }],
+    structuredContent: structured,
+    isError: true,
+  };
+}
+
 export const searchOptionsSchema = {
   top: z.number().int().min(1).max(20).optional().describe("Maximum number of results."),
   includeSuperseded: z

@@ -3,6 +3,8 @@ import type { KbChunk } from "../types";
 export interface SearchArgs {
   query?: string;
   file?: string;
+  text?: string;
+  contextLabel?: string;
   top: number;
   json: boolean;
   rebuildIfStale: boolean;
@@ -27,6 +29,7 @@ export interface SearchResponse {
   query: string;
   queryTerms: string[];
   file?: string;
+  contextLabel?: string;
   includeSuperseded: boolean;
   results: SearchResult[];
 }
