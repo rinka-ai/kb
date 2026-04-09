@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import type { SearchArgs } from "./types";
-export type { SearchArgs, SearchResponse, SearchResult } from "./types";
+
 export {
   ensureIndex,
   formatSearchResults,
@@ -9,6 +9,8 @@ export {
   topTermsFromFile,
   topTermsFromText,
 } from "./engine";
+export type { SearchArgs, SearchResponse, SearchResult } from "./types";
+
 import { formatSearchResults, searchKb } from "./engine";
 
 const searchCommand = new Command("search")
