@@ -1,0 +1,9 @@
+.kb/
+node_modules/
+.env
+.env.local
+.DS_Store
+coverage/
+dist/
+tmp/
+*.log
