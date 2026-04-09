@@ -73,6 +73,8 @@ Useful commands:
 - `bun --cwd /path/to/ai-research run kb:search --query "context rot retrieval long context"`
 - `bun --cwd /path/to/ai-research run kb:search --file /path/to/some-other-repo/src/agent.ts`
 
+For shared HTTP MCP, prefer `kb_search_file` with raw `text` instead of a laptop file path, because the hosted server cannot read your local filesystem.
+
 ## When This Is Enough
 
 This works well when:

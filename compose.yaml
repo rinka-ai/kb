@@ -9,6 +9,7 @@ services:
     environment:
       HOST: 0.0.0.0
       PORT: 3000
+      KB_CACHE_DIR: /home/bun/.cache/ai-research-kb
       KB_STATEFUL_SESSIONS: "true"
       KB_ENABLE_WRITES: "false"
     healthcheck:

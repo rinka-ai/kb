@@ -18,7 +18,7 @@ export function registerReadTool(server: McpServer): void {
         maxChars: z
           .number()
           .int()
-          .min(500)
+          .min(1)
           .max(100000)
           .optional()
           .describe("Maximum number of characters to return from the note."),
