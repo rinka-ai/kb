@@ -74,6 +74,30 @@ export interface ContextPack {
   sourcePaths: string[];
 }
 
+export interface CompactContextPackNote {
+  path: string;
+  title: string;
+  type: string;
+  summary: string;
+  score: number;
+  reason: string;
+  keyPoints: string[];
+  sourcePaths: string[];
+}
+
+export interface CompactContextPack {
+  generatedAt: string;
+  query: string;
+  queryTerms: string[];
+  file?: string;
+  themes: string[];
+  recommendedReadOrder: CompactContextPackNote[];
+  keyPoints: string[];
+  tensions: string[];
+  openQuestions: string[];
+  sourcePaths: string[];
+}
+
 function uniqueStrings(items: string[], limit: number): string[] {
   const seen = new Set<string>();
   const result: string[] = [];
@@ -252,6 +276,66 @@ export function formatContextPack(pack: ContextPack): string {
       : []),
     ...(pack.sourcePaths.length > 0
       ? ["Primary Sources", pack.sourcePaths.map((path) => `- ${path}`).join("\n")]
+      : []),
+  ];
+
+  return sections.join("\n\n").trim();
+}
+
+export function compactContextPack(pack: ContextPack): CompactContextPack {
+  return {
+    generatedAt: pack.generatedAt,
+    query: pack.query,
+    queryTerms: pack.queryTerms,
+    file: pack.file,
+    themes: pack.themes,
+    recommendedReadOrder: pack.recommendedReadOrder.map((note) => ({
+      path: note.path,
+      title: note.title,
+      type: note.type,
+      summary: note.summary,
+      score: note.score,
+      reason: note.reason,
+      keyPoints: note.keyPoints.slice(0, 2),
+      sourcePaths: note.sourcePaths.slice(0, 4),
+    })),
+    keyPoints: pack.keyPoints,
+    tensions: pack.tensions,
+    openQuestions: pack.openQuestions,
+    sourcePaths: pack.sourcePaths,
+  };
+}
+
+export function formatCompactContextPack(pack: CompactContextPack): string {
+  const header = [
+    `Compact context pack for: ${pack.query}`,
+    ...(pack.file ? [`File context: ${pack.file}`] : []),
+    ...(pack.themes.length > 0 ? [`Themes: ${pack.themes.join(", ")}`] : []),
+  ];
+
+  const noteLines =
+    pack.recommendedReadOrder.length > 0
+      ? pack.recommendedReadOrder.map((note, index) =>
+          [
+            `${index + 1}. ${note.title} (${note.type}) score=${note.score}`,
+            `   path: ${note.path}`,
+            ...(note.summary ? [`   summary: ${note.summary}`] : []),
+          ].join("\n"),
+        )
+      : ["No relevant notes found."];
+
+  const sections = [
+    header.join("\n"),
+    "Recommended Notes",
+    noteLines.join("\n\n"),
+    ...(pack.keyPoints.length > 0
+      ? ["Core Points", pack.keyPoints.map((item) => `- ${item}`).join("\n")]
+      : []),
+    ...(pack.tensions.length > 0
+      ? ["Tensions", pack.tensions.map((item) => `- ${item}`).join("\n")]
+      : []),
+    ...(pack.openQuestions.length > 0
+      ? ["Open Questions", pack.openQuestions.map((item) => `- ${item}`).join("\n")]
       : []),
   ];
 

@@ -3,6 +3,8 @@ import { Hono } from "hono";
 import { createHealthHandler } from "../../src/http/handlers/health";
 import { registerMcpRoutes } from "../../src/http/handlers/mcp";
 import { createRootHandler } from "../../src/http/handlers/root";
+import { createHttpMetrics } from "../../src/http/metrics";
+import { InMemoryRateLimiter } from "../../src/http/rate-limit";
 
 describe("http handlers", () => {
   const mcpHeaders = {
@@ -21,11 +23,33 @@ describe("http handlers", () => {
     id: 1,
   });
 
+  function registerRoutes(
+    app: Hono,
+    overrides: Partial<Parameters<typeof registerMcpRoutes>[0]> = {},
+  ): void {
+    registerMcpRoutes({
+      app,
+      statefulSessions: false,
+      enableWrites: false,
+      allowedHosts: undefined,
+      allowedOrigins: undefined,
+      maxBodyBytes: 1_048_576,
+      metrics: createHttpMetrics(),
+      rateLimiter: undefined,
+      sessions: new Map(),
+      ...overrides,
+    });
+  }
+
   test("createHealthHandler returns the expected payload", async () => {
     const app = new Hono();
     app.get(
       "/health",
-      createHealthHandler({ statefulSessions: true, enableWrites: false }, () => 3),
+      createHealthHandler(
+        { statefulSessions: true, enableWrites: false },
+        () => 3,
+        createHttpMetrics,
+      ),
     );
     const res = await app.request("/health");
     expect(res.status).toBe(200);
@@ -36,6 +60,14 @@ describe("http handlers", () => {
       sessions: 3,
       statefulSessions: true,
       enableWrites: false,
+      http: {
+        mcpRequests: 0,
+        byMethod: {},
+        byStatus: {},
+        rateLimited: 0,
+        bodyTooLarge: 0,
+        internalErrors: 0,
+      },
     });
   });
 
@@ -56,12 +88,7 @@ describe("http handlers", () => {
 
   test("registerMcpRoutes returns protocol-level errors for stateful invalid requests", async () => {
     const app = new Hono();
-    registerMcpRoutes({
-      app,
-      statefulSessions: true,
-      enableWrites: false,
-      sessions: new Map(),
-    });
+    registerRoutes(app, { statefulSessions: true });
 
     // POST without session ID and non-initialize body → transport rejects
     const postRes = await app.request("/mcp", {
@@ -99,12 +126,7 @@ describe("http handlers", () => {
   test("registerMcpRoutes closes a stateful session without recursive shutdown", async () => {
     const app = new Hono();
     const sessions = new Map();
-    registerMcpRoutes({
-      app,
-      statefulSessions: true,
-      enableWrites: false,
-      sessions,
-    });
+    registerRoutes(app, { statefulSessions: true, sessions });
 
     const initRes = await app.request("/mcp", {
       method: "POST",
@@ -137,12 +159,7 @@ describe("http handlers", () => {
 
   test("registerMcpRoutes handles stateless initialize POST", async () => {
     const app = new Hono();
-    registerMcpRoutes({
-      app,
-      statefulSessions: false,
-      enableWrites: false,
-      sessions: new Map(),
-    });
+    registerRoutes(app);
 
     const res = await app.request("/mcp", {
       method: "POST",
@@ -157,12 +174,7 @@ describe("http handlers", () => {
 
   test("registerMcpRoutes rejects stateless GET and DELETE requests", async () => {
     const app = new Hono();
-    registerMcpRoutes({
-      app,
-      statefulSessions: false,
-      enableWrites: false,
-      sessions: new Map(),
-    });
+    registerRoutes(app);
 
     const getRes = await app.request("/mcp", {
       method: "GET",
@@ -180,6 +192,61 @@ describe("http handlers", () => {
     expect(deleteRes.status).toBe(405);
     expect(await deleteRes.json()).toMatchObject({
       error: { message: "Method not allowed." },
+    });
+  });
+
+  test("registerMcpRoutes enforces origin allowlisting when configured", async () => {
+    const app = new Hono();
+    registerRoutes(app, { allowedOrigins: ["https://trusted.example.com"] });
+
+    const res = await app.request("/mcp", {
+      method: "POST",
+      headers: { ...mcpHeaders, Origin: "https://evil.example.com" },
+      body: initializeBody,
+    });
+
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({
+      error: { message: "Invalid Origin header: https://evil.example.com" },
+    });
+  });
+
+  test("registerMcpRoutes rejects oversized request bodies", async () => {
+    const app = new Hono();
+    registerRoutes(app, { maxBodyBytes: 32 });
+
+    const res = await app.request("/mcp", {
+      method: "POST",
+      headers: mcpHeaders,
+      body: `${initializeBody}   `,
+    });
+
+    expect(res.status).toBe(413);
+    expect(await res.json()).toMatchObject({
+      error: { message: "Request body too large. Limit is 32 bytes." },
+    });
+  });
+
+  test("registerMcpRoutes rate limits repeated callers", async () => {
+    const app = new Hono();
+    registerRoutes(app, { rateLimiter: new InMemoryRateLimiter(60_000, 1) });
+
+    const first = await app.request("/mcp", {
+      method: "POST",
+      headers: { ...mcpHeaders, "x-forwarded-for": "203.0.113.10" },
+      body: initializeBody,
+    });
+    expect(first.status).toBe(200);
+
+    const second = await app.request("/mcp", {
+      method: "POST",
+      headers: { ...mcpHeaders, "x-forwarded-for": "203.0.113.10" },
+      body: initializeBody,
+    });
+    expect(second.status).toBe(429);
+    expect(second.headers.get("retry-after")).toBeTruthy();
+    expect(await second.json()).toMatchObject({
+      error: { message: "Rate limit exceeded. Try again later." },
     });
   });
 });

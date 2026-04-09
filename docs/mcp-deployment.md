@@ -22,6 +22,10 @@ This repository now supports both:
 - `KB_ENABLE_WRITES`: `true` or `false`. Default: `false`
 - `KB_CACHE_DIR`: writable directory for the derived index on hosted deployments
 - `KB_ALLOWED_HOSTS`: optional comma-separated allowlist for host-header validation
+- `KB_ALLOWED_ORIGINS`: optional comma-separated allowlist for `Origin` header validation
+- `KB_MAX_BODY_BYTES`: maximum accepted MCP POST body size. Default: `1048576`
+- `KB_RATE_LIMIT_WINDOW_MS`: per-client rate-limit window in milliseconds. Default: `60000`
+- `KB_RATE_LIMIT_MAX_REQUESTS`: max MCP requests per client within the window. Default: `120`
 
 ## Local HTTP Run
 
@@ -45,6 +49,7 @@ docker run --rm -p 3000:3000 \
   -e KB_CACHE_DIR=/home/bun/.cache/ai-research-kb \
   -e KB_STATEFUL_SESSIONS=false \
   -e KB_ENABLE_WRITES=false \
+  -e KB_ALLOWED_ORIGINS=https://codex.example.com,https://claude.example.com \
   ai-research-kb
 ```
 
@@ -78,3 +83,4 @@ That lets each client keep:
 - If you enable writes, treat the deployment as an editor against a git checkout and add a review workflow around it.
 - On Railway, the default and safest model is read-only shared retrieval. Image filesystem writes are not your canonical source of truth.
 - For read-only hosted KB access, prefer stateless HTTP sessions. They avoid in-memory session loss and SSE edge timeouts on platforms like Railway.
+- The hosted server now applies a request-size cap and a simple per-client rate limit by default. Tune them with `KB_MAX_BODY_BYTES`, `KB_RATE_LIMIT_WINDOW_MS`, and `KB_RATE_LIMIT_MAX_REQUESTS` if needed.

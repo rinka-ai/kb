@@ -27,6 +27,7 @@ This matters because Railway deploys an image from the repo. It is excellent for
    - `KB_CACHE_DIR=/home/bun/.cache/ai-research-kb`
    - `KB_STATEFUL_SESSIONS=false`
    - `KB_ENABLE_WRITES=false`
+   - optionally `KB_ALLOWED_ORIGINS=https://codex.example.com,https://claude.example.com` if you want browser-origin allowlisting
 4. Do not set `PORT` manually unless you have a special reason. Railway injects it.
 5. In Railway Public Networking, generate a Railway domain.
 6. After deploy, verify `https://<your-domain>/health`.
@@ -57,6 +58,7 @@ Keep the local stdio server too:
 - Public Networking gives the service an HTTPS Railway domain.
 - The health check path is `/health`.
 - The hosted KB is intentionally stateless by default, so `GET /mcp` may return `405` and clients should use `POST /mcp` for normal traffic.
+- Railway deployments inherit a simple in-memory per-client rate limit and a request body cap; raise them with `KB_RATE_LIMIT_MAX_REQUESTS`, `KB_RATE_LIMIT_WINDOW_MS`, or `KB_MAX_BODY_BYTES` only if a real client workflow needs it.
 - The derived index should live in `KB_CACHE_DIR`, not the repo root, so hosted refreshes can safely rewrite cache files.
 - Restarts are configured in [railway.toml](../railway.toml).
 - Each merge to the tracked branch should trigger a new deploy with the latest KB content.
