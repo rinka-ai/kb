@@ -3,7 +3,7 @@ import { ROOT } from "../core/paths";
 import { KB_MCP_SERVER_NAME, KB_MCP_SERVER_VERSION } from "../mcp/constants";
 import { readKbHttpConfig } from "./config";
 import { createHealthHandler } from "./handlers/health";
-import { type SessionState, registerMcpRoutes } from "./handlers/mcp";
+import { registerMcpRoutes, type SessionState } from "./handlers/mcp";
 import { createRootHandler } from "./handlers/root";
 
 export async function main(): Promise<void> {
