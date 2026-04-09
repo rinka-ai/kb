@@ -16,8 +16,8 @@
     "typecheck": "bunx tsc --noEmit",
     "test": "bun test __tests__",
     "check": "bun run biome:check && bun run typecheck && bun run test && bun run kb:refresh",
-    "biome:check": "biome check .",
-    "biome:write": "biome check --write ."
+    "biome:check": "./node_modules/.bin/biome check bin src __tests__ package.json tsconfig.json",
+    "biome:write": "./node_modules/.bin/biome check --write bin src __tests__ package.json tsconfig.json"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.10",

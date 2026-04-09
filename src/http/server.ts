@@ -39,9 +39,7 @@ export async function main(): Promise<void> {
   const shutdown = async () => {
     console.error("Shutting down KB MCP HTTP server...");
     const activeSessions = [...sessions.values()];
-    await Promise.allSettled(
-      activeSessions.map(({ server }) => server.close()),
-    );
+    await Promise.allSettled(activeSessions.map(({ server }) => server.close()));
     sessions.clear();
     server.stop();
     process.exit(0);

@@ -43,7 +43,11 @@ function toolText(result: unknown): string {
     .join("\n");
 }
 
-async function waitForSessionCount(port: number, expected: number, timeoutMs = 5_000): Promise<void> {
+async function waitForSessionCount(
+  port: number,
+  expected: number,
+  timeoutMs = 5_000,
+): Promise<void> {
   const deadline = Date.now() + timeoutMs;
 
   while (Date.now() < deadline) {
