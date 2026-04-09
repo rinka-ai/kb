@@ -17,6 +17,7 @@ This repository exposes the knowledge base through two MCP transports:
 Tools:
 
 - `kb_build_context`: compile a task-specific context pack from the wiki's concept and source-note structure
+  - pass `compact=true` when you want a smaller response for token-sensitive clients
 - `kb_find_gaps`: run wiki health checks for orphan notes, thin concepts, uncovered tags, and unreviewed ingests
 - `kb_list_catalog`: browse the KB catalog page by page with optional filters
 - `kb_make_handoff`: turn the current wiki view into a reusable handoff packet for another agent or future session
@@ -89,6 +90,7 @@ claude mcp remove "ai-research-kb" -s user
 ## Operational Notes
 
 - Prefer `kb_build_context` before long-running research, planning, or synthesis work.
+- Prefer `kb_build_context(compact=true)` when the client warns that a full context pack is too large.
 - Prefer `kb_find_gaps` when you want the Karpathy-style wiki maintenance loop rather than one-off retrieval.
 - Prefer `kb_trace_claim` before turning a wiki claim into an external-facing assertion.
 - Prefer `kb_make_handoff` when a task will span sessions, subagents, or parallel work.

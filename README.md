@@ -134,6 +134,7 @@ Resources:
 The higher-level tools are intentionally grounded in this repo's own wiki model:
 
 - `kb_build_context` compiles a task-specific context pack from concept pages and source notes.
+  Pass `compact=true` when you want a lighter-weight context pack that is less likely to flood client context windows.
 - `kb_find_gaps` runs wiki health checks for orphan notes, thin concepts, uncovered tags, and unreviewed ingests.
 - `kb_trace_claim` traces a claim through synthesis notes and primary source paths.
 - `kb_make_handoff` turns the current wiki view into a reusable long-running-agent handoff artifact.

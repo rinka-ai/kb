@@ -1,7 +1,12 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import invariant from "tiny-invariant";
 import * as z from "zod/v4";
-import { buildContextPack, formatContextPack } from "../../core/context";
+import {
+  buildContextPack,
+  compactContextPack,
+  formatCompactContextPack,
+  formatContextPack,
+} from "../../core/context";
 import { toolResponse } from "./shared";
 
 const CONTEXT_DEFAULTS = {
@@ -38,6 +43,10 @@ export function registerContextTool(server: McpServer): void {
           .boolean()
           .optional()
           .describe("Rebuild the derived KB index automatically if markdown files changed."),
+        compact: z
+          .boolean()
+          .optional()
+          .describe("Return a compact context pack with less duplication to save context tokens."),
       },
     },
     async ({
@@ -46,6 +55,7 @@ export function registerContextTool(server: McpServer): void {
       top = CONTEXT_DEFAULTS.top,
       includeSuperseded = CONTEXT_DEFAULTS.includeSuperseded,
       rebuildIfStale = CONTEXT_DEFAULTS.rebuildIfStale,
+      compact = false,
     }) => {
       invariant(query || filePath, "Provide either query or filePath.");
 
@@ -56,6 +66,11 @@ export function registerContextTool(server: McpServer): void {
         includeSuperseded,
         rebuildIfStale,
       });
+
+      if (compact) {
+        const compactPack = compactContextPack(pack);
+        return toolResponse(formatCompactContextPack(compactPack), { ...compactPack });
+      }
 
       return toolResponse(formatContextPack(pack), { ...pack });
     },

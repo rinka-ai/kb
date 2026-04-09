@@ -79,6 +79,23 @@ describe("mcp tools", () => {
     expect(result?.content[0].text).toContain("Context pack for: managed agents");
   });
 
+  test("kb_build_context supports compact output for token-sensitive clients", async () => {
+    const server = new FakeMcpServer();
+    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+
+    const result = (await server.tools.get("kb_build_context")?.handler({
+      query: "managed agents",
+      top: 4,
+      compact: true,
+      includeSuperseded: false,
+      rebuildIfStale: false,
+    })) as ToolResult | undefined;
+
+    expect(Array.isArray(result?.structuredContent.recommendedReadOrder)).toBe(true);
+    expect("notes" in (result?.structuredContent ?? {})).toBe(false);
+    expect(result?.content[0].text).toContain("Compact context pack for: managed agents");
+  });
+
   test("kb_find_gaps returns health-check categories", async () => {
     const server = new FakeMcpServer();
     registerKbTools(server as unknown as McpServer, { enableWrites: false });
