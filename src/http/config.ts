@@ -20,7 +20,7 @@ const KbHttpConfigSchema = z.object({
         .filter(Boolean),
     )
     .optional(),
-  statefulSessions: booleanString("true"),
+  statefulSessions: booleanString("false"),
   enableWrites: booleanString("false"),
 });
 

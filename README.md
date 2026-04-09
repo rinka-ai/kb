@@ -77,6 +77,7 @@ Railway is the recommended first host for the shared/team HTTP server:
 
 - add this repo as a Railway service
 - let Railway build from the included `Dockerfile`
+- keep `KB_STATEFUL_SESSIONS=false`
 - keep `KB_ENABLE_WRITES=false`
 - expose the service with Railway Public Networking
 
@@ -100,7 +101,9 @@ Sanity-check the deployed service:
 
 - root: `https://kb-production-1c43.up.railway.app/`
 - health: `https://kb-production-1c43.up.railway.app/health`
-- MCP: `https://kb-production-1c43.up.railway.app/mcp`
+- MCP endpoint: `https://kb-production-1c43.up.railway.app/mcp`
+
+For hosted stateless deployments, `POST /mcp` is the normal MCP path. A plain `GET /mcp` may return `405 Method Not Allowed`, which is expected when standalone SSE is disabled.
 
 For shared deployment details, see [docs/mcp-deployment.md](./docs/mcp-deployment.md).
 For the Railway-specific path, see [docs/railway.md](./docs/railway.md).

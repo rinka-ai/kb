@@ -7,7 +7,7 @@ describe("readKbHttpConfig", () => {
       host: "127.0.0.1",
       port: 3000,
       allowedHosts: undefined,
-      statefulSessions: true,
+      statefulSessions: false,
       enableWrites: false,
     });
   });

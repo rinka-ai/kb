@@ -23,7 +23,7 @@ ENV NODE_ENV=production
 ENV HOST=0.0.0.0
 ENV PORT=3000
 ENV KB_CACHE_DIR=/home/bun/.cache/ai-research-kb
-ENV KB_STATEFUL_SESSIONS=true
+ENV KB_STATEFUL_SESSIONS=false
 ENV KB_ENABLE_WRITES=false
 
 RUN mkdir -p /home/bun/.cache/ai-research-kb && chown -R bun:bun /home/bun/.cache
