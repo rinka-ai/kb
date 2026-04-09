@@ -5,10 +5,7 @@ import { ingestSource } from "../../core/ingest";
 import { ROOT } from "../../core/paths";
 import { toolErrorResponse, toolResponse } from "./shared";
 
-export function registerIngestTool(
-  server: McpServer,
-  enableWrites: boolean,
-): void {
+export function registerIngestTool(server: McpServer, enableWrites: boolean): void {
   server.registerTool(
     "kb_ingest",
     {
@@ -18,32 +15,17 @@ export function registerIngestTool(
       inputSchema: {
         url: z.url().optional().describe("Remote URL to ingest."),
         filePath: z.string().optional().describe("Local file path to ingest."),
-        collection: z
-          .string()
-          .optional()
-          .describe("Optional subdirectory under raw/articles/."),
-        tags: z
-          .array(z.string())
-          .optional()
-          .describe("Tags to attach to the new note."),
+        collection: z.string().optional().describe("Optional subdirectory under raw/articles/."),
+        tags: z.array(z.string()).optional().describe("Tags to attach to the new note."),
         title: z.string().optional().describe("Optional title override."),
         author: z.string().optional().describe("Optional author override."),
-        publisher: z
-          .string()
-          .optional()
-          .describe("Optional publisher override."),
+        publisher: z.string().optional().describe("Optional publisher override."),
         published: z
           .string()
           .optional()
           .describe("Optional published date override in YYYY-MM-DD format."),
-        noRefresh: z
-          .boolean()
-          .optional()
-          .describe("Skip index rebuild after writing the note."),
-        dryRun: z
-          .boolean()
-          .optional()
-          .describe("Return the markdown without writing the file."),
+        noRefresh: z.boolean().optional().describe("Skip index rebuild after writing the note."),
+        dryRun: z.boolean().optional().describe("Return the markdown without writing the file."),
       },
     },
     async ({
@@ -97,9 +79,7 @@ export function registerIngestTool(
         ].join("\n");
 
         return toolResponse(text, {
-          outputPath: result.outputPath
-            ? relative(ROOT, result.outputPath)
-            : undefined,
+          outputPath: result.outputPath ? relative(ROOT, result.outputPath) : undefined,
           refreshed: result.refreshed,
           chunkCount: result.chunkCount,
           source: result.source,
