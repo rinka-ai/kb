@@ -10,7 +10,7 @@ source_count: 9
 
 ## Summary
 
-Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The imported momo-research notes show three broad families: explicit external memory stores, structured context playbooks, and learned internal memory systems. The newer MemGPT and Letta additions make the memory-tier design space more concrete by showing how stateful agents can actively move information between working context and longer-lived stores.
+Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The imported momo-research notes show three broad families: explicit external memory stores, structured context playbooks, and learned internal memory systems. The newer MemGPT and Letta additions make the memory-tier design space more concrete by showing how stateful agents can actively move information between working context and longer-lived stores, and how memory needs a control plane in addition to storage.
 
 ## Main Families
 
@@ -24,12 +24,14 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Session history is not the same thing as retrieved context.
 - Editable, provenance-rich memory differs from learned latent memory.
 - Lightweight guide memory can coexist with deeper runtime retrieval.
+- Paging, summarization, and interrupt handling are memory mechanisms too, not just implementation details.
 
 ## Design Questions
 
 - What must remain inspectable and editable by humans?
 - What can be safely compressed without harming future tasks?
 - Should memory be updated continuously, periodically, or only on demand?
+- When should the agent page, summarize, or interrupt itself instead of replying immediately?
 
 ## Source Notes
 

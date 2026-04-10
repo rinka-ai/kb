@@ -3,7 +3,7 @@ id: article-2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-con
 type: source
 title: "LongLLMLingua: Accelerating and Enhancing LLMs in Long Context Scenarios via Prompt Compression"
 path: raw/articles/arxiv/2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression.md
-author: Unknown
+author: "Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2310.06839
 date_published: 2023-10-10
@@ -20,38 +20,43 @@ related: [compression, long-context, retrieval, prompt-compression]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression.md
-- Author: Unknown
-- Published: Unknown
+- Author: Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu
+- Published: 2023-10-10
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2310.06839
 
 ## TL;DR
 
-LongLLMLingua reframes prompt compression as salience management: compress according to relevance, preserve key information density, and mitigate lost-in-the-middle effects rather than only cutting tokens uniformly.
+LongLLMLingua treats long-context compression as a salience-and-ordering problem: identify question-relevant material, reorder it to fight position bias, compress at multiple granularities, and recover subsequences that preserve exact phrasing when needed.
 
 ## Key Claims
 
 - Long-context prompts suffer from cost, latency, performance degradation, and position bias, not just larger context windows.
 - Compression can improve results when it increases the density and placement of key information rather than deleting blindly.
-- LongLLMLingua claims quality gains together with lower token budgets across several long-context tasks.
+- Question-aware compression outperforms entropy-only compression and retrieval-only baselines because it better preserves the information most relevant to the current query.
 - The approach is designed to work with existing models as a prompt-processing step rather than a model retraining method.
+- The method’s strength and limitation are linked: because compression is question-aware, the same context may need to be recompressed for each new question.
 
 ## Important Details
 
+- The paper evaluates on NaturalQuestions, LongBench, ZeroSCROLLS, MuSicQue, and LooGLE.
+- The method combines four main mechanisms: question-aware coarse-to-fine compression, document reordering, dynamic compression ratios, and subsequence recovery.
 - The paper reports up to a 21.4% performance boost on NaturalQuestions with roughly 4x fewer tokens in GPT-3.5-Turbo.
 - It also reports a 94.0% cost reduction on LooGLE and latency improvements of roughly 1.4x to 2.6x on 10k-token prompts compressed by 2x to 6x.
+- The limitations section notes that question-aware compression complicates caching and may be weaker when the context-question relationship is subtle or indirect.
 - The arXiv entry notes ACL 2024 acceptance and linked code.
 
 ## Entities
 
-- Authors: Huiqiang Jiang and collaborators
-- Benchmarks: NaturalQuestions, LooGLE
-- Concepts: prompt compression, position bias, long-context optimization, salience management
+- Authors: Huiqiang Jiang, Qianhui Wu, Xufang Luo, Dongsheng Li, Chin-Yew Lin, Yuqing Yang, Lili Qiu
+- Benchmarks: NaturalQuestions, LongBench, ZeroSCROLLS, MuSicQue, LooGLE
+- Concepts: prompt compression, position bias, document reordering, dynamic compression, subsequence recovery
 
 ## My Notes
 
 - This is a strong primary-source complement to the repo's secondary LongLLMLingua and context-rot notes.
 - It is useful whenever this KB needs to reason about compaction policies rather than only retrieval or summarization.
+- The practical caveat is important for agent systems: question-aware compression improves quality but reduces easy cache reuse.
 
 ## Open Questions
 

@@ -3,7 +3,7 @@ id: article-2026-04-10-react-synergizing-reasoning-and-acting-in-language-models
 type: source
 title: "ReAct: Synergizing Reasoning and Acting in Language Models"
 path: raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md
-author: Unknown
+author: "Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2210.03629
 date_published: 2022-10-06
@@ -20,26 +20,30 @@ related: [agents, tool-use, reasoning, planning]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md
-- Author: Unknown
-- Published: Unknown
+- Author: Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao
+- Published: 2022-10-06
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2210.03629
 
 ## TL;DR
 
-ReAct shows that interleaving explicit reasoning steps with task actions improves both performance and interpretability across question answering, fact verification, and interactive decision-making tasks.
+ReAct is a prompt-level agent loop that alternates sparse reasoning with concrete actions, letting the model decompose goals, gather fresh evidence, and recover from mistakes without requiring a new model architecture.
 
 ## Key Claims
 
 - Reasoning traces and actions are complementary: reasoning helps track and revise plans, while actions bring in fresh external information.
 - ReAct reduces hallucination and error propagation on knowledge tasks by letting the model retrieve evidence instead of only reasoning from static context.
-- The approach also improves interpretability because the model produces human-readable trajectories rather than opaque action-only traces.
+- Sparse reasoning is enough to add value: the paper uses thoughts mainly to decompose goals, track subgoals, and decide what to query next.
+- ReAct is not always the single best prompting strategy on every knowledge task, but it consistently beats action-only prompting and combines especially well with CoT-style self-consistency.
 - On ALFWorld and WebShop, ReAct outperforms imitation and reinforcement-learning baselines even with very few in-context examples.
 
 ## Important Details
 
 - The paper evaluates ReAct on HotpotQA, FEVER, ALFWorld, and WebShop.
-- Reported gains include absolute success-rate improvements of 34% on ALFWorld and 10% on WebShop over comparison baselines.
+- For knowledge tasks, the authors use manually written ReAct trajectories with 6 HotpotQA exemplars and 3 FEVER exemplars plus a simple Wikipedia API.
+- ReAct slightly trails pure CoT on HotpotQA but beats it on FEVER; hybrid ReAct/CoT-SC variants are the best overall prompting setup on the reasoning tasks.
+- On ALFWorld, the best ReAct trial reaches 71% success versus 45% for the best Act trial and 37% for BUTLER.
+- On WebShop, one-shot Act already matches earlier IL and IL+RL baselines, while adding sparse reasoning gives another 10-point absolute gain.
 - The paper positions ReAct as a prompt-level method rather than a new model architecture.
 - The arXiv entry notes a linked project site with code.
 
@@ -52,7 +56,8 @@ ReAct shows that interleaving explicit reasoning steps with task actions improve
 ## My Notes
 
 - This is a foundational paper for agent loops that alternate between thinking and doing.
-- It is especially relevant to planner/executor designs because it makes the plan-update loop explicit.
+- Its more durable lesson is not “always think more” but “think exactly where the next action needs guidance.”
+- Modern structured tool-calling agents still inherit this pattern even when the reasoning trace is hidden behind system scaffolding.
 
 ## Open Questions
 

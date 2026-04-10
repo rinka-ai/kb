@@ -3,7 +3,7 @@ id: article-2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tas
 type: source
 title: "OSWorld: Benchmarking Multimodal Agents for Open-Ended Tasks in Real Computer Environments"
 path: raw/articles/arxiv/2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments.md
-author: Unknown
+author: "Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Toh Jing Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu, Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, Tao Yu"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2404.07972
 date_published: 2024-04-11
@@ -20,27 +20,33 @@ related: [computer-use, multimodal-agents, benchmarks, evals]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments.md
-- Author: Unknown
-- Published: Unknown
+- Author: Tianbao Xie, Danyang Zhang, Jixuan Chen, Xiaochuan Li, Siheng Zhao, Ruisheng Cao, Toh Jing Hua, Zhoujun Cheng, Dongchan Shin, Fangyu Lei, Yitao Liu, Yiheng Xu, Shuyan Zhou, Silvio Savarese, Caiming Xiong, Victor Zhong, Tao Yu
+- Published: 2024-04-11
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2404.07972
 
 ## TL;DR
 
-OSWorld pushes agent evaluation beyond browser-only tasks by benchmarking agents in full operating-system environments with executable setup and verification.
+OSWorld extends realistic agent evaluation from the browser into full computer use: agents operate across real OS environments, arbitrary apps, GUI and CLI interfaces, and example-wise execution checks.
 
 ## Key Claims
 
 - Existing benchmarks underrepresent the diversity and complexity of real computer use.
 - OSWorld provides a unified benchmark environment for multimodal agents across multiple operating systems and application types.
+- Example-wise execution-based evaluation is essential because real computer tasks permit many valid trajectories and often start from partially completed states.
 - The benchmark shows that current agents are still far below human performance on realistic computer tasks.
+- Multi-app workflows are substantially harder than single-app tasks, so general computer-use ability is not well captured by single-interface benchmarks.
 - The paper highlights GUI grounding and operational knowledge as major failure areas for current agents.
 
 ## Important Details
 
-- OSWorld includes 369 tasks involving real web apps, desktop apps, OS file I/O, and multi-application workflows.
+- OSWorld includes 369 Ubuntu tasks plus 43 Windows adaptations involving real web apps, desktop apps, OS file I/O, and multi-application workflows.
 - Each task comes with initial-state setup and an execution-based evaluation script for reproducibility.
+- The benchmark required 134 unique evaluation functions, which the authors emphasize as a major jump over prior work.
+- Reported model performance ranges from 0.99% to 12.24%, while workflow tasks involving multiple apps reach only 6.57% at best.
 - The paper reports 72.36% human success versus 12.24% for the best model at the time of publication.
+- The paper reports that accessibility trees and Set-of-Mark can help but also sometimes mislead models, and that higher screenshot resolution plus longer trajectory history can materially improve results.
+- The error analysis highlights poor GUI grounding, repetitive actions, noise from unexpected windows, and weak operational knowledge of common apps.
 - The arXiv page notes publicly available code, environment, baselines, and data.
 
 ## Entities
@@ -53,6 +59,7 @@ OSWorld pushes agent evaluation beyond browser-only tasks by benchmarking agents
 
 - This is one of the strongest benchmark additions for understanding how far current agents remain from competent computer assistants.
 - It is useful whenever this KB needs a realistic reference point for multimodal and desktop-task evaluation.
+- The paper is also a design document for why computer-use agents need better grounding, memory, and recovery behavior rather than just stronger base models.
 
 ## Open Questions
 

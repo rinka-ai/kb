@@ -10,7 +10,7 @@ source_count: 9
 
 ## Summary
 
-LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions in this KB make the category less abstract: ReAct gives a canonical reasoning-plus-action loop, MCP gives a cleaner interoperability boundary for tools, and WebArena and OSWorld supply realistic environments for testing whether the resulting agents actually work.
+LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions in this KB make the category less abstract: ReAct gives a canonical reasoning-plus-action loop, MCP gives a cleaner interoperability boundary for tools, and WebArena and OSWorld show how far current agents still are from reliable performance once real environments require exploration, recovery, and precise grounding.
 
 ## Key Dimensions
 
@@ -20,6 +20,7 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - how the harness constrains or amplifies behavior
 - how tool protocols and action schemas shape interoperability
 - how evaluation environments differ from deployment environments
+- how well the agent can explore, recover from failure, and ground actions in realistic interfaces
 
 ## Source Notes
 

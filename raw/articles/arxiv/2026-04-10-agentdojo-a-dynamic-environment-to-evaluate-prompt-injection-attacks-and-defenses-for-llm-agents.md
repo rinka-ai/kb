@@ -3,7 +3,7 @@ id: article-2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-inject
 type: source
 title: "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents"
 path: raw/articles/arxiv/2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents.md
-author: Unknown
+author: "Edoardo Debenedetti, Jie Zhang, Mislav Balunovic, Luca Beurer-Kellner, Marc Fischer, Florian Tramèr"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2406.13352
 date_published: 2024-06-19
@@ -20,26 +20,30 @@ related: [security, prompt-injection, agents, evals]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents.md
-- Author: Unknown
-- Published: Unknown
+- Author: Edoardo Debenedetti, Jie Zhang, Mislav Balunovic, Luca Beurer-Kellner, Marc Fischer, Florian Tramèr
+- Published: 2024-06-19
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2406.13352
 
 ## TL;DR
 
-AgentDojo frames prompt injection as a first-class agent-evaluation problem and provides an environment where both task performance and security properties can be measured together.
+AgentDojo treats prompt injection as a systems-evaluation problem, not a prompt-red-teaming toy: agents must solve real tasks in stateful tool environments while preserving security properties under attack.
 
 ## Key Claims
 
 - Tool-using agents are vulnerable to prompt injection because external data can steer subsequent reasoning and actions.
 - AgentDojo is designed as an extensible environment rather than a static fixed test suite so new attacks, tasks, and defenses can be added over time.
+- Robust agent evaluation should measure both task success and adversarial resilience in the same environment.
+- Deterministic utility and security checks over environment state are more credible here than using another LLM to judge whether an attack “worked.”
 - The paper shows that both attacks and defenses remain brittle: strong models still fail many tasks and current defenses do not secure all relevant properties.
-- Robust agent evaluation should measure both task success and adversarial resilience.
 
 ## Important Details
 
 - The paper populates the environment with 97 realistic tasks and 629 security test cases.
-- Example task domains include email, e-banking, and travel booking.
+- Example task domains include email, collaborative workspaces, e-banking, and travel booking.
+- AgentDojo reports three core metrics: benign utility, utility under attack, and targeted attack success rate.
+- Current LLMs solve less than 66% of tasks even without attack; the best attacks succeed in less than 25% of cases, and one detector-style defense reduces attack success to about 8%.
+- The paper also highlights a simple tool-filtering defense that drops attack success to 7.5%, but only for tasks where the needed tools can be safely narrowed.
 - The arXiv page notes later updates to the Llama implementation and travel suite.
 
 ## Entities
@@ -53,6 +57,7 @@ AgentDojo frames prompt injection as a first-class agent-evaluation problem and 
 
 - This is one of the most useful security papers in the KB because it evaluates realistic agent tasks rather than only isolated prompt attacks.
 - It should inform any future enterprise-agent hardening guidance in this repo.
+- The strongest design lesson is to model security as a utility-security frontier, not a separate red-team afterthought.
 
 ## Open Questions
 
