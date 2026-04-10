@@ -3,14 +3,14 @@ id: concept-managed-agents
 type: concept
 title: Managed Agents
 tags: [agents, infrastructure, sessions, sandboxes]
-source_count: 3
+source_count: 5
 ---
 
 # Managed Agents
 
 ## Summary
 
-Managed agents are agent systems built around durable interfaces for state, execution, and orchestration so the implementation can change as models and harness techniques improve.
+Managed agents are agent systems built around durable interfaces for state, execution, and orchestration so the implementation can change as models and harness techniques improve. The newer Manus and MCP additions strengthen this picture by adding two practical concerns: long-loop context discipline and stable protocol surfaces for tool ecosystems.
 
 ## Core Idea
 
@@ -37,9 +37,12 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - general interfaces vs task-specific optimization
 - durable recoverability vs minimal overhead
 - externalized state vs model-local working context
+- rich tool ecosystems vs context and selection overhead
 
 ## Source Notes
 
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2026-04-09-context-engineering-sessions-memory]]
 - [[2026-04-09-agentic-file-system]]
+- [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
+- [[2026-04-10-model-context-protocol]]

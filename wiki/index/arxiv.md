@@ -1,0 +1,39 @@
+---
+id: index-arxiv
+type: index
+title: ArXiv
+---
+
+# ArXiv
+
+## Overview
+
+This index groups primary research papers added to strengthen the KB's coverage of agent reasoning, memory, security, and realistic evaluation environments.
+
+## By Theme
+
+- Agent loops and planning:
+  [[2026-04-10-react-synergizing-reasoning-and-acting-in-language-models]]
+- Long-context compression:
+  [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
+- Memory systems:
+  [[2026-04-10-memgpt-towards-llms-as-operating-systems]]
+- Security and adversarial robustness:
+  [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
+- Web-agent benchmarks:
+  [[2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents]]
+- Computer-use benchmarks:
+  [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
+
+## Why This Collection Matters
+
+- These notes are primary papers rather than secondary summaries.
+- They give the KB stronger benchmark and memory provenance.
+- They help balance the repo's prior reliance on vendor engineering blogs.
+
+## Related
+
+- [[ai-agent-evals]]
+- [[agent-memory]]
+- [[llm-agents]]
+- [[context-engineering]]

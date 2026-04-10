@@ -17,6 +17,16 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[anthropic-engineering]]
 - [[kb-system]]
 
+## Source Collections
+
+- [[arxiv]]
+- [[github-repos]]
+
+## Recent Summaries
+
+- [[2026-04-10-kb-acquisition-priorities]]
+- [[2026-04-10-mari-sources-to-add-now]]
+
 ## Next Suggested Concepts
 
 - [[personal-knowledge-bases]]
