@@ -95,36 +95,4 @@ It mentions managed agents, context engineering, and retrieval.
       },
     );
   });
-
-  test("deep-read dry-run renders the selective summary schema", async () => {
-    await withTempFile(
-      `# Deep read notes
-
-These notes capture only the method and evaluation details that matter for future synthesis.
-
-- The benchmark mix matters because it shows ReAct spanning retrieval and environment interaction.
-- The interpretability claim is stronger when paired with real trajectories instead of only scalar scores.
-`,
-      ".md",
-      async (filePath) => {
-        const deepRead = await runBunCommand([
-          "bin/deep-read.ts",
-          "--source",
-          "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
-          "--file",
-          filePath,
-          "--focus",
-          "method,evals",
-          "--dry-run",
-        ]);
-
-        expect(deepRead.code).toBe(0);
-        expect(deepRead.stdout).toContain("type: summary");
-        expect(deepRead.stdout).toContain("## Deep-Read Evidence");
-        expect(deepRead.stdout).toContain(
-          "[[2026-04-10-react-synergizing-reasoning-and-acting-in-language-models]]",
-        );
-      },
-    );
-  });
 });

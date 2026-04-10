@@ -31,7 +31,6 @@ describe("mcp tools", () => {
 
     expect([...server.tools.keys()].sort()).toEqual([
       "kb_build_context",
-      "kb_deep_read",
       "kb_find_gaps",
       "kb_ingest",
       "kb_list_catalog",
@@ -263,53 +262,6 @@ Another paragraph keeps the extracted content substantial enough for ingestion h
         expect(result?.structuredContent.outputPath).toBeUndefined();
         expect(result?.content[0].text).toContain("Title: MCP Ingest Fixture");
         expect(result?.content[0].text).toContain("path: raw/articles/mcp-dry-run/");
-      },
-    );
-  });
-
-  test("kb_deep_read is blocked when writes are disabled", async () => {
-    const server = new FakeMcpServer();
-    registerKbTools(server as unknown as McpServer, { enableWrites: false });
-
-    const result = (await server.tools.get("kb_deep_read")?.handler({
-      sourcePaths: [
-        "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
-      ],
-      dryRun: true,
-    })) as { content: Array<{ text: string }>; isError?: boolean } | undefined;
-
-    expect(result?.isError).toBe(true);
-    expect(result?.content[0].text).toContain("kb_deep_read is disabled on this MCP server");
-  });
-
-  test("kb_deep_read supports dry-run when writes are enabled", async () => {
-    await withTempFile(
-      `# Deep read companion notes
-
-This file captures only the high-signal notes from a closer read of the paper.
-
-- The evaluation section matters because it spans both retrieval and interactive environments.
-- Failure recovery is one of the clearest reasons to keep reasoning traces visible.
-`,
-      ".md",
-      async (filePath) => {
-        const server = new FakeMcpServer();
-        registerKbTools(server as unknown as McpServer, { enableWrites: true });
-
-        const result = (await server.tools.get("kb_deep_read")?.handler({
-          sourcePaths: [
-            "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
-          ],
-          filePath,
-          focus: ["method", "evals"],
-          dryRun: true,
-        })) as ToolResult | undefined;
-
-        expect(result?.structuredContent.outputPath).toBeUndefined();
-        expect(result?.content[0].text).toContain(
-          "Title: ReAct: Synergizing Reasoning and Acting in Language Models Deep Read",
-        );
-        expect(result?.content[0].text).toContain("## Deep-Read Evidence");
       },
     );
   });

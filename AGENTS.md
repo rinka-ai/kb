@@ -100,7 +100,6 @@ This repo includes lightweight local tooling for knowledge retrieval and mainten
 - `bun run kb:lint`: check for missing metadata and dangling wiki links
 - `bun run kb:refresh`: rebuild index and run lint checks together
 - `bun run kb:ingest --url <url>`: ingest a new article or post into the source-note schema
-- `bun run kb:deep-read --source <kb-note>`: create a selective deep-read summary from one or more existing source notes, optionally using a local notes file for chosen sections instead of ingesting a full PDF
 - `bun run kb:mcp`: expose the KB as a local stdio MCP server for cross-repo agent access
 - `bun run kb:mcp:http`: expose the KB as a Streamable HTTP MCP server for shared/team access
 - `bun run kb:watch --lint`: auto-rebuild the index as KB files change
@@ -116,7 +115,6 @@ When working in this repository as an agent:
 4. Run `bun run kb:lint` before wrapping up substantial KB edits.
 5. If the `ai-research-kb` MCP server is attached, prefer `kb_build_context`, `kb_find_gaps`, `kb_trace_claim`, `kb_make_handoff`, `kb_search`, `kb_search_file`, `kb_list_catalog`, and `kb_read_note` over ad hoc shell lookups. On shared HTTP MCP, prefer passing raw text to `kb_search_file` instead of a local laptop path.
 6. When contradictory knowledge appears, update the canonical note and mark the older source note `status: superseded` so it drops out of default retrieval.
-7. For long papers such as arXiv sources, prefer `kb:deep-read` over full-PDF ingestion by default: keep the processed source note compact, then add a selective deep-read note only for sections that materially improve future synthesis.
 
 ## Codex And Claude Code Awareness
 
