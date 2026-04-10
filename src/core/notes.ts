@@ -1,5 +1,5 @@
-import { readFileSync } from "node:fs";
-import { basename, relative } from "node:path";
+import { existsSync, readFileSync, realpathSync } from "node:fs";
+import { basename, isAbsolute, relative, resolve } from "node:path";
 import { parseFrontmatter } from "./frontmatter";
 import { listMarkdownFiles, newestMarkdownMtime } from "./indexer";
 import { extractSections, extractTitle, stripMarkdown } from "./markdown";
@@ -106,6 +106,35 @@ export function parseKbNote(text: string, relPath: string): KbNote {
 export function readKbNoteFile(filePath: string): KbNote {
   const raw = readFileSync(filePath, "utf-8");
   return parseKbNote(raw, relative(ROOT, filePath));
+}
+
+export function resolveKbNotePath(input: string): string {
+  const trimmed = input.trim();
+  const directPath = isAbsolute(trimmed) ? resolve(trimmed) : resolve(ROOT, trimmed);
+  if (existsSync(directPath)) {
+    const realPath = realpathSync(directPath);
+    if (realPath.startsWith(ROOT)) return realPath;
+  }
+
+  const normalized = trimmed.replace(/^\.\//, "");
+  const withoutExt = stripMdExt(normalized);
+  const matches = listMarkdownFiles().filter((file) => {
+    const rel = relative(ROOT, file);
+    return (
+      rel === normalized ||
+      rel === `${withoutExt}.md` ||
+      stripMdExt(rel) === withoutExt ||
+      stripMdExt(rel.split("/").pop() ?? "") === withoutExt
+    );
+  });
+
+  if (matches.length === 1) return matches[0];
+  if (matches.length > 1) {
+    const candidates = matches.map((match) => relative(ROOT, match)).join(", ");
+    throw new Error(`Multiple KB notes matched "${trimmed}": ${candidates}`);
+  }
+
+  throw new Error(`KB note not found: ${trimmed}`);
 }
 
 export function listKbNotes(): KbNote[] {

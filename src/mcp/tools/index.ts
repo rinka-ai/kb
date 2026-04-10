@@ -1,6 +1,7 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerCatalogTool } from "./catalog";
 import { registerContextTool } from "./context";
+import { registerDeepReadTool } from "./deep-read";
 import { registerGapTool } from "./gaps";
 import { registerHandoffTool } from "./handoff";
 import { registerIngestTool } from "./ingest";
@@ -16,6 +17,7 @@ export interface RegisterKbToolsOptions {
 export function registerKbTools(server: McpServer, options: RegisterKbToolsOptions): void {
   registerCatalogTool(server);
   registerContextTool(server);
+  registerDeepReadTool(server, options.enableWrites);
   registerGapTool(server);
   registerHandoffTool(server);
   registerSearchTools(server);
