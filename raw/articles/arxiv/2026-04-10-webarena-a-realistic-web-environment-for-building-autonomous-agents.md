@@ -3,7 +3,7 @@ id: article-2026-04-10-webarena-a-realistic-web-environment-for-building-autonom
 type: source
 title: "WebArena: A Realistic Web Environment for Building Autonomous Agents"
 path: raw/articles/arxiv/2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents.md
-author: Unknown
+author: "Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, Graham Neubig"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2307.13854
 date_published: 2023-07-25
@@ -20,27 +20,32 @@ related: [web-agents, benchmarks, evals, browser]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents.md
-- Author: Unknown
-- Published: Unknown
+- Author: Shuyan Zhou, Frank F. Xu, Hao Zhu, Xuhui Zhou, Robert Lo, Abishek Sridhar, Xianyi Cheng, Tianyue Ou, Yonatan Bisk, Daniel Fried, Uri Alon, Graham Neubig
+- Published: 2023-07-25
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2307.13854
 
 ## TL;DR
 
-WebArena addresses the gap between simplified synthetic web tasks and realistic online workflows by giving agents full websites, tools, and long-horizon tasks closer to real human internet activity.
+WebArena is a realism-first web-agent benchmark: self-hosted sites with authentic data, auxiliary tools, and programmatic outcome validators so agents are tested on the kind of long-horizon workflows people actually perform online.
 
 ## Key Claims
 
 - Realistic web-agent evaluation requires fully functional sites and reproducible state, not only toy navigation tasks.
 - WebArena includes diverse, long-horizon tasks designed to reflect common internet workflows.
+- Outcome-based evaluation is stronger than action-sequence matching because many realistic web tasks admit multiple valid trajectories.
 - The paper shows that state-of-the-art GPT-4-based agents remain far below human performance on these tasks.
-- The benchmark is intended as a progress measure for more robust real-world web agents.
+- The authors argue that missing capabilities such as active exploration and failure recovery are major reasons for the performance gap.
 
 ## Important Details
 
-- The environment includes sites across e-commerce, social forums, collaborative software development, and content management.
-- It also includes tools such as a map and external knowledge bases such as user manuals.
+- The environment includes four self-hosted sites across e-commerce, social forums, collaborative software development, and content management.
+- It also includes tools such as a map, calculator, and scratchpad, plus knowledge resources such as Wikipedia and user manuals.
+- The benchmark contains 241 intent templates and 812 instantiated long-horizon tasks.
+- Each task is validated for functional correctness by checking the resulting state or artifacts rather than comparing only surface-form action traces.
+- The environment is packaged with separate Docker images so sites can be reset to known initial state for reproducible evaluation.
 - The paper reports 14.41% success for its best GPT-4-based agent versus 78.24% human performance.
+- The authors explicitly point to active exploration and failure recovery as likely missing capabilities in current agents.
 - The arXiv page notes publicly available code, data, environment reproduction resources, and demonstrations.
 
 ## Entities
@@ -53,6 +58,7 @@ WebArena addresses the gap between simplified synthetic web tasks and realistic 
 
 - This is a key benchmark paper for evaluating agents beyond narrow toy environments.
 - It complements security-focused suites such as AgentDojo by focusing on capability in realistic web workflows.
+- Its evaluation design is especially reusable: validate final state, not one blessed action trace.
 
 ## Open Questions
 

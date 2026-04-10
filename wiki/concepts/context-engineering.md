@@ -10,7 +10,7 @@ source_count: 9
 
 ## Summary
 
-Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer Manus and LongLLMLingua additions sharpen that into a more operational view: cache stability, attention placement, and restorable compression are first-class design variables.
+Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer Manus and LongLLMLingua additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, and restorable compression are first-class design variables.
 
 ## What It Is
 
@@ -28,6 +28,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - Keep high-value prefixes stable so cache reuse survives long tool loops.
 - Mask or constrain actions when needed instead of constantly rewriting the tool surface.
 - Recite plans or goal state when the agent needs help keeping attention on long tasks.
+- Treat salience estimation and evidence ordering as context decisions, not only retrieval decisions.
 
 ## Tensions
 
@@ -35,6 +36,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - internal learned memory vs external editable memory
 - static precompiled memory vs just-in-time research and retrieval
 - dense context vs attention and distractor risk
+- query-aware compression quality vs cacheability and reuse
 
 ## Source Notes
 

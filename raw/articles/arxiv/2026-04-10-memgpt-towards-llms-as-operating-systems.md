@@ -3,7 +3,7 @@ id: article-2026-04-10-memgpt-towards-llms-as-operating-systems
 type: source
 title: "MemGPT: Towards LLMs as Operating Systems"
 path: raw/articles/arxiv/2026-04-10-memgpt-towards-llms-as-operating-systems.md
-author: Unknown
+author: "Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, Joseph E. Gonzalez"
 publisher: arXiv.org
 url: https://arxiv.org/abs/2310.08560
 date_published: 2023-10-12
@@ -20,38 +20,44 @@ related: [agent-memory, memory, stateful-agents, long-context]
 ## Source Metadata
 
 - Path: raw/articles/arxiv/2026-04-10-memgpt-towards-llms-as-operating-systems.md
-- Author: Unknown
-- Published: Unknown
+- Author: Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, Joseph E. Gonzalez
+- Published: 2023-10-12
 - Publisher: arXiv.org
 - URL: https://arxiv.org/abs/2310.08560
 
 ## TL;DR
 
-MemGPT treats long-horizon agent memory as a systems problem: keep a limited fast working context, move information between memory tiers, and use explicit control-flow mechanisms so the agent can sustain multi-session behavior.
+MemGPT treats long-horizon agent memory as an operating-systems problem: keep a constrained main context, page information between fast and slow stores, and use explicit interrupts and function chaining so the agent can manage memory without constant user intervention.
 
 ## Key Claims
 
 - Limited context windows are a practical systems bottleneck for document analysis and persistent conversations.
 - MemGPT proposes virtual context management inspired by hierarchical memory systems in operating systems.
 - The design uses memory tiers plus interrupts so the agent can manage control flow between user interaction and memory operations.
+- Memory architecture is not just storage choice: scheduling, paging, summarization, and follow-up execution are all part of the system design.
 - The paper argues that this architecture enables richer document analysis and multi-session chat without requiring a model with a vastly larger native context window.
 
 ## Important Details
 
+- Main context is split into system instructions, working context, and a FIFO queue; the queue also stores a recursive summary of evicted history.
+- External memory is split between archival storage and recall storage, and the agent can search, insert, replace, or page data through function calls.
+- The queue manager can issue a memory-pressure warning at roughly 70% full and flush at 100%, evicting part of the queue while preserving a recursive summary.
+- Function chaining is enabled with a `request_heartbeat=true` control flag so the agent can execute multiple memory operations before yielding to the user.
 - The paper evaluates MemGPT on document analysis and multi-session chat.
-- The arXiv page notes linked code and data for the experiments.
-- The framing is architectural rather than purely algorithmic: it is about how an agent should manage working memory and slower memory tiers.
+- On the deep-memory-retrieval task, MemGPT improves accuracy from 38.7% to 66.9% with GPT-3.5 Turbo, from 32.1% to 92.5% with GPT-4, and from 35.3% to 93.4% with GPT-4 Turbo.
+- The nested key-value retrieval experiments show that MemGPT-style paging is the only approach that consistently handles nesting beyond two levels.
 
 ## Entities
 
-- Authors: Charles Packer and collaborators
-- Concepts: virtual context management, hierarchical memory, interrupts, long-term memory, multi-session chat
+- Authors: Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, Joseph E. Gonzalez
+- Concepts: virtual context management, hierarchical memory, interrupts, function chaining, long-term memory, multi-session chat
 - Domains: document analysis, conversational agents
 
 ## My Notes
 
 - This paper is one of the clearest primary sources for memory-tier thinking in agent systems.
 - It is a strong bridge between the repo's file-backed memory ideas and stateful-agent product frameworks such as Letta.
+- The most reusable idea here is that memory requires a control plane, not just a storage backend.
 
 ## Open Questions
 

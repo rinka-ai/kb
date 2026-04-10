@@ -10,7 +10,7 @@ source_count: 13
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, and realistic computer-use setups.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, and realistic computer-use setups with deterministic state-based checks.
 
 ## Core Components
 
@@ -41,6 +41,8 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - Expect benchmarks to stale as models improve.
 - Prefer evals that reflect deployment conditions.
 - Track what the system is actually optimizing for under a given setup.
+- Prefer execution-based or state-based validators over action-trace matching or LLM-only judging when possible.
+- For security-sensitive agents, measure utility under attack, not only benign success.
 
 ## Source Notes
 
