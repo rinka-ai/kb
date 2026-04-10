@@ -3,14 +3,14 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents]
-source_count: 6
+source_count: 13
 ---
 
 # AI Agent Evals
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, and realistic computer-use setups.
 
 ## Core Components
 
@@ -19,6 +19,13 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - transcripts and outcomes
 - graders and pass criteria
 - infrastructure and runtime conditions
+
+## Benchmark Families
+
+- framework-level evaluation surfaces such as Inspect AI
+- adversarial security suites such as AgentDojo
+- web-environment benchmarks such as WebArena
+- computer-use benchmarks such as OSWorld
 
 ## Common Failure Modes
 
@@ -43,3 +50,10 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-04-09-quantifying-infrastructure-noise-in-agentic-coding-evals]]
 - [[2025-01-06-raising-the-bar-on-swe-bench-verified-with-claude-3-5-sonnet]]
 - [[2025-09-17-a-postmortem-of-three-recent-issues]]
+- [[2026-04-10-inspect-ai]]
+- [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
+- [[2026-04-10-agentdojo]]
+- [[2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents]]
+- [[2026-04-10-webarena]]
+- [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
+- [[2026-04-10-osworld]]
