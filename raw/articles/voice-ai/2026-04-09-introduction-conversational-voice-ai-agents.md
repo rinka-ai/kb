@@ -3,15 +3,15 @@ id: article-2026-04-09-introduction-conversational-voice-ai-agents
 type: source
 title: "Introduction - Conversational voice AI agents"
 path: raw/articles/voice-ai/2026-04-09-introduction-conversational-voice-ai-agents.md
-author: Unknown
-publisher: elevenlabs.io
+author: ElevenLabs
+publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/conversational-ai/docs/introduction
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, elevenlabs, voice-agents, conversational-ai]
-status: ingested
+status: processed
 quality: high
-summary: "ElevenLabs positions its conversational AI stack as a full voice-agent platform combining ASR, turn-taking, TTS, LLM choice, deployment surfaces, and conversation monitoring."
+summary: "ElevenLabs positions ElevenAgents as a full voice-agent platform: model, turn-taking, tools, knowledge, deployment surfaces, and monitoring are treated as one integrated runtime rather than isolated APIs."
 related: [voice-ai, elevenlabs, voice-agents, conversational-ai]
 ---
 
@@ -27,44 +27,39 @@ related: [voice-ai, elevenlabs, voice-agents, conversational-ai]
 
 ## TL;DR
 
-Learn how to build, launch, and scale agents with ElevenLabs.
+The overview page frames ElevenAgents as a full-stack voice-agent platform with distinct layers for agent configuration, deployment, monitoring, and optimization.
 
 ## Key Claims
 
-- Learn how to build, launch, and scale agents with ElevenLabs.
-- Agents accomplish tasks through natural dialogue - from quick requests to complex, open-ended workflows.
-- Platform capabilities
-From design to deployment to optimization, ElevenLabs provides everything you need to build agents at scale.
-- A fine-tuned Speech to Text (ASR) model for speech recognition
-Your choice of language model or custom LLM
-A low-latency Text to Speech (TTS) model across 5k+ voices and 70+ languages
-A proprietary turn-taking model that handles conversation timing
+- Voice agents should be designed as an end-to-end system, not only as model prompting plus TTS.
+- ElevenAgents exposes a consistent stack for design, deployment, and monitoring rather than leaving each layer to custom glue code.
+- The core runtime combines ASR, an LLM layer, TTS, and a turn-taking model.
+- Product features such as knowledge bases, tools, personalization, authentication, and telephony are first-class parts of the agent architecture.
 
 ## Important Details
 
-- Source captured from elevenlabs.io.
-- Section heading: Configure
-- Section heading: Deploy
-- Section heading: Monitor
-- Section heading: Platform capabilities
-- Section heading: Design and configure
+- The docs are organized around `configure`, `deploy`, and `monitor`, which is a useful architecture split for production voice systems.
+- Configuration surfaces include prompts, conversation flow, voices, knowledge base, tools, personalization, and authentication.
+- Deployment surfaces include web widgets, SDKs, WebSocket integrations, SIP trunking, Twilio, batch calling, and events.
+- Monitoring surfaces include user views, transcript search, experiments, testing, conversation analysis, analytics, privacy controls, and cost optimization.
+- The architecture section explicitly identifies four core runtime components: ASR, LLM, TTS, and a turn-taking model.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- Organization: ElevenLabs
+- System: ElevenAgents
+- Concepts: turn-taking, voice-agent runtime, knowledge-base grounding, conversation analysis, telephony integrations
+- Surfaces: tools, personalization, authentication, events, experiments
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This is the canonical high-level page for understanding how ElevenLabs thinks about voice agents as a product architecture.
+- The most important takeaway is the platform split between build-time agent definition, deploy-time transport choices, and monitor-time evaluation and privacy controls.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which parts of our own voice stack should be platform configuration versus application-owned orchestration?
+- Where do we want to rely on ElevenLabs-native monitoring and where do we need our own evaluation/control plane?
 
 ## Related
 
