@@ -3,14 +3,14 @@ id: concept-llm-agents
 type: concept
 title: LLM Agents
 tags: [agents, llms, tool-use]
-source_count: 9
+source_count: 14
 ---
 
 # LLM Agents
 
 ## Summary
 
-LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions in this KB make the category less abstract: ReAct gives a canonical reasoning-plus-action loop, MCP gives a cleaner interoperability boundary for tools, and WebArena and OSWorld show how far current agents still are from reliable performance once real environments require exploration, recovery, and precise grounding.
+LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions make the category much less abstract: beyond ReAct-style loops, real agents need durable execution, resumable interruptions, session or thread state, memory surfaces, and stable protocols for tools and multi-turn runtime control.
 
 ## Key Dimensions
 
@@ -18,7 +18,9 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - what tools and execution environments it can access
 - how state and memory are managed across turns
 - how the harness constrains or amplifies behavior
+- how runs, threads, sessions, and approvals are represented
 - how tool protocols and action schemas shape interoperability
+- how durable the execution model is under pauses, failures, and retries
 - how evaluation environments differ from deployment environments
 - how well the agent can explore, recover from failure, and ground actions in realistic interfaces
 
@@ -33,3 +35,8 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents]]
 - [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
+- [[2026-04-12-temporal-ai-cookbook]]
+- [[2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop]]
+- [[2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop]]
+- [[2026-04-12-google-adk-runtime-event-loop-and-workflow-agents]]
+- [[2026-04-12-agent-protocol]]
