@@ -18,6 +18,16 @@ After reviewing the `../mari` codebase and roadmap, the right additions split in
 
 Mari is already well aligned with the KB's managed-agent architecture. What it needed most was not more Anthropic material, but a stronger supporting source set for implementation, evaluation, and long-term competitiveness.
 
+## Status Update (2026-04-12)
+
+The highest-value gaps from this note are now in the KB:
+
+- durable runtime sources: [[2026-04-12-temporal-ai-cookbook]], [[2026-04-12-durable-mcp-weather-server]], [[2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop]], [[2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop]], [[2026-04-12-google-adk-runtime-event-loop-and-workflow-agents]], [[2026-04-12-agent-protocol]]
+- memory-system sources: [[2026-04-12-langmem]], [[2026-04-12-agent-workflow-memory]], [[2026-04-12-mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents]], [[2026-04-12-memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent]]
+- payment and operational-safety sources: [[2026-04-12-stripe-integration-security-guide]], [[2026-04-12-stripe-checkout-how-checkout-works]]
+
+This changes Mari's best next reading order. The missing edge is no longer "general agent knowledge." It is durable runtime semantics, workflow-shaped memory, and safer side-effect boundaries.
+
 ## Why These Sources
 
 ### Context and runtime memory
@@ -72,6 +82,19 @@ If the goal is to help Mari immediately, the best reading order is:
 6. [[2026-04-10-letta]]
 7. [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
 
+## Revised Reading Order (2026-04-12)
+
+If the goal is to improve Mari's architecture in the next implementation phase, the best order is now:
+
+1. [[2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop]]
+2. [[2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop]]
+3. [[2026-04-12-agent-protocol]]
+4. [[2026-04-12-temporal-ai-cookbook]]
+5. [[2026-04-12-langmem]]
+6. [[2026-04-12-agent-workflow-memory]]
+7. [[2026-04-12-stripe-integration-security-guide]]
+8. [[2026-04-12-stripe-checkout-how-checkout-works]]
+
 ## What Makes Mari More World-Class
 
 If the goal is to make Mari more world-class rather than only nearer-term productive, the most important additions are:
@@ -95,6 +118,7 @@ The best follow-up is:
 - update [[managed-agents]], [[agent-memory]], [[ai-agent-evals]], and [[llm-agents]] with these new sources
 - add one synthesis note specifically on benchmark strategy for enterprise agents
 - add one synthesis note on protocol and tool-surface design once Mari's adapter layer expands
+- add one synthesis note on durable runtime and payment-safe side-effect architecture for Mari
 
 ## Related
 
@@ -104,3 +128,4 @@ The best follow-up is:
 - [[context-engineering]]
 - [[research-workflows]]
 - [[2026-04-10-kb-acquisition-priorities]]
+- [[2026-04-12-mari-architecture-upgrades-from-new-sources]]

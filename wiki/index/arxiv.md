@@ -18,6 +18,11 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
 - Memory systems:
   [[2026-04-10-memgpt-towards-llms-as-operating-systems]]
+- Workflow memory:
+  [[2026-04-12-agent-workflow-memory]]
+- Learned internal memory:
+  [[2026-04-12-mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents]]
+  [[2026-04-12-memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent]]
 - Security and adversarial robustness:
   [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
 - Web-agent benchmarks:
