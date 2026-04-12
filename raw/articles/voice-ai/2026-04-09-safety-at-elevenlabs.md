@@ -3,13 +3,13 @@ id: article-2026-04-09-safety-at-elevenlabs
 type: source
 title: "Safety at ElevenLabs"
 path: raw/articles/voice-ai/2026-04-09-safety-at-elevenlabs.md
-author: Unknown
+author: ElevenLabs
 publisher: ElevenLabs
 url: https://elevenlabs.io/safety/
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, elevenlabs, safety, voice-cloning, governance]
-status: ingested
+status: processed
 quality: high
 summary: "ElevenLabs' safety page describes a layered governance approach for audio AI, including customer vetting, misuse detection, cloning restrictions, traceability efforts, and enforcement against abusive use."
 related: [voice-ai, elevenlabs, safety, voice-cloning, governance]
@@ -27,38 +27,38 @@ related: [voice-ai, elevenlabs, safety, voice-cloning, governance]
 
 ## TL;DR
 
-Our mission is to build and deploy the best audio AI products while continuously improving safeguards to prevent their misuse.
+ElevenLabs describes audio safety as a layered system of prevention, detection, traceability, and enforcement rather than a single moderation filter.
 
 ## Key Claims
 
-- Our mission is to build and deploy the best audio AI products while continuously improving safeguards to prevent their misuse.
-- AI audio built to unlock possibilities and positive impact, guided by responsibility and safeguards that protect people from misuse.Our Safety MissionAt ElevenLabs, we believe deeply in the immense benefits of AI audio.
+- Voice products need multi-layered abuse prevention because no single safeguard catches every misuse case.
+- Voice cloning and synthetic speech require stronger controls than generic text applications because impersonation and deception risks are unusually high.
+- Safety should combine proactive friction, ongoing detection, external standards, and downstream enforcement.
+- Traceability and transparency are part of deployment architecture, not only compliance messaging.
 
 ## Important Details
 
-- Source captured from elevenlabs.io.
-- Section heading: Our Safety Mission
-- Section heading: Our Safety Principles
-- Section heading: Safety by Design
-- Section heading: Traceability & Accountability
-- Section heading: Transparency
+- The page describes a multi-layer defense spanning prevention, detection, enforcement, and transparency.
+- ElevenLabs says it red-teams models, vets customers at sign-up, blocks cloning of celebrity and other high-risk voices, and requires stronger verification for Professional Voice Cloning.
+- The company references support for traceability efforts such as C2PA and an AI audio classifier.
+- Enforcement includes bans and referrals to law enforcement for serious abuse.
+- The page explicitly notes that false positives and false negatives are both expected, which is why multiple safeguards are layered together.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- Organization: ElevenLabs
+- Concepts: voice cloning risk, traceability, deepfake detection, customer vetting, enforcement
+- Standards and tools: C2PA, AI audio classifier, prohibited usage policy
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This is a useful architecture source because it shows which controls ElevenLabs expects customers and platform operators to treat as normal in production.
+- The most reusable lesson is that voice safety is not just content moderation; it includes identity, provenance, product gating, and post-hoc enforcement.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which safety responsibilities should remain provider-owned versus application-owned in our own stack?
+- How much voice provenance and cloning-consent evidence do we need to preserve in our product?
 
 ## Related
 
