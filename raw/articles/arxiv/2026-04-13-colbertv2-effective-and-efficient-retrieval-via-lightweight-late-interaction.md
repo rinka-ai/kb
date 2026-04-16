@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2112.01488
 date_published:
 date_added: 2026-04-13
 tags: [retrieval, late-interaction, colbert, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2112.01488: ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction"
 related: [retrieval, late-interaction, colbert, papers]
@@ -27,45 +27,42 @@ related: [retrieval, late-interaction, colbert, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2112.01488: ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction
+ColBERTv2 shows that late-interaction retrieval can stay highly effective while cutting storage costs substantially through compression and denoised supervision.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2112.01488: ColBERTv2: Effective and Efficient Retrieval via Lightweight Late Interaction
-- View PDF
-            Abstract:Neural information retrieval (IR) has greatly advanced search and other knowledge-intensive language tasks.
-- Omar and Keshav contributed equally to this work
-- Information Retrieval (cs.IR); Computation and Language (cs.CL)
+- Late interaction remains a strong compromise between cheap single-vector retrieval and expensive full reranking.
+- ColBERTv2 improves quality while reducing late-interaction storage cost by roughly 6x to 10x.
+- Denoised supervision plus residual compression makes token-level retrieval more practical at scale.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: DBLP - CS Bibliography
+- The paper argues that token-level matching quality is worth preserving when single-vector dense retrieval loses too much nuance.
+- NAACL 2022.
+- This note matters because it gives the KB a practical retriever family between BM25 and heavyweight reranking.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Omar Khattab, Keshav Santhanam, Xiang Lisa Li, et al.
+- Companies: Stanford University
+- Tools: ColBERTv2
+- Concepts: Late interaction, residual compression, dense retrieval
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This is one of the clearest sources for why “dense retrieval” should not be treated as one undifferentiated category.
+- Useful when comparing retriever families for this KB’s eventual hybrid search stack.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- When would a ColBERT-style retriever justify its added complexity for this KB?
+- Which retrieval queries here are most likely to benefit from token-level interaction instead of simpler dense search?
 
 ## Related
 
 - [[retrieval]]
+- [[rag]]
+- [[embeddings]]
 - [[late-interaction]]
 - [[colbert]]
 - [[papers]]

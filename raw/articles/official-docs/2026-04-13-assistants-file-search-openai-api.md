@@ -9,7 +9,7 @@ url: https://developers.openai.com/api/docs/assistants/tools/file-search
 date_published:
 date_added: 2026-04-13
 tags: [openai, retrieval, file-search, rag]
-status: ingested
+status: processed
 quality: medium
 summary: Use File Search as a built-in RAG tool for assistants.
 related: [openai, retrieval, file-search, rag]

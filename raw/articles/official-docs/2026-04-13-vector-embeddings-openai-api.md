@@ -9,7 +9,7 @@ url: https://developers.openai.com/api/docs/guides/embeddings
 date_published:
 date_added: 2026-04-13
 tags: [openai, embeddings, retrieval, rag]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to turn text into numbers, unlocking use cases like search, clustering, and more with OpenAI API embeddings.
 related: [openai, embeddings, retrieval, rag]

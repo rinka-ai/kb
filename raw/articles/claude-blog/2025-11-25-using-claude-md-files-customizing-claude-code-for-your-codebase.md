@@ -9,7 +9,7 @@ url: https://claude.com/blog/using-claude-md-files
 date_published: 2025-11-25
 date_added: 2026-04-09
 tags: [claude-code, claude-md, context-engineering, workflows]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to use CLAUDE.md files to give Claude Code persistent context about your project structure, coding standards, and workflows.
 related: [claude-code, claude-md, context-engineering, workflows]

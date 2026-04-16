@@ -9,7 +9,7 @@ url: https://elevenlabs.io/docs/creative-platform/voices/voice-cloning
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, elevenlabs, voice-cloning, voice-design]
-status: ingested
+status: processed
 quality: high
 summary: "ElevenLabs distinguishes between Instant Voice Cloning for quick approximate clones and Professional Voice Cloning for slower but more faithful custom models, with detailed recording guidance for better results."
 related: [voice-ai, elevenlabs, voice-cloning, voice-design]

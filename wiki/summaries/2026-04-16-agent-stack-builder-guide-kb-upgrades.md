@@ -3,6 +3,11 @@ id: summary-2026-04-16-agent-stack-builder-guide-kb-upgrades
 type: summary
 title: Agent Stack Builder Guide KB Upgrades
 tags: [agents, memory, skills, protocols, harnesses]
+summary: Summary of how the builder guide and follow-on sources sharpen the KB around memory, skills, protocols, and harnesses.
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.83"
 ---
 
 # Agent Stack Builder Guide KB Upgrades

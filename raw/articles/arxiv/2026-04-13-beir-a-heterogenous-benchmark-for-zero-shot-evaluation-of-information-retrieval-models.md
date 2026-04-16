@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2104.08663
 date_published:
 date_added: 2026-04-13
 tags: [retrieval, benchmarks, beir, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2104.08663: BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models"
 related: [retrieval, benchmarks, beir, papers]
@@ -27,46 +27,42 @@ related: [retrieval, benchmarks, beir, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2104.08663: BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models
+BEIR is a heterogeneous zero-shot retrieval benchmark showing that strong lexical baselines remain competitive and that robustness differs sharply across retriever families.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2104.08663: BEIR: A Heterogenous Benchmark for Zero-shot Evaluation of Information Retrieval Models
-- View PDF
-            Abstract:Existing neural information retrieval (IR) models have often been studied in homogeneous and narrow settings, which has considerably limited insights into their out-of-distribution (OOD) generalization capabilities.
-- Comments:
-          Accepted at NeurIPS 2021 Dataset and Benchmark Track
-- Information Retrieval (cs.IR); Artificial Intelligence (cs.AI); Computation and Language (cs.CL)
+- BEIR broadens retrieval evaluation beyond narrow homogeneous datasets by benchmarking across many task types and domains.
+- BM25 is a stronger zero-shot baseline than many teams assume, especially when dense methods are not tuned for the target domain.
+- Late interaction and reranking are strong on average, but they trade off more compute for quality.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 1 blog link
+- The benchmark covers 18 publicly available datasets and compares lexical, sparse, dense, late-interaction, and reranking systems.
+- The paper is especially useful for explaining why retrieval evaluation should include out-of-domain robustness instead of only in-domain wins.
+- Accepted at NeurIPS 2021 Dataset and Benchmark Track.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Nandan Thakur, Nils Reimers, Andreas Rücklé, et al.
+- Companies: UKP Lab, TU Darmstadt, Hugging Face
+- Tools: BEIR, BM25, dense retrievers, rerankers
+- Concepts: Zero-shot retrieval, robustness, benchmark diversity
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This is a primary source for why retrieval quality in this KB should be measured across query shapes instead of only on one convenient benchmark.
+- It also supports keeping lexical retrieval in the stack instead of assuming embeddings should dominate by default.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which BEIR-style query families should our own retrieval eval set imitate?
+- Where should this KB prefer cheaper lexical baselines over more expensive dense or late-interaction methods?
 
 ## Related
 
 - [[retrieval]]
+- [[rag]]
+- [[embeddings]]
 - [[benchmarks]]
 - [[beir]]
 - [[papers]]

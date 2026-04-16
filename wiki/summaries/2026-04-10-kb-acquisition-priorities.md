@@ -3,6 +3,11 @@ id: summary-2026-04-10-kb-acquisition-priorities
 type: summary
 title: KB Acquisition Priorities
 tags: [knowledge-base, research, agents, acquisition]
+summary: Audit of the KB’s strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.8"
 ---
 
 # KB Acquisition Priorities

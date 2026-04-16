@@ -62,6 +62,7 @@ Stripe Checkout turns payment collection into a session-based workflow: the app 
 
 ## Related
 
+- [[payment-integrations]]
 - [[managed-agents]]
 - [[llm-agents]]
 - [[research-workflows]]

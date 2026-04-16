@@ -197,6 +197,7 @@ Sessions track long-running agent history.
         expect(report.sourceCountMismatches.some((concept) => concept.title === "Sessions")).toBe(
           true,
         );
+        expect(report.reviewBacklog.some((note) => note.title === "Sessions")).toBe(true);
         expect(report.uncoveredTags.some((tag) => tag.tag === "tool-use")).toBe(true);
         expect(formatGapReport(report)).toContain("Suggested Actions");
       },

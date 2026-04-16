@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2310.11511
 date_published:
 date_added: 2026-04-13
 tags: [rag, retrieval, self-rag, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2310.11511: Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection"
 related: [rag, retrieval, self-rag, papers]
@@ -27,46 +27,41 @@ related: [rag, retrieval, self-rag, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2310.11511: Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
+Self-RAG trains a model to retrieve on demand and critique its own outputs with reflection tokens instead of always retrieving a fixed number of passages.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2310.11511: Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
-- View PDF
-            Abstract:Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate.
-- Comments:
-          30 pages, 2 figures, 12 tables
-- Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Machine Learning (cs.LG)
+- Self-RAG makes retrieval adaptive instead of mandatory by letting the model decide when external evidence is needed.
+- Reflection tokens let the system critique retrieved passages and its own generations, improving factuality and controllability.
+- The approach outperforms strong baselines including ChatGPT and retrieval-augmented Llama2-chat on several tasks and improves citation quality in long-form generation.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: BibTeX formatted citation
+- The paper is especially important because it turns retrieval into a learned decision rather than a fixed pipeline stage.
+- It also shows one path toward integrating evaluation and control signals directly into generation through special tokens.
+- This source is most valuable when thinking about “should we retrieve now?” rather than only “how should we rank passages?”
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Akari Asai, Zequn Chen, Yizhong Wang, et al.
+- Companies: University of Washington, Allen Institute for AI
+- Tools: Self-RAG
+- Concepts: Adaptive retrieval, reflection tokens, self-critique
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Useful counterweight to fixed top-k retrieval pipelines because it treats retrieval as conditional and reviewable.
+- Important source for future KB work on adaptive retrieval or answer-level self-critique.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which parts of Self-RAG could be approximated in this KB without training a new model?
+- When should the KB’s retrieval flow abstain, broaden, or critique itself instead of simply returning the top-ranked notes?
 
 ## Related
 
 - [[rag]]
+- [[ai-agent-evals]]
 - [[retrieval]]
 - [[self-rag]]
 - [[papers]]

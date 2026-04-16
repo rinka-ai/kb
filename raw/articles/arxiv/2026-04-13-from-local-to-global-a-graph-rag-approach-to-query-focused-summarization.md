@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2404.16130
 date_published:
 date_added: 2026-04-13
 tags: [rag, graphrag, summarization, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2404.16130: From Local to Global: A Graph RAG Approach to Query-Focused Summarization"
 related: [rag, graphrag, summarization, papers]
@@ -27,46 +27,41 @@ related: [rag, graphrag, summarization, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2404.16130: From Local to Global: A Graph RAG Approach to Query-Focused Summarization
+GraphRAG addresses global corpus questions by building an entity graph plus community summaries, then aggregating partial answers into a final response.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2404.16130: From Local to Global: A Graph RAG Approach to Query-Focused Summarization
-- Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Information Retrieval (cs.IR)
-- Cite as:
-          arXiv:2404.16130 [cs.CL]
-- (or
-              arXiv:2404.16130v2 [cs.CL] for this version)
+- Conventional top-k RAG fails on global questions such as “what are the main themes in this corpus?”
+- GraphRAG builds an entity graph and community summaries so it can answer corpus-level synthesis questions instead of only local lookup queries.
+- On million-token-scale global sensemaking tasks, the approach improves answer comprehensiveness and diversity over a conventional RAG baseline.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: BibTeX formatted citation
+- The approach has a two-stage index: graph construction over entities, then pre-generated summaries over communities of related entities.
+- Query-time answering works by generating partial responses from community summaries, then aggregating them into a final answer.
+- This paper is especially relevant when the KB is asked for cross-document themes rather than direct passage retrieval.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Microsoft Research GraphRAG team
+- Companies: Microsoft Research
+- Tools: GraphRAG
+- Concepts: Query-focused summarization, entity graphs, global synthesis
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Important source for distinguishing “global synthesis” questions from ordinary passage retrieval questions in this KB.
+- Good complement to [[rag]] because it shows when graph-shaped precomputation can outperform naive top-k context stuffing.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which KB queries are really GraphRAG-shaped corpus synthesis problems rather than passage retrieval problems?
+- When would graph-building overhead be justified for a markdown-first KB like this one?
 
 ## Related
 
 - [[rag]]
+- [[embeddings]]
 - [[graphrag]]
 - [[summarization]]
 - [[papers]]

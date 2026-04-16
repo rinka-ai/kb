@@ -28,6 +28,16 @@ describe("CLI integration", () => {
     expect(`${lint.stdout}${lint.stderr}`).toContain("KB lint passed with no warnings.");
   });
 
+  test("eval and report commands run successfully", async () => {
+    const evalRun = await runBunCommand(["bin/eval.ts", "--top", "5"]);
+    expect([0, 1]).toContain(evalRun.code);
+    expect(`${evalRun.stdout}${evalRun.stderr}`).toContain("Search eval dataset:");
+
+    const report = await runBunCommand(["bin/report.ts"]);
+    expect(report.code).toBe(0);
+    expect(`${report.stdout}${report.stderr}`).toContain("KB health report");
+  });
+
   test("refresh respects KB_CACHE_DIR for hosted-style writable caches", async () => {
     const cacheDir = mkdtempSync(join(tmpdir(), "ai-research-kb-cache-"));
 

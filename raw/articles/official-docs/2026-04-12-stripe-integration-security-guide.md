@@ -62,6 +62,7 @@ Stripe's guidance is to reduce payment-system risk by choosing low-risk integrat
 
 ## Related
 
+- [[payment-integrations]]
 - [[managed-agents]]
 - [[llm-agents]]
 - [[research-workflows]]

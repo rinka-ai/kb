@@ -22,10 +22,12 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
 2. Compile durable synthesis into `wiki/concepts/` and `wiki/summaries/`.
 3. Rebuild the local KB index with `bun run kb:build`.
 4. Retrieve relevant notes during active work with `bun run kb:search`.
-5. Run health checks with `bun run kb:lint`.
-6. Expose the KB through `bun run kb:mcp` so other agent sessions can query it cleanly.
-7. Expose the KB through `bun run kb:mcp:http` when the knowledge base needs a shared team endpoint.
-8. Periodically automate steps 3-7.
+5. Run retrieval evals with `bun run kb:eval`.
+6. Run health checks with `bun run kb:lint` and `bun run kb:report`.
+7. Rebuild health artifacts with `bun run kb:refresh`.
+8. Expose the KB through `bun run kb:mcp` so other agent sessions can query it cleanly.
+9. Expose the KB through `bun run kb:mcp:http` when the knowledge base needs a shared team endpoint.
+10. Periodically automate steps 3-9.
 
 ## Retrieval Patterns
 
@@ -33,6 +35,8 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
   - `bun run kb:search --query "context engineering eval contamination"`
 - Work-context-driven:
   - `bun run kb:search --file /absolute/path/to/current/file`
+- Eval-driven:
+  - `bun run kb:eval`
 - MCP-driven:
   - attach `bin/mcp.ts`
   - use `kb_search`, `kb_search_file`, `kb_read_note`, and `kb_refresh`
@@ -42,6 +46,7 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
 - Ingestion:
   - `bun run kb:ingest --url https://example.com/post --tags agents,evals`
 - Maintenance:
+  - `bun run kb:report`
   - `bun run kb:refresh`
   - `bun run kb:watch --lint`
 
@@ -56,6 +61,7 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
 ## Next Layer For Automation
 
 - Daily or on-demand `kb_refresh`
+- recurring `kb_eval` against a gold query set
 - URL ingestion helpers for new articles
 - related-note suggestions based on tags and lexical overlap
 - background concept-page refresh jobs

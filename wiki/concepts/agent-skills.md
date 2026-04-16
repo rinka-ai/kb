@@ -4,6 +4,12 @@ type: concept
 title: Agent Skills
 tags: [agents, skills, context-engineering]
 source_count: 9
+summary: Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
+canonical_for: [agent skills, procedural skills]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.84"
 ---
 
 # Agent Skills

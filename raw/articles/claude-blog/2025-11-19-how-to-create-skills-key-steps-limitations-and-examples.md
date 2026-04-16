@@ -9,7 +9,7 @@ url: https://claude.com/blog/how-to-create-skills-key-steps-limitations-and-exam
 date_published: 2025-11-19
 date_added: 2026-04-09
 tags: [claude-code, skills, skill-authoring, procedural-knowledge]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to write custom skills that extend Claude's capabilities. Follow our 5-step guide with real examples to build specialized workflows for your tasks.
 related: [claude-code, skills, skill-authoring, procedural-knowledge]

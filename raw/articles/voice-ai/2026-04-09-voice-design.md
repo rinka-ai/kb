@@ -9,7 +9,7 @@ url: https://elevenlabs.io/docs/creative-platform/voices/voice-design
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, elevenlabs, voice-design, text-to-speech]
-status: ingested
+status: processed
 quality: high
 summary: "ElevenLabs' Voice Design guide treats voice creation as a prompting problem, showing how accent, persona, emotion, pacing, and audio-quality descriptors shape generated voices from text instructions."
 related: [voice-ai, elevenlabs, voice-design, text-to-speech]

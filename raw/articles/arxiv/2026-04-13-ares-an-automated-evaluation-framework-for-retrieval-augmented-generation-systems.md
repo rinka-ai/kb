@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2311.09476
 date_published:
 date_added: 2026-04-13
 tags: [rag, evaluation, ares, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2311.09476: ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems"
 related: [rag, evaluation, ares, papers]
@@ -27,47 +27,41 @@ related: [rag, evaluation, ares, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2311.09476: ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems
+ARES is an automated RAG evaluation framework that trains lightweight judges on synthetic data, then calibrates evaluation with a small set of human labels.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2311.09476: ARES: An Automated Evaluation Framework for Retrieval-Augmented Generation Systems
-- View PDF
-    HTML (experimental)
-            Abstract:Evaluating retrieval-augmented generation (RAG) systems traditionally relies on hand annotations for input queries, passages to retrieve, and responses to generate.
-- Computation and Language (cs.CL); Artificial Intelligence (cs.AI); Information Retrieval (cs.IR)
-- Cite as:
-          arXiv:2311.09476 [cs.CL]
+- ARES evaluates RAG along context relevance, answer faithfulness, and answer relevance rather than collapsing everything into one score.
+- It bootstraps synthetic training data to fine-tune lightweight LM judges instead of requiring fully manual annotation at evaluation time.
+- It uses prediction-powered inference so a relatively small set of human labels can calibrate automated judgments.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 1 blog link
+- The paper reports results across eight knowledge-intensive tasks spanning KILT, SuperGLUE, and AIS.
+- The judges remain useful under domain shift, including changed query and document types.
+- ARES is most useful when a team wants faster RAG iteration without paying full human-labeling costs on every run.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Saad Mahamood, Naman Mathur, Yixuan Zhang, et al.
+- Companies: Stanford University, Salesforce Research, Amazon AGI
+- Tools: ARES
+- Concepts: RAG evaluation, lightweight judges, prediction-powered inference
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Useful complement to [[rag]] because it treats evaluation as a calibrated systems problem, not only a prompt-level scoring trick.
+- Useful complement to [[ai-agent-evals]] because it shows how to trade some human labels for much faster iteration without giving up all rigor.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which ARES evaluation dimensions should become first-class answer-level checks in this KB?
+- When is judge calibration worth the added complexity relative to simpler retrieval-only metrics?
 
 ## Related
 
 - [[rag]]
+- [[ai-agent-evals]]
 - [[evaluation]]
 - [[ares]]
 - [[papers]]

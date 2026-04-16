@@ -2,8 +2,14 @@
 id: concept-llm-agents
 type: concept
 title: LLM Agents
-tags: [agents, llms, tool-use]
+tags: [agents, llms, tool-use, multi-agent, parallel-agents, web-agents, browser, computer-use]
 source_count: 18
+summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
+canonical_for: [llm agents, multi-agent systems, parallel agents]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.88"
 ---
 
 # LLM Agents

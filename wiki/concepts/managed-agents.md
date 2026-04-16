@@ -2,8 +2,14 @@
 id: concept-managed-agents
 type: concept
 title: Managed Agents
-tags: [agents, infrastructure, sessions, sandboxes]
+tags: [agents, infrastructure, sessions, sandboxes, architecture]
 source_count: 11
+summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, and state.
+canonical_for: [managed agents, durable execution, resumable approvals, decoupling the brain from the hands]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.87"
 ---
 
 # Managed Agents

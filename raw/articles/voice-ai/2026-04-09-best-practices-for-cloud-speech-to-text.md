@@ -9,7 +9,7 @@ url: https://cloud.google.com/speech-to-text/docs/best-practices
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, speech-to-text, audio-quality, google-cloud, input]
-status: ingested
+status: processed
 quality: medium
 summary: Learn the best practices on providing speech data to the Cloud Speech-to-Text API for better efficiency and accuracy.
 related: [voice-ai, speech-to-text, audio-quality, google-cloud, input]

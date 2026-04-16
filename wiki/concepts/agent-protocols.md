@@ -2,8 +2,14 @@
 id: concept-agent-protocols
 type: concept
 title: Agent Protocols
-tags: [agents, protocols, tool-use]
+tags: [agents, protocols, tool-use, mcp, tools]
 source_count: 9
+summary: Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
+canonical_for: [mcp, model context protocol, agent protocol]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.84"
 ---
 
 # Agent Protocols

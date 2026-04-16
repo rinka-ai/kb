@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2309.15217
 date_published:
 date_added: 2026-04-13
 tags: [rag, evaluation, ragas, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2309.15217: Ragas: Automated Evaluation of Retrieval Augmented Generation"
 related: [rag, evaluation, ragas, papers]
@@ -27,48 +27,41 @@ related: [rag, evaluation, ragas, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2309.15217: Ragas: Automated Evaluation of Retrieval Augmented Generation
+Ragas is a reference-free RAG evaluation framework for measuring retrieval focus, faithfulness, and generation quality without requiring exhaustive labeled answers.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2309.15217: Ragas: Automated Evaluation of Retrieval Augmented Generation
-- View PDF
-    HTML (experimental)
-            Abstract:We introduce Ragas (Retrieval Augmented Generation Assessment), a framework for reference-free evaluation of Retrieval Augmented Generation (RAG) pipelines.
-- Comments:
-          Reference-free (not tied to having ground truth available) evaluation framework for retrieval agumented generation
-- Cite as:
-          arXiv:2309.15217 [cs.CL]
+- Ragas treats RAG evaluation as multi-dimensional, separating retrieval quality from generation faithfulness and answer quality.
+- It is reference-free, which makes it useful when exhaustive gold labels are expensive or unavailable.
+- The framework is meant to accelerate iteration on RAG systems rather than replace all human evaluation.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 4 blog links
+- The paper is most useful as an evaluation workflow pattern, not only as a specific metric bundle.
+- It is a good complement to ARES because both papers reduce the human-label bottleneck in different ways.
+- This note matters to the KB because answer-level evaluation will eventually need more than path-ranking metrics.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Shreyashankar, Abhinand, and collaborators from Exploding Gradients
+- Companies: Exploding Gradients
+- Tools: Ragas
+- Concepts: Reference-free evaluation, faithfulness, retrieval focus
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Useful source for deciding which answer-level metrics should complement the current retrieval eval harness.
+- Good reminder that retrieval and generation should not be judged with one blended score.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which Ragas-style metrics are worth adding to the KB beyond retrieval ranking?
+- Where would human evaluation still be necessary even if Ragas-style automated metrics are available?
 
 ## Related
 
 - [[rag]]
+- [[ai-agent-evals]]
 - [[evaluation]]
 - [[ragas]]
 - [[papers]]

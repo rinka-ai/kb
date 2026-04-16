@@ -22,12 +22,14 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[arxiv]]
 - [[github-repos]]
 - [[official-docs]]
+- [[voice-ai-sources]]
 
 ## Recent Summaries
 
 - [[2026-04-10-kb-acquisition-priorities]]
 - [[2026-04-10-mari-sources-to-add-now]]
 - [[2026-04-12-mari-architecture-upgrades-from-new-sources]]
+- [[2026-04-12-elevenlabs-voice-agent-architecture]]
 
 ## Next Suggested Concepts
 
@@ -39,3 +41,10 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[agent-memory]]
 - [[managed-agents]]
 - [[ai-agent-evals]]
+- [[claude-code]]
+- [[agent-frameworks]]
+- [[agent-security]]
+- [[multi-agent-systems]]
+- [[agent-tools]]
+- [[embeddings]]
+- [[payment-integrations]]
