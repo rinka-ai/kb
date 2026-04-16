@@ -9,7 +9,7 @@ url: https://docs.wisprflow.ai/articles/4816967992-how-to-use-command-mode
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, wispr-flow, commands, voice-interface]
-status: ingested
+status: processed
 quality: high
 summary: "Wispr Flow's Command Mode turns dictation into an editing interface, letting users highlight text and speak transformation instructions such as rewrite, translate, summarize, or search."
 related: [voice-ai, wispr-flow, commands, voice-interface]

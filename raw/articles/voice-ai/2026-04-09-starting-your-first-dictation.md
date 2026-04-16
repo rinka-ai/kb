@@ -9,7 +9,7 @@ url: https://docs.wisprflow.ai/articles/6409258247-starting-your-first-dictation
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, wispr-flow, dictation, onboarding]
-status: ingested
+status: processed
 quality: high
 summary: "Wispr Flow's onboarding guide documents the core interaction model for dictation: place the cursor in any text field, hold the hotkey, speak naturally, and release to paste formatted text."
 related: [voice-ai, wispr-flow, dictation, onboarding]

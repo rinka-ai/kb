@@ -6,10 +6,10 @@ path: raw/articles/voice-ai/2026-04-12-server-tools.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/customization/tools/server-tools
-date_published:
+date_published: 
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, tools, server-tools]
-status: ingested
+status: processed
 quality: medium
 summary: Connect your assistant to external data & systems.
 related: [voice-ai, elevenlabs, voice-agents, tools, server-tools]

@@ -6,10 +6,10 @@ path: raw/articles/voice-ai/2026-04-12-simulate-conversations.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/guides/simulate-conversation
-date_published:
+date_published: 
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, simulation]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to test and evaluate your ElevenLabs agent with simulated conversations
 related: [voice-ai, elevenlabs, voice-agents, simulation]

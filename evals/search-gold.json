@@ -1,0 +1,266 @@
+[
+  {
+    "id": "managed-agents",
+    "query": "managed agents decoupling the brain from the hands",
+    "preferredPaths": [
+      "raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md",
+      "wiki/concepts/managed-agents.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/managed-agents.md",
+      "raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md"
+    ]
+  },
+  {
+    "id": "rag-overview",
+    "query": "retrieval augmented generation pipeline",
+    "preferredPaths": ["wiki/concepts/rag.md"],
+    "relevantPaths": [
+      "wiki/concepts/rag.md",
+      "raw/articles/arxiv/2026-04-13-retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks.md",
+      "raw/articles/anthropic-engineering/2024-09-19-introducing-contextual-retrieval.md"
+    ]
+  },
+  {
+    "id": "mcp",
+    "query": "model context protocol repo",
+    "preferredPaths": [
+      "raw/articles/github-repos/2026-04-10-model-context-protocol.md",
+      "wiki/concepts/agent-protocols.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-protocols.md",
+      "raw/articles/github-repos/2026-04-10-model-context-protocol.md"
+    ]
+  },
+  {
+    "id": "claude-code-hooks",
+    "query": "claude code hooks automation",
+    "preferredPaths": [
+      "raw/articles/claude-blog/2025-12-11-claude-code-power-user-customization-how-to-configure-hooks.md",
+      "wiki/concepts/claude-code.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/claude-code.md",
+      "raw/articles/claude-blog/2025-12-11-claude-code-power-user-customization-how-to-configure-hooks.md",
+      "raw/articles/anthropic-engineering/2025-04-18-claude-code-best-practices-for-agentic-coding.md"
+    ]
+  },
+  {
+    "id": "agent-security",
+    "query": "agent prompt injection benchmark",
+    "preferredPaths": [
+      "raw/articles/arxiv/2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents.md",
+      "wiki/concepts/agent-security.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-security.md",
+      "raw/articles/arxiv/2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents.md",
+      "raw/articles/github-repos/2026-04-10-agentdojo.md"
+    ]
+  },
+  {
+    "id": "frameworks",
+    "query": "openai agents sdk sessions handoffs human in the loop",
+    "preferredPaths": [
+      "raw/articles/official-docs/2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop.md",
+      "wiki/concepts/agent-frameworks.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-frameworks.md",
+      "raw/articles/official-docs/2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop.md"
+    ]
+  },
+  {
+    "id": "langgraph-durable",
+    "query": "langgraph durable execution persistence human in the loop",
+    "preferredPaths": [
+      "raw/articles/official-docs/2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop.md",
+      "wiki/concepts/agent-frameworks.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-frameworks.md",
+      "raw/articles/official-docs/2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop.md"
+    ]
+  },
+  {
+    "id": "voice-webhooks",
+    "query": "elevenlabs post call webhooks voice agents",
+    "preferredPaths": [
+      "raw/articles/voice-ai/2026-04-12-post-call-webhooks.md",
+      "wiki/concepts/voice-ai.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/voice-ai.md",
+      "raw/articles/voice-ai/2026-04-12-post-call-webhooks.md",
+      "wiki/summaries/2026-04-12-elevenlabs-voice-agent-architecture.md"
+    ]
+  },
+  {
+    "id": "code-execution-mcp",
+    "query": "code execution with mcp building more efficient agents",
+    "preferredPaths": [
+      "raw/articles/anthropic-engineering/2025-11-04-code-execution-with-mcp-building-more-efficient-agents.md",
+      "wiki/concepts/agent-protocols.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-protocols.md",
+      "raw/articles/anthropic-engineering/2025-11-04-code-execution-with-mcp-building-more-efficient-agents.md"
+    ]
+  },
+  {
+    "id": "graph-rag",
+    "query": "graph rag query focused summarization",
+    "preferredPaths": [
+      "raw/articles/arxiv/2026-04-13-from-local-to-global-a-graph-rag-approach-to-query-focused-summarization.md",
+      "wiki/concepts/rag.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/rag.md",
+      "raw/articles/arxiv/2026-04-13-from-local-to-global-a-graph-rag-approach-to-query-focused-summarization.md"
+    ]
+  },
+  {
+    "id": "agent-harnesses",
+    "query": "agent harness orchestration layer context assembly",
+    "preferredPaths": [
+      "raw/articles/langchain-blog/2026-04-16-the-anatomy-of-an-agent-harness.md",
+      "wiki/concepts/agent-harnesses.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-harnesses.md",
+      "raw/articles/langchain-blog/2026-04-16-the-anatomy-of-an-agent-harness.md",
+      "raw/articles/langchain-blog/2026-04-16-your-harness-your-memory.md"
+    ]
+  },
+  {
+    "id": "agent-memory",
+    "query": "agent memory episodic semantic workflow memory",
+    "preferredPaths": [
+      "raw/articles/arxiv/2026-04-12-agent-workflow-memory.md",
+      "wiki/concepts/agent-memory.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-memory.md",
+      "raw/articles/arxiv/2026-04-12-agent-workflow-memory.md",
+      "raw/articles/arxiv/2026-04-12-mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents.md"
+    ]
+  },
+  {
+    "id": "agent-skills",
+    "query": "agent skills prompts projects mcp subagents",
+    "preferredPaths": [
+      "raw/articles/claude-blog/2025-11-13-skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents.md",
+      "wiki/concepts/agent-skills.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-skills.md",
+      "raw/articles/claude-blog/2025-11-13-skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents.md",
+      "raw/articles/claude-blog/2025-11-19-how-to-create-skills-key-steps-limitations-and-examples.md"
+    ]
+  },
+  {
+    "id": "context-engineering",
+    "query": "context engineering prompt compression cache stability",
+    "preferredPaths": [
+      "raw/articles/momo-research/2026-04-09-agentic-context-engineering.md",
+      "wiki/concepts/context-engineering.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/context-engineering.md",
+      "raw/articles/momo-research/2026-04-09-agentic-context-engineering.md",
+      "raw/articles/anthropic-engineering/2025-09-29-effective-context-engineering-for-ai-agents.md"
+    ]
+  },
+  {
+    "id": "context-rot",
+    "query": "context rot long context degradation distractors",
+    "preferredPaths": [
+      "raw/articles/momo-research/2026-04-09-context-rot.md",
+      "wiki/concepts/context-rot.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/context-rot.md",
+      "raw/articles/momo-research/2026-04-09-context-rot.md",
+      "raw/articles/momo-research/2026-04-09-gam-vs-context-rot.md"
+    ]
+  },
+  {
+    "id": "multi-agent-systems",
+    "query": "when to use subagents parallel agents",
+    "preferredPaths": [
+      "raw/articles/claude-blog/2026-04-06-how-and-when-to-use-subagents-in-claude-code.md",
+      "wiki/concepts/multi-agent-systems.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/multi-agent-systems.md",
+      "raw/articles/claude-blog/2026-04-06-how-and-when-to-use-subagents-in-claude-code.md",
+      "raw/articles/claude-blog/2026-01-23-building-multi-agent-systems-when-and-how-to-use-them.md"
+    ]
+  },
+  {
+    "id": "agent-tools",
+    "query": "writing effective tools for agents tool ergonomics schemas",
+    "preferredPaths": [
+      "raw/articles/anthropic-engineering/2025-09-11-writing-effective-tools-for-agents-with-agents.md",
+      "wiki/concepts/agent-tools.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-tools.md",
+      "raw/articles/anthropic-engineering/2025-09-11-writing-effective-tools-for-agents-with-agents.md",
+      "raw/articles/anthropic-engineering/2025-11-04-code-execution-with-mcp-building-more-efficient-agents.md"
+    ]
+  },
+  {
+    "id": "embeddings",
+    "query": "embeddings dense retrieval semantic search openai",
+    "preferredPaths": [
+      "raw/articles/official-docs/2026-04-13-vector-embeddings-openai-api.md",
+      "wiki/concepts/embeddings.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/embeddings.md",
+      "raw/articles/official-docs/2026-04-13-vector-embeddings-openai-api.md",
+      "raw/articles/official-docs/2026-04-13-question-answering-using-embeddings-based-search.md"
+    ]
+  },
+  {
+    "id": "personal-knowledge-bases",
+    "query": "markdown personal knowledge base raw wiki index",
+    "preferredPaths": [
+      "raw/articles/2026-04-08-llm-knowledge-bases.md",
+      "wiki/concepts/personal-knowledge-bases.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/personal-knowledge-bases.md",
+      "raw/articles/2026-04-08-llm-knowledge-bases.md",
+      "raw/articles/momo-research/2026-04-09-momo-research-repo-overview.md"
+    ]
+  },
+  {
+    "id": "research-workflows",
+    "query": "research workflow ingest retrieve synthesize maintain",
+    "preferredPaths": [
+      "raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md",
+      "wiki/concepts/research-workflows.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/research-workflows.md",
+      "raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md",
+      "raw/articles/2026-04-08-llm-knowledge-bases.md"
+    ]
+  },
+  {
+    "id": "payment-integrations",
+    "query": "stripe checkout webhook pci secure payment flow",
+    "preferredPaths": [
+      "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md",
+      "wiki/concepts/payment-integrations.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/payment-integrations.md",
+      "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md",
+      "raw/articles/official-docs/2026-04-12-stripe-integration-security-guide.md"
+    ]
+  }
+]

@@ -9,7 +9,7 @@ url: https://developers.openai.com/cookbook/examples/question_answering_using_em
 date_published:
 date_added: 2026-04-13
 tags: [openai, cookbook, embeddings, retrieval, rag]
-status: ingested
+status: processed
 quality: medium
 summary: Archived OpenAI Cookbook example for embeddings-based question answering over external text.
 related: [openai, cookbook, embeddings, retrieval, rag]

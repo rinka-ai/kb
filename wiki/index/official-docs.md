@@ -38,3 +38,4 @@ This index groups official documentation added to strengthen the KB's coverage o
 - [[managed-agents]]
 - [[agent-memory]]
 - [[llm-agents]]
+- [[payment-integrations]]

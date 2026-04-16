@@ -15,7 +15,9 @@ export interface SearchResult {
   score: number;
   path: string;
   title: string;
+  type: string;
   section: string;
+  matched_sections: string[];
   status: string;
   superseded_by: string;
   tags: string[];

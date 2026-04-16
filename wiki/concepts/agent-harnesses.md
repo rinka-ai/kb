@@ -2,8 +2,14 @@
 id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
-tags: [agents, harnesses, infrastructure]
+tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
 source_count: 10
+summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
+canonical_for: [agent harnesses, orchestration layer, agent tooling]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.86"
 ---
 
 # Agent Harnesses

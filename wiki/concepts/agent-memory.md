@@ -2,8 +2,14 @@
 id: concept-agent-memory
 type: concept
 title: Agent Memory
-tags: [agents, memory, retrieval]
+tags: [agents, memory, retrieval, reinforcement-learning, stateful-agents]
 source_count: 17
+summary: Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time, from editable external stores to learned compact state.
+canonical_for: [agent memory, workflow memory, semantic memory]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.89"
 ---
 
 # Agent Memory

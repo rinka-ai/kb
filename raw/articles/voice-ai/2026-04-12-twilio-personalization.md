@@ -6,10 +6,10 @@ path: raw/articles/voice-ai/2026-04-12-twilio-personalization.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/phone-numbers/twilio-integration/customising-calls
-date_published:
+date_published: 
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, twilio, personalization]
-status: ingested
+status: processed
 quality: medium
 summary: Configure personalization for incoming Twilio calls using webhooks.
 related: [voice-ai, elevenlabs, voice-agents, twilio, personalization]

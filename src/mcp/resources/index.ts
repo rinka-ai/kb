@@ -1,9 +1,15 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { catalogOverviewResource, catalogPageResource } from "./catalog";
+import { healthResource } from "./health";
 import { statsResource } from "./stats";
 import type { ResourceDef } from "./types";
 
-const KB_RESOURCES: ResourceDef[] = [statsResource, catalogOverviewResource, catalogPageResource];
+const KB_RESOURCES: ResourceDef[] = [
+  statsResource,
+  healthResource,
+  catalogOverviewResource,
+  catalogPageResource,
+];
 
 export function registerKbResources(server: McpServer): void {
   for (const resource of KB_RESOURCES) {

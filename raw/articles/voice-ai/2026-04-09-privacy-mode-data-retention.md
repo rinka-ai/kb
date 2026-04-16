@@ -9,7 +9,7 @@ url: https://docs.wisprflow.ai/articles/6274675613-privacy-mode-data-retention
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, wispr-flow, privacy, data-retention, security]
-status: ingested
+status: processed
 quality: high
 summary: "Wispr Flow's Privacy Mode note explains its zero-retention option: dictation is processed for transcription and then discarded instead of being stored or used for model training."
 related: [voice-ai, wispr-flow, privacy, data-retention, security]

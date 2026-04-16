@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2005.11401
 date_published:
 date_added: 2026-04-13
 tags: [rag, retrieval, open-domain-qa, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2005.11401: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks"
 related: [rag, retrieval, open-domain-qa, papers]
@@ -27,46 +27,41 @@ related: [rag, retrieval, open-domain-qa, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2005.11401: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+The original RAG paper combines a seq2seq model with a dense non-parametric memory index, giving language generation explicit retrieval and provenance access.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2005.11401: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
-- Comments:
-          Accepted at NeurIPS 2020
-- Computation and Language (cs.CL); Machine Learning (cs.LG)
-- Cite as:
-          arXiv:2005.11401 [cs.CL]
+- RAG combines parametric generation with explicit non-parametric retrieval so world knowledge can be updated and inspected outside model weights.
+- The paper defines two retrieval-conditioning patterns: one using the same passages across a full generation and another allowing passage changes per token.
+- The approach improves open-domain QA and produces more specific, diverse, and factual generations than strong parametric-only baselines.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 13 blog links
+- This is the canonical architecture source behind much of the later RAG ecosystem.
+- Accepted at NeurIPS 2020.
+- The paper is especially important because it frames provenance and updatability as core motivations for retrieval, not just quality gains.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, et al.
+- Companies: Facebook AI, University College London
+- Tools: RAG, dense retrievers, Wikipedia index
+- Concepts: Parametric memory, non-parametric memory, open-domain QA
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This note should anchor the KB’s use of the term “RAG” whenever later product docs or variants start to blur the core idea.
+- It is also a key provenance source for why retrieval matters for inspectability and updateability, not only answer quality.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which parts of the original RAG framing still apply cleanly to modern hybrid retrieval stacks?
+- When should this KB think in terms of parametric versus non-parametric memory rather than “model versus search”?
 
 ## Related
 
 - [[rag]]
+- [[embeddings]]
 - [[retrieval]]
 - [[open-domain-qa]]
 - [[papers]]

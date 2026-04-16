@@ -6,10 +6,10 @@ path: raw/articles/voice-ai/2026-04-12-retention.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/customization/privacy/retention
-date_published:
+date_published: 
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, privacy, retention]
-status: ingested
+status: processed
 quality: medium
 summary: Control how long your agent retains conversation history and recordings.
 related: [voice-ai, elevenlabs, voice-agents, privacy, retention]

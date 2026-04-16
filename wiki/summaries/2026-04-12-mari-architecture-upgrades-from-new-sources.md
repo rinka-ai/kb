@@ -3,6 +3,11 @@ id: summary-2026-04-12-mari-architecture-upgrades-from-new-sources
 type: summary
 title: Mari Architecture Upgrades From New Sources
 tags: [mari, architecture, agents, workflows, memory, payments]
+summary: Architecture memo on how the new durable-execution, memory, and payments sources should change Mari’s runtime design.
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.82"
 ---
 
 # Mari Architecture Upgrades From New Sources

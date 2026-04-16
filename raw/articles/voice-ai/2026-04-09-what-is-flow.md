@@ -9,7 +9,7 @@ url: https://docs.wisprflow.ai/articles/2772472373-what-is-flow
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, wispr-flow, dictation, product-overview]
-status: ingested
+status: processed
 quality: high
 summary: "Wispr Flow is a system-wide dictation product that transcribes in real time across apps, learns user vocabulary over time, and layers AI editing commands on top of voice input."
 related: [voice-ai, wispr-flow, dictation, product-overview]

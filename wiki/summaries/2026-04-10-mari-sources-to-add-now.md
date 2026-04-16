@@ -3,6 +3,11 @@ id: summary-2026-04-10-mari-sources-to-add-now
 type: summary
 title: Mari Sources For A World-Class Agent
 tags: [mari, agents, research, evals, memory]
+summary: Source prioritization memo for making Mari more durable, memory-rich, interoperable, and evaluation-ready.
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.79"
 ---
 
 # Mari Sources For A World-Class Agent

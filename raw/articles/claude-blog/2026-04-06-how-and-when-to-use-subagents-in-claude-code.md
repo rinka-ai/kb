@@ -9,7 +9,7 @@ url: https://claude.com/blog/how-and-when-to-use-subagents-in-claude-code
 date_published: 2026-04-06
 date_added: 2026-04-09
 tags: [claude-code, subagents, agentic-coding, parallel-agents]
-status: ingested
+status: processed
 quality: medium
 summary: When to delegate research, parallelize tasks, or get a fresh review with Claude Code subagents—and when to stick with the main session.
 related: [claude-code, subagents, agentic-coding, parallel-agents]

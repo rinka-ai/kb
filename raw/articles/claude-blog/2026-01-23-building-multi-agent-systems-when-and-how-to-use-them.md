@@ -9,7 +9,7 @@ url: https://claude.com/blog/building-multi-agent-systems-when-and-how-to-use-th
 date_published: 2026-01-23
 date_added: 2026-04-09
 tags: [agents, multi-agent, subagents, architecture]
-status: ingested
+status: processed
 quality: medium
 summary: Most teams don't need multi-agent systems. Learn the three scenarios where they consistently outperform single agents—and how to implement them effectively.
 related: [agents, multi-agent, subagents, architecture]

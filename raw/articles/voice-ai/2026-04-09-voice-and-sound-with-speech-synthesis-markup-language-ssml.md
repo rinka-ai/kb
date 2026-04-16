@@ -9,7 +9,7 @@ url: https://learn.microsoft.com/en-us/azure/ai-services/speech-service/speech-s
 date_published: 
 date_added: 2026-04-09
 tags: [voice-ai, ssml, text-to-speech, azure, audio]
-status: ingested
+status: processed
 quality: medium
 summary: Learn about how you can use Speech Synthesis Markup Language (SSML) elements to customize what your Speech service voice sounds like.
 related: [voice-ai, ssml, text-to-speech, azure, audio]

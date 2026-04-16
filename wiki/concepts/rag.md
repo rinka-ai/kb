@@ -2,8 +2,14 @@
 id: concept-rag
 type: concept
 title: RAG
-tags: [rag, retrieval, knowledge-bases]
+tags: [rag, retrieval, knowledge-bases, dense-retrieval, embeddings]
 source_count: 20
+summary: RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
+canonical_for: [retrieval augmented generation, graph rag, corrective rag, contextual retrieval]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.9"
 ---
 
 # RAG

@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2401.15884
 date_published:
 date_added: 2026-04-13
 tags: [rag, retrieval, crag, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2401.15884: Corrective Retrieval Augmented Generation"
 related: [rag, retrieval, crag, papers]
@@ -27,48 +27,41 @@ related: [rag, retrieval, crag, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2401.15884: Corrective Retrieval Augmented Generation
+CRAG improves RAG robustness by evaluating retrieval quality, triggering corrective actions when evidence is weak, and selectively filtering retrieved information.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2401.15884: Corrective Retrieval Augmented Generation
-- View PDF
-    HTML (experimental)
-            Abstract:Large language models (LLMs) inevitably exhibit hallucinations since the accuracy of generated texts cannot be secured solely by the parametric knowledge they encapsulate.
-- Comments:
-          Update results, add more analysis, and fix typos
-- Cite as:
-          arXiv:2401.15884 [cs.CL]
+- CRAG adds a lightweight retrieval evaluator that estimates whether retrieved documents are good enough to trust.
+- When retrieval is weak, the system can trigger corrective actions such as broader web search.
+- It also decomposes and recomposes retrieved material to preserve useful information while filtering irrelevant text.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: BibTeX formatted citation
+- The paper reports gains across four datasets covering both short-form and long-form generation tasks.
+- CRAG is useful because it focuses on what to do after retrieval goes wrong, not only on improving retrieval before generation.
+- This is one of the strongest robustness-oriented additions in the RAG cluster.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Yunfan Gao, Xinyu Zhang, Zexuan Zhong, et al.
+- Companies: Meta AI, University of Washington, Princeton University
+- Tools: CRAG
+- Concepts: Corrective retrieval, retrieval confidence, web augmentation
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- This note matters because the KB increasingly treats retrieval as a pipeline with confidence checks and fallback paths, not a one-shot top-k lookup.
+- Useful contrast with [[2024-09-19-introducing-contextual-retrieval]], which focuses more on pre-index enrichment.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which CRAG-style corrective steps are realistic for this KB’s search flow?
+- When should low-confidence retrieval trigger fallback behavior instead of simply returning weaker evidence?
 
 ## Related
 
 - [[rag]]
+- [[ai-agent-evals]]
 - [[retrieval]]
 - [[crag]]
 - [[papers]]

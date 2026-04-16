@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2212.10496
 date_published:
 date_added: 2026-04-13
 tags: [retrieval, hyde, dense-retrieval, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2212.10496: Precise Zero-Shot Dense Retrieval without Relevance Labels"
 related: [retrieval, hyde, dense-retrieval, papers]
@@ -27,46 +27,42 @@ related: [retrieval, hyde, dense-retrieval, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2212.10496: Precise Zero-Shot Dense Retrieval without Relevance Labels
+HyDE improves zero-shot dense retrieval by generating a hypothetical relevant document, embedding it, and retrieving real neighbors without supervised relevance labels.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2212.10496: Precise Zero-Shot Dense Retrieval without Relevance Labels
-- View PDF
-            Abstract:While dense retrieval has been shown effective and efficient across tasks and languages, it remains difficult to create effective fully zero-shot dense retrieval systems when no relevance label is available.
-- Information Retrieval (cs.IR); Computation and Language (cs.CL)
-- Cite as:
-          arXiv:2212.10496 [cs.IR]
+- HyDE sidesteps the lack of labels in zero-shot dense retrieval by prompting a model to imagine a relevant document first.
+- The hypothetical document is encoded into embedding space, where nearby real documents can be retrieved without trusting the generated text literally.
+- The method outperforms Contriever and competes with fine-tuned retrievers across multiple tasks and languages.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 1 blog link
+- HyDE is one of the clearest examples of query expansion that stays useful even when no relevance labels exist.
+- The dense bottleneck is important because it filters false details from the hypothetical document instead of treating the generated text as evidence.
+- This matters to the KB because retrieval quality can improve without needing a full supervised training pipeline.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Luyu Gao, Xueguang Ma, Jimmy Lin, Jamie Callan
+- Companies: Carnegie Mellon University, University of Waterloo
+- Tools: HyDE, Contriever
+- Concepts: Zero-shot dense retrieval, hypothetical documents, query expansion
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Useful source for any future retrieval upgrades that want query expansion before adding a full dense index or reranker.
+- Also helps explain why generated intermediate artifacts can help retrieval without becoming trusted evidence themselves.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Would HyDE-style query expansion improve hard KB searches enough to justify the extra inference step?
+- Which current failure cases here are really “query formulation” failures rather than “ranking” failures?
 
 ## Related
 
 - [[retrieval]]
+- [[rag]]
+- [[embeddings]]
 - [[hyde]]
 - [[dense-retrieval]]
 - [[papers]]

@@ -9,7 +9,7 @@ url: https://arxiv.org/abs/2004.04906
 date_published:
 date_added: 2026-04-13
 tags: [retrieval, dense-retrieval, open-domain-qa, papers]
-status: ingested
+status: processed
 quality: medium
 summary: "Abstract page for arXiv paper 2004.04906: Dense Passage Retrieval for Open-Domain Question Answering"
 related: [retrieval, dense-retrieval, open-domain-qa, papers]
@@ -27,47 +27,42 @@ related: [retrieval, dense-retrieval, open-domain-qa, papers]
 
 ## TL;DR
 
-Abstract page for arXiv paper 2004.04906: Dense Passage Retrieval for Open-Domain Question Answering
+DPR is a foundational dense retrieval paper showing that dual-encoder passage retrieval can beat BM25 on open-domain question answering benchmarks.
 
 ## Key Claims
 
-- Abstract page for arXiv paper 2004.04906: Dense Passage Retrieval for Open-Domain Question Answering
-- View PDF
-            Abstract:Open-domain question answering relies on efficient passage retrieval to select candidate contexts, where traditional sparse vector space models, such as TF-IDF or BM25, are the de facto method.
-- Cite as:
-          arXiv:2004.04906 [cs.CL]
-- (or
-              arXiv:2004.04906v3 [cs.CL] for this version)
+- DPR shows that dense retrieval can be practical, not only conceptually attractive, for open-domain QA.
+- A simple dual-encoder setup outperforms a strong Lucene-BM25 baseline by roughly 9% to 19% absolute in top-20 passage accuracy across evaluated datasets.
+- Stronger retrieval also lifts end-to-end QA quality, making the retriever a first-class system component rather than a preprocessing detail.
 
 ## Important Details
 
-- Source captured from arxiv.org.
-- Section heading: quick links
-- Section heading: Submission history
-- Section heading: Access Paper:
-- Section heading: References & Citations
-- Section heading: 5 blog links
+- DPR is useful in this KB as the dense-retrieval counterpart to BM25 and later hybrid or reranking approaches.
+- It anchors the original “dense retriever” lineage behind many later RAG systems.
+- The paper is especially important because it separates retriever design from generator design.
 
 ## Entities
 
-- People: Unknown
-- Companies: Unknown
-- Tools: Unknown
-- Concepts: Unknown
+- People: Vladimir Karpukhin, Barlas Oğuz, Sewon Min, et al.
+- Companies: Facebook AI
+- Tools: DPR, Lucene-BM25
+- Concepts: Dense retrieval, dual encoders, open-domain QA
 
 ## My Notes
 
-- Imported automatically by `bun run kb:ingest`.
-- Review and refine the structured sections before relying on this note heavily.
+- Useful source for the KB’s retrieval stack because it explains why embedding-based retrieval became foundational in open-domain QA and RAG.
+- Also useful as a reminder that dense retrieval should be evaluated against lexical baselines, not only compared to weaker strawmen.
 
 ## Open Questions
 
-- What claims in this source matter most for the current knowledge base?
-- Which concept pages should link back to this note?
+- Which of this paper’s wins still survive against newer hybrid and reranking-heavy retrieval stacks?
+- At what corpus sizes or query types would DPR-style retrieval actually improve this KB?
 
 ## Related
 
 - [[retrieval]]
+- [[rag]]
+- [[embeddings]]
 - [[dense-retrieval]]
 - [[open-domain-qa]]
 - [[papers]]

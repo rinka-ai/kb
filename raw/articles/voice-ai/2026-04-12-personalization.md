@@ -6,10 +6,10 @@ path: raw/articles/voice-ai/2026-04-12-personalization.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/customization/personalization
-date_published:
+date_published: 
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, personalization]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to personalize your agent's behavior using dynamic variables and overrides.
 related: [voice-ai, elevenlabs, voice-agents, personalization]

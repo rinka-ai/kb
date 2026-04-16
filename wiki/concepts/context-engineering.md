@@ -2,8 +2,14 @@
 id: concept-context-engineering
 type: concept
 title: Context Engineering
-tags: [agents, memory, long-context]
+tags: [agents, memory, long-context, compression]
 source_count: 10
+summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
+canonical_for: [context engineering, context compression]
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.89"
 ---
 
 # Context Engineering

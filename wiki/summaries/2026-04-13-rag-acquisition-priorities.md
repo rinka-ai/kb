@@ -3,6 +3,11 @@ id: summary-2026-04-13-rag-acquisition-priorities
 type: summary
 title: RAG Acquisition Priorities
 tags: [rag, retrieval, acquisition, knowledge-base]
+summary: Rationale and reading order for the core RAG paper, retriever, evaluation, and GraphRAG additions.
+review_status: reviewed
+last_reviewed: 2026-04-16
+review_due: 2026-05-16
+confidence: "0.86"
 ---
 
 # RAG Acquisition Priorities

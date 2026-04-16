@@ -9,7 +9,7 @@ url: https://claude.com/blog/how-to-configure-hooks
 date_published: 2025-12-11
 date_added: 2026-04-09
 tags: [claude-code, hooks, customization, workflows]
-status: ingested
+status: processed
 quality: medium
 summary: Learn how to configure Claude Code hooks to automate repetitive tasks, enforce project rules, and inject dynamic context into your coding sessions.
 related: [claude-code, hooks, customization, workflows]

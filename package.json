@@ -7,7 +7,9 @@
   "scripts": {
     "kb:build": "bun bin/build.ts",
     "kb:search": "bun bin/search.ts",
+    "kb:eval": "bun bin/eval.ts",
     "kb:lint": "bun bin/lint.ts",
+    "kb:report": "bun bin/report.ts",
     "kb:refresh": "bun bin/refresh.ts",
     "kb:ingest": "bun bin/ingest.ts",
     "kb:mcp": "bun bin/mcp.ts",

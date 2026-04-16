@@ -9,7 +9,7 @@ url: https://claude.com/blog/skills-explained
 date_published: 2025-11-13
 date_added: 2026-04-09
 tags: [claude-code, skills, prompts, mcp, subagents]
-status: ingested
+status: processed
 quality: medium
 summary: Skills are an increasingly powerful tool for creating custom AI workflows and agents, but where do they fit in the Claude stack? We explain what tool to use when - and how they all work together.
 related: [claude-code, skills, prompts, mcp, subagents]
