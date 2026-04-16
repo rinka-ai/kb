@@ -11,6 +11,8 @@ import { registerTraceTool } from "./trace";
 
 export interface RegisterKbToolsOptions {
   enableWrites: boolean;
+  enableSearchTelemetry?: boolean;
+  searchObservationLogPath?: string;
 }
 
 export function registerKbTools(server: McpServer, options: RegisterKbToolsOptions): void {
@@ -18,7 +20,10 @@ export function registerKbTools(server: McpServer, options: RegisterKbToolsOptio
   registerContextTool(server);
   registerGapTool(server);
   registerHandoffTool(server);
-  registerSearchTools(server);
+  registerSearchTools(server, {
+    enableSearchTelemetry: options.enableSearchTelemetry ?? false,
+    searchObservationLogPath: options.searchObservationLogPath,
+  });
   registerReadTool(server);
   registerRefreshTool(server);
   registerTraceTool(server);

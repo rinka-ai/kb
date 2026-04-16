@@ -97,6 +97,7 @@ This repo includes lightweight local tooling for knowledge retrieval and mainten
 - `bun run kb:search --query "..."`: retrieve relevant notes by free-text query
 - `bun run kb:search --query "..." --include-superseded`: include notes that were marked as outdated or contradicted
 - `bun run kb:search --file /absolute/path/to/file`: retrieve relevant notes using a local file as context
+- `bun run kb:search-report`: summarize repeated remote HTTP MCP search observations so retrieval work can target real bad queries
 - `bun run kb:lint`: check for missing metadata and dangling wiki links
 - `bun run kb:refresh`: rebuild index and run lint checks together
 - `bun run kb:ingest --url <url>`: ingest a new article or post into the source-note schema
@@ -115,6 +116,7 @@ When working in this repository as an agent:
 4. Run `bun run kb:lint` before wrapping up substantial KB edits.
 5. If the `ai-research-kb` MCP server is attached, prefer `kb_build_context`, `kb_find_gaps`, `kb_trace_claim`, `kb_make_handoff`, `kb_search`, `kb_search_file`, `kb_list_catalog`, and `kb_read_note` over ad hoc shell lookups. On shared HTTP MCP, prefer passing raw text to `kb_search_file` instead of a local laptop path.
 6. When contradictory knowledge appears, update the canonical note and mark the older source note `status: superseded` so it drops out of default retrieval.
+7. When improving retrieval for shared HTTP MCP usage, review `bun run kb:search-report` and prioritize repeated zero-result, low-confidence, ambiguous, or fuzzy-only queries before changing ranking heuristics.
 
 ## Codex And Claude Code Awareness
 
@@ -123,3 +125,4 @@ When working in this repository as an agent:
 - Both agents should treat KB lookup as part of the default workflow for research, architecture, eval, tool-use, and agent-systems tasks.
 - When configuring external repos, point them at `bin/mcp.ts` in this repository through their MCP client config rather than relying only on shell snippets.
 - For team-shared access, prefer the hosted HTTP MCP endpoint while keeping local stdio for personal use.
+- The hosted HTTP MCP path may capture privacy-safe search observations for retrieval tuning. It records query/result diagnostics and `kb_search_file` context labels, but not raw pasted file text.

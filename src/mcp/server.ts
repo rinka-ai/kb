@@ -7,6 +7,8 @@ export { KB_MCP_SERVER_NAME, KB_MCP_SERVER_VERSION } from "./constants";
 
 export interface CreateKbMcpServerOptions {
   enableWrites?: boolean;
+  enableSearchTelemetry?: boolean;
+  searchObservationLogPath?: string;
 }
 
 export function createKbMcpServer(options: CreateKbMcpServerOptions = {}): McpServer {
@@ -17,6 +19,8 @@ export function createKbMcpServer(options: CreateKbMcpServerOptions = {}): McpSe
 
   registerKbTools(server, {
     enableWrites: options.enableWrites ?? true,
+    enableSearchTelemetry: options.enableSearchTelemetry ?? false,
+    searchObservationLogPath: options.searchObservationLogPath,
   });
   registerKbResources(server);
 

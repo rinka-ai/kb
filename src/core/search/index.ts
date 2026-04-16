@@ -2,6 +2,7 @@ import { Command } from "commander";
 import type { SearchArgs } from "./types";
 
 export {
+  buildQueryPlan,
   ensureIndex,
   formatSearchResults,
   searchIndex,

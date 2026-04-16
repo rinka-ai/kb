@@ -26,6 +26,10 @@ This repository now supports both:
 - `KB_MAX_BODY_BYTES`: maximum accepted MCP POST body size. Default: `1048576`
 - `KB_RATE_LIMIT_WINDOW_MS`: per-client rate-limit window in milliseconds. Default: `60000`
 - `KB_RATE_LIMIT_MAX_REQUESTS`: max MCP requests per client within the window. Default: `120`
+- `KB_SEARCH_TELEMETRY_ENABLED`: `true` or `false`. Default: `true`
+- `KB_SEARCH_OBSERVATION_LOG_PATH`: optional override for the NDJSON search-observation log path
+- `KB_SEARCH_TELEMETRY_SALT`: optional salt used to hash client identifiers instead of storing raw IPs
+- `KB_ADMIN_TOKEN`: optional bearer token that enables `/admin/search-observations/report` and `/admin/search-observations/export`
 
 ## Local HTTP Run
 
@@ -84,3 +88,6 @@ That lets each client keep:
 - On Railway, the default and safest model is read-only shared retrieval. Image filesystem writes are not your canonical source of truth.
 - For read-only hosted KB access, prefer stateless HTTP sessions. They avoid in-memory session loss and SSE edge timeouts on platforms like Railway.
 - The hosted server now applies a request-size cap and a simple per-client rate limit by default. Tune them with `KB_MAX_BODY_BYTES`, `KB_RATE_LIMIT_WINDOW_MS`, and `KB_RATE_LIMIT_MAX_REQUESTS` if needed.
+- Hosted search telemetry is useful for retrieval tuning. Review recurring zero-result, fuzzy-only, or low-confidence queries with `bun run kb:search-report`.
+- The observation log stores query text, search diagnostics, and top results. For `kb_search_file`, it stores the `contextLabel` and text size only, not the raw pasted file content.
+- If you need to inspect hosted telemetry remotely, set `KB_ADMIN_TOKEN` and fetch the protected admin report/export routes over HTTPS instead of logging into the host just to read `.ndjson` files.

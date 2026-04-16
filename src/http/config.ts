@@ -34,6 +34,10 @@ const KbHttpConfigSchema = z.object({
   maxBodyBytes: z.coerce.number().int().positive().default(1_048_576),
   rateLimitWindowMs: z.coerce.number().int().nonnegative().default(60_000),
   rateLimitMaxRequests: z.coerce.number().int().nonnegative().default(120),
+  searchTelemetryEnabled: booleanString("true"),
+  searchObservationLogPath: z.string().optional(),
+  searchTelemetrySalt: z.string().optional(),
+  adminToken: z.string().optional(),
 });
 
 export type KbHttpConfig = z.infer<typeof KbHttpConfigSchema>;
@@ -49,5 +53,9 @@ export function readKbHttpConfig(env: NodeJS.ProcessEnv = process.env): KbHttpCo
     maxBodyBytes: env.KB_MAX_BODY_BYTES,
     rateLimitWindowMs: env.KB_RATE_LIMIT_WINDOW_MS,
     rateLimitMaxRequests: env.KB_RATE_LIMIT_MAX_REQUESTS,
+    searchTelemetryEnabled: env.KB_SEARCH_TELEMETRY_ENABLED,
+    searchObservationLogPath: env.KB_SEARCH_OBSERVATION_LOG_PATH,
+    searchTelemetrySalt: env.KB_SEARCH_TELEMETRY_SALT,
+    adminToken: env.KB_ADMIN_TOKEN,
   });
 }

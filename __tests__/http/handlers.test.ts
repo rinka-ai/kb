@@ -1,8 +1,15 @@
 import { describe, expect, test } from "bun:test";
+import { mkdtempSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { Hono } from "hono";
 import { createHealthHandler } from "../../src/http/handlers/health";
 import { registerMcpRoutes } from "../../src/http/handlers/mcp";
 import { createRootHandler } from "../../src/http/handlers/root";
+import {
+  createSearchObservationExportHandler,
+  createSearchObservationReportHandler,
+} from "../../src/http/handlers/search-observations";
 import { createHttpMetrics } from "../../src/http/metrics";
 import { InMemoryRateLimiter } from "../../src/http/rate-limit";
 
@@ -247,6 +254,114 @@ describe("http handlers", () => {
     expect(second.headers.get("retry-after")).toBeTruthy();
     expect(await second.json()).toMatchObject({
       error: { message: "Rate limit exceeded. Try again later." },
+    });
+  });
+
+  test("search observation admin report requires a bearer token", async () => {
+    const app = new Hono();
+    app.get(
+      "/admin/search-observations/report",
+      createSearchObservationReportHandler({
+        adminToken: "secret-token",
+      }),
+    );
+
+    const res = await app.request("/admin/search-observations/report");
+    expect(res.status).toBe(401);
+    expect(res.headers.get("www-authenticate")).toContain("Bearer");
+    expect(await res.json()).toMatchObject({
+      error: { message: "Unauthorized." },
+    });
+  });
+
+  test("search observation admin routes expose report and filtered export", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "kb-search-observations-"));
+    const logPath = join(directory, "search-observations.ndjson");
+    writeFileSync(
+      logPath,
+      [
+        JSON.stringify({
+          observedAt: "2026-04-16T10:00:00.000Z",
+          tool: "kb_search",
+          rawQuery: "bad fuzzy query",
+          queryText: "bad fuzzy query",
+          filePathProvided: false,
+          includeSuperseded: false,
+          top: 5,
+          rebuildIfStale: true,
+          exactTerms: ["bad", "fuzzy", "query"],
+          expandedTerms: ["approximate"],
+          results: [],
+          resultCount: 0,
+          zeroResults: true,
+          top1FuzzyOnly: false,
+          top12ScoreGap: null,
+          request: {
+            transport: "http",
+            requestId: "req-1",
+            receivedAt: "2026-04-16T10:00:00.000Z",
+          },
+        }),
+        JSON.stringify({
+          observedAt: "2026-04-16T10:05:00.000Z",
+          tool: "kb_search_file",
+          queryText: "context label billing",
+          contextLabel: "billing-debug.md",
+          filePathProvided: false,
+          textBytes: 512,
+          includeSuperseded: false,
+          top: 5,
+          rebuildIfStale: true,
+          exactTerms: ["billing"],
+          expandedTerms: [],
+          results: [],
+          resultCount: 0,
+          zeroResults: true,
+          top1FuzzyOnly: false,
+          top12ScoreGap: null,
+          request: {
+            transport: "http",
+            requestId: "req-2",
+            receivedAt: "2026-04-16T10:05:00.000Z",
+          },
+        }),
+      ].join("\n"),
+      "utf-8",
+    );
+
+    const app = new Hono();
+    app.get(
+      "/admin/search-observations/report",
+      createSearchObservationReportHandler({
+        adminToken: "secret-token",
+        logPath,
+      }),
+    );
+    app.get(
+      "/admin/search-observations/export",
+      createSearchObservationExportHandler({
+        adminToken: "secret-token",
+        logPath,
+      }),
+    );
+
+    const reportRes = await app.request("/admin/search-observations/report?format=text", {
+      headers: { Authorization: "Bearer secret-token" },
+    });
+    expect(reportRes.status).toBe(200);
+    expect(await reportRes.text()).toContain("KB search observation report");
+
+    const exportRes = await app.request(
+      "/admin/search-observations/export?format=json&tool=kb_search&query=fuzzy",
+      {
+        headers: { Authorization: "Bearer secret-token" },
+      },
+    );
+    expect(exportRes.status).toBe(200);
+    expect(await exportRes.json()).toMatchObject({
+      totalMatching: 1,
+      returned: 1,
+      observations: [{ rawQuery: "bad fuzzy query", tool: "kb_search" }],
     });
   });
 });

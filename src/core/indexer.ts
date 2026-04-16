@@ -2,7 +2,14 @@ import { mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { basename, relative } from "node:path";
 import { globSync } from "glob";
 import { parseFrontmatter } from "./frontmatter";
-import { extractSections, extractTitle, slugify, stripMarkdown, tokenize } from "./markdown";
+import {
+  extractSections,
+  extractTitle,
+  slugify,
+  stripMarkdown,
+  tokenize,
+  tokenizeForSearch,
+} from "./markdown";
 import { OUTPUT_DIR, OUTPUT_FILE, ROOT, SOURCE_DIRS } from "./paths";
 import type { Frontmatter, KbChunk, KbIndex } from "./types";
 
@@ -59,7 +66,8 @@ function buildChunk(params: {
   ]
     .filter(Boolean)
     .join(" ");
-  const tokens = tokenize(searchable);
+  const rawTokens = tokenize(searchable);
+  const tokens = tokenizeForSearch(searchable);
 
   return {
     id: params.chunkId,
@@ -87,7 +95,7 @@ function buildChunk(params: {
     confidence: stringValue(params.metadata, "confidence"),
     text,
     term_freq: buildTermFreq(tokens),
-    doc_len: tokens.length,
+    doc_len: rawTokens.length,
   };
 }
 
