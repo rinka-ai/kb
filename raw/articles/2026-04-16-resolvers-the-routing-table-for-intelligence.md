@@ -12,7 +12,7 @@ tags: [agents, routing, context-engineering, memory, skills, governance, evals]
 status: processed
 quality: medium
 summary: A user-provided architecture essay arguing that agent systems need explicit resolver documents that route tasks, context, skills, and filing decisions instead of overloading the system prompt.
-related: [agent-skills, agent-harnesses, agent-memory, context-engineering, ai-agent-evals, workflows]
+related: [resolvers, agent-skills, agent-harnesses, agent-memory, context-engineering, ai-agent-evals, workflows]
 ---
 
 # Resolvers: The Routing Table for Intelligence
