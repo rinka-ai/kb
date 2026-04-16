@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-beir-a-heterogenous-benchmark-for-zero-shot-
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2104.08663
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [retrieval, benchmarks, beir, papers]
 status: ingested

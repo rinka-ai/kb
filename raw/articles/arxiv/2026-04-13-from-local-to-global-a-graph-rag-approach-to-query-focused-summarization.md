@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-from-local-to-global-a-graph-rag-approach-to
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2404.16130
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [rag, graphrag, summarization, papers]
 status: ingested

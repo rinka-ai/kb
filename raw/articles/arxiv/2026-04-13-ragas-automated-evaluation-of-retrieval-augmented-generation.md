@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-ragas-automated-evaluation-of-retrieval-augm
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2309.15217
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [rag, evaluation, ragas, papers]
 status: ingested

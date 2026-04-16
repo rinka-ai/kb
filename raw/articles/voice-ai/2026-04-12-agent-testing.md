@@ -6,7 +6,7 @@ path: raw/articles/voice-ai/2026-04-12-agent-testing.md
 author: ElevenLabs
 publisher: ElevenLabs Docs
 url: https://elevenlabs.io/docs/eleven-agents/customization/agent-testing
-date_published: 
+date_published:
 date_added: 2026-04-12
 tags: [voice-ai, elevenlabs, voice-agents, testing]
 status: ingested

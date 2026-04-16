@@ -6,7 +6,7 @@ path: raw/articles/official-docs/2026-04-13-vector-embeddings-openai-api.md
 author: Unknown
 publisher: developers.openai.com
 url: https://developers.openai.com/api/docs/guides/embeddings
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [openai, embeddings, retrieval, rag]
 status: ingested

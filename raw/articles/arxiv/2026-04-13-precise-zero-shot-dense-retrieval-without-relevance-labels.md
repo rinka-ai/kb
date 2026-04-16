@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-precise-zero-shot-dense-retrieval-without-re
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2212.10496
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [retrieval, hyde, dense-retrieval, papers]
 status: ingested

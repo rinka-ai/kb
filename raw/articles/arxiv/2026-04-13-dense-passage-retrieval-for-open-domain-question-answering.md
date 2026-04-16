@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-dense-passage-retrieval-for-open-domain-ques
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2004.04906
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [retrieval, dense-retrieval, open-domain-qa, papers]
 status: ingested

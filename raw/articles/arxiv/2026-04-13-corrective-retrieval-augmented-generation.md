@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-corrective-retrieval-augmented-generation.md
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2401.15884
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [rag, retrieval, crag, papers]
 status: ingested

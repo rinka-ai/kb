@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-ares-an-automated-evaluation-framework-for-r
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2311.09476
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [rag, evaluation, ares, papers]
 status: ingested

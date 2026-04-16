@@ -3,7 +3,7 @@ id: concept-rag
 type: concept
 title: RAG
 tags: [rag, retrieval, knowledge-bases]
-source_count: 18
+source_count: 20
 ---
 
 # RAG
@@ -64,8 +64,10 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 
 - [[2024-09-19-introducing-contextual-retrieval]]
 - [[2026-04-08-llm-knowledge-bases]]
+- [[2026-04-12-knowledge-base]]
 - [[2026-04-09-context-rot]]
 - [[2026-04-09-longllmlingua]]
+- [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
 - [[2026-04-09-gam-vs-context-rot]]
 - [[2026-04-13-retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks]]
 - [[2026-04-13-dense-passage-retrieval-for-open-domain-question-answering]]

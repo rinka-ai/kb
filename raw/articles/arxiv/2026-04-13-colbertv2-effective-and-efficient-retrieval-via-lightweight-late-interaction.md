@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-colbertv2-effective-and-efficient-retrieval-
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2112.01488
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [retrieval, late-interaction, colbert, papers]
 status: ingested

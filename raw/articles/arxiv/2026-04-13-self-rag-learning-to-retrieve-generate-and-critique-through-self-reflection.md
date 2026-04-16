@@ -6,7 +6,7 @@ path: raw/articles/arxiv/2026-04-13-self-rag-learning-to-retrieve-generate-and-c
 author: Unknown
 publisher: arXiv.org
 url: https://arxiv.org/abs/2310.11511
-date_published: 
+date_published:
 date_added: 2026-04-13
 tags: [rag, retrieval, self-rag, papers]
 status: ingested
