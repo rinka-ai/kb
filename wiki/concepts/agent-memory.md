@@ -3,14 +3,14 @@ id: concept-agent-memory
 type: concept
 title: Agent Memory
 tags: [agents, memory, retrieval]
-source_count: 13
+source_count: 17
 ---
 
 # Agent Memory
 
 ## Summary
 
-Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen an important distinction: memory is not only storage, but also policy about what stays in the hot path, what gets consolidated in the background, and what becomes a reusable procedure.
+Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen three related distinctions: memory is not only storage but also policy about what stays in the hot path, "memory" itself often needs working/episodic/semantic/personal separation, and memory ownership is partly a harness question rather than only a storage question.
 
 ## Main Families
 
@@ -20,11 +20,27 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Learned internal memory: fixed-length or compact state updated through reinforcement learning.
 - Memory-tier systems: agents that treat context windows as a fast working tier and external stores or files as slower but larger memory.
 
+## Operational Layers
+
+- Working memory: live task state, open hypotheses, and resumable checkpoints that matter now and decay quickly.
+- Episodic memory: what happened in prior runs, including failures, decisions, and outcomes.
+- Semantic memory: abstractions, lessons, and durable design decisions that outlive any one episode.
+- Personal memory: user-specific preferences and conventions that should not be mistaken for universal best practice.
+
+## Maintenance Patterns
+
+- Failures often need higher salience than routine successes so they are easier to retrieve before repetition.
+- Consolidation can happen in the background rather than only on the hot path.
+- Promotion from episodic to semantic memory should be evidence-based rather than automatic on every run.
+- Personal preference memory should remain separate from general lessons to avoid overgeneralizing one user's style into doctrine.
+- Memory portability depends on who controls the harness layer that stores, retrieves, and migrates it.
+
 ## Important Distinctions
 
 - Session history is not the same thing as retrieved context.
 - Factual or profile memory differs from workflow memory about how to do a task.
 - Editable, provenance-rich memory differs from learned latent memory.
+- Working memory should usually be archived or reset, not treated as durable truth.
 - Lightweight guide memory can coexist with deeper runtime retrieval.
 - Paging, summarization, and interrupt handling are memory mechanisms too, not just implementation details.
 - Hot-path memory tools and background consolidation jobs solve different problems and should not be collapsed into one layer.
@@ -52,3 +68,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - [[2026-04-12-agent-workflow-memory]]
 - [[2026-04-12-mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents]]
 - [[2026-04-12-memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent]]
+- [[2026-04-16-externalization-in-llm-agents-a-unified-review-of-memory-skills-protocols-and-harness-engineering]]
+- [[2026-04-16-your-harness-your-memory]]
+- [[2026-04-16-agentic-stack]]
+- [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
