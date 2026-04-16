@@ -5,6 +5,11 @@ import {
   type WebStandardStreamableHTTPServerTransportOptions,
 } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
 import type { Hono } from "hono";
+import {
+  createHttpRequestContext,
+  hashClientIdentifier,
+  runWithRequestContext,
+} from "../../core/request-context";
 import { createKbMcpServer } from "../../mcp/server";
 import type { HttpMetrics } from "../metrics";
 import { recordMcpResponse } from "../metrics";
@@ -25,6 +30,9 @@ interface RegisterMcpRoutesOptions {
   metrics: HttpMetrics;
   rateLimiter?: InMemoryRateLimiter;
   sessions: Map<string, SessionState>;
+  enableSearchTelemetry?: boolean;
+  searchObservationLogPath?: string;
+  searchTelemetrySalt?: string;
 }
 
 function jsonRpcError(
@@ -157,10 +165,16 @@ async function readParsedBody(req: Request, maxBodyBytes: number): Promise<Handl
 async function createStatefulSession(
   sessions: Map<string, SessionState>,
   enableWrites: boolean,
+  enableSearchTelemetry: boolean,
+  searchObservationLogPath: string | undefined,
   allowedHosts?: string[],
   allowedOrigins?: string[],
 ): Promise<SessionState> {
-  const server = createKbMcpServer({ enableWrites });
+  const server = createKbMcpServer({
+    enableWrites,
+    enableSearchTelemetry,
+    searchObservationLogPath,
+  });
   const cleanupSession = (sessionId?: string) => {
     if (sessionId) sessions.delete(sessionId);
   };
@@ -187,11 +201,17 @@ async function createStatefulSession(
 async function handleStatelessPost(
   req: Request,
   enableWrites: boolean,
+  enableSearchTelemetry: boolean,
+  searchObservationLogPath: string | undefined,
   allowedHosts?: string[],
   allowedOrigins?: string[],
   options?: HandleRequestOptions,
 ): Promise<Response> {
-  const server = createKbMcpServer({ enableWrites });
+  const server = createKbMcpServer({
+    enableWrites,
+    enableSearchTelemetry,
+    searchObservationLogPath,
+  });
   const transport = new WebStandardStreamableHTTPServerTransport(
     createTransportOptions(allowedHosts, allowedOrigins, {
       sessionIdGenerator: undefined,
@@ -210,6 +230,8 @@ async function handleStateful(
   req: Request,
   sessions: Map<string, SessionState>,
   enableWrites: boolean,
+  enableSearchTelemetry: boolean,
+  searchObservationLogPath: string | undefined,
   allowedHosts?: string[],
   allowedOrigins?: string[],
   options?: HandleRequestOptions,
@@ -224,7 +246,14 @@ async function handleStateful(
     return existing.transport.handleRequest(req, options);
   }
 
-  const session = await createStatefulSession(sessions, enableWrites, allowedHosts, allowedOrigins);
+  const session = await createStatefulSession(
+    sessions,
+    enableWrites,
+    enableSearchTelemetry,
+    searchObservationLogPath,
+    allowedHosts,
+    allowedOrigins,
+  );
   return session.transport.handleRequest(req, options);
 }
 
@@ -238,89 +267,106 @@ export function registerMcpRoutes({
   metrics,
   rateLimiter,
   sessions,
+  enableSearchTelemetry,
+  searchObservationLogPath,
+  searchTelemetrySalt,
 }: RegisterMcpRoutesOptions): void {
+  const searchTelemetryEnabled = enableSearchTelemetry ?? false;
+
   app.all("/mcp", async (c) => {
     const req = c.req.raw;
     const method = req.method;
+    const clientId = clientAddress(req);
+    const requestContext = createHttpRequestContext({
+      clientHash: hashClientIdentifier(clientId, searchTelemetrySalt),
+      sessionId: req.headers.get("mcp-session-id") ?? undefined,
+      userAgent: req.headers.get("user-agent") ?? undefined,
+    });
 
-    try {
-      if (rateLimiter) {
-        const rate = rateLimiter.consume(clientAddress(req));
-        if (!rate.allowed) {
-          metrics.rateLimited += 1;
-          const response = jsonRpcError(
-            429,
-            "Rate limit exceeded. Try again later.",
-            rateLimitHeaders(rate),
-          );
-          recordMcpResponse(metrics, method, response.status);
-          return response;
-        }
-      }
-
-      let transportOptions: HandleRequestOptions | undefined;
-      if (method === "POST") {
-        try {
-          transportOptions = await readParsedBody(req, maxBodyBytes);
-        } catch (error) {
-          if (error instanceof BodyTooLargeError) {
-            metrics.bodyTooLarge += 1;
+    return runWithRequestContext(requestContext, async () => {
+      try {
+        if (rateLimiter) {
+          const rate = rateLimiter.consume(clientId);
+          if (!rate.allowed) {
+            metrics.rateLimited += 1;
             const response = jsonRpcError(
-              413,
-              `Request body too large. Limit is ${error.maxBytes} bytes.`,
+              429,
+              "Rate limit exceeded. Try again later.",
+              rateLimitHeaders(rate),
             );
             recordMcpResponse(metrics, method, response.status);
             return response;
           }
-          if (error instanceof InvalidJsonError) {
-            const response = jsonRpcError(400, error.message, undefined, -32700);
+        }
+
+        let transportOptions: HandleRequestOptions | undefined;
+        if (method === "POST") {
+          try {
+            transportOptions = await readParsedBody(req, maxBodyBytes);
+          } catch (error) {
+            if (error instanceof BodyTooLargeError) {
+              metrics.bodyTooLarge += 1;
+              const response = jsonRpcError(
+                413,
+                `Request body too large. Limit is ${error.maxBytes} bytes.`,
+              );
+              recordMcpResponse(metrics, method, response.status);
+              return response;
+            }
+            if (error instanceof InvalidJsonError) {
+              const response = jsonRpcError(400, error.message, undefined, -32700);
+              recordMcpResponse(metrics, method, response.status);
+              return response;
+            }
+            throw error;
+          }
+        }
+
+        if (statefulSessions) {
+          if (req.method === "GET") {
+            const response = methodNotAllowed(["POST", "DELETE"]);
             recordMcpResponse(metrics, method, response.status);
             return response;
           }
-          throw error;
-        }
-      }
 
-      if (statefulSessions) {
-        if (req.method === "GET") {
-          const response = methodNotAllowed(["POST", "DELETE"]);
+          const response = await handleStateful(
+            req,
+            sessions,
+            enableWrites,
+            searchTelemetryEnabled,
+            searchObservationLogPath,
+            allowedHosts,
+            allowedOrigins,
+            transportOptions,
+          );
           recordMcpResponse(metrics, method, response.status);
           return response;
         }
 
-        const response = await handleStateful(
+        if (req.method !== "POST") {
+          const response = methodNotAllowed(["POST"]);
+          recordMcpResponse(metrics, method, response.status);
+          return response;
+        }
+
+        const response = await handleStatelessPost(
           req,
-          sessions,
           enableWrites,
+          searchTelemetryEnabled,
+          searchObservationLogPath,
           allowedHosts,
           allowedOrigins,
           transportOptions,
         );
         recordMcpResponse(metrics, method, response.status);
         return response;
-      }
-
-      if (req.method !== "POST") {
-        const response = methodNotAllowed(["POST"]);
+      } catch (error) {
+        console.error("Error handling MCP request:", error);
+        metrics.internalErrors += 1;
+        const response = jsonRpcError(500, "Internal server error");
         recordMcpResponse(metrics, method, response.status);
         return response;
       }
-
-      const response = await handleStatelessPost(
-        req,
-        enableWrites,
-        allowedHosts,
-        allowedOrigins,
-        transportOptions,
-      );
-      recordMcpResponse(metrics, method, response.status);
-      return response;
-    } catch (error) {
-      console.error("Error handling MCP request:", error);
-      metrics.internalErrors += 1;
-      const response = jsonRpcError(500, "Internal server error");
-      recordMcpResponse(metrics, method, response.status);
-      return response;
-    }
+    });
   });
 }

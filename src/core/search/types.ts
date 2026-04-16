@@ -25,11 +25,19 @@ export interface SearchResult {
   snippet: string;
   url: string;
   kind: KbChunk["kind"];
+  exact_match_count: number;
+  expanded_match_count: number;
+  exact_title_match_count: number;
+  exact_canonical_match_count: number;
+  exact_tag_match_count: number;
+  fuzzy_only: boolean;
 }
 
 export interface SearchResponse {
   query: string;
   queryTerms: string[];
+  exactTerms: string[];
+  expandedTerms: string[];
   file?: string;
   contextLabel?: string;
   includeSuperseded: boolean;

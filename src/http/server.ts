@@ -5,6 +5,10 @@ import { readKbHttpConfig } from "./config";
 import { createHealthHandler } from "./handlers/health";
 import { registerMcpRoutes, type SessionState } from "./handlers/mcp";
 import { createRootHandler } from "./handlers/root";
+import {
+  createSearchObservationExportHandler,
+  createSearchObservationReportHandler,
+} from "./handlers/search-observations";
 import { createHttpMetrics } from "./metrics";
 import { InMemoryRateLimiter } from "./rate-limit";
 
@@ -27,10 +31,29 @@ export async function main(): Promise<void> {
       () => metrics,
     ),
   );
+  if (config.adminToken) {
+    app.get(
+      "/admin/search-observations/report",
+      createSearchObservationReportHandler({
+        adminToken: config.adminToken,
+        logPath: config.searchObservationLogPath,
+      }),
+    );
+    app.get(
+      "/admin/search-observations/export",
+      createSearchObservationExportHandler({
+        adminToken: config.adminToken,
+        logPath: config.searchObservationLogPath,
+      }),
+    );
+  }
   registerMcpRoutes({
     app,
     statefulSessions: config.statefulSessions,
     enableWrites: config.enableWrites,
+    enableSearchTelemetry: config.searchTelemetryEnabled,
+    searchObservationLogPath: config.searchObservationLogPath,
+    searchTelemetrySalt: config.searchTelemetrySalt,
     allowedHosts: config.allowedHosts,
     allowedOrigins: config.allowedOrigins,
     maxBodyBytes: config.maxBodyBytes,
@@ -51,6 +74,14 @@ export async function main(): Promise<void> {
   console.log(`KB root: ${ROOT}`);
   console.log(`Stateful sessions: ${config.statefulSessions}`);
   console.log(`Writes enabled: ${config.enableWrites}`);
+  console.log(`Search telemetry: ${config.searchTelemetryEnabled}`);
+  if (config.searchObservationLogPath) {
+    console.log(`Search observation log path: ${config.searchObservationLogPath}`);
+  }
+  console.log(`Admin telemetry routes: ${config.adminToken ? "enabled" : "disabled"}`);
+  console.log(
+    `Search telemetry client hashing: ${config.searchTelemetrySalt ? "enabled" : "disabled"}`,
+  );
   if (config.allowedOrigins?.length) {
     console.log(`Allowed origins: ${config.allowedOrigins.join(", ")}`);
   }

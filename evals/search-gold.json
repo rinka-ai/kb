@@ -442,5 +442,54 @@
       "wiki/concepts/payment-integrations.md",
       "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md"
     ]
+  },
+  {
+    "id": "multi-agent-copilots-fuzzy",
+    "query": "delegate specialist copilots",
+    "preferredPaths": [
+      "wiki/concepts/multi-agent-systems.md",
+      "raw/articles/claude-blog/2026-04-06-how-and-when-to-use-subagents-in-claude-code.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/multi-agent-systems.md",
+      "raw/articles/claude-blog/2026-04-06-how-and-when-to-use-subagents-in-claude-code.md",
+      "raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "synthetic-voices-fuzzy",
+    "query": "cloned voice impersonation rules",
+    "preferredPaths": [
+      "wiki/concepts/synthetic-voices.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/synthetic-voices.md",
+      "raw/articles/voice-ai/2026-04-09-navigating-the-challenges-and-opportunities-of-synthetic-voices.md",
+      "raw/articles/voice-ai/2026-04-09-safety-at-elevenlabs.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667,
+    "forbiddenPaths": [
+      "wiki/concepts/text-to-speech.md",
+      "raw/articles/voice-ai/2026-04-09-speech-synthesis-markup-language-ssml.md"
+    ]
+  },
+  {
+    "id": "agent-frameworks-fuzzy",
+    "query": "runtime coordinator stack",
+    "preferredPaths": [
+      "wiki/concepts/agent-frameworks.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-frameworks.md",
+      "raw/articles/official-docs/2026-04-12-google-adk-runtime-event-loop-and-workflow-agents.md",
+      "raw/articles/official-docs/2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop.md"
+    ],
+    "maxPreferredRank": 1,
+    "forbiddenPaths": [
+      "wiki/concepts/voice-ai.md"
+    ]
   }
 ]

@@ -59,6 +59,10 @@ Search from active file context:
 
 `bun run kb:search --file /absolute/path/to/file.ts`
 
+Summarize repeated remote HTTP MCP search observations:
+
+`bun run kb:search-report`
+
 Run the local stdio MCP server:
 
 `bun run kb:mcp`
@@ -105,8 +109,29 @@ Sanity-check the deployed service:
 
 For hosted stateless deployments, `POST /mcp` is the normal MCP path. A plain `GET /mcp` may return `405 Method Not Allowed`, which is expected when standalone SSE is disabled.
 
+Hosted HTTP MCP search telemetry is enabled by default so the team can learn from real retrieval traffic. The observation log keeps query text, query-expansion diagnostics, and top-result diagnostics. For `kb_search_file`, it keeps the `contextLabel` and text size only, not the raw pasted file text. Review the log with `bun run kb:search-report`.
+
+Optional hosted search telemetry environment variables:
+
+- `KB_SEARCH_TELEMETRY_ENABLED=false` disables HTTP MCP search observations
+- `KB_SEARCH_OBSERVATION_LOG_PATH=/absolute/path/to/search-observations.ndjson` overrides the default log path
+- `KB_SEARCH_TELEMETRY_SALT=...` enables privacy-safe client hashing so repeated bad queries can be grouped by caller without storing raw IPs
+- `KB_ADMIN_TOKEN=...` enables protected admin telemetry endpoints for remote inspection
+
 For shared deployment details, see [docs/mcp-deployment.md](./docs/mcp-deployment.md).
 For the Railway-specific path, see [docs/railway.md](./docs/railway.md).
+
+If `KB_ADMIN_TOKEN` is set, you can inspect remote telemetry without shell access to the host:
+
+```bash
+curl -H "Authorization: Bearer $KB_ADMIN_TOKEN" \
+  https://kb.example.com/admin/search-observations/report?format=text
+```
+
+```bash
+curl -H "Authorization: Bearer $KB_ADMIN_TOKEN" \
+  "https://kb.example.com/admin/search-observations/export?format=json&tool=kb_search&limit=200"
+```
 
 ## MCP Surface
 

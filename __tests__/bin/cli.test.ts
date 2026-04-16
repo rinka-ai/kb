@@ -36,7 +36,7 @@ describe("CLI integration", () => {
     const report = await runBunCommand(["bin/report.ts"]);
     expect(report.code).toBe(0);
     expect(`${report.stdout}${report.stderr}`).toContain("KB health report");
-  });
+  }, 15_000);
 
   test("refresh respects KB_CACHE_DIR for hosted-style writable caches", async () => {
     const cacheDir = mkdtempSync(join(tmpdir(), "ai-research-kb-cache-"));

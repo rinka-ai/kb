@@ -13,6 +13,10 @@ describe("readKbHttpConfig", () => {
       maxBodyBytes: 1_048_576,
       rateLimitWindowMs: 60_000,
       rateLimitMaxRequests: 120,
+      searchTelemetryEnabled: true,
+      searchObservationLogPath: undefined,
+      searchTelemetrySalt: undefined,
+      adminToken: undefined,
     });
   });
 
@@ -39,6 +43,10 @@ describe("readKbHttpConfig", () => {
       maxBodyBytes: 4096,
       rateLimitWindowMs: 30000,
       rateLimitMaxRequests: 45,
+      searchTelemetryEnabled: true,
+      searchObservationLogPath: undefined,
+      searchTelemetrySalt: undefined,
+      adminToken: undefined,
     });
   });
 });

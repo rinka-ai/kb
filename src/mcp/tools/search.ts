@@ -1,10 +1,55 @@
 import { existsSync } from "node:fs";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import * as z from "zod/v4";
+import { getRequestContext } from "../../core/request-context";
 import { formatSearchResults, searchKb } from "../../core/search";
+import { recordSearchObservation } from "../../core/search-observations";
 import { SEARCH_DEFAULTS, searchOptionsSchema, toolErrorResponse, toolResponse } from "./shared";
 
-export function registerSearchTools(server: McpServer): void {
+export interface RegisterSearchToolsOptions {
+  enableSearchTelemetry: boolean;
+  searchObservationLogPath?: string;
+}
+
+function maybeRecordObservation(
+  options: RegisterSearchToolsOptions,
+  args: {
+    tool: "kb_search" | "kb_search_file";
+    response: ReturnType<typeof searchKb>;
+    rawQuery?: string;
+    contextLabel?: string;
+    filePathProvided?: boolean;
+    textBytes?: number;
+    top: number;
+    rebuildIfStale: boolean;
+    includeSuperseded: boolean;
+  },
+): void {
+  if (!options.enableSearchTelemetry) {
+    return;
+  }
+
+  const request = getRequestContext();
+  if (!request) {
+    return;
+  }
+
+  recordSearchObservation({
+    request,
+    tool: args.tool,
+    response: args.response,
+    rawQuery: args.rawQuery,
+    contextLabel: args.contextLabel,
+    filePathProvided: args.filePathProvided,
+    textBytes: args.textBytes,
+    top: args.top,
+    rebuildIfStale: args.rebuildIfStale,
+    includeSuperseded: args.includeSuperseded,
+    logPath: options.searchObservationLogPath,
+  });
+}
+
+export function registerSearchTools(server: McpServer, options: RegisterSearchToolsOptions): void {
   server.registerTool(
     "kb_search",
     {
@@ -23,6 +68,14 @@ export function registerSearchTools(server: McpServer): void {
       rebuildIfStale = SEARCH_DEFAULTS.rebuildIfStale,
     }) => {
       const response = searchKb({ query, top, json: false, includeSuperseded, rebuildIfStale });
+      maybeRecordObservation(options, {
+        tool: "kb_search",
+        response,
+        rawQuery: query,
+        top,
+        rebuildIfStale,
+        includeSuperseded,
+      });
       return toolResponse(formatSearchResults(response), { ...response });
     },
   );
@@ -90,6 +143,16 @@ export function registerSearchTools(server: McpServer): void {
         json: false,
         includeSuperseded,
         rebuildIfStale,
+      });
+      maybeRecordObservation(options, {
+        tool: "kb_search_file",
+        response,
+        contextLabel,
+        filePathProvided: !!filePath,
+        textBytes: typeof text === "string" ? Buffer.byteLength(text, "utf-8") : undefined,
+        top,
+        rebuildIfStale,
+        includeSuperseded,
       });
       return toolResponse(formatSearchResults(response), { ...response });
     },
