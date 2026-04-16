@@ -3,7 +3,7 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 10
+source_count: 11
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
@@ -16,13 +16,14 @@ confidence: "0.86"
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt.
 
 ## Core Responsibilities
 
 - build the active context from durable artifacts and recent state
 - define the non-model scaffolding: prompts, tools, bundled infrastructure, orchestration, and hooks
 - route tool calls and execution events through policy hooks
+- route tasks to the right skill, memory surface, or filing rule through explicit registries or resolvers
 - manage resets, resumptions, handoffs, and structured logs
 - keep the hot-path loop lightweight enough to swap models or runtimes without rewriting the whole system
 - persist outputs into files, stores, or thread surfaces instead of letting them die inside the loop
@@ -34,6 +35,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - context assembly is the most important harness function because it decides what the model can reason over
 - structured handoff artifacts matter more when resets are common or desirable
 - open or portable harnesses matter because they preserve control over long-term memory and reduce lock-in
+- resolver tables let thin harnesses load the right context on demand instead of preloading whole skill libraries
 
 ## Common Failure Modes
 
@@ -56,3 +58,4 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2026-04-09-context-engineering-sessions-memory]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
+- [[2026-04-16-resolvers-the-routing-table-for-intelligence]]

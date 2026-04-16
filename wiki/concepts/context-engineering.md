@@ -3,7 +3,7 @@ id: concept-context-engineering
 type: concept
 title: Context Engineering
 tags: [agents, memory, long-context, compression]
-source_count: 10
+source_count: 11
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.89"
 
 ## Summary
 
-Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, and explicit context budgeting are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model.
+Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, explicit context budgeting, and resolver-based routing are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model.
 
 ## What It Is
 
@@ -32,6 +32,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - Treat files, URLs, and external artifacts as part of usable context.
 - Load the most relevant working state, preferences, and permissions first when they are safety- or task-critical.
 - Use registries or manifests so large skill libraries can stay mostly off-context until matched.
+- Prefer small resolver documents or routing tables that load the right context on demand instead of bloating always-on instructions.
 - Keep provenance and failure evidence instead of over-cleaning.
 - Keep high-value prefixes stable so cache reuse survives long tool loops.
 - Mask or constrain actions when needed instead of constantly rewriting the tool surface.
@@ -60,3 +61,4 @@ Context engineering is the discipline of deciding what information an agent shou
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
+- [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
