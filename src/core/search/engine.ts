@@ -309,8 +309,7 @@ function rankGroupedResults(
         .reduce((sum, entry, index) => sum + entry.score * (index === 0 ? 0.35 : 0.2), 0);
       const coverage = matchedTerms.length / Math.max(queryTerms.length, 1);
       const diversityBonus = Math.min(matchedSections.length, 3) * 0.2;
-      const typeBoost =
-        top.chunk.type === "concept" ? 0.55 : top.chunk.type === "summary" ? 0.3 : 0;
+      const typeBoost = top.chunk.type === "concept" ? 0.9 : top.chunk.type === "summary" ? 0.3 : 0;
       const score = top.score + secondarySupport + coverage * 1.5 + diversityBonus + typeBoost;
 
       return {
