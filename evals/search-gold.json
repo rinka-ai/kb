@@ -262,5 +262,185 @@
       "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md",
       "raw/articles/official-docs/2026-04-12-stripe-integration-security-guide.md"
     ]
+  },
+  {
+    "id": "workflows-concept",
+    "query": "workflow agents deterministic orchestration approvals retries",
+    "preferredPaths": [
+      "wiki/concepts/workflows.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/workflows.md",
+      "raw/articles/anthropic-engineering/2024-12-19-building-effective-agents.md",
+      "raw/articles/official-docs/2026-04-12-google-adk-runtime-event-loop-and-workflow-agents.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "durable-execution-concept",
+    "query": "durable execution replay checkpoints interrupts pause resume",
+    "preferredPaths": [
+      "wiki/concepts/durable-execution.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/durable-execution.md",
+      "raw/articles/official-docs/2026-04-12-langgraph-durable-execution-persistence-and-human-in-the-loop.md",
+      "raw/articles/official-docs/2026-04-12-temporal-ai-cookbook.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667,
+    "forbiddenPaths": [
+      "wiki/concepts/payment-integrations.md"
+    ]
+  },
+  {
+    "id": "reasoning-concept",
+    "query": "reasoning traces acting react think tool",
+    "preferredPaths": [
+      "wiki/concepts/reasoning.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/reasoning.md",
+      "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
+      "raw/articles/anthropic-engineering/2025-03-20-the-think-tool-enabling-claude-to-stop-and-think.md"
+    ],
+    "maxPreferredRank": 2
+  },
+  {
+    "id": "web-agents-concept",
+    "query": "realistic web agents browser benchmark long horizon tasks",
+    "preferredPaths": [
+      "wiki/concepts/web-agents.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/web-agents.md",
+      "raw/articles/arxiv/2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents.md",
+      "raw/articles/github-repos/2026-04-10-webarena.md"
+    ],
+    "maxPreferredRank": 1,
+    "forbiddenPaths": [
+      "wiki/concepts/computer-use.md"
+    ]
+  },
+  {
+    "id": "computer-use-concept",
+    "query": "computer use agents gui grounding osworld multimodal benchmark",
+    "preferredPaths": [
+      "wiki/concepts/computer-use.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/computer-use.md",
+      "raw/articles/arxiv/2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments.md",
+      "raw/articles/github-repos/2026-04-10-osworld.md"
+    ],
+    "maxPreferredRank": 1,
+    "forbiddenPaths": [
+      "wiki/concepts/web-agents.md"
+    ]
+  },
+  {
+    "id": "benchmark-integrity-concept",
+    "query": "benchmark integrity contamination eval awareness infrastructure noise",
+    "preferredPaths": [
+      "wiki/concepts/benchmark-integrity.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/benchmark-integrity.md",
+      "raw/articles/anthropic-engineering/2026-03-06-eval-awareness-in-claude-opus-4-6-browsecomp-performance.md",
+      "raw/articles/anthropic-engineering/2026-04-09-quantifying-infrastructure-noise-in-agentic-coding-evals.md"
+    ],
+    "maxPreferredRank": 1
+  },
+  {
+    "id": "speech-to-text-concept",
+    "query": "speech to text diarization transcription speaker labels input formats",
+    "preferredPaths": [
+      "wiki/concepts/speech-to-text.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/speech-to-text.md",
+      "raw/articles/voice-ai/2026-04-09-speech-to-text.md",
+      "raw/articles/voice-ai/2026-04-09-best-practices-for-cloud-speech-to-text.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "text-to-speech-concept",
+    "query": "text to speech streaming voice instructions ssml",
+    "preferredPaths": [
+      "wiki/concepts/text-to-speech.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/text-to-speech.md",
+      "raw/articles/voice-ai/2026-04-09-text-to-speech.md",
+      "raw/articles/voice-ai/2026-04-09-steering-text-to-speech-for-more-dynamic-audio-generation.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667,
+    "forbiddenPaths": [
+      "wiki/concepts/speech-to-text.md"
+    ]
+  },
+  {
+    "id": "synthetic-voices-concept",
+    "query": "synthetic voices consent disclosure watermarking impersonation",
+    "preferredPaths": [
+      "wiki/concepts/synthetic-voices.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/synthetic-voices.md",
+      "raw/articles/voice-ai/2026-04-09-navigating-the-challenges-and-opportunities-of-synthetic-voices.md",
+      "raw/articles/voice-ai/2026-04-09-safety-at-elevenlabs.md"
+    ],
+    "maxPreferredRank": 2
+  },
+  {
+    "id": "voice-dictation-concept",
+    "query": "dictation hotkey command mode privacy mode voice typing",
+    "preferredPaths": [
+      "wiki/concepts/voice-dictation.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/voice-dictation.md",
+      "raw/articles/voice-ai/2026-04-09-what-is-flow.md",
+      "raw/articles/voice-ai/2026-04-09-how-to-use-command-mode.md",
+      "raw/articles/voice-ai/2026-04-09-privacy-mode-data-retention.md"
+    ],
+    "maxPreferredRank": 1
+  },
+  {
+    "id": "payment-webhooks-disambiguation",
+    "query": "checkout session completed webhook fulfillment stripe",
+    "preferredPaths": [
+      "wiki/concepts/payment-integrations.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/payment-integrations.md",
+      "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md",
+      "raw/articles/official-docs/2026-04-12-stripe-integration-security-guide.md"
+    ],
+    "maxPreferredRank": 2,
+    "forbiddenPaths": [
+      "raw/articles/voice-ai/2026-04-12-post-call-webhooks.md"
+    ]
+  },
+  {
+    "id": "voice-webhooks-disambiguation",
+    "query": "post call webhooks transcripts conversation analysis voice agent",
+    "preferredPaths": [
+      "wiki/concepts/voice-ai.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/voice-ai.md",
+      "raw/articles/voice-ai/2026-04-12-post-call-webhooks.md",
+      "wiki/summaries/2026-04-12-elevenlabs-voice-agent-architecture.md"
+    ],
+    "maxPreferredRank": 2,
+    "forbiddenPaths": [
+      "wiki/concepts/payment-integrations.md",
+      "raw/articles/official-docs/2026-04-12-stripe-checkout-how-checkout-works.md"
+    ]
   }
 ]

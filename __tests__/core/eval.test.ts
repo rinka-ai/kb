@@ -23,7 +23,36 @@ describe("search evals", () => {
     expect(result.preferredRank).toBe(1);
     expect(result.firstRelevantRank).toBe(1);
     expect(result.precisionAt3).toBeCloseTo(0.667, 2);
+    expect(result.minPrecisionAt3).toBe(0.333);
+    expect(result.maxPreferredRank).toBeNull();
+    expect(result.forbiddenHits).toEqual([]);
     expect(result.passed).toBe(true);
+  });
+
+  test("evaluateRetrievedPaths honors stricter rank and forbidden-path constraints", () => {
+    const result = evaluateRetrievedPaths(
+      [
+        "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
+        "wiki/concepts/llm-agents.md",
+        "wiki/concepts/web-agents.md",
+      ],
+      {
+        id: "reasoning",
+        query: "reasoning and acting",
+        preferredPaths: ["wiki/concepts/reasoning.md"],
+        relevantPaths: [
+          "wiki/concepts/reasoning.md",
+          "raw/articles/arxiv/2026-04-10-react-synergizing-reasoning-and-acting-in-language-models.md",
+        ],
+        forbiddenPaths: ["wiki/concepts/web-agents.md"],
+        maxPreferredRank: 1,
+        minPrecisionAt3: 0.667,
+      },
+    );
+
+    expect(result.preferredRank).toBeNull();
+    expect(result.forbiddenHits).toEqual(["wiki/concepts/web-agents.md"]);
+    expect(result.passed).toBe(false);
   });
 
   test("summarizeEvalResults aggregates retrieval metrics", () => {
@@ -34,6 +63,9 @@ describe("search evals", () => {
         preferredRank: 1,
         firstRelevantRank: 1,
         precisionAt3: 1,
+        minPrecisionAt3: 0.333,
+        maxPreferredRank: null,
+        forbiddenHits: [],
         topPaths: ["a"],
         passed: true,
       },
@@ -43,6 +75,9 @@ describe("search evals", () => {
         preferredRank: null,
         firstRelevantRank: 4,
         precisionAt3: 0.333,
+        minPrecisionAt3: 0.333,
+        maxPreferredRank: null,
+        forbiddenHits: [],
         topPaths: ["b", "c", "d"],
         passed: false,
       },

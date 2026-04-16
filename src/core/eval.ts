@@ -9,6 +9,9 @@ export interface SearchEvalCase {
   query: string;
   preferredPaths: string[];
   relevantPaths: string[];
+  forbiddenPaths?: string[];
+  minPrecisionAt3?: number;
+  maxPreferredRank?: number;
   notes?: string;
 }
 
@@ -18,6 +21,9 @@ export interface SearchEvalCaseResult {
   preferredRank: number | null;
   firstRelevantRank: number | null;
   precisionAt3: number;
+  minPrecisionAt3: number;
+  maxPreferredRank: number | null;
+  forbiddenHits: string[];
   topPaths: string[];
   passed: boolean;
   notes?: string;
@@ -66,18 +72,32 @@ export function evaluateRetrievedPaths(
 ): SearchEvalCaseResult {
   const preferredRank = rankForAny(topPaths, testCase.preferredPaths);
   const firstRelevantRank = rankForAny(topPaths, testCase.relevantPaths);
+  const minPrecisionAt3 = testCase.minPrecisionAt3 ?? 0.333;
+  const maxPreferredRank = testCase.maxPreferredRank ?? null;
   const precisionAt3 =
     topPaths.slice(0, 3).filter((path) => testCase.relevantPaths.includes(path)).length /
     Math.max(Math.min(topPaths.length, 3), 1);
+  const roundedPrecisionAt3 = Number(precisionAt3.toFixed(3));
+  const forbidden = new Set(testCase.forbiddenPaths ?? []);
+  const forbiddenHits = topPaths.filter((path) => forbidden.has(path));
+  const preferredSatisfied =
+    maxPreferredRank == null || (preferredRank != null && preferredRank <= maxPreferredRank);
 
   return {
     id: testCase.id,
     query: testCase.query,
     preferredRank,
     firstRelevantRank,
-    precisionAt3: Number(precisionAt3.toFixed(3)),
+    precisionAt3: roundedPrecisionAt3,
+    minPrecisionAt3,
+    maxPreferredRank,
+    forbiddenHits,
     topPaths,
-    passed: (firstRelevantRank ?? Number.POSITIVE_INFINITY) <= 3 && precisionAt3 >= 0.333,
+    passed:
+      (firstRelevantRank ?? Number.POSITIVE_INFINITY) <= 3 &&
+      roundedPrecisionAt3 >= minPrecisionAt3 &&
+      preferredSatisfied &&
+      forbiddenHits.length === 0,
     notes: testCase.notes,
   };
 }
@@ -134,6 +154,19 @@ export function loadSearchEvalDataset(filePath: string): SearchEvalCase[] {
           (path): path is string => typeof path === "string" && path.length > 0,
         )
       : preferredPaths;
+    const forbiddenPaths = Array.isArray(value.forbiddenPaths)
+      ? value.forbiddenPaths.filter(
+          (path): path is string => typeof path === "string" && path.length > 0,
+        )
+      : undefined;
+    const minPrecisionAt3 =
+      typeof value.minPrecisionAt3 === "number" && Number.isFinite(value.minPrecisionAt3)
+        ? value.minPrecisionAt3
+        : undefined;
+    const maxPreferredRank =
+      typeof value.maxPreferredRank === "number" && Number.isFinite(value.maxPreferredRank)
+        ? value.maxPreferredRank
+        : undefined;
 
     if (!query || relevantPaths.length === 0) {
       throw new Error(`Eval case ${id} must include a query and at least one relevant path.`);
@@ -144,6 +177,9 @@ export function loadSearchEvalDataset(filePath: string): SearchEvalCase[] {
       query,
       preferredPaths: preferredPaths.length > 0 ? preferredPaths : relevantPaths,
       relevantPaths,
+      forbiddenPaths,
+      minPrecisionAt3,
+      maxPreferredRank,
       notes: typeof value.notes === "string" ? value.notes.trim() : undefined,
     };
   });
@@ -202,6 +238,7 @@ export function formatSearchEvalReport(report: SearchEvalReport): string {
         [
           `- ${result.id}: ${result.query}`,
           `  preferred_rank=${result.preferredRank ?? "miss"} relevant_rank=${result.firstRelevantRank ?? "miss"} precision@3=${result.precisionAt3}`,
+          `  constraints=min_precision@3:${result.minPrecisionAt3} max_preferred_rank:${result.maxPreferredRank ?? "any"} forbidden_hits:${result.forbiddenHits.join(",") || "none"}`,
           `  top_paths=${result.topPaths.join(", ")}`,
         ].join("\n"),
       ),
