@@ -7,8 +7,8 @@ source_count: 17
 summary: Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time, from editable external stores to learned compact state.
 canonical_for: [agent memory, workflow memory, semantic memory]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-04-17
+review_due: 2026-05-17
 confidence: "0.89"
 ---
 
@@ -23,6 +23,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - External memory systems: memory managers, vector stores, graphs, and page stores.
 - Structured context systems: curated bullet playbooks, delta updates, and file-backed context.
 - Workflow or procedural memory: reusable routines distilled from prior successful trajectories.
+- Decision memory: ADR-style or rationale-preserving records that explain why a long-lived design choice was accepted and whether it is still active.
 - Learned internal memory: fixed-length or compact state updated through reinforcement learning.
 - Memory-tier systems: agents that treat context windows as a fast working tier and external stores or files as slower but larger memory.
 
@@ -38,6 +39,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Failures often need higher salience than routine successes so they are easier to retrieve before repetition.
 - Consolidation can happen in the background rather than only on the hot path.
 - Promotion from episodic to semantic memory should be evidence-based rather than automatic on every run.
+- Some teams split semantic memory again into lessons versus decision records so architecture rationale stays inspectable instead of getting buried inside generic summaries.
 - Personal preference memory should remain separate from general lessons to avoid overgeneralizing one user's style into doctrine.
 - Memory portability depends on who controls the harness layer that stores, retrieves, and migrates it.
 
@@ -45,6 +47,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 
 - Session history is not the same thing as retrieved context.
 - Factual or profile memory differs from workflow memory about how to do a task.
+- Lessons explain what tends to work; decision memory explains why a specific architecture choice was made and when it should be revisited.
 - Editable, provenance-rich memory differs from learned latent memory.
 - Working memory should usually be archived or reset, not treated as durable truth.
 - Lightweight guide memory can coexist with deeper runtime retrieval.

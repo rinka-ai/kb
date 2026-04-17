@@ -3,10 +3,14 @@ import { createKbNoteLookup, type KbNote, listKbNotes, sourcePathsForNote } from
 
 const IGNORED_UNCOVERED_TAGS = new Set(["papers", "google-cloud"]);
 const TAG_COVERAGE_ALIASES: Record<string, string[]> = {
+  "browser-agents": ["web-agents"],
+  "browser-automation": ["web-agents", "agent-tools"],
+  browserbase: ["web-agents", "managed-agents", "agent-security", "agent-skills", "agent-tools"],
   design: ["claude-code", "agent-skills"],
   dictation: ["voice-ai"],
   efficiency: ["agent-tools", "agent-memory"],
   "file-system": ["managed-agents", "context-engineering"],
+  functions: ["managed-agents", "agent-frameworks", "agent-tools"],
   frontend: ["claude-code", "agent-skills"],
   input: ["voice-ai"],
   "knowledge-base": ["knowledge-bases", "personal-knowledge-bases", "rag"],

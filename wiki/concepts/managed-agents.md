@@ -3,12 +3,12 @@ id: concept-managed-agents
 type: concept
 title: Managed Agents
 tags: [agents, infrastructure, sessions, sandboxes, architecture]
-source_count: 11
-summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, and state.
+source_count: 14
+summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
 canonical_for: [managed agents, durable execution, resumable approvals, decoupling the brain from the hands]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-04-17
+review_due: 2026-05-17
 confidence: "0.87"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-Managed agents are agent systems built around durable interfaces for state, execution, interruption, and orchestration so the implementation can change as models and harness techniques improve. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, and stable external APIs matter as much as the model loop itself.
+Managed agents are agent systems built around durable interfaces for state, execution, interruption, and orchestration so the implementation can change as models and harness techniques improve. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, stable external APIs, and reusable entrypoint adapters matter as much as the model loop itself.
 
 ## Core Idea
 
@@ -25,14 +25,17 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - Run lifecycle should be explicit enough to pause, resume, stream, cancel, and inspect work.
 - Execution environments and tools should be provisioned only when needed.
 - Security improves when credentials are kept outside model-controlled sandboxes.
+- The same core agent logic should be able to sit behind chat threads, webhooks, or direct UI and API surfaces when session identity and scope are handled explicitly.
 - Human approval should behave like a resumable runtime boundary, not an ad hoc prompt detour.
 
 ## Design Shape
 
 - `thread` or `session`: durable append-only state and history
 - `run`: one execution with status, streaming, and resume semantics
+- `entrypoint adapter`: Slack thread, webhook, UI, or API surface that binds a request to session identity and scope
 - `harness` or workflow engine: orchestration loop around the model
 - `sandbox` or tool: execution environment for actions
+- `credential broker`: the layer that holds real secrets and exposes only scoped capability handles to the runtime
 - `store`: long-term memory and artifacts outside the hot path
 - `approval gate`: operator checkpoint that can resume work without losing context
 
@@ -43,6 +46,7 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - clarifies concurrency, replay, and operator intervention behavior
 - reduces unnecessary startup latency
 - makes “many brains, many hands” architectures more natural
+- lets the same agent runtime serve interactive and background modes without forking the whole system
 - creates safer boundaries for tools and real-world side effects
 
 ## Tensions
@@ -66,3 +70,6 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - [[2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop]]
 - [[2026-04-12-google-adk-runtime-event-loop-and-workflow-agents]]
 - [[2026-04-12-agent-protocol]]
+- [[2026-04-17-browserbase-enterprise-security]]
+- [[2026-04-17-browserbase-functions]]
+- [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]

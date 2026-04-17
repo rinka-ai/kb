@@ -3,27 +3,29 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 11
+source_count: 13
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
-confidence: "0.86"
+last_reviewed: 2026-04-17
+review_due: 2026-05-17
+confidence: "0.87"
 ---
 
 # Agent Harnesses
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness.
 
 ## Core Responsibilities
 
 - build the active context from durable artifacts and recent state
 - define the non-model scaffolding: prompts, tools, bundled infrastructure, orchestration, and hooks
 - route tool calls and execution events through policy hooks
+- unify built-in and external tool surfaces behind one extension runtime so the loop sees one capability plane
 - route tasks to the right skill, memory surface, or filing rule through explicit registries or resolvers
+- present the same core runtime through multiple entrypoint adapters such as chat, webhook, and UI surfaces without forking orchestration semantics
 - manage resets, resumptions, handoffs, and structured logs
 - keep the hot-path loop lightweight enough to swap models or runtimes without rewriting the whole system
 - persist outputs into files, stores, or thread surfaces instead of letting them die inside the loop
@@ -36,6 +38,8 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - structured handoff artifacts matter more when resets are common or desirable
 - open or portable harnesses matter because they preserve control over long-term memory and reduce lock-in
 - resolver tables let thin harnesses load the right context on demand instead of preloading whole skill libraries
+- multiple clients such as CLI, desktop, and server can remain coherent if they reuse one runtime instead of forking orchestration semantics
+- permissions and session identity should usually be attached by the entrypoint adapter, not improvised inside the always-on prompt
 
 ## Common Failure Modes
 
@@ -59,3 +63,5 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - [[2026-04-09-context-engineering-sessions-memory]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
+- [[2026-04-17-goose]]
+- [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
