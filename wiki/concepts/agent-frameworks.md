@@ -3,7 +3,7 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 6
+source_count: 7
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
 review_status: reviewed
@@ -32,6 +32,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - OpenAI Agents SDK emphasizes sessions, handoffs, and human-in-the-loop pauses
 - Google ADK emphasizes an event loop runner with deterministic workflow agents around LLM subagents
 - Letta emphasizes stateful memory-rich agents with explicit long-term storage surfaces
+- Goose emphasizes a local reusable runtime with provider abstraction, unified built-in and MCP extension surfaces, scheduling, and shared core primitives across CLI, desktop, server, and ACP clients
 
 ## Selection Heuristics
 
@@ -55,3 +56,4 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-04-10-letta]]
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
+- [[2026-04-17-goose]]

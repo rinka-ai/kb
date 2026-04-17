@@ -3,7 +3,7 @@ id: concept-agent-protocols
 type: concept
 title: Agent Protocols
 tags: [agents, protocols, tool-use, mcp, tools]
-source_count: 9
+source_count: 10
 summary: Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
 canonical_for: [mcp, model context protocol, agent protocol]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps.
+Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps. Goose adds practical evidence that these surfaces include not only tool schemas but also request identifiers, replayable event streams, extension metadata, and explicit inspection stages before execution.
 
 ## Core Surfaces
 
@@ -24,6 +24,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - permission tiers for always-allowed, approval-required, and never-allowed actions
 - delegation rules for when work can be handed to other agents or runtimes
 - runtime contracts for runs, threads, streams, cancellation, and memory stores
+- request and event identities that let clients reconnect to in-flight work safely
 - lifecycle hooks that enforce policy before and after tool execution
 - portability surfaces that let memory, tools, and approvals survive framework changes
 
@@ -41,6 +42,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - enforce risky boundaries in hooks or protocol surfaces, not only inside skills
 - keep approval logic explicit and resumable rather than treating it as a prompt detour
 - use schemas and metadata to support introspection, routing, and safer automation
+- stack multiple pre-execution inspectors when needed so security, egress, repetition, and approvals do not collapse into one boolean check
 - log protocol decisions so memory can learn which paths fail, stall, or require escalation
 
 ## Tensions
@@ -61,3 +63,4 @@ Agent protocols are the governance and interface layer around agent action. They
 - [[2026-03-25-claude-code-auto-mode]]
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-11-24-introducing-advanced-tool-use-on-the-claude-developer-platform]]
+- [[2026-04-17-goose]]

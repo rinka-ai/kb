@@ -3,12 +3,12 @@ id: concept-agent-tools
 type: concept
 title: Agent Tools
 tags: [tools, tool-use, agents, code-execution, mcp]
-source_count: 8
+source_count: 10
 summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
 canonical_for: [agent tools, tool use, structured tools, code-mediated tool use]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-04-17
+review_due: 2026-05-17
 confidence: "0.86"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.86"
 
 ## Summary
 
-Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large.
+Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes.
 
 ## Design Principles
 
@@ -24,6 +24,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - optimize descriptions and parameters for model reliability, not only human developer taste
 - keep high-risk or multi-step business logic behind durable workflow layers instead of giant tool handlers
 - prefer code-mediated loops when the agent needs iteration, filtering, or orchestration across many tools
+- keep the model-facing tool surface as small as possible; hide integration sprawl behind typed internal packages, brokers, or exec helpers when policy and preprocessing must stay centralized
 
 ## Tool Families
 
@@ -31,6 +32,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - server tools that fetch data or trigger external side effects
 - MCP tools that standardize access to external context and capabilities
 - programmatic tool orchestration where code becomes the control plane for large tool sets
+- brokered gateway tools that front many richer integrations while exposing one controlled model-facing capability
 
 ## Failure Modes
 
@@ -49,3 +51,5 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - [[2026-04-12-client-tools]]
 - [[2026-04-12-server-tools]]
 - [[2026-04-16-the-anatomy-of-an-agent-harness]]
+- [[2026-04-17-browserbase-functions]]
+- [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]

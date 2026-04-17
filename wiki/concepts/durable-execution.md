@@ -3,7 +3,7 @@ id: concept-durable-execution
 type: concept
 title: Durable Execution
 tags: [durable-execution, agents, orchestration, sessions, checkpoints, hitl]
-source_count: 5
+source_count: 6
 summary: Durable execution makes long-running agent work survivable by treating pause, resume, replay, retry, and human intervention as first-class runtime behaviors.
 canonical_for: [durable execution, resumable agents, replayable workflows, checkpointed agents]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Durable execution means an agent run can survive crashes, long pauses, human approvals, and external retries without pretending the whole task fits inside one uninterrupted process. In practice, it is about explicit run identity, checkpointed state, replay discipline, and isolated side-effect boundaries.
+Durable execution means an agent run can survive crashes, long pauses, human approvals, and external retries without pretending the whole task fits inside one uninterrupted process. In practice, it is about explicit run identity, checkpointed state, replay discipline, and isolated side-effect boundaries. Goose adds a useful product-level implementation example: durability is not only storage, but also cancellable live work, scheduled resumes, and replayable client event streams around the same execution state.
 
 ## Core Properties
 
@@ -24,6 +24,7 @@ Durable execution means an agent run can survive crashes, long pauses, human app
 - persisted checkpoints or workflow state, not only chat history
 - replay-safe boundaries around network calls and other side effects
 - pause-resume semantics for review, approval, or delayed continuation
+- reconnectable event streams or logs so clients can reattach to active work without losing execution context
 
 ## Where It Matters
 
@@ -38,6 +39,7 @@ Durable execution means an agent run can survive crashes, long pauses, human app
 - isolate non-deterministic or external work into explicit task boundaries
 - store enough execution metadata to explain why the run is waiting or resumable
 - treat interruption and resume as product features, not recovery hacks
+- distinguish user-visible thread state from internal execution state when forks, provider changes, or background jobs make them diverge
 
 ## Source Notes
 
@@ -46,3 +48,4 @@ Durable execution means an agent run can survive crashes, long pauses, human app
 - [[2026-04-12-durable-mcp-weather-server]]
 - [[2026-04-12-openai-agents-sdk-sessions-handoffs-and-human-in-the-loop]]
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
+- [[2026-04-17-goose]]

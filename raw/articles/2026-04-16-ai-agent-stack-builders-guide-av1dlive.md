@@ -27,7 +27,7 @@ related: [agent-memory, agent-skills, agent-protocols, agent-harnesses, context-
 
 ## TL;DR
 
-The note argues that durable agent value should live in external memory, reusable skills, and explicit protocols rather than in the harness or the model itself. It proposes a thin conductor that assembles context, routes tools, runs hooks, and persists state into git-tracked markdown and JSON artifacts.
+The note argues that durable agent value should live in external memory, reusable skills, explicit protocols, and a git-tracked "brain" repo rather than in the harness or the model itself. It proposes a thin conductor that assembles context, routes tools, runs hooks, and persists state into markdown and JSON artifacts so the harness or model can be swapped without losing the accumulated system.
 
 ## Key Claims
 
@@ -35,38 +35,53 @@ The note argues that durable agent value should live in external memory, reusabl
 - Memory, skills, and protocols should be treated as separate modules with different update and retrieval policies.
 - The harness should stay thin and mostly orchestrate file reads, tool calls, logs, and hooks.
 - Memory should be split into working, episodic, semantic, and personal layers rather than stored as one undifferentiated pile.
+- Decision memory should be explicit enough to stop the agent from re-debating settled architecture choices.
 - `build_context` is the critical function because context assembly determines what the model can reason over at all.
 - Skills should use progressive disclosure so only matched skills load into context.
 - Skills work best when they specify procedures, heuristics, constraints, and examples rather than brittle step-by-step micromanagement.
 - Governance belongs in explicit protocols such as permissions tiers, tool schemas, and lifecycle hooks rather than being hidden inside prompts.
+- Protocols, not individual skills, should own hard boundaries like blocked targets, approval gates, and unsafe compositions.
 - Failures should be amplified into learning via reflection, salience scoring, and periodic consolidation.
 
 ## Important Details
 
 - The proposed repo-native stack centers on a `.agent/` directory containing memory, skills, protocols, harness hooks, and tools.
+- The concrete layout is split into `harness/`, `memory/`, `skills/`, `protocols/`, and `tools/`, with the harness treated as a replaceable adapter around the durable files.
 - `AGENTS.md` is framed as a short root map that tells the harness what to read first and what hard rules always apply.
 - `DECISIONS.md` is treated as an architectural decision record layer that prevents re-debating settled choices.
+- The memory system is explicitly partitioned into `working/`, `episodic/`, `semantic/`, and `personal/`, with representative files such as `WORKSPACE.md`, `AGENT_LEARNINGS.jsonl`, `LESSONS.md`, and `PREFERENCES.md`.
+- The described `build_context` order is: personal preferences plus active workspace, truncated semantic lessons, top episodic entries by salience, progressively loaded matched skills, then short safety-critical permissions.
+- The reference conductor is described with concrete budget knobs such as `MAX_CONTEXT_TOKENS=128000`, `RESERVED_FOR_REASONING=40000`, and a small `max_tokens` response budget for the model call.
+- Salience scoring is based on age, pain, importance, and capped recurrence count rather than pure recency or embeddings.
 - `on_failure.py` is presented as a specialized hook that increases the visibility of failures by assigning high pain scores and triggering rewrites after repeated problems.
+- The failure loop uses a threshold of three failures in fourteen days to escalate a skill from ordinary failure logging into rewrite territory.
 - A nightly "dream cycle" consolidates episodic memory into semantic memory, archives stale working context, and commits the result.
+- The upgraded dream cycle also detects recurring patterns, promotes lessons above a salience threshold, archives low-salience old entries instead of deleting them, and snapshots stale workspaces.
 - The skills system uses a lightweight `_index.md` plus machine-readable `_manifest.jsonl` to support trigger-based loading and composition.
+- Skills can self-rewrite after repeated use or failure, but only when evidence is clear; repeated local failures should sometimes be promoted into global lessons.
 - The protocol layer includes tool schemas, permissions tiers, delegation rules, and pre/post hooks for enforcement and logging.
+- Tool schemas are described as carrying required args, preconditions, side effects, approval requirements, and blocked targets so enforcement lives outside skill prose.
+- The note uses a strong governance heuristic: if a new hire should not do something unsupervised, the agent should not either.
 - The note explicitly warns about positive feedback loops that can amplify bad lessons into bad skills unless decay and human review act as circuit breakers.
 
 ## Entities
 
-- Concepts: externalized memory, thin conductor, progressive disclosure, salience scoring, dream cycle, procedural memory, permissions tiers
-- Artifacts: `AGENTS.md`, `DECISIONS.md`, `WORKSPACE.md`, `PREFERENCES.md`, `LESSONS.md`, `_index.md`, `_manifest.jsonl`, `pre_tool_call.py`, `post_execution.py`, `on_failure.py`
+- Concepts: externalized memory, thin conductor, progressive disclosure, decision memory, salience scoring, dream cycle, procedural memory, permissions tiers
+- Artifacts: `AGENTS.md`, `DECISIONS.md`, `WORKSPACE.md`, `PREFERENCES.md`, `LESSONS.md`, `AGENT_LEARNINGS.jsonl`, `_index.md`, `_manifest.jsonl`, `pre_tool_call.py`, `post_execution.py`, `on_failure.py`
+- Directories: `.agent/harness/`, `.agent/memory/`, `.agent/skills/`, `.agent/protocols/tool_schemas/`, `.agent/tools/`
 - Systems: git, cron, JSONL memory logs, markdown skills, tool schemas
 
 ## My Notes
 
 - This is one of the clearest "builder doctrine" notes in the KB because it turns memory, skills, protocols, and harnesses into separate design surfaces instead of collapsing them into generic "agent architecture."
 - The strongest reusable contribution is not any single file layout, but the separation between durable artifacts and the thin runtime loop that reads them.
+- The most KB-improving addition is that semantic memory is not only "lessons" but can also include explicit decision records that preserve rationale and alternatives.
 - The most debatable parts are the exact salience function, the "< 200 LOC harness" heuristic, and the cron-driven dream cycle. Those feel like strong patterns, not universal rules.
 
 ## Open Questions
 
 - Which pieces of this design should become first-class KB concepts rather than remaining inside broader memory or context-engineering pages?
+- When should `DECISIONS.md`-style architectural memory be treated as its own sub-problem instead of being folded into generic semantic memory?
 - What is the best counterweight to the guide's file-centric bias: more protocol-oriented sources, more managed-agent sources, or more workflow-memory sources?
 - Which of the cited references should be added next as primary sources so the note can be triangulated rather than treated as standalone doctrine?
 

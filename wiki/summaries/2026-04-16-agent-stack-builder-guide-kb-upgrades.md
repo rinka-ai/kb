@@ -5,8 +5,8 @@ title: Agent Stack Builder Guide KB Upgrades
 tags: [agents, memory, skills, protocols, harnesses]
 summary: Summary of how the builder guide and follow-on sources sharpen the KB around memory, skills, protocols, and harnesses.
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-04-17
+review_due: 2026-05-17
 confidence: "0.83"
 ---
 
@@ -36,6 +36,13 @@ The Av1dlive builder guide does not overturn the KB's current architecture views
 - Vivek Trivedy supplies the clearest definition of what a harness actually includes in practice
 - Daniel Miessler strengthens the KB's preference for declarative skill and harness design over brittle choreography
 - the `agentic-stack` repo gives the KB a concrete implementation counterpart rather than only architectural prose
+
+## Concrete Patterns Worth Retaining
+
+- `DECISIONS.md` is worth remembering as a specific semantic-memory artifact, not just another note file
+- the guide's `build_context` order is a useful retrieval pattern: active workspace and preferences first, distilled lessons next, then a small top-k of salient episodes, matched skills, and short safety-critical permissions
+- the salience formula and dream-cycle thresholds are good implementation examples for recency-plus-importance retrieval, even if they should not be treated as universal defaults
+- the protocol layer is most useful when it carries typed preconditions, side effects, approval gates, and blocked targets instead of burying governance inside skill prose
 
 ## Remaining Gaps
 
