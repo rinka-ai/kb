@@ -14,6 +14,8 @@ This index groups official repositories added to the KB as implementation and pr
 
 - Protocols:
   [[2026-04-10-model-context-protocol]]
+- Agent frameworks:
+  [[2026-04-19-openai-agents-js]]
 - Eval frameworks:
   [[2026-04-10-inspect-ai]]
 - Stateful memory systems:

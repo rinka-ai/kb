@@ -32,6 +32,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-04-12-elevenlabs-voice-agent-architecture]]
 - [[2026-04-17-browserbase-agent-architecture-kb-upgrades]]
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]
+- [[2026-04-19-openai-agents-js-runtime-patterns-from-source-teardown]]
 
 ## Next Suggested Concepts
 
