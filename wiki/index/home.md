@@ -31,6 +31,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-04-12-mari-architecture-upgrades-from-new-sources]]
 - [[2026-04-12-elevenlabs-voice-agent-architecture]]
 - [[2026-04-17-browserbase-agent-architecture-kb-upgrades]]
+- [[2026-04-18-outbound-ai-agent-kb-upgrades]]
 
 ## Next Suggested Concepts
 

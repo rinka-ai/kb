@@ -26,12 +26,21 @@ This index groups official documentation added to strengthen the KB's coverage o
 - Payment security and managed side effects:
   [[2026-04-12-stripe-integration-security-guide]]
   [[2026-04-12-stripe-checkout-how-checkout-works]]
+- Outbound deliverability and platform constraints:
+  [[2026-04-18-gmail-email-sender-guidelines]]
+  [[2026-04-18-gmail-postmaster-tools-dashboards]]
+  [[2026-04-18-yahoo-sender-best-practices]]
+  [[2026-04-18-can-spam-act-compliance-guide-for-business]]
+  [[2026-04-18-linkedin-user-agreement]]
+  [[2026-04-18-linkedin-crawling-terms-and-conditions]]
+  [[2026-04-18-ico-business-to-business-marketing]]
 
 ## Why This Collection Matters
 
 - These sources make the KB less dependent on papers and engineering blogs for architecture decisions.
 - They describe the actual runtime and operational surfaces teams implement against in production.
 - They are especially useful when mapping abstract agent concepts onto specific system boundaries.
+- They also ground outbound-agent design in official sender requirements, platform rules, and legal guidance instead of vendor folklore.
 
 ## Related
 
