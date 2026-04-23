@@ -16,6 +16,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-react-synergizing-reasoning-and-acting-in-language-models]]
 - Long-context compression:
   [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
+- Externalized context scaffolds:
+  [[2026-04-23-recursive-language-models]]
 - Memory systems:
   [[2026-04-10-memgpt-towards-llms-as-operating-systems]]
 - Workflow memory:

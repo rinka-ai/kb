@@ -3,7 +3,7 @@ id: concept-llm-agents
 type: concept
 title: LLM Agents
 tags: [agents, llms, tool-use, multi-agent, parallel-agents, web-agents, browser, computer-use]
-source_count: 18
+source_count: 19
 summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 canonical_for: [llm agents, multi-agent systems, parallel agents]
 review_status: reviewed
@@ -31,6 +31,7 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - how durable the execution model is under pauses, failures, and retries
 - how evaluation environments differ from deployment environments
 - how well the agent can explore, recover from failure, and ground actions in realistic interfaces
+- whether sub-calls are verbal workflow steps or programmatic recursive calls over external state
 
 ## Source Notes
 
@@ -52,3 +53,4 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - [[2026-04-16-the-anatomy-of-an-agent-harness]]
 - [[2026-04-16-your-harness-your-memory]]
 - [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
+- [[2026-04-23-recursive-language-models]]
