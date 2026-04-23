@@ -3,7 +3,7 @@ id: concept-context-engineering
 type: concept
 title: Context Engineering
 tags: [agents, memory, long-context, compression]
-source_count: 11
+source_count: 12
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
@@ -28,6 +28,7 @@ Context engineering is the discipline of deciding what information an agent shou
 
 - Preserve raw material, then assemble context selectively.
 - Prefer additive delta updates over full rewrites.
+- For extremely long prompts, consider keeping the input as external state with symbolic handles rather than copying it directly into active model context.
 - Make compression restorable whenever possible.
 - Treat files, URLs, and external artifacts as part of usable context.
 - Load the most relevant working state, preferences, and permissions first when they are safety- or task-critical.
@@ -46,6 +47,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - internal learned memory vs external editable memory
 - static precompiled memory vs just-in-time research and retrieval
 - dense context vs attention and distractor risk
+- RLM-style externalized context vs simpler retrieval or summarization when task complexity is low
 - query-aware compression quality vs cacheability and reuse
 - richer always-loaded skills vs progressive disclosure and budget discipline
 
@@ -62,3 +64,4 @@ Context engineering is the discipline of deciding what information an agent shou
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
+- [[2026-04-23-recursive-language-models]]
