@@ -3,26 +3,27 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 13
+source_count: 14
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
-confidence: "0.87"
+last_reviewed: 2026-04-27
+review_due: 2026-05-27
+confidence: "0.88"
 ---
 
 # Agent Harnesses
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state.
 
 ## Core Responsibilities
 
 - build the active context from durable artifacts and recent state
 - define the non-model scaffolding: prompts, tools, bundled infrastructure, orchestration, and hooks
 - route tool calls and execution events through policy hooks
+- separate model reasoning from enforcement so the model can choose actions while the runtime remains responsible for authority, safety, and auditability
 - unify built-in and external tool surfaces behind one extension runtime so the loop sees one capability plane
 - route tasks to the right skill, memory surface, or filing rule through explicit registries or resolvers
 - present the same core runtime through multiple entrypoint adapters such as chat, webhook, and UI surfaces without forking orchestration semantics
@@ -40,6 +41,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - resolver tables let thin harnesses load the right context on demand instead of preloading whole skill libraries
 - multiple clients such as CLI, desktop, and server can remain coherent if they reuse one runtime instead of forking orchestration semantics
 - permissions and session identity should usually be attached by the entrypoint adapter, not improvised inside the always-on prompt
+- the right harness boundary depends on deployment context: CLI coding agents, hosted managed agents, and persistent personal-assistant gateways should not all inherit the same trust and memory model
 
 ## Common Failure Modes
 
@@ -49,9 +51,11 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - hiding governance logic inside prompt text instead of enforceable runtime layers
 - keeping no durable artifacts for resets, resumes, or postmortems
 - outsourcing memory ownership to a closed harness and discovering too late that portability is gone
+- adding autonomy without adding observability, evaluation hooks, or governance surfaces for silent failures
 
 ## Source Notes
 
+- [[2026-04-14-dive-into-claude-code-the-design-space-of-todays-and-future-ai-agent-systems]]
 - [[2026-04-16-externalization-in-llm-agents-a-unified-review-of-memory-skills-protocols-and-harness-engineering]]
 - [[2026-04-16-the-anatomy-of-an-agent-harness]]
 - [[2026-04-16-your-harness-your-memory]]

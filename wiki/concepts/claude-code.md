@@ -3,20 +3,20 @@ id: concept-claude-code
 type: concept
 title: Claude Code
 tags: [claude-code, agentic-coding, skills, hooks, subagents, workflows]
-source_count: 7
-summary: Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, and delegated work.
+source_count: 8
+summary: Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, and append-oriented session state.
 canonical_for: [claude code, agentic coding, hooks, subagents, skills]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
-confidence: "0.86"
+last_reviewed: 2026-04-27
+review_due: 2026-05-27
+confidence: "0.88"
 ---
 
 # Claude Code
 
 ## Summary
 
-Claude Code is best understood as an agentic coding operating environment rather than a single chat loop. The strongest sources converge on a few stable surfaces: permission handling, verification loops, context management, tool orchestration, hooks, MCP-based tool access, reusable skills, and deliberate delegation to subagents. The newer teardown-style source sharpens the runtime picture further: quality comes less from a single giant prompt than from a harness with evented control flow, cache-aware context assembly, explicit recovery logic, and bounded delegated work.
+Claude Code is best understood as an agentic coding operating environment rather than a single chat loop. The strongest sources converge on a few stable surfaces: permission handling, verification loops, context management, tool orchestration, hooks, MCP-based tool access, reusable skills, and deliberate delegation to subagents. The newer teardown-style source sharpens the runtime picture further: quality comes less from a single giant prompt than from a harness with evented control flow, cache-aware context assembly, explicit recovery logic, and bounded delegated work. The arXiv design-space study adds a more formal lens: Claude Code gives the model broad local judgment inside a deterministic harness that enforces policy, manages context, preserves auditability, and keeps the human in authority.
 
 ## Core Surfaces
 
@@ -28,6 +28,14 @@ Claude Code is best understood as an agentic coding operating environment rather
 - skills package reusable tactics and project conventions beyond one-off prompt text
 - MCP tools expose structured external capabilities without hard-coding them into prompts
 - subagents create parallel or fresh-context workstreams when the main session would become overloaded
+
+## Design Lens
+
+- the central architecture question is not "how smart is the model?" but where model judgment stops and deterministic harness responsibility begins
+- permissions are a product surface for human authority and safety, not just a security wrapper around shell access
+- context management, deferred tool loading, skills, hooks, and MCP form a layered extension stack with different context costs
+- append-oriented transcripts and session artifacts favor resume, fork, rewind, and audit over direct query power
+- Claude Code's repository-scoped CLI design should not be treated as the universal agent architecture; persistent gateways such as OpenClaw move trust, memory, and extension boundaries outward
 
 ## Practical Patterns
 
@@ -47,9 +55,11 @@ Claude Code is best understood as an agentic coding operating environment rather
 - reusable automation vs repo-specific local judgment
 - deep single-thread context vs parallel subagent decomposition
 - prompt guidance vs harness-enforced behavior
+- short-term capability amplification vs long-term human understanding and codebase coherence
 
 ## Source Notes
 
+- [[2026-04-14-dive-into-claude-code-the-design-space-of-todays-and-future-ai-agent-systems]]
 - [[2025-04-18-claude-code-best-practices-for-agentic-coding]]
 - [[2026-04-06-how-and-when-to-use-subagents-in-claude-code]]
 - [[2025-12-11-claude-code-power-user-customization-how-to-configure-hooks]]
