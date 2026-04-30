@@ -3,7 +3,7 @@ id: concept-agent-memory
 type: concept
 title: Agent Memory
 tags: [agents, memory, retrieval, reinforcement-learning, stateful-agents]
-source_count: 17
+source_count: 19
 summary: Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time, from editable external stores to learned compact state.
 canonical_for: [agent memory, workflow memory, semantic memory]
 review_status: reviewed
@@ -16,12 +16,13 @@ confidence: "0.89"
 
 ## Summary
 
-Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen three related distinctions: memory is not only storage but also policy about what stays in the hot path, "memory" itself often needs working/episodic/semantic/personal separation, and memory ownership is partly a harness question rather than only a storage question.
+Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen three related distinctions: memory is not only storage but also policy about what stays in the hot path, "memory" itself often needs working/episodic/semantic/personal separation, and memory ownership is partly a harness question rather than only a storage question. The newer enterprise framing also treats memory as synthesized organizational understanding, where identity resolution, source authority, and freshness tracking matter as much as storage itself. AHE adds an eval-grounded version of memory as a harness component: long-term memory can encode boundary-case lessons that transfer across coding tasks, but stacked with prompt and middleware changes it can also create redundant checks and regressions.
 
 ## Main Families
 
 - External memory systems: memory managers, vector stores, graphs, and page stores.
 - Structured context systems: curated bullet playbooks, delta updates, and file-backed context.
+- Organizational memory: continuously updated company models or context graphs that unify people, projects, authority, and recency across tools.
 - Workflow or procedural memory: reusable routines distilled from prior successful trajectories.
 - Decision memory: ADR-style or rationale-preserving records that explain why a long-lived design choice was accepted and whether it is still active.
 - Learned internal memory: fixed-length or compact state updated through reinforcement learning.
@@ -39,9 +40,11 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Failures often need higher salience than routine successes so they are easier to retrieve before repetition.
 - Consolidation can happen in the background rather than only on the hot path.
 - Promotion from episodic to semantic memory should be evidence-based rather than automatic on every run.
+- Promotion from rollout traces into long-term memory should carry evidence and expected impact so later eval rounds can confirm or revert the lesson.
 - Some teams split semantic memory again into lessons versus decision records so architecture rationale stays inspectable instead of getting buried inside generic summaries.
 - Personal preference memory should remain separate from general lessons to avoid overgeneralizing one user's style into doctrine.
 - Memory portability depends on who controls the harness layer that stores, retrieves, and migrates it.
+- Enterprise memory that only retrieves fragments is weaker than memory that resolves identity, staleness, and source priority ahead of time.
 
 ## Important Distinctions
 
@@ -61,6 +64,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Should memory be updated continuously, periodically, or only on demand?
 - When should the agent page, summarize, or interrupt itself instead of replying immediately?
 - Which knowledge should become a reusable workflow artifact instead of staying as raw history?
+- Which lessons belong in memory versus in tools, middleware, skills, or prompts when all of those surfaces can evolve?
 
 ## Source Notes
 
@@ -81,3 +85,5 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - [[2026-04-16-your-harness-your-memory]]
 - [[2026-04-16-agentic-stack]]
 - [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
+- [[2026-04-19-your-company-needs-a-brain-not-more-connectors]]
+- [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]

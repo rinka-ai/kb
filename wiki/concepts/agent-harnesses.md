@@ -3,7 +3,7 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 14
+source_count: 16
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state. iii adds the backend-convergence version of the same idea: when functions, triggers, and workers are the shared substrate, the agent harness and backend infrastructure become one execution plane rather than two systems glued together. AHE adds the empirical self-evolution pattern: harness components become file-level, evidence-backed, revertible artifacts whose edits are paired with explicit predictions and checked against the next evaluation round.
 
 ## Core Responsibilities
 
@@ -27,7 +27,9 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - unify built-in and external tool surfaces behind one extension runtime so the loop sees one capability plane
 - route tasks to the right skill, memory surface, or filing rule through explicit registries or resolvers
 - present the same core runtime through multiple entrypoint adapters such as chat, webhook, and UI surfaces without forking orchestration semantics
+- unify agent and backend execution primitives when agents, services, queues, schedulers, sandboxes, and browser workers can all register the same callable units
 - manage resets, resumptions, handoffs, and structured logs
+- expose prompts, tools, middleware, skills, sub-agents, and memory as inspectable components when the harness itself is meant to improve over time
 - keep the hot-path loop lightweight enough to swap models or runtimes without rewriting the whole system
 - persist outputs into files, stores, or thread surfaces instead of letting them die inside the loop
 
@@ -42,6 +44,8 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - multiple clients such as CLI, desktop, and server can remain coherent if they reuse one runtime instead of forking orchestration semantics
 - permissions and session identity should usually be attached by the entrypoint adapter, not improvised inside the always-on prompt
 - the right harness boundary depends on deployment context: CLI coding agents, hosted managed agents, and persistent personal-assistant gateways should not all inherit the same trust and memory model
+- the thin-versus-thick harness debate can become a composition choice when runtime capabilities are registered functions and triggers instead of a separate agent layer
+- self-evolving harnesses need observability at three levels: component surfaces, trajectory evidence, and decision ledgers that make each edit falsifiable
 
 ## Common Failure Modes
 
@@ -50,8 +54,10 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - treating session history as if it were already the right active context
 - hiding governance logic inside prompt text instead of enforceable runtime layers
 - keeping no durable artifacts for resets, resumes, or postmortems
+- splitting agent retries, queue retries, HTTP timeouts, and tracing across separate control planes so failures are hard to correlate
 - outsourcing memory ownership to a closed harness and discovering too late that portability is gone
 - adding autonomy without adding observability, evaluation hooks, or governance surfaces for silent failures
+- letting self-improvement optimize intended fixes while missing regressions caused by interactions among prompt, memory, tool, and middleware changes
 
 ## Source Notes
 
@@ -69,3 +75,5 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
 - [[2026-04-17-goose]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-04-28-iii]]
+- [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]

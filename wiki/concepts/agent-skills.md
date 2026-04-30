@@ -3,7 +3,7 @@ id: concept-agent-skills
 type: concept
 title: Agent Skills
 tags: [agents, skills, context-engineering]
-source_count: 13
+source_count: 14
 summary: Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
 canonical_for: [agent skills, procedural skills]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness or pretending they belong in long-term memory. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation.
+Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness or pretending they belong in long-term memory. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text.
 
 ## What They Are
 
@@ -32,6 +32,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - include procedures, heuristics, and hard constraints together
 - prefer examples and destination criteria over brittle micromanaged steps
 - let skills accumulate local knowledge or rewrite hooks, but update them conservatively
+- when skills are evolved automatically, pair each update with evidence, expected fixes, and at-risk regressions
 - escalate repeated local failures into broader semantic lessons when they reveal system-wide constraints
 - keep machine-readable manifests or trigger registries so large skill libraries stay mostly off-context until needed
 - maintain explicit resolver entries or strong description fields so existing skills remain reachable by natural user phrasing
@@ -46,6 +47,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - keeping important safety lessons trapped inside one skill instead of promoting them globally
 - describing exact choreography when the skill should really communicate outcomes, examples, and fences
 - building dark skills that technically exist but have no practical path from the resolver
+- over-crediting skills for improvements that actually came from tool, middleware, or memory changes
 
 ## Source Notes
 
@@ -62,3 +64,4 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - [[2026-04-17-goose]]
 - [[2026-04-17-browserbase-skills]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
