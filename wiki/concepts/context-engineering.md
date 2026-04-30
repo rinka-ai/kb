@@ -3,7 +3,7 @@ id: concept-context-engineering
 type: concept
 title: Context Engineering
 tags: [agents, memory, long-context, compression]
-source_count: 13
+source_count: 14
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
@@ -29,6 +29,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - Preserve raw material, then assemble context selectively.
 - Prefer additive delta updates over full rewrites.
 - For organization-specific work, compile repeated cross-source judgments into durable files when forcing the agent to rediscover them at runtime is noisier and less trustworthy.
+- For extremely long prompts, consider keeping the input as external state with symbolic handles rather than copying it directly into active model context.
 - Make compression restorable whenever possible.
 - Treat files, URLs, and external artifacts as part of usable context.
 - Load the most relevant working state, preferences, and permissions first when they are safety- or task-critical.
@@ -49,6 +50,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - static precompiled memory vs just-in-time research and retrieval
 - maintained synthesized worldview vs repeated raw-tool lookup
 - dense context vs attention and distractor risk
+- RLM-style externalized context vs simpler retrieval or summarization when task complexity is low
 - query-aware compression quality vs cacheability and reuse
 - richer always-loaded skills vs progressive disclosure and budget discipline
 - compact evidence reports vs raw trace fidelity for attribution and rollback decisions
@@ -68,3 +70,4 @@ Context engineering is the discipline of deciding what information an agent shou
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
 - [[2026-04-19-your-company-needs-a-brain-not-more-connectors]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
+- [[2026-04-23-recursive-language-models]]
