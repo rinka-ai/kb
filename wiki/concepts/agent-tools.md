@@ -3,7 +3,7 @@ id: concept-agent-tools
 type: concept
 title: Agent Tools
 tags: [tools, tool-use, agents, code-execution, mcp]
-source_count: 10
+source_count: 11
 summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
 canonical_for: [agent tools, tool use, structured tools, code-mediated tool use]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.86"
 
 ## Summary
 
-Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes.
+Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes. AHE adds evidence that tools themselves can be an evolvable performance surface: changed tool behavior can encode coordination patterns more reliably than adding more prose to the prompt.
 
 ## Design Principles
 
@@ -25,6 +25,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - keep high-risk or multi-step business logic behind durable workflow layers instead of giant tool handlers
 - prefer code-mediated loops when the agent needs iteration, filtering, or orchestration across many tools
 - keep the model-facing tool surface as small as possible; hide integration sprawl behind typed internal packages, brokers, or exec helpers when policy and preprocessing must stay centralized
+- treat tool changes as falsifiable harness edits when they are meant to improve agent behavior over time
 
 ## Tool Families
 
@@ -40,6 +41,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - vague parameter semantics that collapse under spoken, messy, or partial inputs
 - embedding business logic directly into fragile tool handlers
 - assuming human-friendly APIs are automatically agent-friendly
+- adding tool-side guardrails that help common cases but prematurely close long-horizon or edge-case tasks
 
 ## Source Notes
 
@@ -53,3 +55,4 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - [[2026-04-16-the-anatomy-of-an-agent-harness]]
 - [[2026-04-17-browserbase-functions]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]

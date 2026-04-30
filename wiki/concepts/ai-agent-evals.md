@@ -3,7 +3,7 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents, web-agents, browser, computer-use]
-source_count: 13
+source_count: 15
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, and adversarial conditions, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, and realistic computer-use setups with deterministic state-based checks.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, and realistic computer-use setups with deterministic state-based checks. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
 
 ## Core Components
 
@@ -25,6 +25,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - transcripts and outcomes
 - graders and pass criteria
 - infrastructure and runtime conditions
+- edit manifests and attribution ledgers when the evaluated harness evolves over time
 
 ## Benchmark Families
 
@@ -32,6 +33,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - adversarial security suites such as AgentDojo
 - web-environment benchmarks such as WebArena
 - computer-use benchmarks such as OSWorld
+- organization-understanding benchmarks for multi-source company context
 
 ## Common Failure Modes
 
@@ -40,6 +42,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - hidden infra variance
 - task saturation
 - unrealistic task design
+- benchmarks that test lookup or recall but never source conflict resolution or cross-system synthesis
 
 ## Practical Lessons
 
@@ -47,6 +50,8 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - Expect benchmarks to stale as models improve.
 - Prefer evals that reflect deployment conditions.
 - Track what the system is actually optimizing for under a given setup.
+- Pair score deltas with edit-level predictions so self-improving systems can distinguish evidence-driven fixes from lucky changes.
+- Track predicted regressions as seriously as predicted fixes, because regressions are easier for evolve loops to miss.
 - Prefer execution-based or state-based validators over action-trace matching or LLM-only judging when possible.
 - For security-sensitive agents, measure utility under attack, not only benign success.
 
@@ -65,3 +70,5 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-04-10-webarena]]
 - [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
 - [[2026-04-10-osworld]]
+- [[2026-04-19-your-company-needs-a-brain-not-more-connectors]]
+- [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
