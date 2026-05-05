@@ -3,7 +3,7 @@ id: concept-multi-agent-systems
 type: concept
 title: Multi-Agent Systems
 tags: [agents, multi-agent, parallel-agents, orchestration]
-source_count: 7
+source_count: 8
 summary: Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
 canonical_for: [multi-agent systems, parallel agents, subagents]
 review_status: reviewed
@@ -32,6 +32,7 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - give subagents bounded scope, clear outputs, and disjoint responsibilities when possible
 - use artifacts or structured summaries to compress each agent’s findings back into the main thread
 - do not decompose work unless the coordination cost is lower than the benefit from parallelism or specialization
+- for structured extraction workloads, treat reflexive correction loops as an accuracy-cost-latency tradeoff rather than a free improvement; medium-confidence benchmark evidence favors selective hierarchical routing and retry when scale matters
 
 ## Tensions
 
@@ -39,6 +40,7 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - fresh contexts vs fragmented global understanding
 - specialization vs duplicated work
 - autonomy vs the need for explicit task locking and review
+- iterative self-correction vs cost, tail latency, and throughput collapse under load
 
 ## Source Notes
 
@@ -49,3 +51,4 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - [[2026-03-24-harness-design-for-long-running-application-development]]
 - [[2026-04-22-multi-agents-whats-actually-working]]
 - [[2025-04-18-claude-code-best-practices-for-agentic-coding]]
+- [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
