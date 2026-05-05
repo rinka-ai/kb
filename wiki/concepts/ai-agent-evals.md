@@ -3,7 +3,7 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents, web-agents, browser, computer-use]
-source_count: 15
+source_count: 16
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, and adversarial conditions, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
@@ -33,6 +33,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - adversarial security suites such as AgentDojo
 - web-environment benchmarks such as WebArena
 - computer-use benchmarks such as OSWorld
+- domain-specific workflow benchmarks that report accuracy, cost, latency, and throughput together
 - organization-understanding benchmarks for multi-source company context
 
 ## Common Failure Modes
@@ -54,6 +55,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - Track predicted regressions as seriously as predicted fixes, because regressions are easier for evolve loops to miss.
 - Prefer execution-based or state-based validators over action-trace matching or LLM-only judging when possible.
 - For security-sensitive agents, measure utility under attack, not only benign success.
+- For production extraction systems, report cost per document, latency distribution, and throughput knee points alongside F1 or document-level accuracy.
 
 ## Source Notes
 
@@ -72,3 +74,4 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-04-10-osworld]]
 - [[2026-04-19-your-company-needs-a-brain-not-more-connectors]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
+- [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
