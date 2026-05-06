@@ -27,6 +27,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-12-memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent]]
 - Security and adversarial robustness:
   [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
+- Skill supply-chain security:
+  [[2026-05-01-skills-as-verifiable-artifacts]]
 - Web-agent benchmarks:
   [[2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents]]
 - Computer-use benchmarks:

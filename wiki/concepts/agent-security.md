@@ -3,8 +3,8 @@ id: concept-agent-security
 type: concept
 title: Agent Security
 tags: [security, prompt-injection, sandboxing, approvals, agents, adversarial-evals, autonomy]
-source_count: 8
-summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, and adversarial evaluation rather than a single prompting trick.
+source_count: 9
+summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
 canonical_for: [agent security, prompt injection, sandboxing, approval policies, adversarial agent evals]
 review_status: reviewed
 last_reviewed: 2026-04-17
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, and evals that measure useful work under attack instead of only benign task success.
+Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, and evals that measure useful work under attack instead of only benign task success. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified.
 
 ## Threat Surfaces
 
@@ -25,6 +25,7 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - weak sandboxing turns ordinary model mistakes into filesystem, network, or credential incidents
 - live credentials inside model-reachable processes turn arbitrary-code execution into secret exfiltration risk
 - tool sets that are broader than the task surface make both benign mistakes and attacks easier
+- skills can act as persistent prompt-injection or supply-chain surfaces when a runtime infers trust from origin, signature, or registry membership alone
 
 ## Defensive Patterns
 
@@ -35,11 +36,14 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - scope permissions and allowed capabilities by invocation source or job intent when tasks arrive through different channels
 - pair tool permissioning with network or domain allowlists when the environment can reach the open web
 - pair autonomy improvements with stronger isolation, monitoring, and post-hoc review surfaces
+- treat skill packages as untrusted by default; use explicit verification levels to decide when irreversible actions can avoid per-call HITL approval
+- keep audit logs strong enough to reconcile approved-and-executed actions with observed side effects after a run
 
 ## Evaluation Standards
 
 - evaluate utility under attack, not only clean-environment success
 - use state-based or deterministic checks when security properties are concrete
+- check gate correctness by comparing observed side effects against approved-and-executed audit records when the runtime controls the relevant corpus
 - treat adversarial robustness as part of system quality, not as a separate research toy
 - revisit defenses regularly because both attacks and normal agent capabilities change quickly
 
@@ -52,6 +56,7 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 
 ## Source Notes
 
+- [[2026-05-01-skills-as-verifiable-artifacts]]
 - [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
 - [[2026-04-10-agentdojo]]
 - [[2026-03-25-claude-code-auto-mode]]
