@@ -3,7 +3,7 @@ id: concept-agent-skills
 type: concept
 title: Agent Skills
 tags: [agents, skills, context-engineering]
-source_count: 14
+source_count: 15
 summary: Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
 canonical_for: [agent skills, procedural skills]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness or pretending they belong in long-term memory. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text.
+Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness or pretending they belong in long-term memory. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text. A newer security framing treats runtime-loaded skills as supply-chain artifacts: signatures and registries establish provenance, but behavioral trust requires explicit verification before irreversible capabilities can stop asking for HITL approval.
 
 ## What They Are
 
@@ -37,6 +37,8 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - keep machine-readable manifests or trigger registries so large skill libraries stay mostly off-context until needed
 - maintain explicit resolver entries or strong description fields so existing skills remain reachable by natural user phrasing
 - couple skill reachability to permission scope or invocation mode when background jobs should not load the same playbooks as interactive sessions
+- treat signatures, registries, and clearances as provenance signals rather than proof that a skill's behavior matches its manifest
+- freeze loaded skill content and verification levels at bootstrap; route any skill mutation through an audited irreversible operation and re-verify the resulting artifact before reuse
 
 ## Failure Modes
 
@@ -48,9 +50,12 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - describing exact choreography when the skill should really communicate outcomes, examples, and fences
 - building dark skills that technically exist but have no practical path from the resolver
 - over-crediting skills for improvements that actually came from tool, middleware, or memory changes
+- treating signed or registry-delivered skills as trusted without behavioral verification
+- allowing an agent to mutate loaded skill content in-session and silently change what "verified" means
 
 ## Source Notes
 
+- [[2026-05-01-skills-as-verifiable-artifacts]]
 - [[2026-04-16-externalization-in-llm-agents-a-unified-review-of-memory-skills-protocols-and-harness-engineering]]
 - [[2026-04-16-the-anatomy-of-an-agent-harness]]
 - [[2026-04-16-good-and-bad-harness-engineering]]
