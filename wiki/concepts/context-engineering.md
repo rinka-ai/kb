@@ -3,7 +3,7 @@ id: concept-context-engineering
 type: concept
 title: Context Engineering
 tags: [agents, memory, long-context, compression]
-source_count: 14
+source_count: 15
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.89"
 
 ## Summary
 
-Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, explicit context budgeting, and resolver-based routing are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model. The newer enterprise framing adds a further distinction between runtime retrieval and maintained organizational understanding: for some questions, the key choice is whether the agent should re-search raw tools from scratch or read from a continuously synthesized context layer. AHE adds the trajectory-debugging version of progressive disclosure: millions of rollout tokens become layered reports with drill-down access, so the evolve agent can reason over failures without swallowing raw traces whole.
+Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, explicit context budgeting, and resolver-based routing are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model. The newer enterprise framing adds a further distinction between runtime retrieval and maintained organizational understanding: for some questions, the key choice is whether the agent should re-search raw tools from scratch or read from a continuously synthesized context layer. AHE adds the trajectory-debugging version of progressive disclosure: millions of rollout tokens become layered reports with drill-down access, so the evolve agent can reason over failures without swallowing raw traces whole. ContextLattice adds a concrete active-context artifact shape: context packs should be bounded, grounded, cited, and honest about incomplete retrieval.
 
 ## What It Is
 
@@ -42,6 +42,9 @@ Context engineering is the discipline of deciding what information an agent shou
 - Recite plans or goal state when the agent needs help keeping attention on long tasks.
 - Treat salience estimation and evidence ordering as context decisions, not only retrieval decisions.
 - Every fragment in context should earn its place; irrelevant but plausible context is still noise.
+- Prefer context packs that separate facts, numeric facts, citations, rendered result rows, warnings, and retrieval debug instead of pasting raw search results.
+- Use topic rollups as an intermediate layer between raw history and active context, preserving raw refs while exposing recency, file partitions, and open inferences.
+- Return lifecycle metadata with context assembly so the caller knows whether the context is ready, partial, degraded, or worth re-querying after cache warm.
 
 ## Tensions
 
@@ -71,3 +74,4 @@ Context engineering is the discipline of deciding what information an agent shou
 - [[2026-04-19-your-company-needs-a-brain-not-more-connectors]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
 - [[2026-04-23-recursive-language-models]]
+- [[2026-05-09-contextlattice]]
