@@ -7,8 +7,8 @@ source_count: 9
 summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
 canonical_for: [agent security, prompt injection, sandboxing, approval policies, adversarial agent evals]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.88"
 ---
 

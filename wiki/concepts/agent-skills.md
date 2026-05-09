@@ -3,12 +3,12 @@ id: concept-agent-skills
 type: concept
 title: Agent Skills
 tags: [agents, skills, context-engineering]
-source_count: 15
+source_count: 16
 summary: Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
 canonical_for: [agent skills, procedural skills]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.84"
 ---
 
@@ -29,6 +29,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 
 - keep a lightweight registry or manifest always available, then load full skills only on trigger match
 - support both filesystem and built-in skill discovery so skills stay reachable without forcing all of them into the hot path
+- make skill reachability portable across sandbox types; if one deployment target bundles skills while another expects them in the sandbox filesystem, users will experience the same skill as present or absent depending on runtime accident
 - include procedures, heuristics, and hard constraints together
 - prefer examples and destination criteria over brittle micromanaged steps
 - let skills accumulate local knowledge or rewrite hooks, but update them conservatively
@@ -46,6 +47,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - writing procedural skills that the model follows literally even when the world changed
 - letting stale skills survive API or workflow drift
 - confusing skills with tools, memory, or project context
+- making skill discovery depend on hidden filesystem assumptions that differ between local, virtual, hosted, and container sandboxes
 - keeping important safety lessons trapped inside one skill instead of promoting them globally
 - describing exact choreography when the skill should really communicate outcomes, examples, and fences
 - building dark skills that technically exist but have no practical path from the resolver
@@ -70,3 +72,4 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - [[2026-04-17-browserbase-skills]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
+- [[2026-05-02-flue]]

@@ -112,12 +112,16 @@ function stringValue(note: KbNote, key: string): string {
   return typeof raw === "string" ? raw.trim() : "";
 }
 
-function parseIsoDate(value: string): number | null {
+function parseDate(value: string): number | null {
   if (!value) {
     return null;
   }
   const parsed = Date.parse(value);
   return Number.isNaN(parsed) ? null : parsed;
+}
+
+function isoDate(value: number): string {
+  return new Date(value).toISOString().slice(0, 10);
 }
 
 function isCoveredTag(tag: string, representedTags: Set<string>): boolean {
@@ -135,16 +139,23 @@ function newestLinkedSourceDate(
   linkedSourcePaths: string[],
   lookup: ReturnType<typeof createKbNoteLookup>,
 ): string {
-  return (
-    linkedSourcePaths
-      .map((path) => lookup.byPath.get(path))
-      .flatMap((note) =>
-        note ? [stringValue(note, "date_added"), stringValue(note, "date_published")] : [],
-      )
-      .filter(Boolean)
-      .sort()
-      .at(-1) ?? ""
-  );
+  let newest: number | null = null;
+
+  for (const path of linkedSourcePaths) {
+    const note = lookup.byPath.get(path);
+    if (!note) {
+      continue;
+    }
+
+    for (const key of ["date_added", "date_published"]) {
+      const timestamp = parseDate(stringValue(note, key));
+      if (timestamp != null && (newest == null || timestamp > newest)) {
+        newest = timestamp;
+      }
+    }
+  }
+
+  return newest == null ? "" : isoDate(newest);
 }
 
 function suggestedActions(report: GapReport): string[] {
@@ -241,9 +252,9 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
       const reviewStatus = stringValue(note, "review_status");
       const lastReviewed = stringValue(note, "last_reviewed");
       const reviewDue = stringValue(note, "review_due");
-      const lastReviewedTs = parseIsoDate(lastReviewed);
-      const reviewDueTs = parseIsoDate(reviewDue);
-      const newestSourceTs = parseIsoDate(newestSourceDate);
+      const lastReviewedTs = parseDate(lastReviewed);
+      const reviewDueTs = parseDate(reviewDue);
+      const newestSourceTs = parseDate(newestSourceDate);
       const now = Date.now();
 
       let reason = "";

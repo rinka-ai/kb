@@ -7,8 +7,8 @@ source_count: 11
 summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
 canonical_for: [agent tools, tool use, structured tools, code-mediated tool use]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.86"
 ---
 
