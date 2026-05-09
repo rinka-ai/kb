@@ -3,7 +3,7 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 7
+source_count: 8
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.83"
 
 ## Summary
 
-Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability.
+Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture.
 
 ## Common Responsibilities
 
@@ -40,10 +40,12 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - prefer explicit thread or session state when conversations or tasks must survive interruption
 - keep deterministic workflow structure outside the model when correctness and auditability matter
 - avoid collapsing memory, orchestration, and policy into one prompt when they should evolve independently
+- avoid frameworks that make today's topology, such as graph routing, role crews, or conversational multi-agent loops, hard to replace
 
 ## Tensions
 
 - framework leverage vs product-specific constraints
+- topology convenience vs durable primitive portability
 - deterministic workflow structure vs flexible model planning
 - runtime abstraction vs direct control over infrastructure
 - reusable primitives vs framework lock-in
@@ -57,3 +59,4 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-17-goose]]
+- [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
