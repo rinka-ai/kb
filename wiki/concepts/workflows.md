@@ -7,9 +7,9 @@ source_count: 7
 summary: Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, and side effects stay inspectable instead of being improvised inside one autonomous loop.
 canonical_for: [workflows, workflow agents, agent workflows, deterministic orchestration]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
-confidence: "0.83"
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
+confidence: "0.84"
 ---
 
 # Agent Workflows
@@ -33,6 +33,7 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - add more autonomy only when a deterministic skeleton is clearly too rigid for the task
 - compose new agent patterns from explicit workflow primitives instead of hiding orchestration inside prompts or framework-specific topology
 - choose feedback loops with operational constraints in view: iterative correction can improve accuracy, but cost, latency tails, and queuing behavior can dominate at production scale
+- keep workflow state outside sandbox snapshots when completed steps, external waits, and side-effect replay need to be inspectable
 
 ## Failure Modes
 

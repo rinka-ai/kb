@@ -7,8 +7,8 @@ source_count: 15
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
-last_reviewed: 2026-04-29
-review_due: 2026-05-29
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.89"
 ---
 

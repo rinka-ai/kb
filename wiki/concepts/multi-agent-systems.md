@@ -7,8 +7,8 @@ source_count: 8
 summary: Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
 canonical_for: [multi-agent systems, parallel agents, subagents]
 review_status: reviewed
-last_reviewed: 2026-04-23
-review_due: 2026-05-23
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.84"
 ---
 

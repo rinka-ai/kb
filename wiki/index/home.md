@@ -34,6 +34,9 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]
 - [[2026-04-19-openai-agents-js-runtime-patterns-from-source-teardown]]
 - [[2026-05-02-agent-memory-architecture-kb-upgrades]]
+- [[2026-05-02-flue-sandbox-agent-framework-source-teardown]]
+- [[2026-05-09-contextlattice-memory-context-orchestration-source-teardown]]
+- [[2026-05-09-durable-orchestration-background-agents-kb-upgrades]]
 
 ## Next Suggested Concepts
 

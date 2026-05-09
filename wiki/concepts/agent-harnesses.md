@@ -3,25 +3,26 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 19
+source_count: 20
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
-last_reviewed: 2026-04-27
-review_due: 2026-05-27
-confidence: "0.88"
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
+confidence: "0.89"
 ---
 
 # Agent Harnesses
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. The durable-orchestration essay sharpens the topology boundary: ReAct loops, planners, routers, and sub-agent teams should be replaceable compositions above stable step, state, event, lifecycle, and trace primitives. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state. iii adds the backend-convergence version of the same idea: when functions, triggers, and workers are the shared substrate, the agent harness and backend infrastructure become one execution plane rather than two systems glued together. AHE adds the empirical self-evolution pattern: harness components become file-level, evidence-backed, revertible artifacts whose edits are paired with explicit predictions and checked against the next evaluation round. Verifiable-skills work adds the security version of that artifact view: the harness should load skills through a manifest, verification, capability-gate, HITL, and audit-log path rather than trusting skill text because it came from a known origin. ContextLattice adds the memory-gateway version: the harness should define when agents preflight, retrieve, write checkpoints, disclose degraded memory, and re-check recency.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. Flue adds the compact TypeScript sandbox-agent version: a small `init/session/prompt/skill/task/shell` API can be very ergonomic, but context discovery, request validation, observability, and run durability must become explicit contracts for the harness to stay portable across sandbox targets. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state. iii adds the backend-convergence version of the same idea: when functions, triggers, and workers are the shared substrate, the agent harness and backend infrastructure become one execution plane rather than two systems glued together. AHE adds the empirical self-evolution pattern: harness components become file-level, evidence-backed, revertible artifacts whose edits are paired with explicit predictions and checked against the next evaluation round. Verifiable-skills work adds the security version of that artifact view: the harness should load skills through a manifest, verification, capability-gate, HITL, and audit-log path rather than trusting skill text because it came from a known origin. ContextLattice adds the memory-gateway version: the harness should define when agents preflight, retrieve, write checkpoints, disclose degraded memory, and re-check recency. The durable-orchestration source adds a topology boundary: the harness should expose stable execution primitives so ReAct loops, planners, routers, and subagent crews can change without replacing the whole control plane.
 
 ## Core Responsibilities
 
 - build the active context from durable artifacts and recent state
 - define the non-model scaffolding: prompts, tools, bundled infrastructure, orchestration, and hooks
+- define context-loading semantics explicitly so project instructions, skills, roles, memory, and sandbox files do not disappear when the deployment target changes
 - route tool calls and execution events through policy hooks
 - separate model reasoning from enforcement so the model can choose actions while the runtime remains responsible for authority, safety, and auditability
 - unify built-in and external tool surfaces behind one extension runtime so the loop sees one capability plane
@@ -31,6 +32,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - unify agent and backend execution primitives when agents, services, queues, schedulers, sandboxes, and browser workers can all register the same callable units
 - manage resets, resumptions, handoffs, and structured logs
 - manage active run lifecycle controls such as status, cancellation, scheduling, event waits, and inspection
+- expose steps, event waits, retries, cancellation, scheduling, and traces as durable primitives when agents run in the background
 - expose prompts, tools, middleware, skills, sub-agents, and memory as inspectable components when the harness itself is meant to improve over time
 - verify and freeze loaded skills at bootstrap, then enforce declared capabilities through runtime gates rather than trusting prompt text to police itself
 - keep the hot-path loop lightweight enough to swap models or runtimes without rewriting the whole system
@@ -64,6 +66,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - letting self-improvement optimize intended fixes while missing regressions caused by interactions among prompt, memory, tool, and middleware changes
 - allowing signatures, registries, or clearance checks to stand in for behavioral verification of runtime-loaded skills
 - returning retrieved context without lifecycle state, source summaries, or warnings, leaving the model to guess whether memory is complete, partial, stale, or degraded
+- treating sandbox snapshots as a substitute for semantic execution state, leaving no clear record of completed steps or replay-safe side effects
 
 ## Source Notes
 
@@ -84,5 +87,6 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
 - [[2026-04-28-iii]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
+- [[2026-05-02-flue]]
 - [[2026-05-09-contextlattice]]
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]

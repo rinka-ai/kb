@@ -3,13 +3,13 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 8
+source_count: 9
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
-confidence: "0.83"
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
+confidence: "0.84"
 ---
 
 # Agent Frameworks
@@ -33,6 +33,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - Google ADK emphasizes an event loop runner with deterministic workflow agents around LLM subagents
 - Letta emphasizes stateful memory-rich agents with explicit long-term storage surfaces
 - Goose emphasizes a local reusable runtime with provider abstraction, unified built-in and MCP extension surfaces, scheduling, and shared core primitives across CLI, desktop, server, and ACP clients
+- Flue emphasizes sandbox-agent packaging: TypeScript entrypoints compile to deploy targets while sessions, filesystem sandboxes, command grants, skills, typed results, child tasks, and MCP tools form a compact programmable harness
 
 ## Selection Heuristics
 
@@ -41,6 +42,8 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - keep deterministic workflow structure outside the model when correctness and auditability matter
 - avoid collapsing memory, orchestration, and policy into one prompt when they should evolve independently
 - avoid frameworks that make today's topology, such as graph routing, role crews, or conversational multi-agent loops, hard to replace
+- require context-loading semantics to be portable across local, virtual, hosted, and container sandboxes before treating a framework as runtime-agnostic
+- prefer frameworks that expose steps, waits, retries, cancellation, scheduling, and traces as stable primitives rather than hard-coding one agent topology
 
 ## Tensions
 
@@ -59,4 +62,5 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-17-goose]]
+- [[2026-05-02-flue]]
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]

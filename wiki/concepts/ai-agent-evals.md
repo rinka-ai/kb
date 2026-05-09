@@ -7,8 +7,8 @@ source_count: 16
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, and adversarial conditions, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.87"
 ---
 

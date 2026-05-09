@@ -5,10 +5,10 @@ title: Managed Agents
 tags: [agents, infrastructure, sessions, sandboxes, architecture]
 source_count: 14
 summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
-canonical_for: [managed agents, durable execution, resumable approvals, decoupling the brain from the hands]
+canonical_for: [managed agents, hosted agent runtimes, resumable approvals, decoupling the brain from the hands]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.87"
 ---
 

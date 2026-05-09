@@ -7,8 +7,8 @@ source_count: 12
 summary: Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
 canonical_for: [mcp, model context protocol, agent protocol]
 review_status: reviewed
-last_reviewed: 2026-04-18
-review_due: 2026-05-18
+last_reviewed: 2026-05-09
+review_due: 2026-06-09
 confidence: "0.85"
 ---
 
