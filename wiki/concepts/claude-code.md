@@ -3,7 +3,7 @@ id: concept-claude-code
 type: concept
 title: Claude Code
 tags: [claude-code, agentic-coding, skills, hooks, subagents, workflows, html-artifacts]
-source_count: 9
+source_count: 10
 summary: Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, and reviewable collaboration artifacts.
 canonical_for: [claude code, agentic coding, claude code hooks, claude code subagents, claude code skills]
 review_status: reviewed
@@ -42,6 +42,7 @@ Claude Code is best understood as an agentic coding operating environment rather
 
 - give the agent clear ways to verify work with tests, linting, and file inspection
 - keep repo instructions short, durable, and operational instead of writing giant prompt manifests
+- treat repo instructions as behavioral controls for observed failure modes; keep rules that prevent real mistakes and avoid turning self-reported metrics into canonical evidence
 - keep the most stable prompt sections cache-friendly and inject volatile context as late as possible
 - use cheap-first compaction and only escalate to summarization or collapse when lighter tactics fail
 - classify tools by concurrency and side-effect risk at definition time rather than improvising per turn
@@ -72,3 +73,4 @@ Claude Code is best understood as an agentic coding operating environment rather
 - [[2025-07-23-how-anthropic-teams-use-claude-code]]
 - [[2026-04-17-claude-code-agent-complete-architecture-deep-dive-source-code-analysis]]
 - [[2026-05-08-using-claude-code-the-unreasonable-effectiveness-of-html]]
+- [[2026-05-09-mnimiy-claude-md-12-rules]]
