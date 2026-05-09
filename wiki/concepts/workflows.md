@@ -3,7 +3,7 @@ id: concept-workflows
 type: concept
 title: Agent Workflows
 tags: [workflows, agents, orchestration, workflow-agents, deterministic-control]
-source_count: 6
+source_count: 7
 summary: Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, and side effects stay inspectable instead of being improvised inside one autonomous loop.
 canonical_for: [workflows, workflow agents, agent workflows, deterministic orchestration]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.83"
 
 ## Summary
 
-Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run.
+Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run. The durable-orchestration source frames workflows as a stable substrate for changing agent patterns: ReAct loops, planners, routers, and multi-agent delegation are all compositions of step, state, event, retry, and trace primitives.
 
 ## When They Fit
 
@@ -31,6 +31,7 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - separate orchestration from tool implementations and side-effect handlers
 - preserve run state and artifacts so human review and resume are possible
 - add more autonomy only when a deterministic skeleton is clearly too rigid for the task
+- compose new agent patterns from explicit workflow primitives instead of hiding orchestration inside prompts or framework-specific topology
 - choose feedback loops with operational constraints in view: iterative correction can improve accuracy, but cost, latency tails, and queuing behavior can dominate at production scale
 
 ## Failure Modes
@@ -49,3 +50,4 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - [[2026-04-12-agent-workflow-memory]]
 - [[2026-04-12-durable-mcp-weather-server]]
 - [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
+- [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
