@@ -64,9 +64,6 @@ OpenAI's speech-to-text guide is the core input-side reference for voice systems
 
 - [[voice-ai]]
 - [[speech-to-text]]
-- [[transcription]]
-- [[audio]]
-- [[input]]
 
 ## Source Text
 

@@ -58,7 +58,6 @@ Anthropic shows how quickly strong models can invalidate traditional take-home t
 
 - [[ai-agent-evals]]
 - [[benchmark-integrity]]
-- [[technical-interviews]]
 
 ## Source Text
 

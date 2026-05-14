@@ -65,9 +65,7 @@ Dictate anywhere you can type — 4x faster than typing. Flow transcribes your s
 ## Related
 
 - [[voice-ai]]
-- [[wispr-flow]]
-- [[dictation]]
-- [[product-overview]]
+- [[voice-dictation]]
 
 ## Source Text
 

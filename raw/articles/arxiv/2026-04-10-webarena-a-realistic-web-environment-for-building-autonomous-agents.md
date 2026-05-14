@@ -68,9 +68,8 @@ WebArena is a realism-first web-agent benchmark: self-hosted sites with authenti
 ## Related
 
 - [[web-agents]]
-- [[benchmarks]]
-- [[evals]]
-- [[browser]]
+- [[benchmark-integrity]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

@@ -1,0 +1,18 @@
+{
+  "attachmentFolderPath": "raw/images",
+  "userIgnoreFilters": [
+    "node_modules/",
+    ".git/",
+    ".kb/",
+    ".github/",
+    "evals/",
+    "docs/",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "CODE_OF_CONDUCT.md",
+    "**/*.bak-*"
+  ]
+}

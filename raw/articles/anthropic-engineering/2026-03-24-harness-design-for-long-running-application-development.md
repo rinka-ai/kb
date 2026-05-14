@@ -58,7 +58,7 @@ This post argues that agent performance on long-running application work is domi
 
 - [[context-engineering]]
 - [[managed-agents]]
-- [[agentic-coding]]
+- [[claude-code]]
 
 ## Source Text
 

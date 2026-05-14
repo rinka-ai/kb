@@ -57,7 +57,7 @@ Auto mode is Anthropic's attempt to automate common approval decisions in Claude
 ## Related
 
 - [[claude-code]]
-- [[agent-safety]]
+- [[agent-security]]
 - [[managed-agents]]
 
 ## Source Text

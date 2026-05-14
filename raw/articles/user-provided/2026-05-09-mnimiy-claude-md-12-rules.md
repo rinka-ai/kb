@@ -73,11 +73,9 @@ This post is worth keeping as a medium-quality practitioner source on repo instr
 ## Related
 
 - [[claude-code]]
-- [[claude-md]]
 - [[context-engineering]]
-- [[coding-agents]]
 - [[durable-execution]]
-- [[agent-evals]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

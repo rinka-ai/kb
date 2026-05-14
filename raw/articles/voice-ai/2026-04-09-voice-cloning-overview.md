@@ -66,9 +66,7 @@ When cloning a voice, there are two main options: Instant Voice Cloning (IVC) an
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-cloning]]
-- [[voice-design]]
+- [[synthetic-voices]]
 
 ## Source Text
 

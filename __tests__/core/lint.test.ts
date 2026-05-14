@@ -1,5 +1,8 @@
 import { describe, expect, test } from "bun:test";
+import { existsSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { collectKbWarnings } from "../../src/core/lint";
+import { ROOT } from "../../src/core/paths";
 import { withRepoFixtureSourceDirs } from "../helpers/repo-source-dirs";
 
 describe("lint", () => {
@@ -67,6 +70,54 @@ Original source.
         ).toBe(true);
       },
     );
+  });
+
+  test("flags wiki pages missing from wiki/index.md catalog", () => {
+    const indexPath = join(ROOT, "wiki", "index.md");
+    const backupPath = `${indexPath}.bak-${Date.now()}`;
+    const hadIndex = existsSync(indexPath);
+    if (hadIndex) renameSync(indexPath, backupPath);
+
+    writeFileSync(
+      indexPath,
+      `---\nid: wiki-index\ntype: index\ntitle: Wiki Index\nsummary: Test stub.\n---\n\n# Wiki Index\n\n## Concepts\n- [[listed-concept]]\n`,
+    );
+
+    try {
+      withRepoFixtureSourceDirs(
+        [
+          {
+            dir: "wiki",
+            relativePath: "concepts/listed-concept.md",
+            content: "# Listed Concept\n",
+          },
+          {
+            dir: "wiki",
+            relativePath: "concepts/orphan-concept.md",
+            content: "# Orphan Concept\n",
+          },
+        ],
+        () => {
+          // The fixture redirects SOURCE_DIRS away from real wiki/, so the
+          // listed/orphan pages live under wiki/<fixtureId>/. Read the same
+          // stub wiki/index.md from disk; orphan-concept is not listed.
+          const warnings = collectKbWarnings();
+          expect(
+            warnings.some((w) => w.includes("orphan-concept.md: not listed in wiki/index.md")),
+          ).toBe(true);
+          expect(
+            warnings.some((w) => w.includes("listed-concept.md: not listed in wiki/index.md")),
+          ).toBe(false);
+        },
+      );
+    } finally {
+      if (hadIndex) {
+        renameSync(backupPath, indexPath);
+      } else if (existsSync(indexPath)) {
+        // Defensive cleanup if the index file didn't exist before.
+        rmSync(indexPath);
+      }
+    }
   });
 
   test("flags superseded notes without superseded_by and dangling wiki links", () => {

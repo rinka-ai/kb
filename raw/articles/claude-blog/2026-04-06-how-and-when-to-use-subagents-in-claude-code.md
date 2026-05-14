@@ -67,9 +67,7 @@ When to delegate research, parallelize tasks, or get a fresh review with Claude 
 ## Related
 
 - [[claude-code]]
-- [[subagents]]
-- [[agentic-coding]]
-- [[parallel-agents]]
+- [[multi-agent-systems]]
 
 ## Source Text
 

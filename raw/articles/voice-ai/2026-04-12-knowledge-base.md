@@ -61,9 +61,6 @@ Enhance your conversational agent with custom knowledge.
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[knowledge-base]]
 - [[rag]]
 
 ## Source Text

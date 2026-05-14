@@ -52,19 +52,16 @@ This example treats MCP tools as thin entrypoints that start durable workflows, 
 
 ## My Notes
 
-- This is one of the most directly useful implementation references for Mari because it mirrors the repo's own separation between tool surface and durable business logic.
-- If Mari ever grows more MCP-shaped or more asynchronous tool flows, this note should be easy to reach.
 
 ## Open Questions
 
-- Which Mari tools are still simple enough to stay inline, and which would benefit from a more explicitly durable workflow boundary?
 - How much of Temporal's workflow/activity split should be treated as a general agent pattern versus a framework-specific idiom?
 
 ## Related
 
 - [[managed-agents]]
 - [[llm-agents]]
-- [[mcp]]
+- [[agent-protocols]]
 
 ## Source Text
 

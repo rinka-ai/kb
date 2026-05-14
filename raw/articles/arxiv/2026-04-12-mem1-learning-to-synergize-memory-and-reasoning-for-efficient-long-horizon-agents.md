@@ -52,18 +52,14 @@ MEM1 learns a compact shared internal state that supports both memory and reason
 ## My Notes
 
 - This is a better canonical source than the earlier secondary MEM1 note and strengthens the KB's coverage of learned internal memory.
-- It matters for Mari less as a direct implementation recipe and more as a boundary marker for what external memory systems are competing with.
 
 ## Open Questions
 
-- Which parts of Mari's memory pressure should be solved through explicit external memory versus learned internal compression in future models?
-- Could Mari borrow the idea of joint reasoning-plus-consolidation objectives even while keeping memory fully inspectable?
 
 ## Related
 
 - [[agent-memory]]
 - [[llm-agents]]
-- [[long-horizon-agents]]
 
 ## Source Text
 

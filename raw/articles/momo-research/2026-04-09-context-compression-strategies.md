@@ -61,9 +61,7 @@ The note surveys practical ways to manage growing sessions and argues against ag
 ## Related
 
 - [[context-engineering]]
-- [[compression]]
-- [[kv-cache]]
-- [[sessions]]
+- [[managed-agents]]
 
 ## Source Text
 

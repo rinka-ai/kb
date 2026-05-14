@@ -66,10 +66,9 @@ Manus argues that context engineering is a first-class systems problem for agent
 ## Related
 
 - [[context-engineering]]
-- [[agents]]
-- [[sessions]]
-- [[kv-cache]]
-- [[file-system]]
+- [[llm-agents]]
+- [[managed-agents]]
+- [[agent-memory]]
 
 ## Source Text
 

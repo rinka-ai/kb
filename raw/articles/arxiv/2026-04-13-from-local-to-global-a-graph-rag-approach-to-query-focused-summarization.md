@@ -62,9 +62,8 @@ GraphRAG addresses global corpus questions by building an entity graph plus comm
 
 - [[rag]]
 - [[embeddings]]
-- [[graphrag]]
-- [[summarization]]
-- [[papers]]
+- [[context-engineering]]
+- [[arxiv]]
 
 ## Source Text
 

@@ -72,8 +72,7 @@ Anthropic’s core argument is that agent harnesses encode assumptions that beco
 - [[managed-agents]]
 - [[context-engineering]]
 - [[agent-memory]]
-- [[sessions]]
-- [[sandboxes]]
+- [[agent-security]]
 
 ## Source Text
 

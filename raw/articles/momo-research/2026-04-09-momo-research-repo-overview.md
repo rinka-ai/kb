@@ -61,7 +61,6 @@ The repository positions itself as a public research log focused on context engi
 
 - [[context-engineering]]
 - [[agent-memory]]
-- [[persistent-memory]]
 - [[momo-research]]
 
 ## Source Text

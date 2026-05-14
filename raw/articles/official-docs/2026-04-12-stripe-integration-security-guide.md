@@ -52,13 +52,10 @@ Stripe's guidance is to reduce payment-system risk by choosing low-risk integrat
 
 ## My Notes
 
-- This is one of the highest-leverage operational sources for Mari because the repo touches money-adjacent flows and needs strict side-effect boundaries.
 - The most important architectural lesson is to keep the model away from raw payment data and let the application operate through narrow, audited Stripe surfaces.
 
 ## Open Questions
 
-- Which Mari payment or billing flows should be re-shaped to use Stripe-hosted or tokenized boundaries instead of broader server-owned flows?
-- Should webhook verification and event replay protection be treated as a reusable platform primitive in Mari?
 
 ## Related
 

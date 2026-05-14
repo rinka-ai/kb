@@ -57,8 +57,8 @@ This post is a practical taxonomy of agent evaluation. It explains what eval com
 ## Related
 
 - [[ai-agent-evals]]
-- [[harnesses]]
-- [[benchmarking]]
+- [[agent-harnesses]]
+- [[benchmark-integrity]]
 
 ## Source Text
 

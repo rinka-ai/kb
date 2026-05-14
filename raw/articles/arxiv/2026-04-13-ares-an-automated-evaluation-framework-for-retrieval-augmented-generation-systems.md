@@ -62,9 +62,7 @@ ARES is an automated RAG evaluation framework that trains lightweight judges on 
 
 - [[rag]]
 - [[ai-agent-evals]]
-- [[evaluation]]
-- [[ares]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

@@ -61,10 +61,9 @@ The AgentDojo repository turns the paper's security benchmark into a usable eval
 
 ## Related
 
-- [[security]]
-- [[prompt-injection]]
-- [[agents]]
-- [[evals]]
+- [[agent-security]]
+- [[llm-agents]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

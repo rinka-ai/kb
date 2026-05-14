@@ -62,9 +62,7 @@ Ragas is a reference-free RAG evaluation framework for measuring retrieval focus
 
 - [[rag]]
 - [[ai-agent-evals]]
-- [[evaluation]]
-- [[ragas]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

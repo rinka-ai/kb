@@ -60,12 +60,10 @@ BEIR is a heterogeneous zero-shot retrieval benchmark showing that strong lexica
 
 ## Related
 
-- [[retrieval]]
 - [[rag]]
 - [[embeddings]]
-- [[benchmarks]]
-- [[beir]]
-- [[papers]]
+- [[benchmark-integrity]]
+- [[arxiv]]
 
 ## Source Text
 

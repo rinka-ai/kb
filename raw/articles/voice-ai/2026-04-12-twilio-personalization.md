@@ -68,10 +68,6 @@ Validate the incoming request parameters
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[twilio]]
-- [[personalization]]
 
 ## Source Text
 

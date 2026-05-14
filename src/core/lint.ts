@@ -1,9 +1,11 @@
 import { existsSync, readFileSync } from "node:fs";
-import { relative } from "node:path";
+import { join, relative } from "node:path";
 import { STATUS_SUPERSEDED } from "./constants";
 import { parseFrontmatter } from "./frontmatter";
 import { listMarkdownFiles } from "./indexer";
 import { ROOT } from "./paths";
+
+const WIKI_INDEX_PATH = join(ROOT, "wiki", "index.md");
 
 const WIKI_LINK_RE = /\[\[([^\]]+)\]\]/g;
 const REQUIRED_FRONTMATTER_KEYS = ["id", "type", "title", "path", "summary"];
@@ -78,13 +80,56 @@ function checkDanglingWikiLinks(ctx: FileContext, slugs: Set<string>): string[] 
     .map((target) => `${ctx.relPath}: dangling wiki link \`[[${target}]]\``);
 }
 
+function checkCaseCollisionWikiLinks(
+  ctx: FileContext,
+  slugs: Set<string>,
+  lowerToCanonical: Map<string, string>,
+): string[] {
+  return [...ctx.text.matchAll(WIKI_LINK_RE)]
+    .map((m) => m[1]?.split("|", 1)[0]?.trim())
+    .filter((target): target is string => !!target)
+    .filter((target) => !slugs.has(target))
+    .filter((target) => lowerToCanonical.has(target.toLowerCase()))
+    .map((target) => {
+      const canonical = lowerToCanonical.get(target.toLowerCase());
+      return `${ctx.relPath}: case-collision wiki link \`[[${target}]]\` near-matches \`${canonical}.md\``;
+    });
+}
+
+const CATALOG_EXEMPT_PATHS = new Set(["wiki/index.md", "wiki/log.md"]);
+
+function checkWikiIndexCoverage(files: string[]): string[] {
+  if (!existsSync(WIKI_INDEX_PATH)) return [];
+
+  const indexText = readFileSync(WIKI_INDEX_PATH, "utf-8");
+  const indexedSlugs = new Set(
+    [...indexText.matchAll(WIKI_LINK_RE)]
+      .map((m) => m[1]?.split("|", 1)[0]?.trim())
+      .filter((slug): slug is string => !!slug),
+  );
+
+  return files
+    .map((file) => ({ file, rel: relative(ROOT, file) }))
+    .filter(({ rel }) => rel.startsWith("wiki/") && !CATALOG_EXEMPT_PATHS.has(rel))
+    .filter(({ rel }) => {
+      const slug = rel.split("/").at(-1)?.replace(/\.md$/, "") ?? "";
+      return !indexedSlugs.has(slug);
+    })
+    .map(({ rel }) => `${rel}: not listed in wiki/index.md`);
+}
+
 export function collectKbWarnings(): string[] {
   const files = listMarkdownFiles().concat(
     ["AGENTS.md", "CLAUDE.md"].map((f) => `${ROOT}/${f}`).filter(existsSync),
   );
   const slugs = new Set(files.map((f) => f.split("/").at(-1)?.replace(/\.md$/, "") ?? ""));
+  const lowerToCanonical = new Map<string, string>();
+  for (const slug of slugs) {
+    const lower = slug.toLowerCase();
+    if (!lowerToCanonical.has(lower)) lowerToCanonical.set(lower, slug);
+  }
 
-  return files.flatMap((file) => {
+  const perFileWarnings = files.flatMap((file) => {
     const relPath = relative(ROOT, file);
     const text = readFileSync(file, "utf-8");
     const { metadata } = parseFrontmatter(text);
@@ -94,8 +139,11 @@ export function collectKbWarnings(): string[] {
     return [
       ...(isSource ? SOURCE_RULES.flatMap((rule) => rule(ctx)) : []),
       ...(!isSource ? checkDanglingWikiLinks(ctx, slugs) : []),
+      ...checkCaseCollisionWikiLinks(ctx, slugs, lowerToCanonical),
     ];
   });
+
+  return [...perFileWarnings, ...checkWikiIndexCoverage(files)];
 }
 
 export function main(): number {
