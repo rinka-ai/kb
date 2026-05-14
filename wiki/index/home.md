@@ -6,6 +6,8 @@ title: Home
 
 # Home
 
+> The master human-readable catalog of the wiki lives at [[index]]. This page is the landing/navigation hub.
+
 ## Purpose
 
 This wiki accumulates source material and synthesized notes about building with AI.
@@ -27,8 +29,6 @@ This wiki accumulates source material and synthesized notes about building with 
 ## Recent Summaries
 
 - [[2026-04-10-kb-acquisition-priorities]]
-- [[2026-04-10-mari-sources-to-add-now]]
-- [[2026-04-12-mari-architecture-upgrades-from-new-sources]]
 - [[2026-04-12-elevenlabs-voice-agent-architecture]]
 - [[2026-04-17-browserbase-agent-architecture-kb-upgrades]]
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]

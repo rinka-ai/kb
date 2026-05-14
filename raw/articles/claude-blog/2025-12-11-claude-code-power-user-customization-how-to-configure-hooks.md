@@ -70,8 +70,6 @@ Learn how to configure Claude Code hooks to automate repetitive tasks, enforce p
 ## Related
 
 - [[claude-code]]
-- [[hooks]]
-- [[customization]]
 - [[workflows]]
 
 ## Source Text

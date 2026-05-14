@@ -67,9 +67,8 @@ Use "Text extraction" or "Raw XML access" sections below
 ## Related
 
 - [[claude-code]]
-- [[skills]]
-- [[skill-authoring]]
-- [[procedural-knowledge]]
+- [[agent-skills]]
+- [[agent-memory]]
 
 ## Source Text
 

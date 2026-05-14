@@ -57,7 +57,7 @@ This post argues that permission prompts alone do not scale. Better security com
 ## Related
 
 - [[claude-code]]
-- [[sandboxing]]
+- [[agent-security]]
 - [[managed-agents]]
 
 ## Source Text

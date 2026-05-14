@@ -57,7 +57,6 @@ This entry is effectively a gateway into the evolving Claude Code best-practices
 ## Related
 
 - [[claude-code]]
-- [[agentic-coding]]
 - [[context-engineering]]
 
 ## Source Text

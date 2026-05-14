@@ -55,7 +55,7 @@ export function registerSearchTools(server: McpServer, options: RegisterSearchTo
     {
       title: "Search KB",
       description:
-        "Search the AI research knowledge base by free-text query. Use this first when you need relevant notes, concepts, or source articles.",
+        "Search the AI research knowledge base by free-text query. Use this first when you need relevant notes, concepts, or source articles. Each result includes the note's summary and a matched-section preview — read those before deciding whether to fetch the full body. Do not fetch every linked note; pick the most relevant 1-3.",
       inputSchema: {
         query: z.string().min(2).describe("Search query to run against the KB."),
         ...searchOptionsSchema,

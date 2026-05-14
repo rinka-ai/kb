@@ -52,11 +52,9 @@ Temporal frames production AI systems as durable workflows rather than fragile r
 ## My Notes
 
 - This is useful to keep because it maps durable execution onto familiar agent problems without collapsing into generic workflow marketing.
-- For Mari, it matters as a catalog of operational patterns: approvals, retries, resumability, and tool orchestration are all already real concerns in the codebase.
 
 ## Open Questions
 
-- Which Temporal patterns are conceptually useful for Mari even if Temporal itself would be too heavyweight as a runtime dependency?
 - Where should this KB distinguish durable workflow engines from agent frameworks that assume a shorter-lived process model?
 
 ## Related

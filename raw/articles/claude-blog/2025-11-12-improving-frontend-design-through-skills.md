@@ -62,9 +62,6 @@ This post argues that generic AI frontend output comes from distributional conve
 
 - [[claude-code]]
 - [[agent-skills]]
-- [[skills]]
-- [[frontend]]
-- [[design]]
 
 ## Source Text
 

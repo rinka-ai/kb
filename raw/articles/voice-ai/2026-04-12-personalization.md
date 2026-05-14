@@ -67,9 +67,6 @@ Twilio Integration - Personalize inbound call experiences via webhooks
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[personalization]]
 
 ## Source Text
 

@@ -67,10 +67,7 @@ Signed URLs are the recommended approach for client-side applications.
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[authentication]]
-- [[security]]
+- [[agent-security]]
 
 ## Source Text
 

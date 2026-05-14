@@ -68,3 +68,23 @@ This note now serves mainly as a rationale and preferred reading order for the R
 - then add evaluation: Ragas and ARES
 - then add the global-synthesis case: GraphRAG
 - finally add the practical hosted-doc references so the KB has at least one up-to-date implementation viewpoint alongside the papers
+
+## Source Notes
+
+Now-ingested source notes, in the priority order above:
+
+- [[2026-04-13-retrieval-augmented-generation-for-knowledge-intensive-nlp-tasks]] — canonical RAG paper.
+- [[2026-04-13-dense-passage-retrieval-for-open-domain-question-answering]] — DPR, foundational dense retriever.
+- [[2026-04-13-beir-a-heterogenous-benchmark-for-zero-shot-evaluation-of-information-retrieval-models]] — BEIR benchmark.
+- [[2026-04-13-colbertv2-effective-and-efficient-retrieval-via-lightweight-late-interaction]] — ColBERTv2 late interaction.
+- [[2026-04-13-precise-zero-shot-dense-retrieval-without-relevance-labels]] — HyDE.
+- [[2026-04-13-self-rag-learning-to-retrieve-generate-and-critique-through-self-reflection]] — Self-RAG adaptive retrieval.
+- [[2026-04-13-corrective-retrieval-augmented-generation]] — CRAG corrective retrieval.
+- [[2026-04-13-ragas-automated-evaluation-of-retrieval-augmented-generation]] — Ragas evaluation.
+- [[2026-04-13-ares-an-automated-evaluation-framework-for-retrieval-augmented-generation-systems]] — ARES evaluation.
+- [[2026-04-13-from-local-to-global-a-graph-rag-approach-to-query-focused-summarization]] — GraphRAG global synthesis.
+- [[2026-04-13-assistants-file-search-openai-api]] — OpenAI File Search practical reference.
+- [[2026-04-13-vector-embeddings-openai-api]] — OpenAI Embeddings Guide.
+- [[2026-04-13-question-answering-using-embeddings-based-search]] — embeddings QA cookbook.
+
+Related concept page: [[rag]].

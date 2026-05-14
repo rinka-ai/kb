@@ -61,8 +61,7 @@ The note proposes a file-system abstraction for context engineering, where heter
 ## Related
 
 - [[context-engineering]]
-- [[persistent-memory]]
-- [[agentic-file-systems]]
+- [[agent-memory]]
 - [[momo-research]]
 
 ## Source Text

@@ -58,7 +58,7 @@ The core idea is to treat long-running work as a sequence of fresh sessions conn
 
 - [[context-engineering]]
 - [[managed-agents]]
-- [[agentic-coding]]
+- [[claude-code]]
 
 ## Source Text
 

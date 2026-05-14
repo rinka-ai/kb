@@ -68,10 +68,7 @@ The voice used for text to speech output.
 ## Related
 
 - [[voice-ai]]
-- [[ssml]]
 - [[text-to-speech]]
-- [[azure]]
-- [[audio]]
 
 ## Source Text
 

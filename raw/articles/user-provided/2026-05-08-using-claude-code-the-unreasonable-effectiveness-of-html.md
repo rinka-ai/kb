@@ -78,10 +78,8 @@ This Claude Code team practitioner note argues that HTML is becoming a better ou
 ## Related
 
 - [[claude-code]]
-- [[agentic-coding]]
 - [[context-engineering]]
-- [[human-in-the-loop]]
-- [[visual-specs]]
+- [[durable-execution]]
 
 ## Source Text
 

@@ -63,10 +63,7 @@ OpenAI Cookbook's realtime example shows that long voice sessions need explicit 
 ## Related
 
 - [[voice-ai]]
-- [[realtime]]
-- [[context-management]]
-- [[voice-agents]]
-- [[audio]]
+- [[context-engineering]]
 
 ## Source Text
 

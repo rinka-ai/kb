@@ -61,10 +61,9 @@ LongLLMLingua is framed here as a smarter compression strategy: compress prompts
 
 ## Related
 
-- [[compression]]
-- [[long-context]]
+- [[context-engineering]]
 - [[context-rot]]
-- [[retrieval]]
+- [[rag]]
 
 ## Source Text
 

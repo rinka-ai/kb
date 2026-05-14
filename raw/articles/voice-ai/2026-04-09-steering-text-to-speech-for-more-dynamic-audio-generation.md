@@ -62,9 +62,7 @@ This Cookbook note argues that good AI voices need more than a voice ID. When yo
 
 - [[voice-ai]]
 - [[text-to-speech]]
-- [[style-control]]
-- [[audio]]
-- [[openai-cookbook]]
+- [[official-docs]]
 
 ## Source Text
 

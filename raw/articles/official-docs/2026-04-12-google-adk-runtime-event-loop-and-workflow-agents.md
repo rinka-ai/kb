@@ -52,13 +52,10 @@ ADK presents agent execution as an event loop run by a `Runner`, while separatel
 
 ## My Notes
 
-- This is a strong comparator for Mari because Mari is already splitting planner, executor, runtime, and domain logic in a very similar spirit.
 - The most valuable design idea here is the explicit distinction between "workflow-shaped control" and "LLM-shaped reasoning" instead of treating everything as one generic agent loop.
 
 ## Open Questions
 
-- How much of Mari's future planning layer should remain deterministic workflow structure versus model-directed planning?
-- Should Mari expose its own orchestration concepts in a more framework-like way once the planner/executor layer matures further?
 
 ## Related
 

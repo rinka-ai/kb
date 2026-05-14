@@ -63,8 +63,6 @@ OpenAI's TTS guide is the core implementation reference for generating spoken ou
 
 - [[voice-ai]]
 - [[text-to-speech]]
-- [[audio]]
-- [[voice-output]]
 
 ## Source Text
 

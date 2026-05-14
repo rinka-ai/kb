@@ -52,12 +52,9 @@ Agent Workflow Memory treats reusable procedures as a memory artifact: it induce
 ## My Notes
 
 - This is one of the clearest primary sources for "workflow memory" as distinct from retrieval memory or conversation history.
-- It is especially relevant to Mari because the codebase already has planner and pack artifacts that could evolve into reusable workflow memory objects.
 
 ## Open Questions
 
-- What should a Mari workflow-memory artifact look like: natural-language playbook, structured graph, or both?
-- Which parts of Mari's task history are reusable procedures versus one-off observations?
 
 ## Related
 

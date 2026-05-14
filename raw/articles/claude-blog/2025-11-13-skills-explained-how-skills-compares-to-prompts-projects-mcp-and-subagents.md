@@ -76,10 +76,10 @@ Skills are an increasingly powerful tool for creating custom AI workflows and ag
 ## Related
 
 - [[claude-code]]
-- [[skills]]
-- [[prompts]]
-- [[mcp]]
-- [[subagents]]
+- [[agent-skills]]
+- [[context-engineering]]
+- [[agent-protocols]]
+- [[multi-agent-systems]]
 
 ## Source Text
 
