@@ -56,12 +56,12 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Set `userIgnoreFilters` in `.obsidian/app.json` to: `node_modules/`, `.git/`, `.kb/`, `.github/`, `evals/`, `**/*.bak-*`. Vault drops from 520 → 234 visible markdown files. No basename collisions remain in the visible set.
 - Obsidian must be reloaded (Cmd-P → "Reload app without saving", or quit + reopen) for the filter to take effect.
 
-## [2026-05-14] note | Remove personal project (Mari) references
+## [2026-05-14] note | Remove personal project references
 
-- Deleted two summary pages dedicated to a personal project: `wiki/summaries/2026-04-10-mari-sources-to-add-now.md` and `wiki/summaries/2026-04-12-mari-architecture-upgrades-from-new-sources.md`.
-- Stripped 12 raw articles of inline Mari-applicability bullets: removed each `- ...Mari...` line from `## My Notes` and `## Open Questions` sections only. Headings, source text, frontmatter, and non-Mari bullets are all preserved. Files touched: `agent-protocol.md`, `durable-mcp-weather-server.md`, `google-adk-runtime-event-loop-and-workflow-agents.md`, `langgraph-durable-execution-persistence-and-human-in-the-loop.md`, `langmem.md`, `openai-agents-sdk-sessions-handoffs-and-human-in-the-loop.md`, `stripe-checkout-how-checkout-works.md`, `stripe-integration-security-guide.md`, `temporal-ai-cookbook.md` (official-docs); `agent-workflow-memory.md`, `mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents.md`, `memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent.md` (arxiv).
+- Deleted two summary pages dedicated to a personal project (filenames redacted from this log).
+- Stripped 12 raw articles of inline applicability bullets to that project: removed each related bullet from `## My Notes` and `## Open Questions` sections only. Headings, source text, frontmatter, and unrelated bullets are all preserved. Files touched: `agent-protocol.md`, `durable-mcp-weather-server.md`, `google-adk-runtime-event-loop-and-workflow-agents.md`, `langgraph-durable-execution-persistence-and-human-in-the-loop.md`, `langmem.md`, `openai-agents-sdk-sessions-handoffs-and-human-in-the-loop.md`, `stripe-checkout-how-checkout-works.md`, `stripe-integration-security-guide.md`, `temporal-ai-cookbook.md` (official-docs); `agent-workflow-memory.md`, `mem1-learning-to-synergize-memory-and-reasoning-for-efficient-long-horizon-agents.md`, `memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent.md` (arxiv).
 - Patched `wiki/index.md` Summaries section and `wiki/index/home.md` Recent Summaries list to drop the deleted page links.
-- Final repo-wide sweep: zero remaining Mari references. Lint passes.
+- Final repo-wide sweep: zero remaining personal-project references. Lint passes.
 
 ## [2026-05-14] note | Orphan-node audit and fix
 
