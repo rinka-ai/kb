@@ -32,7 +32,8 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[enterprise-agent-deployment-failure-modes]] — Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, and feedback loops.
 - [[llm-agents]] — LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 - [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
-- [[multi-agent-systems]] — Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
+- [[multi-agent-failure-attribution]] — Multi-agent failure attribution identifies where, how, and why errors emerge and propagate across agent roles, steps, tools, and coordination structures so diagnoses can support repair.
+- [[multi-agent-systems]] — Multi-agent systems use multiple model contexts coordinated through code; reliable designs need bounded roles plus attribution paths for diagnosing coordination failures.
 - [[obsidian]] — Obsidian is the human-facing interface for navigating the repo's markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
 - [[payment-integrations]] — Payment integrations should keep sensitive collection inside managed provider surfaces and complete business logic from verified events.
 - [[personal-knowledge-bases]] — Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
@@ -84,7 +85,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 Counts as of `2026-05-16`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
-- `arxiv` (27)
+- `arxiv` (28)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `github-repos` (12)
