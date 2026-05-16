@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-05-14
+last_reviewed: 2026-05-16
 ---
 
 # Wiki Index
@@ -81,10 +81,10 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-14`. Folders under `raw/articles/`.
+Counts as of `2026-05-16`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
-- `arxiv` (26)
+- `arxiv` (27)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `github-repos` (12)

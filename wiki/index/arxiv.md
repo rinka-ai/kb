@@ -18,6 +18,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
 - Externalized context scaffolds:
   [[2026-04-23-recursive-language-models]]
+- Agentic retrieval and harness effects:
+  [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
 - Memory systems:
   [[2026-04-10-memgpt-towards-llms-as-operating-systems]]
 - Workflow memory:

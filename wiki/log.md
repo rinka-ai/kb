@@ -78,3 +78,13 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Tightened tool descriptions in `src/mcp/tools/` so every MCP client gets the message: `kb_read_note` now states that wiki-link references inside a returned note are NOT auto-expanded and that `kb_build_context` is the right multi-note entrypoint; `kb_search` says "Do not fetch every linked note; pick the most relevant 1-3."; `kb_build_context` is positioned as the bounded multi-note entrypoint ("caps fan-out and keeps token usage predictable").
 - Added a "Reader Discipline" section to `AGENTS.md` codifying the consumption pattern for sessions working in this repo: read frontmatter `summary` first, stop at `## Related` / `## Source Notes` unless needed, prefer `kb_build_context` over chained `kb_read_note` for multi-note synthesis.
 - No code logic changed — tools still return one slice per call. The change is informational, but it lands directly in tool descriptions which every MCP client sees on `tools/list`.
+
+## [2026-05-16] ingest | Is Grep All You Need? How Agent Harnesses Reshape Agentic Search
+- Source note: `raw/articles/arxiv/2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search.md`
+- Index not rebuilt this run (`--no-refresh`).
+
+## [2026-05-16] ingest | Agentic grep vs vector retrieval paper propagation
+- Refined the arXiv source note for `[[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]` with structured claims, limitations, entities, and concept links.
+- Updated concept pages: `[[rag]]`, `[[embeddings]]`, `[[agent-harnesses]]`, `[[context-engineering]]`, `[[agent-memory]]`, `[[ai-agent-evals]]`, and `[[context-rot]]`.
+- Updated `[[arxiv]]` and the master `[[index]]` source collection count for the new arXiv source.
+- Ran `bun run kb:refresh`; index rebuilt with 1579 chunks from 222 markdown files, with no lint failures reported.

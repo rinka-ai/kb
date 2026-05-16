@@ -3,12 +3,12 @@ id: concept-agent-memory
 type: concept
 title: Agent Memory
 tags: [agents, memory, retrieval, reinforcement-learning, stateful-agents, context-engineering, agent-harnesses]
-source_count: 21
+source_count: 22
 summary: Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time through explicit storage, load policy, write discipline, verification, and harness-owned context management.
 canonical_for: [agent memory, workflow memory, semantic memory]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-16
+review_due: 2026-06-16
 confidence: "0.90"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.90"
 
 ## Summary
 
-Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen five related distinctions: memory is not only storage but also policy about what stays in the hot path; "memory" often needs working/episodic/semantic/personal separation; memory ownership is partly a harness question; memory quality depends on write gates and verification discipline; and prompt-cache stability constrains where dynamic memory can safely enter context. The newer enterprise framing also treats memory as synthesized organizational understanding, where identity resolution, source authority, and freshness tracking matter as much as storage itself. AHE adds an eval-grounded version of memory as a harness component: long-term memory can encode boundary-case lessons that transfer across coding tasks, but stacked with prompt and middleware changes it can also create redundant checks and regressions. ContextLattice adds the operational version: memory systems should expose explicit read/write/preflight/recency/degraded-state contracts, not only retrieval endpoints.
+Agent memory refers to the mechanisms that let an agent preserve, retrieve, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The newer additions sharpen five related distinctions: memory is not only storage but also policy about what stays in the hot path; "memory" often needs working/episodic/semantic/personal separation; memory ownership is partly a harness question; memory quality depends on write gates and verification discipline; and prompt-cache stability constrains where dynamic memory can safely enter context. The newer enterprise framing also treats memory as synthesized organizational understanding, where identity resolution, source authority, and freshness tracking matter as much as storage itself. AHE adds an eval-grounded version of memory as a harness component: long-term memory can encode boundary-case lessons that transfer across coding tasks, but stacked with prompt and middleware changes it can also create redundant checks and regressions. The agentic-search paper adds a long-conversation retrieval lesson: for personal facts, dates, and preferences with literal textual witnesses, lexical search may be more reliable than vector search, but only under a harness and delivery path that make the evidence easy to consume. ContextLattice adds the operational version: memory systems should expose explicit read/write/preflight/recency/degraded-state contracts, not only retrieval endpoints.
 
 ## Main Families
 
@@ -29,6 +29,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Learned internal memory: fixed-length or compact state updated through reinforcement learning.
 - Memory-tier systems: agents that treat context windows as a fast working tier and external stores or files as slower but larger memory.
 - Context-pack systems: retrieval layers that return bounded facts, numeric facts, citations, source summaries, and lifecycle state instead of unstructured memory dumps.
+- Conversational memory retrieval: long-session stores that combine raw turns, structured temporal events, lexical search, semantic search, and harness-specific load policy.
 
 ## Operational Layers
 
@@ -56,6 +57,7 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - Retrieval output should carry lifecycle and provenance metadata, including whether results are ready, empty, degraded, pending, or missing slow-source continuation.
 - Write policies should isolate telemetry, metrics, and other low-value operational state from semantic memory unless the query explicitly targets those records.
 - Retrieval quality needs saved eval cases, especially for numeric exactness and repeated bad queries, so memory tuning is evidence-backed rather than vibe-backed.
+- Memory retrieval should compare lexical, dense, and hybrid behavior on real answer workflows because exact personal facts and semantic paraphrases fail in different ways.
 
 ## Important Distinctions
 
@@ -108,3 +110,4 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, and 
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
 - [[2026-05-01-agent-memory-engineering-nicolas-bustamante-user-provided-brief]]
 - [[2026-05-09-contextlattice]]
+- [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]

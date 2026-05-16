@@ -3,12 +3,12 @@ id: concept-context-engineering
 type: concept
 title: Context Engineering
 tags: [agents, memory, long-context, compression]
-source_count: 15
+source_count: 16
 summary: Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy.
 canonical_for: [context engineering, context compression]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-16
+review_due: 2026-06-16
 confidence: "0.89"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.89"
 
 ## Summary
 
-Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, explicit context budgeting, and resolver-based routing are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model. The newer enterprise framing adds a further distinction between runtime retrieval and maintained organizational understanding: for some questions, the key choice is whether the agent should re-search raw tools from scratch or read from a continuously synthesized context layer. AHE adds the trajectory-debugging version of progressive disclosure: millions of rollout tokens become layered reports with drill-down access, so the evolve agent can reason over failures without swallowing raw traces whole. ContextLattice adds a concrete active-context artifact shape: context packs should be bounded, grounded, cited, and honest about incomplete retrieval.
+Context engineering is the discipline of deciding what information an agent should see, in what form, at what time, and with what update rules. In this repo, it sits between raw source preservation and query-time synthesis, but the newer additions sharpen that into a more operational view: cache stability, attention placement, query-aware compaction, progressive disclosure, explicit context budgeting, resolver-based routing, and tool-result delivery are first-class design variables. The builder's guide adds a useful operational emphasis here: `build_context` is often the real center of the system because whatever stays outside the active context effectively does not exist to the model. The newer enterprise framing adds a further distinction between runtime retrieval and maintained organizational understanding: for some questions, the key choice is whether the agent should re-search raw tools from scratch or read from a continuously synthesized context layer. AHE adds the trajectory-debugging version of progressive disclosure: millions of rollout tokens become layered reports with drill-down access, so the evolve agent can reason over failures without swallowing raw traces whole. The agentic-search paper adds empirical pressure on the inline-versus-file choice: file-backed result delivery relieves context pressure only when the agent can reliably complete the extra artifact-reading loop. ContextLattice adds a concrete active-context artifact shape: context packs should be bounded, grounded, cited, and honest about incomplete retrieval.
 
 ## What It Is
 
@@ -32,6 +32,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - For extremely long prompts, consider keeping the input as external state with symbolic handles rather than copying it directly into active model context.
 - Make compression restorable whenever possible.
 - Treat files, URLs, and external artifacts as part of usable context.
+- Choose inline tool-result delivery when immediate evidence reading matters more than token budget, and choose file-backed delivery only when the agent has a reliable read/search workflow for the artifact.
 - Load the most relevant working state, preferences, and permissions first when they are safety- or task-critical.
 - Use registries or manifests so large skill libraries can stay mostly off-context until matched.
 - Prefer small resolver documents or routing tables that load the right context on demand instead of bloating always-on instructions.
@@ -57,6 +58,7 @@ Context engineering is the discipline of deciding what information an agent shou
 - query-aware compression quality vs cacheability and reuse
 - richer always-loaded skills vs progressive disclosure and budget discipline
 - compact evidence reports vs raw trace fidelity for attribution and rollback decisions
+- context bandwidth vs compositional tool competence when routing large tool outputs through files
 
 ## Source Notes
 
@@ -75,3 +77,4 @@ Context engineering is the discipline of deciding what information an agent shou
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
 - [[2026-04-23-recursive-language-models]]
 - [[2026-05-09-contextlattice]]
+- [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
