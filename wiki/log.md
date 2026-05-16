@@ -88,3 +88,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated concept pages: `[[rag]]`, `[[embeddings]]`, `[[agent-harnesses]]`, `[[context-engineering]]`, `[[agent-memory]]`, `[[ai-agent-evals]]`, and `[[context-rot]]`.
 - Updated `[[arxiv]]` and the master `[[index]]` source collection count for the new arXiv source.
 - Ran `bun run kb:refresh`; index rebuilt with 1579 chunks from 222 markdown files, with no lint failures reported.
+
+## [2026-05-16] ingest | Beyond Individual Intelligence multi-agent LIFE survey
+- Added source note `[[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]` for arXiv:2605.14892, focused on collaboration, failure attribution, and self-evolution in LLM-based multi-agent systems.
+- Created `[[multi-agent-failure-attribution]]` as a draft concept page covering attribution targets, method families, and the repair loop.
+- Updated concept pages: `[[multi-agent-systems]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, and `[[agent-protocols]]`.
+- Updated `[[arxiv]]` and the master `[[index]]`; ran `bun run kb:refresh`, which rebuilt 1595 chunks from 224 markdown files with no lint failures.

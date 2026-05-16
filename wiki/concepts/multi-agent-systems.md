@@ -3,20 +3,20 @@ id: concept-multi-agent-systems
 type: concept
 title: Multi-Agent Systems
 tags: [agents, multi-agent, parallel-agents, orchestration]
-source_count: 8
-summary: Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
+source_count: 9
+summary: Multi-agent systems use multiple model contexts coordinated through code; reliable designs need bounded roles plus attribution paths for diagnosing coordination failures.
 canonical_for: [multi-agent systems, parallel agents, subagents]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
-confidence: "0.84"
+last_reviewed: 2026-05-16
+review_due: 2026-06-16
+confidence: "0.85"
 ---
 
 # Multi-Agent Systems
 
 ## Summary
 
-Multi-agent systems use multiple model contexts coordinated through code when parallel exploration, specialization, or fresh-context review beats a single agent loop. The current sources agree on a useful caution: most tasks do not need multi-agent decomposition, and the overhead only pays off when context separation, bounded delegation, or concurrent exploration creates meaningful leverage. Recent production evidence sharpens the current sweet spot further for coding-heavy work: one writer usually owns the mutable thread while auxiliary agents contribute review, search, routing, or management intelligence around that writer.
+Multi-agent systems use multiple model contexts coordinated through code when parallel exploration, specialization, or fresh-context review beats a single agent loop. The current sources agree on a useful caution: most tasks do not need multi-agent decomposition, and the overhead only pays off when context separation, bounded delegation, or concurrent exploration creates meaningful leverage. Recent production evidence sharpens the current sweet spot further for coding-heavy work: one writer usually owns the mutable thread while auxiliary agents contribute review, search, routing, or management intelligence around that writer. The LIFE survey adds a diagnostic requirement: once agents are tightly coupled, the system also needs attribution paths that explain how role, message, tool, or topology failures propagate and what should be repaired.
 
 ## When They Help
 
@@ -31,6 +31,7 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - prefer one active writer when code changes encode many implicit decisions; let other agents contribute review, search, routing, or management around that writer
 - give subagents bounded scope, clear outputs, and disjoint responsibilities when possible
 - use artifacts or structured summaries to compress each agent’s findings back into the main thread
+- preserve enough trace structure to attribute failures across role assignments, communication handoffs, tool calls, and final synthesis
 - do not decompose work unless the coordination cost is lower than the benefit from parallelism or specialization
 - for structured extraction workloads, treat reflexive correction loops as an accuracy-cost-latency tradeoff rather than a free improvement; medium-confidence benchmark evidence favors selective hierarchical routing and retry when scale matters
 
@@ -41,6 +42,7 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - specialization vs duplicated work
 - autonomy vs the need for explicit task locking and review
 - iterative self-correction vs cost, tail latency, and throughput collapse under load
+- more collaboration surface vs harder failure attribution and repair
 
 ## Source Notes
 
@@ -52,3 +54,4 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - [[2026-04-22-multi-agents-whats-actually-working]]
 - [[2025-04-18-claude-code-best-practices-for-agentic-coding]]
 - [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
+- [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
