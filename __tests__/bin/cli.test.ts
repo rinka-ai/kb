@@ -28,15 +28,37 @@ describe("CLI integration", () => {
     expect(`${lint.stdout}${lint.stderr}`).toContain("KB lint passed with no warnings.");
   });
 
-  test("eval and report commands run successfully", async () => {
-    const evalRun = await runBunCommand(["bin/eval.ts", "--top", "5"]);
-    expect([0, 1]).toContain(evalRun.code);
-    expect(`${evalRun.stdout}${evalRun.stderr}`).toContain("Search eval dataset:");
+  test("eval command runs successfully against a small dataset", async () => {
+    await withTempFile(
+      JSON.stringify([
+        {
+          id: "llm-kb-smoke",
+          query: "LLM Knowledge Bases",
+          preferredPaths: ["raw/articles/2026-04-08-llm-knowledge-bases.md"],
+          relevantPaths: ["raw/articles/2026-04-08-llm-knowledge-bases.md"],
+        },
+      ]),
+      ".json",
+      async (datasetPath) => {
+        const evalRun = await runBunCommand([
+          "bin/eval.ts",
+          "--dataset",
+          datasetPath,
+          "--top",
+          "3",
+        ]);
 
+        expect(evalRun.code).toBe(0);
+        expect(`${evalRun.stdout}${evalRun.stderr}`).toContain("Search eval dataset:");
+      },
+    );
+  });
+
+  test("report command runs successfully", async () => {
     const report = await runBunCommand(["bin/report.ts"]);
     expect(report.code).toBe(0);
     expect(`${report.stdout}${report.stderr}`).toContain("KB health report");
-  }, 15_000);
+  });
 
   test("refresh respects KB_CACHE_DIR for hosted-style writable caches", async () => {
     const cacheDir = mkdtempSync(join(tmpdir(), "ai-research-kb-cache-"));
