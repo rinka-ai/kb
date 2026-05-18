@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { existsSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { runBunCommand } from "../helpers/bun-process";
@@ -55,13 +55,12 @@ describe("CLI integration", () => {
   });
 
   test("search returns relevant results for query and file context", async () => {
-    const query = await runBunCommand([
-      "bin/search.ts",
-      "--query",
-      "LLM Knowledge Bases",
-      "--top",
-      "3",
-    ]);
+    const query = await runBunCommand(
+      ["bin/search.ts", "--query", "LLM Knowledge Bases", "--top", "3"],
+      {
+        KB_SEARCH_TELEMETRY_ENABLED: "false",
+      },
+    );
     expect(query.code).toBe(0);
     expect(query.stdout).toContain("raw/articles/2026-04-08-llm-knowledge-bases.md");
 
@@ -69,13 +68,46 @@ describe("CLI integration", () => {
       "managed agents context engineering sandboxing\n",
       ".ts",
       async (filePath) => {
-        const contextual = await runBunCommand(["bin/search.ts", "--file", filePath, "--top", "3"]);
+        const contextual = await runBunCommand(
+          ["bin/search.ts", "--file", filePath, "--top", "3"],
+          {
+            KB_SEARCH_TELEMETRY_ENABLED: "false",
+          },
+        );
         expect(contextual.code).toBe(0);
         expect(contextual.stdout).toContain(
           "raw/articles/anthropic-engineering/2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands.md",
         );
       },
     );
+  });
+
+  test("search writes local telemetry to a configured log path", async () => {
+    const directory = mkdtempSync(join(tmpdir(), "ai-research-kb-search-log-"));
+    const logPath = join(directory, "local-search-observations.ndjson");
+
+    try {
+      const result = await runBunCommand(
+        ["bin/search.ts", "--query", "nonexistenttelemetrygap qzxqzxqzx", "--top", "3"],
+        {
+          KB_SEARCH_OBSERVATION_LOG_PATH: logPath,
+        },
+      );
+
+      expect(result.code).toBe(0);
+      const [line] = readFileSync(logPath, "utf-8").trim().split("\n");
+      const observation = JSON.parse(line) as {
+        rawQuery: string;
+        zeroResults: boolean;
+        request: { transport: string };
+      };
+
+      expect(observation.rawQuery).toBe("nonexistenttelemetrygap qzxqzxqzx");
+      expect(observation.zeroResults).toBe(true);
+      expect(observation.request.transport).toBe("cli");
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
   });
 
   test("ingest dry-run renders the expected source-note schema", async () => {

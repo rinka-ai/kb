@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import * as z from "zod/v4";
-import { getRequestContext } from "../../core/request-context";
+import { createStdioRequestContext, getRequestContext } from "../../core/request-context";
 import { formatSearchResults, searchKb } from "../../core/search";
 import { recordSearchObservation } from "../../core/search-observations";
 import { SEARCH_DEFAULTS, searchOptionsSchema, toolErrorResponse, toolResponse } from "./shared";
@@ -29,10 +29,7 @@ function maybeRecordObservation(
     return;
   }
 
-  const request = getRequestContext();
-  if (!request) {
-    return;
-  }
+  const request = getRequestContext() ?? createStdioRequestContext();
 
   recordSearchObservation({
     request,

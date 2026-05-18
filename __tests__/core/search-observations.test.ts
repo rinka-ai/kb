@@ -239,4 +239,31 @@ describe("search observations", () => {
       },
     ]);
   });
+
+  test("buildSearchObservationReport surfaces one-off zero-result queries", () => {
+    const report = buildSearchObservationReport(
+      [
+        makeObservation({
+          rawQuery: "missing local concept",
+          queryText: "missing local concept",
+          observedAt: "2026-04-16T13:00:00.000Z",
+          results: [],
+          resultCount: 0,
+          zeroResults: true,
+          top1Path: undefined,
+          top1Score: undefined,
+          top1FuzzyOnly: false,
+          top12ScoreGap: null,
+        }),
+      ],
+      {
+        limit: 10,
+        minCount: 2,
+        maxTopScoreGap: 1.5,
+      },
+    );
+
+    expect(report.frequentQueries).toEqual([]);
+    expect(report.zeroResultQueries.map((entry) => entry.query)).toEqual(["missing local concept"]);
+  });
 });

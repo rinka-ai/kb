@@ -7,8 +7,8 @@ source_count: 2
 summary: Obsidian is the human-facing interface for navigating the repo’s markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
 canonical_for: [obsidian workflow]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.72"
 ---
 

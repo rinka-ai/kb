@@ -3,12 +3,12 @@ id: concept-rag
 type: concept
 title: RAG
 tags: [rag, retrieval, knowledge-bases, dense-retrieval, embeddings]
-source_count: 21
-summary: RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
+source_count: 23
+summary: RAG is a full retrieval and evidence-assembly pipeline that combines search, representation, ranking, uncertainty, and generation rather than a synonym for vector search alone.
 canonical_for: [retrieval augmented generation, graph rag, corrective rag, contextual retrieval]
 review_status: reviewed
-last_reviewed: 2026-05-16
-review_due: 2026-06-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.9"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.9"
 
 ## Summary
 
-Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, harness behavior, and tool-result delivery all materially affect quality. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
+Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, uncertainty handling, harness behavior, and tool-result delivery all materially affect quality. The textbook layer adds useful classical grounding: retrieval quality depends on representation, nearest-neighbor geometry, ranking objectives, and uncertainty over what evidence actually supports. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
 
 ## Where It Fits
 
@@ -40,10 +40,12 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - preserve URLs, file paths, and source ids so dropped context can be reconstructed instead of irreversibly summarized
 - evaluate retrievers inside the actual agent harness and delivery path, because inline results, file-backed results, and CLI shell ergonomics can change answer accuracy without changing the corpus
 - evaluate retrieval quality and answer quality separately
+- distinguish relevance, evidence sufficiency, source authority, and model faithfulness; a retrieved passage can be relevant but still not enough to answer
 
 ## Retriever Families
 
 - dense retrieval gives RAG its basic retrieve-then-generate backbone, but it should not be treated as the only retrieval option
+- nearest-neighbor retrieval is a representation problem as much as a database problem: the geometry of the embedding space decides which evidence is reachable
 - BM25 remains a strong baseline and is often more robust than people expect in zero-shot settings
 - grep-style lexical retrieval can be a strong agentic-search baseline when tasks have exact dates, preferences, IDs, or other literal witnesses, but it remains brittle to vocabulary mismatch
 - late-interaction retrieval offers a practical middle ground between cheap single-vector retrieval and expensive full reranking
@@ -92,3 +94,5 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - [[2026-04-13-vector-embeddings-openai-api]]
 - [[2026-04-13-question-answering-using-embeddings-based-search]]
 - [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
+- [[2026-05-18-probabilistic-machine-learning-introduction]]
+- [[2026-05-18-foundations-of-machine-learning]]

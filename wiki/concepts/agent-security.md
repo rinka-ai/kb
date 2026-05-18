@@ -3,12 +3,12 @@ id: concept-agent-security
 type: concept
 title: Agent Security
 tags: [security, prompt-injection, sandboxing, approvals, agents, adversarial-evals, autonomy]
-source_count: 9
-summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
+source_count: 11
+summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
 canonical_for: [agent security, prompt injection, sandboxing, approval policies, adversarial agent evals]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.88"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, and evals that measure useful work under attack instead of only benign task success. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified.
+Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, and evals that measure useful work under attack instead of only benign task success. The textbook layer broadens the safety frame: secure AI systems also need explicit properties, falsification searches, governance, fairness checks, and monitoring for socio-technical harm. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified.
 
 ## Threat Surfaces
 
@@ -26,6 +26,7 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - live credentials inside model-reachable processes turn arbitrary-code execution into secret exfiltration risk
 - tool sets that are broader than the task surface make both benign mistakes and attacks easier
 - skills can act as persistent prompt-injection or supply-chain surfaces when a runtime infers trust from origin, signature, or registry membership alone
+- automated decisions can create legitimacy, recourse, discrimination, and feedback-loop failures even when the narrow prompt-injection surface is controlled
 
 ## Defensive Patterns
 
@@ -46,6 +47,7 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - check gate correctness by comparing observed side effects against approved-and-executed audit records when the runtime controls the relevant corpus
 - treat adversarial robustness as part of system quality, not as a separate research toy
 - revisit defenses regularly because both attacks and normal agent capabilities change quickly
+- define safety properties explicitly, then test, falsify, monitor, and revise them as the deployed environment changes
 
 ## Tensions
 
@@ -65,3 +67,5 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - [[2026-01-21-designing-ai-resistant-technical-evaluations]]
 - [[2026-04-17-browserbase-enterprise-security]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-05-18-algorithms-for-validation]]
+- [[2026-05-18-fairness-and-machine-learning]]

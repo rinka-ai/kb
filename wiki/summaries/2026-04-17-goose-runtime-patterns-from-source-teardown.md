@@ -5,8 +5,8 @@ title: Goose Runtime Patterns From A Source Teardown
 tags: [goose, agent-harnesses, agent-frameworks, mcp, durable-execution, skills]
 summary: Reusable runtime-design patterns extracted from the Goose source tree, with emphasis on harness layering, unified tool runtime design, and durable multi-surface execution.
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.8"
 ---
 

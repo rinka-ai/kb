@@ -50,6 +50,15 @@ Turn this repo from a pile of markdown files into an inspectable, agent-friendly
   - `bun run kb:refresh`
   - `bun run kb:watch --lint`
 
+## Query-Gap Telemetry
+
+- Local CLI searches through `bun run kb:search` record search observations by default in `.kb/telemetry/search-observations.ndjson`; `.kb/` is git-ignored, so these local traces are not committed to origin.
+- HTTP MCP search calls record privacy-safe search observations by default in `.kb/telemetry/search-observations.ndjson`.
+- Stdio MCP search calls also record observations by default; set `KB_SEARCH_TELEMETRY_ENABLED=false` to disable this for tests or private local sessions.
+- `kb_search_file` records context labels and byte counts, not raw pasted file text.
+- `bun run kb:search-report` summarizes frequent, zero-result, fuzzy, low-confidence, and ambiguous query patterns.
+- Zero-result queries are surfaced even after one observation; frequent-query reporting still uses the repeated-query threshold.
+
 ## What Makes This Useful To Agents
 
 - The KB is local markdown, so agents can inspect and edit it directly.
