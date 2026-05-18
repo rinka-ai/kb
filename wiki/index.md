@@ -15,14 +15,14 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 ## Concepts
 
 - [[agent-frameworks]] — Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
-- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, and persists artifacts around the model loop.
+- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, persists artifacts, attributes failures, and turns agent loops into deployable AI systems.
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time through explicit storage, load policy, write discipline, verification, and harness-owned context management.
 - [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
 - [[agent-security]] — Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
 - [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
 - [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, and safety cases.
-- [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, and adversarial conditions, rather than isolated model snapshots.
+- [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 - [[benchmark-integrity]] — Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
 - [[claude-code]] — Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, and reviewable collaboration artifacts.
 - [[computer-use]] — Computer-use agents extend web agents into full operating-system environments, where grounding, application knowledge, and multi-app coordination become first-class problems.
@@ -39,8 +39,9 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[llm-agents]] — LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 - [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
 - [[ml-systems-engineering]] — ML systems engineering treats AI as a deployed lifecycle across data, training, evaluation, serving, monitoring, scaling, governance, and compute economics.
+- [[multi-agent-failure-attribution]] — Multi-agent failure attribution identifies where, how, and why errors emerge and propagate across agent roles, steps, tools, and coordination structures so diagnoses can support repair.
 - [[multi-agent-reinforcement-learning]] — Multi-agent reinforcement learning studies learning agents in shared environments where strategic interaction, nonstationarity, coordination, communication, and partial observability matter.
-- [[multi-agent-systems]] — Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
+- [[multi-agent-systems]] — Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles plus attribution paths for diagnosing coordination failures.
 - [[obsidian]] — Obsidian is the human-facing interface for navigating the repo's markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
 - [[optimization-for-ml]] — Optimization for ML is the search layer that turns objectives into trained models, tuned systems, falsifying examples, and efficient deployment choices.
 - [[payment-integrations]] — Payment integrations should keep sensitive collection inside managed provider surfaces and complete business logic from verified events.
@@ -116,7 +117,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 Counts as of `2026-05-18`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
-- `arxiv` (27)
+- `arxiv` (29)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)

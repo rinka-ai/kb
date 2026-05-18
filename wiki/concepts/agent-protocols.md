@@ -3,12 +3,12 @@ id: concept-agent-protocols
 type: concept
 title: Agent Protocols
 tags: [agents, protocols, tool-use, mcp, tools]
-source_count: 12
-summary: Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
+source_count: 13
+summary: Agent protocols define the typed interaction layer around tools, approvals, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
 canonical_for: [mcp, model context protocol, agent protocol]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-16
+review_due: 2026-06-16
 confidence: "0.85"
 ---
 
@@ -16,13 +16,14 @@ confidence: "0.85"
 
 ## Summary
 
-Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps. Goose adds practical evidence that these surfaces include not only tool schemas but also request identifiers, replayable event streams, extension metadata, and explicit inspection stages before execution. Recent work also sharpens a second distinction: invocation-centric protocols explain how agents call tools or communicate, while mutation-governance protocols additionally define how prompts, tools, memory, and other runtime resources can be versioned, updated, evaluated, and rolled back safely. AHE makes that mutation-governance idea concrete for coding agents through change manifests that bind each component edit to evidence, predictions, attribution, and rollback.
+Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, agent messages, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps. Goose adds practical evidence that these surfaces include not only tool schemas but also request identifiers, replayable event streams, extension metadata, and explicit inspection stages before execution. Recent work also sharpens a second distinction: invocation-centric protocols explain how agents call tools or communicate, while mutation-governance protocols additionally define how prompts, tools, memory, and other runtime resources can be versioned, updated, evaluated, and rolled back safely. AHE makes that mutation-governance idea concrete for coding agents through change manifests that bind each component edit to evidence, predictions, attribution, and rollback. The LIFE survey adds the coordination angle: inter-agent protocols also shape what can later be attributed, because message identity, topology, and handoff semantics determine whether failures are debuggable.
 
 ## Core Surfaces
 
 - tool schemas with typed arguments, preconditions, side effects, and blocked targets
 - permission tiers for always-allowed, approval-required, and never-allowed actions
 - delegation rules for when work can be handed to other agents or runtimes
+- inter-agent communication contracts with message identity, sender/receiver roles, and handoff semantics
 - runtime contracts for runs, threads, streams, cancellation, and memory stores
 - request and event identities that let clients reconnect to in-flight work safely
 - lifecycle hooks that enforce policy before and after tool execution
@@ -56,6 +57,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - expressive interfaces vs schema sprawl
 - centralized policy enforcement vs local flexibility inside skills
 - connectivity-first protocols vs mutation-governance protocols
+- lightweight communication vs trace detail needed for failure attribution
 - intended fixes vs unseen regressions when multiple resources mutate together
 
 ## Source Notes
@@ -72,3 +74,4 @@ Agent protocols are the governance and interface layer around agent action. They
 - [[2025-11-24-introducing-advanced-tool-use-on-the-claude-developer-platform]]
 - [[2026-04-17-goose]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
+- [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]

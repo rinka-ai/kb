@@ -89,6 +89,12 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated `[[arxiv]]` and the master `[[index]]` source collection count for the new arXiv source.
 - Ran `bun run kb:refresh`; index rebuilt with 1579 chunks from 222 markdown files, with no lint failures reported.
 
+## [2026-05-16] ingest | Beyond Individual Intelligence multi-agent LIFE survey
+- Added source note `[[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]` for arXiv:2605.14892, focused on collaboration, failure attribution, and self-evolution in LLM-based multi-agent systems.
+- Created `[[multi-agent-failure-attribution]]` as a draft concept page covering attribution targets, method families, and the repair loop.
+- Updated concept pages: `[[multi-agent-systems]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, and `[[agent-protocols]]`.
+- Updated `[[arxiv]]` and the master `[[index]]`; ran `bun run kb:refresh`, which rebuilt 1595 chunks from 224 markdown files with no lint failures.
+
 ## [2026-05-18] query | AI textbook corpus KB improvement audit
 - Extracted full text from every official AI/ML textbook download in `/Users/josemanuelcerqueira/Desktop/mit-ai-books/` into `_extracted_text/`; processed PDFs plus the HTML-only Goodfellow and Distributional RL mirrors.
 - Built local extraction artifacts: `MANIFEST.md` with per-book word counts and `CORPUS_TOPIC_MAP.md` with per-book topic signals plus a wiki-vs-corpus gap check.
