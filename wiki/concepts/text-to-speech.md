@@ -7,8 +7,8 @@ source_count: 5
 summary: Text-to-speech is an output design problem as much as an API call, balancing latency, style control, markup, and disclosure requirements.
 canonical_for: [text to speech, voice output, speech synthesis, ssml]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.83"
 ---
 

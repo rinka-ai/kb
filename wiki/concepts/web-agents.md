@@ -7,8 +7,8 @@ source_count: 8
 summary: Web agents are agents that operate over browser environments, where the browser can be both the primary task world and a fallback integration layer for systems without clean APIs.
 canonical_for: [web agents, browser agents, website task agents]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.84"
 ---
 

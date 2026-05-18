@@ -7,8 +7,8 @@ source_count: 2
 summary: Payment integrations should keep sensitive collection inside managed provider surfaces and complete business logic from verified events.
 canonical_for: [payment integrations, stripe checkout, pci-safe payments]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.78"
 ---
 

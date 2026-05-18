@@ -32,6 +32,22 @@ export function createHttpRequestContext(args: {
   };
 }
 
+export function createStdioRequestContext(): SearchObservationRequestMeta {
+  return {
+    transport: "stdio",
+    requestId: randomUUID(),
+    receivedAt: new Date().toISOString(),
+  };
+}
+
+export function createCliRequestContext(): SearchObservationRequestMeta {
+  return {
+    transport: "cli",
+    requestId: randomUUID(),
+    receivedAt: new Date().toISOString(),
+  };
+}
+
 export function hashClientIdentifier(value: string, salt?: string): string | undefined {
   const trimmed = value.trim();
   if (!trimmed || !salt?.trim()) {

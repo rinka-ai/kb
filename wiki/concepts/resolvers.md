@@ -7,8 +7,8 @@ source_count: 5
 summary: Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
 canonical_for: [resolver, resolvers, routing tables for context]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.81"
 ---
 

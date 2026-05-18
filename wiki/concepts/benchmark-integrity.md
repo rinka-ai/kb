@@ -7,8 +7,8 @@ source_count: 5
 summary: Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
 canonical_for: [benchmark integrity, eval contamination, infra noise, leaderboard trust]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.84"
 ---
 

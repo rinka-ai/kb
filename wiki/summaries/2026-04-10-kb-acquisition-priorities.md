@@ -5,8 +5,8 @@ title: KB Acquisition Priorities
 tags: [knowledge-base, research, agents, acquisition]
 summary: Audit of the KB’s strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.8"
 ---
 

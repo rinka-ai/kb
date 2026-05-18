@@ -5,8 +5,8 @@ title: Browserbase Agent Architecture KB Upgrades
 tags: [browserbase, managed-agents, security, skills, tools]
 summary: The Browserbase material mostly strengthens KB infrastructure patterns around zero-trust sandboxes, credential brokering, permission-aware skill loading, and reusing one agent runtime across multiple entrypoints.
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.79"
 ---
 

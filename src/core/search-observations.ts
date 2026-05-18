@@ -5,7 +5,7 @@ import { OUTPUT_DIR } from "./paths";
 import type { SearchResponse, SearchResult } from "./search";
 
 export interface SearchObservationRequestMeta {
-  transport: "http";
+  transport: "http" | "stdio" | "cli";
   requestId: string;
   sessionId?: string;
   clientHash?: string;
@@ -261,9 +261,9 @@ export function buildSearchObservationReport(
     return acc;
   }, new Map());
 
-  const summarize = (predicate: (entries: SearchObservation[]) => boolean) =>
+  const summarize = (predicate: (entries: SearchObservation[]) => boolean, minCount = 1) =>
     [...groupedQueries.values()]
-      .filter((entries) => entries.length >= args.minCount && predicate(entries))
+      .filter((entries) => entries.length >= minCount && predicate(entries))
       .map(summaryFromEntries)
       .sort((a, b) => b.count - a.count || b.lastSeen.localeCompare(a.lastSeen))
       .slice(0, args.limit);

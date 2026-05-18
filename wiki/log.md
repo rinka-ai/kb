@@ -94,3 +94,31 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Created `[[multi-agent-failure-attribution]]` as a draft concept page covering attribution targets, method families, and the repair loop.
 - Updated concept pages: `[[multi-agent-systems]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, and `[[agent-protocols]]`.
 - Updated `[[arxiv]]` and the master `[[index]]`; ran `bun run kb:refresh`, which rebuilt 1595 chunks from 224 markdown files with no lint failures.
+
+## [2026-05-18] query | AI textbook corpus KB improvement audit
+- Extracted full text from every official AI/ML textbook download in `/Users/josemanuelcerqueira/Desktop/mit-ai-books/` into `_extracted_text/`; processed PDFs plus the HTML-only Goodfellow and Distributional RL mirrors.
+- Built local extraction artifacts: `MANIFEST.md` with per-book word counts and `CORPUS_TOPIC_MAP.md` with per-book topic signals plus a wiki-vs-corpus gap check.
+- Added `[[2026-05-18-ai-textbook-kb-improvement-map]]` and updated the master `[[index]]`.
+- Main finding: the KB is strong on agent systems but thin on ML foundations, probability, optimization, deep learning, RL, fairness, validation, and ML systems engineering.
+
+## [2026-05-18] ingest | Official AI/ML textbook corpus
+- Added 16 compact source notes under `raw/articles/textbooks/`, covering every downloaded official PDF/HTML artifact while keeping full book text in the local official cache rather than copying it into markdown.
+- Added the `[[textbooks]]` sub-index and 11 concept pages: `[[learning-theory]]`, `[[optimization-for-ml]]`, `[[probabilistic-machine-learning]]`, `[[deep-learning]]`, `[[reinforcement-learning]]`, `[[decision-making-under-uncertainty]]`, `[[ml-systems-engineering]]`, `[[ai-validation-and-assurance]]`, `[[fairness-and-ml]]`, `[[multi-agent-reinforcement-learning]]`, and `[[distributional-reinforcement-learning]]`.
+- Propagated textbook-backed ideas into existing concepts: `[[agent-memory]]`, `[[multi-agent-systems]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, `[[rag]]`, `[[embeddings]]`, `[[agent-security]]`, and `[[reasoning]]`.
+- Updated `[[index]]` and `[[home]]`; ran `bun run kb:refresh`, rebuilding 1760 chunks from 251 markdown files.
+
+## [2026-05-18] ingest | AI/ML textbook second-layer digestion
+- Added 19 granular concept pages for the textbook ideas most likely to recur in queries: generalization/model selection, probabilistic inference, Monte Carlo, variational inference, neural training, architectures, generative modeling, bandits, MDPs, TD/value learning, policy gradients, POMDPs, planning, ML lifecycle, scaling/compute economics, monitoring/drift, falsification, fairness criteria, and causal feedback loops.
+- Wired the new pages into parent concepts including `[[learning-theory]]`, `[[probabilistic-machine-learning]]`, `[[deep-learning]]`, `[[reinforcement-learning]]`, `[[decision-making-under-uncertainty]]`, `[[ml-systems-engineering]]`, `[[ai-validation-and-assurance]]`, and `[[fairness-and-ml]]`.
+- Updated `[[index]]`, `[[home]]`, and `[[textbooks]]` so the detailed layer is navigable from the main catalog and the textbook collection; ran `bun run kb:refresh`, rebuilding 1863 chunks from 270 markdown files, and `bun run kb:lint` passed with no warnings.
+
+## [2026-05-18] lint | Query telemetry and KB health cleanup
+- Confirmed the telemetry log did not contain the user's expected 2026-05-17 zero-result query; root cause was likely an unobserved path because stdio MCP did not record search telemetry and one-off zero-result queries were hidden by the repeated-query report threshold.
+- Updated search telemetry so stdio MCP records observations by default and `kb:search-report` surfaces zero-result queries after one observation.
+- Tightened gap detection by counting index/summary pages as coverage surfaces and adding aliases for already-covered tags; refreshed reviewed wiki metadata that was stale after the textbook ingest.
+- Ran `bun run kb:refresh`, `bun run kb:lint`, `bun run biome:check`, `bun run typecheck`, and the test suite; health is now `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-18] lint | Local search telemetry
+- Added local CLI search telemetry for `bun run kb:search` so local query gaps are recorded alongside MCP search observations.
+- Local observations write to the ignored `.kb/telemetry/search-observations.ndjson` path by default; users can disable with `KB_SEARCH_TELEMETRY_ENABLED=false` or override the path with `KB_SEARCH_OBSERVATION_LOG_PATH`.
+- Added a CLI integration test that writes to a temporary observation log and verifies a one-off zero-result local query is captured with `transport: cli`.

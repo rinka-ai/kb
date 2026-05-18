@@ -7,8 +7,8 @@ source_count: 3
 summary: Speech-to-text quality is shaped as much by capture conditions, output structure, and diarization choices as by the base transcription model.
 canonical_for: [speech to text, transcription, audio input, diarization]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.82"
 ---
 
