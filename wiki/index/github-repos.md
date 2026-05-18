@@ -20,6 +20,8 @@ This index groups official repositories added to the KB as implementation and pr
   [[2026-04-10-inspect-ai]]
 - Stateful memory systems:
   [[2026-04-10-letta]]
+- Memory control planes:
+  [[2026-05-18-cognee]]
 - Security benchmarks:
   [[2026-04-10-agentdojo]]
 - Web-agent benchmark repos:

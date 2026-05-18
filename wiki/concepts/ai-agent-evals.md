@@ -3,7 +3,7 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents, web-agents, browser, computer-use]
-source_count: 21
+source_count: 23
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. Cognee adds a retrieval-system version of the same lesson: chunking, graph construction, retriever choice, prompt template, top-k, and judge metric can all change system scores, so evals should track the full configuration rather than just a model and dataset. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
 
 ## Core Components
 
@@ -26,6 +26,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - graders and pass criteria
 - infrastructure and runtime conditions
 - retrieval mode, result presentation, and context-delivery path when the agent uses search
+- retrieval configuration, including chunking, graph-building prompts, retriever family, top-k, context summaries, and answer prompt
 - edit manifests and attribution ledgers when the evaluated harness evolves over time
 - agent, step, message, and causal-chain labels when evaluating multi-agent failure attribution
 
@@ -62,6 +63,9 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - For production extraction systems, report cost per document, latency distribution, and throughput knee points alongside F1 or document-level accuracy.
 - For deployed AI systems, separate benchmark performance from validation evidence: property specification, stochastic metrics, falsification, monitoring, and rollback readiness answer different questions.
 - For multi-agent attribution, report whether the diagnosis supports verified repair rather than only whether it names the expected agent or step.
+- For GraphRAG or memory systems, evaluate the KG-to-LLM interface as a whole: graph extraction, retrieval, context formatting, answer style, and grader choice interact.
+- Pair exact-match/F1 metrics with semantic or LLM-judge metrics, but treat judge variance as a measured system property rather than a footnote.
+- Keep hold-out questions even for small tuning loops; otherwise retrieval prompt tuning can overfit answer style instead of improving evidence use.
 
 ## Source Notes
 
@@ -86,3 +90,5 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-05-18-machine-learning-systems-vol1]]
 - [[2026-05-18-machine-learning-systems-vol2]]
 - [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
+- [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
+- [[2026-05-18-cognee]]

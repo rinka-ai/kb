@@ -19,7 +19,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time through explicit storage, load policy, write discipline, verification, and harness-owned context management.
 - [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
 - [[agent-security]] — Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
-- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance without collapsing it into raw prompts, memory, or tools.
+- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance while keeping invocation, evidence, and mutation boundaries explicit.
 - [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, and safety cases.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
@@ -95,6 +95,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-02-flue-sandbox-agent-framework-source-teardown]] — Reusable lessons from Flue's source tree: how a compact TypeScript sandbox-agent framework should handle context, sessions, capabilities, events, and deployment lifecycle.
 - [[2026-05-09-contextlattice-memory-context-orchestration-source-teardown]] — Reusable lessons from ContextLattice's source tree: memory contracts, context packs, topic rollups, staged retrieval, retrieval lifecycle metadata, and write-path hygiene.
 - [[2026-05-09-durable-orchestration-background-agents-kb-upgrades]] — A durable-orchestration essay reinforces the KB's harness thesis: stable execution primitives should outlive shifting agent topologies, while background agents raise the cost of missing crash recovery, lifecycle controls, event waits, and structured traces.
+- [[2026-05-18-cognee-memory-skills-kb-upgrades]] — Cognee reframes memory as a control plane spanning graph memory, session memory, retrieval routing, eval-driven tuning, feedback promotion, and proposal-first skill mutation.
 - [[2026-05-18-ai-textbook-kb-improvement-map]] — Full-corpus audit of the official AI/ML textbook cache, identifying the KB's biggest gaps in ML foundations, probability, optimization, RL, fairness, validation, and ML systems engineering.
 
 ## Sub-Indexes
@@ -117,15 +118,15 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 Counts as of `2026-05-18`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
-- `arxiv` (29)
+- `arxiv` (30)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
-- `github-repos` (12)
+- `github-repos` (13)
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (8)
-- `user-provided` (6)
+- `user-provided` (7)
 - `browserbase-docs` (3)
 - `langchain-blog` (2)
 - `akitaonrails` (1)
