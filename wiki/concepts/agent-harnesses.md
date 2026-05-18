@@ -3,7 +3,7 @@ id: concept-agent-harnesses
 type: concept
 title: Agent Harnesses
 tags: [agents, harnesses, infrastructure, orchestration, tools, code-execution, scaffolding]
-source_count: 24
+source_count: 27
 summary: Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, persists artifacts, attributes failures, and turns agent loops into deployable AI systems.
 canonical_for: [agent harnesses, orchestration layer, agent tooling]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.90"
 
 ## Summary
 
-Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The ML systems textbook layer adds that a harness is also deployment infrastructure: it must handle lifecycle, latency, throughput, monitoring, rollback, governance, and return on compute when an agent becomes a production system. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. Flue adds the compact TypeScript sandbox-agent version: a small `init/session/prompt/skill/task/shell` API can be very ergonomic, but context discovery, request validation, observability, and run durability must become explicit contracts for the harness to stay portable across sandbox targets. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state. iii adds the backend-convergence version of the same idea: when functions, triggers, and workers are the shared substrate, the agent harness and backend infrastructure become one execution plane rather than two systems glued together. AHE adds the empirical self-evolution pattern: harness components become file-level, evidence-backed, revertible artifacts whose edits are paired with explicit predictions and checked against the next evaluation round. The LIFE survey broadens that idea to agent teams: the harness needs trace structure that can attribute failures across roles, messages, tools, topology, and repair attempts. The agentic-search paper adds the retrieval version of the same claim: changing harnesses or tool-result delivery can move accuracy as much as changing the retriever, so "retrieval" in agents is retrieval-plus-orchestration rather than an isolated module. Verifiable-skills work adds the security version of that artifact view: the harness should load skills through a manifest, verification, capability-gate, HITL, and audit-log path rather than trusting skill text because it came from a known origin. ContextLattice adds the memory-gateway version: the harness should define when agents preflight, retrieve, write checkpoints, disclose degraded memory, and re-check recency. The durable-orchestration source adds a topology boundary: the harness should expose stable execution primitives so ReAct loops, planners, routers, and subagent crews can change without replacing the whole control plane.
+Agent harnesses are the orchestration layer around the model loop: they assemble context, run tools, manage resets and handoffs, enforce approval boundaries, and persist artifacts. The ML systems textbook layer adds that a harness is also deployment infrastructure: it must handle lifecycle, latency, throughput, monitoring, rollback, governance, and return on compute when an agent becomes a production system. The newer source set sharpens three linked ideas: a harness is everything around the model that makes it useful, durable value should usually live in external memory/skills/protocols rather than inside the loop, and harness ownership increasingly determines memory ownership and portability. The resolver pattern adds a practical corollary: thin harnesses stay effective when routing tables tell them what to load instead of forcing every rule into the always-on prompt. Goose adds a strong implementation example of this layering in practice: provider abstraction, unified extension loading, session persistence, inspection hooks, and multiple product surfaces can still share one core harness. Flue adds the compact TypeScript sandbox-agent version: a small `init/session/prompt/skill/task/shell` API can be very ergonomic, but context discovery, request validation, observability, and run durability must become explicit contracts for the harness to stay portable across sandbox targets. The Claude Code design-space paper adds the clearest production case study so far: model judgment can remain flexible when a deterministic harness owns permissioning, context management, extensibility, delegation boundaries, and append-oriented state. iii adds the backend-convergence version of the same idea: when functions, triggers, and workers are the shared substrate, the agent harness and backend infrastructure become one execution plane rather than two systems glued together. AHE adds the empirical self-evolution pattern: harness components become file-level, evidence-backed, revertible artifacts whose edits are paired with explicit predictions and checked against the next evaluation round. The LIFE survey broadens that idea to agent teams: the harness needs trace structure that can attribute failures across roles, messages, tools, topology, and repair attempts. The agentic-search paper adds the retrieval version of the same claim: changing harnesses or tool-result delivery can move accuracy as much as changing the retriever, so "retrieval" in agents is retrieval-plus-orchestration rather than an isolated module. Verifiable-skills work adds the security version of that artifact view: the harness should load skills through a manifest, verification, capability-gate, HITL, and audit-log path rather than trusting skill text because it came from a known origin. ContextLattice adds the memory-gateway version: the harness should define when agents preflight, retrieve, write checkpoints, disclose degraded memory, and re-check recency. Cognee adds the memory-control-plane version: a harness can store skills, skill runs, memory entries, traces, feedback, retrieval settings, and improvement proposals in one graph-backed substrate while preserving explicit routing and apply boundaries. The durable-orchestration source adds a topology boundary: the harness should expose stable execution primitives so ReAct loops, planners, routers, and subagent crews can change without replacing the whole control plane.
 
 ## Core Responsibilities
 
@@ -30,12 +30,14 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - unify built-in and external tool surfaces behind one extension runtime so the loop sees one capability plane
 - route tasks to the right skill, memory surface, or filing rule through explicit registries or resolvers
 - define the memory operating loop explicitly: preflight, scoped retrieval, broader fallback, context-pack loading, checkpoint writes, final recency checks, and degraded-mode reporting
+- define memory maintenance stages explicitly: feedback weighting, session promotion, trace promotion, enrichment, global-summary updates, and session-cache sync
 - present the same core runtime through multiple entrypoint adapters such as chat, webhook, and UI surfaces without forking orchestration semantics
 - unify agent and backend execution primitives when agents, services, queues, schedulers, sandboxes, and browser workers can all register the same callable units
 - manage resets, resumptions, handoffs, and structured logs
 - manage active run lifecycle controls such as status, cancellation, scheduling, event waits, and inspection
 - expose steps, event waits, retries, cancellation, scheduling, and traces as durable primitives when agents run in the background
 - expose prompts, tools, middleware, skills, sub-agents, and memory as inspectable components when the harness itself is meant to improve over time
+- expose skill-run feedback and improvement proposals as first-class artifacts when memory evidence can amend procedural playbooks
 - preserve cross-agent trace identities for roles, messages, handoffs, tool calls, and verification steps so failures can be attributed instead of merely observed
 - verify and freeze loaded skills at bootstrap, then enforce declared capabilities through runtime gates rather than trusting prompt text to police itself
 - keep the hot-path loop lightweight enough to swap models or runtimes without rewriting the whole system
@@ -54,6 +56,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - the right harness boundary depends on deployment context: CLI coding agents, hosted managed agents, and persistent personal-assistant gateways should not all inherit the same trust and memory model
 - the thin-versus-thick harness debate can become a composition choice when runtime capabilities are registered functions and triggers instead of a separate agent layer
 - self-evolving harnesses need observability at three levels: component surfaces, trajectory evidence, and decision ledgers that make each edit falsifiable
+- memory and skills can share a world-model substrate, but the harness still needs typed boundaries for facts, procedures, routing decisions, and irreversible mutations
 
 ## Common Failure Modes
 
@@ -73,6 +76,7 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - treating sandbox snapshots as a substitute for semantic execution state, leaving no clear record of completed steps or replay-safe side effects
 - treating a successful local demo as a deployed ML system without monitoring, drift handling, resource budgeting, or failure recovery
 - recording only aggregate multi-agent outcomes, leaving no way to distinguish root causes from downstream symptoms during repair
+- letting a shared memory/skill substrate silently rewrite procedures without proposal review, score thresholds, or rollback evidence
 
 ## Source Notes
 
@@ -100,3 +104,6 @@ Agent harnesses are the orchestration layer around the model loop: they assemble
 - [[2026-05-18-machine-learning-systems-vol1]]
 - [[2026-05-18-machine-learning-systems-vol2]]
 - [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
+- [[2026-05-17-memory-skills-same-harness-tricalt]]
+- [[2026-05-18-cognee]]
+- [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]

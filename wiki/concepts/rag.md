@@ -2,8 +2,8 @@
 id: concept-rag
 type: concept
 title: RAG
-tags: [rag, retrieval, knowledge-bases, dense-retrieval, embeddings]
-source_count: 23
+tags: [rag, retrieval, knowledge-bases, dense-retrieval, embeddings, graphrag, knowledge-graphs]
+source_count: 25
 summary: RAG is a full retrieval and evidence-assembly pipeline that combines search, representation, ranking, uncertainty, and generation rather than a synonym for vector search alone.
 canonical_for: [retrieval augmented generation, graph rag, corrective rag, contextual retrieval]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.9"
 
 ## Summary
 
-Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, uncertainty handling, harness behavior, and tool-result delivery all materially affect quality. The textbook layer adds useful classical grounding: retrieval quality depends on representation, nearest-neighbor geometry, ranking objectives, and uncertainty over what evidence actually supports. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
+Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, uncertainty handling, harness behavior, and tool-result delivery all materially affect quality. The textbook layer adds useful classical grounding: retrieval quality depends on representation, nearest-neighbor geometry, ranking objectives, and uncertainty over what evidence actually supports. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The Cognee paper and repo add the GraphRAG maintenance lesson: graph memory quality depends on tuning and evaluating the interface between graph extraction, vector search, graph projection, prompt assembly, answer style, and grading, not merely choosing a graph database. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
 
 ## Where It Fits
 
@@ -56,6 +56,9 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - Self-RAG treats retrieval as adaptive rather than mandatory, and adds self-critique to judge whether retrieved evidence helped
 - CRAG focuses on what to do when retrieval quality is weak, adding a corrective step instead of assuming retrieved passages are already trustworthy
 - GraphRAG is useful when the question is about corpus-level themes or global structure rather than a small number of directly relevant passages
+- GraphRAG systems need interface tuning: chunking, overlap, top-k, prompt format, and generation settings can change multi-hop QA quality even when the graph substrate is unchanged
+- graph-completion retrieval is a distinct shape from chunk RAG: it searches node/edge representations, projects a graph fragment, formats triplets, and then asks the LLM to answer from relational context
+- global-summary retrieval can sit between local triplets and full-corpus synthesis, acting like a query-time map over graph summaries
 
 ## Evaluation
 
@@ -64,6 +67,9 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - benchmark coverage matters because retrieval methods that look strong on narrow datasets may fail badly out of domain
 - agentic RAG evals should report harness, model, tool-result delivery style, and distractor/noise setup alongside retriever scores
 - this KB should evaluate RAG systems against both local lookup questions and broader synthesis questions
+- graph-based memory systems should keep saved eval cases because the best KG-to-LLM interface is dataset- and metric-dependent
+- evaluation should include answer-style sensitivity: exact match, F1, and LLM-judge correctness reward different behavior
+- hyperparameter search over the full retrieval-generation path can be more informative than isolated retriever benchmarks
 
 ## When Simpler Is Better
 
@@ -96,3 +102,5 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
 - [[2026-05-18-probabilistic-machine-learning-introduction]]
 - [[2026-05-18-foundations-of-machine-learning]]
+- [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
+- [[2026-05-18-cognee]]

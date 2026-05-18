@@ -20,6 +20,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-23-recursive-language-models]]
 - Agentic retrieval and harness effects:
   [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
+- GraphRAG and KG-to-LLM interface tuning:
+  [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
 - Multi-agent failure attribution and self-evolution:
   [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
 - Memory systems:

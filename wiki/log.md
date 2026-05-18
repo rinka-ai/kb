@@ -122,3 +122,16 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added local CLI search telemetry for `bun run kb:search` so local query gaps are recorded alongside MCP search observations.
 - Local observations write to the ignored `.kb/telemetry/search-observations.ndjson` path by default; users can disable with `KB_SEARCH_TELEMETRY_ENABLED=false` or override the path with `KB_SEARCH_OBSERVATION_LOG_PATH`.
 - Added a CLI integration test that writes to a temporary observation log and verifies a one-off zero-result local query is captured with `transport: cli`.
+
+## [2026-05-18] ingest | Cognee memory-skill harness bundle
+- Added source notes for the Vasilije Markovic memory/skills harness thread, arXiv:2505.24478 on KG-to-LLM interface optimization, and the `topoteretes/cognee` repo at inspected commit `8b0d687`.
+- Added `[[2026-05-18-cognee-memory-skills-kb-upgrades]]` to preserve the cross-source synthesis: skills can be procedural memories backed by run evidence and proposals, but typed review/apply boundaries still matter.
+- Updated `[[agent-memory]]`, `[[agent-skills]]`, `[[agent-harnesses]]`, and `[[rag]]`; updated the master catalog plus `[[home]]`, `[[arxiv]]`, and `[[github-repos]]`.
+- Noted an implementation caveat: the current Cognee repo supports `SkillRunEntry`, `Skill`, `SkillRun`, and `SkillImprovementProposal`, but no exact `SkillChangeEvent` symbol was found in the inspected branch.
+- Ran `bun run kb:refresh`; health is `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-18] refresh | Cognee paper and code deep dive
+- Expanded the Cognee arXiv note with Dreamify optimization details, train/hold-out setup, result-table takeaways, and Appendix A architecture notes.
+- Expanded the Cognee repo note with `cognify`, `search`, `recall`, `improve`, retriever taxonomy, agent-memory decorator, feedback weighting, global context index, eval framework, and test-backed skill mutation behavior.
+- Strengthened `[[agent-memory]]`, `[[rag]]`, `[[context-engineering]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, and `[[agent-skills]]` with reusable patterns: memory control planes, KG-to-LLM interface tuning, session-to-graph promotion, evidence-linked feedback, and proposal-first skill mutation.
+- Ran `bun run kb:refresh`; final health is `review_backlog=0 stale_wiki=0 uncovered_tags=0`.

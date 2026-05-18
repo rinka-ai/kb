@@ -38,6 +38,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-05-02-flue-sandbox-agent-framework-source-teardown]]
 - [[2026-05-09-contextlattice-memory-context-orchestration-source-teardown]]
 - [[2026-05-09-durable-orchestration-background-agents-kb-upgrades]]
+- [[2026-05-18-cognee-memory-skills-kb-upgrades]]
 - [[2026-05-18-ai-textbook-kb-improvement-map]]
 
 ## Next Suggested Concepts
