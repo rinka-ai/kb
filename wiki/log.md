@@ -135,3 +135,28 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Expanded the Cognee repo note with `cognify`, `search`, `recall`, `improve`, retriever taxonomy, agent-memory decorator, feedback weighting, global context index, eval framework, and test-backed skill mutation behavior.
 - Strengthened `[[agent-memory]]`, `[[rag]]`, `[[context-engineering]]`, `[[ai-agent-evals]]`, `[[agent-harnesses]]`, and `[[agent-skills]]` with reusable patterns: memory control planes, KG-to-LLM interface tuning, session-to-graph promotion, evidence-linked feedback, and proposal-first skill mutation.
 - Ran `bun run kb:refresh`; final health is `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-20] ingest | Steward agent wallet infrastructure
+- Added source note `[[2026-05-20-steward]]` for `Steward-Fi/steward` at inspected commit `158e696`, focused on agent wallet custody, policy-gated signing, credential proxying, auth, approvals, and audit logs.
+- Created `[[agent-wallet-infrastructure]]` as a draft concept for policy-bounded agent spending and credential use.
+- Updated `[[agent-security]]`, `[[payment-integrations]]`, `[[agent-tools]]`, `[[managed-agents]]`, and `[[agent-harnesses]]`; updated `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
+- Noted a security caveat from Steward's own ADR/threat model: v1 policy enforcement is an API-path invariant before vault calls, not a separate cryptographic signer-process boundary.
+- Ran `bun run kb:refresh`; lint passed, with two pre-existing stale summary review dates still reported in health.
+
+## [2026-05-20] ingest | Hermes Agent runtime
+- Added source note `[[2026-05-20-hermes-agent]]` for `NousResearch/hermes-agent` at inspected commit `edb2d91`, focused on the self-improving personal-agent runtime: memory, skills, gateway, ACP, cron, toolsets, code execution, browser/computer-use, MCP, and trajectories.
+- Added synthesis `[[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]]` to preserve reusable runtime lessons across [[agent-harnesses]], [[agent-frameworks]], [[agent-memory]], [[agent-skills]], [[agent-tools]], [[agent-protocols]], [[context-engineering]], [[durable-execution]], [[web-agents]], and [[computer-use]].
+- Updated related concept pages plus `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
+- Noted Hermes' own security caveat: approval gates, redaction, tool allowlists, and skill scans are heuristics; OS-level isolation is the real containment boundary for adversarial inputs.
+- Ran `bun run kb:refresh` and `bun run kb:lint`; lint passed, with the same two pre-existing stale summary review dates still reported in health.
+
+## [2026-05-20] ingest | MemWal encrypted agent memory
+- Added source note `[[2026-05-20-memwal]]` for `MystenLabs/MemWal` at inspected commit `e5b98ca`, focused on encrypted Walrus-backed memory, Sui delegate keys, namespaces, SDK/MCP/OpenClaw integrations, relayer trust, restore, and semantic recall.
+- Added synthesis `[[2026-05-20-memwal-encrypted-agent-memory-source-teardown]]` to preserve the user-owned encrypted-memory pattern and its trust-boundary cautions.
+- Updated `[[agent-memory]]`, `[[agent-security]]`, `[[agent-tools]]`, `[[agent-protocols]]`, `[[managed-agents]]`, `[[agent-harnesses]]`, `[[context-engineering]]`, `[[rag]]`, and `[[personal-knowledge-bases]]`; updated `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
+- Noted the main caveat: default relayer mode sees plaintext for embedding/encryption/decryption, while self-hosting, TEE deployment, or manual client flow changes the trust posture.
+- Ran `bun run kb:refresh` and `bun run kb:lint`; lint passed, with the same two pre-existing stale summary review dates still reported in health.
+
+## [2026-05-20] lint | stale summary review cleanup
+- Reviewed `[[2026-04-19-openai-agents-js-runtime-patterns-from-source-teardown]]` and `[[2026-04-20-akitaonrails-blog-durable-lessons]]`; no content changes were needed, only review metadata refresh.
+- Updated both summaries' `last_reviewed` to 2026-05-20 and `review_due` to 2026-06-20 so the canonical layer no longer reports stale wiki notes.

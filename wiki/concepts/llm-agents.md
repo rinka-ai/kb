@@ -3,12 +3,12 @@ id: concept-llm-agents
 type: concept
 title: LLM Agents
 tags: [agents, llms, tool-use, multi-agent, parallel-agents, web-agents, browser, computer-use]
-source_count: 20
+source_count: 21
 summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 canonical_for: [llm agents, tool-using agents, autonomous model agents]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.88"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions make the category much less abstract: beyond ReAct-style loops, real agents need durable execution, resumable interruptions, session or thread state, memory surfaces, reusable skills, stable protocols for tools and runtime control, and a harness that coordinates those pieces without owning all of them invisibly. A useful newer framing is that many high-leverage agent systems decompose into memory, skills, protocols, and a harness rather than one monolithic "agent brain." AHE pushes this further by treating those external pieces as a learnable substrate: the model can stay fixed while the harness accumulates evaluated experience in tools, middleware, memory, and other files.
+LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions make the category much less abstract: beyond ReAct-style loops, real agents need durable execution, resumable interruptions, session or thread state, memory surfaces, reusable skills, stable protocols for tools and runtime control, and a harness that coordinates those pieces without owning all of them invisibly. A useful newer framing is that many high-leverage agent systems decompose into memory, skills, protocols, and a harness rather than one monolithic "agent brain." AHE pushes this further by treating those external pieces as a learnable substrate: the model can stay fixed while the harness accumulates evaluated experience in tools, middleware, memory, and other files. Hermes adds the personal-agent endpoint: a single agent can become a long-lived runtime spanning chat, terminal, editor, scheduled jobs, tool registries, memory, skill mutation, browser work, desktop control, and research traces.
 
 ## Key Dimensions
 
@@ -33,6 +33,7 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - how well the agent can explore, recover from failure, and ground actions in realistic interfaces
 - whether experience is learned in model weights, active context, or external harness artifacts
 - whether sub-calls are verbal workflow steps or programmatic recursive calls over external state
+- which user-facing entrypoints share identity, memory, permissions, and session continuity
 
 ## Source Notes
 
@@ -56,3 +57,4 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - [[2026-04-16-ai-agent-stack-builders-guide-av1dlive]]
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
 - [[2026-04-23-recursive-language-models]]
+- [[2026-05-20-hermes-agent]]

@@ -3,12 +3,12 @@ id: concept-agent-skills
 type: concept
 title: Agent Skills
 tags: [agents, skills, context-engineering]
-source_count: 18
+source_count: 19
 summary: Agent skills are reusable procedural capability modules that package task-specific guidance while keeping invocation, evidence, and mutation boundaries explicit.
 canonical_for: [agent skills, procedural skills]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text. A newer security framing treats runtime-loaded skills as supply-chain artifacts: signatures and registries establish provenance, but behavioral trust requires explicit verification before irreversible capabilities can stop asking for HITL approval. The Cognee bundle adds a useful counterweight to an overly clean taxonomy: skills can be treated as procedural memories backed by run evidence and improvement proposals, as long as the runtime keeps storage, routing, review, and apply semantics explicit.
+Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text. A newer security framing treats runtime-loaded skills as supply-chain artifacts: signatures and registries establish provenance, but behavioral trust requires explicit verification before irreversible capabilities can stop asking for HITL approval. The Cognee bundle adds a useful counterweight to an overly clean taxonomy: skills can be treated as procedural memories backed by run evidence and improvement proposals, as long as the runtime keeps storage, routing, review, and apply semantics explicit. Hermes adds the personal-agent loop: skills can be progressively disclosed, user-editable, agentskills.io-compatible, and subject to background improvement, but that turns mutation policy and protected-skill boundaries into part of the runtime contract.
 
 ## What They Are
 
@@ -43,6 +43,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - record skill-run outcomes with task text, selected skill, score, feedback, and tool trace so future improvements are evidence-backed
 - generate reviewable skill-improvement proposals before mutating stored procedures
 - load skill bodies progressively: expose names and descriptions during routing, then fetch the full procedure only after the agent selects the skill
+- distinguish mutable user skills from read-only external skill directories and protected skills, especially when the runtime can create or improve skills after a task
 
 ## Failure Modes
 
@@ -60,6 +61,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - collapsing skills into memory so completely that facts, preferences, procedures, and instructions become one unsafe retrieval lane
 - rewriting a durable skill from a single weak run instead of accumulating enough evidence for a proposal and review step
 - recording runs for every candidate skill instead of only the skills actually opened or used
+- letting background review rewrite procedural memory without clear protection, provenance, or user-level rollback expectations
 
 ## Source Notes
 
@@ -81,3 +83,4 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - [[2026-05-02-flue]]
 - [[2026-05-17-memory-skills-same-harness-tricalt]]
 - [[2026-05-18-cognee]]
+- [[2026-05-20-hermes-agent]]
