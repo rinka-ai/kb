@@ -3,12 +3,12 @@ id: concept-rag
 type: concept
 title: RAG
 tags: [rag, retrieval, knowledge-bases, dense-retrieval, embeddings, graphrag, knowledge-graphs]
-source_count: 25
+source_count: 26
 summary: RAG is a full retrieval and evidence-assembly pipeline that combines search, representation, ranking, uncertainty, and generation rather than a synonym for vector search alone.
 canonical_for: [retrieval augmented generation, graph rag, corrective rag, contextual retrieval]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.9"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.9"
 
 ## Summary
 
-Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, uncertainty handling, harness behavior, and tool-result delivery all materially affect quality. The textbook layer adds useful classical grounding: retrieval quality depends on representation, nearest-neighbor geometry, ranking objectives, and uncertainty over what evidence actually supports. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The Cognee paper and repo add the GraphRAG maintenance lesson: graph memory quality depends on tuning and evaluating the interface between graph extraction, vector search, graph projection, prompt assembly, answer style, and grading, not merely choosing a graph database. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
+Retrieval-augmented generation is the pattern of constructing model context at query time from external documents, then answering with that evidence in view. In this KB, RAG is best treated as a full [[context-engineering]] pipeline rather than a synonym for "vector search": chunking, lexical and semantic retrieval, ranking, compression, evidence assembly, provenance, uncertainty handling, harness behavior, and tool-result delivery all materially affect quality. The textbook layer adds useful classical grounding: retrieval quality depends on representation, nearest-neighbor geometry, ranking objectives, and uncertainty over what evidence actually supports. The agentic-search evidence strengthens the boundary condition: for literal-witness conversational memory tasks, grep-style lexical retrieval can beat vector retrieval end-to-end when the harness makes hits immediately usable, but that advantage is not stable once delivery paths and provider CLIs change. The Cognee paper and repo add the GraphRAG maintenance lesson: graph memory quality depends on tuning and evaluating the interface between graph extraction, vector search, graph projection, prompt assembly, answer style, and grading, not merely choosing a graph database. MemWal adds the encrypted-memory retrieval case: the retriever may index vectors in a rebuildable database while source text lives as encrypted blobs elsewhere, which makes restore, metadata leakage, and relayer trust part of retrieval design. The current notes also show that for modest corpora, a compiled markdown wiki or full-context prompting can still be simpler and more reliable than a heavy RAG stack.
 
 ## Where It Fits
 
@@ -38,6 +38,7 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - enrich chunks with local or document-level context before indexing when raw chunks are too lossy
 - retrieve broadly, then narrow with reranking, filtering, or query-aware compression
 - preserve URLs, file paths, and source ids so dropped context can be reconstructed instead of irreversibly summarized
+- when source text is encrypted, decide what the retriever is allowed to see: plaintext, vectors only, keywords/entities, or decrypted candidates after a first-stage search
 - evaluate retrievers inside the actual agent harness and delivery path, because inline results, file-backed results, and CLI shell ergonomics can change answer accuracy without changing the corpus
 - evaluate retrieval quality and answer quality separately
 - distinguish relevance, evidence sufficiency, source authority, and model faithfulness; a retrieved passage can be relevant but still not enough to answer
@@ -76,6 +77,7 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - for small corpora, full-context prompting or a compiled wiki may be easier to maintain than a full RAG stack
 - if the main job is cross-document synthesis, a curated concept page may outperform naive top-k passage stuffing
 - if the task is open-ended research, just-in-time multi-step retrieval may work better than single-shot RAG
+- if the corpus is personal or sensitive, the trust boundary of embedding generation and reranking may matter more than the retrieval algorithm
 
 ## Source Notes
 
@@ -104,3 +106,4 @@ Retrieval-augmented generation is the pattern of constructing model context at q
 - [[2026-05-18-foundations-of-machine-learning]]
 - [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
 - [[2026-05-18-cognee]]
+- [[2026-05-20-memwal]]

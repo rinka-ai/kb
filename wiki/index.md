@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-05-16
+last_reviewed: 2026-05-20
 ---
 
 # Wiki Index
@@ -15,12 +15,13 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 ## Concepts
 
 - [[agent-frameworks]] — Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
-- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, persists artifacts, attributes failures, and turns agent loops into deployable AI systems.
+- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, brokers credentials, persists artifacts, attributes failures, and turns agent loops into deployable AI systems.
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, and reuse information across time through explicit storage, load policy, write discipline, verification, and harness-owned context management.
 - [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, threads, and runtime state so agent systems stay inspectable and portable.
-- [[agent-security]] — Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, and adversarial evaluation rather than a single prompting trick.
+- [[agent-security]] — Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
 - [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance while keeping invocation, evidence, and mutation boundaries explicit.
-- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, and better orchestration boundaries than APIs built only for humans.
+- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, and better orchestration boundaries than APIs built only for humans.
+- [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, and safety cases.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 - [[benchmark-integrity]] — Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
@@ -37,14 +38,14 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[fairness-and-ml]] — Fairness and ML is a socio-technical discipline about measurement, legitimacy, classification criteria, causality, recourse, feedback loops, and institutional context.
 - [[learning-theory]] — Learning theory explains when empirical learning should generalize, using sample complexity, hypothesis-class capacity, risk decomposition, and regularization rather than training loss alone.
 - [[llm-agents]] — LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
-- [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
+- [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, entrypoints, and state.
 - [[ml-systems-engineering]] — ML systems engineering treats AI as a deployed lifecycle across data, training, evaluation, serving, monitoring, scaling, governance, and compute economics.
 - [[multi-agent-failure-attribution]] — Multi-agent failure attribution identifies where, how, and why errors emerge and propagate across agent roles, steps, tools, and coordination structures so diagnoses can support repair.
 - [[multi-agent-reinforcement-learning]] — Multi-agent reinforcement learning studies learning agents in shared environments where strategic interaction, nonstationarity, coordination, communication, and partial observability matter.
 - [[multi-agent-systems]] — Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles plus attribution paths for diagnosing coordination failures.
 - [[obsidian]] — Obsidian is the human-facing interface for navigating the repo's markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
 - [[optimization-for-ml]] — Optimization for ML is the search layer that turns objectives into trained models, tuned systems, falsifying examples, and efficient deployment choices.
-- [[payment-integrations]] — Payment integrations should keep sensitive collection inside managed provider surfaces and complete business logic from verified events.
+- [[payment-integrations]] — Payment and value-transfer integrations should keep sensitive collection, credentials, and signing authority inside managed or policy-enforced surfaces while completing business logic from verified events.
 - [[personal-knowledge-bases]] — Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
 - [[probabilistic-machine-learning]] — Probabilistic machine learning treats uncertainty, latent structure, missing information, and prediction as first-class modeling problems.
 - [[rag]] — RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
@@ -97,6 +98,8 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-09-durable-orchestration-background-agents-kb-upgrades]] — A durable-orchestration essay reinforces the KB's harness thesis: stable execution primitives should outlive shifting agent topologies, while background agents raise the cost of missing crash recovery, lifecycle controls, event waits, and structured traces.
 - [[2026-05-18-cognee-memory-skills-kb-upgrades]] — Cognee reframes memory as a control plane spanning graph memory, session memory, retrieval routing, eval-driven tuning, feedback promotion, and proposal-first skill mutation.
 - [[2026-05-18-ai-textbook-kb-improvement-map]] — Full-corpus audit of the official AI/ML textbook cache, identifying the KB's biggest gaps in ML foundations, probability, optimization, RL, fairness, validation, and ML systems engineering.
+- [[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]] — Hermes Agent shows a personal-agent runtime pattern where one core agent loop is reused across CLI, messaging, ACP, cron, API, batch, memory, skills, browser/computer-use, and trajectory surfaces.
+- [[2026-05-20-memwal-encrypted-agent-memory-source-teardown]] — MemWal adds a user-owned encrypted memory pattern: durable Walrus blobs, rebuildable vector indexes, Sui delegate-key access, SDK/MCP/harness integrations, and explicit relayer trust trade-offs.
 
 ## Sub-Indexes
 
@@ -115,14 +118,14 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-18`. Folders under `raw/articles/`.
+Counts as of `2026-05-20`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
 - `arxiv` (30)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
-- `github-repos` (13)
+- `github-repos` (16)
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (8)

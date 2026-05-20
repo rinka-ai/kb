@@ -2,13 +2,13 @@
 id: concept-agent-security
 type: concept
 title: Agent Security
-tags: [security, prompt-injection, sandboxing, approvals, agents, adversarial-evals, autonomy]
-source_count: 11
-summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
+tags: [security, prompt-injection, sandboxing, approvals, agents, adversarial-evals, autonomy, credentials, wallets]
+source_count: 14
+summary: Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
 canonical_for: [agent security, prompt injection, sandboxing, approval policies, adversarial agent evals]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.88"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, and evals that measure useful work under attack instead of only benign task success. The textbook layer broadens the safety frame: secure AI systems also need explicit properties, falsification searches, governance, fairness checks, and monitoring for socio-technical harm. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified.
+Agent security is a systems problem spanning prompt injection, authorization, sandbox boundaries, tool restriction, secret placement, wallet custody, memory privacy, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, policy-bounded signing paths for money movement, privacy-aware memory storage, and evals that measure useful work under attack instead of only benign task success. The textbook layer broadens the safety frame: secure AI systems also need explicit properties, falsification searches, governance, fairness checks, and monitoring for socio-technical harm. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified. Hermes adds a useful trust-model correction from a real agent runtime: approvals, redaction, skill scans, and tool allowlists are valuable heuristics, but OS-level isolation is the load-bearing containment boundary against adversarial model behavior. MemWal adds the memory-privacy version of the same discipline: encrypted durable storage and onchain delegate control are meaningful, but default relayer plaintext handling remains a trust boundary.
 
 ## Threat Surfaces
 
@@ -24,8 +24,11 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - excessive permission prompts create fatigue, but removing them blindly creates wider blast radius
 - weak sandboxing turns ordinary model mistakes into filesystem, network, or credential incidents
 - live credentials inside model-reachable processes turn arbitrary-code execution into secret exfiltration risk
+- wallet private keys and paid API credentials inside agent environments turn prompt injection or dependency compromise into direct financial or account-abuse risk
 - tool sets that are broader than the task surface make both benign mistakes and attacks easier
 - skills can act as persistent prompt-injection or supply-chain surfaces when a runtime infers trust from origin, signature, or registry membership alone
+- plugins, skills, hooks, MCP subprocesses, code execution, and gateway adapters can run outside the narrow terminal-tool sandbox unless the entire agent process is wrapped
+- persistent memory can leak sensitive facts through plaintext relayers, local delegate credentials, embeddings, metadata, overbroad namespaces, or stale delegate keys even when stored blobs are encrypted
 - automated decisions can create legitimacy, recourse, discrimination, and feedback-loop failures even when the narrow prompt-injection surface is controlled
 
 ## Defensive Patterns
@@ -34,11 +37,15 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - prefer least-privilege tool access and narrower toolsets where tasks allow it
 - model approval as an explicit resumable state transition instead of an informal chat detour
 - keep real credentials behind brokers, vaults, or network injection layers rather than exposing them directly inside agent sandboxes
+- route wallet signing and paid API access through policy-aware vault/proxy layers with approval queues and audit logs
 - scope permissions and allowed capabilities by invocation source or job intent when tasks arrive through different channels
 - pair tool permissioning with network or domain allowlists when the environment can reach the open web
 - pair autonomy improvements with stronger isolation, monitoring, and post-hoc review surfaces
 - treat skill packages as untrusted by default; use explicit verification levels to decide when irreversible actions can avoid per-call HITL approval
 - keep audit logs strong enough to reconcile approved-and-executed actions with observed side effects after a run
+- distinguish accident-prevention heuristics from security boundaries; use whole-process isolation when the agent ingests untrusted web, email, multi-user channel, plugin, or MCP content
+- distinguish cryptographic ownership from operational confidentiality; if a relayer embeds, encrypts, decrypts, or reranks plaintext, the relayer operator is in the trust envelope
+- make credential deletion and credential revocation separate UX paths when local agent clients store long-lived delegate keys
 
 ## Evaluation Standards
 
@@ -53,8 +60,11 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 
 - autonomy vs safety guarantees
 - approval fatigue vs over-broad execution permissions
+- product claims about policy-enforced signing vs the actual implementation boundary, especially when policy is API-path enforced rather than enforced by a separate signer process
 - narrow task-specific defenses vs general enterprise hardening
 - security evaluation realism vs benchmark simplicity
+- terminal-backend isolation vs whole-process wrapping when the agent runtime itself loads plugins, skills, hooks, and subprocesses
+- encrypted source storage vs plaintext processing in relayers, middleware, and memory tool adapters
 
 ## Source Notes
 
@@ -69,3 +79,6 @@ Agent security is a systems problem spanning prompt injection, authorization, sa
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
 - [[2026-05-18-algorithms-for-validation]]
 - [[2026-05-18-fairness-and-machine-learning]]
+- [[2026-05-20-steward]]
+- [[2026-05-20-hermes-agent]]
+- [[2026-05-20-memwal]]

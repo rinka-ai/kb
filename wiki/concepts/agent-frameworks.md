@@ -3,12 +3,12 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 9
+source_count: 10
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture.
+Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use.
 
 ## Common Responsibilities
 
@@ -34,6 +34,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - Letta emphasizes stateful memory-rich agents with explicit long-term storage surfaces
 - Goose emphasizes a local reusable runtime with provider abstraction, unified built-in and MCP extension surfaces, scheduling, and shared core primitives across CLI, desktop, server, and ACP clients
 - Flue emphasizes sandbox-agent packaging: TypeScript entrypoints compile to deploy targets while sessions, filesystem sandboxes, command grants, skills, typed results, child tasks, and MCP tools form a compact programmable harness
+- Hermes emphasizes a personal-agent operating environment: one Python runtime behind terminal UI, messaging gateway, ACP editor server, cron, API, batch runner, provider routing, memory, skills, toolsets, MCP, and browser/computer-use surfaces
 
 ## Selection Heuristics
 
@@ -44,6 +45,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - avoid frameworks that make today's topology, such as graph routing, role crews, or conversational multi-agent loops, hard to replace
 - require context-loading semantics to be portable across local, virtual, hosted, and container sandboxes before treating a framework as runtime-agnostic
 - prefer frameworks that expose steps, waits, retries, cancellation, scheduling, and traces as stable primitives rather than hard-coding one agent topology
+- check whether multiple product entrypoints share one runtime contract or quietly fork sessions, tools, permissions, memory, and approval semantics
 
 ## Tensions
 
@@ -64,3 +66,4 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-04-17-goose]]
 - [[2026-05-02-flue]]
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
+- [[2026-05-20-hermes-agent]]
