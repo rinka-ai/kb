@@ -42,6 +42,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-05-18-ai-textbook-kb-improvement-map]]
 - [[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]]
 - [[2026-05-20-memwal-encrypted-agent-memory-source-teardown]]
+- [[2026-05-25-uniswap-interface-ui-ux-source-teardown]]
 
 ## Next Suggested Concepts
 

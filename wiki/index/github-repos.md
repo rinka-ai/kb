@@ -8,7 +8,7 @@ title: GitHub Repos
 
 ## Overview
 
-This index groups official repositories added to the KB as implementation and protocol ground truth for agent systems, benchmark environments, and evaluation frameworks.
+This index groups official repositories added to the KB as implementation and protocol ground truth for agent systems, benchmark environments, evaluation frameworks, and product UI/UX architecture.
 
 ## By Theme
 
@@ -34,12 +34,15 @@ This index groups official repositories added to the KB as implementation and pr
   [[2026-04-10-webarena]]
 - Computer-use benchmark repos:
   [[2026-04-10-osworld]]
+- Frontend UI/UX architecture:
+  [[2026-05-25-uniswap-interface]]
 
 ## Why This Collection Matters
 
 - These repos capture the runnable artifacts behind the KB's newer concepts.
 - They provide implementation references rather than only papers or blog interpretations.
 - They make it easier to trace benchmark, protocol, and framework claims back to canonical project sources.
+- They also preserve codebase-level product patterns, such as how interface quality can be encoded in design systems, domain flows, tests, telemetry, and rollout control.
 
 ## Related
 
@@ -55,3 +58,4 @@ This index groups official repositories added to the KB as implementation and pr
 - [[rag]]
 - [[personal-knowledge-bases]]
 - [[llm-agents]]
+- [[ai-interface-design]]
