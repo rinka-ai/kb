@@ -101,6 +101,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-18-ai-textbook-kb-improvement-map]] — Full-corpus audit of the official AI/ML textbook cache, identifying the KB's biggest gaps in ML foundations, probability, optimization, RL, fairness, validation, and ML systems engineering.
 - [[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]] — Hermes Agent shows a personal-agent runtime pattern where one core agent loop is reused across CLI, messaging, ACP, cron, API, batch, memory, skills, browser/computer-use, and trajectory surfaces.
 - [[2026-05-20-memwal-encrypted-agent-memory-source-teardown]] — MemWal adds a user-owned encrypted memory pattern: durable Walrus blobs, rebuildable vector indexes, Sui delegate-key access, SDK/MCP/harness integrations, and explicit relayer trust trade-offs.
+- [[2026-05-25-uniswap-interface-ui-ux-source-teardown]] — Uniswap/interface shows how a production UI/UX codebase compounds quality through shared design primitives, cross-platform product flows, typed transaction state, telemetry, feature gates, localization, and layered testing.
 
 ## Sub-Indexes
 
@@ -119,14 +120,14 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-20`. Folders under `raw/articles/`.
+Counts as of `2026-05-25`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
 - `arxiv` (30)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
-- `github-repos` (16)
+- `github-repos` (17)
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (8)

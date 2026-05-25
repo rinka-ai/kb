@@ -164,3 +164,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 ## [2026-05-25] query | AI interface design lessons
 - Added `[[ai-interface-design]]` to preserve the general design lesson from the Conformis local vault: AI-designed interfaces should prioritize job clarity, calm density, explicit state, trust, and repeated use over visual novelty.
 - Connected the synthesis to `[[2025-11-12-improving-frontend-design-through-skills]]`, which explains why models drift toward generic frontend defaults without targeted design context.
+
+## [2026-05-25] ingest | Uniswap interface UI/UX source teardown
+- Added source note `[[2026-05-25-uniswap-interface]]` for `Uniswap/interface` at inspected commit `b8dbf44`, focused on frontend UI/UX source organization across `apps/web`, `apps/mobile`, `apps/extension`, `packages/ui`, `packages/uniswap`, and related infrastructure packages.
+- Added synthesis `[[2026-05-25-uniswap-interface-ui-ux-source-teardown]]` to preserve reusable 10/10 UI/UX patterns: shared design primitives, cross-platform domain flows, typed transaction state, telemetry, feature gates, localization, lint guardrails, Storybook, Playwright, Anvil, snapshots, and Maestro performance flows.
+- Updated `[[ai-interface-design]]`, `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
+- Ran `bun run kb:refresh`; health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
