@@ -64,9 +64,7 @@ Use File Search as a built-in RAG tool for assistants.
 
 ## Related
 
-- [[openai]]
-- [[retrieval]]
-- [[file-search]]
+- [[official-docs]]
 - [[rag]]
 
 ## Source Text

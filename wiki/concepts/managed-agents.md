@@ -3,12 +3,12 @@ id: concept-managed-agents
 type: concept
 title: Managed Agents
 tags: [agents, infrastructure, sessions, sandboxes, architecture]
-source_count: 14
-summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, entrypoints, and state.
-canonical_for: [managed agents, durable execution, resumable approvals, decoupling the brain from the hands]
+source_count: 17
+summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, entrypoints, and state.
+canonical_for: [managed agents, hosted agent runtimes, resumable approvals, decoupling the brain from the hands]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.87"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-Managed agents are agent systems built around durable interfaces for state, execution, interruption, and orchestration so the implementation can change as models and harness techniques improve. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, stable external APIs, and reusable entrypoint adapters matter as much as the model loop itself.
+Managed agents are agent systems built around durable interfaces for state, execution, interruption, credentials, and orchestration so the implementation can change as models and harness techniques improve. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, stable external APIs, brokered credentials, and reusable entrypoint adapters matter as much as the model loop itself. Hermes adds a personal-agent version: one runtime can sit behind terminal, messaging, editor, cron, API, library, and batch surfaces while sharing provider routing, memory, skills, sessions, tools, and delivery paths. MemWal adds the user-owned memory surface: managed agents should be able to use durable memory without trapping all state inside the runtime vendor's database.
 
 ## Core Idea
 
@@ -25,8 +25,11 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - Run lifecycle should be explicit enough to pause, resume, stream, cancel, and inspect work.
 - Execution environments and tools should be provisioned only when needed.
 - Security improves when credentials are kept outside model-controlled sandboxes.
+- Wallet custody and paid API credentials should be managed as platform capabilities with policies and logs, not as secrets copied into each agent process.
 - The same core agent logic should be able to sit behind chat threads, webhooks, or direct UI and API surfaces when session identity and scope are handled explicitly.
 - Human approval should behave like a resumable runtime boundary, not an ad hoc prompt detour.
+- Provider credentials, fallback models, and credential pools should be runtime-managed surfaces rather than hard-coded into each entrypoint.
+- Long-term memory should be portable across clients and agents when the user owns the account, delegate keys, and namespace policy.
 
 ## Design Shape
 
@@ -36,8 +39,11 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - `harness` or workflow engine: orchestration loop around the model
 - `sandbox` or tool: execution environment for actions
 - `credential broker`: the layer that holds real secrets and exposes only scoped capability handles to the runtime
+- `wallet/signing broker`: the layer that holds private keys, evaluates policy envelopes, queues approvals, and records transaction evidence before value moves
 - `store`: long-term memory and artifacts outside the hot path
 - `approval gate`: operator checkpoint that can resume work without losing context
+- `channel adapter`: terminal, messaging, editor, API, scheduler, or batch surface that binds work to the same underlying runtime contracts
+- `memory capability`: scoped access to a durable store through delegate keys, namespaces, restore semantics, and retrieval/write policy
 
 ## Why It Matters
 
@@ -73,3 +79,6 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - [[2026-04-17-browserbase-enterprise-security]]
 - [[2026-04-17-browserbase-functions]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-05-20-steward]]
+- [[2026-05-20-hermes-agent]]
+- [[2026-05-20-memwal]]

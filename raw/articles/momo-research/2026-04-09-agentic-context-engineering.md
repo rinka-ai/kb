@@ -65,7 +65,6 @@ This note argues that agents improve when they evolve structured context through
 - [[context-engineering]]
 - [[context-rot]]
 - [[agent-memory]]
-- [[evolving-contexts]]
 
 ## Source Text
 

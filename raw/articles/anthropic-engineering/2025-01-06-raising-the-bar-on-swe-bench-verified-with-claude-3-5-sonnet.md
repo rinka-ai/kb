@@ -57,8 +57,8 @@ This post treats SWE-bench as an agent benchmark and uses Claude 3.5 Sonnet's sc
 ## Related
 
 - [[ai-agent-evals]]
-- [[agentic-coding]]
-- [[harnesses]]
+- [[claude-code]]
+- [[agent-harnesses]]
 
 ## Source Text
 

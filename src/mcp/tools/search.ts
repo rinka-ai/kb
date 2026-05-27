@@ -1,7 +1,7 @@
 import { existsSync } from "node:fs";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import * as z from "zod/v4";
-import { getRequestContext } from "../../core/request-context";
+import { createStdioRequestContext, getRequestContext } from "../../core/request-context";
 import { formatSearchResults, searchKb } from "../../core/search";
 import { recordSearchObservation } from "../../core/search-observations";
 import { SEARCH_DEFAULTS, searchOptionsSchema, toolErrorResponse, toolResponse } from "./shared";
@@ -29,10 +29,7 @@ function maybeRecordObservation(
     return;
   }
 
-  const request = getRequestContext();
-  if (!request) {
-    return;
-  }
+  const request = getRequestContext() ?? createStdioRequestContext();
 
   recordSearchObservation({
     request,
@@ -55,7 +52,7 @@ export function registerSearchTools(server: McpServer, options: RegisterSearchTo
     {
       title: "Search KB",
       description:
-        "Search the AI research knowledge base by free-text query. Use this first when you need relevant notes, concepts, or source articles.",
+        "Search the AI research knowledge base by free-text query. Use this first when you need relevant notes, concepts, or source articles. Each result includes the note's summary and a matched-section preview — read those before deciding whether to fetch the full body. Do not fetch every linked note; pick the most relevant 1-3.",
       inputSchema: {
         query: z.string().min(2).describe("Search query to run against the KB."),
         ...searchOptionsSchema,

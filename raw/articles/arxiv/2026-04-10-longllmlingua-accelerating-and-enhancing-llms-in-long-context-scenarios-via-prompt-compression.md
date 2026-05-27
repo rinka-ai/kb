@@ -65,10 +65,8 @@ LongLLMLingua treats long-context compression as a salience-and-ordering problem
 
 ## Related
 
-- [[compression]]
-- [[long-context]]
-- [[retrieval]]
-- [[prompt-compression]]
+- [[context-engineering]]
+- [[rag]]
 
 ## Source Text
 

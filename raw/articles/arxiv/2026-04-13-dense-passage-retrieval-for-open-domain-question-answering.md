@@ -60,12 +60,9 @@ DPR is a foundational dense retrieval paper showing that dual-encoder passage re
 
 ## Related
 
-- [[retrieval]]
 - [[rag]]
 - [[embeddings]]
-- [[dense-retrieval]]
-- [[open-domain-qa]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

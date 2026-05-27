@@ -52,18 +52,16 @@ MemAgent reframes long-context processing as iterative memory updating: read a s
 ## My Notes
 
 - This is a strong primary source for the learned-internal-memory branch of the design space.
-- For Mari it is mainly useful as contrast: it clarifies which memory problems might disappear in future models and which inspectability, provenance, and control requirements will still favor explicit external memory.
 
 ## Open Questions
 
-- Which parts of Mari's long-horizon behavior are fundamentally product-memory problems rather than model-memory problems?
 - How should the KB compare learned internal memory to external file-backed or store-backed memory on auditability and operator trust?
 
 ## Related
 
 - [[agent-memory]]
 - [[llm-agents]]
-- [[long-context]]
+- [[context-engineering]]
 
 ## Source Text
 

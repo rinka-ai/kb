@@ -68,9 +68,6 @@ Simulation Testing - Runs end-to-end, multi-turn conversations with a simulated 
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[testing]]
 
 ## Source Text
 

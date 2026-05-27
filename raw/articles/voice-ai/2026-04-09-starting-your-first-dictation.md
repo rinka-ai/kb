@@ -67,9 +67,7 @@ Whether you're composing an email, writing a message, or drafting a document —
 ## Related
 
 - [[voice-ai]]
-- [[wispr-flow]]
-- [[dictation]]
-- [[onboarding]]
+- [[voice-dictation]]
 
 ## Source Text
 

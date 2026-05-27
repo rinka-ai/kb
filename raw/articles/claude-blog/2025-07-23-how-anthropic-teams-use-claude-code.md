@@ -63,8 +63,6 @@ Anthropic’s internal case studies show Claude Code functioning as a codebase n
 - [[claude-code]]
 - [[research-workflows]]
 - [[workflows]]
-- [[case-studies]]
-- [[agentic-coding]]
 
 ## Source Text
 

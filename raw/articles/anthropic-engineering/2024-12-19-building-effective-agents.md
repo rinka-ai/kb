@@ -55,7 +55,7 @@ This is one of Anthropic's foundational agent design essays: start simple, disti
 
 ## Related
 
-- [[agents]]
+- [[llm-agents]]
 - [[workflows]]
 - [[context-engineering]]
 

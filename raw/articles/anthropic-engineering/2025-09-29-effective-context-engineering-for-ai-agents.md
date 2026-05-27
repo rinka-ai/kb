@@ -58,7 +58,7 @@ Context engineering is presented here as the broader discipline of selecting and
 
 - [[context-engineering]]
 - [[context-rot]]
-- [[mcp]]
+- [[agent-protocols]]
 
 ## Source Text
 

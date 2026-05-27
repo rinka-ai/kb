@@ -3,12 +3,12 @@ id: concept-reasoning
 type: concept
 title: Reasoning In Agent Loops
 tags: [reasoning, agents, tool-use, planning, extended-thinking]
-source_count: 4
-summary: Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, and when a tool result changes the plan.
+source_count: 6
+summary: Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, how uncertainty changes the plan, and which action is worth taking.
 canonical_for: [reasoning, reasoning and acting, react, think tool]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.8"
 ---
 
@@ -16,12 +16,14 @@ confidence: "0.8"
 
 ## Summary
 
-Reasoning in agent systems is not just “think longer.” Its job is to choose the next action, update plans from new evidence, and avoid blindly executing tool chains after the world has changed. The strongest sources here point to sparse, strategically placed reasoning rather than maximal introspection everywhere.
+Reasoning in agent systems is not just "think longer." Its job is to choose the next action, update plans from new evidence, and avoid blindly executing tool chains after the world has changed. The decision-making textbook layer adds a useful distinction: reasoning should separate belief updates, utility, planning, and policy choice instead of collapsing them into a single vague "thought" step. The strongest agent sources here still point to sparse, strategically placed reasoning rather than maximal introspection everywhere.
 
 ## What Reasoning Does
 
 - decomposes goals into the next useful step
 - interprets intermediate tool results before another action fires
+- updates beliefs when observations are partial, noisy, or contradictory
+- separates prediction from utility and action selection
 - revises plans when retrieved evidence contradicts the current trajectory
 - helps policy-heavy tool loops avoid careless sequential mistakes
 
@@ -45,3 +47,5 @@ Reasoning in agent systems is not just “think longer.” Its job is to choose 
 - [[2025-03-20-the-think-tool-enabling-claude-to-stop-and-think]]
 - [[2024-12-19-building-effective-agents]]
 - [[2025-09-11-writing-effective-tools-for-agents-with-agents]]
+- [[2026-05-18-algorithms-for-decision-making]]
+- [[2026-05-18-decision-making-under-uncertainty]]

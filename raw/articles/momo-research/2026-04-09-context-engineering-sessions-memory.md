@@ -64,8 +64,7 @@ This note separates persistent session history from actively assembled context, 
 
 - [[context-engineering]]
 - [[agent-memory]]
-- [[sessions]]
-- [[memory-as-a-tool]]
+- [[managed-agents]]
 
 ## Source Text
 

@@ -52,13 +52,10 @@ Stripe Checkout turns payment collection into a session-based workflow: the app 
 
 ## My Notes
 
-- This is a better architecture fit for Mari than letting agents improvise payment intent flows directly.
 - It also reinforces a reusable pattern that shows up elsewhere in agent systems: create a durable session object, let the managed platform own the sensitive interaction, then resume business logic from verified events.
 
 ## Open Questions
 
-- Which Mari payment paths should collapse into a Checkout Session plus webhook fulfillment flow?
-- Where should Mari store checkout-session state so side effects remain idempotent across retries and restarts?
 
 ## Related
 

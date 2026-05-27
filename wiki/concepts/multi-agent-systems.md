@@ -3,20 +3,20 @@ id: concept-multi-agent-systems
 type: concept
 title: Multi-Agent Systems
 tags: [agents, multi-agent, parallel-agents, orchestration]
-source_count: 8
-summary: Multi-agent systems use multiple model contexts coordinated through code; the most reliable production pattern is often one coordinating writer plus bounded reviewer, search, or manager agents.
+source_count: 11
+summary: Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles plus attribution paths for diagnosing coordination failures.
 canonical_for: [multi-agent systems, parallel agents, subagents]
 review_status: reviewed
-last_reviewed: 2026-04-23
-review_due: 2026-05-23
-confidence: "0.84"
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
+confidence: "0.85"
 ---
 
 # Multi-Agent Systems
 
 ## Summary
 
-Multi-agent systems use multiple model contexts coordinated through code when parallel exploration, specialization, or fresh-context review beats a single agent loop. The current sources agree on a useful caution: most tasks do not need multi-agent decomposition, and the overhead only pays off when context separation, bounded delegation, or concurrent exploration creates meaningful leverage. Recent production evidence sharpens the current sweet spot further for coding-heavy work: one writer usually owns the mutable thread while auxiliary agents contribute review, search, routing, or management intelligence around that writer.
+Multi-agent systems use multiple agents when parallel exploration, specialization, strategic interaction, or fresh-context review beats a single agent loop. The current agent-engineering sources agree on a useful caution: most LLM tasks do not need multi-agent decomposition, and the overhead only pays off when context separation, bounded delegation, or concurrent exploration creates meaningful leverage. The textbook layer adds an important boundary: multi-agent reinforcement learning and game-theoretic multi-agent systems are not the same thing as LLM subagents. They study strategic interaction, nonstationarity, coordination, communication, partial observability, and equilibrium-like behavior in shared environments. Recent production evidence still sharpens the LLM-agent sweet spot for coding-heavy work: one writer usually owns the mutable thread while auxiliary agents contribute review, search, routing, or management intelligence around that writer. The LIFE survey adds a diagnostic requirement: once agents are tightly coupled, the system also needs attribution paths that explain how role, message, tool, or topology failures propagate and what should be repaired.
 
 ## When They Help
 
@@ -31,8 +31,10 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - prefer one active writer when code changes encode many implicit decisions; let other agents contribute review, search, routing, or management around that writer
 - give subagents bounded scope, clear outputs, and disjoint responsibilities when possible
 - use artifacts or structured summaries to compress each agent’s findings back into the main thread
+- preserve enough trace structure to attribute failures across role assignments, communication handoffs, tool calls, and final synthesis
 - do not decompose work unless the coordination cost is lower than the benefit from parallelism or specialization
 - for structured extraction workloads, treat reflexive correction loops as an accuracy-cost-latency tradeoff rather than a free improvement; medium-confidence benchmark evidence favors selective hierarchical routing and retry when scale matters
+- when reading multi-agent RL sources, separate strategic learning problems from software-orchestration patterns; they share vocabulary but not always assumptions
 
 ## Tensions
 
@@ -41,6 +43,8 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - specialization vs duplicated work
 - autonomy vs the need for explicit task locking and review
 - iterative self-correction vs cost, tail latency, and throughput collapse under load
+- LLM-agent manager/worker metaphors vs formal multi-agent models such as games, stochastic games, and partially observable stochastic games
+- more collaboration surface vs harder failure attribution and repair
 
 ## Source Notes
 
@@ -52,3 +56,6 @@ Multi-agent systems use multiple model contexts coordinated through code when pa
 - [[2026-04-22-multi-agents-whats-actually-working]]
 - [[2025-04-18-claude-code-best-practices-for-agentic-coding]]
 - [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
+- [[2026-05-18-multi-agent-reinforcement-learning]]
+- [[2026-05-18-algorithms-for-decision-making]]
+- [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]

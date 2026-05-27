@@ -54,13 +54,9 @@ The SDK treats multi-turn memory, human approval interrupts, and agent delegatio
 
 ## My Notes
 
-- This is especially relevant to Mari because it shows a vendor-neutral shape hiding inside a vendor SDK: session storage, resumable approvals, and handoff payload control.
-- The handoff material is also a good reference for Mari's own handoff payload and operator-visible transfer semantics.
 
 ## Open Questions
 
-- Which parts of Mari's approval lifecycle should remain domain-specific, and which should become more SDK-like reusable orchestration surfaces?
-- Should Mari standardize more of its handoff payload shape around explicit typed metadata rather than relying on sibling-event joins?
 
 ## Related
 

@@ -15,7 +15,7 @@ summary: "This arXiv paper benchmarks sequential, parallel, hierarchical, and re
 related: [multi-agent-systems, workflows, ai-agent-evals, llm-agents, agent-frameworks]
 ---
 
-# Benchmarking Multi-Agent LLM Architectures for Financial Document Processing
+# Benchmarking Multi-Agent LLM Architectures for Financial Document Processing: A Comparative Study of Orchestration Patterns, Cost-Accuracy Tradeoffs and Production Scaling Strategies
 
 ## Source Metadata
 

@@ -63,10 +63,8 @@ ElevenLabs describes audio safety as a layered system of prevention, detection, 
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[safety]]
-- [[voice-cloning]]
-- [[governance]]
+- [[agent-security]]
+- [[synthetic-voices]]
 
 ## Source Text
 

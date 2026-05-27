@@ -55,7 +55,6 @@ The post argues that naive RAG often strips away too much local context during c
 
 ## Related
 
-- [[retrieval]]
 - [[rag]]
 - [[context-engineering]]
 

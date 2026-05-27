@@ -60,12 +60,9 @@ HyDE improves zero-shot dense retrieval by generating a hypothetical relevant do
 
 ## Related
 
-- [[retrieval]]
 - [[rag]]
 - [[embeddings]]
-- [[hyde]]
-- [[dense-retrieval]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

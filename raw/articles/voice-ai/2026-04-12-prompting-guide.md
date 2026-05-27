@@ -64,9 +64,7 @@ The guide separates prompt concerns from runtime concerns: prompts should define
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[prompting]]
+- [[context-engineering]]
 
 ## Source Text
 

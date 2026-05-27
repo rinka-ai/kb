@@ -62,8 +62,8 @@ This note presents GAM as an alternative to pre-compressed memory systems: keep 
 
 - [[agent-memory]]
 - [[context-rot]]
-- [[deep-research]]
-- [[retrieval]]
+- [[research-workflows]]
+- [[rag]]
 
 ## Source Text
 

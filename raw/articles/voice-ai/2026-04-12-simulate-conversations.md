@@ -68,9 +68,6 @@ Your ElevenLabs API key, which you can create in the dashboard
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[simulation]]
 
 ## Source Text
 

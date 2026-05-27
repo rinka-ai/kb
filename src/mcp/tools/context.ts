@@ -21,7 +21,7 @@ export function registerContextTool(server: McpServer): void {
     {
       title: "Build KB Context Pack",
       description:
-        "Compile a task-specific context pack from the wiki. This is the context-engineering layer above raw search and is useful before planning, synthesis, or long-running agent work.",
+        "Compile a bounded, task-specific context pack from the wiki. Prefer this over chained kb_read_note calls when you need multiple related notes — it caps fan-out and keeps token usage predictable. Pass compact=true for an even lighter pack. This is the right entrypoint for planning, synthesis, or long-running agent work.",
       inputSchema: {
         query: z.string().optional().describe("Research question or topic to gather context for."),
         filePath: z

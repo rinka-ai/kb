@@ -71,6 +71,10 @@ describe("MCP transport integration", () => {
       command: process.execPath,
       args: ["bin/mcp.ts"],
       cwd: ROOT,
+      env: {
+        ...process.env,
+        KB_SEARCH_TELEMETRY_ENABLED: "false",
+      },
       stderr: "pipe",
     });
     const client = new Client({ name: "kb-stdio-smoke", version: "0.0.0" });
@@ -111,6 +115,7 @@ describe("MCP transport integration", () => {
       PORT: String(port),
       KB_STATEFUL_SESSIONS: "true",
       KB_ENABLE_WRITES: "false",
+      KB_SEARCH_TELEMETRY_ENABLED: "false",
     });
 
     try {
@@ -167,6 +172,7 @@ describe("MCP transport integration", () => {
       PORT: String(port),
       KB_STATEFUL_SESSIONS: "false",
       KB_ENABLE_WRITES: "false",
+      KB_SEARCH_TELEMETRY_ENABLED: "false",
     });
 
     try {
@@ -207,6 +213,7 @@ describe("MCP transport integration", () => {
       PORT: String(port),
       KB_STATEFUL_SESSIONS: "true",
       KB_ENABLE_WRITES: "false",
+      KB_SEARCH_TELEMETRY_ENABLED: "false",
     });
 
     try {

@@ -67,10 +67,7 @@ Scheduled deletion by setting the value to 0
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[privacy]]
-- [[retention]]
+- [[agent-security]]
 
 ## Source Text
 

@@ -68,8 +68,7 @@ Native Spanish, español europeo (sin rasgos de español latinoamericano).
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-design]]
+- [[synthetic-voices]]
 - [[text-to-speech]]
 
 ## Source Text

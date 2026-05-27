@@ -6,25 +6,42 @@ const TAG_COVERAGE_ALIASES: Record<string, string[]> = {
   "browser-agents": ["web-agents"],
   "browser-automation": ["web-agents", "agent-tools"],
   browserbase: ["web-agents", "managed-agents", "agent-security", "agent-skills", "agent-tools"],
+  "ai-productivity": ["enterprise-agent-deployment-failure-modes", "software-engineering"],
+  "ai-transformation": ["enterprise-agent-deployment-failure-modes", "ai-ops"],
+  automation: ["outbound", "agent-tools", "workflows"],
+  claude: ["claude-code", "llm-agents"],
+  "claude-md": ["claude-code", "agent-instructions"],
+  "coding-agents": ["agent-harnesses", "claude-code"],
+  deliverability: ["outbound", "email", "compliance"],
   design: ["claude-code", "agent-skills"],
   dictation: ["voice-ai"],
   efficiency: ["agent-tools", "agent-memory"],
   "file-system": ["managed-agents", "context-engineering"],
   functions: ["managed-agents", "agent-frameworks", "agent-tools"],
   frontend: ["claude-code", "agent-skills"],
+  gmail: ["outbound", "email", "compliance"],
+  "human-in-the-loop": ["workflows", "agent-harnesses"],
   input: ["voice-ai"],
   "knowledge-base": ["knowledge-bases", "personal-knowledge-bases", "rag"],
   "kv-cache": ["context-engineering"],
+  linkedin: ["outbound", "compliance"],
   "long-running-agents": ["agent-harnesses", "managed-agents"],
   "memory-efficiency": ["agent-memory"],
   "multimodal-agents": ["llm-agents", "ai-agent-evals"],
+  observability: ["agent-harnesses", "managed-agents", "ai-agent-evals"],
   "open-domain-qa": ["rag", "embeddings"],
   payments: ["agent-security"],
   pci: ["agent-security"],
   permissions: ["claude-code", "agent-security"],
   personalization: ["voice-ai"],
   prompting: ["context-engineering", "voice-ai"],
+  provenance: ["knowledge-bases", "context-engineering"],
   reasoning: ["llm-agents"],
+  roi: ["enterprise-agent-deployment-failure-modes"],
+  "self-evolution": ["agent-protocols", "agent-harnesses"],
+  "software-engineering": ["claude-code", "agent-harnesses"],
+  "stochastic-optimization": ["optimization-for-ml"],
+  "workflow-redesign": ["enterprise-agent-deployment-failure-modes", "workflows"],
 };
 
 export interface FindGapsArgs {
@@ -112,12 +129,16 @@ function stringValue(note: KbNote, key: string): string {
   return typeof raw === "string" ? raw.trim() : "";
 }
 
-function parseIsoDate(value: string): number | null {
+function parseDate(value: string): number | null {
   if (!value) {
     return null;
   }
   const parsed = Date.parse(value);
   return Number.isNaN(parsed) ? null : parsed;
+}
+
+function isoDate(value: number): string {
+  return new Date(value).toISOString().slice(0, 10);
 }
 
 function isCoveredTag(tag: string, representedTags: Set<string>): boolean {
@@ -135,16 +156,23 @@ function newestLinkedSourceDate(
   linkedSourcePaths: string[],
   lookup: ReturnType<typeof createKbNoteLookup>,
 ): string {
-  return (
-    linkedSourcePaths
-      .map((path) => lookup.byPath.get(path))
-      .flatMap((note) =>
-        note ? [stringValue(note, "date_added"), stringValue(note, "date_published")] : [],
-      )
-      .filter(Boolean)
-      .sort()
-      .at(-1) ?? ""
-  );
+  let newest: number | null = null;
+
+  for (const path of linkedSourcePaths) {
+    const note = lookup.byPath.get(path);
+    if (!note) {
+      continue;
+    }
+
+    for (const key of ["date_added", "date_published"]) {
+      const timestamp = parseDate(stringValue(note, key));
+      if (timestamp != null && (newest == null || timestamp > newest)) {
+        newest = timestamp;
+      }
+    }
+  }
+
+  return newest == null ? "" : isoDate(newest);
 }
 
 function suggestedActions(report: GapReport): string[] {
@@ -241,9 +269,9 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
       const reviewStatus = stringValue(note, "review_status");
       const lastReviewed = stringValue(note, "last_reviewed");
       const reviewDue = stringValue(note, "review_due");
-      const lastReviewedTs = parseIsoDate(lastReviewed);
-      const reviewDueTs = parseIsoDate(reviewDue);
-      const newestSourceTs = parseIsoDate(newestSourceDate);
+      const lastReviewedTs = parseDate(lastReviewed);
+      const reviewDueTs = parseDate(reviewDue);
+      const newestSourceTs = parseDate(newestSourceDate);
       const now = Date.now();
 
       let reason = "";
@@ -285,8 +313,11 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
     .slice(0, args.limit);
   const staleWikiNotes = staleWikiCandidates;
 
+  const coverageNotes = notes.filter(
+    (note) => note.type === "concept" || note.type === "summary" || note.type === "index",
+  );
   const representedTags = new Set(
-    conceptNotes
+    coverageNotes
       .flatMap((note) => [...note.tags, note.slug, slugify(note.title)])
       .map((tag) => tag.toLowerCase()),
   );

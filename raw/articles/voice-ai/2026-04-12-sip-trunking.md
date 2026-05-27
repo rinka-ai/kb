@@ -64,10 +64,6 @@ SIP trunking is the telephony boundary for enterprise voice agents: it connects 
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[telephony]]
-- [[sip]]
 
 ## Source Text
 

@@ -63,10 +63,7 @@ OpenAI frames voice-agent design around a first architecture decision: use live 
 ## Related
 
 - [[voice-ai]]
-- [[speech-to-speech]]
-- [[realtime]]
-- [[agents]]
-- [[audio]]
+- [[llm-agents]]
 
 ## Source Text
 

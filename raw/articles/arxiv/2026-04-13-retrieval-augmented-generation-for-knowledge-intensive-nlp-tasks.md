@@ -62,9 +62,7 @@ The original RAG paper combines a seq2seq model with a dense non-parametric memo
 
 - [[rag]]
 - [[embeddings]]
-- [[retrieval]]
-- [[open-domain-qa]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

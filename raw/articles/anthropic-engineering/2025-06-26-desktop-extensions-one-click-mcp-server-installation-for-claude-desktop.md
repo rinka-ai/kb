@@ -56,9 +56,9 @@ This post is about packaging and distribution rather than core model behavior: m
 
 ## Related
 
-- [[mcp]]
-- [[tool-use]]
-- [[claude-desktop]]
+- [[agent-protocols]]
+- [[agent-tools]]
+- [[claude-code]]
 
 ## Source Text
 

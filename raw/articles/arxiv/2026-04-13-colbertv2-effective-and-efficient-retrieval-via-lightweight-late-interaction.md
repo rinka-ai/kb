@@ -60,12 +60,9 @@ ColBERTv2 shows that late-interaction retrieval can stay highly effective while 
 
 ## Related
 
-- [[retrieval]]
 - [[rag]]
 - [[embeddings]]
-- [[late-interaction]]
-- [[colbert]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

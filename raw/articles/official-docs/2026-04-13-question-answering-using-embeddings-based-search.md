@@ -67,10 +67,8 @@ etc.
 
 ## Related
 
-- [[openai]]
-- [[cookbook]]
+- [[official-docs]]
 - [[embeddings]]
-- [[retrieval]]
 - [[rag]]
 
 ## Source Text

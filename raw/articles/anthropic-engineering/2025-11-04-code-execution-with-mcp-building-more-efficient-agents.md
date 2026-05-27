@@ -56,8 +56,8 @@ The post argues that direct tool calling does not scale well in large MCP ecosys
 
 ## Related
 
-- [[mcp]]
-- [[tool-use]]
+- [[agent-protocols]]
+- [[agent-tools]]
 - [[context-engineering]]
 
 ## Source Text

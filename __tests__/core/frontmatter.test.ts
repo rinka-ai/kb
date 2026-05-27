@@ -55,6 +55,16 @@ Body.
     expect(metadata.count).toBe("42");
   });
 
+  test("normalizes YAML dates to ISO calendar strings", () => {
+    const input = `---
+last_reviewed: 2026-05-09
+---
+Body.
+`;
+    const { metadata } = parseFrontmatter(input);
+    expect(metadata.last_reviewed).toBe("2026-05-09");
+  });
+
   test("preserves --- separators in body content", () => {
     const input = `---
 title: Test

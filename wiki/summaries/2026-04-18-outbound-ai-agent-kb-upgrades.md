@@ -5,8 +5,8 @@ title: Outbound AI Agent KB Upgrades
 tags: [outbound, gtm, agents, email, compliance]
 summary: The strongest version of the Levi Munneke workflow is a context-rich outbound operations system with explicit source selection, deterministic data pipelines, human-reviewed messaging, and first-class deliverability and policy guardrails.
 review_status: reviewed
-last_reviewed: 2026-04-18
-review_due: 2026-05-18
+last_reviewed: 2026-05-18
+review_due: 2026-06-18
 confidence: "0.84"
 ---
 

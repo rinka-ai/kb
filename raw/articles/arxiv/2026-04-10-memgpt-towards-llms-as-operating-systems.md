@@ -67,9 +67,7 @@ MemGPT treats long-horizon agent memory as an operating-systems problem: keep a 
 ## Related
 
 - [[agent-memory]]
-- [[memory]]
-- [[stateful-agents]]
-- [[long-context]]
+- [[context-engineering]]
 
 ## Source Text
 

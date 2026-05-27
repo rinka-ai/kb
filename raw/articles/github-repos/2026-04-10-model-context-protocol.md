@@ -60,10 +60,8 @@ The official MCP repository is the KB's primary source of truth for the protocol
 
 ## Related
 
-- [[mcp]]
-- [[protocols]]
-- [[tool-use]]
-- [[specification]]
+- [[agent-protocols]]
+- [[agent-tools]]
 
 ## Source Text
 

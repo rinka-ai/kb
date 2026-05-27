@@ -61,10 +61,10 @@ Inspect AI is a production-oriented evaluation framework for LLM systems that su
 
 ## Related
 
-- [[evals]]
-- [[agents]]
-- [[harnesses]]
-- [[frameworks]]
+- [[ai-agent-evals]]
+- [[llm-agents]]
+- [[agent-harnesses]]
+- [[agent-frameworks]]
 
 ## Source Text
 

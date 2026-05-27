@@ -64,9 +64,7 @@ OpenAI presents synthetic voice generation as a capability with meaningful socia
 
 - [[voice-ai]]
 - [[synthetic-voices]]
-- [[safety]]
-- [[disclosure]]
-- [[policy]]
+- [[agent-security]]
 
 ## Source Text
 

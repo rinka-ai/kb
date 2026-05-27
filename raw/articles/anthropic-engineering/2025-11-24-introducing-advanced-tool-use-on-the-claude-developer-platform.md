@@ -56,9 +56,9 @@ This post extends Anthropic's tool-use story from simple direct tool calls towar
 
 ## Related
 
-- [[tool-use]]
+- [[agent-tools]]
 - [[context-engineering]]
-- [[mcp]]
+- [[agent-protocols]]
 
 ## Source Text
 

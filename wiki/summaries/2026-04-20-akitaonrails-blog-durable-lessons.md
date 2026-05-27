@@ -5,8 +5,8 @@ title: AkitaOnRails Blog Durable Lessons Across 20 Years
 tags: [software-engineering, rails, llms, agent-security, operations, linux]
 summary: A full-corpus synthesis of the English AkitaOnRails archive, showing a long-running practitioner worldview organized around anti-cargo-cult engineering, software economics, operational ownership, and AI-era realism.
 review_status: reviewed
-last_reviewed: 2026-04-20
-review_due: 2026-05-20
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.84"
 ---
 

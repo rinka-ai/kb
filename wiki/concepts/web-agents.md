@@ -3,12 +3,12 @@ id: concept-web-agents
 type: concept
 title: Web Agents
 tags: [web-agents, browser, agents, long-horizon, evaluation]
-source_count: 8
+source_count: 9
 summary: Web agents are agents that operate over browser environments, where the browser can be both the primary task world and a fallback integration layer for systems without clean APIs.
 canonical_for: [web agents, browser agents, website task agents]
 review_status: reviewed
-last_reviewed: 2026-04-17
-review_due: 2026-05-17
+last_reviewed: 2026-05-20
+review_due: 2026-06-20
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Web agents operate inside websites and browser-like environments instead of closed toy tasks. Their difficulty comes from long horizons, messy state, multiple valid trajectories, and the need to recover after confusion rather than merely execute one short scripted action chain. The newer Browserbase material adds an important operational framing: the browser is not only a benchmark environment or automation target, but also a practical fallback interface for general agents when internal or third-party systems do not expose clean APIs.
+Web agents operate inside websites and browser-like environments instead of closed toy tasks. Their difficulty comes from long horizons, messy state, multiple valid trajectories, and the need to recover after confusion rather than merely execute one short scripted action chain. The newer Browserbase material adds an important operational framing: the browser is not only a benchmark environment or automation target, but also a practical fallback interface for general agents when internal or third-party systems do not expose clean APIs. Hermes adds a runtime-integration example: browser automation can be one tool family inside a broader personal agent, with cloud/local backends, accessibility snapshots, persistent sessions, and localhost/private-routing decisions.
 
 ## What Makes Them Distinct
 
@@ -40,6 +40,7 @@ Web agents operate inside websites and browser-like environments instead of clos
 - general-purpose internal agents may use browser automation selectively, alongside typed service integrations, instead of being "browser-only" products
 - skill libraries help separate browsing, fetching, deployment, and CLI workflows so browser capability does not collapse into one overloaded tool
 - secure production use depends on treating browser sessions as high-risk execution environments with strong sandboxing and bounded side effects
+- browser backends should route private or local targets differently from public web targets so automation does not leak internal surfaces into cloud browsers by accident
 
 ## Common Bottlenecks
 
@@ -58,3 +59,4 @@ Web agents operate inside websites and browser-like environments instead of clos
 - [[2026-04-17-browserbase-functions]]
 - [[2026-04-17-browserbase-skills]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
+- [[2026-05-20-hermes-agent]]

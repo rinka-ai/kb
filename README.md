@@ -25,7 +25,9 @@ This repo treats AI research as a durable system rather than a chat transcript:
 - `raw/images/`: local images related to source material
 - `wiki/concepts/`: concept pages synthesized across many sources
 - `wiki/summaries/`: multi-source summaries, memos, and reports
-- `wiki/index/`: maps of content and navigation pages
+- `wiki/index/`: per-collection sub-index pages and the landing page
+- `wiki/index.md`: master human-readable catalog of all wiki pages
+- `wiki/log.md`: append-only chronological log of ingest, lint, and maintenance events
 - `bin/`: executable entrypoints like `search.ts` and `mcp-http.ts`
 - `src/core/`: indexing, ingest, lint, refresh, and search internals
 - `src/mcp/`: MCP server construction and stdio transport

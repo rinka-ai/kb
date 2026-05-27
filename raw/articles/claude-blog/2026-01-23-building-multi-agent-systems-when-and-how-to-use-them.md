@@ -66,10 +66,8 @@ Most teams don't need multi-agent systems. Learn the three scenarios where they 
 
 ## Related
 
-- [[agents]]
-- [[multi-agent]]
-- [[subagents]]
-- [[architecture]]
+- [[llm-agents]]
+- [[multi-agent-systems]]
 
 ## Source Text
 

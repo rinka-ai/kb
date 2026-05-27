@@ -56,9 +56,8 @@ This is a rare deep operational postmortem that treats model quality degradation
 
 ## Related
 
-- [[reliability]]
-- [[infrastructure]]
-- [[benchmarking]]
+- [[durable-execution]]
+- [[benchmark-integrity]]
 
 ## Source Text
 

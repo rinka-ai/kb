@@ -18,6 +18,12 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-longllmlingua-accelerating-and-enhancing-llms-in-long-context-scenarios-via-prompt-compression]]
 - Externalized context scaffolds:
   [[2026-04-23-recursive-language-models]]
+- Agentic retrieval and harness effects:
+  [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
+- GraphRAG and KG-to-LLM interface tuning:
+  [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
+- Multi-agent failure attribution and self-evolution:
+  [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
 - Memory systems:
   [[2026-04-10-memgpt-towards-llms-as-operating-systems]]
 - Workflow memory:
@@ -27,6 +33,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-12-memagent-reshaping-long-context-llm-with-multi-conv-rl-based-memory-agent]]
 - Security and adversarial robustness:
   [[2026-04-10-agentdojo-a-dynamic-environment-to-evaluate-prompt-injection-attacks-and-defenses-for-llm-agents]]
+- Skill supply-chain security:
+  [[2026-05-01-skills-as-verifiable-artifacts]]
 - Web-agent benchmarks:
   [[2026-04-10-webarena-a-realistic-web-environment-for-building-autonomous-agents]]
 - Computer-use benchmarks:

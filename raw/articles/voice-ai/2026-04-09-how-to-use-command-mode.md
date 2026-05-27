@@ -62,9 +62,8 @@ Available on: Mac, Windows, iOS (partial — search commands work via voice trig
 ## Related
 
 - [[voice-ai]]
-- [[wispr-flow]]
-- [[commands]]
-- [[voice-interface]]
+- [[voice-dictation]]
+- [[claude-code]]
 
 ## Source Text
 

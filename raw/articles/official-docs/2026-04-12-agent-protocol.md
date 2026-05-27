@@ -52,13 +52,10 @@ Agent Protocol argues that production agent systems should expose stable APIs fo
 
 ## My Notes
 
-- This is a very strong fit for Mari because it turns design instincts that already exist in the codebase into explicit external contracts.
 - The most reusable lesson is not a specific endpoint list, but the separation between thread state, run lifecycle, and memory store.
 
 ## Open Questions
 
-- Should Mari converge on a run/thread/store split internally before exposing any external protocol?
-- Which parts of Mari's approval and handoff flows belong in thread state versus run metadata?
 
 ## Related
 

@@ -67,10 +67,7 @@ Data Collection: Extract specific data points from conversations such as contact
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[analytics]]
-- [[evaluation]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

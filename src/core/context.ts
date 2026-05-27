@@ -28,9 +28,9 @@ const TENSION_HEADINGS = ["tensions", "important distinctions", "design question
 const OPEN_QUESTION_HEADINGS = ["open questions", "design questions"];
 
 const NOTE_TYPE_ORDER: Record<string, number> = {
-  index: 0,
-  concept: 1,
-  summary: 2,
+  concept: 0,
+  summary: 1,
+  index: 2,
   source: 3,
 };
 

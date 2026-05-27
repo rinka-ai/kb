@@ -64,9 +64,8 @@ Learn how to turn text into numbers, unlocking use cases like search, clustering
 
 ## Related
 
-- [[openai]]
+- [[official-docs]]
 - [[embeddings]]
-- [[retrieval]]
 - [[rag]]
 
 ## Source Text

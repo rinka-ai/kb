@@ -56,8 +56,8 @@ The post treats tools as interfaces for non-deterministic systems, which means t
 
 ## Related
 
-- [[tool-use]]
-- [[mcp]]
+- [[agent-tools]]
+- [[agent-protocols]]
 - [[ai-agent-evals]]
 
 ## Source Text

@@ -62,10 +62,7 @@ Google Cloud's SSML guide is a practical reference for shaping how synthesized s
 ## Related
 
 - [[voice-ai]]
-- [[ssml]]
 - [[text-to-speech]]
-- [[google-cloud]]
-- [[audio]]
 
 ## Source Text
 

@@ -6,6 +6,7 @@ import { slugify } from "../markdown";
 import { ROOT } from "../paths";
 import { parseIngestArgs } from "./cli";
 import { applyOverrides, extractFromLocalFile, extractFromUrl } from "./extract";
+import { appendIngestLog } from "./log";
 import { chooseOutputPath, makeMarkdown } from "./render";
 import type { IngestArgs, IngestResult } from "./types";
 
@@ -53,6 +54,8 @@ export async function ingestSource(args: IngestArgs): Promise<IngestResult> {
     writeIndex(index);
     chunkCount = index.chunk_count;
   }
+
+  appendIngestLog({ notePath, title: source.title, chunkCount });
 
   return {
     markdown,

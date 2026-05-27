@@ -203,4 +203,152 @@ Sessions track long-running agent history.
       },
     );
   });
+
+  test("findKbGaps compares linked source dates chronologically", () => {
+    withRepoFixtureSourceDirs(
+      [
+        {
+          dir: "raw",
+          relativePath: "older-source.md",
+          content: `---
+id: article-older-source
+type: source
+title: Older Source
+path: raw/articles/older-source.md
+summary: Older linked source.
+tags: [agents]
+status: processed
+date_added: 2026-04-29
+---
+# Older Source
+
+## Source Metadata
+
+- Path: raw/articles/older-source.md
+
+## TL;DR
+
+Older source.
+
+## Key Claims
+
+- Older evidence.
+
+## Important Details
+
+- Details.
+
+## Entities
+
+- Concepts: agents
+
+## My Notes
+
+- Note.
+
+## Open Questions
+
+- What changed later?
+
+## Related
+
+- [[agent-harnesses]]
+
+## Source Text
+
+Older source text.
+`,
+        },
+        {
+          dir: "raw",
+          relativePath: "newer-source.md",
+          content: `---
+id: article-newer-source
+type: source
+title: Newer Source
+path: raw/articles/newer-source.md
+summary: Newer linked source.
+tags: [agents]
+status: processed
+date_added: 2026-05-09
+---
+# Newer Source
+
+## Source Metadata
+
+- Path: raw/articles/newer-source.md
+
+## TL;DR
+
+Newer source.
+
+## Key Claims
+
+- Newer evidence.
+
+## Important Details
+
+- Details.
+
+## Entities
+
+- Concepts: agents
+
+## My Notes
+
+- Note.
+
+## Open Questions
+
+- What should be reviewed?
+
+## Related
+
+- [[agent-harnesses]]
+
+## Source Text
+
+Newer source text.
+`,
+        },
+        {
+          dir: "wiki",
+          relativePath: "concepts/agent-harnesses.md",
+          content: `---
+id: concept-agent-harnesses
+type: concept
+title: Agent Harnesses
+summary: Harness concept.
+tags: [agents]
+source_count: 2
+review_status: reviewed
+last_reviewed: 2026-05-02
+review_due: 2026-06-02
+---
+# Agent Harnesses
+
+## Summary
+
+Harness concept.
+
+## Source Notes
+
+- [[older-source]]
+- [[newer-source]]
+`,
+        },
+      ],
+      () => {
+        const report = findKbGaps({
+          limit: 10,
+          minConceptSources: 2,
+          minTagOccurrences: 2,
+        });
+
+        const staleHarness = report.staleWikiNotes.find((note) => note.title === "Agent Harnesses");
+        expect(staleHarness?.newestLinkedSourceDate).toBe("2026-05-09");
+        expect(staleHarness?.reason).toBe("linked source is newer than the page review date");
+      },
+    );
+  });
 });

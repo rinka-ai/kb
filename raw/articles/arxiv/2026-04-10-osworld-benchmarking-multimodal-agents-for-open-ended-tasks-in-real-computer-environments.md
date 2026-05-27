@@ -69,9 +69,8 @@ OSWorld extends realistic agent evaluation from the browser into full computer u
 ## Related
 
 - [[computer-use]]
-- [[multimodal-agents]]
-- [[benchmarks]]
-- [[evals]]
+- [[benchmark-integrity]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

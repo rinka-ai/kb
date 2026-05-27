@@ -66,10 +66,7 @@ Applications may require assistants to interact directly with the user’s envir
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[tools]]
-- [[client-tools]]
+- [[agent-tools]]
 
 ## Source Text
 

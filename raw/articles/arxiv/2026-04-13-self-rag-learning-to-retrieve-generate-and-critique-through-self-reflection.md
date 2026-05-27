@@ -62,9 +62,7 @@ Self-RAG trains a model to retrieve on demand and critique its own outputs with 
 
 - [[rag]]
 - [[ai-agent-evals]]
-- [[retrieval]]
-- [[self-rag]]
-- [[papers]]
+- [[arxiv]]
 
 ## Source Text
 

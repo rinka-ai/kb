@@ -66,10 +66,7 @@ Many applications require assistants to call external APIs to get real-time info
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[tools]]
-- [[server-tools]]
+- [[agent-tools]]
 
 ## Source Text
 

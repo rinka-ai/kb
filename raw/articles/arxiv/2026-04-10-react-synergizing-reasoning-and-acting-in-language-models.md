@@ -66,10 +66,9 @@ ReAct is a prompt-level agent loop that alternates sparse reasoning with concret
 
 ## Related
 
-- [[agents]]
-- [[tool-use]]
+- [[llm-agents]]
+- [[agent-tools]]
 - [[reasoning]]
-- [[planning]]
 
 ## Source Text
 

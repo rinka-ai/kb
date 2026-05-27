@@ -54,13 +54,10 @@ LangGraph treats agent execution as persistent graph state organized into thread
 
 ## My Notes
 
-- This is one of the closest external comparators to Mari's current architecture, especially for approvals, resumability, and stateful orchestration.
 - The most useful idea here is not "graphs" by itself but the combination of thread identity, checkpoint semantics, and explicit replay rules.
 
 ## Open Questions
 
-- Which parts of Mari's approval and resume behavior should eventually become as explicit and protocol-shaped as LangGraph's thread and interrupt model?
-- How much replay discipline should Mari impose on tool implementations before resume semantics become too fragile?
 
 ## Related
 

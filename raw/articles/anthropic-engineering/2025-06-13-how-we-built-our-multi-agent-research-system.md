@@ -56,9 +56,8 @@ Anthropic argues that research is naturally multi-agent because open-ended quest
 
 ## Related
 
-- [[multi-agent]]
+- [[multi-agent-systems]]
 - [[research-workflows]]
-- [[parallel-agents]]
 
 ## Source Text
 

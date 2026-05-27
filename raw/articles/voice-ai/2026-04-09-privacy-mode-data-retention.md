@@ -70,10 +70,8 @@ Use Privacy Mode when you want to:
 ## Related
 
 - [[voice-ai]]
-- [[wispr-flow]]
-- [[privacy]]
-- [[data-retention]]
-- [[security]]
+- [[voice-dictation]]
+- [[agent-security]]
 
 ## Source Text
 

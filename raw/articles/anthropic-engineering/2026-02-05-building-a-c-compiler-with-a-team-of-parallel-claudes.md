@@ -56,8 +56,8 @@ This post explores "agent teams" as a way to scale autonomous software developme
 
 ## Related
 
-- [[agentic-coding]]
-- [[parallel-agents]]
+- [[claude-code]]
+- [[multi-agent-systems]]
 - [[managed-agents]]
 
 ## Source Text

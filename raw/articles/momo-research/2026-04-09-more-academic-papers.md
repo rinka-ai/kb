@@ -58,9 +58,9 @@ This note is a secondary reading list of more theoretical or exploratory papers 
 
 ## Related
 
-- [[retrieval]]
-- [[persistent-memory]]
-- [[reading-list]]
+- [[rag]]
+- [[agent-memory]]
+- [[arxiv]]
 - [[momo-research]]
 
 ## Source Text

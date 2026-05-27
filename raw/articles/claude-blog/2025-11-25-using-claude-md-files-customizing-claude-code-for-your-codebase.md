@@ -66,7 +66,6 @@ Learn how to use CLAUDE.md files to give Claude Code persistent context about yo
 ## Related
 
 - [[claude-code]]
-- [[claude-md]]
 - [[context-engineering]]
 - [[workflows]]
 

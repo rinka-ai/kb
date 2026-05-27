@@ -55,7 +55,7 @@ Anthropic presents the think tool as a lightweight way to create extra deliberat
 
 ## Related
 
-- [[tool-use]]
+- [[agent-tools]]
 - [[reasoning]]
 - [[context-engineering]]
 

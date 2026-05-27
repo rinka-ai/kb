@@ -66,10 +66,9 @@ AgentDojo treats prompt injection as a systems-evaluation problem, not a prompt-
 
 ## Related
 
-- [[security]]
-- [[prompt-injection]]
-- [[agents]]
-- [[evals]]
+- [[agent-security]]
+- [[llm-agents]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

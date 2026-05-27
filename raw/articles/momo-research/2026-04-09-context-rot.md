@@ -63,8 +63,7 @@ This note argues that long-context failure is more subtle than standard retrieva
 
 - [[context-rot]]
 - [[context-engineering]]
-- [[long-context]]
-- [[evaluations]]
+- [[ai-agent-evals]]
 
 ## Source Text
 

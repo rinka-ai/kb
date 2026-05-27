@@ -57,8 +57,8 @@ This post shows that agentic coding eval scores are not just functions of model 
 ## Related
 
 - [[ai-agent-evals]]
-- [[agentic-coding]]
-- [[benchmarking]]
+- [[claude-code]]
+- [[benchmark-integrity]]
 
 ## Source Text
 

@@ -66,9 +66,6 @@ Learn the best practices on providing speech data to the Cloud Speech-to-Text AP
 
 - [[voice-ai]]
 - [[speech-to-text]]
-- [[audio-quality]]
-- [[google-cloud]]
-- [[input]]
 
 ## Source Text
 

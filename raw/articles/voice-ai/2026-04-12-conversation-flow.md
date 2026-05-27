@@ -63,10 +63,6 @@ Conversation flow is a runtime control plane for voice agents: it determines whe
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[turn-taking]]
-- [[realtime]]
 
 ## Source Text
 

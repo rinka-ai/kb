@@ -64,9 +64,6 @@ The overview page frames ElevenAgents as a full-stack voice-agent platform with 
 ## Related
 
 - [[voice-ai]]
-- [[elevenlabs]]
-- [[voice-agents]]
-- [[conversational-ai]]
 
 ## Source Text
 

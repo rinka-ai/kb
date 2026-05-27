@@ -3,20 +3,20 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 8
-summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
-canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
+source_count: 11
+summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives, but they should earn their place by improving product reliability or speed rather than by adding novelty.
+canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, runtime coordinator, agent stack, langgraph, openai agents sdk, google adk]
 review_status: reviewed
-last_reviewed: 2026-04-16
-review_due: 2026-05-16
-confidence: "0.83"
+last_reviewed: 2026-05-21
+review_due: 2026-06-21
+confidence: "0.84"
 ---
 
 # Agent Frameworks
 
 ## Summary
 
-Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture.
+Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use. The AI SaaS case-study transcript adds the commercial counterweight: framework churn can distract from shipping product improvements and can introduce regressions in how the model works with a codebase.
 
 ## Common Responsibilities
 
@@ -33,6 +33,8 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - Google ADK emphasizes an event loop runner with deterministic workflow agents around LLM subagents
 - Letta emphasizes stateful memory-rich agents with explicit long-term storage surfaces
 - Goose emphasizes a local reusable runtime with provider abstraction, unified built-in and MCP extension surfaces, scheduling, and shared core primitives across CLI, desktop, server, and ACP clients
+- Flue emphasizes sandbox-agent packaging: TypeScript entrypoints compile to deploy targets while sessions, filesystem sandboxes, command grants, skills, typed results, child tasks, and MCP tools form a compact programmable harness
+- Hermes emphasizes a personal-agent operating environment: one Python runtime behind terminal UI, messaging gateway, ACP editor server, cron, API, batch runner, provider routing, memory, skills, toolsets, MCP, and browser/computer-use surfaces
 
 ## Selection Heuristics
 
@@ -41,6 +43,10 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - keep deterministic workflow structure outside the model when correctness and auditability matter
 - avoid collapsing memory, orchestration, and policy into one prompt when they should evolve independently
 - avoid frameworks that make today's topology, such as graph routing, role crews, or conversational multi-agent loops, hard to replace
+- require context-loading semantics to be portable across local, virtual, hosted, and container sandboxes before treating a framework as runtime-agnostic
+- prefer frameworks that expose steps, waits, retries, cancellation, scheduling, and traces as stable primitives rather than hard-coding one agent topology
+- check whether multiple product entrypoints share one runtime contract or quietly fork sessions, tools, permissions, memory, and approval semantics
+- require a framework to either remove operational risk, provide durable primitives, or improve a product metric; otherwise it may be novelty drag
 
 ## Tensions
 
@@ -49,6 +55,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - deterministic workflow structure vs flexible model planning
 - runtime abstraction vs direct control over infrastructure
 - reusable primitives vs framework lock-in
+- framework leverage vs churn-induced regressions in product teams
 
 ## Source Notes
 
@@ -59,4 +66,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]
 - [[2025-07-18-context-engineering-for-ai-agents-lessons-from-building-manus]]
 - [[2026-04-17-goose]]
+- [[2026-05-02-flue]]
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
+- [[2026-05-20-hermes-agent]]
+- [[2026-05-21-saas-million-arr-clairvo]]

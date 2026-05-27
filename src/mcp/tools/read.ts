@@ -9,7 +9,7 @@ export function registerReadTool(server: McpServer): void {
     {
       title: "Read KB Note",
       description:
-        "Read a KB markdown note by relative path, basename slug, or absolute path. Use paths returned by kb_search when possible.",
+        "Read a single KB markdown note by relative path, basename slug, or absolute path. Use paths returned by kb_search when possible. Wiki-link references like [[slug]] inside the returned note are NOT auto-expanded — only fetch additional notes when the current one does not answer the question. For multi-note context, prefer kb_build_context (bounded) over chained kb_read_note calls (unbounded fan-out).",
       inputSchema: {
         path: z
           .string()
