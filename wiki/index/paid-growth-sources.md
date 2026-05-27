@@ -4,7 +4,7 @@ type: index
 title: Paid Growth Sources
 tags: [paid-growth, meta-ads, google-ads, ugc, copywriting, content-creation]
 summary: Sub-index for `raw/articles/paid-growth/` source notes covering paid acquisition, Meta Ads, Google Ads, UGC, copywriting, content strategy, policy, and measurement.
-source_count: 23
+source_count: 25
 canonical_for: [paid growth sources, ads sources, marketing sources]
 review_status: draft
 last_reviewed: 2026-05-27
@@ -49,6 +49,8 @@ This collection contains source notes for the KB's paid-growth layer: Meta Ads, 
 - [[2026-05-27-billo-ugc-video-hooks-h2-2025]]
 - [[2026-05-27-cmi-b2b-content-marketing-2025]]
 - [[2026-05-27-sprout-social-content-benchmarks-2025]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
+- [[2026-05-27-effective-meta-ads-ai-agency-framework]]
 
 ## Synthesis Pages
 
@@ -61,3 +63,4 @@ This collection contains source notes for the KB's paid-growth layer: Meta Ads, 
 - [[content-creation-strategy]]
 - [[marketing-measurement]]
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]]
+- [[2026-05-27-ai-agency-meta-ad-checklist]]

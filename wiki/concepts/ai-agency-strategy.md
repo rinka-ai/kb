@@ -3,7 +3,7 @@ id: concept-ai-agency-strategy
 type: concept
 title: AI Agency Strategy
 tags: [business-strategy, ai-agency, productized-services, local-business, gtm, sales, paid-ads, compliance]
-source_count: 7
+source_count: 8
 summary: AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 canonical_for: [ai agency strategy, ai automation agency, productized ai agency, local business ai agency]
 review_status: draft
@@ -47,6 +47,7 @@ If we build this agency, the KB should become the operating memory:
 - niche briefs with buyer economics, LTV, common objections, regulatory constraints, and integration surfaces
 - consent and compliance rules for SMS, calls, email, reviews, ads, data import, and claims
 - approved scripts for reactivation, appointment reminders, missed-call text-back, reviews, referrals, ads, and sales calls
+- paid-ad templates that force each campaign to state the niche, outcome, AI mechanism, proof level, and claim boundaries before creative production
 - delivery SOPs for onboarding, CRM export/import, calendar setup, message routing, dashboard setup, human fallback, and handoff
 - metric definitions and dashboard schemas so every client reports the same way
 - ad libraries with spend, lead quality, appointment rate, show rate, close rate, and refund/churn outcomes
@@ -110,3 +111,4 @@ If we build this agency, the KB should become the operating memory:
 - [[2026-04-18-can-spam-act-compliance-guide-for-business]]
 - [[2026-04-18-ico-business-to-business-marketing]]
 - [[2026-04-18-gmail-email-sender-guidelines]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]

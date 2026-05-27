@@ -3,7 +3,7 @@ id: paid-growth
 type: concept
 title: Paid Growth
 tags: [paid-growth, advertising, performance-marketing, meta-ads, google-ads, creative-strategy, ad-policy]
-source_count: 23
+source_count: 25
 summary: Paid growth is now an operating system of offer clarity, creative supply, first-party data, platform automation, compliance, and incrementality discipline rather than only media buying.
 canonical_for: [paid growth, performance marketing, paid acquisition, digital advertising strategy, paid media operating model]
 review_status: draft
@@ -52,6 +52,7 @@ The shared Meta/Google direction is asset-hungry automation. Winning teams need 
 - modular copy assets for search headlines, descriptions, social primary text, overlays, hooks, CTAs, and landing pages
 - visual assets in multiple ratios, especially vertical short-form video
 - creator and UGC briefs that specify audience, situation, claim boundaries, disclosure, and usage rights
+- niche-specific static ad templates for local-business offers, including target-market overlays, plain-language mechanism copy, proof slots, and high-contrast readable creative
 - refresh cadence to avoid fatigue without resetting learning constantly
 
 ## Measurement
@@ -126,3 +127,5 @@ High-risk failure modes:
 - [[2026-05-27-sprout-social-content-benchmarks-2025]]
 - [[2026-05-27-lewis-rao-advertising-measurement-roi]]
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
+- [[2026-05-27-effective-meta-ads-ai-agency-framework]]

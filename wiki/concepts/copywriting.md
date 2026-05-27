@@ -3,7 +3,7 @@ id: copywriting
 type: concept
 title: Copywriting
 tags: [copywriting, paid-growth, voice-of-customer, ads, landing-pages, ugc]
-source_count: 10
+source_count: 12
 summary: Copywriting for paid growth turns customer language, offer truth, objections, proof, and channel intent into concise, policy-safe messages that move the buyer to the next action.
 canonical_for: [copywriting, ad copywriting, conversion copywriting, landing page copy, ugc scripts]
 review_status: draft
@@ -43,6 +43,8 @@ The goal is to extract pain, desired outcomes, triggers, alternatives, objection
 Search ads respond to declared intent. The query already tells you what the person wants or suspects. Copy should be direct, relevant, and modular.
 
 Paid social interrupts the feed. The copy must create context quickly: why this problem matters, why now, why this solution is credible, and why the next step is worth taking.
+
+For AI-agency Meta ads, the first visible line has to do extra work. A practical pattern is to name the niche, describe the new AI mechanism in ordinary language, and connect it to a concrete business outcome such as booked appointments or handled follow-up. The headline then compresses urgency and market fit, while the description can carry proof or trust when the placement exposes it. If proof is thin, the copy should shift from "we delivered X" to a more defensible mechanism or pilot framing.
 
 UGC scripts need to sound spoken. The copywriter's job is to provide structure and raw material, then let the creator make it believable.
 
@@ -117,3 +119,5 @@ AI copy should be checked against:
 - [[2026-05-27-google-ads-policies-misrepresentation]]
 - [[2026-05-27-meta-advertising-standards]]
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
+- [[2026-05-27-effective-meta-ads-ai-agency-framework]]

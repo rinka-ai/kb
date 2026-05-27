@@ -3,7 +3,7 @@ id: performance-creative
 type: concept
 title: Performance Creative
 tags: [paid-growth, performance-creative, creative-testing, ad-creative, ugc, copywriting, generative-ai]
-source_count: 14
+source_count: 16
 summary: Performance creative is the repeatable system for turning customer insight into policy-safe ad concepts, modular assets, creator briefs, variants, tests, and refreshed winners across paid channels.
 canonical_for: [performance creative, creative testing, ad creative strategy, creative diversification, creative pipeline]
 review_status: draft
@@ -64,6 +64,8 @@ Meta Advantage+ creative and Google Performance Max both want a broad asset supp
 - landing-page copy matched to ad promises
 
 The goal is not raw volume. It is enough meaningful variation for the platform to learn what message, format, and proof type fits each context.
+
+For local-business AI-agency Meta statics, one reusable asset recipe is: target-market overlay, plain-language AI mechanism, appointment or follow-up outcome, niche-relevant symbol, and high-contrast text treatment. QA the finished ad across four surfaces: copy creates relevance, creative stops the scroll, headline compresses niche fit and urgency, and description adds proof when visible. This should become a creative template family with proof-led, mechanism-led, and labor-saving variants rather than one repeated ad.
 
 ## Testing Loop
 
@@ -128,3 +130,5 @@ AI-generated assets should be treated as candidates, not truth.
 - [[2026-05-27-motion-ugc-ad-scripts]]
 - [[2026-05-27-billo-ugc-video-hooks-h2-2025]]
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
+- [[2026-05-27-effective-meta-ads-ai-agency-framework]]

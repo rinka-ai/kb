@@ -230,3 +230,14 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added paid-growth retrieval aliases (Meta/Google ads, UGC/creator, CAPI/conversions API, PMax, RSA, incrementality/lift, TCPA/FCC/robocall/SMS/consent) and made `topTermsFromFile`/`topTermsFromText` IDF-aware when an index is supplied, so `kb_search_file`/text context favors discriminating terms.
 - Ordered concept and summary notes before index pages in context-pack read order; documented `KB_SEARCH_OBSERVATION_LOG_PATH` (persistent volume), `KB_SEARCH_TELEMETRY_SALT`, `KB_ADMIN_TOKEN`, and the admin search-report/export endpoints in `docs/railway.md`.
 - Expanded `evals/search-gold.json` to 45 cases (Meta/UGC creative, CAPI, Google PMax/RSA, incrementality, TCPA/compliance, internal codebase/methodology) and fixed the two prior failures legitimately (added `runtime coordinator`/`agent stack` canonical phrases to `[[agent-frameworks]]`; widened the multi-agent copilots relevant set to genuinely-relevant orchestration sources). `bun run kb:refresh`, `kb:eval` (all pass), `biome:write`, `typecheck`, and `bun test` (96 pass) are green.
+
+## [2026-05-27] ingest | AI agency Meta ad screenshot checklist
+- Added `[[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]` from the user-provided screenshot and archived the original image under `raw/images/user-provided/2026-05-27-winning-meta-ad-copy-ai-agency-ads/`.
+- Created `[[2026-05-27-ai-agency-meta-ad-checklist]]` as the reusable playbook for proper AI-agency Meta ads: niche call-out, legible AI mechanism, appointment/result outcome, high-contrast creative, and proof/trust descriptions.
+- Updated `[[meta-ads]]`, `[[performance-creative]]`, `[[copywriting]]`, `[[paid-growth]]`, `[[ai-agency-strategy]]`, `[[paid-growth-sources]]`, `[[home]]`, and the master `[[index]]`.
+- Noted the core guardrail: "ChatGPT Plugin," ROI, booked-appointment, and success-story claims should only be used when accurate, substantiated, policy-safe, and matched on the landing page.
+
+## [2026-05-27] ingest | AI agency Meta ad four-surface framework
+- Added `[[2026-05-27-effective-meta-ads-ai-agency-framework]]` from the second user-provided screenshot and archived the original image under `raw/images/user-provided/2026-05-27-effective-meta-ads-ai-agency-framework/`.
+- Strengthened `[[2026-05-27-ai-agency-meta-ad-checklist]]` with the four-surface model: ad copy creates relevance, creative stops the scroll and conveys the AI angle, headline compresses urgency and niche fit, and description adds proof/trust when visible.
+- Updated `[[meta-ads]]`, `[[performance-creative]]`, `[[copywriting]]`, `[[paid-growth]]`, and `[[paid-growth-sources]]`.
