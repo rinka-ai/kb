@@ -590,9 +590,13 @@
     "id": "paid-compliance-tcpa",
     "query": "tcpa fcc robocall sms consent outbound compliance",
     "preferredPaths": [
+      "wiki/concepts/database-reactivation.md",
+      "wiki/concepts/speed-to-lead-and-missed-call-recovery.md",
       "wiki/concepts/ai-agency-strategy.md"
     ],
     "relevantPaths": [
+      "wiki/concepts/database-reactivation.md",
+      "wiki/concepts/speed-to-lead-and-missed-call-recovery.md",
       "wiki/concepts/ai-agency-strategy.md",
       "raw/articles/business-strategy/2026-02-27-how-i-made-25m-selling-just-one-ai-system.md",
       "raw/articles/business-strategy/2026-05-21-saas-million-arr-clairvo.md"

@@ -241,3 +241,17 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-05-27-effective-meta-ads-ai-agency-framework]]` from the second user-provided screenshot and archived the original image under `raw/images/user-provided/2026-05-27-effective-meta-ads-ai-agency-framework/`.
 - Strengthened `[[2026-05-27-ai-agency-meta-ad-checklist]]` with the four-surface model: ad copy creates relevance, creative stops the scroll and conveys the AI angle, headline compresses urgency and niche fit, and description adds proof/trust when visible.
 - Updated `[[meta-ads]]`, `[[performance-creative]]`, `[[copywriting]]`, `[[paid-growth]]`, and `[[paid-growth-sources]]`.
+
+## [2026-05-27] refresh | JP Middleton AI agency section extraction
+- Split the core Middleton AI-agency sections into topic pages: `[[local-business-ai-acquisition-system]]`, `[[database-reactivation]]`, `[[review-referral-automation]]`, `[[speed-to-lead-and-missed-call-recovery]]`, `[[sales-coaching-gpt]]`, `[[ai-agency-sales-process]]`, and `[[ai-agency-paid-ads-process]]`.
+- Enriched each topic with workflow steps, metrics, failure modes, compliance/proof guardrails, and links back to the source transcript plus adjacent paid-growth and agency-strategy synthesis.
+- Updated `[[ai-agency-strategy]]`, `[[2026-05-27-ai-aristotle-agency-build-plan]]`, `[[business-strategy]]`, and the master `[[index]]` so the extracted topics are navigable.
+
+## [2026-05-27] refresh | AI agency topic external-source enrichment
+- Added outside-KB source anchors to the extracted AI-agency topic pages: FTC review guidance/rule Q&A, FTC CAN-SPAM, FTC lead-generation guidance, FCC TCPA/AI voice/consent materials, Google Business Profile review/local-ranking policy, Meta Advertising Standards/Performance/CAPI, HBS/HBR and InsideSales speed-to-lead sources, BrightLocal 2026 review survey, NIST AI RMF, Salesforce State of Sales 2026, HBR solution-sales context, and Lewis/Rao advertising-measurement research.
+- Clarified source strength by separating official policy/regulatory sources from vendor/practitioner research and from Middleton's self-reported operator evidence.
+- Updated `[[2026-05-27-ai-aristotle-agency-build-plan]]` with the expanded external-source inventory for future agency validation work.
+
+## [2026-05-27] lint | AI agency topic health cleanup
+- Corrected `source_count` metadata on the seven extracted AI-agency concept pages so counts match linked source notes rather than external web references.
+- Updated the TCPA/compliance search eval to treat the new dedicated `[[database-reactivation]]` and `[[speed-to-lead-and-missed-call-recovery]]` pages as preferred retrieval targets.
