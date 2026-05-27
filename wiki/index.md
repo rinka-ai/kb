@@ -25,6 +25,8 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, and safety cases.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 - [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, and repeated use rather than visual novelty or generic model-default aesthetics.
+- [[ai-saas-strategy]] — AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
+- [[ai-agency-strategy]] — AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 - [[benchmark-integrity]] — Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
 - [[claude-code]] — Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, and reviewable collaboration artifacts.
 - [[computer-use]] — Computer-use agents extend web agents into full operating-system environments, where grounding, application knowledge, and multi-app coordination become first-class problems.
@@ -101,7 +103,9 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-18-ai-textbook-kb-improvement-map]] — Full-corpus audit of the official AI/ML textbook cache, identifying the KB's biggest gaps in ML foundations, probability, optimization, RL, fairness, validation, and ML systems engineering.
 - [[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]] — Hermes Agent shows a personal-agent runtime pattern where one core agent loop is reused across CLI, messaging, ACP, cron, API, batch, memory, skills, browser/computer-use, and trajectory surfaces.
 - [[2026-05-20-memwal-encrypted-agent-memory-source-teardown]] — MemWal adds a user-owned encrypted memory pattern: durable Walrus blobs, rebuildable vector indexes, Sui delegate-key access, SDK/MCP/harness integrations, and explicit relayer trust trade-offs.
+- [[2026-05-21-ai-saas-million-arr-lessons]] — The Clairvo case-study transcript is most useful as a playbook for AI-era SaaS discovery: pick a costly measurable workflow problem, use agents for mechanism search and simulation, validate in live deployments, and capture value through high-touch operational moats.
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]] — Uniswap/interface shows how a production UI/UX codebase compounds quality through shared design primitives, cross-platform product flows, typed transaction state, telemetry, feature gates, localization, and layered testing.
+- [[2026-05-27-ai-aristotle-agency-build-plan]] — The Middleton video should become a validation-backed agency build plan: sell one sequenced local-business acquisition system, verify compliance and niche economics, and use the KB as the operating memory for scripts, SOPs, ads, metrics, and case studies.
 
 ## Sub-Indexes
 
@@ -110,6 +114,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 - [[home]] — Landing page and navigation hub. (Master catalog is this file.)
 - [[anthropic-engineering]] — Sub-index for `raw/articles/anthropic-engineering/` notes.
 - [[arxiv]] — Sub-index for `raw/articles/arxiv/` papers.
+- [[business-strategy]] — Sub-index for `raw/articles/business-strategy/` sources on AI SaaS, GTM, pricing, workflow value, and commercial moats.
 - [[claude-blog]] — Sub-index for `raw/articles/claude-blog/` posts.
 - [[github-repos]] — Sub-index for `raw/articles/github-repos/` teardowns.
 - [[kb-system]] — Overview of the KB tooling, schema, and MCP surface.
@@ -120,7 +125,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-25`. Folders under `raw/articles/`.
+Counts as of `2026-05-27`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
 - `arxiv` (30)
@@ -132,6 +137,7 @@ Counts as of `2026-05-25`. Folders under `raw/articles/`.
 - `momo-research` (11)
 - `claude-blog` (8)
 - `user-provided` (7)
+- `business-strategy` (3)
 - `browserbase-docs` (3)
 - `langchain-blog` (2)
 - `akitaonrails` (1)

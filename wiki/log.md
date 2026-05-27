@@ -161,6 +161,23 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Reviewed `[[2026-04-19-openai-agents-js-runtime-patterns-from-source-teardown]]` and `[[2026-04-20-akitaonrails-blog-durable-lessons]]`; no content changes were needed, only review metadata refresh.
 - Updated both summaries' `last_reviewed` to 2026-05-20 and `review_due` to 2026-06-20 so the canonical layer no longer reports stale wiki notes.
 
+## [2026-05-21] query | Hermes enterprise readiness market analysis
+- Added `2026-05-21-hermes-enterprise-readiness-market-analysis` after a ten-agent market analysis of why Hermes is not yet an enterprise standard and what would make it enterprise-ready.
+- Captured the main synthesis: Hermes has strong runtime breadth, but enterprise adoption depends on identity, governance, whole-process isolation, tool/skill supply-chain controls, auditability, support, compliance evidence, and measured workflow ROI.
+- Added MemWal/Walrus/Sui conclusions: user-owned memory and verifiable artifacts strengthen Hermes' wedge, while Sui's May 20, 2026 announcement is gasless supported stablecoin transfers rather than free stablecoin balances.
+- Updated the master `[[index]]`; ran `bun run kb:refresh`.
+
+## [2026-05-21] note | retract Hermes market-analysis filing
+- Retracted `2026-05-21-hermes-enterprise-readiness-market-analysis` after the user clarified the Hermes enterprise discussion was idea mining, not material to preserve as a wiki summary.
+- Removed the page from `wiki/summaries/` and from the master `[[index]]`.
+- Future speculative market-analysis/subagent synthesis should stay in chat unless the user explicitly asks to preserve it in the KB.
+
+## [2026-05-21] ingest | AI SaaS business strategy source
+- Added `[[2026-05-21-saas-million-arr-clairvo]]` under `raw/articles/business-strategy/` from a user-provided transcript about a Claude Code-built AI power dialer reaching claimed million-dollar ARR.
+- Created `[[ai-saas-strategy]]`, `[[2026-05-21-ai-saas-million-arr-lessons]]`, and the `[[business-strategy]]` sub-index to start a durable business-strategy layer.
+- Updated `[[claude-code]]`, `[[workflows]]`, `[[agent-frameworks]]`, and `[[enterprise-agent-deployment-failure-modes]]` with the commercial lessons: payable pain, mechanism mining, simulation-to-live validation, value-based pricing, model-agnostic coding, and high-touch moats.
+- Ran `bun run kb:refresh`; health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
 ## [2026-05-25] query | AI interface design lessons
 - Added `[[ai-interface-design]]` to preserve the general design lesson from the Conformis local vault: AI-designed interfaces should prioritize job clarity, calm density, explicit state, trust, and repeated use over visual novelty.
 - Connected the synthesis to `[[2025-11-12-improving-frontend-design-through-skills]]`, which explains why models drift toward generic frontend defaults without targeted design context.
@@ -171,6 +188,24 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated `[[ai-interface-design]]`, `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
 - Ran `bun run kb:refresh`; health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
 
+## [2026-05-27] ingest | JP Middleton AI agency video
+- Added `[[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]` under `raw/articles/business-strategy/` from the YouTube transcript for JP Middleton's AI agency offer video, and connected the adjacent `[[2026-04-22-ai-business-zero-employees-jp-middleton]]` source already present in the same collection.
+- Created `[[ai-agency-strategy]]` and `[[2026-05-27-ai-aristotle-agency-build-plan]]` so the KB can serve as the operating memory for building the described agency model.
+- Updated `[[ai-saas-strategy]]`, `[[enterprise-agent-deployment-failure-modes]]`, `[[workflows]]`, `[[business-strategy]]`, `[[home]]`, and the master `[[index]]`.
+- Added external research checks for speed-to-lead, Google local ranking/reviews, FTC review-incentive guidance, and FCC TCPA consent constraints.
+- Cleaned related freshness/source-count metadata surfaced by `kb_find_gaps` so the post-ingest health report stays actionable.
+- Ran `bun run kb:refresh` and `kb_find_gaps`; final health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-27] refresh | AI agency KB enrichment
+- Added `[[2026-04-22-ai-business-zero-employees-jp-middleton]]` from the user-provided transcript and fixed the related link in `[[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]` back to the existing agency build-plan summary.
+- Strengthened `[[ai-agency-strategy]]` and `[[2026-05-27-ai-aristotle-agency-build-plan]]` with current external guardrails: Lead Response Management speed-to-lead research, BrightLocal 2026 review behavior, Google review/local-ranking policies, FTC review and lead-generation guidance, and FCC TCPA/AI voice consent constraints.
+- Noted the TCPA nuance for future agency work: the stricter FCC one-to-one consent rule was vacated/deleted, but prior express written consent for telemarketing calls/texts and consent sensitivity for AI voice calls remain core constraints.
+- Ran `bun run kb:refresh`; index rebuilt with 2055 chunks from 293 markdown files and health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
 ## [2026-05-27] lint | dangling AI interface link cleanup
 - Removed a dangling `ai-saas-strategy` related-link from `[[ai-interface-design]]`; the target concept page is not present on `main`.
 - Reproduced the failing CI lint locally and reran the repo quality gate after the cleanup.
+
+## [2026-05-27] sync | PR 52 conflict resolution
+- Merged the `main` lint history with the PR's AI agency ingest log entries.
+- Restored the `[[ai-saas-strategy]]` relationship from `[[ai-interface-design]]` because PR 52 adds that target concept page.

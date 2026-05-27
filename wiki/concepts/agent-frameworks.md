@@ -3,12 +3,12 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 10
-summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
+source_count: 11
+summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives, but they should earn their place by improving product reliability or speed rather than by adding novelty.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-05-21
+review_due: 2026-06-21
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use.
+Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use. The AI SaaS case-study transcript adds the commercial counterweight: framework churn can distract from shipping product improvements and can introduce regressions in how the model works with a codebase.
 
 ## Common Responsibilities
 
@@ -46,6 +46,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - require context-loading semantics to be portable across local, virtual, hosted, and container sandboxes before treating a framework as runtime-agnostic
 - prefer frameworks that expose steps, waits, retries, cancellation, scheduling, and traces as stable primitives rather than hard-coding one agent topology
 - check whether multiple product entrypoints share one runtime contract or quietly fork sessions, tools, permissions, memory, and approval semantics
+- require a framework to either remove operational risk, provide durable primitives, or improve a product metric; otherwise it may be novelty drag
 
 ## Tensions
 
@@ -54,6 +55,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - deterministic workflow structure vs flexible model planning
 - runtime abstraction vs direct control over infrastructure
 - reusable primitives vs framework lock-in
+- framework leverage vs churn-induced regressions in product teams
 
 ## Source Notes
 
@@ -67,3 +69,4 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-05-02-flue]]
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
 - [[2026-05-20-hermes-agent]]
+- [[2026-05-21-saas-million-arr-clairvo]]

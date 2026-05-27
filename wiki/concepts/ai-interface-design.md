@@ -3,7 +3,7 @@ id: concept-ai-interface-design
 type: concept
 title: AI Interface Design
 tags: [design, frontend, ai-products, product-ux, agentic-ux]
-source_count: 7
+source_count: 2
 summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, and repeated use rather than visual novelty or generic model-default aesthetics.
 canonical_for: [ai interface design, ai product design, ai-designed UI, AI UX, frontend design with AI]
 review_status: draft
@@ -97,6 +97,7 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 
 - [[agent-skills]]
 - [[context-engineering]]
+- [[ai-saas-strategy]]
 - [[enterprise-agent-deployment-failure-modes]]
 - [[workflows]]
 
