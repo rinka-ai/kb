@@ -3,12 +3,12 @@ id: concept-personal-knowledge-bases
 type: concept
 title: Personal Knowledge Bases
 tags: [knowledge-bases, research, markdown, obsidian]
-source_count: 3
+source_count: 5
 summary: Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
 canonical_for: [personal knowledge base, markdown knowledge base]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-05-27
+review_due: 2026-06-27
 confidence: "0.83"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.83"
 
 ## Summary
 
-A personal knowledge base is a durable, cumulative system for storing raw source material, synthesized notes, and reusable outputs so research compounds over time instead of disappearing into chat history. In this repo the dominant shape is markdown plus local indexing, but MemWal adds a neighboring pattern: user-owned encrypted memory that can move across apps and agents when the user controls account, namespace, and delegate access.
+A personal knowledge base is a durable, cumulative system for storing raw source material, synthesized notes, and reusable outputs so research compounds over time instead of disappearing into chat history. In this repo the dominant shape is markdown plus local indexing, but MemWal adds a neighboring pattern: user-owned encrypted memory that can move across apps and agents when the user controls account, namespace, and delegate access. The Conformis and Aya internal-codebase ingests add a project-local version of the same idea: code repositories can carry their own durable knowledge layers for product truth, conventions, design rules, and architectural decisions.
 
 ## Why It Matters
 
@@ -31,9 +31,19 @@ A personal knowledge base is a durable, cumulative system for storing raw source
 - `wiki/` stores compiled concepts and summaries
 - `.kb/index.json` gives local retrieval over the markdown corpus
 - adjacent infrastructure such as MemWal shows how encrypted, cross-client memory can complement a markdown wiki when the goal is portable personal context rather than only inspectable notes
+- internal codebase teardowns can turn tacit repo practice into durable wiki knowledge without copying full private source code
+- repo-local vaults such as Conformis' `conformis-knowledge/` show how a project can carry its own inspectable memory while still feeding selected patterns back into this broader KB
+
+## Related
+
+- [[repo-local-knowledge-bases]]
+- [[research-workflows]]
+- [[codebase-architecture]]
 
 ## Source Notes
 
 - [[2026-04-08-llm-knowledge-bases]]
 - [[2026-04-09-momo-research-repo-overview]]
 - [[2026-05-20-memwal]]
+- [[2026-05-27-conformis]]
+- [[2026-05-27-aya]]

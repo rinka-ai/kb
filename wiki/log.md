@@ -202,6 +202,11 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Noted the TCPA nuance for future agency work: the stricter FCC one-to-one consent rule was vacated/deleted, but prior express written consent for telemarketing calls/texts and consent sensitivity for AI voice calls remain core constraints.
 - Ran `bun run kb:refresh`; index rebuilt with 2055 chunks from 293 markdown files and health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
 
+## [2026-05-27] ingest | Meta and Google ads paid-growth research
+- Added 23 source notes under `raw/articles/paid-growth/` covering Meta Performance 5, Advantage+ creative, creator/partnership ads, Reels, Advertising Standards, Conversions API, Google Performance Max, responsive search ads, ABCD video creative, people-first content, misrepresentation policy, Conversion Lift, FTC endorsement disclosure, Demand Curve, CXL, Motion, Billo, CMI, Sprout, Lewis/Rao, and Meta AdLlama.
+- Created the core paid-growth wiki layer: `[[paid-growth]]`, `[[meta-ads]]`, `[[google-ads]]`, `[[performance-creative]]`, `[[ugc-ads]]`, `[[copywriting]]`, `[[content-creation-strategy]]`, and `[[marketing-measurement]]`.
+- Added synthesis `[[2026-05-27-meta-google-ads-creative-content-kb-expansion]]` and sub-index `[[paid-growth-sources]]`, then wired both into `[[index]]` and `[[home]]`.
+
 ## [2026-05-27] lint | dangling AI interface link cleanup
 - Removed a dangling `ai-saas-strategy` related-link from `[[ai-interface-design]]`; the target concept page is not present on `main`.
 - Reproduced the failing CI lint locally and reran the repo quality gate after the cleanup.
@@ -209,3 +214,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 ## [2026-05-27] sync | PR 52 conflict resolution
 - Merged the `main` lint history with the PR's AI agency ingest log entries.
 - Restored the `[[ai-saas-strategy]]` relationship from `[[ai-interface-design]]` because PR 52 adds that target concept page.
+
+## [2026-05-27] ingest | Aya and Conformis internal codebases
+- Added internal-codebase source notes `[[2026-05-27-aya]]` and `[[2026-05-27-conformis]]`, explicitly excluding secrets, env files, caches, generated artifacts, and full private source dumps.
+- Added synthesis `[[2026-05-27-aya-conformis-internal-codebase-patterns]]` plus new concepts `[[codebase-architecture]]`, `[[internal-engineering-conventions]]`, and `[[repo-local-knowledge-bases]]`.
+- Updated `[[ai-interface-design]]`, `[[personal-knowledge-bases]]`, `[[research-workflows]]`, `[[home]]`, `[[internal-codebases]]`, and the master `[[index]]`.

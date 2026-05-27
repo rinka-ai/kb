@@ -3,12 +3,12 @@ id: concept-ai-interface-design
 type: concept
 title: AI Interface Design
 tags: [design, frontend, ai-products, product-ux, agentic-ux]
-source_count: 2
+source_count: 4
 summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, and repeated use rather than visual novelty or generic model-default aesthetics.
 canonical_for: [ai interface design, ai product design, ai-designed UI, AI UX, frontend design with AI]
 review_status: draft
-last_reviewed: 2026-05-25
-review_due: 2026-06-25
+last_reviewed: 2026-05-27
+review_due: 2026-06-27
 confidence: "0.78"
 ---
 
@@ -81,6 +81,8 @@ The reusable pattern is:
 - Type and centralize analytics events, test IDs, route metadata, feature flags, and localized copy.
 - Use lint rules and e2e fixtures as UX guardrails so the product cannot quietly drift back into inconsistent ad hoc UI.
 
+The internal Aya and Conformis codebase teardowns add the smaller-product version of the same pattern. Aya encodes dashboard quality through `docs/DESIGN.md`, token roles, bilingual copy parity, server-seed plus React Query workbenches, and screenshot requirements for UI work. Conformis encodes operational GRC UI through a repo-local design vault, implementation tokens, account/shell placement, table-density rules, human-readable audit history, and careful page/modal/drawer decisions. Both show that AI-built interfaces improve when source architecture tells the agent where product UI rules live before it starts inventing screens.
+
 ## When To Be More Expressive
 
 Restraint is not a universal aesthetic. AI should become more expressive when the domain calls for it: games, editorial sites, portfolios, brand launches, immersive education, creative tools, and consumer experiences may need stronger imagery, motion, atmosphere, or personality. The same rule still applies: expression should be native to the user's goal and context, not a generic flourish.
@@ -100,11 +102,15 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 - [[ai-saas-strategy]]
 - [[enterprise-agent-deployment-failure-modes]]
 - [[workflows]]
+- [[codebase-architecture]]
+- [[internal-engineering-conventions]]
 
 ## Source Notes
 
 - [[2025-11-12-improving-frontend-design-through-skills]]
 - [[2026-05-25-uniswap-interface]]
+- [[2026-05-27-aya]]
+- [[2026-05-27-conformis]]
 
 ## External Local Sources
 
