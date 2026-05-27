@@ -97,7 +97,6 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 
 - [[agent-skills]]
 - [[context-engineering]]
-- [[ai-saas-strategy]]
 - [[enterprise-agent-deployment-failure-modes]]
 - [[workflows]]
 

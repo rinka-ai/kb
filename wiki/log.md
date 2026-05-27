@@ -170,3 +170,7 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added synthesis `[[2026-05-25-uniswap-interface-ui-ux-source-teardown]]` to preserve reusable 10/10 UI/UX patterns: shared design primitives, cross-platform domain flows, typed transaction state, telemetry, feature gates, localization, lint guardrails, Storybook, Playwright, Anvil, snapshots, and Maestro performance flows.
 - Updated `[[ai-interface-design]]`, `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
 - Ran `bun run kb:refresh`; health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-27] lint | dangling AI interface link cleanup
+- Removed a dangling `ai-saas-strategy` related-link from `[[ai-interface-design]]`; the target concept page is not present on `main`.
+- Reproduced the failing CI lint locally and reran the repo quality gate after the cleanup.
