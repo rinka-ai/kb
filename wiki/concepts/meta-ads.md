@@ -3,7 +3,7 @@ id: meta-ads
 type: concept
 title: Meta Ads
 tags: [paid-growth, meta-ads, facebook-ads, instagram-ads, reels, creator-ads]
-source_count: 8
+source_count: 10
 summary: Meta Ads performance now depends on simplified structures, automation, diversified creative, creator/UGC supply, first-party conversion signals, policy-safe claims, and validation beyond dashboard ROAS.
 canonical_for: [meta ads, facebook ads, instagram ads, reels ads, meta paid social]
 review_status: draft
@@ -42,6 +42,8 @@ Useful creative inputs:
 - static assets that can be adapted across placements
 - concise primary text and headlines with multiple variations
 - landing pages that match the exact promise
+
+For AI-agency offers aimed at local businesses, the user-provided ad checklists add a useful static-ad pattern: name the target market before the "See More" cutoff, make the AI mechanism legible, sell the appointment or follow-up outcome, and use headline/description fields to reinforce niche fit and proof. Treat this as a format, not permission to overclaim: "ChatGPT," "ROI," booked appointments, urgency, and success stories all need to be true, substantiated, and landing-page matched.
 
 ## Creator And UGC Layer
 
@@ -117,3 +119,5 @@ Common creative risks:
 - [[2026-05-27-meta-conversions-api]]
 - [[2026-05-27-ftc-endorsement-guides-influencers]]
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
+- [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
+- [[2026-05-27-effective-meta-ads-ai-agency-framework]]
