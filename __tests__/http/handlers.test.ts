@@ -53,20 +53,30 @@ describe("http handlers", () => {
     app.get(
       "/health",
       createHealthHandler(
-        { statefulSessions: true, enableWrites: false },
+        {
+          statefulSessions: true,
+          enableWrites: false,
+          searchTelemetryEnabled: true,
+          searchTelemetrySalt: undefined,
+          adminToken: undefined,
+        },
         () => 3,
         createHttpMetrics,
       ),
     );
     const res = await app.request("/health");
     expect(res.status).toBe(200);
-    expect(await res.json()).toEqual({
+    const payload = (await res.json()) as Record<string, unknown>;
+    expect(payload).toMatchObject({
       ok: true,
       name: "ai-research-kb",
       version: "1.1.0",
       sessions: 3,
       statefulSessions: true,
       enableWrites: false,
+      searchTelemetryEnabled: true,
+      telemetryHashingConfigured: false,
+      adminTelemetryConfigured: false,
       http: {
         mcpRequests: 0,
         byMethod: {},
@@ -76,6 +86,14 @@ describe("http handlers", () => {
         internalErrors: 0,
       },
     });
+    // Index freshness is privacy-safe metadata only; never secret values.
+    const index = payload.index as Record<string, unknown>;
+    expect(index.available).toBe(true);
+    expect(typeof index.schemaVersion).toBe("number");
+    expect(typeof index.fileCount).toBe("number");
+    expect(typeof index.chunkCount).toBe("number");
+    expect(typeof index.stale).toBe("boolean");
+    expect(JSON.stringify(payload)).not.toContain("salt");
   });
 
   test("createRootHandler returns streamable-http metadata", async () => {

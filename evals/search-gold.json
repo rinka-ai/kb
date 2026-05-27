@@ -453,7 +453,9 @@
     "relevantPaths": [
       "wiki/concepts/multi-agent-systems.md",
       "raw/articles/claude-blog/2026-04-06-how-and-when-to-use-subagents-in-claude-code.md",
-      "raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md"
+      "raw/articles/anthropic-engineering/2025-06-13-how-we-built-our-multi-agent-research-system.md",
+      "raw/articles/user-provided/2026-05-09-durable-orchestration-agent-patterns-user-provided.md",
+      "raw/articles/arxiv/2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing.md"
     ],
     "maxPreferredRank": 2,
     "minPrecisionAt3": 0.667
@@ -491,5 +493,139 @@
     "forbiddenPaths": [
       "wiki/concepts/voice-ai.md"
     ]
+  },
+  {
+    "id": "meta-advantage-creative",
+    "query": "meta advantage plus creative diversification",
+    "preferredPaths": [
+      "raw/articles/paid-growth/2026-05-27-meta-advantage-plus-creative.md",
+      "wiki/concepts/meta-ads.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/meta-ads.md",
+      "wiki/concepts/performance-creative.md",
+      "raw/articles/paid-growth/2026-05-27-meta-advantage-plus-creative.md",
+      "raw/articles/paid-growth/2026-05-27-meta-performance-5.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "ugc-creator-ads",
+    "query": "ugc creator ads briefs usage rights disclosure",
+    "preferredPaths": [
+      "wiki/concepts/ugc-ads.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/ugc-ads.md",
+      "wiki/concepts/meta-ads.md",
+      "raw/articles/paid-growth/2026-05-27-meta-creators-for-business-partnership-ads.md",
+      "raw/articles/paid-growth/2026-05-27-ftc-endorsement-guides-influencers.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "meta-conversions-api",
+    "query": "meta conversions api capi server side events",
+    "preferredPaths": [
+      "raw/articles/paid-growth/2026-05-27-meta-conversions-api.md",
+      "wiki/concepts/meta-ads.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/meta-ads.md",
+      "wiki/concepts/paid-growth.md",
+      "raw/articles/paid-growth/2026-05-27-meta-conversions-api.md",
+      "wiki/summaries/2026-05-27-meta-google-ads-creative-content-kb-expansion.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "google-performance-max",
+    "query": "google performance max asset groups pmax",
+    "preferredPaths": [
+      "wiki/concepts/google-ads.md",
+      "raw/articles/paid-growth/2026-05-27-google-performance-max-asset-groups.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/google-ads.md",
+      "raw/articles/paid-growth/2026-05-27-google-performance-max-asset-groups.md",
+      "raw/articles/paid-growth/2026-05-27-google-performance-max-creative-assets.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "google-responsive-search-ads",
+    "query": "responsive search ads rsa assets",
+    "preferredPaths": [
+      "wiki/concepts/google-ads.md",
+      "raw/articles/paid-growth/2026-05-27-google-responsive-search-ads.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/google-ads.md",
+      "raw/articles/paid-growth/2026-05-27-google-responsive-search-ads.md",
+      "raw/articles/paid-growth/2026-05-27-google-effective-search-ads.md"
+    ],
+    "maxPreferredRank": 2,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "marketing-incrementality",
+    "query": "marketing incrementality conversion lift experiments",
+    "preferredPaths": [
+      "wiki/concepts/marketing-measurement.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/marketing-measurement.md",
+      "wiki/concepts/paid-growth.md",
+      "raw/articles/paid-growth/2026-05-27-google-conversion-lift.md",
+      "raw/articles/paid-growth/2026-05-27-lewis-rao-advertising-measurement-roi.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "paid-compliance-tcpa",
+    "query": "tcpa fcc robocall sms consent outbound compliance",
+    "preferredPaths": [
+      "wiki/concepts/ai-agency-strategy.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/ai-agency-strategy.md",
+      "raw/articles/business-strategy/2026-02-27-how-i-made-25m-selling-just-one-ai-system.md",
+      "raw/articles/business-strategy/2026-05-21-saas-million-arr-clairvo.md"
+    ],
+    "maxPreferredRank": 1
+  },
+  {
+    "id": "internal-codebase-architecture",
+    "query": "internal codebase architecture monorepo conventions",
+    "preferredPaths": [
+      "wiki/concepts/codebase-architecture.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/codebase-architecture.md",
+      "wiki/concepts/internal-engineering-conventions.md",
+      "wiki/summaries/2026-05-27-aya-conformis-internal-codebase-patterns.md",
+      "raw/articles/internal-codebases/2026-05-27-conformis.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "repo-local-kb-methodology",
+    "query": "repo local knowledge base agent instructions conventions",
+    "preferredPaths": [
+      "wiki/concepts/repo-local-knowledge-bases.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/repo-local-knowledge-bases.md",
+      "wiki/concepts/internal-engineering-conventions.md",
+      "wiki/summaries/2026-05-27-aya-conformis-internal-codebase-patterns.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
   }
 ]

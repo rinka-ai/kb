@@ -28,6 +28,7 @@ This matters because Railway deploys an image from the repo. It is excellent for
    - `KB_STATEFUL_SESSIONS=false`
    - `KB_ENABLE_WRITES=false`
    - optionally `KB_ALLOWED_ORIGINS=https://codex.example.com,https://claude.example.com` if you want browser-origin allowlisting
+   - optionally the search-telemetry variables below if you want to capture and review privacy-safe search observations
 4. Do not set `PORT` manually unless you have a special reason. Railway injects it.
 5. In Railway Public Networking, generate a Railway domain.
 6. After deploy, verify `https://<your-domain>/health`.
@@ -62,6 +63,31 @@ Keep the local stdio server too:
 - The derived index should live in `KB_CACHE_DIR`, not the repo root, so hosted refreshes can safely rewrite cache files.
 - Restarts are configured in [railway.toml](../railway.toml).
 - Each merge to the tracked branch should trigger a new deploy with the latest KB content.
+
+## Search Telemetry And Admin Reports
+
+The hosted server can record privacy-safe search observations (query/result diagnostics and `kb_search_file` context labels, never raw pasted file text) and expose them through token-gated admin endpoints. All of this is opt-in.
+
+Relevant variables:
+
+- `KB_SEARCH_TELEMETRY_ENABLED` — defaults to `true`. Set to `false` to disable observation capture entirely.
+- `KB_SEARCH_OBSERVATION_LOG_PATH` — absolute path to the NDJSON observation log. On Railway this must point at a **mounted persistent volume** (e.g. attach a volume at `/data` and set `KB_SEARCH_OBSERVATION_LOG_PATH=/data/search-observations.ndjson`). Without a volume the log lives on the ephemeral container filesystem and is lost on every deploy/restart. Leave unset to keep telemetry in-memory only for the container lifetime.
+- `KB_SEARCH_TELEMETRY_SALT` — secret salt used to hash client identifiers before they are written to the log. Set it so observations cannot be linked back to a raw client identity. The salt value is never returned by `/health` (only a `telemetryHashingConfigured` readiness boolean).
+- `KB_ADMIN_TOKEN` — bearer token that gates the admin telemetry routes. When unset, the admin routes are not registered. The token value is never returned by `/health` (only an `adminTelemetryConfigured` readiness boolean).
+
+Admin endpoints (only mounted when `KB_ADMIN_TOKEN` is set):
+
+- `GET /admin/search-observations/report` — aggregated report of repeated/low-quality queries. Supports `?format=text|json`, `?limit=`, `?minCount=`, `?maxTopScoreGap=`. Mirrors `bun run kb:search-report`.
+- `GET /admin/search-observations/export` — raw observations. Supports `?format=ndjson|json`, `?limit=`, `?tool=`, `?query=`.
+
+Authenticate with either header:
+
+```bash
+curl -H "Authorization: Bearer $KB_ADMIN_TOKEN" \
+  "https://your-service.up.railway.app/admin/search-observations/report?format=text"
+```
+
+`/health` reports `searchTelemetryEnabled`, `telemetryHashingConfigured`, and `adminTelemetryConfigured` so you can confirm readiness without exposing any secret values.
 
 ## If You Ever Want Remote Writes
 

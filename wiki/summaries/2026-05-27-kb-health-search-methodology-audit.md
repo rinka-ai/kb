@@ -63,6 +63,18 @@ In negentropy terms, the repo is doing the right compounding work: raw sources, 
 
 The current retrieval method is good enough that the next move should not be a vector database or semantic reranker by default. Add those only after evals show a lexical ceiling. The nearer win is better observability, fresher evals, richer aliases, and more deliberate canonical concepts.
 
+## Implementation Follow-Up (2026-05-27)
+
+Most of the recommendations above are now shipped:
+
+- **Remote health (rec. 2):** `/health` reports a privacy-safe `index` block (`available`, `generatedAt`, `schemaVersion`, `fileCount`, `chunkCount`, `stale` vs newest markdown mtime) plus `searchTelemetryEnabled`, `telemetryHashingConfigured`, and `adminTelemetryConfigured`. It never rebuilds the index, catches read failures, and never returns salt or token values.
+- **Aliases (rec. 4) and IDF-aware file context (rec. 6):** added targeted paid-growth/compliance aliases and made `topTermsFromFile`/`topTermsFromText` IDF-weighted when given an index.
+- **Context order (rec. 7):** concept and summary notes now precede index pages in the context-pack read order.
+- **Evals (rec. 3):** `evals/search-gold.json` grew to 45 cases covering Meta/UGC creative, CAPI, Google PMax/RSA, incrementality, TCPA/compliance, and internal-codebase/methodology retrieval; the two prior failures were fixed via metadata (`[[agent-frameworks]]` canonical phrases) and a corrected relevant set, not by loosening constraints.
+- **Telemetry docs (rec. 1):** `docs/railway.md` documents `KB_SEARCH_OBSERVATION_LOG_PATH` (persistent volume), `KB_SEARCH_TELEMETRY_SALT`, `KB_ADMIN_TOKEN`, and the admin search-report/export endpoints.
+
+Still open: a dedicated compliance/outbound-guardrails concept (rec. 5), a git-SHA field in `/health` (part of rec. 2), and a combined recurring health-audit command (rec. 8).
+
 ## Related
 
 - [[research-workflows]]

@@ -5,7 +5,7 @@ title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
 source_count: 11
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives, but they should earn their place by improving product reliability or speed rather than by adding novelty.
-canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, langgraph, openai agents sdk, google adk]
+canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, runtime coordinator, agent stack, langgraph, openai agents sdk, google adk]
 review_status: reviewed
 last_reviewed: 2026-05-21
 review_due: 2026-06-21
