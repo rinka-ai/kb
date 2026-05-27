@@ -80,6 +80,24 @@ const QUERY_ALIASES: Record<string, string[]> = {
   transcribing: ["transcription", "speech-to-text"],
   tts: ["speech", "voice", "audio"],
   voice: ["audio", "speech"],
+  // Paid-growth / advertising vocabulary. Maps marketer shorthand onto the
+  // tokens that actually appear in the Meta/Google/UGC/measurement notes.
+  capi: ["conversions", "conversion", "api", "signals"],
+  consent: ["tcpa", "disclosure", "compliance", "opt-in"],
+  conversions: ["capi", "conversion", "signals"],
+  creator: ["creators", "ugc", "influencer", "partnership"],
+  creators: ["creator", "ugc", "influencer", "partnership"],
+  fcc: ["tcpa", "robocall", "consent", "telemarketing"],
+  google: ["search-ads", "performance-max", "youtube"],
+  incrementality: ["incremental", "lift", "conversion-lift", "experiments"],
+  lift: ["incrementality", "incremental", "conversion-lift"],
+  meta: ["facebook", "instagram", "paid-social", "reels"],
+  pmax: ["performance-max", "performance", "max", "asset-groups"],
+  robocall: ["tcpa", "fcc", "consent", "telemarketing"],
+  rsa: ["responsive-search-ads", "responsive", "search-ads"],
+  sms: ["messaging", "text", "consent", "tcpa"],
+  tcpa: ["consent", "robocall", "fcc", "telemarketing"],
+  ugc: ["user-generated", "creator", "creators", "influencer"],
 };
 
 const LOW_INFO_TERMS = new Set([
@@ -216,7 +234,7 @@ function buildQueryPhrases(tokens: string[]): string[] {
   return uniqueStrings(phrases, 8);
 }
 
-function buildQueryText(args: SearchArgs): string {
+function buildQueryText(args: SearchArgs, index?: KbIndex): string {
   const parts: string[] = [];
   if (args.query) {
     parts.push(args.query);
@@ -224,13 +242,13 @@ function buildQueryText(args: SearchArgs): string {
   if (args.file) {
     const filePath = resolve(args.file);
     parts.push(filePath.split("/").at(-1) ?? filePath);
-    parts.push(...topTermsFromFile(filePath));
+    parts.push(...topTermsFromFile(filePath, 12, index));
   }
   if (args.text) {
     if (args.contextLabel) {
       parts.push(args.contextLabel);
     }
-    parts.push(...topTermsFromText(args.text));
+    parts.push(...topTermsFromText(args.text, 12, index));
   }
 
   return parts.join(" ").trim();
@@ -284,7 +302,7 @@ function conceptExpansionTerms(index: KbIndex, queryTerms: string[]): string[] {
 }
 
 export function buildQueryPlan(index: KbIndex, args: SearchArgs): QueryPlan {
-  const queryText = buildQueryText(args);
+  const queryText = buildQueryText(args, index);
   const baseTerms = filterSearchTerms(tokenize(queryText));
   const baseTermSet = new Set(baseTerms);
   const queryPhrases = buildQueryPhrases(baseTerms);
@@ -319,8 +337,10 @@ export function buildQueryPlan(index: KbIndex, args: SearchArgs): QueryPlan {
   };
 }
 
-export function topTermsFromFile(filePath: string, limit = 12): string[] {
-  const tokens = tokenize(readFileSync(filePath, "utf-8").slice(0, 20_000));
+// Rank context terms by frequency, optionally weighting by IDF so that rare,
+// discriminating terms outrank common boilerplate. Passing no index keeps the
+// previous frequency-only behaviour for existing callers.
+function rankContextTerms(tokens: string[], limit: number, index?: KbIndex): string[] {
   const counts = tokens
     .filter((token) => !STOPWORDS.has(token) && token.length > 2)
     .reduce<Map<string, number>>(
@@ -329,24 +349,18 @@ export function topTermsFromFile(filePath: string, limit = 12): string[] {
     );
 
   return [...counts.entries()]
+    .map(([term, count]) => [term, count * (index ? (index.idf[term] ?? Math.log(3)) : 1)] as const)
     .sort((a, b) => b[1] - a[1])
     .slice(0, limit)
     .map(([term]) => term);
 }
 
-export function topTermsFromText(text: string, limit = 12): string[] {
-  const tokens = tokenize(text.slice(0, 20_000));
-  const counts = tokens
-    .filter((token) => !STOPWORDS.has(token) && token.length > 2)
-    .reduce<Map<string, number>>(
-      (acc, token) => acc.set(token, (acc.get(token) ?? 0) + 1),
-      new Map(),
-    );
+export function topTermsFromFile(filePath: string, limit = 12, index?: KbIndex): string[] {
+  return rankContextTerms(tokenize(readFileSync(filePath, "utf-8").slice(0, 20_000)), limit, index);
+}
 
-  return [...counts.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, limit)
-    .map(([term]) => term);
+export function topTermsFromText(text: string, limit = 12, index?: KbIndex): string[] {
+  return rankContextTerms(tokenize(text.slice(0, 20_000)), limit, index);
 }
 
 export function ensureIndex(rebuildIfStale: boolean): KbIndex {
