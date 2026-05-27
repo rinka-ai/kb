@@ -16,7 +16,7 @@ confidence: "0.62"
 
 ## Summary
 
-The strongest AI agency pattern in the current KB is not "sell AI automations." It is to pick one reachable buyer type with a costly workflow bottleneck, sell one repeatable operating system, measure the business outcome, and keep the delivery motion boring enough to delegate. For a local-business agency, that means packaging acquisition, response, reputation, referral, and sales-process improvement as one system instead of selling disconnected bots.
+The strongest AI agency pattern in the current KB is not "sell AI automations." It is to pick one reachable buyer type with a costly workflow bottleneck, sell one repeatable operating system, measure the business outcome, and keep the delivery motion boring enough to delegate. For a local-business agency, that means packaging acquisition, response, reputation, referral, and sales-process improvement as one [[local-business-ai-acquisition-system]] instead of selling disconnected bots.
 
 This page is intentionally evidence-cautious. The JP Middleton video is useful as an operator playbook, but its revenue, close-rate, lead-cost, and client-result claims are self-reported. The KB should use the pattern as a hypothesis to validate, not as proof.
 
@@ -30,13 +30,13 @@ This page is intentionally evidence-cautious. The JP Middleton video is useful a
 
 ## Offer Architecture
 
-The Middleton source's "AI Aristotle" offer is best abstracted as a full-funnel local-business acquisition system:
+The Middleton source's "AI Aristotle" offer is best abstracted as a full-funnel [[local-business-ai-acquisition-system]]:
 
-- Database reactivation: re-engage old leads, former customers, or dormant prospects and route them to appointments.
-- Reviews and referrals: systematically ask real customers for feedback, public reviews, and referrals while avoiding deceptive review gating or undisclosed incentives.
-- Speed-to-lead and missed-call recovery: respond quickly to web leads, missed calls, and booking changes so paid and organic demand does not leak.
-- Sales process coaching: use transcripts and rubrics to grade consultations against a standard process.
-- Paid acquisition: run ads only after the business can respond, show, and close the demand being generated.
+- [[database-reactivation]]: re-engage old leads, former customers, or dormant prospects and route them to appointments.
+- [[review-referral-automation]]: systematically ask real customers for feedback, public reviews, and referrals while avoiding deceptive review gating or undisclosed incentives.
+- [[speed-to-lead-and-missed-call-recovery]]: respond quickly to web leads, missed calls, and booking changes so paid and organic demand does not leak.
+- [[sales-coaching-gpt]]: use transcripts and rubrics to grade consultations against a standard process.
+- [[ai-agency-paid-ads-process]]: run ads only after the business can respond, show, and close the demand being generated.
 
 The strategic difference from a normal agency is not any one component. It is that each component makes the next one more valuable: reactivation funds ads, reviews improve trust, response speed preserves lead value, sales coaching lifts conversion, and paid ads scale a less leaky system.
 
@@ -97,6 +97,13 @@ If we build this agency, the KB should become the operating memory:
 ## Related
 
 - [[ai-saas-strategy]]
+- [[local-business-ai-acquisition-system]]
+- [[ai-agency-sales-process]]
+- [[ai-agency-paid-ads-process]]
+- [[database-reactivation]]
+- [[review-referral-automation]]
+- [[speed-to-lead-and-missed-call-recovery]]
+- [[sales-coaching-gpt]]
 - [[enterprise-agent-deployment-failure-modes]]
 - [[workflows]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
