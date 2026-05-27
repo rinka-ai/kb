@@ -2,13 +2,13 @@
 id: concept-enterprise-agent-deployment-failure-modes
 type: concept
 title: Enterprise Agent Deployment Failure Modes
-tags: [enterprise-ai, agents, ai-adoption, workflows, orchestration, governance, ai-ops]
-source_count: 13
-summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, and feedback loops.
+tags: [enterprise-ai, agents, ai-adoption, workflows, orchestration, governance, ai-ops, sales]
+source_count: 16
+summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations]
 review_status: draft
-last_reviewed: 2026-05-02
-review_due: 2026-06-02
+last_reviewed: 2026-05-27
+review_due: 2026-06-27
 confidence: "0.78"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.78"
 
 The current evidence points to a stable pattern: enterprise AI is not blocked mainly by raw model intelligence. It is blocked by workflow fit, data and integration substrate, governance, and operating ownership. Broad AI use can produce individual task gains while failing to produce enterprise-level ROI when the real work remains unbounded, undocumented, fragmented across systems, and hard to verify.
 
-The practical response is to make non-engineering workflows more like the parts of software engineering where AI already works: bounded artifacts, explicit state, deterministic checks, replayable execution, human review, and measured feedback loops.
+The practical response is to make non-engineering workflows more like the parts of software engineering where AI already works: bounded artifacts, explicit state, deterministic checks, replayable execution, human review, and measured feedback loops. For AI SaaS vendors, the same pattern becomes a market-selection rule: sell into costly workflows where an improvement can be measured, deployed, and priced against actual economic value.
 
 ## Core Pattern
 
@@ -78,6 +78,10 @@ Design response:
 
 AI pilots often measure demos, usage, latency, or model benchmark quality instead of the business metric that would justify continued operation. RAND identifies wrong problem framing and wrong metrics as root causes. McKinsey finds that high performers redesign workflows and track practices tied to value capture. Deloitte emphasizes that ROI is hard to isolate when AI is mixed with data quality and operational changes.
 
+The Clairvo transcript gives the vendor-side version of this failure mode: a SaaS product should start from a metric such as pickup rate, revenue per rep, or live conversations per hour, then prove that its mechanism changes that metric in production. Otherwise the product is only another easy-to-build tool.
+
+The Middleton AI-agency source gives the local-business services version: paid ads, reactivation, reviews, missed-call text-back, and sales coaching only matter if they move the buyer's full funnel. A system that books more leads but leaves consent, response, show rate, close rate, review policy, or attribution unowned is still a leaky workflow.
+
 Design response:
 
 - define the unit of value before building: cycle time, error rate, throughput, cash recovery, close duration, customer retention, cost per resolved ticket, or conversion rate
@@ -129,6 +133,8 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - GitHub, Anthropic, and Google: software engineering is an early AI success domain because outputs are more bounded, checkable, and reviewable.
 - Anthropic model deprecations: production AI systems must handle model lifecycle change as infrastructure.
 - Salesforce: sales productivity is constrained by long-standing admin and workflow friction, which explains why naive AI assistants may not move the whole metric.
+- Clairvo transcript: founder/operator testimony that AI SaaS opportunities should be selected by payable workflow pain, measurable metric lift, live deployment data, and implementation or regulatory moats rather than buildability alone.
+- Middleton AI agency video: self-reported operator playbook arguing that a local-business AI agency should sell one sequenced acquisition workflow, but the claims need compliance checks and niche-specific validation before being treated as proof.
 
 ## Tensions
 
@@ -137,6 +143,7 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - Model-agnostic routing reduces lock-in, but some provider-specific capabilities may be worth exploiting.
 - Local task gains are real, but workflow-level ROI depends on the slowest bottleneck left in the process.
 - External partners may accelerate fieldwork and implementation, but durable ownership still has to land inside the enterprise.
+- High-touch AI SaaS may look less scalable than pure self-serve software, but implementation work can be the moat when the buyer's workflow is messy, regulated, and economically valuable.
 
 ## Open Questions
 
@@ -170,3 +177,6 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - [[2026-04-14-anthropic-claude-model-deprecations]]
 - [[2022-12-08-salesforce-sales-reps-time-selling]]
 - [[2024-12-19-building-effective-agents]]
+- [[2026-05-21-saas-million-arr-clairvo]]
+- [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
+- [[2026-04-22-ai-business-zero-employees-jp-middleton]]

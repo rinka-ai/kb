@@ -22,6 +22,7 @@ This wiki accumulates source material and synthesized notes about building with 
 ## Source Collections
 
 - [[arxiv]]
+- [[business-strategy]]
 - [[github-repos]]
 - [[official-docs]]
 - [[textbooks]]
@@ -42,6 +43,8 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-05-18-ai-textbook-kb-improvement-map]]
 - [[2026-05-20-hermes-agent-runtime-patterns-from-source-teardown]]
 - [[2026-05-20-memwal-encrypted-agent-memory-source-teardown]]
+- [[2026-05-21-ai-saas-million-arr-lessons]]
+- [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]]
 
 ## Next Suggested Concepts
@@ -84,6 +87,8 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[agent-memory]]
 - [[managed-agents]]
 - [[ai-agent-evals]]
+- [[ai-saas-strategy]]
+- [[ai-agency-strategy]]
 - [[claude-code]]
 - [[agent-frameworks]]
 - [[agent-security]]

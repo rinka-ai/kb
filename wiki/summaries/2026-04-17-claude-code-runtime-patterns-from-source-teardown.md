@@ -5,8 +5,8 @@ title: Claude Code Runtime Patterns From A Source Teardown
 tags: [claude-code, agent-harnesses, context-engineering, permissions, subagents]
 summary: Reusable runtime-design patterns extracted from a Claude Code architecture teardown and cross-checked against adjacent Claude Code, context-engineering, and design-space sources.
 review_status: reviewed
-last_reviewed: 2026-04-27
-review_due: 2026-05-27
+last_reviewed: 2026-05-27
+review_due: 2026-06-27
 confidence: "0.84"
 ---
 
