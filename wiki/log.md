@@ -219,3 +219,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added internal-codebase source notes `[[2026-05-27-aya]]` and `[[2026-05-27-conformis]]`, explicitly excluding secrets, env files, caches, generated artifacts, and full private source dumps.
 - Added synthesis `[[2026-05-27-aya-conformis-internal-codebase-patterns]]` plus new concepts `[[codebase-architecture]]`, `[[internal-engineering-conventions]]`, and `[[repo-local-knowledge-bases]]`.
 - Updated `[[ai-interface-design]]`, `[[personal-knowledge-bases]]`, `[[research-workflows]]`, `[[home]]`, `[[internal-codebases]]`, and the master `[[index]]`.
+
+## [2026-05-27] query | KB health and search methodology audit
+- Added `[[2026-05-27-kb-health-search-methodology-audit]]` after reviewing local health, `kb_find_gaps`, search telemetry, retrieval evals, representative probe queries, remote `/health`, remote admin route availability, deployment docs, and search/indexing internals.
+- Findings: corpus health is clean, remote MCP is live/read-only, paid-growth and internal-codebase retrieval are strong, but remote telemetry is not inspectable because admin routes returned 404 and eval coverage has not caught up to the newest clusters.
+- Recommended improvements: enable protected persistent remote telemetry, add corpus/index freshness to remote health, expand retrieval evals for paid growth/compliance/internal codebase queries, add domain aliases, improve `kb_search_file`, and prefer concept/summary notes before index notes in context-pack read order.
