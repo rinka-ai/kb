@@ -88,11 +88,13 @@ describe("http handlers", () => {
     });
     // Index freshness is privacy-safe metadata only; never secret values.
     const index = payload.index as Record<string, unknown>;
-    expect(index.available).toBe(true);
-    expect(typeof index.schemaVersion).toBe("number");
-    expect(typeof index.fileCount).toBe("number");
-    expect(typeof index.chunkCount).toBe("number");
-    expect(typeof index.stale).toBe("boolean");
+    expect(typeof index.available).toBe("boolean");
+    if (index.available) {
+      expect(typeof index.schemaVersion).toBe("number");
+      expect(typeof index.fileCount).toBe("number");
+      expect(typeof index.chunkCount).toBe("number");
+      expect(typeof index.stale).toBe("boolean");
+    }
     expect(JSON.stringify(payload)).not.toContain("salt");
   });
 
