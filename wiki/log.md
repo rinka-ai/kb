@@ -201,3 +201,11 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Strengthened `[[ai-agency-strategy]]` and `[[2026-05-27-ai-aristotle-agency-build-plan]]` with current external guardrails: Lead Response Management speed-to-lead research, BrightLocal 2026 review behavior, Google review/local-ranking policies, FTC review and lead-generation guidance, and FCC TCPA/AI voice consent constraints.
 - Noted the TCPA nuance for future agency work: the stricter FCC one-to-one consent rule was vacated/deleted, but prior express written consent for telemarketing calls/texts and consent sensitivity for AI voice calls remain core constraints.
 - Ran `bun run kb:refresh`; index rebuilt with 2055 chunks from 293 markdown files and health was clean with `review_backlog=0 stale_wiki=0 uncovered_tags=0`.
+
+## [2026-05-27] lint | dangling AI interface link cleanup
+- Removed a dangling `ai-saas-strategy` related-link from `[[ai-interface-design]]`; the target concept page is not present on `main`.
+- Reproduced the failing CI lint locally and reran the repo quality gate after the cleanup.
+
+## [2026-05-27] sync | PR 52 conflict resolution
+- Merged the `main` lint history with the PR's AI agency ingest log entries.
+- Restored the `[[ai-saas-strategy]]` relationship from `[[ai-interface-design]]` because PR 52 adds that target concept page.
