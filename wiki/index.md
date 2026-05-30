@@ -127,6 +127,9 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-27-ai-agency-meta-ad-checklist]] — Tactical checklist for AI-agency Meta ads: niche call-out before the cutoff, legible AI mechanism, appointment/result framing, high-contrast creative, and substantiated proof claims.
 - [[2026-05-30-website-agency-operator-playbook]] — The Pavlo website-agency interview is useful as an operator playbook for a contractor-focused, low-ticket agency: use cold outbound to build sales skill, sell a cheap website/reputation/follow-up wedge, add upsells after trust, systematize sales and CSM delivery, and only then use AI to compress fulfillment labor.
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — Aya and Conformis show how internal repos can become reusable architecture sources when they encode product scope, package boundaries, runtime state, design rules, verification habits, and project memory as inspectable code and markdown.
+- [[2026-05-30-app-template-design-system-blueprint]] — Retrieve-before-you-build blueprint for starting a new web app or feature: default Next 16 / React 19 / React Query stack, token-first design contract, minimum component set, data-routing and interaction-state rules, accessibility/motion/density baselines, component/theme source selection, anti-patterns, agent-prompting guidance, and an authoritative resources inventory, distilled from Aya and Conformis.
+- [[2026-05-30-component-theme-source-library]] — Retrieve-before-you-build source map for improving AI-built apps with Refero style references, shadcn/ui, Radix, Tailwind Plus/Catalyst, and mature public design systems without copying brands or mixing incompatible UI vocabularies.
+- [[2026-05-30-backend-stack-patterns-blueprint]] — Retrieve-before-you-build backend blueprint for starting API apps, workers, provider integrations, webhook ingress, durable mutations, and storage/auth surfaces: default Bun/Hono/TypeScript stack, Postgres/Drizzle persistence, Redis coordination, provider adapters, outbox/idempotency decision rules, validation/security baselines, tests, and authoritative resources.
 - [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 
@@ -139,6 +142,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 - [[arxiv]] — Sub-index for `raw/articles/arxiv/` papers.
 - [[business-strategy]] — Sub-index for `raw/articles/business-strategy/` sources on AI SaaS, GTM, pricing, workflow value, and commercial moats.
 - [[claude-blog]] — Sub-index for `raw/articles/claude-blog/` posts.
+- [[design-systems]] — Sub-index for `raw/articles/design-systems/` notes covering component libraries, themes, UI references, and design-system calibration sources.
 - [[github-repos]] — Sub-index for `raw/articles/github-repos/` teardowns.
 - [[internal-codebases]] — Sub-index for local internal repository teardowns used to preserve reusable architecture, convention, structure, dependency, and project-memory patterns.
 - [[kb-system]] — Overview of the KB tooling, schema, and MCP surface.
@@ -158,7 +162,8 @@ Counts as of `2026-05-30`. Folders under `raw/articles/`.
 - `official-docs` (19)
 - `textbooks` (16)
 - `github-repos` (17)
-- `internal-codebases` (2)
+- `internal-codebases` (4)
+- `design-systems` (1)
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (8)

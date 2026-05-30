@@ -2,13 +2,13 @@
 id: concept-ai-interface-design
 type: concept
 title: AI Interface Design
-tags: [design, frontend, ai-products, product-ux, agentic-ux]
-source_count: 4
-summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, and repeated use rather than visual novelty or generic model-default aesthetics.
+tags: [design, frontend, ai-products, product-ux, agentic-ux, design-system]
+source_count: 5
+summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, and source-aware design references rather than visual novelty or generic model-default aesthetics.
 canonical_for: [ai interface design, ai product design, ai-designed UI, AI UX, frontend design with AI]
-review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-05-30
+review_due: 2026-08-30
 confidence: "0.78"
 ---
 
@@ -43,6 +43,8 @@ That question is better than "how do I make this look impressive?" because many 
 Models often converge toward safe, common frontend patterns unless given domain-specific guidance. That can produce recognizable AI defaults: generic font choices, predictable layouts, overused gradients, shallow card grids, and insufficient product depth. The opposite failure is also common: when asked to be more creative, the model may add theatrical decoration that ignores the workflow.
 
 Better AI design guidance should therefore specify the product context, interaction density, state model, and trust posture before aesthetic details. A finance workbench, research notebook, clinical review queue, developer console, and game menu should not share the same default visual language.
+
+The practical upgrade is to retrieve a source lane before building. [[2026-05-30-component-theme-source-library]] separates taste references from implementation sources: Refero Styles can give the agent concrete visual context, while shadcn/ui, Radix, Tailwind kits, and mature public design systems provide component or calibration patterns. That keeps AI away from blank defaults without encouraging brand cloning or incompatible component-system mixing.
 
 ## Trust And State
 
@@ -104,6 +106,7 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 - [[workflows]]
 - [[codebase-architecture]]
 - [[internal-engineering-conventions]]
+- [[2026-05-30-component-theme-source-library]]
 
 ## Source Notes
 
@@ -111,6 +114,7 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 - [[2026-05-25-uniswap-interface]]
 - [[2026-05-27-aya]]
 - [[2026-05-27-conformis]]
+- [[2026-05-30-refero-component-theme-source-library]]
 
 ## External Local Sources
 

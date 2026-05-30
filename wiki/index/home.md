@@ -23,6 +23,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 - [[arxiv]]
 - [[business-strategy]]
+- [[design-systems]]
 - [[github-repos]]
 - [[internal-codebases]]
 - [[official-docs]]
@@ -32,6 +33,9 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-05-30-component-theme-source-library]]
+- [[2026-05-30-app-template-design-system-blueprint]]
+- [[2026-05-30-backend-stack-patterns-blueprint]]
 - [[2026-04-10-kb-acquisition-priorities]]
 - [[2026-04-12-elevenlabs-voice-agent-architecture]]
 - [[2026-04-17-browserbase-agent-architecture-kb-upgrades]]
