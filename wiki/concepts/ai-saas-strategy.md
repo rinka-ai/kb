@@ -3,12 +3,12 @@ id: concept-ai-saas-strategy
 type: concept
 title: AI SaaS Strategy
 tags: [business-strategy, ai-saas, ai-agency, saas, product-discovery, pricing, gtm, enterprise-ai]
-source_count: 8
+source_count: 9
 summary: AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
 canonical_for: [ai saas strategy, ai startup strategy, ai saas pricing, agent-built saas, payable problems]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.72"
 ---
 
@@ -88,7 +88,7 @@ The enterprise AI sources support this indirectly: real value comes from workflo
 
 ## Productized Agency Variant
 
-The JP Middleton video adds the agency-service version of the same strategy. The recommended offer is not a standalone SaaS product; it is a productized local-business acquisition system sold and delivered repeatedly. The reusable lesson is that agencies can build a moat through vertical focus, scripts, dashboards, consent/compliance discipline, ad benchmarks, onboarding SOPs, and case-study evidence. The same warning still applies: if the agency cannot measure the buyer's actual revenue or workflow metric, premium pricing turns into sales theater.
+The JP Middleton video adds the agency-service version of the same strategy. The recommended offer is not a standalone SaaS product; it is a productized local-business acquisition system sold and delivered repeatedly. The Pavlo website-agency interview adds the lower-ticket version: a website/reputation/follow-up wedge can start as service delivery, then become more SaaS-like as the agency builds internal tooling, AI-assisted edits, templates, CSM workflows, and upsell paths. The reusable lesson is that agencies can build a moat through vertical focus, scripts, dashboards, consent/compliance discipline, ad benchmarks, onboarding SOPs, and case-study evidence. The same warning still applies: if the agency cannot measure the buyer's actual revenue or workflow metric, premium pricing turns into sales theater.
 
 ## Agent Stack Discipline
 
@@ -132,6 +132,7 @@ The sharper rule is:
 - [[2026-05-21-saas-million-arr-clairvo]]
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-04-18-how-to-build-a-1m-yr-gtm-team-with-claude-opus-4-7-user-provided-summary]]
 - [[2025-07-01-the-genai-divide-state-of-ai-in-business-2025]]
 - [[2025-10-22-deloitte-ai-roi-rising-investment-elusive-returns]]

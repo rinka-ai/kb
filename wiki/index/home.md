@@ -48,6 +48,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-05-21-ai-saas-million-arr-lessons]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[2026-05-27-ai-agency-meta-ad-checklist]]
+- [[2026-05-30-website-agency-operator-playbook]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]]
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]]

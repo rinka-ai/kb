@@ -3,12 +3,12 @@ id: review-referral-automation
 type: concept
 title: Review Referral Automation
 tags: [business-strategy, ai-agency, local-business, reviews, referrals, compliance]
-source_count: 2
+source_count: 3
 summary: "Review and referral automation turns real customer interactions into reputation, feedback, and referred leads, but it must avoid deceptive review gating, undisclosed incentives, and borrowed proof."
 canonical_for: [review referral automation, reviews and referrals, local business reviews, referral automation, reputation automation]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.66"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.66"
 
 Review and referral automation exists because local-business demand is trust-mediated. People look at reviews before contacting a provider, and referred leads often arrive warmer than cold paid traffic. The Middleton transcript frames this as a pillar of the acquisition system: ask customers for feedback, route happy customers toward public reviews, and ask satisfied customers for referrals.
 
-The enriched KB version is more cautious. The exact gating pattern in the transcript is compliance-sensitive. A durable agency workflow should ask real customers in a neutral, platform-safe way, separate feedback collection from public-review manipulation, disclose or avoid incentives where required, and keep referral rewards distinct from review requests.
+The enriched KB version is more cautious. The exact gating patterns in the Middleton and Pavlo transcripts are compliance-sensitive, especially when a funnel is described as preventing bad reviews. A durable agency workflow should ask real customers in a neutral, platform-safe way, separate feedback collection from public-review manipulation, disclose or avoid incentives where required, and keep referral rewards distinct from review requests.
 
 ## Jobs To Be Done
 
@@ -58,6 +58,7 @@ The enriched KB version is more cautious. The exact gating pattern in the transc
 ## Risks
 
 - Review gating: asking only happy customers for public reviews or discouraging unhappy customers from posting.
+- "No bad reviews" funnels: filtering public review invitations based on private sentiment can create platform and consumer-protection risk.
 - Incentive ambiguity: rewards that appear tied to positive public reviews instead of neutral feedback or referrals.
 - Privacy leakage in review replies.
 - Using fake, staff-written, or non-customer reviews.
@@ -86,6 +87,7 @@ The enriched KB version is more cautious. The exact gating pattern in the transc
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[ai-agency-strategy]]
 - [[copywriting]]

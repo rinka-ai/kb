@@ -3,12 +3,12 @@ id: speed-to-lead-and-missed-call-recovery
 type: concept
 title: Speed To Lead And Missed Call Recovery
 tags: [business-strategy, ai-agency, local-business, lead-nurturing, workflows]
-source_count: 2
+source_count: 3
 summary: "Speed-to-lead and missed-call recovery protect organic and paid demand by responding quickly, booking or rescheduling prospects, and handing edge cases to humans before lead value decays."
 canonical_for: [speed to lead, missed call text back, missed-call recovery, website lead nurturing, AI lead follow-up]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.68"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.68"
 
 Speed-to-lead is the conversion layer between demand generation and revenue. In the Middleton offer, it is paired with missed-call text-back because many local businesses lose buyers who were already interested: web forms wait too long, calls go unanswered, appointments are not confirmed, and reschedules require manual staff effort.
 
-The core principle is that paid ads should not be scaled until inbound demand can be captured. A lead that is generated cheaply but answered slowly is still expensive.
+The core principle is that paid ads should not be scaled until inbound demand can be captured. A lead that is generated cheaply but answered slowly is still expensive. The Pavlo website-agency interview reinforces this by putting missed-call text-back and website form follow-up into the base $297/month package rather than treating them as advanced add-ons.
 
 ## Operating Workflow
 
@@ -58,6 +58,7 @@ The core principle is that paid ads should not be scaled until inbound demand ca
 - Failing to update the calendar or CRM, causing double-booking and staff confusion.
 - Automating channels without a suppression list or opt-out handling.
 - Scaling ads into an untrained sales team, which moves the bottleneck instead of removing it.
+- Treating missed-call text-back as a generic marketing blast instead of a context-specific response to an inbound action.
 
 ## Evidence And Authority
 
@@ -80,6 +81,7 @@ The core principle is that paid ads should not be scaled until inbound demand ca
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[ai-agency-strategy]]
 - [[workflows]]

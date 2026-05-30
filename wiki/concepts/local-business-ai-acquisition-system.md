@@ -2,13 +2,13 @@
 id: local-business-ai-acquisition-system
 type: concept
 title: Local Business AI Acquisition System
-tags: [business-strategy, ai-agency, local-business, acquisition, workflows, paid-growth]
-source_count: 2
+tags: [business-strategy, ai-agency, local-business, acquisition, workflows, paid-growth, marketing-automation]
+source_count: 3
 summary: "A local-business AI acquisition system sequences reactivation, reputation/referrals, speed-to-lead, sales coaching, and paid ads into one measurable workflow so new demand enters a less leaky funnel."
 canonical_for: [local business AI acquisition system, AI Aristotle offer, AI agency offer pillars, full-funnel local business AI]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.65"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.65"
 
 The durable lesson from the Middleton "AI Aristotle" offer is not that every agency should copy a gym-agency script. It is that a local business usually leaks revenue across several connected places: old leads are untouched, reviews are inconsistent, inbound leads are answered too slowly, calls are missed, salespeople improvise, and ads scale the mess. The stronger offer is one sequenced acquisition workflow that fixes the leak order before adding more spend.
 
-This should be treated as a validation-backed operating model, not as audited proof. Middleton's numbers and client results are self-reported. The useful KB abstraction is the system design: one vertical, one measurable funnel, one dashboard, one set of SOPs, and one evidence trail.
+This should be treated as a validation-backed operating model, not as audited proof. Middleton's numbers and client results are self-reported, and the Pavlo website-agency interview adds more self-reported operator metrics rather than audited evidence. The useful KB abstraction is the system design: one vertical, one measurable funnel, one dashboard, one set of SOPs, and one evidence trail.
 
 ## Operating Model
 
@@ -37,12 +37,14 @@ This should be treated as a validation-backed operating model, not as audited pr
 - [[ai-agency-paid-ads-process]]: scale demand after the business can follow up, show, close, and attribute the leads being generated.
 - [[ai-agency-sales-process]]: sell the system by diagnosing the buyer's funnel economics before prescribing the offer.
 
+The Pavlo source shows a lower-friction entry offer for contractors: website, missed-call text-back, form follow-up, review requests, and Google profile help at roughly $297/month. This is not the whole acquisition system, but it can be a wedge into the same funnel if the agency later adds reactivation, paid ads, sales coaching, and stronger measurement.
+
 ## Implementation Sequence
 
 1. Pick one niche and write the buyer-economics brief: LTV, gross margin, buying trigger, staffing pattern, current ad spend, common CRM/calendar tools, and regulatory surface.
 2. Audit the current funnel numerically: lead volume, response time, missed calls, booked appointments, show rate, close rate, review volume, referral flow, revenue, and ad spend.
 3. Verify data rights before reactivation: source of lead, timestamp, consent language, channel permission, opt-out state, suppression list, and jurisdiction.
-4. Run a narrow pilot around reactivation plus speed-to-lead, because these can produce proof before heavier creative or ad spend.
+4. Choose the first wedge deliberately: either reactivation plus speed-to-lead for fast proof, or a cheap website/reputation/follow-up package if the buyer mainly needs trust and basic capture infrastructure.
 5. Add review/referral and sales-coaching loops only when the business can handle the operational follow-through.
 6. Launch paid ads with a clean landing page, booking path, follow-up path, CRM tracking, and outcome dashboard.
 7. Convert exceptions into SOP decisions: reject custom work, price it separately, or turn it into a reusable module.
@@ -90,6 +92,7 @@ This should be treated as a validation-backed operating model, not as audited pr
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[ai-agency-strategy]]
 - [[enterprise-agent-deployment-failure-modes]]

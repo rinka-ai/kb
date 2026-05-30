@@ -5,8 +5,8 @@ title: AI Aristotle Agency Build Plan
 tags: [business-strategy, ai-agency, local-business, gtm, sales, compliance]
 summary: "The Middleton video should become a validation-backed agency build plan: sell one sequenced local-business acquisition system, verify compliance and niche economics, and use the KB as the operating memory for scripts, SOPs, ads, metrics, and case studies."
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.61"
 ---
 
@@ -17,6 +17,8 @@ confidence: "0.61"
 The JP Middleton video is valuable for the agency we want to build because it describes a coherent productized offer: reactivate existing leads, improve review/referral loops, recover inbound demand quickly, coach sales calls, then scale paid ads. The KB should keep this as a working plan, but the plan only becomes real after we validate a niche, compliance path, delivery stack, and our own evidence.
 
 The core sections have now been split into durable topic pages: [[local-business-ai-acquisition-system]], [[database-reactivation]], [[review-referral-automation]], [[speed-to-lead-and-missed-call-recovery]], [[sales-coaching-gpt]], [[ai-agency-sales-process]], and [[ai-agency-paid-ads-process]].
+
+The Pavlo website-agency interview is adjacent rather than identical. It suggests a smaller wedge into the same market: contractor websites plus missed-call text-back, form follow-up, reviews, and Google profile help at about $297/month, followed by GBP/Maps, SEO, and LSA upsells. Use it as an operations and pricing case study, not as a replacement for the broader acquisition-system plan.
 
 ## What To Keep
 
@@ -77,6 +79,8 @@ The core sections have now been split into durable topic pages: [[local-business
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
+- [[2026-05-30-website-agency-operator-playbook]]
 - [[ai-agency-strategy]]
 - [[ai-saas-strategy]]
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]

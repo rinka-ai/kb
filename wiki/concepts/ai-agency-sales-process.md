@@ -3,12 +3,12 @@ id: ai-agency-sales-process
 type: concept
 title: AI Agency Sales Process
 tags: [business-strategy, ai-agency, sales, local-business, gtm]
-source_count: 2
+source_count: 3
 summary: "The AI-agency sales process is a diagnostic call flow: quantify the buyer's funnel gap, build doubt in the current approach, map offer pillars to measured problems, temperature-check buy-in, and close with clear next steps."
 canonical_for: [AI agency sales process, agency sales script, diagnostic sales call, AI Aristotle sales process, local business agency sales]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.63"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.63"
 
 Middleton's sales process is best preserved as a diagnostic sales call, not as a pressure script. The rep's job is to understand the buyer's funnel in numbers, show how the current strategy prevents the stated goal, then prescribe the acquisition system only when it fits. This makes the offer feel less like "AI automation" and more like a business-performance intervention.
 
-The video calls it a seven-step process, but the discovery stage contains several substeps. The enriched KB version makes those substeps explicit so the process can become a usable call rubric and future [[sales-coaching-gpt]] input.
+The video calls it a seven-step process, but the discovery stage contains several substeps. The enriched KB version makes those substeps explicit so the process can become a usable call rubric and future [[sales-coaching-gpt]] input. The Pavlo interview adds the earlier-stage lesson that cold calling can train founder sales judgment, but it also shows why scripts need truthfulness, compliance, and pressure limits before becoming reusable SOPs.
 
 ## Call Flow
 
@@ -61,6 +61,8 @@ The formula prevents feature-dumping. The rep should not talk about reactivation
 
 - Do not sell if the buyer lacks enough demand, margin, staff capacity, or operational trust to benefit.
 - Do not use Middleton's reported close rates, lead costs, or client results as the agency's own proof.
+- Do not use false-referral openers or invented customer relationships, even if a source claims they increased booking rates.
+- Do not teach closers to force a credit card or a hang-up as the default close; track trust, cancellation, refund, and retention quality alongside close rate.
 - Do not promise revenue, appointments, or ROI without niche-specific evidence and clear conditions.
 - Treat "I need to think about it" as a signal to clarify uncertainty, not as permission to push harder.
 - Keep a call scorecard so close rate improves through evidence rather than personality.
@@ -100,6 +102,7 @@ The formula prevents feature-dumping. The rep should not talk about reactivation
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[ai-agency-strategy]]
 - [[sales-coaching-gpt]]
