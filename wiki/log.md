@@ -278,3 +278,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-05-30-refero-component-theme-source-library]]` under `raw/articles/design-systems/`: Refero Styles as an AI-agent taste/DESIGN.md reference lane, shadcn/ui and Radix as implementation lanes, Tailwind Plus/Catalyst as license-sensitive Tailwind recipes, and Carbon/Primer/Polaris/Atlassian/GOV.UK/USWDS/Apple/Material as calibration sources.
 - Added `[[2026-05-30-component-theme-source-library]]` as the retrieve-before-you-build component/theme source map: choose one implementation lane, use Refero before prompting, map every borrowed pattern into local tokens/components, verify license before copying, and reject mixed styled systems.
 - Updated `[[2026-05-30-app-template-design-system-blueprint]]`, `[[ai-interface-design]]`, `[[design-systems]]`, `[[home]]`, and the master `[[index]]` so future app builds retrieve the source library alongside the Aya/Conformis blueprint.
+
+## [2026-05-30] query | Conformis latest cleanup-helper commit lessons
+- Inspected latest Conformis commit `2cd099c627751ce16456e98a9c176f445a0c678a` (`refactor: centralize cleanup helpers`) from `/Users/josemanuelcerqueira/Desktop/conformis`; left the unrelated `.obsidian/graph.json` working-tree change untouched.
+- Added `[[2026-05-30-conformis-cleanup-helpers-commit]]` as an internal-codebase source note covering central Postgres error classification, JSON payload conversion, Next API response helpers, audit-universe schema re-export facades, and focused smoke tests.
+- Updated `[[2026-05-30-backend-stack-patterns-blueprint]]`, `[[2026-05-27-aya-conformis-internal-codebase-patterns]]`, `[[internal-codebases]]`, and the master `[[index]]`.

@@ -4,10 +4,10 @@ type: summary
 title: Aya And Conformis Internal Codebase Patterns
 tags: [internal-codebases, codebase-architecture, conventions, monorepos, knowledge-bases, ai-products]
 summary: Aya and Conformis show how internal repos can become reusable architecture sources when they encode product scope, package boundaries, runtime state, design rules, verification habits, and project memory as inspectable code and markdown.
-source_count: 2
+source_count: 3
 canonical_for: [internal codebase patterns, Aya Conformis repo patterns, repo convention ingestion, internal engineering knowledge ingestion]
 review_status: reviewed
-last_reviewed: 2026-05-27
+last_reviewed: 2026-05-30
 review_due: 2026-06-27
 confidence: "0.84"
 ---
@@ -48,6 +48,7 @@ The durable lesson is to ingest internal repos as pattern maps, not source dumps
 - Put external providers behind adapters/gateways, then keep core/domain code expressed in product-owned types.
 - Make lifecycle states and side effects inspectable through tables, logs, events, queues, outboxes, or transaction contexts.
 - Use named domain errors instead of leaking driver or provider error codes into route handlers.
+- Promote repeated boundary cleanup into shared infra only after the behavior appears in enough places to drift; then test the helper at the wrapper/adapter shape rather than only through happy-path routes.
 - Keep frontend-safe contracts/constants free of runtime validators unless the bundle explicitly needs them.
 - Let repo instructions earn their place by naming a failure mode they prevent.
 - Preserve design systems as operational rules: tokens, state grammar, typography, copy, accessibility, screenshots, and data-routing contracts.
@@ -73,3 +74,4 @@ The durable lesson is to ingest internal repos as pattern maps, not source dumps
 
 - [[2026-05-27-aya]]
 - [[2026-05-27-conformis]]
+- [[2026-05-30-conformis-cleanup-helpers-commit]]

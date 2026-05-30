@@ -162,7 +162,7 @@ Counts as of `2026-05-30`. Folders under `raw/articles/`.
 - `official-docs` (19)
 - `textbooks` (16)
 - `github-repos` (17)
-- `internal-codebases` (4)
+- `internal-codebases` (5)
 - `design-systems` (1)
 - `enterprise-ai` (12)
 - `momo-research` (11)
