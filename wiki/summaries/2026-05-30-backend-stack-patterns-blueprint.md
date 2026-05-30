@@ -4,7 +4,7 @@ type: summary
 title: Backend Stack And Patterns Blueprint
 tags: [backend, backend-stack, api-architecture, hono, bun, postgres, drizzle, redis, queues, outbox, idempotency, security, blueprint]
 summary: "A retrieve-before-you-build backend blueprint for new apps/features: default Bun/Hono/TypeScript stack, package boundaries, API/runtime composition, persistence, queues/outbox/idempotency, provider adapters, validation, security, test support, and authoritative resources distilled from Aya and Conformis."
-source_count: 3
+source_count: 4
 canonical_for: [backend blueprint, backend stack, backend patterns, api architecture, outbox pattern, provider adapters, domain stores, idempotent mutations, Bun Hono backend default]
 review_status: reviewed
 last_reviewed: 2026-05-30
@@ -151,6 +151,10 @@ Stable error envelope:
 
 Named backend error codes should be finite and boring: `BAD_REQUEST`, `UNAUTHORIZED`, `FORBIDDEN`, `NOT_FOUND`, `CONFLICT`, `PAYLOAD_TOO_LARGE`, `UNSUPPORTED_MEDIA_TYPE`, `INTERNAL_SERVER_ERROR`, `SERVICE_UNAVAILABLE`.
 
+When a stable response envelope repeats across several Next proxy routes, centralize the envelope and small parsing helpers in a narrow server-only module. Keep the helper boring: map known app-owned API errors, emit the shared `{ error: { code, message } }` shape, and rethrow unknown errors so real defects still reach the framework/runtime error path.
+
+Schema files can also be compatibility facades. If validation ownership moves into a shared `@app/validation` package and frontend-safe wire types live in `@app/contracts`, keep route-local `schema.ts` files as re-export facades when that preserves existing handler imports without duplicating large Zod schemas.
+
 ## Persistence Patterns
 
 Use Postgres transactions when multiple local writes encode one invariant. PostgreSQL's transaction model gives the all-or-nothing, invisible-until-commit semantics that Conformis uses for audit-event + domain-state commits.
@@ -168,6 +172,8 @@ Rules:
 - Translate DB conflicts into named domain errors; handlers should not inspect raw driver codes.
 - Tenant/workspace-owned tables carry tenant/workspace keys and query helpers must scope by them every time.
 - Keep provider payloads out of canonical tables. Store provider raw payloads for replay/debugging if needed, but downstream logic reads app-owned normalized fields.
+
+For Drizzle/Postgres error handling, do not rely on a top-level `err.code`. ORMs and drivers may wrap the real Postgres error under `cause`, so a small infra helper should walk a bounded cause chain and classify only the specific database facts the app needs. Unique checks may be permissive when a driver omits constraint names; foreign-key checks should require the expected constraint name so unrelated FK failures do not become false domain errors. Test this helper with plain wrapped error objects instead of requiring a live database.
 
 ## Side Effects, Queues, And Idempotency
 
@@ -283,6 +289,7 @@ Use primary docs first:
 ## Source Notes
 
 - [[2026-05-30-aya-conformis-backend-stack-patterns]] — combined backend/source teardown this blueprint distills.
+- [[2026-05-30-conformis-cleanup-helpers-commit]] — Conformis commit showing small shared boundary helpers for Postgres errors, JSON payloads, Next API responses, and route schema facades.
 - [[2026-05-27-aya]] — Aya internal codebase source note.
 - [[2026-05-27-conformis]] — Conformis internal codebase source note.
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — broader internal-codebase architecture synthesis.

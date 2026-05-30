@@ -17,6 +17,7 @@ This index groups local internal repositories ingested as architecture and conve
 - [[2026-05-27-conformis]] — Conformis is a GRC/audit platform with a repo-local knowledge vault, domain stores/sinks, transaction-scoped audit writes, WorkOS adapter boundaries, encrypted storage, and strict test-support separation.
 - [[2026-05-30-aya-conformis-app-template-design-system]] — Combined frontend/design-system teardown of Aya and Conformis: shared Next 16 / React 19 / React Query baseline, token-first CSS-variable design systems, a minimum role-driven component set, server-seed data routing, and accessibility/motion/state rules.
 - [[2026-05-30-aya-conformis-backend-stack-patterns]] — Combined backend teardown of Aya and Conformis: Bun/Hono/TypeScript services, Postgres/Drizzle persistence, Redis coordination, explicit dependency envelopes, provider adapters, outbox/idempotency policies, boundary validation, and test-support quarantine.
+- [[2026-05-30-conformis-cleanup-helpers-commit]] — Latest Conformis commit note: central Postgres error classification, JSON payload conversion, Next API response helpers, audit-universe schema re-export facades, and focused helper tests.
 
 ## Synthesis
 
