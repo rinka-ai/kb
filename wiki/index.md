@@ -130,6 +130,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-30-app-template-design-system-blueprint]] — Retrieve-before-you-build blueprint for starting a new web app or feature: default Next 16 / React 19 / React Query stack, token-first design contract, minimum component set, data-routing and interaction-state rules, accessibility/motion/density baselines, component/theme source selection, anti-patterns, agent-prompting guidance, and an authoritative resources inventory, distilled from Aya and Conformis.
 - [[2026-05-30-component-theme-source-library]] — Retrieve-before-you-build source map for improving AI-built apps with Refero style references, shadcn/ui, Radix, Tailwind Plus/Catalyst, and mature public design systems without copying brands or mixing incompatible UI vocabularies.
 - [[2026-05-30-backend-stack-patterns-blueprint]] — Retrieve-before-you-build backend blueprint for starting API apps, workers, provider integrations, webhook ingress, durable mutations, and storage/auth surfaces: default Bun/Hono/TypeScript stack, Postgres/Drizzle persistence, Redis coordination, provider adapters, outbox/idempotency decision rules, validation/security baselines, tests, and authoritative resources.
+- [[2026-05-31-aya-conformis-latest-commit-lessons]] — Latest Aya and Conformis commits show how small product/UI fixes and larger infrastructure migrations become reusable rules: intent-scoped prefetch, no raw IDs in operator UI, normalized product facts, narrow proxy matchers, tested i18n wiring, and executable React quality gates.
 - [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 
@@ -154,7 +155,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-30`. Folders under `raw/articles/`.
+Counts as of `2026-05-31`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
 - `arxiv` (30)
@@ -162,7 +163,7 @@ Counts as of `2026-05-30`. Folders under `raw/articles/`.
 - `official-docs` (19)
 - `textbooks` (16)
 - `github-repos` (17)
-- `internal-codebases` (5)
+- `internal-codebases` (6)
 - `design-systems` (1)
 - `enterprise-ai` (12)
 - `momo-research` (11)
