@@ -283,3 +283,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Inspected latest Conformis commit `2cd099c627751ce16456e98a9c176f445a0c678a` (`refactor: centralize cleanup helpers`) from `/Users/josemanuelcerqueira/Desktop/conformis`; left the unrelated `.obsidian/graph.json` working-tree change untouched.
 - Added `[[2026-05-30-conformis-cleanup-helpers-commit]]` as an internal-codebase source note covering central Postgres error classification, JSON payload conversion, Next API response helpers, audit-universe schema re-export facades, and focused smoke tests.
 - Updated `[[2026-05-30-backend-stack-patterns-blueprint]]`, `[[2026-05-27-aya-conformis-internal-codebase-patterns]]`, `[[internal-codebases]]`, and the master `[[index]]`.
+
+## [2026-05-31] query | Aya and Conformis latest commit lessons
+- Inspected latest committed history in `/Users/josemanuelcerqueira/Desktop/aya` and `/Users/josemanuelcerqueira/Desktop/conformis`; treated Aya's large staged/uncommitted verticalization work and Conformis' `.obsidian/graph.json` change as separate local state.
+- Added `[[2026-05-31-aya-conformis-latest-commits]]` as an internal-codebase source note covering Aya row prefetch, no raw IDs in operator UI, persisted caller intent, Conformis next-intl migration, proxy matcher hardening, and React Doctor gate enforcement.
+- Added `[[2026-05-31-aya-conformis-latest-commit-lessons]]` as the durable synthesis and updated `[[2026-05-27-aya-conformis-internal-codebase-patterns]]`, `[[internal-codebases]]`, and the master `[[index]]`.

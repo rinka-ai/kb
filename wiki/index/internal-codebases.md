@@ -18,12 +18,14 @@ This index groups local internal repositories ingested as architecture and conve
 - [[2026-05-30-aya-conformis-app-template-design-system]] — Combined frontend/design-system teardown of Aya and Conformis: shared Next 16 / React 19 / React Query baseline, token-first CSS-variable design systems, a minimum role-driven component set, server-seed data routing, and accessibility/motion/state rules.
 - [[2026-05-30-aya-conformis-backend-stack-patterns]] — Combined backend teardown of Aya and Conformis: Bun/Hono/TypeScript services, Postgres/Drizzle persistence, Redis coordination, explicit dependency envelopes, provider adapters, outbox/idempotency policies, boundary validation, and test-support quarantine.
 - [[2026-05-30-conformis-cleanup-helpers-commit]] — Latest Conformis commit note: central Postgres error classification, JSON payload conversion, Next API response helpers, audit-universe schema re-export facades, and focused helper tests.
+- [[2026-05-31-aya-conformis-latest-commits]] — Latest Aya and Conformis commit inspection: intent-scoped row prefetch, no raw IDs in operator UI, persisted caller intent, next-intl migration shape, proxy matcher hardening, and React Doctor gate enforcement.
 
 ## Synthesis
 
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — Cross-repo synthesis of the reusable patterns from Aya and Conformis.
 - [[2026-05-30-app-template-design-system-blueprint]] — Retrieve-before-you-build blueprint for starting a new app/feature: default stack, token contract, component minimum set, data-routing and state rules, anti-patterns, agent-prompting guidance, and authoritative references.
 - [[2026-05-30-backend-stack-patterns-blueprint]] — Retrieve-before-you-build backend blueprint for starting API apps, workers, provider integrations, webhook ingress, durable mutations, side-effect policies, persistence boundaries, security baselines, and tests.
+- [[2026-05-31-aya-conformis-latest-commit-lessons]] — Fresh cross-repo lessons from the latest Aya and Conformis commits: polish operator cognition, normalize product facts, migrate framework infrastructure behind tests, and make quality gates executable.
 
 ## Related
 
