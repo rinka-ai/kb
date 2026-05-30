@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-05-27
+last_reviewed: 2026-05-30
 ---
 
 # Wiki Index
@@ -125,6 +125,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]] — Uniswap/interface shows how a production UI/UX codebase compounds quality through shared design primitives, cross-platform product flows, typed transaction state, telemetry, feature gates, localization, and layered testing.
 - [[2026-05-27-ai-aristotle-agency-build-plan]] — The Middleton video should become a validation-backed agency build plan: sell one sequenced local-business acquisition system, verify compliance and niche economics, and use the KB as the operating memory for scripts, SOPs, ads, metrics, and case studies.
 - [[2026-05-27-ai-agency-meta-ad-checklist]] — Tactical checklist for AI-agency Meta ads: niche call-out before the cutoff, legible AI mechanism, appointment/result framing, high-contrast creative, and substantiated proof claims.
+- [[2026-05-30-website-agency-operator-playbook]] — The Pavlo website-agency interview is useful as an operator playbook for a contractor-focused, low-ticket agency: use cold outbound to build sales skill, sell a cheap website/reputation/follow-up wedge, add upsells after trust, systematize sales and CSM delivery, and only then use AI to compress fulfillment labor.
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — Aya and Conformis show how internal repos can become reusable architecture sources when they encode product scope, package boundaries, runtime state, design rules, verification habits, and project memory as inspectable code and markdown.
 - [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
@@ -149,7 +150,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-27`. Folders under `raw/articles/`.
+Counts as of `2026-05-30`. Folders under `raw/articles/`.
 
 - `anthropic-engineering` (22)
 - `arxiv` (30)
@@ -162,7 +163,7 @@ Counts as of `2026-05-27`. Folders under `raw/articles/`.
 - `momo-research` (11)
 - `claude-blog` (8)
 - `user-provided` (7)
-- `business-strategy` (3)
+- `business-strategy` (4)
 - `paid-growth` (25)
 - `browserbase-docs` (3)
 - `langchain-blog` (2)

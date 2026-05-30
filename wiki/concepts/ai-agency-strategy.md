@@ -3,12 +3,12 @@ id: concept-ai-agency-strategy
 type: concept
 title: AI Agency Strategy
 tags: [business-strategy, ai-agency, productized-services, local-business, gtm, sales, paid-ads, compliance]
-source_count: 8
+source_count: 9
 summary: AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 canonical_for: [ai agency strategy, ai automation agency, productized ai agency, local business ai agency]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.62"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.62"
 
 The strongest AI agency pattern in the current KB is not "sell AI automations." It is to pick one reachable buyer type with a costly workflow bottleneck, sell one repeatable operating system, measure the business outcome, and keep the delivery motion boring enough to delegate. For a local-business agency, that means packaging acquisition, response, reputation, referral, and sales-process improvement as one [[local-business-ai-acquisition-system]] instead of selling disconnected bots.
 
-This page is intentionally evidence-cautious. The JP Middleton video is useful as an operator playbook, but its revenue, close-rate, lead-cost, and client-result claims are self-reported. The KB should use the pattern as a hypothesis to validate, not as proof.
+This page is intentionally evidence-cautious. The JP Middleton and Pavlo videos are useful as operator playbooks, but their revenue, close-rate, lead-cost, margin, and client-result claims are self-reported. The KB should use the patterns as hypotheses to validate, not as proof.
 
 ## Operating Thesis
 
@@ -26,6 +26,7 @@ This page is intentionally evidence-cautious. The JP Middleton video is useful a
 - Sell a business metric rather than an AI feature: booked appointments, showed appointments, close rate, customer acquisition cost, revenue collected, reviews earned, referrals generated, or staff hours saved.
 - Prefer repeatable delivery over custom consulting. Every client should make the SOP, prompts, integrations, dashboards, and objections sharper for the next client.
 - Sequence the offer so the buyer gets working capital and trust first: reactivate existing assets, improve reputation and referrals, improve speed-to-lead, tighten sales process, then scale paid ads.
+- Use a cheap wedge when trust is low. A website/reputation/follow-up package around the $300/month range can be easier to sell than an expensive ads retainer, then upsells can raise ARPA after the client has seen competent delivery.
 - Keep evidence local to the niche. A gym case study may inspire the model, but a dentist, med spa, HVAC contractor, or generator installer needs its own economics and compliance map.
 
 ## Offer Architecture
@@ -40,6 +41,8 @@ The Middleton source's "AI Aristotle" offer is best abstracted as a full-funnel 
 
 The strategic difference from a normal agency is not any one component. It is that each component makes the next one more valuable: reactivation funds ads, reviews improve trust, response speed preserves lead value, sales coaching lifts conversion, and paid ads scale a less leaky system.
 
+The Pavlo website-agency source adds a smaller starting package: sell contractors a low-ticket website plus missed-call text-back, form follow-up, reviews, and Google profile help, then upsell GBP/Maps cleanup, SEO, and Local Services Ads. This is less complete than the Middleton acquisition system, but it may be a more realistic first wedge for an unproven agency if compliance and delivery quality are handled.
+
 ## KB As Agency OS
 
 If we build this agency, the KB should become the operating memory:
@@ -52,6 +55,7 @@ If we build this agency, the KB should become the operating memory:
 - metric definitions and dashboard schemas so every client reports the same way
 - ad libraries with spend, lead quality, appointment rate, show rate, close rate, and refund/churn outcomes
 - objection libraries and call-score rubrics tied to actual recordings or transcripts
+- role scorecards and training paths for setters, closers, CSMs, and technical delivery so founder behavior becomes a reproducible system
 - case-study evidence packs that separate observed client results from extrapolated sales claims
 - postmortems for failed niches, weak offers, policy issues, bad-fit clients, and brittle automations
 
@@ -70,6 +74,8 @@ If we build this agency, the KB should become the operating memory:
 - Review systems can become deceptive if they only route happy customers to public reviews, suppress negative feedback, or hide incentives.
 - Automated marketing texts and calls can trigger TCPA, platform, carrier, consent, and opt-out requirements.
 - "Former lead" does not automatically mean "permission to text."
+- Deceptive outbound openers can create trust, legal, and brand risk even if they improve booking rates in the short term.
+- Pressure-close tactics can create cancellations, chargebacks, bad-fit customers, and poor evidence for the offer.
 - Ad claims need substantiation. Self-reported numbers from another agency should not become our promise.
 - A lead booked by AI still needs human fallback, cancellation handling, edge-case routing, and CRM hygiene.
 - A productized offer can drift back into custom services unless every exception is either rejected, priced, or converted into a reusable SOP.
@@ -113,6 +119,7 @@ If we build this agency, the KB should become the operating memory:
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-21-saas-million-arr-clairvo]]
 - [[2026-04-18-how-to-build-a-1m-yr-gtm-team-with-claude-opus-4-7-user-provided-summary]]
 - [[2026-04-18-can-spam-act-compliance-guide-for-business]]

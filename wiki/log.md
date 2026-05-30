@@ -255,3 +255,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 ## [2026-05-27] lint | AI agency topic health cleanup
 - Corrected `source_count` metadata on the seven extracted AI-agency concept pages so counts match linked source notes rather than external web references.
 - Updated the TCPA/compliance search eval to treat the new dedicated `[[database-reactivation]]` and `[[speed-to-lead-and-missed-call-recovery]]` pages as preferred retrieval targets.
+
+## [2026-05-30] ingest | Pavlo website agency operator transcript
+- Added `[[2026-05-29-how-he-makes-500k-mo-selling-websites]]` from the user-provided YouTube transcript, preserving the source text and adding a video-time index for package, pricing, margin, team, acquisition, upsell, and AI-fulfillment sections.
+- Added `[[2026-05-30-website-agency-operator-playbook]]` as the durable synthesis: low-ticket contractor website wedge, cold outbound as sales skill acquisition, post-sale upsells, sales/CSM systems, and AI-assisted fulfillment after manual process learning.
+- Updated `[[ai-agency-strategy]]`, `[[local-business-ai-acquisition-system]]`, `[[review-referral-automation]]`, `[[speed-to-lead-and-missed-call-recovery]]`, `[[ai-agency-sales-process]]`, `[[ai-agency-paid-ads-process]]`, `[[ai-saas-strategy]]`, `[[2026-05-27-ai-aristotle-agency-build-plan]]`, `[[business-strategy]]`, `[[home]]`, and the master `[[index]]`.
+- Noted cautions: margin/client/ad-spend claims are self-reported; the false-referral cold-call opener, pressure closing, cold SMS, and review-gating-style funnel should not become approved scripts without compliance-safe redesign.

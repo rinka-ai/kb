@@ -3,12 +3,12 @@ id: ai-agency-paid-ads-process
 type: concept
 title: AI Agency Paid Ads Process
 tags: [business-strategy, ai-agency, paid-growth, meta-ads, copywriting, marketing-measurement]
-source_count: 8
+source_count: 9
 summary: "The AI-agency paid-ads process uses simple lead-generation campaign structure, sharp niche-specific creative, landing-page and booking follow-up, and CRM-backed measurement rather than treating cheap leads as proof."
 canonical_for: [AI agency paid ads process, AI agency ads, agency client acquisition ads, local business AI agency Meta ads]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-30
+review_due: 2026-06-30
 confidence: "0.67"
 ---
 
@@ -19,6 +19,8 @@ confidence: "0.67"
 Middleton describes paid ads in two connected ways. First, client businesses should receive ads only after the funnel can respond, show, and close the demand. Second, the agency itself can use paid ads to generate inbound local-business-owner calls instead of relying only on personal brand content or cold outreach.
 
 The durable process is not "turn on ads and get cheap leads." It is a full path: niche-specific offer, policy-safe creative, simple campaign structure, landing-page match, calendar booking, AI follow-up, diagnostic sales call, onboarding, and revenue attribution.
+
+The Pavlo website-agency interview adds a self-reported scale benchmark: about $150k/month in ad spend to support a seven-closer, three-setter sales motion at roughly $500k/month revenue and about 40% margin. Treat this as an operator claim to compare against, not as a target or proof that paid ads will work for the same offer.
 
 ## Where Ads Fit
 
@@ -107,6 +109,7 @@ Every variant needs the same offer, same conversion path, and same outcome track
 ## Source Notes
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
+- [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-agency-meta-ad-checklist]]
 - [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
 - [[2026-05-27-effective-meta-ads-ai-agency-framework]]
