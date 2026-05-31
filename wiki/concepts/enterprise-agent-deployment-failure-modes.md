@@ -3,12 +3,12 @@ id: concept-enterprise-agent-deployment-failure-modes
 type: concept
 title: Enterprise Agent Deployment Failure Modes
 tags: [enterprise-ai, agents, ai-adoption, workflows, orchestration, governance, ai-ops, sales]
-source_count: 16
+source_count: 18
 summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-05-31
+review_due: 2026-06-30
 confidence: "0.78"
 ---
 
@@ -19,6 +19,8 @@ confidence: "0.78"
 The current evidence points to a stable pattern: enterprise AI is not blocked mainly by raw model intelligence. It is blocked by workflow fit, data and integration substrate, governance, and operating ownership. Broad AI use can produce individual task gains while failing to produce enterprise-level ROI when the real work remains unbounded, undocumented, fragmented across systems, and hard to verify.
 
 The practical response is to make non-engineering workflows more like the parts of software engineering where AI already works: bounded artifacts, explicit state, deterministic checks, replayable execution, human review, and measured feedback loops. For AI SaaS vendors, the same pattern becomes a market-selection rule: sell into costly workflows where an improvement can be measured, deployed, and priced against actual economic value.
+
+Anthropic's zero-trust agent-security guide adds a hard constraint to this operating model: enterprise agent deployment fails when the shared platform has no cryptographic agent identity, no least-agency policy, no memory integrity model, no sandbox boundary, and no detection-speed metrics. Governance is not just an approval committee; it is the control plane that makes agent actions attributable, revocable, contained, and recoverable.
 
 ## Core Pattern
 
@@ -54,7 +56,7 @@ Design response:
 
 ### Agent Sprawl
 
-Many employees can now build personal agents or departmental automations. That creates value locally but can become a control-plane problem: duplicated prompts, duplicated ingestion, unowned API keys, inconsistent approvals, no shared audit logs, and many brittle workflows that engineering later has to support. This is an inferred pattern from MIT NANDA's shadow AI, IBM's disconnected technology finding, and Google's framing that enterprises now need to manage many agents.
+Many employees can now build personal agents or departmental automations. That creates value locally but can become a control-plane problem: duplicated prompts, duplicated ingestion, unowned API keys, inconsistent approvals, no shared audit logs, and many brittle workflows that engineering later has to support. Osmani's orchestration-tax framing adds a smaller-scale version of the same failure: when agent output grows faster than human review capacity, teams either accumulate queues or quietly lower review standards. This is an inferred pattern from MIT NANDA's shadow AI, IBM's disconnected technology finding, Google's framing that enterprises now need to manage many agents, and Osmani's coding-agent bottleneck model.
 
 Design response:
 
@@ -62,6 +64,20 @@ Design response:
 - let teams configure use cases on top of the shared layer instead of creating isolated mini-platforms
 - make ownership, on-call responsibility, data access, and retirement criteria explicit for every agent
 - track agent inventory the same way production services and data integrations are tracked
+- cap concurrent agent work to the review and approval capacity available, especially for code, data changes, customer messaging, and regulated side effects
+- assign cryptographic identities, scoped credentials, and ownership metadata to agents so sprawl remains auditable rather than becoming anonymous automation
+
+### Security Control-Plane Gap
+
+Agents can reach APIs, databases, tools, files, memory, and other agents. If those surfaces inherit human-era credentials and ad hoc policies, the deployment can be productive while quietly accumulating unacceptable blast radius.
+
+Design response:
+
+- treat static API keys and shared service accounts as known gaps, not acceptable baselines
+- enforce least agency at the tool and resource level
+- put tool allowlists, MCP server approval, sandboxing, and memory-retention policy into platform controls
+- track dwell time, alert coverage, behavioral conformance, and detection speed as operating metrics
+- predefine emergency change and containment procedures before incidents happen
 
 ### One-Off Project Mentality
 
@@ -135,6 +151,8 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - Salesforce: sales productivity is constrained by long-standing admin and workflow friction, which explains why naive AI assistants may not move the whole metric.
 - Clairvo transcript: founder/operator testimony that AI SaaS opportunities should be selected by payable workflow pain, measurable metric lift, live deployment data, and implementation or regulatory moats rather than buildability alone.
 - Middleton AI agency video: self-reported operator playbook arguing that a local-business AI agency should sell one sequenced acquisition workflow, but the claims need compliance checks and niche-specific validation before being treated as proof.
+- Osmani orchestration-tax post: practitioner framing that parallel coding agents can create cognitive and technical debt when human review and architectural judgment remain a serial bottleneck.
+- Anthropic zero-trust agent guide: official Claude Security framework arguing that enterprise agents need cryptographic identity, short-lived credentials, least agency, protected memory, and AI-speed defensive operations.
 
 ## Tensions
 
@@ -180,3 +198,5 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - [[2026-05-21-saas-million-arr-clairvo]]
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2026-05-24-the-orchestration-tax]]
+- [[2026-05-27-zero-trust-for-ai-agents]]

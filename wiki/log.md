@@ -288,3 +288,20 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Inspected latest committed history in `/Users/josemanuelcerqueira/Desktop/aya` and `/Users/josemanuelcerqueira/Desktop/conformis`; treated Aya's large staged/uncommitted verticalization work and Conformis' `.obsidian/graph.json` change as separate local state.
 - Added `[[2026-05-31-aya-conformis-latest-commits]]` as an internal-codebase source note covering Aya row prefetch, no raw IDs in operator UI, persisted caller intent, Conformis next-intl migration, proxy matcher hardening, and React Doctor gate enforcement.
 - Added `[[2026-05-31-aya-conformis-latest-commit-lessons]]` as the durable synthesis and updated `[[2026-05-27-aya-conformis-internal-codebase-patterns]]`, `[[internal-codebases]]`, and the master `[[index]]`.
+
+## [2026-05-31] ingest | Addy Osmani orchestration tax
+- Added `[[2026-05-24-the-orchestration-tax]]` under the new `addy-osmani` collection, preserving the canonical AddyOsmani.com source URL and article text.
+- Updated `[[multi-agent-systems]]`, `[[workflows]]`, `[[llm-agents]]`, and `[[enterprise-agent-deployment-failure-modes]]` with the human-review bottleneck, Amdahl's Law, backpressure, batching, and cognitive-surrender lessons.
+- Added `[[addy-osmani]]` as a collection sub-index and updated `[[home]]` plus the master `[[index]]`.
+
+## [2026-05-31] ingest | pmarca AI custom prompt
+- Added `[[2026-05-04-pmarca-ai-custom-prompt]]` under `raw/articles/user-provided/`, preserving the user-provided prompt text and noting X fetch limitations.
+- Added `[[ai-instruction-design]]` as the reusable concept for always-on assistant instruction design: truth over approval, evidence policy, uncertainty, direct disagreement, and context discipline.
+- Added `[[2026-05-31-ai-custom-instruction-profile]]` as the portable distilled profile for reuse across ChatGPT, coding agents, repo instructions, and skills.
+- Updated `[[context-engineering]]`, `[[internal-engineering-conventions]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+
+## [2026-05-31] ingest | Claude zero trust for AI agents ebook
+- Added `[[2026-05-27-zero-trust-for-ai-agents]]` under `raw/articles/claude-blog/`, preserving the extracted PDF source text and linking the Claude blog landing page.
+- Added `[[2026-05-31-zero-trust-ai-agents-kb-upgrades]]` as the reusable synthesis for cryptographic agent identity, least agency, MCP/tool authorization, memory integrity, sandboxing, and agentic SOAR.
+- Updated `[[agent-security]]`, `[[agent-tools]]`, `[[agent-protocols]]`, `[[agent-memory]]`, `[[ai-validation-and-assurance]]`, and `[[enterprise-agent-deployment-failure-modes]]`.
+- Updated `[[claude-blog]]`, `[[home]]`, and the master `[[index]]`.

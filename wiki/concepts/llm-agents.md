@@ -3,12 +3,12 @@ id: concept-llm-agents
 type: concept
 title: LLM Agents
 tags: [agents, llms, tool-use, multi-agent, parallel-agents, web-agents, browser, computer-use]
-source_count: 21
+source_count: 22
 summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 canonical_for: [llm agents, tool-using agents, autonomous model agents]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-05-31
+review_due: 2026-06-30
 confidence: "0.88"
 ---
 
@@ -29,6 +29,8 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - how runs, threads, sessions, and approvals are represented
 - how tool protocols and action schemas shape interoperability
 - how durable the execution model is under pauses, failures, and retries
+- where human review, merge authority, and architectural judgment sit as bottlenecks inside the loop
+- how much routine correctness agents can prove before consuming scarce human attention
 - how evaluation environments differ from deployment environments
 - how well the agent can explore, recover from failure, and ground actions in realistic interfaces
 - whether experience is learned in model weights, active context, or external harness artifacts
@@ -58,3 +60,4 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - [[2026-04-28-agentic-harness-engineering-observability-driven-automatic-evolution-of-coding-agent-harnesses]]
 - [[2026-04-23-recursive-language-models]]
 - [[2026-05-20-hermes-agent]]
+- [[2026-05-24-the-orchestration-tax]]

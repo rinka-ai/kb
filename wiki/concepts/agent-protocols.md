@@ -3,8 +3,8 @@ id: concept-agent-protocols
 type: concept
 title: Agent Protocols
 tags: [agents, protocols, tool-use, mcp, tools]
-source_count: 15
-summary: Agent protocols define the typed interaction layer around tools, approvals, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
+source_count: 16
+summary: Agent protocols define the typed interaction layer around tools, approvals, identity, authorization, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
 canonical_for: [mcp, model context protocol, agent protocol]
 review_status: reviewed
 last_reviewed: 2026-05-20
@@ -16,11 +16,13 @@ confidence: "0.85"
 
 ## Summary
 
-Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, agent messages, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps. Goose adds practical evidence that these surfaces include not only tool schemas but also request identifiers, replayable event streams, extension metadata, and explicit inspection stages before execution. Recent work also sharpens a second distinction: invocation-centric protocols explain how agents call tools or communicate, while mutation-governance protocols additionally define how prompts, tools, memory, and other runtime resources can be versioned, updated, evaluated, and rolled back safely. AHE makes that mutation-governance idea concrete for coding agents through change manifests that bind each component edit to evidence, predictions, attribution, and rollback. The LIFE survey adds the coordination angle: inter-agent protocols also shape what can later be attributed, because message identity, topology, and handoff semantics determine whether failures are debuggable. Hermes adds protocol breadth from an implementation: MCP dynamic tool discovery, ACP editor sessions and approvals, gateway message normalization, plugin APIs, and normalized trajectories all function as protocol surfaces around one agent runtime. MemWal adds the memory-protocol case: MCP login, local credential files, relayer bridging, namespace defaults, and restore tools define how memory portability actually works across clients.
+Agent protocols are the governance and interface layer around agent action. They define what can be called, under what conditions, with what approval semantics, and how execution state should be represented across runs, threads, tools, agent messages, and long-term stores. The stronger source set here makes a useful distinction explicit: skills say how to approach work, while protocols define the interaction structure, typed surfaces, and non-negotiable boundaries that must survive composition and runtime swaps. Goose adds practical evidence that these surfaces include not only tool schemas but also request identifiers, replayable event streams, extension metadata, and explicit inspection stages before execution. Recent work also sharpens a second distinction: invocation-centric protocols explain how agents call tools or communicate, while mutation-governance protocols additionally define how prompts, tools, memory, and other runtime resources can be versioned, updated, evaluated, and rolled back safely. AHE makes that mutation-governance idea concrete for coding agents through change manifests that bind each component edit to evidence, predictions, attribution, and rollback. The LIFE survey adds the coordination angle: inter-agent protocols also shape what can later be attributed, because message identity, topology, and handoff semantics determine whether failures are debuggable. Hermes adds protocol breadth from an implementation: MCP dynamic tool discovery, ACP editor sessions and approvals, gateway message normalization, plugin APIs, and normalized trajectories all function as protocol surfaces around one agent runtime. MemWal adds the memory-protocol case: MCP login, local credential files, relayer bridging, namespace defaults, and restore tools define how memory portability actually works across clients. Anthropic's zero-trust framing adds that protocols such as MCP must carry identity, authorization, and audit semantics; invocation syntax without authenticated caller identity and scoped tool authority becomes a capability leak.
 
 ## Core Surfaces
 
 - tool schemas with typed arguments, preconditions, side effects, and blocked targets
+- cryptographic caller identity and per-agent authentication for tool and service access
+- authorization attributes such as user-on-behalf-of, risk score, resource sensitivity, time, and requested action
 - permission tiers for always-allowed, approval-required, and never-allowed actions
 - delegation rules for when work can be handed to other agents or runtimes
 - inter-agent communication contracts with message identity, sender/receiver roles, and handoff semantics
@@ -52,6 +54,8 @@ Agent protocols are the governance and interface layer around agent action. They
 - stack multiple pre-execution inspectors when needed so security, egress, repetition, and approvals do not collapse into one boolean check
 - log protocol decisions so memory can learn which paths fail, stall, or require escalation
 - keep dynamic tool-discovery protocols paired with filtering, naming, and authorization rules so discovery does not become ambient authority
+- treat MCP server descriptors, schemas, and metadata as supply-chain and prompt-injection surfaces, not neutral documentation
+- log every protocol-level authorization and approval decision with enough identity context to reconstruct incidents
 - avoid treating local logout as permission revocation when the protocol also has an onchain or server-side delegate registry
 
 ## Tensions
@@ -63,6 +67,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - connectivity-first protocols vs mutation-governance protocols
 - lightweight communication vs trace detail needed for failure attribution
 - intended fixes vs unseen regressions when multiple resources mutate together
+- protocol portability vs provider-specific identity, token, and policy systems
 
 ## Source Notes
 
@@ -81,3 +86,4 @@ Agent protocols are the governance and interface layer around agent action. They
 - [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
 - [[2026-05-20-hermes-agent]]
 - [[2026-05-20-memwal]]
+- [[2026-05-27-zero-trust-for-ai-agents]]
