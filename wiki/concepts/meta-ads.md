@@ -3,11 +3,11 @@ id: meta-ads
 type: concept
 title: Meta Ads
 tags: [paid-growth, meta-ads, facebook-ads, instagram-ads, reels, creator-ads]
-source_count: 10
+source_count: 11
 summary: Meta Ads performance now depends on simplified structures, automation, diversified creative, creator/UGC supply, first-party conversion signals, policy-safe claims, and validation beyond dashboard ROAS.
 canonical_for: [meta ads, facebook ads, instagram ads, reels ads, meta paid social]
 review_status: draft
-last_reviewed: 2026-05-27
+last_reviewed: 2026-05-31
 review_due: 2026-06-27
 confidence: "0.83"
 ---
@@ -42,6 +42,8 @@ Useful creative inputs:
 - static assets that can be adapted across placements
 - concise primary text and headlines with multiple variations
 - landing pages that match the exact promise
+
+When a once-winning ad declines, diagnose the creative layer before replacing everything. A practitioner model separates the angle, execution, and avatar: falling CTR with still-healthy engagement suggests execution fatigue; falling CTR and engagement suggests angle saturation; stable CTR with weaker conversion quality suggests avatar drift or qualification problems. This should be treated as a testing heuristic, not platform truth.
 
 For AI-agency offers aimed at local businesses, the user-provided ad checklists add a useful static-ad pattern: name the target market before the "See More" cutoff, make the AI mechanism legible, sell the appointment or follow-up outcome, and use headline/description fields to reinforce niche fit and proof. Treat this as a format, not permission to overclaim: "ChatGPT," "ROI," booked appointments, urgency, and success stories all need to be true, substantiated, and landing-page matched.
 
@@ -121,3 +123,4 @@ Common creative risks:
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
 - [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
 - [[2026-05-27-effective-meta-ads-ai-agency-framework]]
+- [[2026-05-31-zackpaid-meta-ads-creative-fatigue-framework]]
