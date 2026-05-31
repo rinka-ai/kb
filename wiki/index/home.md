@@ -21,6 +21,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Source Collections
 
+- [[addy-osmani]]
 - [[arxiv]]
 - [[business-strategy]]
 - [[design-systems]]
@@ -29,10 +30,13 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[official-docs]]
 - [[paid-growth-sources]]
 - [[textbooks]]
+- [[user-provided]]
 - [[voice-ai-sources]]
 
 ## Recent Summaries
 
+- [[2026-05-31-zero-trust-ai-agents-kb-upgrades]]
+- [[2026-05-31-ai-custom-instruction-profile]]
 - [[2026-05-30-component-theme-source-library]]
 - [[2026-05-30-app-template-design-system-blueprint]]
 - [[2026-05-30-backend-stack-patterns-blueprint]]
@@ -94,6 +98,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[llm-agents]]
 - [[obsidian]]
 - [[context-engineering]]
+- [[ai-instruction-design]]
 - [[agent-memory]]
 - [[managed-agents]]
 - [[ai-agent-evals]]
@@ -113,9 +118,9 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[claude-code]]
 - [[agent-frameworks]]
 - [[agent-security]]
+- [[agent-tools]]
 - [[agent-wallet-infrastructure]]
 - [[multi-agent-systems]]
-- [[agent-tools]]
 - [[embeddings]]
 - [[payment-integrations]]
 - [[workflows]]

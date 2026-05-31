@@ -3,8 +3,8 @@ id: concept-ai-validation-and-assurance
 type: concept
 title: AI Validation and Assurance
 tags: [validation, assurance, evals, safety, robustness]
-source_count: 5
-summary: AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, and safety cases.
+source_count: 6
+summary: AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
 canonical_for: [AI validation, AI assurance, falsification, system validation, safety cases]
 review_status: reviewed
 last_reviewed: 2026-05-18
@@ -16,7 +16,7 @@ confidence: "0.81"
 
 ## Summary
 
-AI validation and assurance is the more rigorous sibling of benchmark evaluation. It asks what properties a system should satisfy, how those properties can be specified, how failures can be searched for, and what evidence is needed before deployment. This helps the KB avoid treating [[ai-agent-evals]] as only scoreboards and model graders.
+AI validation and assurance is the more rigorous sibling of benchmark evaluation. It asks what properties a system should satisfy, how those properties can be specified, how failures can be searched for, what evidence is needed before deployment, and what operational signals prove the system remains controlled after launch. This helps the KB avoid treating [[ai-agent-evals]] as only scoreboards and model graders.
 
 ## Core Ideas
 
@@ -26,6 +26,8 @@ AI validation and assurance is the more rigorous sibling of benchmark evaluation
 - Fuzzing and falsification search for counterexamples.
 - Optimization can be used to find failures, not only to train models.
 - Safety evidence should combine modeling, tests, robustness analysis, monitoring, and operational constraints.
+- For deployed agents, assurance also needs detection metrics such as dwell time, alert coverage, behavioral conformance, and detection speed.
+- The "impossible vs. tedious" test is a useful security-assurance heuristic: controls that only add friction degrade against AI-assisted attackers, while capability-removing controls create stronger evidence.
 
 ## KB Payoff
 
@@ -44,6 +46,7 @@ AI validation and assurance is the more rigorous sibling of benchmark evaluation
 - [[2026-05-18-machine-learning-systems-vol2]]
 - [[2026-05-18-fairness-and-machine-learning]]
 - [[2026-05-18-algorithms-for-decision-making]]
+- [[2026-05-27-zero-trust-for-ai-agents]]
 
 ## Related
 

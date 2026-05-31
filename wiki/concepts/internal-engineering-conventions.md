@@ -3,7 +3,7 @@ id: concept-internal-engineering-conventions
 type: concept
 title: Internal Engineering Conventions
 tags: [engineering-conventions, agent-instructions, coding-agents, monorepos, tests]
-source_count: 3
+source_count: 4
 summary: Internal engineering conventions turn tacit team practice into reusable constraints for agents and humans, especially around scope, imports, validation, naming, tests, side effects, UI discipline, and knowledge updates.
 canonical_for: [internal engineering conventions, repo conventions, coding conventions, agent coding rules]
 review_status: reviewed
@@ -43,6 +43,7 @@ Good rules usually include:
 - the failure mode being prevented
 - the verification command or review check
 - whether the rule is absolute or only a default
+- whether the rule belongs in always-on behavior instructions, repo-local guidance, a skill, or deterministic tooling
 
 ## Convention Drift Signals
 
@@ -57,6 +58,7 @@ Good rules usually include:
 
 - [[codebase-architecture]]
 - [[repo-local-knowledge-bases]]
+- [[ai-instruction-design]]
 - [[claude-code]]
 - [[context-engineering]]
 - [[ai-interface-design]]
@@ -66,4 +68,5 @@ Good rules usually include:
 - [[2026-05-27-aya]]
 - [[2026-05-27-conformis]]
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
+- [[2026-05-04-pmarca-ai-custom-prompt]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]

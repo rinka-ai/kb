@@ -8,12 +8,12 @@ title: Claude Blog
 
 ## Overview
 
-Selected current posts from the Claude blog that are worth keeping in this KB for durable workflow guidance rather than transient product news.
+Selected current posts from the Claude blog that are worth keeping in this KB for durable workflow, agent-security, and product-surface guidance rather than transient product news.
 
 ## Collection Notes
 
 - Imported on 2026-04-09.
-- This collection focuses on reusable ideas about Claude Code, Skills, subagents, multi-agent design, and workflow customization.
+- This collection focuses on reusable ideas about Claude Code, Skills, subagents, multi-agent design, workflow customization, and agent-security operations.
 - I skipped most launch and marketing posts unless they contained operational guidance that seems likely to age well.
 
 ## By Theme
@@ -30,9 +30,12 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
   - [[2026-01-23-building-multi-agent-systems-when-and-how-to-use-them]]
 - Adoption patterns and case studies:
   - [[2025-07-23-how-anthropic-teams-use-claude-code]]
+- Agent security and enterprise controls:
+  - [[2026-05-27-zero-trust-for-ai-agents]]
 
 ## Why This Collection Matters
 
 - It complements the more systems-heavy Anthropic Engineering corpus with product-surface workflow guidance.
 - Several posts map directly onto this repo's own use of `AGENTS.md`, Skills, subagents, and KB-driven context management.
 - The multi-agent and subagent posts are especially useful because they explain when extra coordination is worth the cost and when it is not.
+- The zero-trust agent-security ebook now anchors the collection's security material around identity, least agency, sandboxing, protected memory, and defensive operations.
