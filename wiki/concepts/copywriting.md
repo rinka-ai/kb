@@ -3,11 +3,11 @@ id: copywriting
 type: concept
 title: Copywriting
 tags: [copywriting, paid-growth, voice-of-customer, ads, landing-pages, ugc]
-source_count: 12
+source_count: 13
 summary: Copywriting for paid growth turns customer language, offer truth, objections, proof, and channel intent into concise, policy-safe messages that move the buyer to the next action.
 canonical_for: [copywriting, ad copywriting, conversion copywriting, landing page copy, ugc scripts]
 review_status: draft
-last_reviewed: 2026-05-27
+last_reviewed: 2026-05-31
 review_due: 2026-06-27
 confidence: "0.82"
 ---
@@ -44,6 +44,8 @@ Search ads respond to declared intent. The query already tells you what the pers
 
 Paid social interrupts the feed. The copy must create context quickly: why this problem matters, why now, why this solution is credible, and why the next step is worth taking.
 
+Avatar specificity is one control surface for lead quality. If clicks hold but conversion quality falls, the copy may need sharper qualifying language that names the intended buyer, use case, or constraint while repelling low-fit curiosity clicks.
+
 For AI-agency Meta ads, the first visible line has to do extra work. A practical pattern is to name the niche, describe the new AI mechanism in ordinary language, and connect it to a concrete business outcome such as booked appointments or handled follow-up. The headline then compresses urgency and market fit, while the description can carry proof or trust when the placement exposes it. If proof is thin, the copy should shift from "we delivered X" to a more defensible mechanism or pilot framing.
 
 UGC scripts need to sound spoken. The copywriter's job is to provide structure and raw material, then let the creator make it believable.
@@ -62,10 +64,13 @@ A useful copy library separates:
 - comparison lines
 - urgency lines
 - audience call-outs
+- avatar qualifiers and disqualifiers
 - CTAs
 - disclaimers and required claims
 - hooks
 - landing-page section headlines
+
+Mechanism copy should move beyond the physical service when the proof supports it. Functional, emotional, and identity-level mechanisms can create stronger angles, but only if they are tied to real process, client experience, and substantiated proof rather than invented differentiation.
 
 This taxonomy maps cleanly to Google RSA headlines, Meta primary text, UGC hooks, overlays, email subjects, and landing-page modules.
 
@@ -121,3 +126,4 @@ AI copy should be checked against:
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
 - [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
 - [[2026-05-27-effective-meta-ads-ai-agency-framework]]
+- [[2026-05-31-zackpaid-meta-ads-creative-fatigue-framework]]

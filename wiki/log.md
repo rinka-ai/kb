@@ -305,3 +305,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-05-31-zero-trust-ai-agents-kb-upgrades]]` as the reusable synthesis for cryptographic agent identity, least agency, MCP/tool authorization, memory integrity, sandboxing, and agentic SOAR.
 - Updated `[[agent-security]]`, `[[agent-tools]]`, `[[agent-protocols]]`, `[[agent-memory]]`, `[[ai-validation-and-assurance]]`, and `[[enterprise-agent-deployment-failure-modes]]`.
 - Updated `[[claude-blog]]`, `[[home]]`, and the master `[[index]]`.
+
+## [2026-05-31] ingest | Zack Paid Meta ads creative fatigue framework
+- Added `[[2026-05-31-zackpaid-meta-ads-creative-fatigue-framework]]` under `raw/articles/paid-growth/`, preserving the user-provided X thread text and noting that the status date was inferred from the X snowflake timestamp.
+- Updated `[[performance-creative]]`, `[[meta-ads]]`, `[[paid-growth]]`, and `[[copywriting]]` with the angle/execution/avatar fatigue diagnosis model, the three-format-before-killing-an-angle heuristic, and the creative intelligence log pattern.
+- Updated `[[paid-growth-sources]]` and the master `[[index]]`; treated the post as low-authority practitioner evidence, with self-reported case-study claims left in the raw source rather than promoted as verified performance proof.

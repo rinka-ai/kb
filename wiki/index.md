@@ -62,7 +62,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[payment-integrations]] — Payment and value-transfer integrations should keep sensitive collection, credentials, and signing authority inside managed or policy-enforced surfaces while completing business logic from verified events.
 - [[paid-growth]] — Paid growth is now an operating system of offer clarity, creative supply, first-party data, platform automation, compliance, and incrementality discipline rather than only media buying.
 - [[personal-knowledge-bases]] — Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
-- [[performance-creative]] — Performance creative is the repeatable system for turning customer insight into policy-safe ad concepts, modular assets, creator briefs, variants, tests, and refreshed winners across paid channels.
+- [[performance-creative]] — Performance creative turns customer insight into policy-safe ad concepts, modular assets, tests, fatigue diagnosis, and refreshed winners across paid channels.
 - [[probabilistic-machine-learning]] — Probabilistic machine learning treats uncertainty, latent structure, missing information, and prediction as first-class modeling problems.
 - [[rag]] — RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
 - [[reasoning]] — Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, and when a tool result changes the plan.
@@ -176,7 +176,7 @@ Counts as of `2026-05-31`. Folders under `raw/articles/`.
 - `claude-blog` (9)
 - `user-provided` (8)
 - `business-strategy` (4)
-- `paid-growth` (25)
+- `paid-growth` (26)
 - `browserbase-docs` (3)
 - `langchain-blog` (2)
 - `akitaonrails` (1)

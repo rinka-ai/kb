@@ -3,11 +3,11 @@ id: performance-creative
 type: concept
 title: Performance Creative
 tags: [paid-growth, performance-creative, creative-testing, ad-creative, ugc, copywriting, generative-ai]
-source_count: 16
-summary: Performance creative is the repeatable system for turning customer insight into policy-safe ad concepts, modular assets, creator briefs, variants, tests, and refreshed winners across paid channels.
+source_count: 17
+summary: Performance creative turns customer insight into policy-safe ad concepts, modular assets, tests, fatigue diagnosis, and refreshed winners across paid channels.
 canonical_for: [performance creative, creative testing, ad creative strategy, creative diversification, creative pipeline]
 review_status: draft
-last_reviewed: 2026-05-27
+last_reviewed: 2026-05-31
 review_due: 2026-06-27
 confidence: "0.82"
 ---
@@ -17,6 +17,8 @@ confidence: "0.82"
 ## Summary
 
 Performance creative is not decoration for media buying. In Meta and Google systems, creative is a primary optimization input. Automated delivery needs many coherent assets, but the assets must come from real customer insight, distinct angles, channel-native formats, and a measurement loop that produces new briefs.
+
+When a winner declines, the diagnostic question is not simply whether the ad is dead. Separate the angle, execution, and avatar first so the team can refresh the failed layer without discarding the learning that still works.
 
 ## Creative Inputs
 
@@ -50,6 +52,22 @@ A durable performance creative library should separate:
 
 Each angle can become search headlines, social primary text, creator briefs, video hooks, overlays, static concepts, landing-page sections, and email copy.
 
+## Fatigue Diagnosis
+
+For Meta-style paid social, one useful practitioner heuristic is to split every ad into three layers:
+
+- angle: the selling premise or psychological trigger
+- execution: the hook, visual, format, and first moments of presentation
+- avatar: the specific customer profile the copy is qualifying or repelling
+
+Metric movement can then guide the next test:
+
+- CTR drops while engagement stays relatively strong: refresh the execution while preserving the angle.
+- CTR and engagement both drop: the angle may be saturated, so test a new selling premise.
+- CTR holds while conversion rate or lead quality drops: tighten avatar specificity and qualifying copy.
+
+This is not causal proof by itself; tracking, spend volume, conversion lag, seasonality, and landing-page match can all confound the read. But it is a better operating habit than treating every decline as generic "creative fatigue." A practical rule is to test several execution formats before killing a previously working angle.
+
 ## Asset System
 
 Meta Advantage+ creative and Google Performance Max both want a broad asset supply. The system should include:
@@ -78,9 +96,11 @@ Loop:
 3. Produce assets in channel-native formats.
 4. Launch with clean naming and tracking.
 5. Wait long enough to avoid premature kills.
-6. Read results by angle, hook, format, offer, and funnel quality.
+6. Read results by angle, execution, avatar, offer, and funnel quality.
 7. Refresh or remix winners.
 8. Retire assets that are fatigued, non-compliant, or low quality.
+
+The test log should capture the premise, format, avatar, CTR, CPL, conversion rate, ROAS or revenue quality, what worked, and where the funnel broke. Over time this becomes a creative intelligence database instead of a sequence of isolated guesses.
 
 ## AI Role
 
@@ -132,3 +152,4 @@ AI-generated assets should be treated as candidates, not truth.
 - [[2026-05-27-adllama-generative-ad-text-facebook]]
 - [[2026-05-27-winning-meta-ad-copy-ai-agency-ads]]
 - [[2026-05-27-effective-meta-ads-ai-agency-framework]]
+- [[2026-05-31-zackpaid-meta-ads-creative-fatigue-framework]]
