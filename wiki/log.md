@@ -343,3 +343,15 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-06-03-claude-use-cases-workflow-map]]` as the durable synthesis: Claude use cases as task boundaries, required context, product surfaces, output artifacts, follow-up actions, and approval/troubleshooting cues.
 - Updated `[[workflows]]`, `[[agent-tools]]`, `[[agent-skills]]`, `[[computer-use]]`, `[[web-agents]]`, `[[enterprise-agent-deployment-failure-modes]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
 - Caveat: treated the digest as product/use-case packaging evidence, not independent proof of reliability, ROI, or compliance readiness.
+
+## [2026-06-03] query | Matt Pocock skills ingest assessment
+- Cloned and inspected `mattpocock/skills` at commit `aaf2453fbdfe7a15c07f11d861224f34ab4b53cb`, covering all 72 non-`.git` files across stable, misc, personal, in-progress, deprecated, setup, and out-of-scope areas.
+- Added `[[2026-06-03-matt-pocock-skills-ingest-assessment]]` as the durable go/no-go assessment and updated the master `[[index]]`.
+- Key conclusion: worth a targeted repo-level ingest for diagnosis, domain-language grilling, TDD, issue triage, prototype, and architecture-deepening workflows; do not copy the setup skill here unmodified because this repo already has a canonical `AGENTS.md` schema.
+- Recommended adding/adapting `diagnose` first if only one Matt Pocock skill is adopted for better development.
+
+## [2026-06-04] ingest | Matt Pocock skills repo
+- Added `[[2026-06-04-mattpocock-skills]]` under `raw/articles/github-repos/`, preserving a repo-level source note for the inspected `mattpocock/skills` commit rather than one note per skill file.
+- Updated `[[agent-skills]]`, `[[internal-engineering-conventions]]`, `[[codebase-architecture]]`, `[[claude-code]]`, and `[[research-workflows]]` with diagnosis, domain-language grilling, vertical TDD, durable issue briefs, out-of-scope notes, and architecture-deepening vocabulary.
+- Updated `[[github-repos]]`, `[[home]]`, the master `[[index]]`, and the earlier `[[2026-06-03-matt-pocock-skills-ingest-assessment]]` to point at the full source note.
+- Caveat: did not copy `setup-matt-pocock-skills` into this repo because its `CONTEXT.md`/ADR/docs-agent assumptions overlap with this repo's canonical `AGENTS.md` and wiki schema.

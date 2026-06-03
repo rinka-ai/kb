@@ -3,7 +3,7 @@ id: concept-internal-engineering-conventions
 type: concept
 title: Internal Engineering Conventions
 tags: [engineering-conventions, agent-instructions, coding-agents, monorepos, tests]
-source_count: 4
+source_count: 5
 summary: Internal engineering conventions turn tacit team practice into reusable constraints for agents and humans, especially around scope, imports, validation, naming, tests, side effects, UI discipline, and knowledge updates.
 canonical_for: [internal engineering conventions, repo conventions, coding conventions, agent coding rules]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.82"
 
 ## Summary
 
-Internal engineering conventions are the repo-specific rules that prevent common mistakes. They are strongest when they name a concrete failure mode, point to an existing pattern, and can be verified through code review, tests, lint, or source layout. They are weakest when they become a generic preference dump.
+Internal engineering conventions are the repo-specific rules that prevent common mistakes. They are strongest when they name a concrete failure mode, point to an existing pattern, and can be verified through code review, tests, lint, or source layout. They are weakest when they become a generic preference dump. Matt Pocock's skills repo adds a compact version of the same pattern: conventions should become invoked workflows only when they protect real work, and setup instructions should appear only where missing configuration would make the workflow wrong rather than merely less sharp.
 
 Aya and Conformis show the value of ingesting conventions into the KB. Aya's conventions protect an AI voice product from provider leakage, magic strings, zod bundle bloat, broad refactors, dashboard latency regressions, and bilingual/design drift. Conformis' conventions protect a compliance product from audit-log gaps, unbounded WorkOS scans, test doubles in production bundles, raw-source mutation, and stale project memory.
 
@@ -44,6 +44,7 @@ Good rules usually include:
 - the verification command or review check
 - whether the rule is absolute or only a default
 - whether the rule belongs in always-on behavior instructions, repo-local guidance, a skill, or deterministic tooling
+- whether the rule needs a repo setup artifact or can degrade gracefully from local code inspection
 
 ## Convention Drift Signals
 
@@ -70,3 +71,4 @@ Good rules usually include:
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
 - [[2026-05-04-pmarca-ai-custom-prompt]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]
+- [[2026-06-04-mattpocock-skills]]

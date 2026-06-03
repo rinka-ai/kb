@@ -139,6 +139,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-06-02-anthropic-financial-services-ingest-assessment]] — Anthropic's financial-services repo is worth a targeted KB ingest because it is an official reference corpus for finance-domain Claude skills, managed-agent cookbooks, least-privilege subagent patterns, MCP data connectors, and enterprise Office deployment.
 - [[2026-06-03-agentic-engineering-practitioner-stack]] — Van Horn's agentic-engineering field report is useful as an operator-stack snapshot: plan-first artifacts, research-before-planning, parallel agent sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste as the bottleneck.
 - [[2026-06-03-claude-use-cases-workflow-map]] — Anthropic's Claude use-case digest is best preserved as a workflow-packaging map: task boundaries, required context, product surface, output artifact, follow-up action, and operational cautions across 94 jobs-to-be-done.
+- [[2026-06-03-matt-pocock-skills-ingest-assessment]] — Matt Pocock's skills repo is worth a targeted repo-level ingest for agentic engineering workflow design, and the approved ingest preserved it as one GitHub-repo source note rather than copying every skill wholesale.
 - [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 
@@ -165,7 +166,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-06-03`. Folders under `raw/articles/`.
+Counts as of `2026-06-04`. Folders under `raw/articles/`.
 
 - `addy-osmani` (1)
 - `anthropic-engineering` (22)
@@ -173,7 +174,7 @@ Counts as of `2026-06-03`. Folders under `raw/articles/`.
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
-- `github-repos` (17)
+- `github-repos` (18)
 - `internal-codebases` (6)
 - `design-systems` (1)
 - `enterprise-ai` (12)
