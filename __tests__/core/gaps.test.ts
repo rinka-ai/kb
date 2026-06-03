@@ -323,7 +323,7 @@ tags: [agents]
 source_count: 2
 review_status: reviewed
 last_reviewed: 2026-05-02
-review_due: 2026-06-02
+review_due: 2099-06-02
 ---
 # Agent Harnesses
 
