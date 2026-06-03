@@ -8,13 +8,13 @@ title: Anthropic Engineering
 
 ## Overview
 
-Imported collection of the current posts listed on Anthropic's Engineering page as of 2026-04-09. The collection centers on agents, harnesses, evals, tool use, coding systems, MCP, and retrieval.
+Imported collection of the current posts listed on Anthropic's Engineering page as of 2026-04-09, with later targeted repairs as individual notes are revisited. The collection centers on agents, harnesses, evals, tool use, coding systems, MCP, and retrieval.
 
 ## Collection Notes
 
-- Imported 21 current Engineering-page posts.
-- Most entries are stored as structured source notes with metadata and first-pass synthesis rather than full copied text.
-- `Scaling Managed Agents: Decoupling the brain from the hands` now lives alongside the rest of the Anthropic Engineering source notes in `raw/articles/anthropic-engineering/`.
+- Imported 22 Engineering-page posts.
+- Most entries are stored as structured source notes with metadata and first-pass synthesis; `Scaling Managed Agents: Decoupling the brain from the hands` has been promoted with preserved article text and refreshed metadata.
+- `Scaling Managed Agents: Decoupling the brain from the hands` lives alongside the rest of the Anthropic Engineering source notes in `raw/articles/anthropic-engineering/`.
 
 ## By Theme
 

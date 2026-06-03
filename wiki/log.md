@@ -332,3 +332,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-06-03-agentic-engineering-practitioner-stack]]` as the durable synthesis: plan-first artifacts, research-before-planning, parallel Claude/Codex sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste/review as the bottleneck.
 - Updated `[[claude-code]]`, `[[workflows]]`, `[[agent-skills]]`, `[[personal-knowledge-bases]]`, `[[voice-dictation]]`, `[[agent-tools]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
 - Caveat: permission-bypass, browser-session auth, and agent-native real-world CLIs are treated as personal-risk tradeoffs, not KB security defaults.
+
+## [2026-06-03] ingest | Anthropic Managed Agents repair
+- Promoted the existing `[[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]` note from first-pass metadata into a proper archival source note with the Anthropic article text preserved and publication date corrected to 2026-04-08.
+- Refreshed `[[managed-agents]]` with the source's sharper session-log, meta-harness, credential-boundary, and TTFT claims.
+- Updated `[[anthropic-engineering]]` collection notes to reflect 22 imported Engineering posts and this targeted repair.
