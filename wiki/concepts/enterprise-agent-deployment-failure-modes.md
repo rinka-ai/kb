@@ -3,7 +3,7 @@ id: concept-enterprise-agent-deployment-failure-modes
 type: concept
 title: Enterprise Agent Deployment Failure Modes
 tags: [enterprise-ai, agents, ai-adoption, workflows, orchestration, governance, ai-ops, sales]
-source_count: 18
+source_count: 19
 summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations]
 review_status: draft
@@ -20,7 +20,7 @@ The current evidence points to a stable pattern: enterprise AI is not blocked ma
 
 The practical response is to make non-engineering workflows more like the parts of software engineering where AI already works: bounded artifacts, explicit state, deterministic checks, replayable execution, human review, and measured feedback loops. For AI SaaS vendors, the same pattern becomes a market-selection rule: sell into costly workflows where an improvement can be measured, deployed, and priced against actual economic value.
 
-Anthropic's zero-trust agent-security guide adds a hard constraint to this operating model: enterprise agent deployment fails when the shared platform has no cryptographic agent identity, no least-agency policy, no memory integrity model, no sandbox boundary, and no detection-speed metrics. Governance is not just an approval committee; it is the control plane that makes agent actions attributable, revocable, contained, and recoverable.
+Anthropic's zero-trust agent-security guide adds a hard constraint to this operating model: enterprise agent deployment fails when the shared platform has no cryptographic agent identity, no least-agency policy, no memory integrity model, no sandbox boundary, and no detection-speed metrics. Governance is not just an approval committee; it is the control plane that makes agent actions attributable, revocable, contained, and recoverable. The Claude use-case digest adds the positive packaging pattern: enterprise-friendly AI examples make the job, required context, output artifact, downstream handoff, confidence, and human approval point visible instead of leaving them implicit in chat.
 
 ## Core Pattern
 
@@ -115,6 +115,7 @@ Design response:
 - expose tools with clear contracts and auditability
 - make state transitions durable and replayable
 - keep human corrections as structured feedback that improves the workflow
+- package each use case with required context, optional integrations, concrete output artifacts, and explicit continuation paths so teams can distinguish reusable workflows from impressive demos
 
 ## Why Software Engineering Is Easier
 
@@ -153,6 +154,7 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - Middleton AI agency video: self-reported operator playbook arguing that a local-business AI agency should sell one sequenced acquisition workflow, but the claims need compliance checks and niche-specific validation before being treated as proof.
 - Osmani orchestration-tax post: practitioner framing that parallel coding agents can create cognitive and technical debt when human review and architectural judgment remain a serial bottleneck.
 - Anthropic zero-trust agent guide: official Claude Security framework arguing that enterprise agents need cryptographic identity, short-lived credentials, least agency, protected memory, and AI-speed defensive operations.
+- Anthropic Claude use-case digest: product-resource corpus showing how Claude workflows are packaged around task boundaries, required context, artifacts, follow-up actions, integrations, and approval cautions across business and personal domains.
 
 ## Tensions
 
@@ -200,3 +202,4 @@ GitHub, Anthropic, and Google all provide evidence that AI is already valuable i
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-24-the-orchestration-tax]]
 - [[2026-05-27-zero-trust-for-ai-agents]]
+- [[2026-06-03-claude-use-cases-full-digest]]

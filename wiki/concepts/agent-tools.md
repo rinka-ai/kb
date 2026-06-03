@@ -3,7 +3,7 @@ id: concept-agent-tools
 type: concept
 title: Agent Tools
 tags: [tools, tool-use, agents, code-execution, mcp]
-source_count: 16
+source_count: 17
 summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans.
 canonical_for: [agent tools, tool use, structured tools, code-mediated tool use]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.86"
 
 ## Summary
 
-Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes. Steward adds the money-and-credentials version of the same pattern: an agent-facing signing or API tool should expose a narrow capability while a vault/proxy layer owns real keys, policies, metering, and audit logs. Hermes adds the runtime-registry version: built-in tools, MCP tools, plugin tools, browser/computer-use tools, terminal backends, and code-execution RPC need explicit discovery, filtering, availability checks, and approval hooks. MemWal adds the memory-tool version: remember, recall, analyze, restore, login, and logout are not generic database calls; they are high-leverage state mutations and retrieval paths that need namespace, credential, and trust-boundary semantics. AHE adds evidence that tools themselves can be an evolvable performance surface: changed tool behavior can encode coordination patterns more reliably than adding more prose to the prompt. Anthropic's zero-trust guide adds a sharper baseline: tool access is one of the highest-risk agent surfaces, so tool allowlists, per-agent authentication, parameter validation, capability restrictions, sandboxing, spend limits, and approval escalation should be designed as first-class controls. The Van Horn digest adds a consumer-operator pattern: agent-native CLIs plus browser-session handoff can make ordinary services operable by agents, but credentials and side effects become the real design problem.
+Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes. Steward adds the money-and-credentials version of the same pattern: an agent-facing signing or API tool should expose a narrow capability while a vault/proxy layer owns real keys, policies, metering, and audit logs. Hermes adds the runtime-registry version: built-in tools, MCP tools, plugin tools, browser/computer-use tools, terminal backends, and code-execution RPC need explicit discovery, filtering, availability checks, and approval hooks. MemWal adds the memory-tool version: remember, recall, analyze, restore, login, and logout are not generic database calls; they are high-leverage state mutations and retrieval paths that need namespace, credential, and trust-boundary semantics. AHE adds evidence that tools themselves can be an evolvable performance surface: changed tool behavior can encode coordination patterns more reliably than adding more prose to the prompt. Anthropic's zero-trust guide adds a sharper baseline: tool access is one of the highest-risk agent surfaces, so tool allowlists, per-agent authentication, parameter validation, capability restrictions, sandboxing, spend limits, and approval escalation should be designed as first-class controls. The Van Horn digest adds a consumer-operator pattern: agent-native CLIs plus browser-session handoff can make ordinary services operable by agents, but credentials and side effects become the real design problem. The Claude use-case digest adds a product-surface map: folders, browsers, calendars, CRMs, email, dashboards, Drive, Office files, task trackers, and scheduled jobs become agent tools only when the surrounding product constrains context, approvals, and handoff.
 
 ## Design Principles
 
@@ -36,6 +36,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - treat durable memory writes as privileged tool calls with capture filters, namespace scope, and deletion/revocation expectations
 - when wrapping real-world services for agents, broker logged-in browser sessions or cookies behind narrow commands rather than exposing ambient account access
 - make allowlists, dry-run modes, confirmation thresholds, and audit logs part of the CLI surface when tool calls can spend money, message people, buy goods, or change accounts
+- turn ordinary work surfaces into agent tools only with explicit context scope, output format, downstream handoff, and approval policy
 
 ## Tool Families
 
@@ -49,6 +50,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - browser and computer-use tools that bridge human-facing interfaces when no reliable API exists
 - memory tools that expose recall, fact extraction, durable writes, restore, and client authentication across agent runtimes
 - agent-native service CLIs that let agents operate products such as travel, shopping, cars, calendars, or media through authenticated but bounded command surfaces
+- productized work-surface tools such as folder access, browser extensions, document/spreadsheet generation, task-manager connectors, analytics dashboards, calendar/email access, and scheduled task runners
 
 ## Failure Modes
 
@@ -81,3 +83,4 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - [[2026-05-20-memwal]]
 - [[2026-05-27-zero-trust-for-ai-agents]]
 - [[2026-06-02-every-agentic-engineering-hack-i-know]]
+- [[2026-06-03-claude-use-cases-full-digest]]
