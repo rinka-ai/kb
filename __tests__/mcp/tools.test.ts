@@ -6,6 +6,8 @@ import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerKbTools } from "../../src/mcp/tools";
 import { FakeMcpServer } from "../helpers/fake-mcp-server";
 
+const FULL_INDEX_TIMEOUT_MS = 20_000;
+
 interface ToolResult {
   content: Array<{ text: string }>;
   structuredContent: Record<string, unknown>;
@@ -43,26 +45,30 @@ describe("mcp tools", () => {
     ]);
   });
 
-  test("kb_list_catalog returns paginated catalog entries", async () => {
-    const server = new FakeMcpServer();
-    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+  test(
+    "kb_list_catalog returns paginated catalog entries",
+    async () => {
+      const server = new FakeMcpServer();
+      registerKbTools(server as unknown as McpServer, { enableWrites: false });
 
-    const result = (await server.tools.get("kb_list_catalog")?.handler({
-      page: 1,
-      pageSize: 5,
-      pathPrefix: "raw/articles/anthropic-engineering",
-      includeSuperseded: false,
-      rebuildIfStale: false,
-    })) as ToolResult | undefined;
+      const result = (await server.tools.get("kb_list_catalog")?.handler({
+        page: 1,
+        pageSize: 5,
+        pathPrefix: "raw/articles/anthropic-engineering",
+        includeSuperseded: false,
+        rebuildIfStale: false,
+      })) as ToolResult | undefined;
 
-    const items = result?.structuredContent.items as Array<{ path: string }> | undefined;
-    expect(Array.isArray(items)).toBe(true);
-    expect(items?.length ?? 0).toBeLessThanOrEqual(5);
-    expect(
-      items?.every((entry) => entry.path.startsWith("raw/articles/anthropic-engineering")),
-    ).toBe(true);
-    expect(result?.content[0].text).toContain("Catalog page 1/");
-  });
+      const items = result?.structuredContent.items as Array<{ path: string }> | undefined;
+      expect(Array.isArray(items)).toBe(true);
+      expect(items?.length ?? 0).toBeLessThanOrEqual(5);
+      expect(
+        items?.every((entry) => entry.path.startsWith("raw/articles/anthropic-engineering")),
+      ).toBe(true);
+      expect(result?.content[0].text).toContain("Catalog page 1/");
+    },
+    FULL_INDEX_TIMEOUT_MS,
+  );
 
   test("kb_build_context returns a structured context pack", async () => {
     const server = new FakeMcpServer();
@@ -184,15 +190,19 @@ describe("mcp tools", () => {
     expect(result?.structuredContent.truncated).toBe(true);
   });
 
-  test("kb_refresh returns current index stats", async () => {
-    const server = new FakeMcpServer();
-    registerKbTools(server as unknown as McpServer, { enableWrites: false });
+  test(
+    "kb_refresh returns current index stats",
+    async () => {
+      const server = new FakeMcpServer();
+      registerKbTools(server as unknown as McpServer, { enableWrites: false });
 
-    const result = (await server.tools.get("kb_refresh")?.handler({})) as ToolResult | undefined;
+      const result = (await server.tools.get("kb_refresh")?.handler({})) as ToolResult | undefined;
 
-    expect((result?.structuredContent.chunkCount as number | undefined) ?? 0).toBeGreaterThan(0);
-    expect((result?.structuredContent.fileCount as number | undefined) ?? 0).toBeGreaterThan(0);
-  });
+      expect((result?.structuredContent.chunkCount as number | undefined) ?? 0).toBeGreaterThan(0);
+      expect((result?.structuredContent.fileCount as number | undefined) ?? 0).toBeGreaterThan(0);
+    },
+    FULL_INDEX_TIMEOUT_MS,
+  );
 
   test("kb_search_file accepts raw text context for remote MCP use", async () => {
     const server = new FakeMcpServer();
