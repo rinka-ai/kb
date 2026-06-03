@@ -134,6 +134,10 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-05-31-aya-conformis-latest-commit-lessons]] — Latest Aya and Conformis commits show how small product/UI fixes and larger infrastructure migrations become reusable rules: intent-scoped prefetch, no raw IDs in operator UI, normalized product facts, narrow proxy matchers, tested i18n wiring, and executable React quality gates.
 - [[2026-05-31-ai-custom-instruction-profile]] — Reusable distilled custom-instruction profile that preserves anti-sycophancy, independent estimation, uncertainty, and verification while removing persona inflation and verbosity defaults.
 - [[2026-05-31-zero-trust-ai-agents-kb-upgrades]] — Anthropic's Zero Trust for AI Agents ebook upgrades the KB's agent-security model around cryptographic identity, least agency, MCP/tool authorization, memory integrity, sandboxing, and AI-speed defensive operations.
+- [[2026-06-02-graphed-ai-agents-aristotle-pavlo-comparison]] — Graphed matches the AI Aristotle pattern at the systems-architecture level: integrated agents, shared data infrastructure, dashboards, and high-touch deployment, but it is closer to a marketing-ops agent platform than the local-business Aristotle or Pavlo agency methods.
+- [[2026-06-02-ai-search-optimization-build-read]] — AI search optimization is worth building around as an execution and source-influence system, but a pure dashboard, schema helper, or generic blog generator is likely weakly differentiated.
+- [[2026-06-02-anthropic-financial-services-ingest-assessment]] — Anthropic's financial-services repo is worth a targeted KB ingest because it is an official reference corpus for finance-domain Claude skills, managed-agent cookbooks, least-privilege subagent patterns, MCP data connectors, and enterprise Office deployment.
+- [[2026-06-03-agentic-engineering-practitioner-stack]] — Van Horn's agentic-engineering field report is useful as an operator-stack snapshot: plan-first artifacts, research-before-planning, parallel agent sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste as the bottleneck.
 - [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 
@@ -160,7 +164,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-05-31`. Folders under `raw/articles/`.
+Counts as of `2026-06-03`. Folders under `raw/articles/`.
 
 - `addy-osmani` (1)
 - `anthropic-engineering` (22)
@@ -174,7 +178,7 @@ Counts as of `2026-05-31`. Folders under `raw/articles/`.
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (9)
-- `user-provided` (8)
+- `user-provided` (9)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)

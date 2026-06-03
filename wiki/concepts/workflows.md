@@ -3,12 +3,12 @@ id: concept-workflows
 type: concept
 title: Agent Workflows
 tags: [workflows, agents, orchestration, workflow-agents, deterministic-control]
-source_count: 11
+source_count: 12
 summary: Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, side effects, and human review capacity stay inspectable instead of being improvised inside one autonomous loop.
 canonical_for: [workflows, workflow agents, agent workflows, deterministic orchestration, review backpressure]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
+last_reviewed: 2026-06-03
+review_due: 2026-07-03
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run. The durable-orchestration source frames workflows as a stable substrate for changing agent patterns: ReAct loops, planners, routers, and multi-agent delegation are all compositions of step, state, event, retry, and trace primitives. Osmani adds an operator-capacity constraint: approval gates are not free, so workflow throughput should model human review as the slow consumer and apply backpressure before agent output becomes an unreviewed queue. The AI SaaS case-study transcript extends this into product discovery: a workflow can also move from metric definition to mechanism mining, simulation, parameter search, live rollout, and business-metric feedback. The AI-agency source adds a GTM/delivery version: reactivation, review/referral capture, speed-to-lead, sales coaching, and ads should be sequenced as one measurable funnel workflow rather than sold as disconnected automations.
+Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run. The durable-orchestration source frames workflows as a stable substrate for changing agent patterns: ReAct loops, planners, routers, and multi-agent delegation are all compositions of step, state, event, retry, and trace primitives. Osmani adds an operator-capacity constraint: approval gates are not free, so workflow throughput should model human review as the slow consumer and apply backpressure before agent output becomes an unreviewed queue. The AI SaaS case-study transcript extends this into product discovery: a workflow can also move from metric definition to mechanism mining, simulation, parameter search, live rollout, and business-metric feedback. The AI-agency source adds a GTM/delivery version: reactivation, review/referral capture, speed-to-lead, sales coaching, and ads should be sequenced as one measurable funnel workflow rather than sold as disconnected automations. The Van Horn digest adds a personal-operator version: research, plan, build, verify, review, and skillize can be treated as an artifact loop across multiple agent sessions.
 
 ## When They Fit
 
@@ -39,6 +39,9 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - keep workflow state outside sandbox snapshots when completed steps, external waits, and side-effect replay need to be inspectable
 - treat simulations as workflow stages with explicit assumptions, then verify the same mechanism in live deployment before promoting it to product truth
 - for commercial agency workflows, define consent, opt-out, fallback, attribution, and dashboard state as workflow steps rather than after-the-fact operations
+- make the plan artifact earn its place by carrying source context, acceptance criteria, files or surfaces to inspect, and a restart point for fresh sessions
+- research-before-planning is a workflow stage, not a nicety, when current tool choice, docs, market context, or codebase conventions affect the plan
+- convert repeated successful workflow fragments into skills or scripts once their shape is stable enough to reuse
 
 ## Failure Modes
 
@@ -49,6 +52,8 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - adding verification or retry loops without explicit timeout, routing, and budget policy
 - letting background agents produce faster than humans can review, which converts parallelism into queue growth and shallow approvals
 - mistaking a simulated metric lift for a live business result when unmodeled confounders remain in the real workflow
+- using parallel agent sessions to create more work than the human can review, turning throughput into an uninspected queue
+- treating a plan as proof of correctness when it is only a contract for later verification
 
 ## Source Notes
 
@@ -63,3 +68,4 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-24-the-orchestration-tax]]
+- [[2026-06-02-every-agentic-engineering-hack-i-know]]

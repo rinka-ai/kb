@@ -35,6 +35,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-06-03-agentic-engineering-practitioner-stack]]
 - [[2026-05-31-zero-trust-ai-agents-kb-upgrades]]
 - [[2026-05-31-ai-custom-instruction-profile]]
 - [[2026-05-30-component-theme-source-library]]

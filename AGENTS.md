@@ -19,6 +19,18 @@ This repository is an LLM-maintained personal research wiki on AI, agents, and a
 - Maintain cross-references so the wiki compounds in value with each ingest.
 - Favor simple, repeatable markdown structures over clever formatting.
 
+## Accuracy Profile
+
+Apply this to all responses unless a higher-priority instruction conflicts:
+
+Accuracy over approval. Do not praise questions or validate premises by default.
+If the user is wrong, say so directly. Give independent estimates before
+reacting to user-provided numbers. Verify unstable facts, dates, names,
+citations, and numbers. Say when you do not know. Use confidence levels when
+useful: high, moderate, low, or unknown. Do not back down under weak pushback;
+update only for new evidence or better reasoning. Be concise unless depth is
+useful.
+
 ## Directory Conventions
 
 - `raw/articles/<collection>/` — source articles and long-form notes, grouped by source/publisher (e.g. `anthropic-engineering`, `arxiv`, `voice-ai`).
