@@ -3,7 +3,7 @@ id: concept-claude-code
 type: concept
 title: Claude Code
 tags: [claude-code, agentic-coding, skills, hooks, subagents, workflows, html-artifacts]
-source_count: 12
+source_count: 13
 summary: Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, reviewable collaboration artifacts, and practical product-building workflows.
 canonical_for: [claude code, agentic coding, claude code hooks, claude code subagents, claude code skills]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.88"
 
 ## Summary
 
-Claude Code is best understood as an agentic coding operating environment rather than a single chat loop. The strongest sources converge on a few stable surfaces: permission handling, verification loops, context management, tool orchestration, hooks, MCP-based tool access, reusable skills, deliberate delegation to subagents, and rich artifacts for human review. The newer teardown-style source sharpens the runtime picture further: quality comes less from a single giant prompt than from a harness with evented control flow, cache-aware context assembly, explicit recovery logic, and bounded delegated work. The arXiv design-space study adds a more formal lens: Claude Code gives the model broad local judgment inside a deterministic harness that enforces policy, manages context, preserves auditability, and keeps the human in authority. The business-strategy transcript adds a practical product-building lens: Claude Code can help mine mechanisms, write simulations, and implement features, but market selection, feasibility filtering, and pricing remain human-owned judgment. The Van Horn practitioner digest adds the operator-stack version: plan artifacts, voice input, parallel terminal sessions, raw context, Codex handoffs, and human taste form a repeatable working loop around the runtime.
+Claude Code is best understood as an agentic coding operating environment rather than a single chat loop. The strongest sources converge on a few stable surfaces: permission handling, verification loops, context management, tool orchestration, hooks, MCP-based tool access, reusable skills, deliberate delegation to subagents, and rich artifacts for human review. The newer teardown-style source sharpens the runtime picture further: quality comes less from a single giant prompt than from a harness with evented control flow, cache-aware context assembly, explicit recovery logic, and bounded delegated work. The arXiv design-space study adds a more formal lens: Claude Code gives the model broad local judgment inside a deterministic harness that enforces policy, manages context, preserves auditability, and keeps the human in authority. The business-strategy transcript adds a practical product-building lens: Claude Code can help mine mechanisms, write simulations, and implement features, but market selection, feasibility filtering, and pricing remain human-owned judgment. The Van Horn practitioner digest adds the operator-stack version: plan artifacts, voice input, parallel terminal sessions, raw context, Codex handoffs, and human taste form a repeatable working loop around the runtime. Matt Pocock's skills repo adds the craft-operating version: reusable skills should encode feedback loops, domain-language checks, issue-tracker contracts, and architecture review language, while project setup skills should remain separate from ordinary task skills.
 
 ## Core Surfaces
 
@@ -57,6 +57,8 @@ Claude Code is best understood as an agentic coding operating environment rather
 - for non-trivial work, use a plan-first loop only when the plan creates checkable criteria and reusable context, not as ceremony
 - use parallel Claude/Codex sessions as throughput tools only when the human can still inspect the critical path and reject low-quality work
 - raw transcripts, screenshots, issue URLs, and prior plans can be better pre-plan context than premature summaries, provided the agent is asked to extract against concrete acceptance criteria
+- install broad workflow skills only when their repo setup assumptions match the project; otherwise adapt the useful procedure into the local `AGENTS.md` and KB conventions
+- use a dedicated diagnosis skill for bugs and regressions so the agent constructs a repro loop before editing
 
 ## Tensions
 
@@ -69,6 +71,7 @@ Claude Code is best understood as an agentic coding operating environment rather
 - Claude Code team practitioner claims vs empirical evidence; HTML artifact guidance is high-signal practice, not controlled proof
 - provider-specific Claude Code surfaces vs model-agnostic workspace setup for teams that need to hot-swap coding agents
 - permission-bypass speed vs zero-trust, credential scope, auditability, and human review capacity
+- upstream skill convenience vs local instruction-schema coherence
 
 ## Source Notes
 
@@ -84,3 +87,4 @@ Claude Code is best understood as an agentic coding operating environment rather
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
 - [[2026-05-21-saas-million-arr-clairvo]]
 - [[2026-06-02-every-agentic-engineering-hack-i-know]]
+- [[2026-06-04-mattpocock-skills]]

@@ -3,7 +3,7 @@ id: concept-codebase-architecture
 type: concept
 title: Codebase Architecture
 tags: [software-architecture, codebase-architecture, monorepo, monorepos, conventions, source-organization]
-source_count: 4
+source_count: 5
 summary: Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
 canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization]
 review_status: reviewed
@@ -18,7 +18,7 @@ confidence: "0.84"
 
 Codebase architecture is the durable organization of a repository so future changes inherit the right constraints. It includes folder structure and package boundaries, but also product scope, runtime state, provider adapters, tests, docs, source-of-truth decision records, and agent instructions. A good architecture makes the correct path obvious and the risky path visible.
 
-The internal Aya and Conformis repos make this concrete. Aya organizes an AI voice product around provider-neutral runtime state, gateways, queues, outbox delivery, and dashboard contracts. Conformis organizes a compliance product around domain stores/sinks, transaction-scoped audit writes, WorkOS adapters, encrypted storage, and a repo-local vault. Uniswap adds the frontend version: UI quality is also architecture when tokens, domain flows, state, telemetry, tests, and feature gates live in source.
+The internal Aya and Conformis repos make this concrete. Aya organizes an AI voice product around provider-neutral runtime state, gateways, queues, outbox delivery, and dashboard contracts. Conformis organizes a compliance product around domain stores/sinks, transaction-scoped audit writes, WorkOS adapters, encrypted storage, and a repo-local vault. Uniswap adds the frontend version: UI quality is also architecture when tokens, domain flows, state, telemetry, tests, and feature gates live in source. Matt Pocock's skills repo adds a review vocabulary for architecture work: modules become more valuable when their interfaces create leverage and locality instead of exposing nearly as much complexity as their implementations.
 
 ## Core Pattern
 
@@ -29,6 +29,8 @@ The internal Aya and Conformis repos make this concrete. Aya organizes an AI voi
 - Runtime validators belong at boundaries, while frontend-safe contracts/constants should stay cheap to import.
 - Tests, lint rules, and route shape should enforce the architecture instead of relying only on docs.
 - Repo instructions should describe the failure modes agents must avoid in that codebase.
+- A module should earn its interface. If deleting it merely pushes complexity into callers, it was probably shallow; if deleting it spreads real complexity across call sites, it was probably hiding something useful.
+- A seam is justified by variation. One adapter is a hypothetical seam; two adapters make the seam real.
 
 ## Boundary Styles
 
@@ -84,3 +86,4 @@ Uniswap demonstrates a **product-UX source architecture** style:
 - [[2026-05-25-uniswap-interface]]
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]
+- [[2026-06-04-mattpocock-skills]]

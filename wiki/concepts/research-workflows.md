@@ -3,7 +3,7 @@ id: concept-research-workflows
 type: concept
 title: Research Workflows
 tags: [research, workflows, agents, multi-agent]
-source_count: 5
+source_count: 6
 summary: Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
 canonical_for: [research workflows]
 review_status: reviewed
@@ -30,6 +30,8 @@ Research workflows in this KB are loops of ingest, retrieval, synthesis, and mai
 
 Internal codebase ingestion follows the same loop, but the source is a repository rather than an article or paper. The useful output is a teardown of durable patterns: directory structure, package ownership, dependency boundaries, agent instructions, source-of-truth docs, testing habits, design contracts, and project-memory conventions. The source note should explicitly exclude secrets, environment files, generated caches, and full private source dumps.
 
+For public skill repositories, the same discipline applies: inspect the whole repo, preserve one repo-level source note, separate stable skills from deprecated or in-progress material, and synthesize the workflow patterns rather than copying every skill file into the KB.
+
 ## Source Notes
 
 - [[2026-04-08-llm-knowledge-bases]]
@@ -37,3 +39,4 @@ Internal codebase ingestion follows the same loop, but the source is a repositor
 - [[2026-03-24-harness-design-for-long-running-application-development]]
 - [[2026-05-27-aya]]
 - [[2026-05-27-conformis]]
+- [[2026-06-04-mattpocock-skills]]
