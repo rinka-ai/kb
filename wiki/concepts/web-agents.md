@@ -3,20 +3,20 @@ id: concept-web-agents
 type: concept
 title: Web Agents
 tags: [web-agents, browser, agents, long-horizon, evaluation]
-source_count: 9
+source_count: 10
 summary: Web agents are agents that operate over browser environments, where the browser can be both the primary task world and a fallback integration layer for systems without clean APIs.
 canonical_for: [web agents, browser agents, website task agents]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
-confidence: "0.84"
+last_reviewed: 2026-06-03
+review_due: 2026-07-03
+confidence: "0.85"
 ---
 
 # Web Agents
 
 ## Summary
 
-Web agents operate inside websites and browser-like environments instead of closed toy tasks. Their difficulty comes from long horizons, messy state, multiple valid trajectories, and the need to recover after confusion rather than merely execute one short scripted action chain. The newer Browserbase material adds an important operational framing: the browser is not only a benchmark environment or automation target, but also a practical fallback interface for general agents when internal or third-party systems do not expose clean APIs. Hermes adds a runtime-integration example: browser automation can be one tool family inside a broader personal agent, with cloud/local backends, accessibility snapshots, persistent sessions, and localhost/private-routing decisions.
+Web agents operate inside websites and browser-like environments instead of closed toy tasks. Their difficulty comes from long horizons, messy state, multiple valid trajectories, and the need to recover after confusion rather than merely execute one short scripted action chain. The newer Browserbase material adds an important operational framing: the browser is not only a benchmark environment or automation target, but also a practical fallback interface for general agents when internal or third-party systems do not expose clean APIs. Hermes adds a runtime-integration example: browser automation can be one tool family inside a broader personal agent, with cloud/local backends, accessibility snapshots, persistent sessions, and localhost/private-routing decisions. The Claude use-case digest adds a mainstream product example: Claude in Chrome is framed around concrete browser jobs such as CRM logging, comparison shopping, calendar preparation, email cleanup, dashboard metric extraction, and Drive organization.
 
 ## What Makes Them Distinct
 
@@ -41,6 +41,7 @@ Web agents operate inside websites and browser-like environments instead of clos
 - skill libraries help separate browsing, fetching, deployment, and CLI workflows so browser capability does not collapse into one overloaded tool
 - secure production use depends on treating browser sessions as high-risk execution environments with strong sandboxing and bounded side effects
 - browser backends should route private or local targets differently from public web targets so automation does not leak internal surfaces into cloud browsers by accident
+- consumer browser agents still need task-level approval semantics because "use my logged-in browser" can reach files, messages, dashboards, purchases, and customer records through ambient session authority
 
 ## Common Bottlenecks
 
@@ -48,6 +49,7 @@ Web agents operate inside websites and browser-like environments instead of clos
 - losing progress after multi-step navigation
 - brittle handling of ambiguous or partially completed state
 - poor reuse of procedures across similar browser tasks
+- summarizing browser work without leaving an inspectable artifact or change log for the user to review
 
 ## Source Notes
 
@@ -60,3 +62,4 @@ Web agents operate inside websites and browser-like environments instead of clos
 - [[2026-04-17-browserbase-skills]]
 - [[2026-04-17-browserbase-bb-internal-agent-full-architecture-synthesis]]
 - [[2026-05-20-hermes-agent]]
+- [[2026-06-03-claude-use-cases-full-digest]]

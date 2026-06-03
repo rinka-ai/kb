@@ -337,3 +337,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Promoted the existing `[[2026-04-09-scaling-managed-agents-decoupling-the-brain-from-the-hands]]` note from first-pass metadata into a proper archival source note with the Anthropic article text preserved and publication date corrected to 2026-04-08.
 - Refreshed `[[managed-agents]]` with the source's sharper session-log, meta-harness, credential-boundary, and TTFT claims.
 - Updated `[[anthropic-engineering]]` collection notes to reflect 22 imported Engineering posts and this targeted repair.
+
+## [2026-06-03] ingest | Claude use cases full digest
+- Added `[[2026-06-03-claude-use-cases-full-digest]]` under `raw/articles/user-provided/`, converting the local HTML digest into a structured source note while preserving all 94 rendered use cases and their Claude resource URLs.
+- Added `[[2026-06-03-claude-use-cases-workflow-map]]` as the durable synthesis: Claude use cases as task boundaries, required context, product surfaces, output artifacts, follow-up actions, and approval/troubleshooting cues.
+- Updated `[[workflows]]`, `[[agent-tools]]`, `[[agent-skills]]`, `[[computer-use]]`, `[[web-agents]]`, `[[enterprise-agent-deployment-failure-modes]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Caveat: treated the digest as product/use-case packaging evidence, not independent proof of reliability, ROI, or compliance readiness.
