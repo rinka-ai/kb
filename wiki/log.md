@@ -310,3 +310,25 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-05-31-zackpaid-meta-ads-creative-fatigue-framework]]` under `raw/articles/paid-growth/`, preserving the user-provided X thread text and noting that the status date was inferred from the X snowflake timestamp.
 - Updated `[[performance-creative]]`, `[[meta-ads]]`, `[[paid-growth]]`, and `[[copywriting]]` with the angle/execution/avatar fatigue diagnosis model, the three-format-before-killing-an-angle heuristic, and the creative intelligence log pattern.
 - Updated `[[paid-growth-sources]]` and the master `[[index]]`; treated the post as low-authority practitioner evidence, with self-reported case-study claims left in the raw source rather than promoted as verified performance proof.
+
+## [2026-06-02] query | Graphed vs Aristotle and Pavlo methods
+- Compared Graphed's AI marketing agent offer against the KB's AI Aristotle and Pavlo agency patterns.
+- Added `[[2026-06-02-graphed-ai-agents-aristotle-pavlo-comparison]]` as a durable summary and updated `wiki/index.md`.
+- Key conclusion: Graphed is Aristotle-like as an integrated marketing-ops agent system, but it is not a literal Pavlo low-ticket local-business wedge.
+- Ran `bun run kb:refresh`; index rebuild succeeded and health reported pre-existing stale wiki signals.
+
+## [2026-06-02] query | AI search optimization build read
+- Answered whether the Ahrefs AI-search optimization findings justify building a product or service.
+- Added `[[2026-06-02-ai-search-optimization-build-read]]` as a durable synthesis and updated `wiki/index.md`.
+- Key conclusion: build the execution/source-influence layer, not a generic AI visibility dashboard, schema helper, or undifferentiated blog generator.
+
+## [2026-06-02] query | Anthropic financial-services repo ingest assessment
+- Cloned and inspected `anthropics/financial-services` at `120a31dcede4affa1d771cbf286a63ee331f92a4`, including README, plugin manifests, vertical skills, agent prompts, managed-agent cookbooks, subagent schemas, helper scripts, partner plugins, and Microsoft 365 install tooling.
+- Added `[[2026-06-02-anthropic-financial-services-ingest-assessment]]` as the durable go/no-go assessment and updated `wiki/index.md`.
+- Key conclusion: worth a targeted ingest for finance-domain Claude skills, managed-agent least-privilege patterns, MCP connector maps, and enterprise Office deployment; note that the inspected core `.mcp.json` is malformed after the Box addition.
+
+## [2026-06-03] ingest | Matt Van Horn agentic engineering hacks digest
+- Added `[[2026-06-02-every-agentic-engineering-hack-i-know]]` under `raw/articles/user-provided/`, preserving the user-provided digest and noting that a stable canonical X URL was not present in the attachment.
+- Added `[[2026-06-03-agentic-engineering-practitioner-stack]]` as the durable synthesis: plan-first artifacts, research-before-planning, parallel Claude/Codex sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste/review as the bottleneck.
+- Updated `[[claude-code]]`, `[[workflows]]`, `[[agent-skills]]`, `[[personal-knowledge-bases]]`, `[[voice-dictation]]`, `[[agent-tools]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Caveat: permission-bypass, browser-session auth, and agent-native real-world CLIs are treated as personal-risk tradeoffs, not KB security defaults.

@@ -21,6 +21,7 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]] - User-provided durable orchestration and background-agent pattern note.
 - [[2026-05-09-mnimiy-claude-md-12-rules]] - Practitioner thread on CLAUDE.md-style repo instructions and coding-agent failure modes.
 - [[2026-05-17-memory-skills-same-harness-tricalt]] - User-provided Tricalt note connecting memory, skills, and harness design.
+- [[2026-06-02-every-agentic-engineering-hack-i-know]] - Matt Van Horn practitioner digest on plan-first agentic engineering, voice, parallel Claude/Codex sessions, notes as memory, skills, agent-native CLIs, and overbuilding risk.
 
 ## Related Wiki Pages
 
@@ -28,4 +29,7 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[context-engineering]]
 - [[agent-memory]]
 - [[claude-code]]
+- [[workflows]]
+- [[agent-skills]]
+- [[personal-knowledge-bases]]
 - [[internal-engineering-conventions]]
