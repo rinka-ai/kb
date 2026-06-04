@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-05-31
+last_reviewed: 2026-06-04
 ---
 
 # Wiki Index
@@ -104,6 +104,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-06-04-ai-native-content-machine]] — Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory.
 - [[2026-04-10-kb-acquisition-priorities]] — Audit of the KB's strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
 - [[2026-04-12-elevenlabs-voice-agent-architecture]] — Architecture summary of ElevenLabs' voice-agent stack across runtime control, tools, personalization, telephony, and operations.
 - [[2026-04-13-rag-acquisition-priorities]] — Rationale and reading order for the core RAG paper, retriever, evaluation, and GraphRAG additions.
@@ -180,7 +181,7 @@ Counts as of `2026-06-04`. Folders under `raw/articles/`.
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (9)
-- `user-provided` (10)
+- `user-provided` (11)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)

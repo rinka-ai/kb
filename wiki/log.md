@@ -355,3 +355,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated `[[agent-skills]]`, `[[internal-engineering-conventions]]`, `[[codebase-architecture]]`, `[[claude-code]]`, and `[[research-workflows]]` with diagnosis, domain-language grilling, vertical TDD, durable issue briefs, out-of-scope notes, and architecture-deepening vocabulary.
 - Updated `[[github-repos]]`, `[[home]]`, the master `[[index]]`, and the earlier `[[2026-06-03-matt-pocock-skills-ingest-assessment]]` to point at the full source note.
 - Caveat: did not copy `setup-matt-pocock-skills` into this repo because its `CONTEXT.md`/ADR/docs-agent assumptions overlap with this repo's canonical `AGENTS.md` and wiki schema.
+
+## [2026-06-04] ingest | Alex Lieberman content machine
+- Added `[[2026-06-03-alex-lieberman-content-machine]]` under `raw/articles/user-provided/`, preserving the user-provided X digest and noting that the tweet ID decodes to 2026-06-03T20:35:27Z while X did not expose clean source text during ingest.
+- Added `[[2026-06-04-ai-native-content-machine]]` as the durable synthesis: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native derivatives, and final-edit learning loops as creator memory.
+- Updated `[[content-creation-strategy]]`, `[[workflows]]`, `[[agent-skills]]`, `[[agent-memory]]`, `[[context-engineering]]`, `[[personal-knowledge-bases]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Ran `bun run kb:refresh`; index rebuild succeeded with health reporting `review_backlog=0`, `stale_wiki=10`, and `uncovered_tags=1`.

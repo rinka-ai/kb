@@ -3,12 +3,12 @@ id: content-creation-strategy
 type: concept
 title: Content Creation Strategy
 tags: [content-creation, content-marketing, content-strategy, social-media, seo, paid-growth, ai-content]
-source_count: 7
+source_count: 8
 summary: Content creation strategy compounds when audience insight, first-hand expertise, platform-native formats, repurposing, paid distribution, and measurement produce reusable proof instead of isolated posts.
 canonical_for: [content creation, content strategy, content marketing strategy, social content engine, ai content strategy]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-06-04
+review_due: 2026-07-04
 confidence: "0.80"
 ---
 
@@ -69,6 +69,12 @@ One strong source event should become many assets:
 6. Use paid spend to amplify proven winners.
 7. Feed comments and performance data back into the next brief.
 
+## AI-Native Creator Pipeline
+
+The Lieberman content-machine source adds a sharper workflow pattern: AI-assisted content should keep the creator in the first and final mile while turning the middle into explicit artifacts and skills. The useful sequence is not "write me a post"; it is idea mining, human idea selection, sourced research, specificity-seeking interviews, raw transcript preservation, voice-aware drafting, reviewer critique, native repurposing, final human approval, and a learning loop from final edits back into creator-specific lessons.
+
+This pattern helps avoid AI-slop because the system is fed by first-hand context, real stories, exact words, and final human edits rather than only by platform trends or generic style mimicry.
+
 ## Social Saturation
 
 Sprout and CMI both point to a crowded content environment. More output alone is not a strategy. Teams need goals, audience clarity, benchmarks, and a repeatable creation model.
@@ -101,6 +107,7 @@ Good paid-content integration:
 - [[ugc-ads]]
 - [[google-ads]]
 - [[meta-ads]]
+- [[2026-06-04-ai-native-content-machine]]
 
 ## Source Notes
 
@@ -111,3 +118,4 @@ Good paid-content integration:
 - [[2026-05-27-google-abcd-effective-video-ads]]
 - [[2026-05-27-demand-curve-making-ads]]
 - [[2026-05-27-cxl-voice-of-customer-research]]
+- [[2026-06-03-alex-lieberman-content-machine]]

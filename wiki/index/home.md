@@ -35,6 +35,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-06-04-ai-native-content-machine]]
 - [[2026-06-03-matt-pocock-skills-ingest-assessment]]
 - [[2026-06-03-claude-use-cases-workflow-map]]
 - [[2026-06-03-agentic-engineering-practitioner-stack]]
