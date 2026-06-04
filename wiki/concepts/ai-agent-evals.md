@@ -3,12 +3,12 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents, web-agents, browser, computer-use]
-source_count: 23
+source_count: 24
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-06-04
+review_due: 2026-07-04
 confidence: "0.87"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. Cognee adds a retrieval-system version of the same lesson: chunking, graph construction, retriever choice, prompt template, top-k, and judge metric can all change system scores, so evals should track the full configuration rather than just a model and dataset. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. Cognee adds a retrieval-system version of the same lesson: chunking, graph construction, retriever choice, prompt template, top-k, and judge metric can all change system scores, so evals should track the full configuration rather than just a model and dataset. Learn Harness Engineering adds a useful distinction between structural harness validation and behavioral agent evaluation: checking whether `AGENTS.md`, feature state, verification commands, and handoff files exist is useful, but it does not replace before/after sessions on representative tasks. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
 
 ## Core Components
 
@@ -29,6 +29,8 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - retrieval configuration, including chunking, graph-building prompts, retriever family, top-k, context summaries, and answer prompt
 - edit manifests and attribution ledgers when the evaluated harness evolves over time
 - agent, step, message, and causal-chain labels when evaluating multi-agent failure attribution
+- structural harness checks for instructions, state, verification, scope, and lifecycle
+- real-session replay or before/after tasks when the claim is that the harness improves agent performance
 
 ## Benchmark Families
 
@@ -66,6 +68,8 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - For GraphRAG or memory systems, evaluate the KG-to-LLM interface as a whole: graph extraction, retrieval, context formatting, answer style, and grader choice interact.
 - Pair exact-match/F1 metrics with semantic or LLM-judge metrics, but treat judge variance as a measured system property rather than a footnote.
 - Keep hold-out questions even for small tuning loops; otherwise retrieval prompt tuning can overfit answer style instead of improving evidence use.
+- Use structural validators as fast smoke tests, not as proof that agents complete more work.
+- When reporting harness experiments, separate artifact coverage, eval-case coverage, and observed task completion.
 
 ## Source Notes
 
@@ -92,3 +96,4 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-05-14-beyond-individual-intelligence-multi-agent-life-survey]]
 - [[2025-05-30-optimizing-interface-knowledge-graphs-llms-complex-reasoning]]
 - [[2026-05-18-cognee]]
+- [[2026-06-04-walkinglabs-learn-harness-engineering]]

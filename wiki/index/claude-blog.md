@@ -13,7 +13,7 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
 ## Collection Notes
 
 - Imported on 2026-04-09.
-- This collection focuses on reusable ideas about Claude Code, Skills, subagents, multi-agent design, workflow customization, and agent-security operations.
+- This collection focuses on reusable ideas about Claude Code, Skills, subagents, multi-agent design, workflow customization, skill distribution, and agent-security operations.
 - I skipped most launch and marketing posts unless they contained operational guidance that seems likely to age well.
 
 ## By Theme
@@ -25,6 +25,7 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
   - [[2025-11-13-skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents]]
   - [[2025-11-19-how-to-create-skills-key-steps-limitations-and-examples]]
   - [[2025-11-12-improving-frontend-design-through-skills]]
+  - [[2026-06-03-lessons-from-building-claude-code-how-we-use-skills]]
 - Subagents and multi-agent design:
   - [[2026-04-06-how-and-when-to-use-subagents-in-claude-code]]
   - [[2026-01-23-building-multi-agent-systems-when-and-how-to-use-them]]
@@ -36,6 +37,7 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
 ## Why This Collection Matters
 
 - It complements the more systems-heavy Anthropic Engineering corpus with product-surface workflow guidance.
-- Several posts map directly onto this repo's own use of `AGENTS.md`, Skills, subagents, and KB-driven context management.
+- Several posts map directly onto this repo's own use of `AGENTS.md`, Skills, subagents, hooks, and KB-driven context management.
+- The skills material now captures both product-level positioning and internal Anthropic operating advice on gotchas, verification, progressive disclosure, setup, memory, hooks, marketplaces, and measurement.
 - The multi-agent and subagent posts are especially useful because they explain when extra coordination is worth the cost and when it is not.
 - The zero-trust agent-security ebook now anchors the collection's security material around identity, least agency, sandboxing, protected memory, and defensive operations.

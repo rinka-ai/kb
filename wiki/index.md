@@ -19,7 +19,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, secure, and reuse information across time through explicit storage, load policy, write discipline, verification, integrity controls, belief-state modeling, and harness-owned context management.
 - [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, identity, authorization, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
 - [[agent-security]] — Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
-- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance while keeping invocation, evidence, and mutation boundaries explicit.
+- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance, examples, scripts, setup state, hooks, and verification habits while keeping invocation, evidence, and mutation boundaries explicit.
 - [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans.
 - [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
@@ -67,7 +67,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[rag]] — RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
 - [[reasoning]] — Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, and when a tool result changes the plan.
 - [[reinforcement-learning]] — Reinforcement learning studies agents that learn policies through interaction, delayed reward, value estimation, exploration, and sequential decision-making.
-- [[repo-local-knowledge-bases]] — Repo-local knowledge bases are committed project-memory layers that help coding agents and humans reuse product, codebase, design, and decision knowledge without rereading the whole source tree.
+- [[repo-local-knowledge-bases]] — Repo-local knowledge bases are committed project-memory layers that help coding agents and humans reuse product, codebase, design, decision, progress, verification, and handoff knowledge without rereading the whole source tree.
 - [[research-workflows]] — Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
 - [[resolvers]] — Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
 - [[speech-to-text]] — Speech-to-text quality is shaped as much by capture conditions, output structure, and diarization choices as by the base transcription model.
@@ -84,7 +84,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[generalization-and-model-selection]] — Generalization and model selection explain how to choose models that perform beyond the training set by managing capacity, validation evidence, and regularization.
 - [[generative-modeling]] — Generative modeling learns data distributions or simulators, connecting latent-variable models, autoregressive models, VAEs, GANs, flows, and diffusion models.
 - [[google-ads]] — Google Ads increasingly runs on modular assets, AI assembly, search intent, Performance Max breadth, video creative principles, policy-safe landing pages, and conversion lift rather than static keyword-and-ad setups alone.
-- [[internal-engineering-conventions]] — Internal engineering conventions turn tacit team practice into reusable constraints for agents and humans, especially around scope, imports, validation, naming, tests, side effects, UI discipline, and knowledge updates.
+- [[internal-engineering-conventions]] — Internal engineering conventions turn tacit team practice into reusable constraints for agents and humans, especially around scope, imports, validation, naming, tests, side effects, UI discipline, knowledge updates, and skillized gotchas.
 - [[markov-decision-processes]] — Markov decision processes model sequential decisions with states, actions, transitions, rewards, policies, value functions, and Bellman equations.
 - [[marketing-measurement]] — Marketing measurement separates optimization, attribution, funnel quality, and causal incrementality so paid growth decisions are not overfit to platform dashboards.
 - [[meta-ads]] — Meta Ads performance now depends on simplified structures, automation, diversified creative, creator/UGC supply, first-party conversion signals, policy-safe claims, and validation beyond dashboard ROAS.
@@ -104,6 +104,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-06-04-learn-harness-engineering-kb-upgrades]] — walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill.
 - [[2026-06-04-ai-native-content-machine]] — Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory.
 - [[2026-04-10-kb-acquisition-priorities]] — Audit of the KB's strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
 - [[2026-04-12-elevenlabs-voice-agent-architecture]] — Architecture summary of ElevenLabs' voice-agent stack across runtime control, tools, personalization, telephony, and operations.
@@ -175,12 +176,12 @@ Counts as of `2026-06-04`. Folders under `raw/articles/`.
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
-- `github-repos` (18)
+- `github-repos` (19)
 - `internal-codebases` (6)
 - `design-systems` (1)
 - `enterprise-ai` (12)
 - `momo-research` (11)
-- `claude-blog` (9)
+- `claude-blog` (10)
 - `user-provided` (11)
 - `business-strategy` (4)
 - `paid-growth` (26)
