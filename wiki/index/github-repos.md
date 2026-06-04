@@ -20,6 +20,8 @@ This index groups official repositories added to the KB as implementation and pr
   [[2026-05-20-hermes-agent]]
 - Agentic engineering skill repositories:
   [[2026-06-04-mattpocock-skills]]
+- Harness-engineering curricula and templates:
+  [[2026-06-04-walkinglabs-learn-harness-engineering]]
 - Eval frameworks:
   [[2026-04-10-inspect-ai]]
 - Stateful memory systems:
@@ -46,6 +48,7 @@ This index groups official repositories added to the KB as implementation and pr
 - They make it easier to trace benchmark, protocol, and framework claims back to canonical project sources.
 - They also preserve codebase-level product patterns, such as how interface quality can be encoded in design systems, domain flows, tests, telemetry, and rollout control.
 - Skill repositories preserve reusable development procedures as inspectable artifacts rather than chat-only habits.
+- Harness-engineering curricula preserve the surrounding files, templates, validators, and project comparisons that turn agent reliability advice into a runnable operating system.
 
 ## Related
 

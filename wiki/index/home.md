@@ -24,6 +24,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[addy-osmani]]
 - [[arxiv]]
 - [[business-strategy]]
+- [[claude-blog]]
 - [[design-systems]]
 - [[github-repos]]
 - [[internal-codebases]]
@@ -35,6 +36,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-06-04-learn-harness-engineering-kb-upgrades]]
 - [[2026-06-04-ai-native-content-machine]]
 - [[2026-06-03-matt-pocock-skills-ingest-assessment]]
 - [[2026-06-03-claude-use-cases-workflow-map]]
