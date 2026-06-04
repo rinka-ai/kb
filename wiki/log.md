@@ -381,3 +381,13 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 ## [2026-06-04] refresh | walkinglabs learn-harness-engineering repo
 - Ran `bun run kb:refresh` after the ingest; index rebuild succeeded with `3319` chunks from `379` markdown files.
 - Health reported `review_backlog=0`, `stale_wiki=8`, and `uncovered_tags=1`.
+
+## [2026-06-04] ingest | Claude Code Dynamic Workflows X digest
+- Added `[[2026-06-03-dynamic-workflows-claude-code-ingest]]` under `raw/articles/user-provided/`, preserving the local Markdown packet from `/Users/josemanuelcerqueira/Downloads/dynamic-workflows-claude-code-ingest.md`.
+- Checked Anthropic's official May 28, 2026 Dynamic Workflows launch post during ingest; core feature/date/`ultracode`/token-cost/research-preview claims are confirmed there, while the six-pattern taxonomy remains practitioner synthesis from the X digest.
+- Added `[[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]` as durable synthesis for classify-and-act, fan-out-and-synthesize, adversarial verification, generate-and-filter, tournament comparison, loop-until-done, quarantine, and save-as-skill patterns.
+- Updated `[[claude-code]]`, `[[workflows]]`, `[[agent-harnesses]]`, `[[agent-skills]]`, `[[agent-security]]`, `[[ai-agent-evals]]`, `[[context-engineering]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+
+## [2026-06-04] refresh | Claude Code Dynamic Workflows X digest
+- Ran `bun run kb:refresh` after the ingest; index rebuild succeeded with `3352` chunks from `381` markdown files.
+- Health reported `review_backlog=0`, `stale_wiki=7`, and `uncovered_tags=1`.

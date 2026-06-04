@@ -104,6 +104,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]] — A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills.
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]] — walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill.
 - [[2026-06-04-ai-native-content-machine]] — Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory.
 - [[2026-04-10-kb-acquisition-priorities]] — Audit of the KB's strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
@@ -182,7 +183,7 @@ Counts as of `2026-06-04`. Folders under `raw/articles/`.
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (10)
-- `user-provided` (11)
+- `user-provided` (12)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)

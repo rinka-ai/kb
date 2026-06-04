@@ -3,7 +3,7 @@ id: concept-workflows
 type: concept
 title: Agent Workflows
 tags: [workflows, agents, orchestration, workflow-agents, deterministic-control]
-source_count: 16
+source_count: 17
 summary: Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, side effects, and human review capacity stay inspectable instead of being improvised inside one autonomous loop.
 canonical_for: [workflows, workflow agents, agent workflows, deterministic orchestration, review backpressure]
 review_status: reviewed
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run. The durable-orchestration source frames workflows as a stable substrate for changing agent patterns: ReAct loops, planners, routers, and multi-agent delegation are all compositions of step, state, event, retry, and trace primitives. Osmani adds an operator-capacity constraint: approval gates are not free, so workflow throughput should model human review as the slow consumer and apply backpressure before agent output becomes an unreviewed queue. The AI SaaS case-study transcript extends this into product discovery: a workflow can also move from metric definition to mechanism mining, simulation, parameter search, live rollout, and business-metric feedback. The AI-agency source adds a GTM/delivery version: reactivation, review/referral capture, speed-to-lead, sales coaching, and ads should be sequenced as one measurable funnel workflow rather than sold as disconnected automations. The Van Horn digest adds a personal-operator version: research, plan, build, verify, review, and skillize can be treated as an artifact loop across multiple agent sessions. The Claude use-case digest adds a product-packaging version: a useful AI workflow is described by its task boundary, required context, product surface, output artifact, follow-up action, and troubleshooting guidance. The Lieberman content-machine digest adds a creator-operations version: the human owns premise and final approval, while the middle stages become artifact-producing AI skills with explicit upstream routes when information is missing. Anthropic's Claude Code skills article adds a workflow-library lens: recurring business processes, scaffolds, reviews, CI/CD operations, runbooks, and infrastructure procedures can become skills when the repeated skeleton is stable, measurable, and configured enough to avoid wrong side effects. Learn Harness Engineering adds the coding-session skeleton: initialize, select one active feature, implement against a verification command, record evidence, update handoff, and leave a clean restartable state.
+Agent workflows are deterministic or semi-deterministic control structures around model calls. They matter when ordering, retries, approval gates, and business rules are known well enough that orchestration should live in code rather than be rediscovered by the model on every run. The durable-orchestration source frames workflows as a stable substrate for changing agent patterns: ReAct loops, planners, routers, and multi-agent delegation are all compositions of step, state, event, retry, and trace primitives. Osmani adds an operator-capacity constraint: approval gates are not free, so workflow throughput should model human review as the slow consumer and apply backpressure before agent output becomes an unreviewed queue. The AI SaaS case-study transcript extends this into product discovery: a workflow can also move from metric definition to mechanism mining, simulation, parameter search, live rollout, and business-metric feedback. The AI-agency source adds a GTM/delivery version: reactivation, review/referral capture, speed-to-lead, sales coaching, and ads should be sequenced as one measurable funnel workflow rather than sold as disconnected automations. The Van Horn digest adds a personal-operator version: research, plan, build, verify, review, and skillize can be treated as an artifact loop across multiple agent sessions. The Claude use-case digest adds a product-packaging version: a useful AI workflow is described by its task boundary, required context, product surface, output artifact, follow-up action, and troubleshooting guidance. The Lieberman content-machine digest adds a creator-operations version: the human owns premise and final approval, while the middle stages become artifact-producing AI skills with explicit upstream routes when information is missing. Anthropic's Claude Code skills article adds a workflow-library lens: recurring business processes, scaffolds, reviews, CI/CD operations, runbooks, and infrastructure procedures can become skills when the repeated skeleton is stable, measurable, and configured enough to avoid wrong side effects. Learn Harness Engineering adds the coding-session skeleton: initialize, select one active feature, implement against a verification command, record evidence, update handoff, and leave a clean restartable state. The Dynamic Workflows digest adds a model-generated workflow lens: the orchestration plan itself can become task-specific code when fan-out, verification, ranking, or loop-until-done behavior would be too fragile in one conversation.
 
 ## When They Fit
 
@@ -45,6 +45,12 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - split initialization from implementation so startup readiness is verified before feature work begins
 - drive coding-agent sessions from one active feature with explicit status, dependencies, verification, and evidence
 - treat handoff and cleanup as workflow stages, not optional afterthoughts
+- use classify-and-act when heterogeneous items need routing before action
+- use fan-out-and-synthesize when independent items can be processed in parallel and merged later
+- use adversarial verification when the worker should not grade its own output
+- use generate-and-filter or tournament comparison when quality depends on exploring alternatives before committing
+- use loop-until-done when the stop condition is known but the number of iterations is not
+- quarantine untrusted content in read-only workflow stages before privileged action stages run
 - split skillized workflows by operating category; verification, deployment, runbook, and infrastructure skills have different risk and evidence requirements
 - keep setup, prior-run logs, and output destinations explicit when a workflow skill posts, deploys, files tickets, or reports deltas
 - package user-facing workflows around concrete artifacts and continuations: what context is required, what file/report/tracker gets produced, what downstream tool receives it, and what still needs review
@@ -64,6 +70,9 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - treating a polished use-case template as production evidence before reliability, ROI, compliance, and side-effect controls are independently verified
 - skillizing a workflow before its category, side effects, setup dependencies, evidence checks, and review points are clear
 - letting the agent choose its own definition of "done" instead of binding workflow transitions to evidence
+- using a high-compute workflow for a routine task that a normal session would finish faster and cheaper
+- omitting token budgets or hard goals from broad workflow runs
+- letting raw untrusted content reach the same agent or stage that can edit code, open PRs, or call privileged tools
 - letting AI-generated critique close information gaps by invention instead of routing missing facts, stories, or numbers back to the human/source-gathering stage
 
 ## Source Notes
@@ -84,3 +93,4 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - [[2026-06-03-alex-lieberman-content-machine]]
 - [[2026-06-03-lessons-from-building-claude-code-how-we-use-skills]]
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
+- [[2026-06-03-dynamic-workflows-claude-code-ingest]]
