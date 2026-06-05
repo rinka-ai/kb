@@ -5,11 +5,11 @@ title: Resolvers
 tags: [agents, context-engineering, routing, skills, governance]
 source_count: 5
 summary: Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
-canonical_for: [resolver, resolvers, routing tables for context]
+canonical_for: [resolver, resolvers, routing tables for context, vertical agent architecture, modular context packs, route gating, context pack routing]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
-confidence: "0.81"
+last_reviewed: 2026-06-05
+review_due: 2026-07-05
+confidence: "0.83"
 ---
 
 # Resolvers

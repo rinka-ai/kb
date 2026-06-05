@@ -6,10 +6,10 @@ tags: [agent-skills, coding-agents, engineering-workflows, claude-code, tdd, deb
 summary: "Matt Pocock's skills repo is worth a targeted repo-level ingest for agentic engineering workflow design, especially diagnosis, domain-language grilling, TDD, issue triage, and architecture deepening; the subsequent ingest preserved it as one GitHub-repo source note rather than copying every skill wholesale."
 source_count: 1
 canonical_for: [matt pocock skills ingest assessment, mattpocock skills, skills for real engineers]
-review_status: draft
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
-confidence: "0.84"
+review_status: reviewed
+last_reviewed: 2026-06-05
+review_due: 2026-08-05
+confidence: "0.86"
 ---
 
 # Matt Pocock Skills Ingest Assessment
@@ -19,6 +19,8 @@ confidence: "0.84"
 `mattpocock/skills` was worth a targeted repo-level ingest, not a per-file bulk ingest. The durable value is the way the repo packages ordinary software-engineering discipline into small, composable agent skills: clarify the domain language, build feedback loops, test through public interfaces, slice work vertically, keep issue briefs durable, and use architecture reviews to deepen shallow modules.
 
 The assessment inspected all 72 non-`.git` files from `mattpocock/skills` at commit `aaf2453fbdfe7a15c07f11d861224f34ab4b53cb` dated `2026-05-31`. The approved follow-up preserved the repository as [[2026-06-04-mattpocock-skills]].
+
+June review note: this page now functions as the decision memo for why the repo was ingested once at repo level. The canonical source note carries the archival details; this summary preserves the selection and exclusion logic.
 
 ## What Is Worth Keeping
 

@@ -5,11 +5,11 @@ title: Agent Protocols
 tags: [agents, protocols, tool-use, mcp, tools]
 source_count: 16
 summary: Agent protocols define the typed interaction layer around tools, approvals, identity, authorization, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
-canonical_for: [mcp, model context protocol, agent protocol]
+canonical_for: [mcp, model context protocol, agent protocol, mcp authorization, agent identity protocol, least agency protocol]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
-confidence: "0.85"
+last_reviewed: 2026-06-05
+review_due: 2026-07-05
+confidence: "0.87"
 ---
 
 # Agent Protocols
@@ -23,6 +23,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - tool schemas with typed arguments, preconditions, side effects, and blocked targets
 - cryptographic caller identity and per-agent authentication for tool and service access
 - authorization attributes such as user-on-behalf-of, risk score, resource sensitivity, time, and requested action
+- least-agency policy that constrains what a tool can do, how often, where, and under which delegated authority
 - permission tiers for always-allowed, approval-required, and never-allowed actions
 - delegation rules for when work can be handed to other agents or runtimes
 - inter-agent communication contracts with message identity, sender/receiver roles, and handoff semantics
@@ -38,6 +39,7 @@ Agent protocols are the governance and interface layer around agent action. They
 ## Why They Matter
 
 - prevent capability from being confused with authorization
+- make security and approval decisions attributable instead of leaving them as prompt-only convention
 - make tool use more portable across models and harnesses
 - reduce hidden prompt logic and implicit safety assumptions
 - centralize enforcement so composed skills do not create governance gaps
@@ -56,6 +58,7 @@ Agent protocols are the governance and interface layer around agent action. They
 - keep dynamic tool-discovery protocols paired with filtering, naming, and authorization rules so discovery does not become ambient authority
 - treat MCP server descriptors, schemas, and metadata as supply-chain and prompt-injection surfaces, not neutral documentation
 - log every protocol-level authorization and approval decision with enough identity context to reconstruct incidents
+- prefer capability-removing controls, such as scoped credentials and deny-by-default tool access, over friction-only controls that merely slow an attacker down
 - avoid treating local logout as permission revocation when the protocol also has an onchain or server-side delegate registry
 
 ## Tensions

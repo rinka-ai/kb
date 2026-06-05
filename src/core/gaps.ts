@@ -23,6 +23,11 @@ const TAG_COVERAGE_ALIASES: Record<string, string[]> = {
   "human-in-the-loop": ["workflows", "agent-harnesses"],
   input: ["voice-ai"],
   "knowledge-base": ["knowledge-bases", "personal-knowledge-bases", "rag"],
+  "knowledge-vault": [
+    "repo-local-knowledge-bases",
+    "internal-engineering-conventions",
+    "codebase-architecture",
+  ],
   "kv-cache": ["context-engineering"],
   linkedin: ["outbound", "compliance"],
   "long-running-agents": ["agent-harnesses", "managed-agents"],

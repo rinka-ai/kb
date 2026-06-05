@@ -154,6 +154,25 @@ const TITLE_PHRASE_BOOST = 20;
 const CANONICAL_PHRASE_BOOST = 12;
 const TAG_PHRASE_BOOST = 8;
 const SECTION_PHRASE_BOOST = 4;
+const SEARCH_META_TOPIC_PENALTY = 25;
+
+const SEARCH_META_TAGS = new Set(["evals", "kb-health", "search", "telemetry"]);
+
+const SEARCH_META_QUERY_TERMS = new Set([
+  "audit",
+  "base",
+  "eval",
+  "evals",
+  "health",
+  "kb",
+  "knowledge",
+  "mcp",
+  "methodology",
+  "observability",
+  "retrieval",
+  "search",
+  "telemetry",
+]);
 
 interface ScoredChunk {
   chunk: KbChunk;
@@ -607,6 +626,11 @@ function rankGroupedResults(
         exactMatchedTerms.length > 0 && expandedMatchedTerms.length >= exactMatchedTerms.length + 3
           ? 0.25
           : 0;
+      const searchMetaPenalty =
+        top.chunk.tags.filter((tag) => SEARCH_META_TAGS.has(tag)).length >= 2 &&
+        !exactTerms.some((term) => SEARCH_META_QUERY_TERMS.has(term))
+          ? SEARCH_META_TOPIC_PENALTY
+          : 0;
       const score =
         top.score +
         secondarySupport +
@@ -617,7 +641,8 @@ function rankGroupedResults(
         rerankBoost +
         phraseBoost -
         fuzzyOnlyPenalty -
-        expansionHeavyPenalty;
+        expansionHeavyPenalty -
+        searchMetaPenalty;
 
       return {
         score: Number(score.toFixed(3)),

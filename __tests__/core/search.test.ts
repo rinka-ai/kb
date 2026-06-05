@@ -427,6 +427,67 @@ describe("searchIndex", () => {
     expect(results[0]?.path).toBe("wiki/concepts/multi-agent-systems.md");
   });
 
+  test("search metadata pages do not outrank topical matches for non-search queries", () => {
+    const metadataNoiseIndex: KbIndex = {
+      ...semanticIndex,
+      chunk_count: semanticIndex.chunk_count + 1,
+      file_count: semanticIndex.file_count + 1,
+      chunks: [
+        ...semanticIndex.chunks,
+        {
+          id: "search-audit-doc",
+          path: "wiki/summaries/search-audit.md",
+          note_slug: "search-audit",
+          kind: "document",
+          title: "Search Audit",
+          section: "Evidence Read",
+          type: "summary",
+          status: "current",
+          superseded_by: "",
+          summary: "Retrieval audit that mentions old failed query examples.",
+          tags: ["knowledge-base", "search", "evals", "kb-health"],
+          related: [],
+          canonical_for: [],
+          wiki_links: [],
+          url: "",
+          date_published: "",
+          date_added: "",
+          author: "",
+          publisher: "",
+          review_status: "reviewed",
+          last_reviewed: "2026-04-16",
+          review_due: "2026-05-16",
+          confidence: "0.9",
+          text: "Eval failures included the exact query delegate specialist copilots.",
+          term_freq: {
+            delegate: 3,
+            specialist: 3,
+            copilots: 3,
+          },
+          doc_len: 8,
+        },
+      ],
+    };
+    const plan = buildQueryPlan(metadataNoiseIndex, {
+      query: "delegate specialist copilots",
+      top: 5,
+      json: false,
+      rebuildIfStale: false,
+      includeSuperseded: false,
+    });
+
+    const results = searchIndex(metadataNoiseIndex, plan.scoringTerms, 5, {
+      exactTerms: plan.exactTerms,
+      expandedTerms: plan.expandedTerms,
+      termWeights: plan.termWeights,
+    });
+
+    expect(results[0]?.path).toBe("wiki/concepts/multi-agent-systems.md");
+    expect(
+      results.findIndex((result) => result.path === "wiki/summaries/search-audit.md"),
+    ).toBeGreaterThan(0);
+  });
+
   test("buildQueryPlan downweights stem variants relative to literal query terms", () => {
     const plan = buildQueryPlan(semanticIndex, {
       query: "workflow agents retries",

@@ -5,18 +5,18 @@ title: Research Workflows
 tags: [research, workflows, agents, multi-agent]
 source_count: 6
 summary: Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
-canonical_for: [research workflows]
+canonical_for: [research workflows, repo ingest workflow, github repo teardown, skills repo ingest, source teardown workflow]
 review_status: reviewed
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
-confidence: "0.8"
+last_reviewed: 2026-06-05
+review_due: 2026-07-05
+confidence: "0.84"
 ---
 
 # Research Workflows
 
 ## Summary
 
-Research workflows in this KB are loops of ingest, retrieval, synthesis, and maintenance. The goal is not just to answer questions, but to improve the corpus each time work is done.
+Research workflows in this KB are loops of ingest, retrieval, synthesis, and maintenance. The goal is not just to answer questions, but to improve the corpus each time work is done. Recent repo-level ingests sharpen the pattern: inspect the source as a system, preserve one provenance-bearing source note, synthesize reusable operating lessons, then update the concept layer and health checks instead of copying every internal file.
 
 ## Common Loop
 
@@ -25,6 +25,7 @@ Research workflows in this KB are loops of ingest, retrieval, synthesis, and mai
 - produce a synthesis artifact
 - file the result back into the wiki
 - run health checks and rebuild the index
+- use search telemetry and stale-page reports as maintenance input for the next content pass
 
 ## Internal Codebase Ingests
 

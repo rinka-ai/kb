@@ -5,11 +5,11 @@ title: Codebase Architecture
 tags: [software-architecture, codebase-architecture, monorepo, monorepos, conventions, source-organization]
 source_count: 5
 summary: Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
-canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization]
+canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization, module depth, deep modules, seam adapter architecture, codebase organization for agents]
 review_status: reviewed
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
-confidence: "0.84"
+last_reviewed: 2026-06-05
+review_due: 2026-07-05
+confidence: "0.86"
 ---
 
 # Codebase Architecture
@@ -29,6 +29,7 @@ The internal Aya and Conformis repos make this concrete. Aya organizes an AI voi
 - Runtime validators belong at boundaries, while frontend-safe contracts/constants should stay cheap to import.
 - Tests, lint rules, and route shape should enforce the architecture instead of relying only on docs.
 - Repo instructions should describe the failure modes agents must avoid in that codebase.
+- Skillized engineering procedures should reinforce architecture instead of creating a second instruction system; diagnosis, TDD, triage, and architecture-review skills work best when they reference local boundaries and verification habits.
 - A module should earn its interface. If deleting it merely pushes complexity into callers, it was probably shallow; if deleting it spreads real complexity across call sites, it was probably hiding something useful.
 - A seam is justified by variation. One adapter is a hypothetical seam; two adapters make the seam real.
 
