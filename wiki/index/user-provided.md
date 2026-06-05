@@ -24,6 +24,7 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[2026-06-02-every-agentic-engineering-hack-i-know]] - Matt Van Horn practitioner digest on plan-first agentic engineering, voice, parallel Claude/Codex sessions, notes as memory, skills, agent-native CLIs, and overbuilding risk.
 - [[2026-06-03-claude-use-cases-full-digest]] - Local HTML digest of 94 Anthropic Claude use cases across Cowork, Chrome, Dispatch, Skills, Projects, Office/file outputs, domain workflows, and connectors.
 - [[2026-06-03-alex-lieberman-content-machine]] - Alex Lieberman practitioner digest on an AI-native content machine with human first/final-mile review, skillized research/interview/draft/review/repurposing stages, raw source preservation, and creator-specific learning loops.
+- [[2026-06-03-dynamic-workflows-claude-code-ingest]] - Codez practitioner X digest on Claude Code Dynamic Workflows as model-written workflow harnesses, with six orchestration patterns, token-budget cautions, quarantine topology, and save-as-skill guidance.
 
 ## Related Wiki Pages
 
@@ -40,3 +41,6 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[web-agents]]
 - [[enterprise-agent-deployment-failure-modes]]
 - [[content-creation-strategy]]
+- [[agent-harnesses]]
+- [[agent-security]]
+- [[ai-agent-evals]]

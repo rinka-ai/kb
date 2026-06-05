@@ -54,7 +54,7 @@ interface EvalArgs {
   includeSuperseded: boolean;
 }
 
-const DEFAULT_DATASET = resolve(ROOT, "evals", "search-gold.json");
+export const DEFAULT_SEARCH_EVAL_DATASET = resolve(ROOT, "evals", "search-gold.json");
 
 function rankForAny(paths: string[], acceptedPaths: string[]): number | null {
   if (acceptedPaths.length === 0) {
@@ -247,7 +247,7 @@ export function formatSearchEvalReport(report: SearchEvalReport): string {
 
 const evalCommand = new Command("eval")
   .description("Run KB retrieval evals against a gold dataset.")
-  .option("--dataset <path>", "Path to the eval dataset JSON file", DEFAULT_DATASET)
+  .option("--dataset <path>", "Path to the eval dataset JSON file", DEFAULT_SEARCH_EVAL_DATASET)
   .option("--top <n>", "Number of ranked results to inspect per query", "5")
   .option("--json", "Output the full eval report as JSON")
   .option("--no-rebuild-if-stale", "Skip automatic index rebuild")

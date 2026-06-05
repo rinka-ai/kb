@@ -5,11 +5,11 @@ title: Enterprise Agent Deployment Failure Modes
 tags: [enterprise-ai, agents, ai-adoption, workflows, orchestration, governance, ai-ops, sales]
 source_count: 19
 summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
-canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations]
-review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
-confidence: "0.78"
+canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations, Claude use cases workflow packaging, enterprise AI workflow packaging]
+review_status: reviewed
+last_reviewed: 2026-06-05
+review_due: 2026-07-05
+confidence: "0.82"
 ---
 
 # Enterprise Agent Deployment Failure Modes
@@ -42,6 +42,7 @@ Design response:
 - map systems-of-record, side channels, exception types, approvals, and actual decision criteria
 - distinguish documented process, actual process, and desired future process
 - treat the workflow map as a living artifact, not a one-time discovery deck
+- package candidate use cases with required context, output artifact, continuation path, confidence policy, and human approval point before treating them as deployable workflows
 
 ### Over-LLMing
 
@@ -116,6 +117,7 @@ Design response:
 - make state transitions durable and replayable
 - keep human corrections as structured feedback that improves the workflow
 - package each use case with required context, optional integrations, concrete output artifacts, and explicit continuation paths so teams can distinguish reusable workflows from impressive demos
+- use product-surface choice as part of deployment design: folder-scale work, browser work, file generation, connectors, skills, and scheduled tasks carry different governance and verification needs
 
 ## Why Software Engineering Is Easier
 

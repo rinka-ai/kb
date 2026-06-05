@@ -3,11 +3,13 @@ id: summary-2026-05-02-flue-sandbox-agent-framework-source-teardown
 type: summary
 title: Flue Sandbox Agent Framework Source Teardown
 tags: [flue, agent-frameworks, agent-harnesses, sandbox-agents, skills, durable-execution, mcp]
+source_count: 1
 summary: Reusable lessons from Flue's source tree, focused on how a compact TypeScript sandbox-agent framework should handle context, sessions, capabilities, events, and deployment lifecycle.
+canonical_for: [Flue source teardown, sandbox agent framework, Flue framework lessons]
 review_status: reviewed
-last_reviewed: 2026-05-02
-review_due: 2026-06-02
-confidence: "0.82"
+last_reviewed: 2026-06-05
+review_due: 2026-08-05
+confidence: "0.84"
 ---
 
 # Flue Sandbox Agent Framework Source Teardown
@@ -15,6 +17,8 @@ confidence: "0.82"
 ## Summary
 
 Flue is valuable as a compact implementation of the sandbox-agent thesis: a headless TypeScript handler can initialize an agent, give it a sandbox, open a session, run prompts or skills with typed results, grant specific commands, spawn child task sessions, connect MCP tools, and compile to target-specific deployment artifacts. The KB lesson is sharper than "sandbox everything": the better framework shape is a portable runtime contract around context, runs, capabilities, events, and infrastructure lifecycle. Flue has elegant ergonomics, but its current pain points show that those contracts must be explicit before the framework feels reliable across Node, Cloudflare, local, virtual, R2, and container sandboxes.
+
+June review note: the original teardown still holds. Its main value is the distinction between session persistence and durable execution, plus the warning that build-time roles and runtime filesystem context must converge into one explicit context plane.
 
 ## Patterns Worth Keeping
 

@@ -23,6 +23,17 @@ interface IndexHealth {
   error?: string;
 }
 
+function deployGitSha(): string {
+  return (
+    process.env.KB_DEPLOY_GIT_SHA ||
+    process.env.RAILWAY_GIT_COMMIT_SHA ||
+    process.env.VERCEL_GIT_COMMIT_SHA ||
+    process.env.SOURCE_VERSION ||
+    process.env.GIT_SHA ||
+    ""
+  ).trim();
+}
+
 // Privacy-safe index freshness snapshot. Never rebuilds the index (health must
 // stay cheap and side-effect free) and swallows any read/parse failure so the
 // endpoint always responds.
@@ -78,6 +89,7 @@ export function createHealthHandler(
       ok: true,
       name: KB_MCP_SERVER_NAME,
       version: KB_MCP_SERVER_VERSION,
+      gitSha: deployGitSha() || undefined,
       sessions: getSessionCount(),
       statefulSessions: config.statefulSessions,
       enableWrites: config.enableWrites,

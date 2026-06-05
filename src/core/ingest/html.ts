@@ -88,3 +88,15 @@ export function extractHtmlTitle(html: string): string {
     .replace(/\s+\|\s+.+$/, "")
     .trim();
 }
+
+export function extractCanonicalUrl(html: string, baseUrl: string): string {
+  const $ = cheerio.load(html);
+  const href = $('link[rel~="canonical"]').attr("href")?.trim();
+  if (!href) return "";
+
+  try {
+    return new URL(href, baseUrl).toString();
+  } catch {
+    return "";
+  }
+}

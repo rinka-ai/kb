@@ -12,6 +12,7 @@
     "kb:lint": "bun bin/lint.ts",
     "kb:report": "bun bin/report.ts",
     "kb:refresh": "bun bin/refresh.ts",
+    "kb:audit": "bun bin/audit.ts",
     "kb:ingest": "bun bin/ingest.ts",
     "kb:mcp": "bun bin/mcp.ts",
     "kb:mcp:http": "bun bin/mcp-http.ts",
