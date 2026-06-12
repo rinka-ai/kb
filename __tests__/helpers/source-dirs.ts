@@ -1,7 +1,17 @@
-import { mkdirSync, mkdtempSync, rmSync, utimesSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  rmSync,
+  statSync,
+  unlinkSync,
+  utimesSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { SOURCE_DIRS } from "../../src/core/paths";
+import { OUTPUT_FILE, SOURCE_DIRS } from "../../src/core/paths";
 
 export function withTempSourceDirs<T>(
   files: Array<{ relativePath: string; content: string; mtimeMs?: number }>,
@@ -24,12 +34,21 @@ export function withTempSourceDirs<T>(
   }
 
   const originalSourceDirs = [...SOURCE_DIRS];
+  const originalOutput = existsSync(OUTPUT_FILE)
+    ? { contents: readFileSync(OUTPUT_FILE), mtime: statSync(OUTPUT_FILE).mtime }
+    : null;
   SOURCE_DIRS.splice(0, SOURCE_DIRS.length, rawDir, wikiDir);
 
   try {
     return run({ tempRoot, rawDir, wikiDir });
   } finally {
     SOURCE_DIRS.splice(0, SOURCE_DIRS.length, ...originalSourceDirs);
+    if (originalOutput) {
+      writeFileSync(OUTPUT_FILE, originalOutput.contents);
+      utimesSync(OUTPUT_FILE, originalOutput.mtime, originalOutput.mtime);
+    } else if (existsSync(OUTPUT_FILE)) {
+      unlinkSync(OUTPUT_FILE);
+    }
     rmSync(tempRoot, { recursive: true, force: true });
   }
 }
