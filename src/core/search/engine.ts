@@ -4,6 +4,7 @@ import { ACTIVE_STATUSES, STATUS_SUPERSEDED } from "../constants";
 import {
   buildIndex,
   INDEX_SCHEMA_VERSION,
+  listMarkdownFiles,
   loadIndex,
   newestMarkdownMtime,
   writeIndex,
@@ -395,6 +396,10 @@ export function ensureIndex(rebuildIfStale: boolean): KbIndex {
 
     if (!rebuildIfStale) {
       return false;
+    }
+
+    if (loaded.file_count !== listMarkdownFiles().length) {
+      return true;
     }
 
     return newestMarkdownMtime() > statSync(OUTPUT_FILE).mtimeMs;
