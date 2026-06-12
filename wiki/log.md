@@ -396,3 +396,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Reviewed and refreshed stale wiki pages: `[[agent-protocols]]`, `[[ai-validation-and-assurance]]`, `[[codebase-architecture]]`, `[[enterprise-agent-deployment-failure-modes]]`, `[[research-workflows]]`, `[[2026-05-02-flue-sandbox-agent-framework-source-teardown]]`, and `[[2026-06-03-matt-pocock-skills-ingest-assessment]]`.
 - Folded newer source implications from `[[2026-05-27-zero-trust-for-ai-agents]]`, `[[2026-06-03-claude-use-cases-full-digest]]`, and `[[2026-06-04-mattpocock-skills]]` into the concept layer without creating new pages.
 - Added telemetry-backed canonical phrases to `[[resolvers]]`, `[[managed-agents]]`, `[[voice-ai]]`, `[[google-ads]]`, and `[[2026-06-03-claude-use-cases-workflow-map]]` so current low-confidence search examples route to existing canonical pages.
+
+## [2026-06-12] note | Railway egress + thin-client API-gateway pattern
+- Filed `[[2026-06-08-railway-egress-thin-client-api-gateway]]` under `wiki/summaries/` as internal decision rationale, not an external-source ingest.
+- Captured Railway egress-not-ingress billing, private-network versus public-proxy cost/latency, the serverless-to-single-region-Postgres anti-pattern, and the thin-client API-gateway topology.
+- Updated `[[home]]` and the master `[[index]]`; no concept pages touched because this topic is adjacent infrastructure guidance rather than core AI/agent synthesis.
