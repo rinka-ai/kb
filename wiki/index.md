@@ -19,8 +19,8 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, secure, and reuse information across time through explicit storage, load policy, write discipline, verification, integrity controls, belief-state modeling, and harness-owned context management.
 - [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, identity, authorization, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
 - [[agent-security]] — Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
-- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance, examples, scripts, setup state, hooks, and verification habits while keeping invocation, evidence, and mutation boundaries explicit.
-- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans.
+- [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance, examples, scripts, setup state, hooks, verification habits, and bounded search maps for long-tail references while keeping invocation, evidence, and mutation boundaries explicit.
+- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, code-mediated composition, and better orchestration boundaries than APIs built only for humans.
 - [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
@@ -40,7 +40,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[codebase-architecture]] — Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
 - [[content-creation-strategy]] — Content creation strategy compounds when audience insight, first-hand expertise, platform-native formats, repurposing, paid distribution, and measurement produce reusable proof instead of isolated posts.
 - [[computer-use]] — Computer-use agents extend web agents into full operating-system environments, where grounding, application knowledge, and multi-app coordination become first-class problems.
-- [[context-engineering]] — Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy, including which behavioral instructions deserve always-on placement.
+- [[context-engineering]] — Context engineering is the discipline of deciding what information enters active model context, in what form, and with what update policy, including which behavioral instructions deserve always-on placement and how domain task distributions decide context tiers.
 - [[context-rot]] — Context rot is performance degradation caused by overly long, noisy, or repeatedly rewritten context that erodes semantic discrimination.
 - [[copywriting]] — Copywriting for paid growth turns customer language, offer truth, objections, proof, and channel intent into concise, policy-safe messages that move the buyer to the next action.
 - [[decision-making-under-uncertainty]] — Decision-making under uncertainty connects probability, utility, planning, belief states, and sequential consequences into one action-oriented framework.
@@ -69,7 +69,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[reinforcement-learning]] — Reinforcement learning studies agents that learn policies through interaction, delayed reward, value estimation, exploration, and sequential decision-making.
 - [[repo-local-knowledge-bases]] — Repo-local knowledge bases are committed project-memory layers that help coding agents and humans reuse product, codebase, design, decision, progress, verification, and handoff knowledge without rereading the whole source tree.
 - [[research-workflows]] — Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
-- [[resolvers]] — Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
+- [[resolvers]] — Resolvers are lightweight routing layers that decide which context, skill, capability tier, or filing rule an agent should load for a given task.
 - [[speech-to-text]] — Speech-to-text quality is shaped as much by capture conditions, output structure, and diarization choices as by the base transcription model.
 - [[synthetic-voices]] — Synthetic voices create powerful accessibility and product opportunities, but they also demand consent, disclosure, provenance, and strong anti-impersonation controls.
 - [[text-to-speech]] — Text-to-speech is an output design problem as much as an API call, balancing latency, style control, markup, and disclosure requirements.
@@ -104,6 +104,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-06-12-vertical-agent-context-hierarchy-kb-upgrades]] — BrainsAndTennis's vertical-agent article is best preserved as a task-distribution compression pattern: put hot-path domain operations in tightly engineered L1 context, load curated specs on demand as L2, and keep complete raw API references reachable through L3 search skills.
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]] — A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills.
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]] — walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill.
 - [[2026-06-04-ai-native-content-machine]] — Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory.
@@ -169,11 +170,11 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-06-04`. Folders under `raw/articles/`.
+Counts as of `2026-06-12`. Folders under `raw/articles/`.
 
 - `addy-osmani` (1)
 - `anthropic-engineering` (22)
-- `arxiv` (30)
+- `arxiv` (29)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
@@ -183,7 +184,7 @@ Counts as of `2026-06-04`. Folders under `raw/articles/`.
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (10)
-- `user-provided` (12)
+- `user-provided` (13)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)

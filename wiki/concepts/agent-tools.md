@@ -3,12 +3,12 @@ id: concept-agent-tools
 type: concept
 title: Agent Tools
 tags: [tools, tool-use, agents, code-execution, mcp]
-source_count: 17
-summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans.
+source_count: 18
+summary: Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, code-mediated composition, and better orchestration boundaries than APIs built only for humans.
 canonical_for: [agent tools, tool use, structured tools, code-mediated tool use]
 review_status: reviewed
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
+last_reviewed: 2026-06-12
+review_due: 2026-07-12
 confidence: "0.86"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.86"
 
 ## Summary
 
-Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes. Steward adds the money-and-credentials version of the same pattern: an agent-facing signing or API tool should expose a narrow capability while a vault/proxy layer owns real keys, policies, metering, and audit logs. Hermes adds the runtime-registry version: built-in tools, MCP tools, plugin tools, browser/computer-use tools, terminal backends, and code-execution RPC need explicit discovery, filtering, availability checks, and approval hooks. MemWal adds the memory-tool version: remember, recall, analyze, restore, login, and logout are not generic database calls; they are high-leverage state mutations and retrieval paths that need namespace, credential, and trust-boundary semantics. AHE adds evidence that tools themselves can be an evolvable performance surface: changed tool behavior can encode coordination patterns more reliably than adding more prose to the prompt. Anthropic's zero-trust guide adds a sharper baseline: tool access is one of the highest-risk agent surfaces, so tool allowlists, per-agent authentication, parameter validation, capability restrictions, sandboxing, spend limits, and approval escalation should be designed as first-class controls. The Van Horn digest adds a consumer-operator pattern: agent-native CLIs plus browser-session handoff can make ordinary services operable by agents, but credentials and side effects become the real design problem. The Claude use-case digest adds a product-surface map: folders, browsers, calendars, CRMs, email, dashboards, Drive, Office files, task trackers, and scheduled jobs become agent tools only when the surrounding product constrains context, approvals, and handoff.
+Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans. The current sources draw two especially useful distinctions: client-side versus server-side tools, and direct tool calling versus code-mediated orchestration when tool ecosystems grow large. The Browserbase-style pattern sharpens this further: the model-facing surface can stay surprisingly small when typed service packages, broker layers, or runtime helpers absorb integration sprawl behind the scenes. Steward adds the money-and-credentials version of the same pattern: an agent-facing signing or API tool should expose a narrow capability while a vault/proxy layer owns real keys, policies, metering, and audit logs. Hermes adds the runtime-registry version: built-in tools, MCP tools, plugin tools, browser/computer-use tools, terminal backends, and code-execution RPC need explicit discovery, filtering, availability checks, and approval hooks. MemWal adds the memory-tool version: remember, recall, analyze, restore, login, and logout are not generic database calls; they are high-leverage state mutations and retrieval paths that need namespace, credential, and trust-boundary semantics. AHE adds evidence that tools themselves can be an evolvable performance surface: changed tool behavior can encode coordination patterns more reliably than adding more prose to the prompt. Anthropic's zero-trust guide adds a sharper baseline: tool access is one of the highest-risk agent surfaces, so tool allowlists, per-agent authentication, parameter validation, capability restrictions, sandboxing, spend limits, and approval escalation should be designed as first-class controls. The Van Horn digest adds a consumer-operator pattern: agent-native CLIs plus browser-session handoff can make ordinary services operable by agents, but credentials and side effects become the real design problem. The Claude use-case digest adds a product-surface map: folders, browsers, calendars, CRMs, email, dashboards, Drive, Office files, task trackers, and scheduled jobs become agent tools only when the surrounding product constrains context, approvals, and handoff. The vertical-agent article adds a spreadsheet-domain example where one `execute_code` surface fronts many internal APIs, while observation wrappers and diffs carry the domain-specific context the model needs.
 
 ## Design Principles
 
@@ -29,6 +29,7 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - keep high-risk or multi-step business logic behind durable workflow layers instead of giant tool handlers
 - keep wallet keys and third-party API credentials behind brokers, vaults, or proxy gateways rather than inside tool-call context
 - prefer code-mediated loops when the agent needs iteration, filtering, or orchestration across many tools
+- when domain operations are composable and policy allows it, consider a single code-execution surface that fronts many internal APIs instead of exposing overlapping model-facing tools
 - keep the model-facing tool surface as small as possible; hide integration sprawl behind typed internal packages, brokers, or exec helpers when policy and preprocessing must stay centralized
 - treat tool changes as falsifiable harness edits when they are meant to improve agent behavior over time
 - register and filter tools through explicit toolsets so channel-specific modes can expose different capabilities without changing the core loop
@@ -84,3 +85,4 @@ Agent tools are structured action surfaces for non-deterministic systems, so the
 - [[2026-05-27-zero-trust-for-ai-agents]]
 - [[2026-06-02-every-agentic-engineering-hack-i-know]]
 - [[2026-06-03-claude-use-cases-full-digest]]
+- [[2026-06-11-building-a-good-vertical-agent]]

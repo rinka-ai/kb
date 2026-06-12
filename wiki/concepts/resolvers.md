@@ -3,12 +3,12 @@ id: concept-resolvers
 type: concept
 title: Resolvers
 tags: [agents, context-engineering, routing, skills, governance]
-source_count: 5
-summary: Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
-canonical_for: [resolver, resolvers, routing tables for context, vertical agent architecture, modular context packs, route gating, context pack routing]
+source_count: 6
+summary: Resolvers are lightweight routing layers that decide which context, skill, capability tier, or filing rule an agent should load for a given task.
+canonical_for: [resolver, resolvers, routing tables for context, vertical agent architecture, vertical agent context hierarchy, good vertical agent, task distribution compression, modular context packs, route gating, context pack routing]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-06-12
+review_due: 2026-07-12
 confidence: "0.83"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.83"
 
 ## Summary
 
-Resolvers are lightweight routing layers that decide what an agent should load, call, or consult for a given task before the model starts improvising. In this KB, the most useful framing is that resolvers sit between broad always-on instructions and full skill or memory payloads: they keep the hot context lean, make capabilities reachable, and turn routing into an explicit governance surface rather than an accidental side effect of prompt sprawl.
+Resolvers are lightweight routing layers that decide what an agent should load, call, or consult for a given task before the model starts improvising. In this KB, the most useful framing is that resolvers sit between broad always-on instructions and full skill or memory payloads: they keep the hot context lean, make capabilities reachable, and turn routing into an explicit governance surface rather than an accidental side effect of prompt sprawl. The vertical-agent framing adds that routing can follow the task distribution itself: hot capabilities stay in L1, occasional capabilities load through L2 specs, and rare capabilities route to L3 raw-reference skills.
 
 ## What They Are
 
@@ -31,6 +31,7 @@ Resolvers are lightweight routing layers that decide what an agent should load, 
 - skill resolvers map user requests to the right skill or workflow
 - filing resolvers map content to the right directory, page type, or memory schema
 - context resolvers decide which supporting documents or rules should load before reasoning
+- capability-tier resolvers decide whether a task belongs on the always-resident path, the curated-spec path, or the raw-reference search path
 - sub-resolvers can live inside skills, where one selected skill still branches into different internal procedures
 
 ## Design Rules
@@ -61,3 +62,4 @@ Resolvers make context engineering operational. They help thin harnesses stay th
 - [[2025-11-13-skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents]]
 - [[2025-11-19-how-to-create-skills-key-steps-limitations-and-examples]]
 - [[2026-04-09-context-rot]]
+- [[2026-06-11-building-a-good-vertical-agent]]

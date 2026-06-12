@@ -396,3 +396,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Reviewed and refreshed stale wiki pages: `[[agent-protocols]]`, `[[ai-validation-and-assurance]]`, `[[codebase-architecture]]`, `[[enterprise-agent-deployment-failure-modes]]`, `[[research-workflows]]`, `[[2026-05-02-flue-sandbox-agent-framework-source-teardown]]`, and `[[2026-06-03-matt-pocock-skills-ingest-assessment]]`.
 - Folded newer source implications from `[[2026-05-27-zero-trust-for-ai-agents]]`, `[[2026-06-03-claude-use-cases-full-digest]]`, and `[[2026-06-04-mattpocock-skills]]` into the concept layer without creating new pages.
 - Added telemetry-backed canonical phrases to `[[resolvers]]`, `[[managed-agents]]`, `[[voice-ai]]`, `[[google-ads]]`, and `[[2026-06-03-claude-use-cases-workflow-map]]` so current low-confidence search examples route to existing canonical pages.
+
+## [2026-06-12] ingest | Building a Good Vertical Agent
+- Added `[[2026-06-11-building-a-good-vertical-agent]]` under `raw/articles/user-provided/`, preserving the user-provided X article capture and noting that the tweet ID decodes to 2026-06-11T21:51:48Z while direct X fetch did not expose stable article text.
+- Added `[[2026-06-12-vertical-agent-context-hierarchy-kb-upgrades]]` as the durable synthesis: vertical-agent performance as task-distribution compression, with L1 hot-path wrappers, L2 curated specs, L3 raw-reference skills, code-mediated tool use, compressed reads, and structured write diffs.
+- Updated `[[context-engineering]]`, `[[agent-tools]]`, `[[agent-harnesses]]`, `[[agent-skills]]`, `[[resolvers]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Caveat: treated Shortcut accuracy and hedge-fund deployment statements as practitioner claims, not independently verified benchmark evidence.

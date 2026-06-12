@@ -36,6 +36,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-06-12-vertical-agent-context-hierarchy-kb-upgrades]]
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]]
 - [[2026-06-04-ai-native-content-machine]]
@@ -66,7 +67,6 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-05-30-website-agency-operator-playbook]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]]
-- [[2026-05-25-uniswap-interface-ui-ux-source-teardown]]
 
 ## Next Suggested Concepts
 
