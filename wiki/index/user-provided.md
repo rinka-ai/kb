@@ -25,6 +25,7 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[2026-06-03-claude-use-cases-full-digest]] - Local HTML digest of 94 Anthropic Claude use cases across Cowork, Chrome, Dispatch, Skills, Projects, Office/file outputs, domain workflows, and connectors.
 - [[2026-06-03-alex-lieberman-content-machine]] - Alex Lieberman practitioner digest on an AI-native content machine with human first/final-mile review, skillized research/interview/draft/review/repurposing stages, raw source preservation, and creator-specific learning loops.
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]] - Codez practitioner X digest on Claude Code Dynamic Workflows as model-written workflow harnesses, with six orchestration patterns, token-budget cautions, quarantine topology, and save-as-skill guidance.
+- [[2026-06-11-building-good-vertical-agent]] - Peter Wang article on building high-performing vertical agents through L1/L2/L3 context tiers, one code-execution substrate, compressed read/write wrappers, deferred specs/tool schemas, and raw-reference escape hatches.
 
 ## Related Wiki Pages
 
@@ -44,3 +45,4 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[agent-harnesses]]
 - [[agent-security]]
 - [[ai-agent-evals]]
+- [[llm-agents]]

@@ -36,6 +36,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-06-12-vertical-agent-context-cache-hierarchy]]
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]]
 - [[2026-06-04-ai-native-content-machine]]

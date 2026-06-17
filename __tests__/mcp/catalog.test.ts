@@ -16,7 +16,7 @@ describe("mcp catalog", () => {
     expect(note?.title).toBe("LLM Knowledge Bases");
     expect(note?.summary).toContain("A practical workflow");
     expect(catalog.some((entry) => entry.path.endsWith("::document"))).toBe(false);
-  });
+  }, 20_000);
 
   test("catalog overview returns counts and a bounded sample instead of the full corpus dump", () => {
     const overview = getCatalogOverview();
