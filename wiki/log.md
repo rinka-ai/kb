@@ -397,6 +397,11 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Folded newer source implications from `[[2026-05-27-zero-trust-for-ai-agents]]`, `[[2026-06-03-claude-use-cases-full-digest]]`, and `[[2026-06-04-mattpocock-skills]]` into the concept layer without creating new pages.
 - Added telemetry-backed canonical phrases to `[[resolvers]]`, `[[managed-agents]]`, `[[voice-ai]]`, `[[google-ads]]`, and `[[2026-06-03-claude-use-cases-workflow-map]]` so current low-confidence search examples route to existing canonical pages.
 
+## [2026-06-12] ingest | Peter Wang vertical-agent context hierarchy
+- Added `[[2026-06-11-building-good-vertical-agent]]` under `raw/articles/user-provided/`, preserving the attached article text and treating Shortcut deployment/accuracy claims as self-reported practitioner evidence.
+- Added `[[2026-06-12-vertical-agent-context-cache-hierarchy]]` as the durable synthesis: vertical agents should encode their domain task distribution into L1 hot-path wrappers, L2 fetched specs/tool schemas, and L3 raw-reference escape hatches.
+- Updated `[[context-engineering]]`, `[[agent-tools]]`, `[[agent-skills]]`, `[[agent-harnesses]]`, `[[llm-agents]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+
 ## [2026-06-17] ingest | Kevin polished UI with Claude article
 - Added `[[2026-06-16-polished-ui-with-claude]]` under `raw/articles/user-provided/`, preserving the user-provided capture and recording the public X article/status URLs.
 - Updated `[[ai-interface-design]]` with the reusable lesson that AI UI taste should be externalized as exact interaction constraints, not vague aesthetic prompts.
