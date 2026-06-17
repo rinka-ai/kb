@@ -2,8 +2,8 @@
 id: concept-ai-interface-design
 type: concept
 title: AI Interface Design
-tags: [design, frontend, ai-products, product-ux, agentic-ux, design-system]
-source_count: 6
+tags: [design, frontend, ai-products, product-ux, agentic-ux, design-system, interaction-design, motion-design]
+source_count: 8
 summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, source-aware design references, and precise interaction constraints rather than visual novelty or generic model-default aesthetics.
 canonical_for: [ai interface design, ai product design, ai-designed UI, AI UX, frontend design with AI]
 review_status: reviewed
@@ -50,6 +50,8 @@ Better AI design guidance should therefore specify the product context, interact
 
 The practical upgrade is to retrieve a source lane before building. [[2026-05-30-component-theme-source-library]] separates taste references from implementation sources: Refero Styles can give the agent concrete visual context, while shadcn/ui, Radix, Tailwind kits, and mature public design systems provide component or calibration patterns. That keeps AI away from blank defaults without encouraging brand cloning or incompatible component-system mixing.
 
+Official design-system sources sharpen this further. [[2026-06-17-apple-human-interface-guidelines]] should be retrieved when platform expectations matter: native Apple apps, mobile-heavy flows, touch interactions, navigation, motion, input behavior, and accessibility. [[2026-06-17-carbon-design-system]] should be retrieved when an agent needs a mature enterprise design-system reference: role tokens, layered themes, accessibility, component usage, content guidance, AI labels, explainability, and runtime design-system context through MCP.
+
 ## AI UI Polish Pattern
 
 For AI-built UI, polish is best handled as a repeatable interaction contract rather than a final "make it better" pass:
@@ -71,6 +73,7 @@ AI product interfaces need trust to evolve gradually:
 - Act quietly only for routine, low-risk actions where trust has been earned.
 - Provide undo, correction, review, and escalation paths for model mistakes.
 - Reveal what the system remembers or assumes when memory affects the current recommendation.
+- Mark AI-generated or AI-influenced content explicitly when it affects trust, decisions, or editable output; Carbon for AI's label, explainability, and revert patterns are useful references.
 - Use semantic color only for status, validation, risk, or destructive feedback, and pair it with text.
 - Avoid raw implementation details in operator-facing history; translate events into timestamp, actor, action, entity, details, and evidence.
 
@@ -133,6 +136,8 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 - [[2026-05-27-conformis]]
 - [[2026-05-30-refero-component-theme-source-library]]
 - [[2026-06-16-polished-ui-with-claude]]
+- [[2026-06-17-apple-human-interface-guidelines]]
+- [[2026-06-17-carbon-design-system]]
 
 ## External Local Sources
 

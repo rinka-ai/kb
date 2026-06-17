@@ -4,11 +4,11 @@ type: summary
 title: Component And Theme Source Library
 tags: [design-system, component-library, themes, frontend, tailwind, shadcn, radix, accessibility, ai-ui, blueprint]
 summary: A retrieve-before-you-build source map for improving AI-built apps with curated style references, reusable component systems, licensed Tailwind recipes, and mature public design systems without copying brands or mixing incompatible UI vocabularies.
-source_count: 1
+source_count: 3
 canonical_for: [component source library, theme source library, world class components, UI references for agents, Refero Styles, shadcn themes, Radix components, Tailwind UI, Catalyst, design system references]
 review_status: reviewed
-last_reviewed: 2026-05-30
-review_due: 2026-08-30
+last_reviewed: 2026-06-17
+review_due: 2026-09-17
 confidence: "0.8"
 ---
 
@@ -18,7 +18,7 @@ confidence: "0.8"
 
 This page is the retrieval companion to [[2026-05-30-app-template-design-system-blueprint]]. Use it when a future agent is about to build a new app, page, dashboard, mobile-responsive surface, or component set and needs better starting taste than a blank Tailwind/shadcn default.
 
-The rule: **choose a source lane before implementation**. Refero Styles gives the agent visual direction and DESIGN.md-style constraints. shadcn/ui, Radix, Tailwind Plus/Catalyst, and mature public design systems give implementation or calibration sources. Everything still maps back into the local token contract, component set, interaction-state grammar, accessibility baseline, and verification workflow.
+The rule: **choose a source lane before implementation**. Refero Styles gives the agent visual direction and DESIGN.md-style constraints. shadcn/ui, Radix, Tailwind Plus/Catalyst, and mature public design systems give implementation or calibration sources. [[2026-06-17-carbon-design-system]] is the strongest official example for enterprise design-system structure, role tokens, accessibility, AI transparency patterns, and agent-readable design-system context through Carbon MCP. [[2026-06-17-apple-human-interface-guidelines]] is platform-behavior calibration for Apple-native, touch-heavy, and mobile-first work. Everything still maps back into the local token contract, component set, interaction-state grammar, accessibility baseline, and verification workflow.
 
 ## Source Lanes
 
@@ -44,6 +44,8 @@ The rule: **choose a source lane before implementation**. Refero Styles gives th
 - Treat third-party theme galleries as exploration tools. A theme is only production-ready after contrast, dark mode, state colors, focus rings, brand fit, and licensing pass review.
 - Prefer headless primitives for complex behavior. Dialogs, menus, listboxes, comboboxes, tabs, selects, tooltips, popovers, and sliders are where accessibility bugs hide.
 - Treat public systems as calibration, not costumes. Carbon, Primer, Polaris, Atlassian, GOV.UK, USWDS, Apple, and Material should sharpen choices around hierarchy, state, forms, tables, motion, touch, and content.
+- Use Carbon as the model for mature enterprise design-system structure: role tokens, theme value maps, accessibility guidance, component usage docs, implementation examples, and agent-readable design-system context.
+- Use Apple HIG as platform calibration for Apple-native and mobile-heavy interaction expectations, not as a generic visual skin for web apps.
 - Verify every imported or inspired component against the local quality bar: states, focus, keyboard behavior, dark mode, responsive layout, loading/empty/error, reduced motion, and screenshot review.
 
 ## Agent Prompt Add-On
@@ -61,6 +63,7 @@ Map every borrowed pattern into the local token contract and component grammar f
 ## Practical Defaults
 
 - **New serious web app/dashboard:** Aya/Conformis blueprint + shadcn/ui or Radix Primitives + local tokens. Use Refero for taste and Primer/Carbon/Polaris/Atlassian for product-system calibration.
+- **Enterprise/product UI calibration:** read the Carbon source note when token roles, layered surfaces, accessibility, component-state discipline, or AI transparency states need a stronger reference.
 - **Fast polished prototype:** shadcn/ui blocks, a vetted third-party shadcn theme, or Radix Themes, then prune and re-tokenize. Add real empty/loading/error states before showing it as product work.
 - **Licensed Tailwind build:** Catalyst for app UI and Tailwind Plus for marketing/application recipes, with explicit license verification.
 - **High-accessibility service flow:** GOV.UK or USWDS as the first calibration source, with local brand restrained until forms and validation are excellent.
@@ -91,6 +94,8 @@ That combination should produce better first drafts because the agent no longer 
 
 - [[2026-05-30-refero-component-theme-source-library]]
 - [[2026-05-30-app-template-design-system-blueprint]]
+- [[2026-06-17-apple-human-interface-guidelines]]
+- [[2026-06-17-carbon-design-system]]
 
 ## Related
 

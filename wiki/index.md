@@ -180,7 +180,7 @@ Counts as of `2026-06-17`. Folders under `raw/articles/`.
 - `textbooks` (16)
 - `github-repos` (19)
 - `internal-codebases` (6)
-- `design-systems` (1)
+- `design-systems` (3)
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (10)
