@@ -407,3 +407,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated `[[ai-interface-design]]` with the reusable lesson that AI UI taste should be externalized as exact interaction constraints, not vague aesthetic prompts.
 - Updated `[[2026-05-30-app-template-design-system-blueprint]]` with motion-token, tactile-state, drag/snap, reveal, FLIP, reduced-motion, and numeric prompting guidance.
 - Treated the source as practitioner craft guidance rather than controlled evidence that the exact easing/shadow values are universal defaults.
+
+## [2026-06-17] ingest | Apple HIG and IBM Carbon design-system sources
+- Added `[[2026-06-17-apple-human-interface-guidelines]]` and `[[2026-06-17-carbon-design-system]]` under `raw/articles/design-systems/`, preserving official source metadata and linked source maps without copying full proprietary documentation.
+- Updated `[[2026-05-30-component-theme-source-library]]` and `[[2026-05-30-app-template-design-system-blueprint]]` with Apple as platform-interaction calibration and Carbon as enterprise design-system / agent-context calibration.
+- Updated `[[ai-interface-design]]` with Carbon for AI patterns around AI labeling, explainability, and revert states, plus Apple HIG retrieval guidance for platform-heavy UI work.
+- Updated `[[design-systems]]` and the master `[[index]]`; treated both sources as official calibration references, not visual skins to clone.

@@ -14,6 +14,8 @@ This index groups design-system and component/theme reference sources. These not
 ## Sources
 
 - [[2026-05-30-refero-component-theme-source-library]] - Curated online source set for AI-built apps: Refero Styles for taste/context, shadcn/ui and Radix for implementation lanes, Tailwind Plus/Catalyst for licensed recipes, and mature public design systems for calibration.
+- [[2026-06-17-apple-human-interface-guidelines]] - Apple HIG official-source note for platform interaction calibration: accessibility, layout, typography, motion, system components, patterns, symbols, and Apple-platform expectations.
+- [[2026-06-17-carbon-design-system]] - IBM Carbon official-source note covering enterprise design-system completeness, role-based tokens, accessibility, Carbon for AI transparency patterns, and Carbon MCP as design-system context for agents.
 
 ## Synthesis
 

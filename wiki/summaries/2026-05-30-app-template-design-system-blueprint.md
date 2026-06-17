@@ -2,9 +2,9 @@
 id: summary-2026-05-30-app-template-design-system-blueprint
 type: summary
 title: App Template And Design-System Blueprint
-tags: [design-system, design-tokens, app-template, frontend, nextjs, react, tailwind, react-query, accessibility, component-library, themes, blueprint]
+tags: [design-system, design-tokens, app-template, frontend, nextjs, react, tailwind, react-query, accessibility, component-library, components, themes, blueprint]
 summary: A reusable, retrieve-before-you-build blueprint for starting a new web app or feature — default stack, token-first design contract, minimum component set, data-routing and state rules, accessibility/motion/density baselines, component/theme source selection, anti-patterns, and authoritative references — distilled from the Aya and Conformis internal apps.
-source_count: 5
+source_count: 7
 canonical_for: [app template, design system blueprint, new app defaults, design tokens starter, frontend starting defaults, UI component minimum set, how to start a new app, how to prompt agents to build UI]
 review_status: reviewed
 last_reviewed: 2026-06-17
@@ -181,6 +181,8 @@ Concise reference set for the parts this teardown should not re-derive. Use the 
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — architecture/convention synthesis behind these apps.
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]] — external corroboration that UI quality is sourced from shared primitives, typed state, and verification, not sprinkled on.
 - [[2026-06-16-polished-ui-with-claude]] — practitioner source translating AI UI polish into exact motion curves, tactile states, layered shadows, reveal mechanics, reduced-motion rules, and state-driven prompting.
+- [[2026-06-17-apple-human-interface-guidelines]] — official platform-calibration source for accessibility, layout, typography, motion, controls, navigation, and Apple-platform conventions.
+- [[2026-06-17-carbon-design-system]] — official enterprise design-system source for role tokens, layered themes, accessibility, components, AI transparency patterns, and Carbon MCP as agent context.
 
 ## Related
 
