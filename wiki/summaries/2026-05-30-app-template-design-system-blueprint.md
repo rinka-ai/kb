@@ -4,11 +4,11 @@ type: summary
 title: App Template And Design-System Blueprint
 tags: [design-system, design-tokens, app-template, frontend, nextjs, react, tailwind, react-query, accessibility, component-library, themes, blueprint]
 summary: A reusable, retrieve-before-you-build blueprint for starting a new web app or feature — default stack, token-first design contract, minimum component set, data-routing and state rules, accessibility/motion/density baselines, component/theme source selection, anti-patterns, and authoritative references — distilled from the Aya and Conformis internal apps.
-source_count: 4
+source_count: 5
 canonical_for: [app template, design system blueprint, new app defaults, design tokens starter, frontend starting defaults, UI component minimum set, how to start a new app, how to prompt agents to build UI]
 review_status: reviewed
-last_reviewed: 2026-05-30
-review_due: 2026-08-30
+last_reviewed: 2026-06-17
+review_due: 2026-09-17
 confidence: "0.82"
 ---
 
@@ -66,7 +66,7 @@ Token layers, in dependency order:
    - **State (semantic) colors:** success / warning / danger(error) / info, each as a **quadruplet** — solid, soft fill, border, ink. Used **only** for state/validation/destructive, never as brand or decoration, never color-alone.
    - **Elevation:** a small, named shadow set (`hairline`, `popover/raised`, `modal/overlay`). Prefer surface/border shifts over heavy blur.
    - **Focus ring:** one `--focus-ring` token reused everywhere.
-3. **Scale tokens:** spacing (4px base, e.g. `--space-1..--space-10/12`), radius (small set — Conformis uses 4px everywhere; Aya defaults 8px with 4/6/8/12), motion (`fast/base/slow` ≈ 120/180/240ms + one easing), typography (named size+line-height+weight roles, not inline literals).
+3. **Scale tokens:** spacing (4px base, e.g. `--space-1..--space-10/12`), radius (small set — Conformis uses 4px everywhere; Aya defaults 8px with 4/6/8/12), motion (`fast/base/slow` ≈ 120/180/240ms + named easing curves), typography (named size+line-height+weight roles, not inline literals).
 4. **Component/interaction tokens:** field border/hover/focus, row hover/selected/focus-ring, density row heights. Centralize these so the state grammar lives in one place (Aya: `lib/ui/controls.ts`; Conformis: semantic classes in `globals.css`).
 
 ### Starter Token Contract (minimum)
@@ -80,7 +80,7 @@ Token layers, in dependency order:
 --shadow-hairline / --shadow-popover / --shadow-modal
 --space-1..--space-10            (4px base scale)
 --radius-input / --radius-card   (+ --radius-circle: 9999px for true circles only)
---motion-fast/base/slow + --easing
+--motion-fast/base/slow + --ease-smooth / --ease-out / --ease-spring
 type roles: display / h1 / h2 / h3 / body / label / caption / mono
 --field-border(+hover/focus)  --row-hover/--row-selected/--row-focus-ring
 density rows: --row-compact / --row-default / --row-comfortable
@@ -112,12 +112,14 @@ Ship these before product-specific components. Each must implement the full stat
 
 Default · Hover (≥2 cues) · Active/pressed · Focus-visible · Selected (distinct from hover) · Open (trigger stays connected) · Disabled (stable size, legible, no fake hover) · Loading (preserves width/icon placement) · Error (plain-language message near source). **State is never conveyed by color alone.** Centralize these as shared class strings/tokens, not per-component ad hoc styles. Focus is component-specific: fields use a hairline border + ~0.5px inset ring; rows use a 1px inset ring; buttons/controls use a contained focus ring.
 
+The polished-UI-with-Claude source adds a useful tactile default: every clickable control should have an active response that preserves layout, commonly a subtle `scale(0.98)` using the fast duration. Tooltips and small overlays should not pop in instantly; prefer a short opacity + lift + blur-clear entrance unless reduced motion is enabled.
+
 ## Rules That Travel With The Blueprint
 
 - **Density:** make row height the **only** density variable (compact/default/comfortable); hold padding, font, and icon sizes fixed so tables never reflow between modes.
 - **Mobile / responsive:** stack page title + primary CTA at narrow widths (CTA goes full-width, never steals title space); fixed mobile nav must reserve bottom padding incl. `env(safe-area-inset-bottom)`; use breakpoints, not fluid type scaling; prefer container/media queries over JS measurement.
 - **Accessibility (baseline, not optional):** WCAG 2.2 AA contrast; visible focus on all interactive elements; semantic HTML before ARIA; state never by color alone; icon-only controls have accessible names; touch targets ≥44px (Aya) / ≥40px (Conformis); focus order follows visual order; polite live regions for non-focus-changing confirmations, assertive only for system failures.
-- **Motion:** short and physical (≈80–320ms), used only to clarify state; always guard with `@media (prefers-reduced-motion: reduce)` (drop transforms, keep color/border feedback); no parallax, bounce, or decorative loops; tables and nav rows should not move.
+- **Motion:** short and physical (≈80–320ms), used only to clarify state; define named curves instead of relying on browser `ease`; always guard with `@media (prefers-reduced-motion: reduce)` (drop transforms, keep color/border feedback); no parallax or decorative loops; tables and nav rows should not move. For richer controls, use real interaction mechanics: drag velocity/momentum, soft boundaries, magnetic snap points with clear catch feedback, grid-row reveal for dynamic height, and FLIP for cross-layout movement.
 - **Data routing (App Router contract):** server-rendered **seed** for first paint → pass as `initialData` → **React Query** owns reads/mutations/refresh with tenant-scoped, normalized query keys; optimistic `onMutate`/`onError`/`onSettled`; `router.refresh()` **only** for global server-context changes (auth, locale); URL sync for filters/search/pagination via a no-navigation replace, not `router.push`.
 - **Empty / loading / error states:** design all four table states (loading skeleton mirroring final columns, empty, filtered-empty, error with retry); skeletons must not cause a layout jump; add route-level `loading.tsx` only when the route awaits page-shaping async data, not on stable settings/preference routes.
 - **Verification:** verify UI changes by running the app and viewing them, not just by reading code. Use **Playwright** for interaction/screenshot checks; do a screenshot review for any HTML/CSS change. Add token-usage and data-routing guard scripts as CI checks (Aya ships `check:design-tokens` and `check:data-routing`).
@@ -138,6 +140,7 @@ Give the agent this page (or its retrieval) as a precondition, then constrain:
 6. **Verify:** "Run the app and screenshot the change with Playwright; do not report done from code-reading alone."
 7. **Reject the anti-patterns list** explicitly in the prompt so the agent does not drift to generic AI aesthetics.
 8. **Choose a source lane:** "Read `wiki/summaries/2026-05-30-component-theme-source-library.md`, use Refero only as visual context, choose one component/theme implementation lane, verify license before copying code, and translate all external patterns into the local token/component grammar."
+9. **Prompt polish numerically:** "Give exact curves, durations, offsets, blur values, active scale, snap points, and state names. Iterate one property at a time instead of asking for broad 'premium' polish."
 
 ## Component And Theme Source Selection
 
@@ -177,6 +180,7 @@ Concise reference set for the parts this teardown should not re-derive. Use the 
 - [[2026-05-30-component-theme-source-library]] — external style/component/theme source-selection map for better AI-built app starts.
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — architecture/convention synthesis behind these apps.
 - [[2026-05-25-uniswap-interface-ui-ux-source-teardown]] — external corroboration that UI quality is sourced from shared primitives, typed state, and verification, not sprinkled on.
+- [[2026-06-16-polished-ui-with-claude]] — practitioner source translating AI UI polish into exact motion curves, tactile states, layered shadows, reveal mechanics, reduced-motion rules, and state-driven prompting.
 
 ## Related
 
