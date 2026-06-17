@@ -212,6 +212,7 @@ export function buildIndex(): KbIndex {
     schema_version: INDEX_SCHEMA_VERSION,
     generated_at: new Date().toISOString(),
     root: ROOT,
+    source_dirs: [...SOURCE_DIRS],
     chunk_count: chunks.length,
     file_count: files.length,
     avg_doc_len: avgDocLen,

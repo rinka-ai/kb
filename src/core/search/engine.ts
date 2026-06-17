@@ -9,7 +9,7 @@ import {
   writeIndex,
 } from "../indexer";
 import { tokenize, tokenizeForSearch, tokenVariants } from "../markdown";
-import { OUTPUT_FILE } from "../paths";
+import { OUTPUT_FILE, SOURCE_DIRS } from "../paths";
 import type { KbChunk, KbIndex } from "../types";
 import type { SearchArgs, SearchResponse, SearchResult } from "./types";
 
@@ -383,6 +383,10 @@ export function topTermsFromText(text: string, limit = 12, index?: KbIndex): str
 }
 
 export function ensureIndex(rebuildIfStale: boolean): KbIndex {
+  const sourceDirsMatch = (index: KbIndex): boolean =>
+    index.source_dirs?.length === SOURCE_DIRS.length &&
+    index.source_dirs.every((dir, index) => dir === SOURCE_DIRS[index]);
+
   const shouldRebuild = () => {
     if (!existsSync(OUTPUT_FILE)) {
       return true;
@@ -390,6 +394,10 @@ export function ensureIndex(rebuildIfStale: boolean): KbIndex {
 
     const loaded = loadIndex();
     if (loaded.schema_version !== INDEX_SCHEMA_VERSION) {
+      return true;
+    }
+
+    if (!sourceDirsMatch(loaded)) {
       return true;
     }
 
