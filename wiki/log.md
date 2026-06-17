@@ -401,3 +401,9 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-06-11-building-good-vertical-agent]]` under `raw/articles/user-provided/`, preserving the attached article text and treating Shortcut deployment/accuracy claims as self-reported practitioner evidence.
 - Added `[[2026-06-12-vertical-agent-context-cache-hierarchy]]` as the durable synthesis: vertical agents should encode their domain task distribution into L1 hot-path wrappers, L2 fetched specs/tool schemas, and L3 raw-reference escape hatches.
 - Updated `[[context-engineering]]`, `[[agent-tools]]`, `[[agent-skills]]`, `[[agent-harnesses]]`, `[[llm-agents]]`, `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+
+## [2026-06-17] ingest | Kevin polished UI with Claude article
+- Added `[[2026-06-16-polished-ui-with-claude]]` under `raw/articles/user-provided/`, preserving the user-provided capture and recording the public X article/status URLs.
+- Updated `[[ai-interface-design]]` with the reusable lesson that AI UI taste should be externalized as exact interaction constraints, not vague aesthetic prompts.
+- Updated `[[2026-05-30-app-template-design-system-blueprint]]` with motion-token, tactile-state, drag/snap, reveal, FLIP, reduced-motion, and numeric prompting guidance.
+- Treated the source as practitioner craft guidance rather than controlled evidence that the exact easing/shadow values are universal defaults.

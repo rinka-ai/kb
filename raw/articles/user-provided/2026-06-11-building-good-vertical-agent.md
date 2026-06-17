@@ -168,7 +168,7 @@ This is the 80%. If reading and writing cell ranges isn't excellent, nothing els
 Reading a range is an act of compression
 Reading a 200-row revenue table:
 markdown
-Common formulas are abbreviated like F1, F2, etc. 
+Common formulas are abbreviated like F1, F2, etc.
 
 A2:North | B2:1200 | C2:9.99 | D2:11988(F1)
 A3:South | B3:840  | C3:9.99 | D3:8391.6(F1)
@@ -188,7 +188,7 @@ A1:Region | B1:Units | C1:Price | D1:Revenue
 Three things are happening.
 First, formula aliasing. A 500-row column of =A2*B2, =A3*B3, … is 500 near-identical formulas. We normalize each formula to R1C1 form — so =A2*B2 and =A3*B3 both become =RC[-2]*RC[-1] — count the patterns, and any pattern that appears more than ten times collapses to a short alias like F1. The model sees F1 repeated plus one legend line, instead of 500 formulas. Big token savings, zero information loss.
 Second, free row and column context. When you read C5:E20, what do those bare numbers mean? We scan leftward for the row labels and upward for the header row (picking the header by voting on which nearby row has the most text cells) and attach them, so the model gets Region | Q1 | Q2 and North America | … for free and never has to guess what a grid of numbers represents.
-Third, style compression. Formatting is information too — a bold red cell with a 0.00% number format is telling you something — but listing the full style of every cell would swamp the values. So we group cells by identical style, collapse each group to its connected range, and print one line per group: the range, the cell count, and a compact description. 
+Third, style compression. Formatting is information too — a bold red cell with a 0.00% number format is telling you something — but listing the full style of every cell would swamp the values. So we group cells by identical style, collapse each group to its connected range, and print one line per group: the range, the cell count, and a compact description.
 Six hundred formulas became one legend line. Four hundred styled cells became two lines. And the header row the model never explicitly asked for is right there at the bottom. That's the whole table, losslessly, in a fraction of the tokens a raw dump would cost. Every one of these is the compression-vs-discovery tradeoff, won decisively for the common case.
 Writing cells: tell the model what it actually changed, and what looks wrong
 Writing is harder than it looks, because a single execute_code call can change hundreds of cells, and the agent needs to know what happened without re-reading the whole sheet. So after the code runs, we hand back a structured diff of every cell that changed — and, just as importantly, we compress and triage it.

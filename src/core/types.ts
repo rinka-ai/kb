@@ -34,6 +34,7 @@ export interface KbIndex {
   schema_version: number;
   generated_at: string;
   root: string;
+  source_dirs?: string[];
   chunk_count: number;
   file_count: number;
   avg_doc_len: number;

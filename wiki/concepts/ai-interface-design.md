@@ -3,12 +3,12 @@ id: concept-ai-interface-design
 type: concept
 title: AI Interface Design
 tags: [design, frontend, ai-products, product-ux, agentic-ux, design-system]
-source_count: 5
-summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, and source-aware design references rather than visual novelty or generic model-default aesthetics.
+source_count: 6
+summary: AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, source-aware design references, and precise interaction constraints rather than visual novelty or generic model-default aesthetics.
 canonical_for: [ai interface design, ai product design, ai-designed UI, AI UX, frontend design with AI]
 review_status: reviewed
-last_reviewed: 2026-05-30
-review_due: 2026-08-30
+last_reviewed: 2026-06-17
+review_due: 2026-09-17
 confidence: "0.78"
 ---
 
@@ -17,6 +17,8 @@ confidence: "0.78"
 ## Summary
 
 AI-designed interfaces should start from the user's job, not from a visual style prompt. The strongest pattern is to design calm, exact, stateful product surfaces that help people understand, compare, decide, recover, and repeat work over time. Visual novelty matters only when it serves the product context; otherwise it turns into generic AI output or decorative noise.
+
+The newer polished-UI-with-Claude source sharpens the practical version of this rule: taste becomes useful to a coding model when it is translated into exact constraints. "Make it premium" is weak; a token block, easing curve, duration, state list, shadow stack, reduced-motion rule, and one-variable iteration target are buildable.
 
 This page abstracts from a local product design vault and the KB's Claude frontend-design source. It is not a note about that product's brand. The durable lesson is broader: AI should be guided away from both failure modes at once: bland distributional defaults and over-decorated "make it impressive" interfaces.
 
@@ -37,6 +39,8 @@ That question is better than "how do I make this look impressive?" because many 
 - Keep one primary action per region so users can tell what the interface expects from them.
 - Prefer real data surfaces, tables, timelines, lists, filters, and inspection flows over ornamental cards when users need to compare or verify.
 - Treat copy as part of the interface: product text should be operational, exact, and human-readable.
+- Translate taste into measurable constraints: named tokens, exact easing curves, durations, offsets, shadow stacks, state names, and accessibility behavior.
+- Treat microinteractions as product states, not decoration: pressed, dragged, snapped, working, loading, success, disabled, and recovering states all need deliberate behavior.
 
 ## AI-Specific Failure Modes
 
@@ -45,6 +49,19 @@ Models often converge toward safe, common frontend patterns unless given domain-
 Better AI design guidance should therefore specify the product context, interaction density, state model, and trust posture before aesthetic details. A finance workbench, research notebook, clinical review queue, developer console, and game menu should not share the same default visual language.
 
 The practical upgrade is to retrieve a source lane before building. [[2026-05-30-component-theme-source-library]] separates taste references from implementation sources: Refero Styles can give the agent concrete visual context, while shadcn/ui, Radix, Tailwind kits, and mature public design systems provide component or calibration patterns. That keeps AI away from blank defaults without encouraging brand cloning or incompatible component-system mixing.
+
+## AI UI Polish Pattern
+
+For AI-built UI, polish is best handled as a repeatable interaction contract rather than a final "make it better" pass:
+
+- Define motion, radius, shadow, duration, and state tokens before building components.
+- Prefer named custom easing curves over browser defaults when motion matters, and reuse them consistently.
+- Give the agent numbers rather than adjectives: a 280ms transition, 6px rise, 2px blur-clear, 0.98 active scale, or a specific shadow stack.
+- Make direct manipulation feel physical only where the interaction calls for it: draggable controls, live counters, snap points, sliders, sheets, and value changes.
+- Use layered depth sparingly: hairline rings plus faint contact and ambient shadows usually read better than a single heavy drop shadow.
+- Animate real state transitions with appropriate mechanics, such as grid-row reveal for dynamic height or FLIP for cross-layout movement.
+- Always honor `prefers-reduced-motion`; polished motion excludes users if it ignores accessibility settings.
+- Iterate one variable at a time: tune the easing, then the shadow, then the entrance, instead of asking for a broad aesthetic rewrite.
 
 ## Trust And State
 
@@ -115,6 +132,7 @@ Restraint is not a universal aesthetic. AI should become more expressive when th
 - [[2026-05-27-aya]]
 - [[2026-05-27-conformis]]
 - [[2026-05-30-refero-component-theme-source-library]]
+- [[2026-06-16-polished-ui-with-claude]]
 
 ## External Local Sources
 

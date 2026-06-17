@@ -44,6 +44,7 @@ export interface CatalogPage extends CatalogQuery {
 
 interface CatalogCache {
   generatedAt: string;
+  sourceDirs: string[];
   entries: CatalogEntry[];
 }
 
@@ -111,7 +112,12 @@ function matchesFilters(entry: CatalogEntry, filters: CatalogQuery): boolean {
 }
 
 function getCatalogEntriesFromIndex(index: KbIndex): CatalogEntry[] {
-  if (catalogCache?.generatedAt === index.generated_at) {
+  const sourceDirs = index.source_dirs ?? [];
+  const sourceDirsMatch =
+    catalogCache?.sourceDirs.length === sourceDirs.length &&
+    catalogCache.sourceDirs.every((dir, dirIndex) => dir === sourceDirs[dirIndex]);
+
+  if (catalogCache?.generatedAt === index.generated_at && sourceDirsMatch) {
     return catalogCache.entries;
   }
 
@@ -122,6 +128,7 @@ function getCatalogEntriesFromIndex(index: KbIndex): CatalogEntry[] {
 
   catalogCache = {
     generatedAt: index.generated_at,
+    sourceDirs,
     entries,
   };
 

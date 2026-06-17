@@ -24,7 +24,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
-- [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, and repeated use rather than visual novelty or generic model-default aesthetics.
+- [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, source-aware design references, and precise interaction constraints rather than visual novelty or generic model-default aesthetics.
 - [[ai-instruction-design]] — AI instruction design turns always-on assistant prompts into compact behavioral contracts for truthfulness, evidence handling, uncertainty, tone, tool use, and context discipline.
 - [[ai-saas-strategy]] — AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
 - [[ai-agency-strategy]] — AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
@@ -170,11 +170,11 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-06-12`. Folders under `raw/articles/`.
+Counts as of `2026-06-17`. Folders under `raw/articles/`.
 
 - `addy-osmani` (1)
 - `anthropic-engineering` (22)
-- `arxiv` (30)
+- `arxiv` (29)
 - `voice-ai` (33)
 - `official-docs` (19)
 - `textbooks` (16)
@@ -184,7 +184,7 @@ Counts as of `2026-06-12`. Folders under `raw/articles/`.
 - `enterprise-ai` (12)
 - `momo-research` (11)
 - `claude-blog` (10)
-- `user-provided` (13)
+- `user-provided` (14)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)
