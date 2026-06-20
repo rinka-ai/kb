@@ -104,6 +104,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-06-20-loop-engineer-template-ingest-assessment]] — JayZeeDesign/loop-engineer-template is worth a selective repo-level ingest for its compact loop-memory schema and Claude Code harness skills, but not worth copying wholesale because the KB already covers stronger harness-engineering and Claude Code skill sources.
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]] — Peter Wang's vertical-agent article is best preserved as a design rule: encode the domain task distribution into L1 always-resident wrappers, L2 fetched specs/tool schemas, and L3 raw-reference escape hatches so the model stays accurate without bloated context.
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]] — A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills.
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]] — walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill.
