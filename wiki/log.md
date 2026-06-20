@@ -413,3 +413,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Updated `[[2026-05-30-component-theme-source-library]]` and `[[2026-05-30-app-template-design-system-blueprint]]` with Apple as platform-interaction calibration and Carbon as enterprise design-system / agent-context calibration.
 - Updated `[[ai-interface-design]]` with Carbon for AI patterns around AI labeling, explainability, and revert states, plus Apple HIG retrieval guidance for platform-heavy UI work.
 - Updated `[[design-systems]]` and the master `[[index]]`; treated both sources as official calibration references, not visual skins to clone.
+
+## [2026-06-20] query | loop-engineer-template ingest assessment
+- Inspected `JayZeeDesign/loop-engineer-template` at commit `a2267355209713a2184eaeef3b276ec680219d2b`, focusing on its five Claude Code skills, `ship-change.js` workflow, and `domains/signals/docs` loop-memory schema.
+- Added `[[2026-06-20-loop-engineer-template-ingest-assessment]]` and updated the master `[[index]]`.
+- Recommendation: worth a selective repo-level source note if collecting practical harness templates, but do not copy the skills wholesale or replace this KB's existing `AGENTS.md` / `wiki/` schema.
