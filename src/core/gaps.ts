@@ -55,6 +55,12 @@ export interface FindGapsArgs {
   minTagOccurrences: number;
 }
 
+export const DEFAULT_GAP_ARGS: Readonly<FindGapsArgs> = {
+  limit: 10,
+  minConceptSources: 3,
+  minTagOccurrences: 2,
+};
+
 export interface GapNote {
   path: string;
   title: string;
@@ -68,6 +74,7 @@ export interface ThinConcept {
   declaredSourceCount: number | null;
   actualSourceCount: number;
   linkedSourcePaths: string[];
+  coverageStatus: string;
 }
 
 export interface ReviewGap {
@@ -78,6 +85,7 @@ export interface ReviewGap {
   lastReviewed: string;
   reviewDue: string;
   newestLinkedSourceDate: string;
+  freshnessSignal: "missing-metadata" | "calendar-overdue" | "source-drift" | "";
   reason: string;
 }
 
@@ -96,9 +104,12 @@ export interface GapReport {
   orphanSourceNoteCount: number;
   ingestedSourceNoteCount: number;
   thinConceptCount: number;
+  intentionallyThinConceptCount: number;
   sourceCountMismatchCount: number;
   reviewBacklogCount: number;
   staleWikiNoteCount: number;
+  calendarOverdueWikiNoteCount: number;
+  sourceDriftWikiNoteCount: number;
   uncoveredTagCount: number;
   orphanSourceNotes: GapNote[];
   ingestedSourceNotes: GapNote[];
@@ -208,9 +219,14 @@ function suggestedActions(report: GapReport): string[] {
       "Add `review_status`, `last_reviewed`, and optionally `review_due` metadata to concept and summary pages so freshness can be tracked automatically.",
     );
   }
-  if (report.staleWikiNotes.length > 0) {
+  if (report.sourceDriftWikiNoteCount > 0) {
     actions.push(
-      "Review wiki pages that are overdue or older than their linked source notes so the canonical layer stays fresher than the raw corpus.",
+      "Review source-drift pages first because their linked evidence is newer than the canonical synthesis.",
+    );
+  }
+  if (report.calendarOverdueWikiNoteCount > 0) {
+    actions.push(
+      "Triage calendar-overdue pages by volatility; renew fast-moving concepts deliberately and use longer or event-driven review windows for stable historical summaries.",
     );
   }
   if (report.uncoveredTags.length > 0) {
@@ -249,11 +265,19 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
       declaredSourceCount: declaredSourceCount(note),
       actualSourceCount: linkedSourcePaths.length,
       linkedSourcePaths,
+      coverageStatus: stringValue(note, "coverage_status"),
     };
   });
 
   const thinConceptCandidates = conceptAnalysis.filter(
-    (concept) => concept.actualSourceCount < args.minConceptSources,
+    (concept) =>
+      concept.actualSourceCount < args.minConceptSources &&
+      concept.coverageStatus !== "intentionally-thin",
+  );
+  const intentionallyThinConceptCandidates = conceptAnalysis.filter(
+    (concept) =>
+      concept.actualSourceCount < args.minConceptSources &&
+      concept.coverageStatus === "intentionally-thin",
   );
   const thinConcepts = thinConceptCandidates.slice(0, args.limit);
 
@@ -279,17 +303,21 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
       const newestSourceTs = parseDate(newestSourceDate);
       const now = Date.now();
 
+      let freshnessSignal: ReviewGap["freshnessSignal"] = "";
       let reason = "";
       if (!reviewStatus || !lastReviewed) {
+        freshnessSignal = "missing-metadata";
         reason = "missing review metadata";
-      } else if (reviewDueTs != null && reviewDueTs < now) {
-        reason = "review due date has passed";
       } else if (
         newestSourceTs != null &&
         lastReviewedTs != null &&
         newestSourceTs > lastReviewedTs
       ) {
+        freshnessSignal = "source-drift";
         reason = "linked source is newer than the page review date";
+      } else if (reviewDueTs != null && reviewDueTs < now) {
+        freshnessSignal = "calendar-overdue";
+        reason = "review due date has passed without linked-source drift";
       }
 
       return {
@@ -300,20 +328,20 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
         lastReviewed,
         reviewDue,
         newestLinkedSourceDate: newestSourceDate,
+        freshnessSignal,
         reason,
       };
     });
 
   const reviewBacklogCandidates = reviewAnalysis.filter(
-    (item) => item.reason === "missing review metadata",
+    (item) => item.freshnessSignal === "missing-metadata",
   );
   const reviewBacklog = reviewBacklogCandidates.slice(0, args.limit);
 
   const staleWikiCandidates = reviewAnalysis
     .filter(
       (item) =>
-        item.reason === "review due date has passed" ||
-        item.reason === "linked source is newer than the page review date",
+        item.freshnessSignal === "calendar-overdue" || item.freshnessSignal === "source-drift",
     )
     .slice(0, args.limit);
   const staleWikiNotes = staleWikiCandidates;
@@ -364,6 +392,7 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
     orphanSourceNoteCount: orphanSourceCandidates.length,
     ingestedSourceNoteCount: ingestedSourceCandidates.length,
     thinConceptCount: thinConceptCandidates.length,
+    intentionallyThinConceptCount: intentionallyThinConceptCandidates.length,
     sourceCountMismatchCount: conceptAnalysis.filter(
       (concept) =>
         concept.declaredSourceCount != null &&
@@ -372,8 +401,13 @@ export function findKbGaps(args: FindGapsArgs): GapReport {
     reviewBacklogCount: reviewBacklogCandidates.length,
     staleWikiNoteCount: reviewAnalysis.filter(
       (item) =>
-        item.reason === "review due date has passed" ||
-        item.reason === "linked source is newer than the page review date",
+        item.freshnessSignal === "calendar-overdue" || item.freshnessSignal === "source-drift",
+    ).length,
+    calendarOverdueWikiNoteCount: reviewAnalysis.filter(
+      (item) => item.freshnessSignal === "calendar-overdue",
+    ).length,
+    sourceDriftWikiNoteCount: reviewAnalysis.filter(
+      (item) => item.freshnessSignal === "source-drift",
     ).length,
     uncoveredTagCount: [
       ...sourceNotes
@@ -411,7 +445,7 @@ export function formatGapReport(report: GapReport): string {
   const sections = [
     "KB Gap Report",
     `Notes: ${report.totalNotes} total, ${report.sourceNoteCount} source, ${report.conceptNoteCount} concept, ${report.indexNoteCount} index`,
-    `Backlog totals: orphan=${report.orphanSourceNoteCount}, ingested=${report.ingestedSourceNoteCount}, thin_concepts=${report.thinConceptCount}, review_backlog=${report.reviewBacklogCount}, stale_wiki=${report.staleWikiNoteCount}, uncovered_tags=${report.uncoveredTagCount}`,
+    `Backlog totals: orphan=${report.orphanSourceNoteCount}, ingested=${report.ingestedSourceNoteCount}, thin_concepts=${report.thinConceptCount}, intentionally_thin=${report.intentionallyThinConceptCount}, review_backlog=${report.reviewBacklogCount}, stale_wiki=${report.staleWikiNoteCount}, calendar_overdue=${report.calendarOverdueWikiNoteCount}, source_drift=${report.sourceDriftWikiNoteCount}, uncovered_tags=${report.uncoveredTagCount}`,
   ];
 
   const block = (title: string, lines: string[]) => {
@@ -455,7 +489,7 @@ export function formatGapReport(report: GapReport): string {
       "Stale Wiki Notes",
       report.staleWikiNotes.map(
         (note) =>
-          `- ${note.title} (${note.path}) last_reviewed=${note.lastReviewed || "unset"} newest_source=${note.newestLinkedSourceDate || "unknown"} reason=${note.reason}`,
+          `- ${note.title} (${note.path}) signal=${note.freshnessSignal || "unknown"} last_reviewed=${note.lastReviewed || "unset"} newest_source=${note.newestLinkedSourceDate || "unknown"} reason=${note.reason}`,
       ),
     ),
     ...block(

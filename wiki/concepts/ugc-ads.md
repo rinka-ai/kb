@@ -7,8 +7,8 @@ source_count: 6
 summary: UGC ads are paid creative assets that borrow the credibility and native grammar of customer or creator content, but they require clear briefs, usage rights, truthful claims, disclosure, and performance testing.
 canonical_for: [ugc ads, user generated content ads, creator ads, partnership ads, influencer ads]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.80"
 ---
 

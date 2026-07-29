@@ -5,8 +5,8 @@ title: ElevenLabs Voice Agent Architecture
 tags: [voice-ai, elevenlabs, voice-agents, architecture, telephony, evaluation]
 summary: Architecture summary of ElevenLabs’ voice-agent stack across runtime control, tools, personalization, telephony, and operations.
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.84"
 ---
 

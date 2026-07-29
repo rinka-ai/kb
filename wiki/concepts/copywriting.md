@@ -7,8 +7,8 @@ source_count: 13
 summary: Copywriting for paid growth turns customer language, offer truth, objections, proof, and channel intent into concise, policy-safe messages that move the buyer to the next action.
 canonical_for: [copywriting, ad copywriting, conversion copywriting, landing page copy, ugc scripts]
 review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.82"
 ---
 

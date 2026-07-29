@@ -3,12 +3,12 @@ id: concept-managed-agents
 type: concept
 title: Managed Agents
 tags: [agents, infrastructure, sessions, sandboxes, architecture]
-source_count: 17
-summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, entrypoints, and state.
+source_count: 20
+summary: Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, inter-agent tasks, observability, entrypoints, and state.
 canonical_for: [managed agents, hosted agent runtimes, resumable approvals, decoupling the brain from the hands, omnichannel agent architecture, messaging gateway agent runtime, unified inbox agents, human approval handoff architecture]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.87"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-Managed agents are agent systems built around durable interfaces for state, execution, interruption, credentials, and orchestration so the implementation can change as models and harness techniques improve. Anthropic's Managed Agents post makes the core shape explicit: session logs, harnesses, and sandboxes should be separable interfaces, with model-context management treated as a replaceable harness concern rather than the durable source of truth. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, stable external APIs, brokered credentials, and reusable entrypoint adapters matter as much as the model loop itself. Hermes adds a personal-agent version: one runtime can sit behind terminal, messaging, editor, cron, API, library, and batch surfaces while sharing provider routing, memory, skills, sessions, tools, and delivery paths. MemWal adds the user-owned memory surface: managed agents should be able to use durable memory without trapping all state inside the runtime vendor's database.
+Managed agents are agent systems built around durable interfaces for state, execution, interruption, credentials, and orchestration so the implementation can change as models and harness techniques improve. Anthropic's Managed Agents post makes the core shape explicit: session logs, harnesses, and sandboxes should be separable interfaces, with model-context management treated as a replaceable harness concern rather than the durable source of truth. The newer runtime and protocol additions make that architecture more concrete: durable workflows, resumable approvals, explicit run/thread boundaries, stable external APIs, brokered credentials, and reusable entrypoint adapters matter as much as the model loop itself. A2A adds a cross-runtime discovery and task layer, while OpenTelemetry GenAI adds portable trace structure across agent, model, retrieval, tool, and MCP operations; together they make interoperability and operational evidence explicit without removing the need for local authorization and privacy policy. Hermes adds a personal-agent version: one runtime can sit behind terminal, messaging, editor, cron, API, library, and batch surfaces while sharing provider routing, memory, skills, sessions, tools, and delivery paths. MemWal adds the user-owned memory surface: managed agents should be able to use durable memory without trapping all state inside the runtime vendor's database. Mukta's production-memory talk adds a managed learning loop: shared file-backed memory needs attributed version history, optimistic concurrency, scoped read/write permissions, portability, and a periodic job that converts selected session evidence into a reviewable candidate memory state.
 
 ## Core Idea
 
@@ -31,6 +31,8 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - Provider credentials, fallback models, and credential pools should be runtime-managed surfaces rather than hard-coded into each entrypoint.
 - Long-term memory should be portable across clients and agents when the user owns the account, delegate keys, and namespace policy.
 - Meta-harness design is about being strict on interfaces around the model while leaving room for future harness implementations to change.
+- Shared organizational memory should be a managed capability with versioning, attribution, content-hash concurrency, rollback, and scope-aware read/write policy.
+- Background consolidation should select session evidence through the same authority boundary as the target memory store and produce an inspectable candidate version before promotion.
 
 ## Design Shape
 
@@ -46,6 +48,7 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - `channel adapter`: terminal, messaging, editor, API, scheduler, or batch surface that binds work to the same underlying runtime contracts
 - `memory capability`: scoped access to a durable store through delegate keys, namespaces, restore semantics, and retrieval/write policy
 - `session query interface`: bounded reads over prior event slices so the harness can reconstruct relevant context without irreversible compaction being the only memory path
+- `dreaming or consolidation job`: a periodic run over permission-matched transcripts and tool metadata that clones, verifies, organizes, enriches, and proposes a successor memory store
 
 ## Why It Matters
 
@@ -57,6 +60,7 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - makes “many brains, many hands” architectures more natural
 - lets the same agent runtime serve interactive and background modes without forking the whole system
 - creates safer boundaries for tools and real-world side effects
+- lets fleet-wide lessons compound across sessions without forcing each live agent to spend all of its task context maintaining shared memory
 
 ## Tensions
 
@@ -65,6 +69,7 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - externalized state vs model-local working context
 - rich tool ecosystems vs context and selection overhead
 - framework convenience vs protocol-level portability
+- fast in-band learning vs the cost, delay, and governance burden of cross-session consolidation
 
 ## Source Notes
 
@@ -85,3 +90,6 @@ Managed agents are agent systems built around durable interfaces for state, exec
 - [[2026-05-20-steward]]
 - [[2026-05-20-hermes-agent]]
 - [[2026-05-20-memwal]]
+- [[2026-06-22-lamis-mukta-learning-while-you-sleep-beyond-memory-to-dreaming]]
+- [[2026-05-28-agent2agent-a2a-protocol-v1-0-1]]
+- [[2026-07-25-opentelemetry-generative-ai-semantic-conventions]]

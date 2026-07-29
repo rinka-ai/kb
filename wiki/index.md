@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-06-04
+last_reviewed: 2026-07-29
 ---
 
 # Wiki Index
@@ -15,27 +15,28 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 ## Concepts
 
 - [[agent-frameworks]] — Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue.
-- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, brokers credentials, persists artifacts, attributes failures, and turns agent loops into deployable AI systems.
+- [[agent-harnesses]] — Agent harnesses are the non-model execution layer that assembles context, runs tools, enforces policy, brokers credentials, emits correlated telemetry, persists artifacts, and turns agent loops into deployable AI systems.
 - [[agent-memory]] — Agent memory covers how systems preserve, retrieve, consolidate, secure, and reuse information across time through explicit storage, load policy, write discipline, verification, integrity controls, belief-state modeling, and harness-owned context management.
-- [[agent-protocols]] — Agent protocols define the typed interaction layer around tools, approvals, identity, authorization, inter-agent communication, threads, and runtime state so agent systems stay inspectable and portable.
+- [[agent-observability]] — Agent observability correlates model calls, agent runs, tools, retrieval, state changes, costs, and outcomes while applying explicit privacy controls to captured content.
+- [[agent-protocols]] — Agent protocols define typed interaction layers for tools, approvals, identity, authorization, agent discovery, inter-agent tasks, threads, and runtime state so composed systems remain inspectable and portable.
 - [[agent-security]] — Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
 - [[agent-skills]] — Agent skills are reusable procedural capability modules that package task-specific guidance, examples, scripts, setup state, hooks, and verification habits while keeping invocation, evidence, and mutation boundaries explicit.
-- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems, so they need clearer schemas, tighter ergonomics, credential boundaries, zero-trust authorization, and better orchestration boundaries than APIs built only for humans.
+- [[agent-tools]] — Agent tools are structured action surfaces for non-deterministic systems; they require precise schemas, abstention tests, stateful and end-state evaluation, credential boundaries, and stronger orchestration than human-only APIs.
 - [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
-- [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
+- [[ai-agent-evals]] — AI agent evals measure full systems across tool correctness, abstention, policy-constrained interaction, final state, reliability, observability, infrastructure, adversarial conditions, and deployment constraints.
 - [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, source-aware design references, and precise interaction constraints rather than visual novelty or generic model-default aesthetics.
 - [[ai-instruction-design]] — AI instruction design turns always-on assistant prompts into compact behavioral contracts for truthfulness, evidence handling, uncertainty, tone, tool use, and context discipline.
 - [[ai-saas-strategy]] — AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
 - [[ai-agency-strategy]] — AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 - [[local-business-ai-acquisition-system]] — A local-business AI acquisition system sequences reactivation, reputation/referrals, speed-to-lead, sales coaching, and paid ads into one measurable workflow so new demand enters a less leaky funnel.
-- [[database-reactivation]] — Database reactivation re-engages dormant leads or former customers through permission-aware conversations, booking paths, and outcome tracking before a local business increases paid acquisition spend.
+- [[database-reactivation]] — Database reactivation re-engages eligible dormant contacts through provenance- and consent-aware conversations, booking paths, suppression controls, and outcome tracking before increasing paid acquisition.
 - [[review-referral-automation]] — Review and referral automation turns real customer interactions into reputation, feedback, and referred leads, but it must avoid deceptive review gating, undisclosed incentives, and borrowed proof.
 - [[speed-to-lead-and-missed-call-recovery]] — Speed-to-lead and missed-call recovery protect organic and paid demand by responding quickly, booking or rescheduling prospects, and handing edge cases to humans before lead value decays.
-- [[sales-coaching-gpt]] — A sales-coaching GPT turns consultation recordings or transcripts into rubric-based feedback so local businesses can improve close rate with a standardized, auditable sales process.
+- [[sales-coaching-gpt]] — An AI sales coach turns permissioned call evidence into calibrated, segment-aware feedback; experimental evidence favors bounded feedback for struggling reps and AI-human coaching over uniform automation.
 - [[ai-agency-sales-process]] — The AI-agency sales process is a diagnostic call flow: quantify the buyer's funnel gap, build doubt in the current approach, map offer pillars to measured problems, temperature-check buy-in, and close with clear next steps.
 - [[ai-agency-paid-ads-process]] — The AI-agency paid-ads process uses simple lead-generation campaign structure, sharp niche-specific creative, landing-page and booking follow-up, and CRM-backed measurement rather than treating cheap leads as proof.
-- [[benchmark-integrity]] — Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
+- [[benchmark-integrity]] — Benchmark integrity preserves the meaning of agent scores by pinning tasks, code, evaluators, simulators, environments, and reporting assumptions—not only guarding against contamination.
 - [[claude-code]] — Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, and reviewable collaboration artifacts.
 - [[codebase-architecture]] — Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
 - [[content-creation-strategy]] — Content creation strategy compounds when audience insight, first-hand expertise, platform-native formats, repurposing, paid distribution, and measurement produce reusable proof instead of isolated posts.
@@ -46,17 +47,18 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[decision-making-under-uncertainty]] — Decision-making under uncertainty connects probability, utility, planning, belief states, and sequential consequences into one action-oriented framework.
 - [[deep-learning]] — Deep learning is representation learning with neural networks, where architecture, losses, optimization, data, and scale jointly shape model behavior.
 - [[distributional-reinforcement-learning]] — Distributional reinforcement learning models the full distribution of returns rather than only expected value, enabling richer theory and algorithms for uncertainty over outcomes.
+- [[domain-specific-agents]] — Domain-specific agents package one bounded domain's context, tools, state, policies, and execution environment into a reusable unit; they help when context and authority boundaries are real, but lose when routing and coordination overhead exceed the isolation gains.
 - [[durable-execution]] — Durable execution makes long-running agent work survivable by treating pause, resume, replay, retry, and human intervention as first-class runtime behaviors.
 - [[embeddings]] — Embeddings turn text into vector representations for similarity search and clustering, but in this KB they matter mainly as one retriever component inside a broader retrieval pipeline.
 - [[enterprise-agent-deployment-failure-modes]] — Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 - [[fairness-and-ml]] — Fairness and ML is a socio-technical discipline about measurement, legitimacy, classification criteria, causality, recourse, feedback loops, and institutional context.
 - [[learning-theory]] — Learning theory explains when empirical learning should generalize, using sample complexity, hypothesis-class capacity, risk decomposition, and regularization rather than training loss alone.
 - [[llm-agents]] — LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
-- [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, entrypoints, and state.
+- [[managed-agents]] — Managed agents decouple model reasoning from durable runtime interfaces for sessions, runs, approvals, tools, credentials, inter-agent tasks, observability, entrypoints, and state.
 - [[ml-systems-engineering]] — ML systems engineering treats AI as a deployed lifecycle across data, training, evaluation, serving, monitoring, scaling, governance, and compute economics.
 - [[multi-agent-failure-attribution]] — Multi-agent failure attribution identifies where, how, and why errors emerge and propagate across agent roles, steps, tools, and coordination structures so diagnoses can support repair.
 - [[multi-agent-reinforcement-learning]] — Multi-agent reinforcement learning studies learning agents in shared environments where strategic interaction, nonstationarity, coordination, communication, and partial observability matter.
-- [[multi-agent-systems]] — Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles, human-review backpressure, and attribution paths for diagnosing coordination failures.
+- [[multi-agent-systems]] — Multi-agent systems span LLM orchestration and formal multi-agent learning; reliable deployments need bounded roles, interoperable discovery and task contracts, human-review backpressure, and failure attribution.
 - [[obsidian]] — Obsidian is the human-facing interface for navigating the repo's markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
 - [[optimization-for-ml]] — Optimization for ML is the search layer that turns objectives into trained models, tuned systems, falsifying examples, and efficient deployment choices.
 - [[payment-integrations]] — Payment and value-transfer integrations should keep sensitive collection, credentials, and signing authority inside managed or policy-enforced surfaces while completing business logic from verified events.
@@ -73,7 +75,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[speech-to-text]] — Speech-to-text quality is shaped as much by capture conditions, output structure, and diarization choices as by the base transcription model.
 - [[synthetic-voices]] — Synthetic voices create powerful accessibility and product opportunities, but they also demand consent, disclosure, provenance, and strong anti-impersonation controls.
 - [[text-to-speech]] — Text-to-speech is an output design problem as much as an API call, balancing latency, style control, markup, and disclosure requirements.
-- [[voice-ai]] — Voice AI is a full interaction stack spanning speech I/O, runtime control, tools, personalization, telephony, and trust controls.
+- [[voice-ai]] — Voice AI is a full interaction stack spanning speech I/O, turn-taking, latency and interruption evaluation, runtime control, tools, telephony, consent, and trust controls.
 - [[voice-dictation]] — Voice dictation systems optimize for fast cursor-level text entry and editing, which makes them a distinct product shape from conversational voice agents.
 - [[web-agents]] — Web agents are agents that operate over browser environments, where the browser can be both the primary task world and a fallback integration layer for systems without clean APIs.
 - [[workflows]] — Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, side effects, and human review capacity stay inspectable instead of being improvised inside one autonomous loop.
@@ -89,7 +91,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[marketing-measurement]] — Marketing measurement separates optimization, attribution, funnel quality, and causal incrementality so paid growth decisions are not overfit to platform dashboards.
 - [[meta-ads]] — Meta Ads performance now depends on simplified structures, automation, diversified creative, creator/UGC supply, first-party conversion signals, policy-safe claims, and validation beyond dashboard ROAS.
 - [[ml-training-serving-lifecycle]] — The ML training-serving lifecycle covers how data, training, evaluation, deployment, inference, monitoring, and feedback connect into one operational system.
-- [[monitoring-drift-and-feedback]] — Monitoring, drift, and feedback loops explain why deployed ML systems must track changing data, behavior, outcomes, and downstream effects after launch.
+- [[monitoring-drift-and-feedback]] — Monitoring, drift, and feedback loops explain why deployed ML and agent systems must correlate changing data, model behavior, tool activity, outcomes, and downstream effects after launch.
 - [[monte-carlo-and-sampling]] — Monte Carlo and sampling methods approximate expectations, probabilities, and posterior quantities by drawing samples when exact inference is unavailable.
 - [[neural-network-architectures]] — Neural network architectures encode inductive biases through composition, convolution, recurrence, attention, graph structure, residual paths, and latent-variable structure.
 - [[neural-network-training]] — Neural network training combines losses, backpropagation, automatic differentiation, stochastic optimization, initialization, normalization, and regularization into one learning process.
@@ -104,12 +106,18 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-07-29-understanding-gates-for-agentic-workflows]] — Agentic workflows should add a risk-triggered understanding gate after machine verification: teach the system and change, test retrieval or transfer, and reserve interactive micro-worlds for behavior that static explanation cannot make intuitive.
+- [[2026-07-28-deterministic-gates-for-agentic-coding-workflows]] — Reliable agentic coding separates guidance from enforced gates, binds completion claims to fresh task-specific evidence, and measures context additions against an unassisted baseline; fixed thresholds and ratcheted debt remain provisional local tactics.
+- [[2026-07-27-ai-native-organization-execution-platform-spec]] — Product specification for an organization execution platform where any employee turns an idea into an approved Goal Contract, agents execute it under company rules and design-system constraints through a durable planner/executor/verifier loop, everyone queries permission-filtered status over one evidence graph, and delivery lands as a normal GitHub pull request.
+- [[2026-07-27-kb-freshness-and-primary-source-refresh]] — A July 2026 maintenance cycle separated calendar age from source drift, re-tiered the full review backlog, and closed primary-source gaps in A2A, GenAI observability, tool-agent evaluation, lead compliance, and AI sales coaching.
+- [[2026-07-25-claude-5-context-engineering-rules]] — Claude 5 shifts context engineering from accumulating instructions toward budgeting constraints: keep product identity and authority boundaries stable, encode repo gotchas briefly, defer conditional procedures, design expressive interfaces, and pass task intent through rich references.
+- [[2026-07-25-agent-memory-dreaming-production-pattern]] — Agent-memory dreaming is a two-speed learning architecture: live agents make scoped, immediate memory updates, while a permission-aware background process uses cross-session evidence to propose versioned, attributable, testable improvements to the shared store.
 - [[2026-06-20-loop-engineer-template-ingest-assessment]] — JayZeeDesign/loop-engineer-template is worth a selective repo-level ingest for its compact loop-memory schema and Claude Code harness skills, but not worth copying wholesale because the KB already covers stronger harness-engineering and Claude Code skill sources.
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]] — Peter Wang's vertical-agent article is best preserved as a design rule: encode the domain task distribution into L1 always-resident wrappers, L2 fetched specs/tool schemas, and L3 raw-reference escape hatches so the model stays accurate without bloated context.
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]] — A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills.
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]] — walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill.
 - [[2026-06-04-ai-native-content-machine]] — Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory.
-- [[2026-04-10-kb-acquisition-priorities]] — Audit of the KB's strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
+- [[2026-04-10-kb-acquisition-priorities]] — A dated April 2026 acquisition audit that established the KB's primary-source strategy; its completed and superseded priorities are preserved for provenance.
 - [[2026-04-12-elevenlabs-voice-agent-architecture]] — Architecture summary of ElevenLabs' voice-agent stack across runtime control, tools, personalization, telephony, and operations.
 - [[2026-04-13-rag-acquisition-priorities]] — Rationale and reading order for the core RAG paper, retriever, evaluation, and GraphRAG additions.
 - [[2026-04-16-agent-stack-builder-guide-kb-upgrades]] — Summary of how the builder guide and follow-on sources sharpen the KB around memory, skills, protocols, and harnesses.
@@ -145,7 +153,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[2026-06-03-agentic-engineering-practitioner-stack]] — Van Horn's agentic-engineering field report is useful as an operator-stack snapshot: plan-first artifacts, research-before-planning, parallel agent sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste as the bottleneck.
 - [[2026-06-03-claude-use-cases-workflow-map]] — Anthropic's Claude use-case digest is best preserved as a workflow-packaging map: task boundaries, required context, product surface, output artifact, follow-up action, and operational cautions across 94 jobs-to-be-done.
 - [[2026-06-03-matt-pocock-skills-ingest-assessment]] — Matt Pocock's skills repo is worth a targeted repo-level ingest for agentic engineering workflow design, and the approved ingest preserved it as one GitHub-repo source note rather than copying every skill wholesale.
-- [[2026-05-27-kb-health-search-methodology-audit]] — Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
+- [[2026-05-27-kb-health-search-methodology-audit]] — A historical May 2026 audit of local health, remote MCP observability, search methodology, telemetry, and retrieval-eval coverage, retained as a baseline for later health cycles.
 - [[2026-05-27-meta-google-ads-creative-content-kb-expansion]] — Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 
 ## Sub-Indexes
@@ -154,6 +162,7 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 - [[home]] — Landing page and navigation hub. (Master catalog is this file.)
 - [[addy-osmani]] — Sub-index for Addy Osmani source notes on AI-assisted software engineering, agent orchestration, and engineering productivity.
+- [[academic-papers]] — Sub-index for peer-reviewed papers published outside arXiv.
 - [[anthropic-engineering]] — Sub-index for `raw/articles/anthropic-engineering/` notes.
 - [[arxiv]] — Sub-index for `raw/articles/arxiv/` papers.
 - [[business-strategy]] — Sub-index for `raw/articles/business-strategy/` sources on AI SaaS, GTM, pricing, workflow value, and commercial moats.
@@ -171,21 +180,22 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 
 ## Source Collections
 
-Counts as of `2026-06-17`. Folders under `raw/articles/`.
+Counts as of `2026-07-29`. Folders under `raw/articles/`.
 
+- `academic-papers` (2)
 - `addy-osmani` (1)
 - `anthropic-engineering` (22)
-- `arxiv` (29)
+- `arxiv` (30)
 - `voice-ai` (33)
-- `official-docs` (19)
+- `official-docs` (21)
 - `textbooks` (16)
-- `github-repos` (19)
+- `github-repos` (24)
 - `internal-codebases` (6)
 - `design-systems` (3)
 - `enterprise-ai` (12)
 - `momo-research` (11)
-- `claude-blog` (10)
-- `user-provided` (14)
+- `claude-blog` (11)
+- `user-provided` (18)
 - `business-strategy` (4)
 - `paid-growth` (26)
 - `browserbase-docs` (3)

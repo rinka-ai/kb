@@ -7,8 +7,8 @@ summary: "Peter Wang's vertical-agent article is best preserved as a design rule
 source_count: 1
 canonical_for: [vertical agent context hierarchy, agent context cache hierarchy, faithful compression of task distribution]
 review_status: reviewed
-last_reviewed: 2026-06-12
-review_due: 2026-07-12
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

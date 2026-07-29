@@ -5,8 +5,8 @@ title: Agent Memory Architecture KB Upgrades
 tags: [agent-memory, context-engineering, kb-system, prompt-caching, agent-harnesses]
 summary: Summary of how the Nicolas Bustamante memory-architecture thread should improve the KB's agent-memory synthesis and its own authoring discipline.
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

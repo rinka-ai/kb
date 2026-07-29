@@ -33,10 +33,13 @@ describe("refresh", () => {
         review: {
           reviewBacklogCount: 1,
           staleWikiCount: 0,
+          calendarOverdueWikiCount: 0,
+          sourceDriftWikiCount: 0,
         },
         maintenance: {
           ingestedSourceCount: 0,
           thinConceptCount: 0,
+          intentionallyThinConceptCount: 0,
           uncoveredTagCount: 1,
         },
         gapReport: {
@@ -48,9 +51,12 @@ describe("refresh", () => {
           orphanSourceNoteCount: 0,
           ingestedSourceNoteCount: 0,
           thinConceptCount: 0,
+          intentionallyThinConceptCount: 0,
           sourceCountMismatchCount: 0,
           reviewBacklogCount: 0,
           staleWikiNoteCount: 0,
+          calendarOverdueWikiNoteCount: 0,
+          sourceDriftWikiNoteCount: 0,
           uncoveredTagCount: 0,
           orphanSourceNotes: [],
           ingestedSourceNotes: [],

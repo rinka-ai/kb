@@ -75,7 +75,9 @@ function recommendedActions(
     actions.push("Review failed retrieval evals before changing the ranking model.");
   }
   if (searchObservations.zeroResultQueries.length > 0) {
-    actions.push("Add aliases, concepts, or source coverage for repeated zero-result searches.");
+    actions.push(
+      "Review zero-result searches; prioritize repeated or decision-relevant queries before adding aliases, concepts, or sources.",
+    );
   }
   if (searchObservations.lowConfidenceQueries.length > 0) {
     actions.push("Inspect low-confidence search observations for alias or canonical-page drift.");
@@ -122,7 +124,7 @@ export function formatKbAuditReport(report: KbAuditReport): string {
     "KB audit report",
     `generated_at=${report.generatedAt} passed=${report.passed}`,
     `index_files=${report.refresh.index.fileCount} index_chunks=${report.refresh.index.chunkCount}`,
-    `health review_backlog=${health.review.reviewBacklogCount} stale_wiki=${health.review.staleWikiCount} thin_concepts=${health.maintenance.thinConceptCount} uncovered_tags=${health.maintenance.uncoveredTagCount}`,
+    `health review_backlog=${health.review.reviewBacklogCount} stale_wiki=${health.review.staleWikiCount} calendar_overdue=${health.review.calendarOverdueWikiCount} source_drift=${health.review.sourceDriftWikiCount} thin_concepts=${health.maintenance.thinConceptCount} intentionally_thin=${health.maintenance.intentionallyThinConceptCount} uncovered_tags=${health.maintenance.uncoveredTagCount}`,
     `search_observations total=${report.searchObservations.totalObservations} low_confidence=${report.searchObservations.lowConfidenceQueries.length} zero_results=${report.searchObservations.zeroResultQueries.length}`,
     `eval cases=${report.eval.totalCases} failures=${report.eval.failures.length} preferred_hit@1=${report.eval.metrics.preferredHitAt1} relevant_hit@3=${report.eval.metrics.relevantHitAt3}`,
     "",

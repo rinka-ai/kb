@@ -7,8 +7,8 @@ summary: Multi-agent failure attribution identifies where, how, and why errors e
 source_count: 4
 canonical_for: [multi-agent failure attribution, agent failure attribution, failure diagnosis in agent teams, attribution in multi-agent systems]
 review_status: draft
-last_reviewed: 2026-05-16
-review_due: 2026-06-16
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.74"
 ---
 

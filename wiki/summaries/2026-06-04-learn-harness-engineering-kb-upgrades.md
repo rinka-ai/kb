@@ -7,8 +7,8 @@ summary: "walkinglabs/learn-harness-engineering turns harness engineering into a
 source_count: 1
 canonical_for: [learn harness engineering, walkinglabs harness engineering, harness engineering course, harness creator skill]
 review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.84"
 ---
 

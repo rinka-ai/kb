@@ -7,8 +7,8 @@ source_count: 5
 summary: Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
 canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization, module depth, deep modules, seam adapter architecture, codebase organization for agents]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.86"
 ---
 

@@ -7,8 +7,8 @@ source_count: 8
 summary: Content creation strategy compounds when audience insight, first-hand expertise, platform-native formats, repurposing, paid distribution, and measurement produce reusable proof instead of isolated posts.
 canonical_for: [content creation, content strategy, content marketing strategy, social content engine, ai content strategy]
 review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.80"
 ---
 

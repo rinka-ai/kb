@@ -5,8 +5,8 @@ title: Graphed AI Agents vs Aristotle And Pavlo Methods
 tags: [business-strategy, ai-agency, marketing-agents, ai-saas, gtm]
 summary: "Graphed matches the AI Aristotle pattern at the systems-architecture level: integrated agents, shared data infrastructure, dashboards, and high-touch deployment, but it is closer to a marketing-ops agent platform than the local-business Aristotle or Pavlo agency methods."
 review_status: draft
-last_reviewed: 2026-06-02
-review_due: 2026-07-02
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.66"
 ---
 

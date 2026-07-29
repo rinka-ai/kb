@@ -7,8 +7,8 @@ summary: "Van Horn's agentic-engineering field report is useful as an operator-s
 source_count: 7
 canonical_for: [agentic engineering stack, plan-first agentic coding, Claude Code Codex workflow, agentic engineering hacks]
 review_status: draft
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.78"
 ---
 

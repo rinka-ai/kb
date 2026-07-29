@@ -7,8 +7,8 @@ source_count: 17
 summary: Performance creative turns customer insight into policy-safe ad concepts, modular assets, tests, fatigue diagnosis, and refreshed winners across paid channels.
 canonical_for: [performance creative, creative testing, ad creative strategy, creative diversification, creative pipeline]
 review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

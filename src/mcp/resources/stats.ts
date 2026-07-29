@@ -1,3 +1,4 @@
+import { DEFAULT_GAP_ARGS } from "../../core/gaps";
 import { buildHealthReport } from "../../core/health";
 import { collectKbWarnings } from "../../core/lint";
 import { ensureIndex } from "../../core/search";
@@ -12,9 +13,7 @@ export const statsResource: ResourceDef = {
   getData: () => {
     const index = ensureIndex(true);
     const health = buildHealthReport({
-      limit: 10,
-      minConceptSources: 2,
-      minTagOccurrences: 2,
+      ...DEFAULT_GAP_ARGS,
       rebuildIfStale: false,
     });
     return {

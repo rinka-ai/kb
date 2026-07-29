@@ -52,11 +52,14 @@ The official MCP repository is the KB's primary source of truth for the protocol
 
 - This is the key protocol source added in this round and should anchor future MCP-related synthesis in the KB.
 - It gives the repo a primary-source alternative to treating MCP only through vendor blog posts.
+- Version check on 2026-07-27: the latest final specification remains `2025-11-25`.
+- The `2026-07-28-RC` release candidate was published on 2026-05-29, but the corresponding final specification was not yet published at the time of review. Do not label or ingest the release candidate as the final release.
 
 ## Open Questions
 
 - Which concept page should own protocol-level interoperability in this KB if MCP keeps growing as a theme?
 - How should this repo distinguish between MCP as a protocol and specific vendor product surfaces built on top of it?
+- After the final `2026-07-28` specification is published, which release-candidate claims survived unchanged and which require migration notes?
 
 ## Related
 

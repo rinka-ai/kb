@@ -7,8 +7,8 @@ summary: The Cognee bundle reframes memory as a control plane spanning graph mem
 source_count: 3
 canonical_for: [cognee memory skills, skills as memory, memory skills same harness]
 review_status: draft
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

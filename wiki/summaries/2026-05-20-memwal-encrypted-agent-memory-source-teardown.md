@@ -7,8 +7,8 @@ summary: "MemWal adds a user-owned encrypted memory pattern: durable Walrus blob
 source_count: 1
 canonical_for: [memwal, encrypted agent memory, user-owned agent memory, walrus memory]
 review_status: draft
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

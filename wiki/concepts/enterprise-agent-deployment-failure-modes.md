@@ -7,8 +7,8 @@ source_count: 19
 summary: Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 canonical_for: [enterprise AI failure, agent sprawl, AI adoption gap, enterprise agent deployment, AI operations, Claude use cases workflow packaging, enterprise AI workflow packaging]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

@@ -21,6 +21,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Source Collections
 
+- [[academic-papers]]
 - [[addy-osmani]]
 - [[arxiv]]
 - [[business-strategy]]
@@ -36,6 +37,11 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-07-29-understanding-gates-for-agentic-workflows]]
+- [[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]
+- [[2026-07-27-kb-freshness-and-primary-source-refresh]]
+- [[2026-07-25-claude-5-context-engineering-rules]]
+- [[2026-07-25-agent-memory-dreaming-production-pattern]]
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]]
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]]
@@ -104,6 +110,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[personal-knowledge-bases]]
 - [[research-workflows]]
 - [[llm-agents]]
+- [[domain-specific-agents]]
 - [[obsidian]]
 - [[context-engineering]]
 - [[ai-instruction-design]]

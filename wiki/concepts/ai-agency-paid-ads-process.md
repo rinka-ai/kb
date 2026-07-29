@@ -7,8 +7,8 @@ source_count: 9
 summary: "The AI-agency paid-ads process uses simple lead-generation campaign structure, sharp niche-specific creative, landing-page and booking follow-up, and CRM-backed measurement rather than treating cheap leads as proof."
 canonical_for: [AI agency paid ads process, AI agency ads, agency client acquisition ads, local business AI agency Meta ads]
 review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.67"
 ---
 

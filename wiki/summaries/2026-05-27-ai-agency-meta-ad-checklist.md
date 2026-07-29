@@ -7,8 +7,8 @@ summary: "A tactical checklist for AI-agency Meta ads: call out the niche before
 source_count: 9
 canonical_for: [ai agency meta ads checklist, ai agency facebook ads, local business ai ads, meta ads for ai agency]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.65"
 ---
 

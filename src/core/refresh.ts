@@ -1,3 +1,4 @@
+import { DEFAULT_GAP_ARGS } from "./gaps";
 import { buildHealthReport, writeHealthArtifacts } from "./health";
 import { buildIndex, writeIndex } from "./indexer";
 import { collectKbWarnings } from "./lint";
@@ -17,9 +18,7 @@ export function refreshKb(): RefreshResponse {
   const index = buildIndex();
   writeIndex(index);
   const health = buildHealthReport({
-    limit: 10,
-    minConceptSources: 2,
-    minTagOccurrences: 2,
+    ...DEFAULT_GAP_ARGS,
     rebuildIfStale: false,
   });
   const artifacts = writeHealthArtifacts(health);

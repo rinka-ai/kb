@@ -7,8 +7,8 @@ source_count: 3
 summary: "The AI-agency sales process is a diagnostic call flow: quantify the buyer's funnel gap, build doubt in the current approach, map offer pillars to measured problems, temperature-check buy-in, and close with clear next steps."
 canonical_for: [AI agency sales process, agency sales script, diagnostic sales call, AI Aristotle sales process, local business agency sales]
 review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.63"
 ---
 

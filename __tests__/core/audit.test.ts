@@ -34,10 +34,13 @@ describe("kb audit", () => {
           review: {
             reviewBacklogCount: 0,
             staleWikiCount: 1,
+            calendarOverdueWikiCount: 1,
+            sourceDriftWikiCount: 0,
           },
           maintenance: {
             ingestedSourceCount: 0,
             thinConceptCount: 0,
+            intentionallyThinConceptCount: 0,
             uncoveredTagCount: 0,
           },
           gapReport: {
@@ -49,9 +52,12 @@ describe("kb audit", () => {
             orphanSourceNoteCount: 0,
             ingestedSourceNoteCount: 0,
             thinConceptCount: 0,
+            intentionallyThinConceptCount: 0,
             sourceCountMismatchCount: 0,
             reviewBacklogCount: 0,
             staleWikiNoteCount: 1,
+            calendarOverdueWikiNoteCount: 1,
+            sourceDriftWikiNoteCount: 0,
             uncoveredTagCount: 0,
             orphanSourceNotes: [],
             ingestedSourceNotes: [],

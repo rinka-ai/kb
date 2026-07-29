@@ -7,8 +7,8 @@ source_count: 3
 summary: "A local-business AI acquisition system sequences reactivation, reputation/referrals, speed-to-lead, sales coaching, and paid ads into one measurable workflow so new demand enters a less leaky funnel."
 canonical_for: [local business AI acquisition system, AI Aristotle offer, AI agency offer pillars, full-funnel local business AI]
 review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.65"
 ---
 

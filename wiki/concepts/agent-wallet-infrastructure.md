@@ -7,8 +7,8 @@ source_count: 5
 summary: Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 canonical_for: [agent wallets, agent wallet infrastructure, autonomous agent wallets, agent custody, agent payments]
 review_status: draft
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.78"
 ---
 

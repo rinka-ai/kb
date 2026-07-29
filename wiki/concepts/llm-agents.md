@@ -3,12 +3,12 @@ id: concept-llm-agents
 type: concept
 title: LLM Agents
 tags: [agents, llms, tool-use, multi-agent, parallel-agents, web-agents, browser, computer-use]
-source_count: 23
+source_count: 24
 summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 canonical_for: [llm agents, tool-using agents, autonomous model agents]
 review_status: reviewed
-last_reviewed: 2026-06-12
-review_due: 2026-07-12
+last_reviewed: 2026-07-29
+review_due: 2026-09-12
 confidence: "0.88"
 ---
 
@@ -17,6 +17,8 @@ confidence: "0.88"
 ## Summary
 
 LLM agents are systems where a model acts over time using tools, memory, and structured context rather than only producing a single response. The newer additions make the category much less abstract: beyond ReAct-style loops, real agents need durable execution, resumable interruptions, session or thread state, memory surfaces, reusable skills, stable protocols for tools and runtime control, and a harness that coordinates those pieces without owning all of them invisibly. A useful newer framing is that many high-leverage agent systems decompose into memory, skills, protocols, and a harness rather than one monolithic "agent brain." AHE pushes this further by treating those external pieces as a learnable substrate: the model can stay fixed while the harness accumulates evaluated experience in tools, middleware, memory, and other files. Hermes adds the personal-agent endpoint: a single agent can become a long-lived runtime spanning chat, terminal, editor, scheduled jobs, tool registries, memory, skill mutation, browser work, desktop control, and research traces. Wang's vertical-agent article adds a product-quality distinction: the basic while-loop is easy, but a good domain agent compresses its task distribution into context tiers, tool wrappers, deferred specs, and raw-reference escape hatches.
+
+Schroeder's talk offers a useful systems definition—deterministic software harnessing nondeterministic model outputs toward an objective—and argues that a domain specialist can be packaged as a callable agent with its own loop and execution boundary. This KB still distinguishes the model-driven agent from its deterministic harness because they have different evaluation, portability, and governance responsibilities.
 
 ## Key Dimensions
 
@@ -38,6 +40,7 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - whether high-frequency operations return compressed, semantically enriched, self-checking feedback
 - whether sub-calls are verbal workflow steps or programmatic recursive calls over external state
 - which user-facing entrypoints share identity, memory, permissions, and session continuity
+- whether a stable domain should be a separate agent with its own context, state, authority, model, sandbox, and task contract, or remain a progressively disclosed capability inside one agent
 
 ## Source Notes
 
@@ -64,3 +67,4 @@ LLM agents are systems where a model acts over time using tools, memory, and str
 - [[2026-05-20-hermes-agent]]
 - [[2026-05-24-the-orchestration-tax]]
 - [[2026-06-11-building-good-vertical-agent]]
+- [[2026-06-28-the-future-is-domain-specific-agents]]

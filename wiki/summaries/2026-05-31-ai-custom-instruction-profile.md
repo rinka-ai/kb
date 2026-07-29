@@ -7,8 +7,8 @@ summary: A reusable distilled custom-instruction profile that preserves anti-syc
 source_count: 4
 canonical_for: [AI custom instruction profile, reusable custom prompt, anti-sycophancy custom instructions, truth over approval assistant prompt]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 
