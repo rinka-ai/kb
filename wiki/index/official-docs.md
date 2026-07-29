@@ -34,6 +34,9 @@ This index groups official documentation added to strengthen the KB's coverage o
   [[2026-04-18-linkedin-user-agreement]]
   [[2026-04-18-linkedin-crawling-terms-and-conditions]]
   [[2026-04-18-ico-business-to-business-marketing]]
+- Lead-generation and AI-voice compliance:
+  [[2016-09-01-ftc-follow-the-lead]]
+  [[2024-02-08-fcc-ai-generated-voices-tcpa]]
 
 ## Why This Collection Matters
 
@@ -48,3 +51,5 @@ This index groups official documentation added to strengthen the KB's coverage o
 - [[agent-memory]]
 - [[llm-agents]]
 - [[payment-integrations]]
+- [[database-reactivation]]
+- [[voice-ai]]

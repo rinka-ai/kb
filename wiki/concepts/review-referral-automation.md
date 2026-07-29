@@ -7,8 +7,8 @@ source_count: 3
 summary: "Review and referral automation turns real customer interactions into reputation, feedback, and referred leads, but it must avoid deceptive review gating, undisclosed incentives, and borrowed proof."
 canonical_for: [review referral automation, reviews and referrals, local business reviews, referral automation, reputation automation]
 review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.66"
 ---
 

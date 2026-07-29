@@ -7,8 +7,8 @@ summary: "A user-provided Dynamic Workflows digest is best preserved as an opera
 source_count: 1
 canonical_for: [claude code dynamic workflows, dynamic workflows patterns, ultracode workflow patterns]
 review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.78"
 ---
 

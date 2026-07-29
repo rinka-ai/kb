@@ -2,21 +2,23 @@
 id: concept-agent-skills
 type: concept
 title: Agent Skills
-tags: [agents, skills, context-engineering]
-source_count: 27
+tags: [agents, skills, context-engineering, explanations, quizzes]
+source_count: 31
 summary: Agent skills are reusable procedural capability modules that package task-specific guidance, examples, scripts, setup state, hooks, and verification habits while keeping invocation, evidence, and mutation boundaries explicit.
 canonical_for: [agent skills, procedural skills]
 review_status: reviewed
-last_reviewed: 2026-06-12
-review_due: 2026-07-12
-confidence: "0.84"
+last_reviewed: 2026-07-29
+review_due: 2026-10-27
+confidence: "0.85"
 ---
 
 # Agent Skills
 
 ## Summary
 
-Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text. A newer security framing treats runtime-loaded skills as supply-chain artifacts: signatures and registries establish provenance, but behavioral trust requires explicit verification before irreversible capabilities can stop asking for HITL approval. The Cognee bundle adds a useful counterweight to an overly clean taxonomy: skills can be treated as procedural memories backed by run evidence and improvement proposals, as long as the runtime keeps storage, routing, review, and apply semantics explicit. Hermes adds the personal-agent loop: skills can be progressively disclosed, user-editable, agentskills.io-compatible, and subject to background improvement, but that turns mutation policy and protected-skill boundaries into part of the runtime contract. Van Horn adds the practitioner heuristic: if an agent workflow is performed more than twice, consider turning it into a skill after checking that the repeated shape is real. The Claude use-case digest adds the user-facing version: once a workflow's grouping, inputs, output format, and review policy are stable, save it as a skill, shortcut, project instruction, or scheduled Cowork task. Matt Pocock's skills repo adds a practitioner implementation pattern: package ordinary engineering discipline into small invoked skills that force feedback loops, domain-language alignment, vertical slices, durable briefs, and architecture vocabulary. Lieberman's content-machine digest adds a domain example: a skill directory can mirror a creator's actual process, with separate skills for idea mining, research, interviewing, production, refinement, review, repurposing, and learning. Anthropic's Claude Code skills article adds the org-scale version: skills should fit a clean category, focus on gotchas and verification, use the filesystem for progressive disclosure, include setup/memory/scripts/hooks only when they earn their keep, and be distributed or measured through repo skills, plugins, marketplaces, and usage hooks. Learn Harness Engineering adds a meta-skill example: `harness-creator` packages harness creation and auditing as templates, references, scripts, eval cases, and a structural validator. The Dynamic Workflows digest adds a workflow-to-skill packaging path: once a generated workflow proves useful, save it as a reusable skill template with its script and rubric nearby. Wang's vertical-agent article adds a low-level reference-navigation pattern: a skill can be a short map over a complete raw API tome, teaching grep/search recipes so long-tail capabilities remain reachable without putting the raw reference into context.
+Agent skills are reusable capability modules that teach an agent how to approach recurring classes of tasks without hard-coding those procedures into the harness. In this KB, the strongest recent pattern is that skills externalize procedural expertise best when they are progressively disclosed, carry clear constraints, and specify what good looks like more than brittle step-by-step choreography. At scale, that depends on resolver surfaces that keep skills discoverable without loading all of them all the time, and in some systems on permission layers that decide which skills are even reachable for a given invocation. AHE adds a boundary condition: skills are only one evolvable harness component, and gains may live more strongly in tools, middleware, or memory than in procedural text. A newer security framing treats runtime-loaded skills as supply-chain artifacts: signatures and registries establish provenance, but behavioral trust requires explicit verification before irreversible capabilities can stop asking for HITL approval. The Cognee bundle adds a useful counterweight to an overly clean taxonomy: skills can be treated as procedural memories backed by run evidence and improvement proposals, as long as the runtime keeps storage, routing, review, and apply semantics explicit. Hermes adds the personal-agent loop: skills can be progressively disclosed, user-editable, agentskills.io-compatible, and subject to background improvement, but that turns mutation policy and protected-skill boundaries into part of the runtime contract. Van Horn adds the practitioner heuristic: if an agent workflow is performed more than twice, consider turning it into a skill after checking that the repeated shape is real. The Claude use-case digest adds the user-facing version: once a workflow's grouping, inputs, output format, and review policy are stable, save it as a skill, shortcut, project instruction, or scheduled Cowork task. Matt Pocock's skills repo adds a practitioner implementation pattern: package ordinary engineering discipline into small invoked skills that force feedback loops, domain-language alignment, vertical slices, durable briefs, and architecture vocabulary. Lieberman's content-machine digest adds a domain example: a skill directory can mirror a creator's actual process, with separate skills for idea mining, research, interviewing, production, refinement, review, repurposing, and learning. Anthropic's Claude Code skills article adds the org-scale version: skills should fit a clean category, focus on gotchas and verification, use the filesystem for progressive disclosure, include setup/memory/scripts/hooks only when they earn their keep, and be distributed or measured through repo skills, plugins, marketplaces, and usage hooks. Learn Harness Engineering adds a meta-skill example: `harness-creator` packages harness creation and auditing as templates, references, scripts, eval cases, and a structural validator. The Dynamic Workflows digest adds a workflow-to-skill packaging path: once a generated workflow proves useful, save it as a reusable skill template with its script and rubric nearby. Wang's vertical-agent article adds a low-level reference-navigation pattern: a skill can be a short map over a complete raw API tome, teaching grep/search recipes so long-tail capabilities remain reachable without putting the raw reference into context. Anthropic's Claude 5 guidance adds a constraint-budget rule: skills should remain lightweight discovery guides, split long material across progressively loaded files, and avoid overconstraining model judgment except where the stakes justify explicit boundaries. Litt's `explain-diff` adds a comprehension-oriented example: the reusable procedure is an educational sequence—background, intuition, conceptual code path, and self-check—not merely an HTML output format.
+
+Nisi adds a useful negative result: an automatically generated, documentation-comprehensive skill can be worse than no skill. His reported WorkOS experiment reduced more than 10,000 generated lines to 553 lines of observed gotchas and cut an eval run from 68 minutes to six; one unspecified task scored 77% with a skill and 97% without it. The missing trial, model, and grader details prevent generalization, but the design rule is strong: evaluate each skill against the current model's unassisted baseline, including accuracy, latency, cost, and failure shape.
 
 ## What They Are
 
@@ -48,6 +50,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - categorize skills by the work they actually perform; mixed-purpose skills are harder for the model to select and follow
 - prioritize product verification skills when agent output quality is the bottleneck; use scripts, browser drivers, TTY drivers, videos, and programmatic assertions where useful
 - make the gotchas section the living center of a skill, fed by observed failure cases rather than generic reminders
+- run representative held-out ablations with and without the skill; keep or expand skill content only when it improves the target behavior enough to repay context, latency, and maintenance cost
 - write skill descriptions as trigger rules for the model, not as marketing summaries for humans
 - keep setup state explicit in config files and ask for missing configuration when a skill would otherwise target the wrong surface
 - use skill-local memory only when prior executions materially affect the next run, such as delta-aware standups or recurring reports
@@ -64,6 +67,15 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - package saved workflow files as adaptable templates, not rigid scripts to run verbatim regardless of task context
 - include workflow rubrics, stop conditions, budget guidance, and privilege boundaries when a skill launches multi-agent orchestration
 - for content and research skills, encode routing rules for missing information so the skill asks for facts, stories, or numbers instead of fabricating specificity
+- keep the skill's always-read body proportional to its routing value; move deep procedures, examples, and references into narrower files
+- distinguish soft craft guidance from high-stakes constraints so a capable model can use local judgment without weakening safety, authorization, or irreversible-action rules
+- remove skill instructions duplicated in the system prompt or tool description; one authoritative location reduces reconciliation work
+- reevaluate examples against the current model: keep examples that add taste or edge-case semantics, but prefer interfaces and destination criteria when examples merely narrow exploration
+- for comprehension skills, order material pedagogically rather than by file path: establish the existing system, teach the smallest useful intuition, then walk the changed execution path
+- bind generated explainers to the inspected commit or diff and cite tests, configuration, callers, or traces that support each important claim
+- separate explainer content from a fixed renderer when the HTML shell, accessibility behavior, answer ordering, and offline validation repeat across runs
+- treat repository and diff text as untrusted data: escape it, forbid code-derived scripts or network dependencies, and keep privileged actions outside the explanation stage
+- design self-checks for retrieval, causality, prediction, and transfer; balance answer positions and option lengths when multiple choice is used, and add free response when recognition is too weak
 
 ## Failure Modes
 
@@ -85,6 +97,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - skillizing a fashionable personal trick before proving it helps repeated local work
 - writing one skill that straddles multiple categories and leaves the model unsure whether it is verifying, scaffolding, deploying, or investigating
 - filling a skill with obvious coding advice that consumes context without changing behavior
+- generating a comprehensive skill from documentation and assuming coverage is value without comparing it against the same tasks with no skill loaded
 - treating the description as a human-facing summary, causing the resolver to miss the skill when users ask in natural language
 - keeping a complete raw reference on disk without a skill that teaches the agent how to find the right signatures, types, and constraints quickly
 - hiding required Slack, tracker, deployment, or data-source setup inside prose instead of explicit configuration
@@ -94,6 +107,13 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - shipping a workflow skill that can fan out agents or touch privileged tools without clear budget, review, and quarantine rules
 - copying another repo's setup skill wholesale when local `AGENTS.md`, docs, issue tracker, or KB schema already provide the same coordination surface
 - using famous-person reviewer personas as decorative critique instead of preserving concrete scores, edits, unanswered questions, and upstream handoff requirements
+- carrying forward older-model workarounds as permanent skill rules without checking whether they now suppress valid solutions
+- splitting a long skill into files without a clear routing map, leaving the detail technically deferred but practically undiscoverable
+- treating “avoid overconstraint” as permission to remove critical safeguards from high-risk skills
+- generating an elaborate explainer for every trivial change and turning a targeted comprehension tool into review ceremony
+- letting predictable answer position, option length, or wording make a quiz measure pattern recognition instead of understanding
+- allowing an agent to declare that the human passed a comprehension gate without an actual human response
+- rendering untrusted diff content as executable HTML or JavaScript
 
 ## Source Notes
 
@@ -124,3 +144,7 @@ Agent skills are reusable capability modules that teach an agent how to approach
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]]
 - [[2026-06-11-building-good-vertical-agent]]
+- [[2026-07-24-the-new-rules-of-context-engineering-for-claude-5-generation-models]]
+- [[2026-07-29-understanding-is-the-new-bottleneck]]
+- [[2026-06-28-explain-diff-skill]]
+- [[2026-05-30-how-i-deleted-95-percent-of-my-agent-skills-and-got-better-results]]

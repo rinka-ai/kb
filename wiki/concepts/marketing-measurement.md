@@ -7,8 +7,8 @@ source_count: 5
 summary: Marketing measurement separates optimization, attribution, funnel quality, and causal incrementality so paid growth decisions are not overfit to platform dashboards.
 canonical_for: [marketing measurement, incrementality, conversion lift, ROAS, attribution, paid media measurement]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.82"
 ---
 

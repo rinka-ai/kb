@@ -7,8 +7,8 @@ source_count: 3
 summary: "Speed-to-lead and missed-call recovery protect organic and paid demand by responding quickly, booking or rescheduling prospects, and handing edge cases to humans before lead value decays."
 canonical_for: [speed to lead, missed call text back, missed-call recovery, website lead nurturing, AI lead follow-up]
 review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.68"
 ---
 

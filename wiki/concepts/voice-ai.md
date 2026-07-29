@@ -3,20 +3,20 @@ id: concept-voice-ai
 type: concept
 title: Voice AI
 tags: [voice-ai, voice-agents, elevenlabs, audio, speech-to-text, text-to-speech, realtime, safety, privacy, webhooks, wispr-flow, retention, telephony, ssml, voice-cloning, voice-design]
-source_count: 33
-summary: Voice AI is a full interaction stack spanning speech I/O, runtime control, tools, personalization, telephony, and trust controls.
+source_count: 35
+summary: Voice AI is a full interaction stack spanning speech I/O, turn-taking, latency and interruption evaluation, runtime control, tools, telephony, consent, and trust controls.
 canonical_for: [voice agents, conversational voice ai, elevenlabs voice agents, voice agent tool testing, deterministic voice workflows, voice agent deterministic workflow]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
-confidence: "0.89"
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
+confidence: "0.91"
 ---
 
 # Voice AI
 
 ## Summary
 
-Voice AI is best treated as a full interaction stack rather than a single model feature: audio capture and transcription, dialogue orchestration, turn-taking runtime, speech generation, telephony transport, monitoring, and trust controls all materially shape the user experience.
+Voice AI is best treated as a full interaction stack rather than a single model feature: audio capture and transcription, dialogue orchestration, turn-taking runtime, speech generation, telephony transport, monitoring, and trust controls all materially shape the user experience. τ2-bench adds a useful evaluation boundary for real-time agents—task success must be paired with response and yield latency, interruption behavior, and selectivity around backchannels or non-directed speech. FCC 24-17 adds the channel-governance boundary: AI-generated human voices count as artificial or prerecorded voices under the TCPA, so covered outreach must satisfy the applicable consent, identification, and opt-out obligations.
 
 ## Architecture Patterns
 
@@ -112,3 +112,5 @@ Voice AI is best treated as a full interaction stack rather than a single model 
 - [[2026-04-12-privacy]]
 - [[2026-04-12-retention]]
 - [[2026-04-12-sip-trunking]]
+- [[2026-07-22-tau2-bench-v1-0-1]]
+- [[2024-02-08-fcc-ai-generated-voices-tcpa]]

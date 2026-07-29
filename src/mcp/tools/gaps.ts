@@ -1,13 +1,7 @@
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import * as z from "zod/v4";
-import { findKbGaps, formatGapReport } from "../../core/gaps";
+import { DEFAULT_GAP_ARGS, findKbGaps, formatGapReport } from "../../core/gaps";
 import { toolResponse } from "./shared";
-
-const GAP_DEFAULTS = {
-  limit: 10,
-  minConceptSources: 2,
-  minTagOccurrences: 2,
-} as const;
 
 export function registerGapTool(server: McpServer): void {
   server.registerTool(
@@ -41,9 +35,9 @@ export function registerGapTool(server: McpServer): void {
       },
     },
     async ({
-      limit = GAP_DEFAULTS.limit,
-      minConceptSources = GAP_DEFAULTS.minConceptSources,
-      minTagOccurrences = GAP_DEFAULTS.minTagOccurrences,
+      limit = DEFAULT_GAP_ARGS.limit,
+      minConceptSources = DEFAULT_GAP_ARGS.minConceptSources,
+      minTagOccurrences = DEFAULT_GAP_ARGS.minTagOccurrences,
     }) => {
       const report = findKbGaps({
         limit,

@@ -7,8 +7,8 @@ summary: "Alex Lieberman's content-machine digest is best preserved as an AI-nat
 source_count: 6
 canonical_for: [ai-native content machine, AI content workflow, creator content pipeline, content skills pipeline]
 review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.72"
 ---
 

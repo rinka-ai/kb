@@ -595,11 +595,14 @@
     "id": "paid-compliance-tcpa",
     "query": "tcpa fcc robocall sms consent outbound compliance",
     "preferredPaths": [
+      "raw/articles/official-docs/2024-02-08-fcc-ai-generated-voices-tcpa.md",
       "wiki/concepts/database-reactivation.md",
       "wiki/concepts/speed-to-lead-and-missed-call-recovery.md",
       "wiki/concepts/ai-agency-strategy.md"
     ],
     "relevantPaths": [
+      "raw/articles/official-docs/2024-02-08-fcc-ai-generated-voices-tcpa.md",
+      "raw/articles/official-docs/2016-09-01-ftc-follow-the-lead.md",
       "wiki/concepts/database-reactivation.md",
       "wiki/concepts/speed-to-lead-and-missed-call-recovery.md",
       "wiki/concepts/ai-agency-strategy.md",
@@ -636,5 +639,108 @@
     ],
     "maxPreferredRank": 1,
     "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "a2a-agent-interoperability",
+    "query": "A2A agent card task artifact agent to agent interoperability",
+    "preferredPaths": [
+      "wiki/concepts/agent-protocols.md",
+      "raw/articles/github-repos/2026-05-28-agent2agent-a2a-protocol-v1-0-1.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-protocols.md",
+      "wiki/concepts/multi-agent-systems.md",
+      "raw/articles/github-repos/2026-05-28-agent2agent-a2a-protocol-v1-0-1.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "agent-observability-otel",
+    "query": "OpenTelemetry GenAI agent observability traces model tool retrieval MCP",
+    "preferredPaths": [
+      "wiki/concepts/agent-observability.md",
+      "raw/articles/github-repos/2026-07-25-opentelemetry-generative-ai-semantic-conventions.md"
+    ],
+    "relevantPaths": [
+      "wiki/concepts/agent-observability.md",
+      "raw/articles/github-repos/2026-07-25-opentelemetry-generative-ai-semantic-conventions.md",
+      "wiki/concepts/agent-harnesses.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "tau-bench-tool-agent-user",
+    "query": "tau bench policy constrained tool agent user simulation end state pass k",
+    "preferredPaths": [
+      "raw/articles/arxiv/2024-06-17-tau-bench-tool-agent-user-interaction.md",
+      "raw/articles/github-repos/2026-07-22-tau2-bench-v1-0-1.md"
+    ],
+    "relevantPaths": [
+      "raw/articles/arxiv/2024-06-17-tau-bench-tool-agent-user-interaction.md",
+      "raw/articles/github-repos/2026-07-22-tau2-bench-v1-0-1.md",
+      "wiki/concepts/ai-agent-evals.md",
+      "wiki/concepts/benchmark-integrity.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "bfcl-function-calling-evals",
+    "query": "BFCL function calling evaluation abstention parallel multi turn memory",
+    "preferredPaths": [
+      "raw/articles/academic-papers/2025-07-13-berkeley-function-calling-leaderboard.md",
+      "raw/articles/github-repos/2026-04-12-berkeley-function-calling-leaderboard-v4.md"
+    ],
+    "relevantPaths": [
+      "raw/articles/academic-papers/2025-07-13-berkeley-function-calling-leaderboard.md",
+      "raw/articles/github-repos/2026-04-12-berkeley-function-calling-leaderboard-v4.md",
+      "wiki/concepts/ai-agent-evals.md",
+      "wiki/concepts/benchmark-integrity.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "ai-voice-tcpa-consent",
+    "query": "FCC AI generated voice TCPA prior express written consent telemarketing",
+    "preferredPaths": [
+      "raw/articles/official-docs/2024-02-08-fcc-ai-generated-voices-tcpa.md",
+      "wiki/concepts/database-reactivation.md"
+    ],
+    "relevantPaths": [
+      "raw/articles/official-docs/2024-02-08-fcc-ai-generated-voices-tcpa.md",
+      "wiki/concepts/database-reactivation.md",
+      "wiki/concepts/voice-ai.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "ai-sales-coaching-evidence",
+    "query": "AI sales coaching randomized field experiment information overload human manager",
+    "preferredPaths": [
+      "raw/articles/academic-papers/2020-10-14-ai-coaches-for-sales-agents.md",
+      "wiki/concepts/sales-coaching-gpt.md"
+    ],
+    "relevantPaths": [
+      "raw/articles/academic-papers/2020-10-14-ai-coaches-for-sales-agents.md",
+      "wiki/concepts/sales-coaching-gpt.md"
+    ],
+    "maxPreferredRank": 1,
+    "minPrecisionAt3": 0.667
+  },
+  {
+    "id": "kb-freshness-policy",
+    "query": "KB calendar overdue source drift freshness review policy",
+    "preferredPaths": [
+      "wiki/summaries/2026-07-27-kb-freshness-and-primary-source-refresh.md"
+    ],
+    "relevantPaths": [
+      "wiki/summaries/2026-07-27-kb-freshness-and-primary-source-refresh.md",
+      "wiki/summaries/2026-05-27-kb-health-search-methodology-audit.md"
+    ],
+    "maxPreferredRank": 1
   }
 ]

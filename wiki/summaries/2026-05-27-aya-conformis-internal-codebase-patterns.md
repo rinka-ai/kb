@@ -7,8 +7,8 @@ summary: Aya and Conformis show how internal repos can become reusable architect
 source_count: 4
 canonical_for: [internal codebase patterns, Aya Conformis repo patterns, repo convention ingestion, internal engineering knowledge ingestion]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

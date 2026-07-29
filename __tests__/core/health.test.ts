@@ -94,6 +94,8 @@ Security basics.
 
         expect(report.index.fileCount).toBeGreaterThan(0);
         expect(report.review.staleWikiCount).toBeGreaterThan(0);
+        expect(report.review.sourceDriftWikiCount).toBeGreaterThan(0);
+        expect(report.review.calendarOverdueWikiCount).toBe(0);
         expect(report.maintenance.uncoveredTagCount).toBeGreaterThanOrEqual(0);
       },
     );

@@ -41,6 +41,8 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
 - Multi-agent orchestration benchmarks:
   [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
+- Policy-constrained tool-agent evaluation:
+  [[2024-06-17-tau-bench-tool-agent-user-interaction]]
 
 ## Why This Collection Matters
 
@@ -54,3 +56,4 @@ This index groups primary research papers added to strengthen the KB's coverage 
 - [[agent-memory]]
 - [[llm-agents]]
 - [[context-engineering]]
+- [[benchmark-integrity]]

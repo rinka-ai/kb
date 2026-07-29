@@ -7,8 +7,8 @@ summary: Hermes Agent shows a personal-agent runtime pattern where one core agen
 source_count: 1
 canonical_for: [hermes agent, self-improving agent runtime, personal agent operating environment]
 review_status: draft
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

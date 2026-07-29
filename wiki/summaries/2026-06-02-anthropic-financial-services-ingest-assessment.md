@@ -7,8 +7,8 @@ source_count: 1
 summary: Anthropic's financial-services repo is worth a targeted KB ingest because it is an official reference corpus for finance-domain Claude skills, managed-agent cookbooks, least-privilege subagent patterns, MCP data connectors, and enterprise Office deployment.
 canonical_for: [anthropics financial services ingest, Claude financial services repo, financial services managed agents, finance agent skills]
 review_status: draft
-last_reviewed: 2026-06-02
-review_due: 2026-07-02
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

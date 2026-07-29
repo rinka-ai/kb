@@ -7,8 +7,8 @@ source_count: 23
 summary: Deep online research pass turning Meta, Google, UGC, copywriting, content, compliance, and measurement sources into a reusable paid-growth operating model for the KB.
 canonical_for: [meta google ads research, paid growth creative content synthesis, ugc copywriting ads playbook]
 review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

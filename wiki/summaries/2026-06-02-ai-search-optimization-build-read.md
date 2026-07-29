@@ -7,8 +7,8 @@ source_count: 8
 summary: AI search optimization is worth building around as an execution and source-influence system, but a pure dashboard, schema helper, or generic blog generator is likely weakly differentiated.
 canonical_for: [AI search optimization product, AEO product strategy, GEO product strategy, AI visibility agency offer]
 review_status: draft
-last_reviewed: 2026-06-02
-review_due: 2026-07-02
+last_reviewed: 2026-07-27
+review_due: 2026-09-10
 confidence: "0.72"
 ---
 

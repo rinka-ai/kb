@@ -40,6 +40,9 @@ Anthropic argues that research is naturally multi-agent because open-ended quest
 - Anthropic uses a lead planning agent plus parallel search subagents.
 - The post highlights compression and separation of concerns as key benefits.
 - Anthropic reports a strong gain over a single-agent baseline on internal research evals.
+- Token economics are reported explicitly: single research agents use about 4× the tokens of a chat interaction, and multi-agent systems about 15×. Anthropic concludes this requires "tasks where the value of the task is high enough to pay for the increased performance." These multipliers describe this system, model generation, and research workload; they are not general constants.
+- The post limits its own recommendation for coding work: "most coding tasks involve fewer truly parallelizable tasks than research, and LLM agents are not yet great at coordinating and delegating to other agents in real time." Breadth-first research and workloads exceeding a single context window are the stated sweet spot.
+- Stated challenges include coordination complexity growing with agent count, non-deterministic behavior complicating debugging, state management across long-running processes, and evaluation difficulty because agents reach goals by valid alternative paths.
 
 ## Entities
 

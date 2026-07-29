@@ -347,7 +347,107 @@ Harness concept.
 
         const staleHarness = report.staleWikiNotes.find((note) => note.title === "Agent Harnesses");
         expect(staleHarness?.newestLinkedSourceDate).toBe("2026-05-09");
+        expect(staleHarness?.freshnessSignal).toBe("source-drift");
         expect(staleHarness?.reason).toBe("linked source is newer than the page review date");
+        expect(report.sourceDriftWikiNoteCount).toBe(1);
+        expect(report.calendarOverdueWikiNoteCount).toBe(0);
+      },
+    );
+  });
+
+  test("findKbGaps excludes explicitly bounded concepts from thin-concept pressure", () => {
+    withRepoFixtureSourceDirs(
+      [
+        {
+          dir: "raw",
+          relativePath: "bounded-source.md",
+          content: `---
+id: article-bounded-source
+type: source
+title: Bounded Source
+path: raw/articles/bounded-source.md
+summary: A source for a deliberately narrow concept.
+tags: [bounded]
+status: active
+date_added: 2026-07-01
+---
+# Bounded Source
+
+## Source Metadata
+
+- Path: raw/articles/bounded-source.md
+
+## TL;DR
+
+One source is enough for this deliberately narrow fixture.
+
+## Key Claims
+
+- The scope is bounded.
+
+## Important Details
+
+- This is a fixture.
+
+## Entities
+
+- Concepts: bounded
+
+## My Notes
+
+- Note.
+
+## Open Questions
+
+- None.
+
+## Related
+
+- [[bounded-concept]]
+
+## Source Text
+
+Bounded source text.
+`,
+        },
+        {
+          dir: "wiki",
+          relativePath: "concepts/bounded-concept.md",
+          content: `---
+id: concept-bounded
+type: concept
+title: Bounded Concept
+summary: A deliberately narrow concept.
+tags: [bounded]
+source_count: 1
+coverage_status: intentionally-thin
+coverage_note: The page only documents one bounded implementation pattern.
+review_status: reviewed
+last_reviewed: 2026-07-01
+review_due: 2027-01-01
+---
+# Bounded Concept
+
+## Summary
+
+A deliberately narrow concept.
+
+## Source Notes
+
+- [[bounded-source]]
+`,
+        },
+      ],
+      () => {
+        const report = findKbGaps({
+          limit: 10,
+          minConceptSources: 3,
+          minTagOccurrences: 2,
+        });
+
+        expect(report.thinConceptCount).toBe(0);
+        expect(report.intentionallyThinConceptCount).toBe(1);
+        expect(report.sourceCountMismatchCount).toBe(0);
       },
     );
   });

@@ -5,8 +5,8 @@ title: OpenAI Agents JS Runtime Patterns From A Source Teardown
 tags: [openai, agent-frameworks, durable-execution, sessions, tracing, mcp]
 summary: "The strongest reusable lessons from openai-agents-js are about runtime structure: separate the core loop from provider bindings, treat approvals and sessions as first-class state machines, and encode orchestration patterns as explicit framework surfaces instead of prompt folklore."
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

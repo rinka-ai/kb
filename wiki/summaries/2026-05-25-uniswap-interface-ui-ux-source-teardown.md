@@ -7,8 +7,8 @@ summary: "Reusable UI/UX source-organization lessons from Uniswap/interface: sha
 source_count: 1
 canonical_for: [Uniswap interface UI UX source teardown, frontend UI UX source architecture, production design system source patterns]
 review_status: reviewed
-last_reviewed: 2026-05-25
-review_due: 2026-06-25
+last_reviewed: 2026-07-27
+review_due: 2027-01-23
 confidence: "0.82"
 ---
 

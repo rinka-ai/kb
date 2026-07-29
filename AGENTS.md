@@ -97,7 +97,22 @@ Concept and summary pages use the extended schema below. Required keys: `id`, `t
 - `review_status` — `draft` | `reviewed` | `stale`
 - `last_reviewed` — ISO date
 - `review_due` — ISO date; freshness target
+- `coverage_status` — optional; `standard` (default) or `intentionally-thin`
+- `coverage_note` — required when `coverage_status: intentionally-thin`; explains why bounded coverage is sufficient
 - `confidence` — quoted decimal, e.g. `"0.85"`
+
+### Freshness policy
+
+Freshness is evidence-aware, not just calendar-driven:
+
+- **Source drift wins.** Review a page whenever a linked source has a later `date_added` or `date_published` than the page's `last_reviewed`, even if `review_due` is still in the future.
+- **45 days — fast-moving.** Use for active vendor products, protocols, security, compliance, and platform behavior.
+- **90 days — operational.** Use for canonical concepts, decision guides, and cross-source operational summaries.
+- **180 days — stable.** Use for durable theory, historical analyses, and bounded ingestion assessments. Prefer event-driven review when the underlying evidence changes rarely.
+- `last_reviewed` means the page's claims, provenance links, contradictions, and `source_count` were actually checked; it is not a generic “last touched” date.
+- Preserve `review_status: draft` when evidence remains incomplete. A freshness review does not automatically make a draft authoritative.
+
+Concepts may use `coverage_status: intentionally-thin` only when their scope is deliberately narrow and the current linked evidence is sufficient for that scope. Add a concrete `coverage_note`; the gap checker will exclude these pages from thin-concept pressure but will still check `source_count` accuracy and freshness.
 
 ## Wiki Pages: `index.md` and `log.md`
 

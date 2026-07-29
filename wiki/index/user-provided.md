@@ -21,12 +21,17 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]] - User-provided durable orchestration and background-agent pattern note.
 - [[2026-05-09-mnimiy-claude-md-12-rules]] - Practitioner thread on CLAUDE.md-style repo instructions and coding-agent failure modes.
 - [[2026-05-17-memory-skills-same-harness-tricalt]] - User-provided Tricalt note connecting memory, skills, and harness design.
+- [[2026-05-30-how-i-deleted-95-percent-of-my-agent-skills-and-got-better-results]] - Nick Nisi's WorkOS talk on evidence-gated state-machine workflows, measured skill/context ablation, compact product gotchas, and retrospective memory proposals.
 - [[2026-06-02-every-agentic-engineering-hack-i-know]] - Matt Van Horn practitioner digest on plan-first agentic engineering, voice, parallel Claude/Codex sessions, notes as memory, skills, agent-native CLIs, and overbuilding risk.
 - [[2026-06-03-claude-use-cases-full-digest]] - Local HTML digest of 94 Anthropic Claude use cases across Cowork, Chrome, Dispatch, Skills, Projects, Office/file outputs, domain workflows, and connectors.
 - [[2026-06-03-alex-lieberman-content-machine]] - Alex Lieberman practitioner digest on an AI-native content machine with human first/final-mile review, skillized research/interview/draft/review/repurposing stages, raw source preservation, and creator-specific learning loops.
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]] - Codez practitioner X digest on Claude Code Dynamic Workflows as model-written workflow harnesses, with six orchestration patterns, token-budget cautions, quarantine topology, and save-as-skill guidance.
 - [[2026-06-11-building-good-vertical-agent]] - Peter Wang article on building high-performing vertical agents through L1/L2/L3 context tiers, one code-execution substrate, compressed read/write wrappers, deferred specs/tool schemas, and raw-reference escape hatches.
 - [[2026-06-16-polished-ui-with-claude]] - Kevin practitioner article on shipping polished Claude-built UI through exact design tokens, easing curves, tactile states, drag physics, snap points, layered shadows, reduced-motion rules, and state-driven prompting.
+- [[2026-06-22-lamis-mukta-learning-while-you-sleep-beyond-memory-to-dreaming]] - Complete timed auto-caption transcript, Q&A, and 15 timestamped slides from Lamis Mukta's AI Native DevCon talk on file-backed memory, production guardrails, and out-of-band “dreaming” for cross-session consolidation.
+- [[2026-06-28-the-future-is-domain-specific-agents]] - Justin Schroeder talk proposing composed specialist agents that each own bounded context, tools, state, policy, and execution, with quantitative efficiency claims retained as unverified practitioner evidence.
+- [[2026-07-15-these-90-minutes-will-change-the-way-you-use-ai]] - Caleb Curry practitioner transcript preserved as a hypothesis source and cross-checked against official Claude Code, Anthropic, TypeScript, ESLint, PostgreSQL, Git, MCP, and OpenTelemetry material; unsupported thresholds, productivity claims, and credential advice are explicitly rejected or qualified.
+- [[2026-07-29-understanding-is-the-new-bottleneck]] - Geoffrey Litt's AI Engineer talk on preserving human creative participation in agentic coding through background-first explainers, retrieval practice, selective micro-worlds, and shared understanding spaces.
 
 ## Related Wiki Pages
 
@@ -47,4 +52,5 @@ This collection holds sources supplied directly by the user or captured from loc
 - [[agent-security]]
 - [[ai-agent-evals]]
 - [[llm-agents]]
+- [[domain-specific-agents]]
 - [[ai-interface-design]]

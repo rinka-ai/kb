@@ -7,8 +7,8 @@ source_count: 10
 summary: Durable execution makes long-running agent work survivable by treating pause, resume, replay, retry, and human intervention as first-class runtime behaviors.
 canonical_for: [durable execution, resumable agents, replayable workflows, checkpointed agents]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-07-27
+review_due: 2026-10-25
 confidence: "0.85"
 ---
 

@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { Command } from "commander";
-import { type FindGapsArgs, findKbGaps, type GapReport } from "./gaps";
+import { DEFAULT_GAP_ARGS, type FindGapsArgs, findKbGaps, type GapReport } from "./gaps";
 import { listKbNotes } from "./notes";
 import { OUTPUT_DIR } from "./paths";
 import { ensureIndex } from "./search";
@@ -23,10 +23,13 @@ export interface HealthReport {
   review: {
     reviewBacklogCount: number;
     staleWikiCount: number;
+    calendarOverdueWikiCount: number;
+    sourceDriftWikiCount: number;
   };
   maintenance: {
     ingestedSourceCount: number;
     thinConceptCount: number;
+    intentionallyThinConceptCount: number;
     uncoveredTagCount: number;
   };
   gapReport: GapReport;
@@ -36,12 +39,6 @@ interface HealthArgs extends FindGapsArgs {
   rebuildIfStale: boolean;
   json: boolean;
 }
-
-const DEFAULT_GAP_ARGS: FindGapsArgs = {
-  limit: 10,
-  minConceptSources: 2,
-  minTagOccurrences: 2,
-};
 
 export function buildHealthReport(args: Omit<HealthArgs, "json">): HealthReport {
   const index = ensureIndex(args.rebuildIfStale);
@@ -69,10 +66,13 @@ export function buildHealthReport(args: Omit<HealthArgs, "json">): HealthReport 
     review: {
       reviewBacklogCount: gapReport.reviewBacklogCount,
       staleWikiCount: gapReport.staleWikiNoteCount,
+      calendarOverdueWikiCount: gapReport.calendarOverdueWikiNoteCount,
+      sourceDriftWikiCount: gapReport.sourceDriftWikiNoteCount,
     },
     maintenance: {
       ingestedSourceCount: gapReport.ingestedSourceNoteCount,
       thinConceptCount: gapReport.thinConceptCount,
+      intentionallyThinConceptCount: gapReport.intentionallyThinConceptCount,
       uncoveredTagCount: gapReport.uncoveredTagCount,
     },
     gapReport,
@@ -85,8 +85,8 @@ export function formatHealthReport(report: HealthReport): string {
     `files=${report.index.fileCount} chunks=${report.index.chunkCount} generated_at=${report.index.generatedAt}`,
     `source_notes=${report.corpus.sourceNoteCount} concepts=${report.corpus.conceptNoteCount} summaries=${report.corpus.summaryNoteCount} indexes=${report.corpus.indexNoteCount}`,
     `concept_coverage_ratio=${report.corpus.conceptCoverageRatio}`,
-    `review_backlog=${report.review.reviewBacklogCount} stale_wiki=${report.review.staleWikiCount}`,
-    `ingested_sources=${report.maintenance.ingestedSourceCount} thin_concepts=${report.maintenance.thinConceptCount} uncovered_tags=${report.maintenance.uncoveredTagCount}`,
+    `review_backlog=${report.review.reviewBacklogCount} stale_wiki=${report.review.staleWikiCount} calendar_overdue=${report.review.calendarOverdueWikiCount} source_drift=${report.review.sourceDriftWikiCount}`,
+    `ingested_sources=${report.maintenance.ingestedSourceCount} thin_concepts=${report.maintenance.thinConceptCount} intentionally_thin=${report.maintenance.intentionallyThinConceptCount} uncovered_tags=${report.maintenance.uncoveredTagCount}`,
     "",
     "Suggested actions",
     ...report.gapReport.suggestedActions.map((action) => `- ${action}`),
@@ -114,10 +114,13 @@ export function formatHealthMarkdown(report: HealthReport): string {
     "## Review Health",
     `- Review backlog: ${report.review.reviewBacklogCount}`,
     `- Stale wiki notes: ${report.review.staleWikiCount}`,
+    `- Calendar-overdue wiki notes: ${report.review.calendarOverdueWikiCount}`,
+    `- Source-drift wiki notes: ${report.review.sourceDriftWikiCount}`,
     "",
     "## Maintenance",
     `- Ingested sources: ${report.maintenance.ingestedSourceCount}`,
     `- Thin concepts: ${report.maintenance.thinConceptCount}`,
+    `- Intentionally thin concepts: ${report.maintenance.intentionallyThinConceptCount}`,
     `- Uncovered tags: ${report.maintenance.uncoveredTagCount}`,
     "",
     "## Suggested Actions",
