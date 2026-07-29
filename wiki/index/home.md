@@ -43,6 +43,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[2026-07-25-claude-5-context-engineering-rules]]
 - [[2026-07-25-agent-memory-dreaming-production-pattern]]
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]]
+- [[2026-06-08-railway-egress-thin-client-api-gateway]]
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]]
 - [[2026-06-04-ai-native-content-machine]]

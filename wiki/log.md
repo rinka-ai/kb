@@ -528,3 +528,8 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - `bun run kb:audit` passed all `52/52` retrieval cases with `preferred_hit@1=0.942`, `relevant_hit@3=1`, `mrr_preferred=0.971`, and no search-eval failures.
 - MCP `kb_find_gaps` reported `0` orphan sources, unreviewed ingests, thin concepts, review backlog items, stale pages, source drift, and uncovered tags.
 - Targeted retrieval ranked `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]` first and the new Nick Nisi source second; the archived source text remains byte-identical to the supplied `22,032`-byte transcript plus one terminating newline.
+
+## [2026-07-29] sync | Railway egress + thin-client API-gateway branch
+- Filed `[[2026-06-08-railway-egress-thin-client-api-gateway]]` under `wiki/summaries/` as internal decision rationale, not an external-source ingest.
+- Captured Railway egress-not-ingress billing, private-network versus public-proxy cost/latency, the serverless-to-single-region-Postgres anti-pattern, and the thin-client API-gateway topology.
+- Merged the legacy topic branch into `main` and updated `[[home]]` plus the master `[[index]]`; no concept pages were touched because this topic is adjacent infrastructure guidance rather than core AI/agent synthesis.
