@@ -8,7 +8,7 @@ summary: "Review and referral automation turns real customer interactions into r
 canonical_for: [review referral automation, reviews and referrals, local business reviews, referral automation, reputation automation]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.66"
 ---
 

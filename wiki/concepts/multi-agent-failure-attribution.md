@@ -8,7 +8,7 @@ source_count: 4
 canonical_for: [multi-agent failure attribution, agent failure attribution, failure diagnosis in agent teams, attribution in multi-agent systems]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.74"
 ---
 

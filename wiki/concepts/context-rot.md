@@ -3,20 +3,20 @@ id: concept-context-rot
 type: concept
 title: Context Rot
 tags: [context, long-context, evaluation]
-source_count: 7
+source_count: 8
 summary: Context rot is performance degradation caused by overly long, noisy, or repeatedly rewritten context that erodes semantic discrimination.
 canonical_for: [context rot]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
-confidence: "0.82"
+review_due: 2026-10-25
+confidence: "0.84"
 ---
 
 # Context Rot
 
 ## Summary
 
-Context rot is the degradation in model performance as context gets longer, noisier, or repeatedly rewritten, especially when tasks require semantic discrimination rather than simple lexical lookup. Recursive Language Models add a useful empirical framing: degradation depends on task complexity, so constant-needle lookup is easier than dense aggregation or pairwise reasoning over the same token scale. The agentic-search study adds that retrieval degradation under distractors is not a smooth property of corpus size alone: lexical and dense methods interact with the harness transcript, sampled distractors, and the model's implicit stop-searching policy. In practice, the same decay can show up one layer higher when routing or resolver documents stop matching the real skill inventory and user phrasing.
+Context rot is the degradation in model performance as context gets longer, noisier, or repeatedly rewritten, especially when tasks require semantic discrimination rather than simple lexical lookup. Recursive Language Models add a useful empirical framing: degradation depends on task complexity, so constant-needle lookup is easier than dense aggregation or pairwise reasoning over the same token scale. The agentic-search study adds that retrieval degradation under distractors is not a smooth property of corpus size alone: lexical and dense methods interact with the harness transcript, sampled distractors, and the model's implicit stop-searching policy. In practice, the same decay can show up one layer higher when routing or resolver documents stop matching the real skill inventory and user phrasing. Anthropic's Claude 5 guidance adds an instruction-conflict form of rot: even individually plausible system, skill, repo, and user rules can create reconciliation overhead when they overlap or contradict, and obsolete older-model guardrails can consume attention while narrowing valid behavior.
 
 ## Practical Implications
 
@@ -27,6 +27,10 @@ Context rot is the degradation in model performance as context gets longer, nois
 - adding irrelevant material can change which retriever wins, so context-rot tests should compare full agent workflows rather than only static top-k retrieval
 - repeated rewriting can erase useful structure
 - resolver tables and trigger descriptions also rot if they are not maintained as the system changes
+- duplicated instructions can rot semantically as copies drift across the system prompt, repo files, skills, and tool descriptions
+- model upgrades can turn previously useful guardrails into compatibility sediment, so context needs model-version-aware review
+- shorter context should still be tested on rare, destructive, and repo-specific cases because average evaluations can miss tail regressions
+- one authoritative location per behavior plus progressive disclosure reduces both token load and conflict risk
 
 ## Source Notes
 
@@ -37,3 +41,4 @@ Context rot is the degradation in model performance as context gets longer, nois
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
 - [[2026-04-23-recursive-language-models]]
 - [[2026-05-14-is-grep-all-you-need-how-agent-harnesses-reshape-agentic-search]]
+- [[2026-07-24-the-new-rules-of-context-engineering-for-claude-5-generation-models]]

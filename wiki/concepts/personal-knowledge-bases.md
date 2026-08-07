@@ -8,7 +8,7 @@ summary: Personal knowledge bases turn one-off research into durable, cumulative
 canonical_for: [personal knowledge base, markdown knowledge base]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.83"
 ---
 

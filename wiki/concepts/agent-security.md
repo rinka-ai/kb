@@ -3,20 +3,22 @@ id: concept-agent-security
 type: concept
 title: Agent Security
 tags: [security, prompt-injection, sandboxing, approvals, agents, adversarial-evals, autonomy, credentials, wallets]
-source_count: 18
+source_count: 21
 summary: Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, secret placement, wallet custody, memory privacy, tool restriction, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick.
 canonical_for: [agent security, prompt injection, sandboxing, approval policies, adversarial agent evals]
 review_status: reviewed
 last_reviewed: 2026-08-02
 review_due: 2026-10-30
-confidence: "0.88"
+confidence: "0.89"
 ---
 
 # Agent Security
 
 ## Summary
 
-Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, tool restriction, secret placement, wallet custody, memory privacy, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick. The Copilot-for-Word disclosure adds an artifact-propagation threat: indirect prompt injection can copy itself into generated documents, laundering attacker influence into internal-looking artifacts that remain dangerous after the original source disappears. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, policy-bounded signing paths for money movement, privacy-aware memory storage, and evals that measure useful work under attack instead of only benign task success. The textbook layer broadens the safety frame: secure AI systems also need explicit properties, falsification searches, governance, fairness checks, and monitoring for socio-technical harm. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified. Hermes adds a useful trust-model correction from a real agent runtime: approvals, redaction, skill scans, and tool allowlists are valuable heuristics, but OS-level isolation is the load-bearing containment boundary against adversarial model behavior. MemWal adds the memory-privacy version of the same discipline: encrypted durable storage and onchain delegate control are meaningful, but default relayer plaintext handling remains a trust boundary. Anthropic's zero-trust ebook adds the deployable maturity model: cryptographic agent identity, short-lived scoped credentials, least agency, identity-based isolation, protected memory, and AI-speed defensive operations are now baseline controls rather than nice-to-have hardening. The Dynamic Workflows digest adds a topology-level prompt-injection defense: untrusted content should be read and summarized by low-privilege agents, while high-privilege actors operate only on structured summaries.
+Agent security is a systems problem spanning prompt injection, zero-trust identity, authorization, sandbox boundaries, tool restriction, secret placement, wallet custody, memory privacy, skill supply-chain trust, validation, fairness, and adversarial evaluation rather than a single prompting trick. The Copilot-for-Word disclosure adds an artifact-propagation threat: indirect prompt injection can copy itself into generated documents, laundering attacker influence into internal-looking artifacts that remain dangerous after the original source disappears. The current source set points toward a practical security stack: explicit approval semantics, constrained execution environments, least-privilege tool access, credentials kept outside model-controlled runtimes when possible, policy-bounded signing paths for money movement, privacy-aware memory storage, and evals that measure useful work under attack instead of only benign task success. The textbook layer broadens the safety frame: secure AI systems also need explicit properties, falsification searches, governance, fairness checks, and monitoring for socio-technical harm. A newer skill-security framing adds that reusable skills themselves should be treated as untrusted runtime-loaded artifacts until their declared behavior has been verified. Hermes adds a useful trust-model correction from a real agent runtime: approvals, redaction, skill scans, and tool allowlists are valuable heuristics, but OS-level isolation is the load-bearing containment boundary against adversarial model behavior. MemWal adds the memory-privacy version of the same discipline: encrypted durable storage and onchain delegate control are meaningful, but default relayer plaintext handling remains a trust boundary. Anthropic's zero-trust ebook adds the deployable maturity model: cryptographic agent identity, short-lived scoped credentials, least agency, identity-based isolation, protected memory, and AI-speed defensive operations are now baseline controls rather than nice-to-have hardening. The Dynamic Workflows digest adds a topology-level prompt-injection defense: untrusted content should be read and summarized by low-privilege agents, while high-privilege actors operate only on structured summaries. Mukta's dreaming design adds an offline-memory boundary: broad cross-session visibility can improve learning, but transcript selection must mirror the target store's permissions and every shared-memory write needs attribution, version history, optimistic concurrency, and rollback.
+
+Domain-specific agents add a potentially useful least-agency boundary: a specialist can expose fewer tools and receive narrower credentials than a general agent. The boundary is real only when identity, secrets, filesystem, network, resource limits, and downstream delegation are scoped with the prompt and tool set; nested agents sharing ambient authority do not reduce blast radius.
 
 ## Threat Surfaces
 
@@ -35,6 +37,8 @@ Agent security is a systems problem spanning prompt injection, zero-trust identi
 - persistent memory can leak sensitive facts through plaintext relayers, local delegate credentials, embeddings, metadata, overbroad namespaces, or stale delegate keys even when stored blobs are encrypted
 - provenance can collapse across transformations, causing internal-looking documents to receive more trust than their least-trusted contributing source
 - automated decisions can create legitimacy, recourse, discrimination, and feedback-loop failures even when the narrow prompt-injection surface is controlled
+- an out-of-band consolidation job can bypass live-agent permissions or amplify poisoned transcript content across an entire fleet if it receives overbroad evidence or writes directly to shared memory
+- a specialist hierarchy can create the appearance of least privilege while every child inherits the coordinator's ambient credentials, network reach, filesystem, or delegation authority
 - evaluation sandboxes can become offensive infrastructure when actual egress differs from prompt-declared scope, especially when fictional names resolve to real systems or generated artifacts reach public registries
 
 ## Defensive Patterns
@@ -44,6 +48,7 @@ Agent security is a systems problem spanning prompt injection, zero-trust identi
 - assign unique cryptographic identities to agent instances and carry those identities through logs, access requests, tool calls, and incident traces
 - prefer least-privilege tool access and narrower toolsets where tasks allow it
 - extend least privilege into least agency: restrict what each tool can do, how often, where, and under which delegated authority
+- align each specialist's identity, credential scope, network/filesystem boundary, resource budget, and delegation ceiling with its domain contract; a shorter prompt and smaller tool list are not security boundaries by themselves
 - model approval as an explicit resumable state transition instead of an informal chat detour
 - keep real credentials behind brokers, vaults, or network injection layers rather than exposing them directly inside agent sandboxes
 - route wallet signing and paid API access through policy-aware vault/proxy layers with approval queues and audit logs
@@ -61,6 +66,11 @@ Agent security is a systems problem spanning prompt injection, zero-trust identi
 - distinguish cryptographic ownership from operational confidentiality; if a relayer embeds, encrypts, decrypts, or reranks plaintext, the relayer operator is in the trust envelope
 - make credential deletion and credential revocation separate UX paths when local agent clients store long-lived delegate keys
 - treat defensive agents as high-blast-radius systems too: let them collect evidence and draft triage, but gate containment, disclosure, and customer-communication decisions through explicit human authority
+- select consolidation transcripts through the same tenant, role, project, and user scope as the target memory store; do not infer authority from mere transcript availability
+- clone shared memory before curation, attach evidence and prevalence to proposed changes, and preserve attributed versions so poisoned or incorrect promotions can be rejected or rolled back
+- for autonomous coding sessions, expose only the repository and disposable local dependencies the task needs; keep production databases, GitHub authority, cloud credentials, unrelated local services, and ambient user sessions outside the process, then use a separate approval-preserving path for privileged operations
+- reason about permission-bypass modes from documented behavior rather than folklore: in Claude Code, deny and explicit ask rules still apply in bypass mode and only allow rules go inert, so bypass removes prompts and safety checks but not the deny layer. It still provides no prompt-injection protection, which is why the boundary must be OS-level isolation rather than any rule set
+- verify whether a sandbox fails open or closed before treating it as a control; Claude Code's Bash sandbox warns and runs unsandboxed when it cannot start unless `sandbox.failIfUnavailable` is set, and it covers Bash subprocesses rather than every tool surface
 - preflight every evaluation image and vendor environment with deterministic egress tests, explicit target allowlists, continuous network/transcript monitoring, and incident-response ownership; never use a system-prompt claim as evidence of isolation
 - include public registries, scanners, and accidental consumers in blast-radius models when an agent can publish packages or other executable artifacts
 
@@ -85,6 +95,7 @@ Agent security is a systems problem spanning prompt injection, zero-trust identi
 - encrypted source storage vs plaintext processing in relayers, middleware, and memory tool adapters
 - automation speed vs human accountability in agentic SOAR and incident response
 - quarantine fidelity vs missing important context when privileged agents receive summaries rather than raw untrusted material
+- specialist capability isolation vs transitive authority when nested agents share credentials or can delegate beyond their own envelope
 - useful document synthesis vs preserving enforceable authority boundaries between user intent, source data, and generated artifacts
 - realistic offensive evaluation vs the possibility that reachable real infrastructure is mistaken for the simulated task world
 
@@ -106,5 +117,8 @@ Agent security is a systems problem spanning prompt injection, zero-trust identi
 - [[2026-05-20-memwal]]
 - [[2026-05-27-zero-trust-for-ai-agents]]
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]]
+- [[2026-06-22-lamis-mukta-learning-while-you-sleep-beyond-memory-to-dreaming]]
+- [[2026-07-15-these-90-minutes-will-change-the-way-you-use-ai]]
+- [[2026-06-28-the-future-is-domain-specific-agents]]
 - [[2026-07-28-context-collapse-part-3-ai-worming-through-word]]
 - [[2026-07-30-investigating-three-real-world-incidents-in-our-cybersecurity-evaluations]]

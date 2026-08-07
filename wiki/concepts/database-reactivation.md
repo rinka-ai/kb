@@ -3,20 +3,20 @@ id: database-reactivation
 type: concept
 title: Database Reactivation
 tags: [business-strategy, ai-agency, local-business, lead-nurturing, compliance]
-source_count: 2
-summary: "Database reactivation re-engages dormant leads or former customers through permission-aware conversations, booking paths, and outcome tracking before a local business increases paid acquisition spend."
+source_count: 4
+summary: "Database reactivation re-engages eligible dormant contacts through provenance- and consent-aware conversations, booking paths, suppression controls, and outcome tracking before increasing paid acquisition."
 canonical_for: [database reactivation, old lead reactivation, lead reactivation, dormant lead campaign]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
-confidence: "0.62"
+review_due: 2026-09-10
+confidence: "0.75"
 ---
 
 # Database Reactivation
 
 ## Summary
 
-Database reactivation is the first commercial lever in the Middleton agency model because it can create revenue from assets the business already owns. The operational version is simple: identify eligible dormant contacts, send a relevant reason to re-engage, route replies into appointment booking, remind people to show, and measure revenue. The hard part is not the chatbot. It is consent, data quality, offer fit, and downstream fulfillment.
+Database reactivation is the first commercial lever in the Middleton agency model because it can create revenue from assets the business already holds. Possession is not permission: the operational version begins by establishing the record's source, collection disclosure, channel-specific consent or other lawful basis, suppression state, and jurisdiction. Only then should the team send a relevant reason to re-engage, route replies into appointment booking, remind people to show, and measure revenue. The hard part is not the chatbot. It is provenance, consent, data quality, offer fit, and downstream fulfillment.
 
 For a new agency, reactivation is attractive because it can create proof before paid ads. For the client, it can create working capital and trust before asking them to spend more money on marketing.
 
@@ -60,9 +60,9 @@ For a new agency, reactivation is attractive because it can create proof before 
 
 ## Evidence And Authority
 
-- Lead-source authority: [FTC's Follow the Lead staff perspective](https://www.ftc.gov/reports/follow-lead-workshop-staff-perspective) treats lead generation as a data ecosystem with consumer-protection and privacy risks, so a reactivation workflow needs source, consent, transfer, and disclosure records.
+- Lead-source authority: [[2016-09-01-ftc-follow-the-lead]] treats lead generation as a data ecosystem with consumer-protection and privacy risks, so a reactivation workflow needs source, consent, transfer, and disclosure records.
 - Email authority: [FTC CAN-SPAM guidance](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business) applies to commercial email, including B2B and former-customer promotional messages, and requires truthful routing, non-deceptive subject lines, sender identification, a physical address, opt-out, and prompt opt-out honoring.
-- Phone/voice authority: [FCC TCPA AI voice ruling](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf) confirms AI-generated human voices fall under artificial/prerecorded voice restrictions; telemarketing use requires prior express written consent.
+- Phone/voice authority: [[2024-02-08-fcc-ai-generated-voices-tcpa]] confirms AI-generated human voices fall under artificial/prerecorded voice restrictions; covered calls require prior express consent and telemarketing or advertising use requires prior express written consent.
 - Text/consent authority: the FCC's [TCPA consent FAQ](https://docs.fcc.gov/public/attachments/DOC-408396A1.pdf) reiterates that TCPA applies to voice calls and text messages, that certain autodialed/artificial/prerecorded calls require consent, and that telemarketing to DNC-listed numbers needs seller-specific written permission.
 - Evidence status: the Middleton reactivation examples are useful case prompts, but the KB should require its own eligibility audit, message approval, opt-out logs, and revenue attribution before treating results as transferable.
 
@@ -79,5 +79,7 @@ For a new agency, reactivation is attractive because it can create proof before 
 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
+- [[2016-09-01-ftc-follow-the-lead]]
+- [[2024-02-08-fcc-ai-generated-voices-tcpa]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]

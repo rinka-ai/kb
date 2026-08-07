@@ -4,15 +4,19 @@ type: summary
 title: KB Health and Search Methodology Audit
 tags: [knowledge-base, retrieval, search, mcp, telemetry, evals, kb-health]
 source_count: 0
-summary: Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
+summary: A historical May 2026 audit of local health, remote MCP observability, search methodology, telemetry, and retrieval-eval coverage, retained as a baseline for later health cycles.
 canonical_for: [kb health audit, search methodology audit, retrieval optimization review, remote kb telemetry audit]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.86"
 ---
 
 # KB Health and Search Methodology Audit
+
+## July 2026 Review
+
+This report is a dated baseline. Its corpus counts and open-item list should not be read as current state. The successor audit is [[2026-07-27-kb-freshness-and-primary-source-refresh]], which adds evidence-aware freshness signals, tiered review windows, a complete stale review, and targeted primary-source ingestion. The original May evidence and recommendations remain below for provenance.
 
 ## Verdict
 

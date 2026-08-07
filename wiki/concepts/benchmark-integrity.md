@@ -3,20 +3,20 @@ id: concept-benchmark-integrity
 type: concept
 title: Benchmark Integrity
 tags: [benchmark-integrity, evals, contamination, infrastructure, reliability]
-source_count: 5
-summary: Benchmark integrity is the discipline of ensuring that reported agent scores still mean what people think they mean despite contamination, infra variance, and evaluator drift.
-canonical_for: [benchmark integrity, eval contamination, infra noise, leaderboard trust]
+source_count: 9
+summary: Benchmark integrity preserves the meaning of agent scores by pinning tasks, code, evaluators, simulators, environments, and reporting assumptions—not only guarding against contamination.
+canonical_for: [benchmark integrity, eval contamination, infra noise, leaderboard trust, benchmark version pinning]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
-confidence: "0.84"
+review_due: 2026-10-25
+confidence: "0.88"
 ---
 
 # Benchmark Integrity
 
 ## Summary
 
-Benchmark integrity is about protecting the meaning of evaluation results. For agent systems, that means more than guarding against answer leakage: contamination, eval awareness, infrastructure noise, and hidden harness differences can all turn a leaderboard into a misleading proxy.
+Benchmark integrity is about protecting the meaning of evaluation results. For agent systems, that means more than guarding against answer leakage: contamination, eval awareness, infrastructure noise, hidden harness differences, mutable task data, simulator changes, live dependencies, and evaluator drift can all turn a leaderboard into a misleading proxy. τ-bench and BFCL make the versioning requirement concrete: a claim should identify the task set, code commit, grader, simulator or live environment, prompting/tool schema, and repeated-run policy alongside the model.
 
 ## What Breaks Integrity
 
@@ -24,6 +24,8 @@ Benchmark integrity is about protecting the meaning of evaluation results. For a
 - models inferring the benchmark and reverse-engineering the task itself
 - infra changes that alter what the system is actually being tested on
 - underreported harness, resource, or routing assumptions
+- mutable user simulators, task data, domain policies, or live APIs
+- aggregate scores that conceal abstention, state, memory, policy, or interaction-quality failures
 
 ## Reporting Rules
 
@@ -46,3 +48,7 @@ Benchmark integrity is about protecting the meaning of evaluation results. For a
 - [[2025-09-17-a-postmortem-of-three-recent-issues]]
 - [[2026-01-21-designing-ai-resistant-technical-evaluations]]
 - [[2025-01-06-raising-the-bar-on-swe-bench-verified-with-claude-3-5-sonnet]]
+- [[2024-06-17-tau-bench-tool-agent-user-interaction]]
+- [[2026-07-22-tau2-bench-v1-0-1]]
+- [[2025-07-13-berkeley-function-calling-leaderboard]]
+- [[2026-04-12-berkeley-function-calling-leaderboard-v4]]

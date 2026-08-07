@@ -21,6 +21,7 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
 - Claude Code context and customization:
   - [[2025-11-25-using-claude-md-files-customizing-claude-code-for-your-codebase]]
   - [[2025-12-11-claude-code-power-user-customization-how-to-configure-hooks]]
+  - [[2026-07-24-the-new-rules-of-context-engineering-for-claude-5-generation-models]]
 - Skills and dynamic context:
   - [[2025-11-13-skills-explained-how-skills-compares-to-prompts-projects-mcp-and-subagents]]
   - [[2025-11-19-how-to-create-skills-key-steps-limitations-and-examples]]
@@ -39,5 +40,6 @@ Selected current posts from the Claude blog that are worth keeping in this KB fo
 - It complements the more systems-heavy Anthropic Engineering corpus with product-surface workflow guidance.
 - Several posts map directly onto this repo's own use of `AGENTS.md`, Skills, subagents, hooks, and KB-driven context management.
 - The skills material now captures both product-level positioning and internal Anthropic operating advice on gotchas, verification, progressive disclosure, setup, memory, hooks, marketplaces, and measurement.
+- The Claude 5 context-engineering article adds a model-generation migration: shrink compatibility-era prompt rules, keep repo files focused on gotchas, design expressive interfaces, defer conditional context, and retain enforceable safety boundaries outside prose.
 - The multi-agent and subagent posts are especially useful because they explain when extra coordination is worth the cost and when it is not.
 - The zero-trust agent-security ebook now anchors the collection's security material around identity, least agency, sandboxing, protected memory, and defensive operations.

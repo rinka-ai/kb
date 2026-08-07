@@ -8,7 +8,7 @@ summary: AI search optimization is worth building around as an execution and sou
 canonical_for: [AI search optimization product, AEO product strategy, GEO product strategy, AI visibility agency offer]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.72"
 ---
 

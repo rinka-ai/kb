@@ -6,7 +6,7 @@ tags: [software-engineering, rails, llms, agent-security, operations, linux]
 summary: A full-corpus synthesis of the English AkitaOnRails archive, showing a long-running practitioner worldview organized around anti-cargo-cult engineering, software economics, operational ownership, and AI-era realism.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

@@ -419,6 +419,121 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Added `[[2026-06-20-loop-engineer-template-ingest-assessment]]` and updated the master `[[index]]`.
 - Recommendation: worth a selective repo-level source note if collecting practical harness templates, but do not copy the skills wholesale or replace this KB's existing `AGENTS.md` / `wiki/` schema.
 
+## [2026-07-25] ingest | Lamis Mukta agent-memory dreaming talk
+- Added `[[2026-06-22-lamis-mukta-learning-while-you-sleep-beyond-memory-to-dreaming]]`, preserving all 944 timed English auto-caption cues, the complete Q&A, source metadata, evidence qualifications, and a searchable slide ledger.
+- Archived and checksum-verified all 15 user-supplied screenshots under `raw/images/user-provided/2026-07-25-learning-while-you-sleep-dreaming/`, mapped to the supplied video timestamps.
+- Added `[[2026-07-25-agent-memory-dreaming-production-pattern]]` and updated `[[agent-memory]]`, `[[agent-harnesses]]`, `[[context-engineering]]`, `[[multi-agent-systems]]`, `[[managed-agents]]`, and `[[agent-security]]`.
+- Updated `[[user-provided]]`, `[[home]]`, and the master `[[index]]`; treated the anonymized 97% / 30% / cost / latency figures as self-reported customer outcomes rather than general benchmarks.
+
+## [2026-07-25] ingest | Claude 5 context-engineering rules
+- Added `[[2026-07-24-the-new-rules-of-context-engineering-for-claude-5-generation-models]]` under `raw/articles/claude-blog/`, preserving the full readable article, all four canonical figure URLs, diagram-only information, and the six “then → now” transitions.
+- Added `[[2026-07-25-claude-5-context-engineering-rules]]`, distinguishing model-dependent prompt simplification from durable placement rules and enforceable safety boundaries.
+- Updated `[[context-engineering]]`, `[[claude-code]]`, `[[agent-skills]]`, `[[agent-tools]]`, `[[agent-harnesses]]`, `[[ai-instruction-design]]`, `[[context-rot]]`, `[[repo-local-knowledge-bases]]`, `[[internal-engineering-conventions]]`, and `[[agent-memory]]`.
+- Updated `[[claude-blog]]`, `[[home]]`, and the master `[[index]]`; treated the “over 80%” prompt reduction and no-measurable-loss result as an official but under-specified internal practitioner claim.
+
+## [2026-07-25] refresh | Claude 5 context-engineering rules
+- Ran `bun run kb:refresh`; the final index rebuild succeeded with `3460` chunks from `391` markdown files and KB lint passed with no warnings.
+- `kb_find_gaps` reported no orphan sources, unreviewed ingests, thin concepts, source-count mismatches, review backlog, or uncovered tags; `79` unrelated wiki pages are past their pre-existing review-due dates.
+- Retrieval verification ranked the new source note first and `[[2026-07-25-claude-5-context-engineering-rules]]` second for a Claude 5 context-engineering query.
+
+## [2026-07-25] refresh | Lamis Mukta agent-memory dreaming talk
+- Ran `bun run kb:refresh` against the combined workspace; the index rebuilt successfully with `3460` chunks from `391` markdown files and KB lint passed with no warnings.
+- Verified transcript preservation programmatically: `944/944` timed caption cues match the fetched English track exactly, with zero missing or altered cues; all `15/15` archived screenshots are byte-identical to the supplied originals.
+- Targeted metadata, required-heading, whitespace, and wiki-link checks passed; the new synthesis ranks first and the source note second for the dreaming / out-of-band memory-consolidation query.
+- Health reported `review_backlog=0`, `stale_wiki=79`, and `uncovered_tags=0`; the stale pages are the repository's pre-existing review backlog, not ingest defects.
+
+## [2026-07-27] query | AI-native organization execution platform spec
+- Added `[[2026-07-27-ai-native-organization-execution-platform-spec]]`, a product-level specification for an idea → Goal Contract → durable execution → permission-filtered status → GitHub pull-request platform, synthesized from `26` existing source notes plus `[[2026-07-25-agent-memory-dreaming-production-pattern]]` and `[[2026-07-25-claude-5-context-engineering-rules]]`.
+- Corrected the premise that one product can safely handle every AI workflow; recommended an opinionated kernel (Goal Contract, runs, approvals, capabilities, evidence, PR handoff) plus workflow packs and tiered connectors, per the audit-gap / over-LLMing / agent-sprawl failure modes in `[[enterprise-agent-deployment-failure-modes]]`.
+- Recorded Multica as an optional execution-runtime and task-source adapter with an external `multica.ai` documentation URL in a separate labeled section; it is not a KB source note and is excluded from `source_count`.
+- Kept `review_status: draft`, separated evidence-backed architecture from product speculation, and restated that the dreaming performance figures are self-reported anonymized customer outcomes rather than benchmarks; no concept page, source note, or `raw/` file was modified.
+- Second revision after Codex review: added an `Out-Of-Box Organization Bootstrap` section specifying an admin-guided durable setup run (connect → read-only discovery → inert draft artifacts → connector permission tests and sandbox dry-run Goal Contract → owner approval, version pinning, activation), plus a `Consolidation Setup And Activation` subsection making dreaming setup automated but promotion governed: permission-matched trace scopes, retention/redaction, evidence threshold with dormant-by-default behavior, pre-consolidation eval baseline including rare workflows, cost/frequency ceilings, scheduled and event triggers, candidate clone with evidence ledger and human gate, canary, rollback, and pause/disable. Added acceptance criteria `11` and `12`; kept consolidation in Phase 2 because it depends on evidence accumulated in Phases 0–1.
+- Revision after Codex review: added a current-landscape subsection covering Linear's agent app users, project/issue context, MCP, code intelligence, and Claude Code / Codex coding sessions alongside Multica's human-agent board and local runtimes, concluding the product must not compete as another issue tracker or agent board and naming its defensible kernel; added the official Linear and GitHub App permissions URLs to External Sources; corrected "one-shot" to mean one approved Goal Contract version / approval cycle that may require several approvers, with no merge or deploy authority. `source_count` stays `26`; no external URL is counted.
+
+## [2026-07-27] lint | evidence-aware freshness and stale review
+- Split freshness failures into missing metadata, calendar overdue, and linked-source drift; health and audit reports now expose calendar and drift counts separately.
+- Added 45/90/180-day review tiers plus an explicit, documented `intentionally-thin` coverage status that does not suppress source-count or freshness checks.
+- Reviewed all `79` formerly overdue concept and summary pages: none had newer linked evidence, statuses were preserved, and the queue closed at `review_backlog=0`, `calendar_overdue=0`, and `source_drift=0`.
+- Strict three-source gap analysis now reports `0` unjustified thin concepts, `1` intentionally bounded concept (`[[obsidian]]`), `0` count mismatches, and `0` uncovered tags.
+
+## [2026-07-27] ingest | protocols, observability, evals, compliance, and coaching
+- Added pinned primary sources for A2A v1.0.1, OpenTelemetry GenAI semantic conventions, τ-bench/τ2, and BFCL; created `[[agent-observability]]` and updated the protocol, multi-agent, harness, managed-agent, tool, eval, benchmark, voice, and monitoring concepts.
+- Added FTC lead-generation and FCC AI-voice/TCPA sources to `[[database-reactivation]]`, plus randomized-field-experiment evidence to `[[sales-coaching-gpt]]`; only the public sales-paper abstract was accessible, so full methods and effect sizes remain an open verification item.
+- Added `[[2026-07-27-kb-freshness-and-primary-source-refresh]]`, the `[[academic-papers]]` collection index, and updated the master catalog, landing page, and affected source indexes.
+- Recorded that MCP `2026-07-28-RC` is not the final release; the latest final remained `2025-11-25` on 2026-07-27, so no false final-release source was created.
+
+## [2026-07-27] refresh | primary-source and freshness audit
+- Expanded retrieval evaluation from `45` to `52` cases with A2A, OpenTelemetry GenAI, τ-bench, BFCL, FCC AI voice, AI sales coaching, and freshness-policy queries.
+- `bun run kb:audit` passed with `404` indexed Markdown files, `3592` chunks, no lint or health gaps, and all `52/52` retrieval cases passing.
+- Retrieval metrics after the refresh: `preferred_hit@1=0.942`, `relevant_hit@3=1`, `relevant_hit@5=1`, `mrr_preferred=0.971`, and `precision@3=0.769`.
+
+## [2026-07-28] ingest | Caleb Curry deterministic-gates coding workflow
+- Added `[[2026-07-15-these-90-minutes-will-change-the-way-you-use-ai]]`, preserving the supplied 1:28:43 timed transcript byte-for-byte and recording verified YouTube title, channel, publication date, runtime, and transcript checksum.
+- Added `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]`: recurring failures should move from prose into architecture or ratcheted deterministic gates, with model verification reserved for semantic residue and human review weighted by consequence.
+- Updated `[[internal-engineering-conventions]]`, `[[agent-harnesses]]`, `[[workflows]]`, `[[claude-code]]`, `[[repo-local-knowledge-bases]]`, `[[multi-agent-systems]]`, and `[[agent-security]]`, plus `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Treated fixed file-size thresholds, productivity claims, model-only monitoring, permission bypass, cookie handoff, and large agent hierarchies as practitioner advice requiring local evidence or stronger controls—not KB defaults.
+
+## [2026-07-28] refresh | deterministic-gates coding workflow
+- `bun run kb:refresh` built `3618` chunks from `406` Markdown files with `review_backlog=0`, `stale_wiki=0`, and `uncovered_tags=0`.
+- `bun run kb:audit` passed all `52/52` retrieval cases with no lint, freshness, source-count, thin-concept, drift, or uncovered-tag failures.
+- Targeted retrieval ranked `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]` first, the Caleb Curry source second, and `[[internal-engineering-conventions]]` third.
+- Recomputed the archived source-text SHA-256 after indexing; it still matches the supplied transcript exactly.
+
+## [2026-07-28] refresh | primary-source cross-check of Caleb Curry workflow claims
+- Reclassified the video as a practitioner hypothesis source rather than authority and added a claim-by-claim ledger using current Claude Code docs plus primary Anthropic, TypeScript, ESLint, PostgreSQL, Git, MCP, and OpenTelemetry material.
+- Corroborated the guidance-versus-enforcement distinction, deterministic command hooks, skills/subagent context split, strict typing/custom lint capability, and permission-plus-sandbox defense in depth.
+- Qualified ratcheted legacy gates, tenant adapters, worktrees, MCP endpoint mirroring, and multi-agent bundles; primary sources support parts of the mechanisms but not the video's general performance claims or exact workflow.
+- Marked fixed file-size thresholds, drastic token savings, self-learning-vault gains, and model-only monitoring as unverified; rejected browser-cookie/ambient-key handoff and permission bypass outside strict fail-closed isolation.
+
+## [2026-07-28] lint | independent recheck of Caleb Curry ledger against current Claude Code docs
+- Corrected a factual error the first pass left unclassified: the video claims bypassed permissions ignore allow/deny rules, leaving hooks as the only restriction. Current `permission-modes` documentation says deny and explicit ask rules apply in every mode including `bypassPermissions`, and only allow rules go inert; the hook advice survives but its stated premise does not. Recorded as a **Rejected** ledger row in `[[2026-07-15-these-90-minutes-will-change-the-way-you-use-ai]]`, as a rejected bullet in `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]`, and as defensive-pattern lines in `[[claude-code]]` and `[[agent-security]]`.
+- Strengthened the multi-agent verdict from "not validated" to counter-evidence for the coding case, citing the ~15× multi-agent and ~4× single-research-agent token multipliers and the "fewer truly parallelizable tasks than research" conclusion. Anchored both figures in `[[2025-06-13-how-we-built-our-multi-agent-research-system]]`, whose extracted sections had not recorded them, so the claim is locally traceable; that note's uncopied `## Source Text` was left untouched and `source_count` values are unchanged everywhere.
+- Distinguished agent teams from subagents across the summary, `[[claude-code]]`, and `[[multi-agent-systems]]`: independent sessions, peer-to-peer messaging, shared task list, one full instance per teammate, experimental and disabled by default. The video's bundle/sub-orchestrator pattern is mapped as an approximation of that surface, not as subagent behavior.
+- Added current nuance that a skill can run isolated via `context: fork` and a subagent can preload skills via `skills:`, and contrasted the unverified "self-learning vault" with shipped auto memory as its auditable, machine-local counterpart.
+- Retiered the summary to the 45-day fast-moving tier (`review_due: 2026-09-11`) because its load-bearing claims are platform behavior. Left `[[multi-agent-systems]]`, `[[agent-harnesses]]`, `[[workflows]]`, `[[internal-engineering-conventions]]`, and `[[repo-local-knowledge-bases]]` on the 90-day operational tier: their subject matter is durable orchestration and convention design, so AGENTS.md does not require the vendor-product tier; the volatile product specifics live in `[[claude-code]]` and `[[agent-security]]`, which are already at 45 days.
+- Readability: added a reading-boundary line to the source metadata marking that analysis ends at `## Related` (~17 KB) and the archival transcript below is ~86 KB, and normalized the ledger to a fixed five-term verdict vocabulary (Corroborated, Corroborated with caveat, Partially supported, Unverified, Rejected) so it can be filtered mechanically. No cross-check table was duplicated; the summary remains canonical.
+- Verified the archived `## Source Text` is byte-identical to the supplied transcript rather than trusting the recorded hash: the section equals the attachment exactly plus one terminating newline, which the attachment lacks. The recorded SHA-256 is the hash of the local transcript file and still matches it.
+
+## [2026-07-29] ingest | understanding gates for agentic workflows
+- Added `[[2026-07-29-understanding-is-the-new-bottleneck]]`, preserving the complete user-supplied transcript, and `[[2026-06-28-explain-diff-skill]]`, preserving both public gist variants.
+- Added `[[2026-07-29-understanding-gates-for-agentic-workflows]]`: use a risk-triggered comprehension gate after deterministic verification, bind explanations to a code state, require real human retrieval or teach-back, and reserve micro-worlds for behavior static media cannot expose well.
+- Updated `[[claude-code]]`, `[[agent-skills]]`, and `[[workflows]]`, plus `[[user-provided]]`, `[[github-repos]]`, `[[home]]`, and the master `[[index]]`.
+- Kept the recommendation as a measured pilot rather than changing `AGENTS.md`: the talk and skill are coherent practitioner evidence, but they do not establish outcome improvements or universal thresholds.
+
+## [2026-07-29] refresh | understanding gates for agentic workflows
+- `bun run kb:refresh` built `3656` chunks from `409` Markdown files with no review backlog, stale wiki pages, source drift, thin concepts, source-count mismatches, orphan sources, or uncovered tags.
+- `bun run kb:audit` passed all `52/52` retrieval cases: `preferred_hit@1=0.942`, `relevant_hit@3=1`, `mrr_preferred=0.971`, and `precision@3=0.769`.
+- `kb_find_gaps` returned no actionable gaps after the new `explanations` and `quizzes` tags were covered by `[[agent-skills]]`.
+
+## [2026-07-29] ingest | domain-specific agent composition
+- Added `[[2026-06-28-the-future-is-domain-specific-agents]]`, preserving the user-supplied timed transcript and recording that its final roughly 23 seconds are missing from the attachment.
+- Added `[[domain-specific-agents]]`: specialize when context, tools, state, authority, and evaluation form a stable boundary; measure the coordinator and every handoff rather than treating a smaller worker prompt as end-to-end efficiency.
+- Updated `[[multi-agent-systems]]`, `[[context-engineering]]`, `[[agent-tools]]`, `[[llm-agents]]`, `[[agent-security]]`, `[[agent-frameworks]]`, and `[[agent-harnesses]]`, plus `[[user-provided]]`, `[[home]]`, and the master `[[index]]`.
+- Kept the talk's “80% efficiency,” `137×` model-cost, and 2026 token-price trend figures as underspecified speaker-reported claims rather than KB planning constants.
+
+## [2026-07-29] refresh | domain-specific agent composition
+- `bun run kb:refresh` built `3674` chunks from `411` Markdown files with no review backlog, stale wiki pages, source drift, or uncovered tags.
+- `bun run kb:audit` completed successfully, and `kb_find_gaps` reported `0` orphan sources, `0` unreviewed ingests, `0` thin concepts, `0` source-count mismatches, and `0` uncovered tags.
+- Targeted retrieval ranked `[[domain-specific-agents]]` first, `[[2026-06-28-the-future-is-domain-specific-agents]]` second, and `[[agent-tools]]` third for the tool-versus-specialist decision query.
+- Verified the archived source text is byte-identical to the supplied `33,512`-byte transcript plus one terminating newline; the recorded SHA-256 remains `e553a0feb774ec550c7d5f99c1f00184a89fd75dd61f6afc3196b1602f39fda6`.
+
+## [2026-07-29] ingest | evidence-gated harnesses and skill ablation
+- Added `[[2026-05-30-how-i-deleted-95-percent-of-my-agent-skills-and-got-better-results]]`, preserving the complete supplied 17:20 timed transcript and recording the verified YouTube title, speaker, channel, premiere date, and transcript checksum.
+- Extended `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]` with a completion-evidence contract and a context-change ablation protocol instead of creating a duplicative summary.
+- Updated `[[agent-harnesses]]`, `[[agent-skills]]`, `[[ai-agent-evals]]`, `[[agent-memory]]`, and `[[workflows]]`, plus `[[user-provided]]` and the master `[[index]]`.
+- Treated the 10,000→553 lines, 68→6 minutes, and 77%→97% figures as under-specified practitioner results; clarified that a hash detects later artifact changes but does not prove execution unless trusted capture binds it to the current task and code state.
+
+## [2026-07-29] refresh | evidence-gated harnesses and skill ablation
+- `bun run kb:refresh` completed without lint warnings, review backlog, stale pages, source drift, thin concepts, source-count mismatches, or uncovered tags.
+- `bun run kb:audit` passed all `52/52` retrieval cases with `preferred_hit@1=0.942`, `relevant_hit@3=1`, `mrr_preferred=0.971`, and no search-eval failures.
+- MCP `kb_find_gaps` reported `0` orphan sources, unreviewed ingests, thin concepts, review backlog items, stale pages, source drift, and uncovered tags.
+- Targeted retrieval ranked `[[2026-07-28-deterministic-gates-for-agentic-coding-workflows]]` first and the new Nick Nisi source second; the archived source text remains byte-identical to the supplied `22,032`-byte transcript plus one terminating newline.
+
+## [2026-07-29] sync | Railway egress + thin-client API-gateway branch
+- Filed `[[2026-06-08-railway-egress-thin-client-api-gateway]]` under `wiki/summaries/` as internal decision rationale, not an external-source ingest.
+- Captured Railway egress-not-ingress billing, private-network versus public-proxy cost/latency, the serverless-to-single-region-Postgres anti-pattern, and the thin-client API-gateway topology.
+- Merged the legacy topic branch into `main` and updated `[[home]]` plus the master `[[index]]`; no concept pages were touched because this topic is adjacent infrastructure guidance rather than core AI/agent synthesis.
+
 ## [2026-07-30] ingest | How enabling two settings tripled our scores on the ARC-AGI-3 benchmark
 - Source note: `raw/articles/2026-07-30-how-enabling-two-settings-tripled-our-scores-on-the-arc-agi-3-benchmark.md`
 - Index rebuilt: 3405 chunks.
@@ -782,3 +897,14 @@ See `AGENTS.md` → Agent Workflows for when to append. The master catalog of wi
 - Stale-content corrections: [[2026-04-10-kb-acquisition-priorities]] presented an April corpus snapshot (59 sources) in present tense against today's 273, now marked as historical; [[2026-05-27-kb-health-search-methodology-audit]] listed three open recommendations of which two have shipped (`deployGitSha()` in `src/http/handlers/health.ts`, and `bun run kb:audit`); [[2026-06-02-anthropic-financial-services-ingest-assessment]] recommended a high-priority ingest that was never performed and is now flagged as outstanding.
 - Two genuine gaps recorded rather than papered over: no compliance/outbound-guardrails concept exists despite TCPA/FTC/CAN-SPAM/FCC citations being duplicated across five pages, and the `anthropics/financial-services` ingest remains undone.
 - Four thin concepts remain and are accurately flagged: [[effective-go-for-production-servers]], [[rust-destructors-drop-scopes-and-resource-lifecycle]], [[rust-lifetime-subtyping-and-variance]], and [[rust-trait-coherence-and-implementation-ownership]] each rest on one primary doc. Clearing that flag needs new sources, not more cross-links.
+
+## [2026-08-07] sync | Merge origin/main into the health-pass branch
+
+- The local checkout was based on `9a19e3b` (2026-06-20) while `origin/main` had advanced to `c88b131` (2026-07-29): 14 commits including the July consolidation, the A2A/Claude 5/OpenTelemetry/dreaming/domain-specific-agent ingests, and a Dependabot batch. 97 files conflicted.
+- Resolved as a union throughout. Neither side was a superset: the local line carried the Rust/TypeScript clusters, the prop-AMM notes, and the 2026-08-07 arXiv ingest and health pass; the remote carried its own July ingests. Nothing was discarded.
+- 79 files conflicted only on review frontmatter. Rule applied: `review_status` and `last_reviewed` from whichever side reviewed later, `review_due`/`confidence`/`source_count` from the remote where the local side had never edited them. The remote's per-page cadence tiers (roughly 6 weeks, 3 months, 6 months) were preserved in place of the uniform 3-month normalisation from earlier today, because they encode deliberate intent.
+- 18 files needed content synthesis. 55 fragments unique to the local side were re-inserted after their local predecessor sentence and then verified present by an automated check; `wiki/log.md` was merged chronologically (remote 07-25..07-29, then local 07-30..08-07, 85 entries, order asserted).
+- One defect introduced and fixed during the merge: the union duplicated a near-identical Hermes sentence in [[agent-protocols]] because the two sides' wording differed slightly. Kept the richer local variant. A prefix-similarity scan confirmed no other duplicate sentences or repeated wiki links across the merged files.
+- Corrected 12 `source_count` values that the union invalidated, using the indexer's resolved counts rather than arithmetic, and recounted every `raw/articles/` collection in the master [[index]] — four collections (`helius`, `jump-crypto`, `jupiter`, `solana`) had never been listed and `user-provided` was one short.
+- Adopted the remote's `coverage_status: intentionally-thin` convention where it applied, and synced two master-index descriptions to the concept summaries they had drifted from.
+- Post-merge: 476 files, 4,603 chunks, lint clean, `review_backlog`, `stale_wiki`, `uncovered_tags`, orphans, ingested, and `source_count` mismatches all zero. Thin concepts now report 8 rather than 4 because the remote's threshold and its new single-source language pages both changed; the flag remains accurate.

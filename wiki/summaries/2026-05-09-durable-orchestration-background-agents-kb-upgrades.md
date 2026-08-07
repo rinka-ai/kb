@@ -6,7 +6,7 @@ tags: [agents, durable-execution, orchestration, agent-harnesses, frameworks, ba
 summary: "A user-provided durable-orchestration essay reinforces the KB's harness thesis: stable execution primitives should outlive shifting agent topologies, while background agents raise the cost of missing crash recovery, lifecycle controls, event waits, and structured traces."
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.72"
 ---
 

@@ -8,7 +8,7 @@ source_count: 4
 canonical_for: [AI custom instruction profile, reusable custom prompt, anti-sycophancy custom instructions, truth over approval assistant prompt]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

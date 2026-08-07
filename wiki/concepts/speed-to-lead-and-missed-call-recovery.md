@@ -8,7 +8,7 @@ summary: "Speed-to-lead and missed-call recovery protect organic and paid demand
 canonical_for: [speed to lead, missed call text back, missed-call recovery, website lead nurturing, AI lead follow-up]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.68"
 ---
 

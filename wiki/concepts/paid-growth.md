@@ -8,7 +8,7 @@ summary: Paid growth is now an operating system of offer clarity, creative suppl
 canonical_for: [paid growth, performance marketing, paid acquisition, digital advertising strategy, paid media operating model]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.84"
 ---
 

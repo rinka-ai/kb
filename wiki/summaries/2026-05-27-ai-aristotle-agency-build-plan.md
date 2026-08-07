@@ -6,7 +6,7 @@ tags: [business-strategy, ai-agency, local-business, gtm, sales, compliance]
 summary: "The Middleton video should become a validation-backed agency build plan: sell one sequenced local-business acquisition system, verify compliance and niche economics, and use the KB as the operating memory for scripts, SOPs, ads, metrics, and case studies."
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.61"
 ---
 

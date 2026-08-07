@@ -8,7 +8,7 @@ source_count: 1
 canonical_for: [vertical agent context hierarchy, agent context cache hierarchy, faithful compression of task distribution]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.78"
 ---
 

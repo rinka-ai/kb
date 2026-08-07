@@ -8,7 +8,7 @@ summary: Content creation strategy compounds when audience insight, first-hand e
 canonical_for: [content creation, content strategy, content marketing strategy, social content engine, ai content strategy]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.80"
 ---
 

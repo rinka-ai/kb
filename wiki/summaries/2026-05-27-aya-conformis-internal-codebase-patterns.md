@@ -8,7 +8,7 @@ source_count: 4
 canonical_for: [internal codebase patterns, Aya Conformis repo patterns, repo convention ingestion, internal engineering knowledge ingestion]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

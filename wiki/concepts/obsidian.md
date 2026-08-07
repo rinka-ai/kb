@@ -8,7 +8,9 @@ summary: Obsidian is the human-facing interface for navigating the repo’s mark
 canonical_for: [obsidian workflow]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
+coverage_status: intentionally-thin
+coverage_note: This page only records Obsidian's bounded role as the human-facing markdown and wiki-link browser for this repository.
 confidence: "0.72"
 ---
 
@@ -17,6 +19,8 @@ confidence: "0.72"
 ## Summary
 
 Obsidian is used here as the human-facing frontend for browsing raw sources, compiled concept pages, and generated artifacts like slides or plots.
+
+Its scope is deliberately bounded. Product-wide Obsidian coverage would not improve the KB's research or retrieval model unless the repository adopts additional Obsidian-specific workflows.
 
 ## Why It Fits
 

@@ -8,7 +8,7 @@ summary: Durable execution makes long-running agent work survivable by treating 
 canonical_for: [durable execution, resumable agents, replayable workflows, checkpointed agents]
 review_status: reviewed
 last_reviewed: 2026-08-02
-review_due: 2026-10-31
+review_due: 2026-10-25
 confidence: "0.85"
 ---
 

@@ -8,7 +8,7 @@ source_count: 7
 canonical_for: [agentic engineering stack, plan-first agentic coding, Claude Code Codex workflow, agentic engineering hacks]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.78"
 ---
 

@@ -1,3 +1,4 @@
+import { DEFAULT_GAP_ARGS } from "../../core/gaps";
 import { buildHealthReport } from "../../core/health";
 import type { ResourceDef } from "./types";
 
@@ -9,9 +10,7 @@ export const healthResource: ResourceDef = {
   description: "Maintenance, review, and coverage health for the knowledge base.",
   getData: () =>
     buildHealthReport({
-      limit: 10,
-      minConceptSources: 2,
-      minTagOccurrences: 2,
+      ...DEFAULT_GAP_ARGS,
       rebuildIfStale: true,
     }),
 };

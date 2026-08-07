@@ -8,7 +8,7 @@ summary: Payment and value-transfer integrations should keep sensitive collectio
 canonical_for: [payment integrations, stripe checkout, pci-safe payments, agent payments, agent wallets]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.78"
 ---
 

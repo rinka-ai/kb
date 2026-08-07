@@ -6,7 +6,7 @@ tags: [business-strategy, ai-agency, local-business, productized-services, sales
 summary: "The Pavlo website-agency interview is useful as an operator playbook for a contractor-focused, low-ticket agency: use cold outbound to build sales skill, sell a cheap website/reputation/follow-up wedge, add upsells after trust, systematize sales and CSM delivery, and only then use AI to compress fulfillment labor."
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.58"
 ---
 

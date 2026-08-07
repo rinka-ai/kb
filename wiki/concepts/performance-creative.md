@@ -8,7 +8,7 @@ summary: Performance creative turns customer insight into policy-safe ad concept
 canonical_for: [performance creative, creative testing, ad creative strategy, creative diversification, creative pipeline]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

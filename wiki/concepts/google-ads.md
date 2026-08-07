@@ -8,7 +8,7 @@ summary: Google Ads increasingly runs on modular assets, AI assembly, search int
 canonical_for: [google ads, performance max, pmax, responsive search ads, rsa, responsive search ads assets, search ad assets, youtube ads]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.84"
 ---
 

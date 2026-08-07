@@ -3,14 +3,20 @@ id: summary-2026-04-10-kb-acquisition-priorities
 type: summary
 title: KB Acquisition Priorities
 tags: [knowledge-base, research, agents, acquisition]
-summary: Audit of the KB’s strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
+summary: A dated April 2026 acquisition audit that established the KB's primary-source strategy; its completed and superseded priorities are preserved for provenance.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.8"
 ---
 
 # KB Acquisition Priorities
+
+## July 2026 Review
+
+This page is a historical acquisition plan, not the current corpus inventory. Most of its first-wave protocol, benchmark, memory, and cross-vendor priorities were subsequently completed. The current health decision and next acquisition rules live in [[2026-07-27-kb-freshness-and-primary-source-refresh]].
+
+The July refresh additionally added pinned A2A, OpenTelemetry GenAI, τ-bench/τ2, and BFCL sources. Do not use the April corpus counts or “current coverage” section below as live health data; they are retained to show why those acquisitions were chosen.
 
 ## Summary
 

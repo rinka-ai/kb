@@ -8,7 +8,7 @@ summary: Codebase architecture is the durable organization of product scope, pac
 canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization, module depth, deep modules, seam adapter architecture, codebase organization for agents]
 review_status: reviewed
 last_reviewed: 2026-08-04
-review_due: 2026-11-04
+review_due: 2027-01-23
 confidence: "0.86"
 ---
 

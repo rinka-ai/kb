@@ -8,7 +8,7 @@ summary: Speech-to-text quality is shaped as much by capture conditions, output 
 canonical_for: [speech to text, transcription, audio input, diarization]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

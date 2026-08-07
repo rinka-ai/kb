@@ -8,7 +8,7 @@ summary: "A local-business AI acquisition system sequences reactivation, reputat
 canonical_for: [local business AI acquisition system, AI Aristotle offer, AI agency offer pillars, full-funnel local business AI]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.65"
 ---
 

@@ -8,7 +8,7 @@ source_count: 1
 canonical_for: [Uniswap interface UI UX source teardown, frontend UI UX source architecture, production design system source patterns]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.82"
 ---
 

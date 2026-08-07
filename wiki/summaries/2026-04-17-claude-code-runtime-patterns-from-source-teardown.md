@@ -6,7 +6,7 @@ tags: [claude-code, agent-harnesses, context-engineering, permissions, subagents
 summary: Reusable runtime-design patterns extracted from a Claude Code architecture teardown and cross-checked against adjacent Claude Code, context-engineering, and design-space sources.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.84"
 ---
 

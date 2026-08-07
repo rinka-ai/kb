@@ -8,7 +8,7 @@ summary: Deep online research pass turning Meta, Google, UGC, copywriting, conte
 canonical_for: [meta google ads research, paid growth creative content synthesis, ugc copywriting ads playbook]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

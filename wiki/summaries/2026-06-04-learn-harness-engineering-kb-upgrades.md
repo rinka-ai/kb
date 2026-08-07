@@ -8,7 +8,7 @@ source_count: 1
 canonical_for: [learn harness engineering, walkinglabs harness engineering, harness engineering course, harness creator skill]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.84"
 ---
 

@@ -8,7 +8,7 @@ summary: "The AI-agency sales process is a diagnostic call flow: quantify the bu
 canonical_for: [AI agency sales process, agency sales script, diagnostic sales call, AI Aristotle sales process, local business agency sales]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.63"
 ---
 

@@ -8,7 +8,7 @@ summary: Synthetic voices create powerful accessibility and product opportunitie
 canonical_for: [synthetic voices, voice cloning, ai voice governance, disclosure]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

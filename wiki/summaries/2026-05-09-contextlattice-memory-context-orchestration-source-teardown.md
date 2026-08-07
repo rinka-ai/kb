@@ -6,7 +6,7 @@ tags: [contextlattice, agent-memory, context-engineering, retrieval, agent-harne
 summary: Reusable lessons from ContextLattice's source tree, focused on memory contracts, context packs, topic rollups, staged retrieval, retrieval lifecycle metadata, and write-path hygiene.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.83"
 ---
 

@@ -8,7 +8,7 @@ summary: Copywriting for paid growth turns customer language, offer truth, objec
 canonical_for: [copywriting, ad copywriting, conversion copywriting, landing page copy, ugc scripts]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.82"
 ---
 

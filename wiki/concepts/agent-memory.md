@@ -3,12 +3,12 @@ id: concept-agent-memory
 type: concept
 title: Agent Memory
 tags: [agents, memory, retrieval, reinforcement-learning, stateful-agents, context-engineering, agent-harnesses]
-source_count: 33
+source_count: 36
 summary: Agent memory covers how systems preserve, retrieve, consolidate, secure, and reuse information across time through explicit storage, load policy, write discipline, verification, integrity controls, belief-state modeling, and harness-owned context management.
 canonical_for: [agent memory, workflow memory, semantic memory, memory control plane]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-27
 confidence: "0.90"
 ---
 
@@ -16,7 +16,9 @@ confidence: "0.90"
 
 ## Summary
 
-Agent memory refers to the mechanisms that let an agent preserve, retrieve, secure, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The textbook layer adds a fifth foundation: memory can also be understood as a belief-state and uncertainty-management problem, especially in POMDPs, Bayesian filtering, and sequential decision-making. The newer additions sharpen five related distinctions: memory is not only storage but also policy about what stays in the hot path; "memory" often needs working/episodic/semantic/personal separation; memory ownership is partly a harness question; memory quality depends on write gates and verification discipline; and prompt-cache stability constrains where dynamic memory can safely enter context. The newer enterprise framing also treats memory as synthesized organizational understanding, where identity resolution, source authority, and freshness tracking matter as much as storage itself. AHE adds an eval-grounded version of memory as a harness component: long-term memory can encode boundary-case lessons that transfer across coding tasks, but stacked with prompt and middleware changes it can also create redundant checks and regressions. The agentic-search paper adds a long-conversation retrieval lesson: for personal facts, dates, and preferences with literal textual witnesses, lexical search may be more reliable than vector search, but only under a harness and delivery path that make the evidence easy to consume. ContextLattice adds the operational version: memory systems should expose explicit read/write/preflight/recency/degraded-state contracts, not only retrieval endpoints. The Cognee bundle adds the memory-control-plane version: one runtime can own graph memory, session memory, trace capture, retrieval routing, feedback weighting, global summaries, and procedural skill proposals, but it still needs typed retrieval lanes, review gates, and explicit apply semantics before memory-derived evidence rewrites durable procedures. Hermes adds the personal-agent-runtime version: curated `MEMORY.md`/`USER.md` snapshots, SQLite/FTS session search, optional external memory providers, and background review can coexist when the harness separates what is frozen into a session from what can be searched or updated later. MemWal adds the user-owned encrypted-memory version: durable encrypted blobs, rebuildable vector indexes, namespace-scoped recall, onchain delegate access, and explicit relayer trust posture are all memory design variables. Anthropic's zero-trust guide makes memory security explicit: context persistence creates a durable attack surface, so memory needs isolation, source attribution, integrity validation, retention limits, quarantine, and rollback. Lieberman's content-machine digest adds a creator-memory pattern: raw interviews, idea vaults, style guides, final edits, and `content-lessons.md` should be separate memory lanes, with confirmed final-edit lessons allowed to override generic style rules only through an explicit write path.
+Agent memory refers to the mechanisms that let an agent preserve, retrieve, secure, and reuse information across time. The KB now covers four broad families: explicit external memory stores, structured context playbooks, reusable workflow memory, and learned internal memory systems. The textbook layer adds a fifth foundation: memory can also be understood as a belief-state and uncertainty-management problem, especially in POMDPs, Bayesian filtering, and sequential decision-making. The newer additions sharpen five related distinctions: memory is not only storage but also policy about what stays in the hot path; "memory" often needs working/episodic/semantic/personal separation; memory ownership is partly a harness question; memory quality depends on write gates and verification discipline; and prompt-cache stability constrains where dynamic memory can safely enter context. The newer enterprise framing also treats memory as synthesized organizational understanding, where identity resolution, source authority, and freshness tracking matter as much as storage itself. AHE adds an eval-grounded version of memory as a harness component: long-term memory can encode boundary-case lessons that transfer across coding tasks, but stacked with prompt and middleware changes it can also create redundant checks and regressions. The agentic-search paper adds a long-conversation retrieval lesson: for personal facts, dates, and preferences with literal textual witnesses, lexical search may be more reliable than vector search, but only under a harness and delivery path that make the evidence easy to consume. ContextLattice adds the operational version: memory systems should expose explicit read/write/preflight/recency/degraded-state contracts, not only retrieval endpoints. The Cognee bundle adds the memory-control-plane version: one runtime can own graph memory, session memory, trace capture, retrieval routing, feedback weighting, global summaries, and procedural skill proposals, but it still needs typed retrieval lanes, review gates, and explicit apply semantics before memory-derived evidence rewrites durable procedures. Hermes adds the personal-agent-runtime version: curated `MEMORY.md`/`USER.md` snapshots, SQLite/FTS session search, optional external memory providers, and background review can coexist when the harness separates what is frozen into a session from what can be searched or updated later. MemWal adds the user-owned encrypted-memory version: durable encrypted blobs, rebuildable vector indexes, namespace-scoped recall, onchain delegate access, and explicit relayer trust posture are all memory design variables. Anthropic's zero-trust guide makes memory security explicit: context persistence creates a durable attack surface, so memory needs isolation, source attribution, integrity validation, retention limits, quarantine, and rollback. Lieberman's content-machine digest adds a creator-memory pattern: raw interviews, idea vaults, style guides, final edits, and `content-lessons.md` should be separate memory lanes, with confirmed final-edit lessons allowed to override generic style rules only through an explicit write path. Mukta's dreaming talk adds the production consolidation pattern: keep fast agent-directed writes in band, but periodically clone and curate the store out of band using permission-matched transcripts, cross-session tool evidence, multi-agent analysis, prevalence thresholds, attributed proposals, and deterministic version/concurrency controls. Anthropic's Claude 5 guidance adds a product-surface transition: Claude Code's auto-memory reduces pressure to use `CLAUDE.md` as a manual catch-all, but convenience does not erase the need for explicit scope, provenance, precedence, retention, integrity, and write governance.
+
+Nisi's retrospective-agent pattern adds a concrete trace-to-memory path: inspect full tool and transcript evidence for loops or framework-specific failure modes, then write general and scoped markdown lessons. Its value depends on routing before writing—mechanical invariants should become code or tests, product landmines may become skills, run facts remain episodic, and only repeated evidence-backed lessons should be proposed for durable semantic memory.
 
 ## Main Families
 
@@ -75,6 +77,16 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, secu
 - Durable storage and semantic search can be separate layers: encrypted source-of-truth blobs may live outside the search index, with restore rebuilding vectors when the operational database is lost.
 - Memory ownership needs its own capability model; delegate keys, namespaces, and revocation are different controls from ordinary app sessions or prompt instructions.
 - In creator workflows, compare first drafts with final approved drafts before writing lessons, and scope those lessons to the creator, platform, and content type that produced the evidence.
+- Combine immediate in-band writes with a slower out-of-band consolidation lane when short time-to-learning and cross-session pattern detection are both important.
+- Treat shared file-backed memory like concurrent mutable state: version every write, attribute it to an agent/session/time, use content-hash preconditions, reject stale writes, and retain rollback history.
+- A consolidation pass should inspect complete session evidence—including tool calls, skill use, failures, and metadata—rather than learning only from final responses.
+- Cross-session promotion should be evidence-bearing: attach example transcripts, prevalence estimates, and a rationale before a pattern changes shared memory.
+- Align consolidation inputs with the target store's permission scope; an offline job must not become a cross-role or cross-tenant visibility bypass.
+- Clone-and-propose is safer than opaque in-place rewriting: build a candidate output store, evaluate or review the diff, then promote it through an explicit acceptance policy.
+- Keep automatic memory distinct from repository instructions so personal or cross-session state does not silently become a shared project-wide rule.
+- Surface conflicts among auto-memory, repo conventions, current user intent, and task references instead of relying on the model to reconcile invisible precedence.
+- Treat auto-memory as a product capability with its own evals and controls, not as evidence that all agents should persist whatever seems relevant automatically.
+- Route retrospective findings by failure type before writing memory: architecture/test/hook for mechanical invariants, scoped skill for product gotchas, episodic record for run-specific facts, and reviewable semantic proposal for repeated cross-run lessons.
 
 ## Memory Control Plane Pattern
 
@@ -101,6 +113,10 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, secu
 - Eviction and verification are different answers to staleness. Eviction removes low-value memories; verification lets old memories remain useful without pretending they are live state.
 - A memory index tells the agent what it might know; a memory body should still be treated as dated evidence.
 - A skill can be procedural memory without becoming ordinary factual memory; invocation, mutation, and permission semantics still differ.
+- In-band memory optimizes for immediate local learning; out-of-band consolidation optimizes for cross-session verification, organization, enrichment, and fleet-level patterns.
+- Agent judgment should decide what evidence means, while the harness deterministically enforces versioning, attribution, concurrency, permissions, and rollback.
+- Automatic capture changes the write mechanism, not the trust class: auto-saved memory still differs from verified repo truth, current tool evidence, and explicit user instruction.
+- A detected pattern in run logs is evidence for a candidate memory, not proof that the candidate will improve the next run; promotion still needs scope, provenance, ablation, and rollback.
 
 ## Design Questions
 
@@ -120,6 +136,10 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, secu
 - How should feedback weights decay, revert, or get audited when later answers reveal that boosted evidence was misleading?
 - What metadata or embedding signals remain sensitive even when memory text is encrypted?
 - What integrity and retention controls are appropriate for lightweight markdown memories versus databases, vector stores, and graph stores?
+- Which transcript examples, prevalence threshold, and regression checks justify promoting a cross-session pattern into shared memory?
+- How should a consolidation job preserve tenant, role, project, and user permission boundaries while examining enough evidence to discover fleet-level failures?
+- Should candidate memory-store diffs apply automatically, require human review, or pass task-level evals before promotion?
+- What can `claude doctor` inspect about auto-memory conflicts or stale memories, and which memory writes remain directly reviewable or reversible by the user?
 
 ## Source Notes
 
@@ -156,3 +176,6 @@ Agent memory refers to the mechanisms that let an agent preserve, retrieve, secu
 - [[2026-05-20-memwal]]
 - [[2026-05-27-zero-trust-for-ai-agents]]
 - [[2026-06-03-alex-lieberman-content-machine]]
+- [[2026-06-22-lamis-mukta-learning-while-you-sleep-beyond-memory-to-dreaming]]
+- [[2026-07-24-the-new-rules-of-context-engineering-for-claude-5-generation-models]]
+- [[2026-05-30-how-i-deleted-95-percent-of-my-agent-skills-and-got-better-results]]

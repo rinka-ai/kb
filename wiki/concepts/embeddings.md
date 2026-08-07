@@ -8,7 +8,7 @@ summary: Embeddings turn data into vector representations for similarity search,
 canonical_for: [embeddings, vector search, dense retrieval]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.82"
 ---
 

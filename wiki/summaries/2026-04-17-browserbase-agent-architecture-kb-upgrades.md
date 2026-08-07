@@ -6,7 +6,7 @@ tags: [browserbase, managed-agents, security, skills, tools]
 summary: The Browserbase material mostly strengthens KB infrastructure patterns around zero-trust sandboxes, credential brokering, permission-aware skill loading, and reusing one agent runtime across multiple entrypoints.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.79"
 ---
 

@@ -8,7 +8,7 @@ source_count: 1
 canonical_for: [claude code dynamic workflows, dynamic workflows patterns, ultracode workflow patterns]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.78"
 ---
 

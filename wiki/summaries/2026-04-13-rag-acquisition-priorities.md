@@ -6,7 +6,7 @@ tags: [rag, retrieval, acquisition, knowledge-base]
 summary: Rationale and reading order for the core RAG paper, retriever, evaluation, and GraphRAG additions.
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.86"
 ---
 

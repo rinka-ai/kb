@@ -8,7 +8,7 @@ source_count: 6
 canonical_for: [ai-native content machine, AI content workflow, creator content pipeline, content skills pipeline]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.72"
 ---
 

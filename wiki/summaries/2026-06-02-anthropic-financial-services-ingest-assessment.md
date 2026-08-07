@@ -8,7 +8,7 @@ summary: Anthropic's financial-services repo is worth a targeted KB ingest becau
 canonical_for: [anthropics financial services ingest, Claude financial services repo, financial services managed agents, finance agent skills]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.82"
 ---
 

@@ -8,7 +8,7 @@ source_count: 6
 canonical_for: [zero trust AI agents, agent zero trust, least agency, agentic security operations, MCP zero trust]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.86"
 ---
 

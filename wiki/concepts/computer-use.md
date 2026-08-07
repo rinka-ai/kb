@@ -8,7 +8,7 @@ summary: Computer-use agents extend web agents into full operating-system enviro
 canonical_for: [computer use, computer-use agents, gui agents, desktop agents]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-09-10
 confidence: "0.80"
 ---
 

@@ -8,7 +8,7 @@ source_count: 1
 canonical_for: [Aya Conformis latest commits, latest internal repo lessons, React Doctor gate lessons, next-intl migration lessons, operator UI commit lessons]
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2027-01-23
 confidence: "0.82"
 ---
 

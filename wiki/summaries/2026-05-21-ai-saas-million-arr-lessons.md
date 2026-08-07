@@ -6,7 +6,7 @@ tags: [business-strategy, ai-saas, pricing, product-discovery, claude-code]
 summary: "The Clairvo case-study transcript is most useful as a playbook for AI-era SaaS discovery: pick a costly measurable workflow problem, use agents for mechanism search and simulation, validate in live deployments, and capture value through high-touch operational moats."
 review_status: reviewed
 last_reviewed: 2026-08-07
-review_due: 2026-11-07
+review_due: 2026-10-25
 confidence: "0.68"
 ---
 
