@@ -6,9 +6,9 @@ tags: [github-repos, agent-skills, managed-agents, financial-services, agent-sec
 source_count: 1
 summary: Anthropic's financial-services repo is worth a targeted KB ingest because it is an official reference corpus for finance-domain Claude skills, managed-agent cookbooks, least-privilege subagent patterns, MCP data connectors, and enterprise Office deployment.
 canonical_for: [anthropics financial services ingest, Claude financial services repo, financial services managed agents, finance agent skills]
-review_status: draft
-last_reviewed: 2026-06-02
-review_due: 2026-07-02
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 
@@ -114,6 +114,10 @@ Read and cite at minimum:
 - [[enterprise-agent-deployment-failure-modes]]
 - [[payment-integrations]] only if discussing money/credential boundaries
 - consider adding a new concept for `financial-services-agents` if more finance-agent sources arrive
+
+## Status (2026-08-07 review)
+
+**Not yet ingested.** No `raw/articles/github-repos/2026-06-02-anthropic-financial-services.md` exists, so the "high priority" recommendation above is still outstanding two months on, and none of the listed concept pages were updated. The assessment itself remains the only artifact. This is the largest open ingest recommendation in the wiki; re-inspect the repo revision before acting, since the snapshot above is from `120a31d` and the malformed `.mcp.json` may have been fixed since.
 
 ## Bottom Line
 

@@ -6,9 +6,9 @@ tags: [paid-growth, meta-ads, google-ads, ugc, copywriting, content-creation]
 summary: Sub-index for `raw/articles/paid-growth/` source notes covering paid acquisition, Meta Ads, Google Ads, UGC, copywriting, content strategy, policy, and measurement.
 source_count: 26
 canonical_for: [paid growth sources, ads sources, marketing sources]
-review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.86"
 ---
 

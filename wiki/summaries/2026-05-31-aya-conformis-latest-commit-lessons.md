@@ -7,8 +7,8 @@ summary: "Latest Aya and Conformis commits show how small product/UI fixes and l
 source_count: 1
 canonical_for: [Aya Conformis latest commits, latest internal repo lessons, React Doctor gate lessons, next-intl migration lessons, operator UI commit lessons]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, sales, local-business, gtm]
 source_count: 3
 summary: "The AI-agency sales process is a diagnostic call flow: quantify the buyer's funnel gap, build doubt in the current approach, map offer pillars to measured problems, temperature-check buy-in, and close with clear next steps."
 canonical_for: [AI agency sales process, agency sales script, diagnostic sales call, AI Aristotle sales process, local business agency sales]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.63"
 ---
 
@@ -104,5 +104,3 @@ The formula prevents feature-dumping. The rep should not talk about reactivation
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
-- [[ai-agency-strategy]]
-- [[sales-coaching-gpt]]

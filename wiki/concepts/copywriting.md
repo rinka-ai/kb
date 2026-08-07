@@ -6,9 +6,9 @@ tags: [copywriting, paid-growth, voice-of-customer, ads, landing-pages, ugc]
 source_count: 13
 summary: Copywriting for paid growth turns customer language, offer truth, objections, proof, and channel intent into concise, policy-safe messages that move the buyer to the next action.
 canonical_for: [copywriting, ad copywriting, conversion copywriting, landing page copy, ugc scripts]
-review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

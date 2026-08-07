@@ -3,12 +3,12 @@ id: concept-durable-execution
 type: concept
 title: Durable Execution
 tags: [durable-execution, agents, orchestration, sessions, checkpoints, hitl]
-source_count: 10
+source_count: 12
 summary: Durable execution makes long-running agent work survivable by treating pause, resume, replay, retry, and human intervention as first-class runtime behaviors.
 canonical_for: [durable execution, resumable agents, replayable workflows, checkpointed agents]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-02
+review_due: 2026-10-31
 confidence: "0.85"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.85"
 
 ## Summary
 
-Durable execution means an agent run can survive crashes, long pauses, human approvals, and external retries without pretending the whole task fits inside one uninterrupted process. In practice, it is about explicit run identity, checkpointed state, replay discipline, and isolated side-effect boundaries. Goose adds a useful product-level implementation example: durability is not only storage, but also cancellable live work, scheduled resumes, and replayable client event streams around the same execution state. Flue adds the useful boundary case: persisted session history and Durable Object storage are valuable, but they are not by themselves a durable run contract unless active work, approvals, retries, event logs, and side effects are also represented explicitly. The durable-orchestration source adds the background-agent frame: durable steps, external state, event waits, lifecycle controls, and traces should outlive whichever agent topology is fashionable. Hermes sharpens the distinction between persistence and durability: cron wakeups, gateways, session storage, and background terminal work support long-lived agents, while synchronous subagent delegation is explicitly not a durable workflow boundary. Learn Harness Engineering adds the lightweight coding-agent version: even without a full durable workflow engine, repo-tracked progress, feature state, handoff, clean-state, and verification artifacts can make fresh sessions restartable.
+Durable execution means an agent run can survive crashes, long pauses, human approvals, and external retries without pretending the whole task fits inside one uninterrupted process. In practice, it is about explicit run identity, checkpointed state, replay discipline, and isolated side-effect boundaries. Goose adds a useful product-level implementation example: durability is not only storage, but also cancellable live work, scheduled resumes, and replayable client event streams around the same execution state. Flue adds the useful boundary case: persisted session history and Durable Object storage are valuable, but they are not by themselves a durable run contract unless active work, approvals, retries, event logs, and side effects are also represented explicitly. The durable-orchestration source adds the background-agent frame: durable steps, external state, event waits, lifecycle controls, and traces should outlive whichever agent topology is fashionable. Hermes sharpens the distinction between persistence and durability: cron wakeups, gateways, session storage, and background terminal work support long-lived agents, while synchronous subagent delegation is explicitly not a durable workflow boundary. The v0.19.1 teardown adds a high-assurance constraint: provider fallback, context compaction, and conversation branching must preserve explicit run lineage, while authority-bearing side effects remain in a separately durable control plane. Learn Harness Engineering adds the lightweight coding-agent version: even without a full durable workflow engine, repo-tracked progress, feature state, handoff, clean-state, and verification artifacts can make fresh sessions restartable.
 
 ## Core Properties
 
@@ -46,7 +46,9 @@ Durable execution means an agent run can survive crashes, long pauses, human app
 - store enough execution metadata to explain why the run is waiting or resumable
 - treat interruption and resume as product features, not recovery hacks
 - distinguish user-visible thread state from internal execution state when forks, provider changes, or background jobs make them diverge
+- preserve model/provider identity, context-snapshot digest, compaction lineage, and fallback transitions as run metadata rather than silently mutating an active run
 - keep semantic workflow state above sandbox or VM snapshots so completed steps and side effects are inspectable without replaying everything
+- separate transport sessions from durable run state; explicit handles should be scoped, expiring, attributable, and safe to retry rather than hidden behind connection affinity
 - treat "stored chat history" as necessary but insufficient; persist active run metadata and side-effect checkpoints as their own state
 - keep sandbox snapshots separate from workflow snapshots so compute state does not become the only durability record
 - avoid calling synchronous child-agent delegation durable unless the runtime also persists child run state, approvals, retries, and side effects
@@ -64,3 +66,5 @@ Durable execution means an agent run can survive crashes, long pauses, human app
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
 - [[2026-05-20-hermes-agent]]
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
+- [[2026-07-31-hermes-agent-v0-19-1-source-teardown]]
+- [[2026-07-28-the-2026-07-28-model-context-protocol-specification]]

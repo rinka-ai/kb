@@ -7,8 +7,8 @@ source_count: 4
 summary: Synthetic voices create powerful accessibility and product opportunities, but they also demand consent, disclosure, provenance, and strong anti-impersonation controls.
 canonical_for: [synthetic voices, voice cloning, ai voice governance, disclosure]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

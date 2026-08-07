@@ -192,6 +192,7 @@ This runs:
 - MCP setup and commands: [docs/mcp-server.md](./docs/mcp-server.md)
 - Shared deployment: [docs/mcp-deployment.md](./docs/mcp-deployment.md)
 - Cross-repo access: [docs/external-agent-access.md](./docs/external-agent-access.md)
+- Research curation and learning briefs: [docs/research-curation.md](./docs/research-curation.md)
 - Release checklist: [docs/release-checklist.md](./docs/release-checklist.md)
 
 ## Current Rule On Contradictions

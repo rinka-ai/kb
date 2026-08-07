@@ -7,8 +7,8 @@ source_count: 12
 summary: Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles, human-review backpressure, and attribution paths for diagnosing coordination failures.
 canonical_for: [multi-agent systems, parallel agents, subagents, orchestration tax, parallel agent review bottleneck, attention bottleneck]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.85"
 ---
 

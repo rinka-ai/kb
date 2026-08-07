@@ -3,12 +3,12 @@ id: concept-internal-engineering-conventions
 type: concept
 title: Internal Engineering Conventions
 tags: [engineering-conventions, agent-instructions, coding-agents, monorepos, tests]
-source_count: 7
+source_count: 12
 summary: Internal engineering conventions turn tacit team practice into reusable constraints for agents and humans, especially around scope, imports, validation, naming, tests, side effects, UI discipline, knowledge updates, and skillized gotchas.
 canonical_for: [internal engineering conventions, repo conventions, coding conventions, agent coding rules]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 
@@ -33,6 +33,11 @@ Aya and Conformis show the value of ingesting conventions into the KB. Aya's con
 - **Knowledge rules:** durable discoveries update the repo or shared KB instead of disappearing into chat.
 - **Skill rules:** repeated internal footguns become skill gotchas, executable verifiers, setup files, or scoped hooks only when they change recurring agent behavior.
 - **Harness rules:** startup readiness, active feature state, verification evidence, clean handoff, and cleanup checks belong in files or scripts when coding agents repeatedly lose state.
+- **TypeScript module rules:** select compiler module settings from the actual runtime/bundler, make type-only erasure explicit, treat `exports` plus declarations as the package API, and prohibit `paths` aliases from impersonating workspace packages.
+- **TypeScript state rules:** validate unknown data at runtime boundaries, model application-owned states as discriminated unions of complete variants, test custom predicates as runtime code, and enforce exhaustive handling without casts or silent catch-all branches.
+- **TypeScript compatibility rules:** keep structural ports minimal, forbid `any` as boundary admission, make domain identity explicit when equal shapes must not mix, review callback inputs from producer ownership, and lock intended assignability into strict public-package type tests.
+- **TypeScript conditional-type rules:** use named helpers only for coherent input-output relations, choose union distribution explicitly, keep recursion bounded, mirror the relation in runtime code, and test edge cases plus consumer compile behavior through packed declarations.
+- **TypeScript mapped-type rules:** derive projections only from an owned key vocabulary, make modifier/remapping/filtering behavior obvious, never confuse static removal or requiredness with runtime redaction/defaulting, and test emitted declarations plus any runtime realization.
 
 ## Agent-Instruction Design
 
@@ -69,6 +74,11 @@ Good rules usually include:
 - [[claude-code]]
 - [[context-engineering]]
 - [[ai-interface-design]]
+- [[typescript-module-systems]]
+- [[typescript-control-flow-narrowing]]
+- [[typescript-structural-compatibility]]
+- [[typescript-conditional-types]]
+- [[typescript-mapped-types]]
 
 ## Source Notes
 
@@ -80,3 +90,8 @@ Good rules usually include:
 - [[2026-06-04-mattpocock-skills]]
 - [[2026-06-03-lessons-from-building-claude-code-how-we-use-skills]]
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
+- [[2026-08-01-typescript-modules-reference]]
+- [[2026-08-02-typescript-narrowing]]
+- [[2026-08-03-typescript-type-compatibility]]
+- [[2026-08-04-typescript-conditional-types]]
+- [[2026-08-05-typescript-mapped-types]]

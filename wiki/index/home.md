@@ -27,6 +27,7 @@ This wiki accumulates source material and synthesized notes about building with 
 - [[claude-blog]]
 - [[design-systems]]
 - [[github-repos]]
+- [[hci-research]]
 - [[internal-codebases]]
 - [[official-docs]]
 - [[paid-growth-sources]]
@@ -36,6 +37,7 @@ This wiki accumulates source material and synthesized notes about building with 
 
 ## Recent Summaries
 
+- [[2026-08-02-explicit-state-and-enforced-boundaries-weekly]]
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]]
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]]
 - [[2026-06-04-learn-harness-engineering-kb-upgrades]]

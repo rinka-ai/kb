@@ -7,8 +7,8 @@ summary: "Matt Pocock's skills repo is worth a targeted repo-level ingest for ag
 source_count: 1
 canonical_for: [matt pocock skills ingest assessment, mattpocock skills, skills for real engineers]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-08-05
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.86"
 ---
 

@@ -6,9 +6,9 @@ tags: [paid-growth, advertising, performance-marketing, meta-ads, google-ads, cr
 source_count: 26
 summary: Paid growth is now an operating system of offer clarity, creative supply, first-party data, platform automation, compliance, and incrementality discipline rather than only media buying.
 canonical_for: [paid growth, performance marketing, paid acquisition, digital advertising strategy, paid media operating model]
-review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.84"
 ---
 

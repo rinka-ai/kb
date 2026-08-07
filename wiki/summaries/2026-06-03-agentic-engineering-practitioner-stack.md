@@ -6,9 +6,9 @@ tags: [agentic-engineering, claude-code, codex, workflows, skills, personal-know
 summary: "Van Horn's agentic-engineering field report is useful as an operator-stack snapshot: plan-first artifacts, research-before-planning, parallel agent sessions, voice/raw-context capture, notes as agent memory, reusable skills, agent-native CLIs, and human taste as the bottleneck."
 source_count: 7
 canonical_for: [agentic engineering stack, plan-first agentic coding, Claude Code Codex workflow, agentic engineering hacks]
-review_status: draft
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.78"
 ---
 

@@ -7,8 +7,8 @@ source_count: 33
 summary: Agent memory covers how systems preserve, retrieve, consolidate, secure, and reuse information across time through explicit storage, load policy, write discipline, verification, integrity controls, belief-state modeling, and harness-owned context management.
 canonical_for: [agent memory, workflow memory, semantic memory, memory control plane]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.90"
 ---
 

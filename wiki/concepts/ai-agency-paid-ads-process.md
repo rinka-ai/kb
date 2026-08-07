@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, paid-growth, meta-ads, copywriting, marketi
 source_count: 9
 summary: "The AI-agency paid-ads process uses simple lead-generation campaign structure, sharp niche-specific creative, landing-page and booking follow-up, and CRM-backed measurement rather than treating cheap leads as proof."
 canonical_for: [AI agency paid ads process, AI agency ads, agency client acquisition ads, local business AI agency Meta ads]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.67"
 ---
 
@@ -118,4 +118,3 @@ Every variant needs the same offer, same conversion path, and same outcome track
 - [[2026-05-27-meta-conversions-api]]
 - [[2026-05-27-demand-curve-making-ads]]
 - [[2026-05-27-cxl-voice-of-customer-research]]
-- [[marketing-measurement]]

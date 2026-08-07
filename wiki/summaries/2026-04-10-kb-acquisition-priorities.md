@@ -5,8 +5,8 @@ title: KB Acquisition Priorities
 tags: [knowledge-base, research, agents, acquisition]
 summary: Audit of the KB’s strongest clusters, weakest provenance gaps, and the next sources that most improve coverage.
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.8"
 ---
 
@@ -41,6 +41,8 @@ Several of the top-priority additions from this audit have now been added to the
 - [[2026-04-10-model-context-protocol]]
 
 ## Current Coverage
+
+> Point-in-time snapshot from 2026-04-10. These figures are historical and are preserved as the basis for the priorities below. As of the 2026-08-07 review the corpus holds 273 source notes, 107 concept pages, 49 summaries, and 20 index pages, and every "Highest-Priority Addition" in the table below has since been ingested.
 
 - The KB currently contains 59 source notes, 10 concept notes, and 5 index notes.
 - Publisher concentration is high: 22 source notes from Anthropic, 8 from Claude, and 11 imported `GitHub` notes from `momo-research`.

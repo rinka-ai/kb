@@ -6,9 +6,9 @@ tags: [business-strategy, ai-saas, ai-agency, saas, product-discovery, pricing, 
 source_count: 9
 summary: AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
 canonical_for: [ai saas strategy, ai startup strategy, ai saas pricing, agent-built saas, payable problems]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.72"
 ---
 

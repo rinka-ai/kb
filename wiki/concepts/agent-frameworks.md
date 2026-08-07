@@ -3,12 +3,12 @@ id: concept-agent-frameworks
 type: concept
 title: Agent Frameworks
 tags: [frameworks, agents, orchestration, runtimes, durable-execution, sessions, openai, architecture]
-source_count: 11
+source_count: 12
 summary: Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives, but they should earn their place by improving product reliability or speed rather than by adding novelty.
 canonical_for: [agent frameworks, agent runtimes, orchestration frameworks, runtime coordinator, agent stack, langgraph, openai agents sdk, google adk]
 review_status: reviewed
-last_reviewed: 2026-05-21
-review_due: 2026-06-21
+last_reviewed: 2026-07-31
+review_due: 2026-10-31
 confidence: "0.84"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.84"
 
 ## Summary
 
-Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use. The AI SaaS case-study transcript adds the commercial counterweight: framework churn can distract from shipping product improvements and can introduce regressions in how the model works with a codebase.
+Agent frameworks package orchestration, runtime state, approval interrupts, tool surfaces, and durability into reusable system primitives instead of app-specific glue. Across the current source set, the important distinction is not “framework or no framework,” but which control-plane responsibilities are made explicit: sessions or threads, pause-resume execution, handoffs, memory stores, deterministic workflow structure, and tool/runtime observability. The durable-orchestration source adds a stricter lock-in test: a framework is safer when it exposes durable primitives and riskier when one agent topology becomes the application architecture. Hermes adds a wider category: some frameworks are really agent operating environments, where one runtime spans CLI, messaging, editor integration, cron, API, batch trajectories, memory, skills, tools, and browser/computer use. The v0.19.1 teardown adds a structural caution: a coherent product can still accumulate multi-thousand-line core objects, so “one runtime” should mean one contract and state machine rather than one mutable god object. The AI SaaS case-study transcript adds the commercial counterweight: framework churn can distract from shipping product improvements and can introduce regressions in how the model works with a codebase.
 
 ## Common Responsibilities
 
@@ -47,6 +47,7 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - prefer frameworks that expose steps, waits, retries, cancellation, scheduling, and traces as stable primitives rather than hard-coding one agent topology
 - check whether multiple product entrypoints share one runtime contract or quietly fork sessions, tools, permissions, memory, and approval semantics
 - require a framework to either remove operational risk, provide durable primitives, or improve a product metric; otherwise it may be novelty drag
+- distinguish a narrow runtime contract from a physically monolithic implementation; multi-entrypoint coherence does not require multi-thousand-line core classes
 
 ## Tensions
 
@@ -70,3 +71,4 @@ Agent frameworks package orchestration, runtime state, approval interrupts, tool
 - [[2026-05-09-durable-orchestration-agent-patterns-user-provided]]
 - [[2026-05-20-hermes-agent]]
 - [[2026-05-21-saas-million-arr-clairvo]]
+- [[2026-07-31-hermes-agent-v0-19-1-source-teardown]]

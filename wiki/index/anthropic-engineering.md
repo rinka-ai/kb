@@ -12,7 +12,7 @@ Imported collection of the current posts listed on Anthropic's Engineering page 
 
 ## Collection Notes
 
-- Imported 22 Engineering-page posts.
+- Imported 22 Engineering-page posts plus one later Anthropic incident report.
 - Most entries are stored as structured source notes with metadata and first-pass synthesis; `Scaling Managed Agents: Decoupling the brain from the hands` has been promoted with preserved article text and refreshed metadata.
 - `Scaling Managed Agents: Decoupling the brain from the hands` lives alongside the rest of the Anthropic Engineering source notes in `raw/articles/anthropic-engineering/`.
 
@@ -40,6 +40,7 @@ Imported collection of the current posts listed on Anthropic's Engineering page 
   - [[2026-01-21-designing-ai-resistant-technical-evaluations]]
   - [[2026-03-06-eval-awareness-in-claude-opus-4-6-browsecomp-performance]]
   - [[2026-04-09-quantifying-infrastructure-noise-in-agentic-coding-evals]]
+  - [[2026-07-30-investigating-three-real-world-incidents-in-our-cybersecurity-evaluations]]
 - Research, retrieval, and systems:
   - [[2024-09-19-introducing-contextual-retrieval]]
   - [[2025-06-13-how-we-built-our-multi-agent-research-system]]

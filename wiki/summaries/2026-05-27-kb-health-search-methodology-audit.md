@@ -6,9 +6,9 @@ tags: [knowledge-base, retrieval, search, mcp, telemetry, evals, kb-health]
 source_count: 0
 summary: Audit of the KB's local health, remote MCP observability, search methodology, telemetry, and eval coverage after the May 2026 paid-growth and internal-codebase expansions.
 canonical_for: [kb health audit, search methodology audit, retrieval optimization review, remote kb telemetry audit]
-review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.86"
 ---
 
@@ -73,7 +73,9 @@ Most of the recommendations above are now shipped:
 - **Evals (rec. 3):** `evals/search-gold.json` grew to 45 cases covering Meta/UGC creative, CAPI, Google PMax/RSA, incrementality, TCPA/compliance, and internal-codebase/methodology retrieval; the two prior failures were fixed via metadata (`[[agent-frameworks]]` canonical phrases) and a corrected relevant set, not by loosening constraints.
 - **Telemetry docs (rec. 1):** `docs/railway.md` documents `KB_SEARCH_OBSERVATION_LOG_PATH` (persistent volume), `KB_SEARCH_TELEMETRY_SALT`, `KB_ADMIN_TOKEN`, and the admin search-report/export endpoints.
 
-Still open: a dedicated compliance/outbound-guardrails concept (rec. 5), a git-SHA field in `/health` (part of rec. 2), and a combined recurring health-audit command (rec. 8).
+Still open as of the original write-up: a dedicated compliance/outbound-guardrails concept (rec. 5), a git-SHA field in `/health` (part of rec. 2), and a combined recurring health-audit command (rec. 8).
+
+**2026-08-07 review update.** Two of those three have since shipped: `/health` now resolves a deploy SHA via `deployGitSha()` in `src/http/handlers/health.ts` (reading `KB_DEPLOY_GIT_SHA` or `RAILWAY_GIT_COMMIT_SHA`), and the combined health-audit command exists as `bun run kb:audit` (`bin/audit.ts`). Recommendation 5 remains genuinely open — there is still no compliance or outbound-guardrails concept page, even though TCPA, FTC, CAN-SPAM, FCC, and review-incentive citations are now duplicated across [[database-reactivation]], [[review-referral-automation]], [[speed-to-lead-and-missed-call-recovery]], [[local-business-ai-acquisition-system]], and [[ai-agency-strategy]]. That duplication is the strongest argument yet for extracting the canonical page.
 
 ## Related
 

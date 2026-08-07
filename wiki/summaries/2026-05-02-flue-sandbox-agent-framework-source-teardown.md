@@ -7,8 +7,8 @@ source_count: 1
 summary: Reusable lessons from Flue's source tree, focused on how a compact TypeScript sandbox-agent framework should handle context, sessions, capabilities, events, and deployment lifecycle.
 canonical_for: [Flue source teardown, sandbox agent framework, Flue framework lessons]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-08-05
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.84"
 ---
 

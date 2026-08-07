@@ -7,8 +7,8 @@ source_count: 9
 summary: Embeddings turn data into vector representations for similarity search, clustering, and retrieval, but in this KB they matter mainly as one representation component inside a broader evidence pipeline.
 canonical_for: [embeddings, vector search, dense retrieval]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

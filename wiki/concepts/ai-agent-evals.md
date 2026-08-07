@@ -3,12 +3,12 @@ id: concept-ai-agent-evals
 type: concept
 title: AI Agent Evals
 tags: [evals, benchmarks, agents, web-agents, browser, computer-use]
-source_count: 25
+source_count: 33
 summary: AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
 canonical_for: [agent evals, benchmark suites, agent benchmarks]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-06
+review_due: 2026-11-04
 confidence: "0.87"
 ---
 
@@ -16,7 +16,7 @@ confidence: "0.87"
 
 ## Summary
 
-AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. Cognee adds a retrieval-system version of the same lesson: chunking, graph construction, retriever choice, prompt template, top-k, and judge metric can all change system scores, so evals should track the full configuration rather than just a model and dataset. Learn Harness Engineering adds a useful distinction between structural harness validation and behavioral agent evaluation: checking whether `AGENTS.md`, feature state, verification commands, and handoff files exist is useful, but it does not replace before/after sessions on representative tasks. The Dynamic Workflows digest adds practical eval patterns: separate worker and verifier agents, one verifier per claim or rule, tournament comparison for ranking, and candidate-in-worktree grading loops. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
+AI agent evals measure full systems, not just model snapshots. Anthropic's engineering posts repeatedly show that harnesses, tools, infra, contamination, and grading design can all materially change the result. OpenAI's ARC-AGI-3 harness comparison makes that dependence quantitative: retained reasoning plus compaction raised GPT-5.6 Sol's public-set score from 13.3% to 38.3% while using roughly six times fewer output tokens, although the bundled intervention does not isolate either setting's individual contribution. The textbook layer broadens "eval" into validation and assurance: useful evaluation should ask which properties the system is supposed to satisfy, how failures can be falsified, how stochastic behavior is measured, and what deployment constraints make a score meaningful. The newer additions broaden this from critique into concrete benchmark and framework coverage: agent evaluation now spans full-system harnesses, adversarial security environments, web-task benchmarks, realistic computer-use setups with deterministic state-based checks, and retrieval experiments where the harness and tool-result delivery path are part of what is being measured. AHE adds a further requirement for self-improving agents: when the harness changes between runs, evaluation should track which edits predicted which fixes or regressions, not only the final aggregate score. The LIFE survey adds the multi-agent version of that requirement: evals should not stop at team success or failure, but should test whether failures can be attributed across agents, steps, communication paths, and repair interventions. Cognee adds a retrieval-system version of the same lesson: chunking, graph construction, retriever choice, prompt template, top-k, and judge metric can all change system scores, so evals should track the full configuration rather than just a model and dataset. Learn Harness Engineering adds a useful distinction between structural harness validation and behavioral agent evaluation: checking whether `AGENTS.md`, feature state, verification commands, and handoff files exist is useful, but it does not replace before/after sessions on representative tasks. The Dynamic Workflows digest adds practical eval patterns: separate worker and verifier agents, one verifier per claim or rule, tournament comparison for ranking, and candidate-in-worktree grading loops. One visible gap remains company-understanding evals that test cross-tool synthesis, source arbitration, freshness, and identity resolution against messy enterprise data.
 
 ## Core Components
 
@@ -39,6 +39,7 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - web-environment benchmarks such as WebArena
 - computer-use benchmarks such as OSWorld
 - domain-specific workflow benchmarks that report accuracy, cost, latency, and throughput together
+- creativity-support evaluations that separate within-user variety from cross-user semantic or category convergence
 - organization-understanding benchmarks for multi-source company context
 - validation and assurance workflows that specify properties, search for falsifying examples, and gather safety evidence
 
@@ -50,10 +51,12 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - task saturation
 - unrealistic task design
 - benchmarks that test lookup or recall but never source conflict resolution or cross-system synthesis
+- evaluation prompts that declare isolation or scope without validating the real network boundary, allowing the benchmark to spill into production systems
 
 ## Practical Lessons
 
 - Report harness and infra assumptions, not only scores.
+- Report context retention, reasoning-state retention, compaction or truncation policy, API mode, and termination rules; these can dominate an agent score while changing cost at the same time.
 - Expect benchmarks to stale as models improve.
 - Prefer evals that reflect deployment conditions.
 - Track what the system is actually optimizing for under a given setup.
@@ -62,6 +65,8 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - Track predicted regressions as seriously as predicted fixes, because regressions are easier for evolve loops to miss.
 - Prefer execution-based or state-based validators over action-trace matching or LLM-only judging when possible.
 - For security-sensitive agents, measure utility under attack, not only benign success.
+- Treat high-capability eval infrastructure as production-grade security infrastructure: prove egress policy, continuously monitor transcripts and network events, retain traces for retrospective review, and apply the same assurance to third-party ranges.
+- Define target scope so it is machine-enforceable; model situational awareness can be evaluated as defense in depth but must not be the containment boundary.
 - For production extraction systems, report cost per document, latency distribution, and throughput knee points alongside F1 or document-level accuracy.
 - For deployed AI systems, separate benchmark performance from validation evidence: property specification, stochastic metrics, falsification, monitoring, and rollback readiness answer different questions.
 - For multi-agent attribution, report whether the diagnosis supports verified repair rather than only whether it names the expected agent or step.
@@ -72,6 +77,13 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - When reporting harness experiments, separate artifact coverage, eval-case coverage, and observed task completion.
 - Use separate verifier contexts when self-preferential bias would make a worker's own judgment suspect.
 - Use pairwise tournament comparison when absolute scores are too noisy for ranking many outputs.
+- For generative design and creativity support, evaluate at two levels: per-user fluency, quality, and diversity, then cross-user or portfolio-level convergence. Validate embedding-based similarity against domain judgments and do not mistake semantic distance for usefulness.
+- For editable AI workflows, compare the complete interaction design rather than model outputs alone: task success, blinded artifact preference, regeneration versus curation behavior, local recovery, propagation understanding, reliance, cognitive load, accessibility, latency, and cost can move in different directions.
+- Treat perceived transparency as one outcome, not proof of calibrated trust. Inspectable stages need failure tasks that test whether users can locate an error, correct it, preserve accepted work, and recover without hidden downstream damage.
+- For generative editors, evaluate the whole steering loop against meaningful ablations: objective task fit where possible, blinded or expert artifact quality, intent match, correction locus, accepted-work preservation, version recovery, workload, latency, accessibility, provenance, rights, and cross-user convergence. A bundled interface win does not identify which control caused the gain.
+- For human-facing AI products, begin with a user-benefit and non-AI baseline, then connect model metrics to the autonomy policy and full interaction loop. Evaluate comprehension, appropriate reliance, steering, correction, manual takeover, fallback, accessibility, privacy choices, and disaggregated outcomes before and after launch; aggregate model quality cannot show whether responsibility and failure costs shifted onto users.
+- Evaluate AI interface prototypes with live-but-sandboxed behavior before polishing static frames. Test output length and cardinality, malformed or missing fields, duplicates, refusals, latency, harmful content, diverse inputs, layout recovery, and manual fallback in the actual interaction shell; record multiple runs rather than treating a selected completion as representative. Pair perceived communication and efficiency measures with objective task, artifact, accessibility, safety, privacy, and longitudinal outcomes.
+- Evaluate whether human authors can use the eval surface, not only whether the runner exists. [[2023-04-19-why-johnny-can-t-prompt-how-non-ai-experts-try-and-fail-to-design-llm-prompts]] found that ten non-expert prompt designers relied on local retries, overgeneralized from one or two outputs, and never used an available systematic testing interface during the study task. Prompt and agent workbenches should test case discovery, error labeling comprehension, old/new comparison, regression preservation, variability interpretation, rollback, and accessible operation as first-class human-system outcomes.
 
 ## Source Notes
 
@@ -100,3 +112,11 @@ AI agent evals measure full systems, not just model snapshots. Anthropic's engin
 - [[2026-05-18-cognee]]
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]]
+- [[2026-07-29-how-enabling-two-settings-tripled-our-arc-agi-3-scores]]
+- [[2024-06-22-homogenization-effects-of-large-language-models-on-human-creative-ideation]]
+- [[2026-07-30-investigating-three-real-world-incidents-in-our-cybersecurity-evaluations]]
+- [[2022-04-29-ai-chains-transparent-and-controllable-human-ai-interaction]]
+- [[2024-05-11-promptcharm-multimodal-prompting-and-refinement]]
+- [[2026-08-04-people-ai-guidebook]]
+- [[2024-06-29-promptinfuser-ai-ui-design-workflows]]
+- [[2023-04-19-why-johnny-can-t-prompt-how-non-ai-experts-try-and-fail-to-design-llm-prompts]]

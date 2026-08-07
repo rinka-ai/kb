@@ -6,9 +6,9 @@ tags: [agents, multi-agent, evals, diagnosis, failure-attribution]
 summary: Multi-agent failure attribution identifies where, how, and why errors emerge and propagate across agent roles, steps, tools, and coordination structures so diagnoses can support repair.
 source_count: 4
 canonical_for: [multi-agent failure attribution, agent failure attribution, failure diagnosis in agent teams, attribution in multi-agent systems]
-review_status: draft
-last_reviewed: 2026-05-16
-review_due: 2026-06-16
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.74"
 ---
 

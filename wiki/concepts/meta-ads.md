@@ -6,9 +6,9 @@ tags: [paid-growth, meta-ads, facebook-ads, instagram-ads, reels, creator-ads]
 source_count: 11
 summary: Meta Ads performance now depends on simplified structures, automation, diversified creative, creator/UGC supply, first-party conversion signals, policy-safe claims, and validation beyond dashboard ROAS.
 canonical_for: [meta ads, facebook ads, instagram ads, reels ads, meta paid social]
-review_status: draft
-last_reviewed: 2026-05-31
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.83"
 ---
 

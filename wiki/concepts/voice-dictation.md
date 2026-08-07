@@ -7,8 +7,8 @@ source_count: 5
 summary: Voice dictation systems optimize for fast cursor-level text entry and editing, which makes them a distinct product shape from conversational voice agents.
 canonical_for: [voice dictation, dictation interfaces, command mode, wispr flow]
 review_status: reviewed
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.79"
 ---
 

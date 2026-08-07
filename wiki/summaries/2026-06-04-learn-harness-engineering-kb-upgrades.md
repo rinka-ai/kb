@@ -6,9 +6,9 @@ tags: [agent-harnesses, harness-engineering, coding-agents, context-engineering,
 summary: "walkinglabs/learn-harness-engineering turns harness engineering into a practical curriculum: five subsystems, repo-as-system-of-record, feature-list state, executable verification, observability, clean handoff, and a portable harness-creator skill."
 source_count: 1
 canonical_for: [learn harness engineering, walkinglabs harness engineering, harness engineering course, harness creator skill]
-review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.84"
 ---
 

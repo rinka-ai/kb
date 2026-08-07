@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, local-business, reviews, referrals, complia
 source_count: 3
 summary: "Review and referral automation turns real customer interactions into reputation, feedback, and referred leads, but it must avoid deceptive review gating, undisclosed incentives, and borrowed proof."
 canonical_for: [review referral automation, reviews and referrals, local business reviews, referral automation, reputation automation]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.66"
 ---
 
@@ -82,6 +82,7 @@ The enriched KB version is more cautious. The exact gating patterns in the Middl
 - [[ai-agency-sales-process]]
 - [[ai-agency-strategy]]
 - [[copywriting]]
+- [[enterprise-agent-deployment-failure-modes]]
 
 ## Source Notes
 
@@ -89,6 +90,3 @@ The enriched KB version is more cautious. The exact gating patterns in the Middl
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
-- [[ai-agency-strategy]]
-- [[copywriting]]
-- [[enterprise-agent-deployment-failure-modes]]

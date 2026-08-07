@@ -4,9 +4,9 @@ type: summary
 title: AI SaaS Million ARR Lessons
 tags: [business-strategy, ai-saas, pricing, product-discovery, claude-code]
 summary: "The Clairvo case-study transcript is most useful as a playbook for AI-era SaaS discovery: pick a costly measurable workflow problem, use agents for mechanism search and simulation, validate in live deployments, and capture value through high-touch operational moats."
-review_status: draft
-last_reviewed: 2026-05-21
-review_due: 2026-06-21
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.68"
 ---
 
@@ -40,6 +40,9 @@ This source adds a business-strategy layer to the existing agent-systems KB. It 
 ## Source Notes
 
 - [[2026-05-21-saas-million-arr-clairvo]]
+
+## Related
+
 - [[ai-saas-strategy]]
 - [[claude-code]]
 - [[workflows]]

@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, productized-services, local-business, gtm, 
 source_count: 9
 summary: AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 canonical_for: [ai agency strategy, ai automation agency, productized ai agency, local business ai agency]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.62"
 ---
 

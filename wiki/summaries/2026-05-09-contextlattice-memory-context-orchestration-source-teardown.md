@@ -5,8 +5,8 @@ title: ContextLattice Memory Context Orchestration Source Teardown
 tags: [contextlattice, agent-memory, context-engineering, retrieval, agent-harnesses, knowledge-bases]
 summary: Reusable lessons from ContextLattice's source tree, focused on memory contracts, context packs, topic rollups, staged retrieval, retrieval lifecycle metadata, and write-path hygiene.
 review_status: reviewed
-last_reviewed: 2026-05-09
-review_due: 2026-06-09
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.83"
 ---
 

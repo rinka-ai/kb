@@ -9,10 +9,11 @@ url: https://github.com/NousResearch/hermes-agent
 date_published:
 date_added: 2026-05-20
 tags: [agent-frameworks, agent-harnesses, agent-memory, agent-skills, computer-use, browser-agents, mcp, acp, cron, github-repos]
-status: active
+status: superseded
 quality: high
 summary: Hermes Agent is an open-source self-improving agent operating environment spanning CLI, messaging gateways, editor integration, memory, skills, cron, subagents, browser/computer use, MCP tools, and trajectory generation.
 related: [agent-frameworks, agent-harnesses, llm-agents, agent-memory, agent-skills, agent-tools, managed-agents, computer-use, web-agents, context-engineering, durable-execution, agent-protocols, agent-security]
+superseded_by: 2026-07-31-hermes-agent-v0-19-1-source-teardown
 ---
 
 # Hermes Agent

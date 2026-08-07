@@ -3,13 +3,13 @@ id: concept-ai-instruction-design
 type: concept
 title: AI Instruction Design
 tags: [custom-instructions, prompt-engineering, agent-instructions, context-engineering, anti-sycophancy]
-source_count: 4
-summary: AI instruction design turns always-on assistant prompts into compact behavioral contracts for truthfulness, evidence handling, uncertainty, tone, tool use, and context discipline.
+source_count: 5
+summary: AI instruction design turns prompts into scoped, testable behavioral contracts whose evidence, lifecycle, uncertainty, tool boundaries, and regressions remain inspectable instead of trusting one successful completion.
 canonical_for: [AI custom prompt, custom AI instructions, assistant instruction design, anti-sycophancy prompt, prompt instruction design]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
-confidence: "0.82"
+last_reviewed: 2026-08-06
+review_due: 2026-11-04
+confidence: "0.85"
 ---
 
 # AI Instruction Design
@@ -40,6 +40,21 @@ The reusable lesson from the pmarca prompt is anti-sycophancy: optimize for accu
 - Keep global custom instructions short because they occupy always-on context and compete with task evidence.
 - Move reusable domain workflows into skills or project files rather than bloating the universal assistant profile.
 
+## Prompt Authoring Is Behavioral Evaluation
+
+[[2023-04-19-why-johnny-can-t-prompt-how-non-ai-experts-try-and-fail-to-design-llm-prompts]] adds an empirical warning to instruction craft: a prompt that works once is not yet a behavioral contract. Ten non-expert designers could change a GPT-3 chatbot, but they usually fixed one visible utterance, stopped after one improved retry, and did not use the available systematic testing interface. Participants also expected semantically similar instructions to behave similarly and often mistook a single failure for model incapability.
+
+For reusable instructions:
+
+- state the instruction's owner, scope, precedence, and lifetime rather than relying on conversational memory metaphors;
+- pair each important rule with representative happy, boundary, adversarial, and prior-failure cases;
+- compare old and new instructions on the same cases, inspect output variance and failure classes, and preserve the prior version for rollback;
+- use examples as evidence-bearing specification, with provenance and context, not as unexplained magic strings;
+- keep deterministic policy, authority, schemas, retries, and side effects in code or harness controls even when prompt tests look good;
+- re-run cases after model, retrieval, tool, memory, or safety-policy changes because the visible instruction text is not the whole system.
+
+The CHI study is qualitative (`n = 10`) and used one 2022-era chatbot task. It identifies early mental-model and workflow failures; it does not prove a universal prompt recipe, sufficient sample size, or causal benefit from any proposed interface scaffold.
+
 ## Failure Modes
 
 - **Persona theater:** claiming universal expertise instead of giving verifiable behavior rules.
@@ -48,6 +63,7 @@ The reusable lesson from the pmarca prompt is anti-sycophancy: optimize for accu
 - **Style over truth:** making the assistant sound aggressive when the real goal is calibrated disagreement.
 - **Instruction collisions:** asking for no disclaimers, no ethics, or unlimited directness in ways that conflict with higher-priority policy, legal, medical, financial, or safety constraints.
 - **Prompt overreach:** putting deterministic routing, retry, formatting, or tool policies in prose when they belong in code or schemas.
+- **One-run validation:** treating one successful or failed completion as proof that an instruction is robust or impossible.
 
 ## Source Notes
 
@@ -55,6 +71,7 @@ The reusable lesson from the pmarca prompt is anti-sycophancy: optimize for accu
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
 - [[2026-04-12-prompting-guide]]
 - [[2026-04-16-resolvers-the-routing-table-for-intelligence]]
+- [[2023-04-19-why-johnny-can-t-prompt-how-non-ai-experts-try-and-fail-to-design-llm-prompts]]
 
 ## Related
 

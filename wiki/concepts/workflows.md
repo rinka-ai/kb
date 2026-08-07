@@ -3,13 +3,13 @@ id: concept-workflows
 type: concept
 title: Agent Workflows
 tags: [workflows, agents, orchestration, workflow-agents, deterministic-control]
-source_count: 17
+source_count: 18
 summary: Agent workflows wrap model calls in explicit orchestration so sequencing, approvals, side effects, and human review capacity stay inspectable instead of being improvised inside one autonomous loop.
 canonical_for: [workflows, workflow agents, agent workflows, deterministic orchestration, review backpressure]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
-confidence: "0.84"
+last_reviewed: 2026-08-02
+review_due: 2026-11-02
+confidence: "0.86"
 ---
 
 # Agent Workflows
@@ -55,6 +55,8 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - keep setup, prior-run logs, and output destinations explicit when a workflow skill posts, deploys, files tickets, or reports deltas
 - package user-facing workflows around concrete artifacts and continuations: what context is required, what file/report/tracker gets produced, what downstream tool receives it, and what still needs review
 - for creative workflows, separate first-mile taste/context, middle-stage artifact production, and final-mile approval so model throughput does not erase creator judgment
+- when the workflow is user-facing, expose intermediate artifacts as editable checkpoints: users should be able to accept or freeze upstream work, branch and compare alternatives, rerun from one stage, and inspect propagation before applying it
+- keep freeform exploration and structured execution interoperable; use a sandbox while intent is ambiguous and promote a stable path into named stages rather than forcing every task into a graph from the start
 
 ## Failure Modes
 
@@ -74,6 +76,8 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - omitting token budgets or hard goals from broad workflow runs
 - letting raw untrusted content reach the same agent or stage that can edit code, open PRs, or call privileged tools
 - letting AI-generated critique close information gaps by invention instead of routing missing facts, stories, or numbers back to the human/source-gathering stage
+- exposing a complex node graph without local undo, propagation previews, stage summaries, accessibility support, or a simpler progressive-disclosure view and calling it transparency
+- decomposing interdependent work into independent steps until global coherence or essential context is lost
 
 ## Source Notes
 
@@ -94,3 +98,4 @@ Agent workflows are deterministic or semi-deterministic control structures aroun
 - [[2026-06-03-lessons-from-building-claude-code-how-we-use-skills]]
 - [[2026-06-04-walkinglabs-learn-harness-engineering]]
 - [[2026-06-03-dynamic-workflows-claude-code-ingest]]
+- [[2022-04-29-ai-chains-transparent-and-controllable-human-ai-interaction]]

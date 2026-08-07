@@ -7,8 +7,8 @@ summary: Anthropic's Zero Trust for AI Agents ebook upgrades the KB's agent-secu
 source_count: 6
 canonical_for: [zero trust AI agents, agent zero trust, least agency, agentic security operations, MCP zero trust]
 review_status: reviewed
-last_reviewed: 2026-05-31
-review_due: 2026-06-30
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.86"
 ---
 

@@ -3,7 +3,7 @@ id: wiki-index
 type: index
 title: Wiki Index
 summary: Master human-readable catalog of all wiki pages and source collections. Updated on every ingest.
-last_reviewed: 2026-06-04
+last_reviewed: 2026-08-07
 ---
 
 # Wiki Index
@@ -24,8 +24,10 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[agent-wallet-infrastructure]] — Agent wallet infrastructure gives autonomous agents policy-bounded authority to sign transactions, spend money, and use paid credentials without exposing raw keys to model-controlled runtimes.
 - [[ai-validation-and-assurance]] — AI validation and assurance extends evals into system modeling, property specification, falsification, stochastic testing, robustness evidence, safety cases, and operational detection metrics.
 - [[ai-agent-evals]] — AI agent evals measure full systems, including harnesses, tools, infrastructure, adversarial conditions, validation properties, failure attribution, and deployment constraints, rather than isolated model snapshots.
-- [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, calm density, explicit state, repeated use, source-aware design references, and precise interaction constraints rather than visual novelty or generic model-default aesthetics.
-- [[ai-instruction-design]] — AI instruction design turns always-on assistant prompts into compact behavioral contracts for truthfulness, evidence handling, uncertainty, tone, tool use, and context discipline.
+- [[ai-interface-design]] — AI-designed interfaces should optimize for job clarity, trust, inspectable and reversible control, distinctive human intent, collective diversity, and precise interaction constraints rather than visual novelty, generic defaults, or output volume alone.
+- [[human-centered-ai-product-design]] — Human-centered AI product design connects a validated user need to an explicit autonomy policy, realistic mental models, meaningful control, graceful recovery, and lifecycle evaluation rather than treating the model or chat surface as the product.
+- [[ai-assisted-creative-ideation]] — AI-assisted ideation should use models to elicit distinctive intent and expand the search space while measuring collective convergence, human ownership, quality, and accessibility—not merely idea volume or speed.
+- [[ai-instruction-design]] — AI instruction design turns prompts into scoped, testable behavioral contracts whose evidence, lifecycle, uncertainty, tool boundaries, and regressions remain inspectable instead of trusting one successful completion.
 - [[ai-saas-strategy]] — AI-era SaaS and agency strategy shifts advantage from mere software construction toward picking payable workflow pain, validating mechanisms against real data, pricing against value created, and building moats in implementation, data, compliance, and distribution.
 - [[ai-agency-strategy]] — AI agency strategy should compound around one repeatable buyer, one measurable workflow system, validated delivery SOPs, and compliance-aware evidence rather than scattered automations or unverified hype.
 - [[local-business-ai-acquisition-system]] — A local-business AI acquisition system sequences reactivation, reputation/referrals, speed-to-lead, sales coaching, and paid ads into one measurable workflow so new demand enters a less leaky funnel.
@@ -47,6 +49,7 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[deep-learning]] — Deep learning is representation learning with neural networks, where architecture, losses, optimization, data, and scale jointly shape model behavior.
 - [[distributional-reinforcement-learning]] — Distributional reinforcement learning models the full distribution of returns rather than only expected value, enabling richer theory and algorithms for uncertainty over outcomes.
 - [[durable-execution]] — Durable execution makes long-running agent work survivable by treating pause, resume, replay, retry, and human intervention as first-class runtime behaviors.
+- [[effective-go-for-production-servers]] — Effective Go becomes a production-server discipline when its core idioms are combined with modern Go semantics, explicit lifecycle and dependency bounds, repository-owned architecture, and verification at the layer each claim concerns.
 - [[embeddings]] — Embeddings turn text into vector representations for similarity search and clustering, but in this KB they matter mainly as one retriever component inside a broader retrieval pipeline.
 - [[enterprise-agent-deployment-failure-modes]] — Enterprise AI value usually fails when models are poured onto messy workflows without real workflow discovery, deterministic orchestration, shared governance, model operations, feedback loops, and business metrics that justify adoption.
 - [[fairness-and-ml]] — Fairness and ML is a socio-technical discipline about measurement, legitimacy, classification criteria, causality, recourse, feedback loops, and institutional context.
@@ -58,21 +61,38 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 - [[multi-agent-reinforcement-learning]] — Multi-agent reinforcement learning studies learning agents in shared environments where strategic interaction, nonstationarity, coordination, communication, and partial observability matter.
 - [[multi-agent-systems]] — Multi-agent systems include both LLM orchestration patterns and formal multi-agent learning settings; reliable designs need bounded roles, human-review backpressure, and attribution paths for diagnosing coordination failures.
 - [[obsidian]] — Obsidian is the human-facing interface for navigating the repo's markdown corpus, wiki links, and mixed raw-versus-derived knowledge artifacts.
+- [[onchain-market-manipulation]] — Onchain manipulation in low-liquidity token markets runs as a sequence — cheap artificial growth first, profit extraction second — and measuring it demands contamination-adjusted causal design because the manipulators' own transactions sit inside the outcome variable.
 - [[optimization-for-ml]] — Optimization for ML is the search layer that turns objectives into trained models, tuned systems, falsifying examples, and efficient deployment choices.
 - [[payment-integrations]] — Payment and value-transfer integrations should keep sensitive collection, credentials, and signing authority inside managed or policy-enforced surfaces while completing business logic from verified events.
 - [[paid-growth]] — Paid growth is now an operating system of offer clarity, creative supply, first-party data, platform automation, compliance, and incrementality discipline rather than only media buying.
 - [[personal-knowledge-bases]] — Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
 - [[performance-creative]] — Performance creative turns customer insight into policy-safe ad concepts, modular assets, tests, fatigue diagnosis, and refreshed winners across paid channels.
 - [[probabilistic-machine-learning]] — Probabilistic machine learning treats uncertainty, latent structure, missing information, and prediction as first-class modeling problems.
+- [[proprietary-automated-market-makers]] — Proprietary AMMs are automated principal dealers combining private fair-value and inventory models with compact onchain state, deterministic settlement, and aggregator distribution.
 - [[rag]] — RAG is a full retrieval pipeline that assembles external evidence at query time rather than a synonym for vector search alone.
 - [[reasoning]] — Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, and when a tool result changes the plan.
 - [[reinforcement-learning]] — Reinforcement learning studies agents that learn policies through interaction, delayed reward, value estimation, exploration, and sequential decision-making.
 - [[repo-local-knowledge-bases]] — Repo-local knowledge bases are committed project-memory layers that help coding agents and humans reuse product, codebase, design, decision, progress, verification, and handoff knowledge without rereading the whole source tree.
 - [[research-workflows]] — Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
 - [[resolvers]] — Resolvers are lightweight routing layers that decide which context, skill, or filing rule an agent should load for a given task.
+- [[rust-async-cancellation-and-select]] — Rust async cancellation is an ownership protocol built on dropping futures, so reliable select loops must make partial progress, child-task lifetime, pinned operation identity, fairness, and teardown observable and explicit.
+- [[rust-destructors-drop-scopes-and-resource-lifecycle]] — Rust destruction is deterministic local ownership cleanup with specified scope and ordering rules, but sound APIs must tolerate leaked values, aborting termination, and externally incomplete teardown.
+- [[rust-lifetime-subtyping-and-variance]] — Rust lifetime subtyping is narrow but API-shaping: outlives relations and higher-ranked bounds flow through generic types according to representation-derived covariance, contravariance, or invariance.
+- [[rust-pinning-and-address-sensitive-types]] — Rust pinning is a library-enforced lifecycle contract that lets unsafe implementations rely on an address-sensitive pointee remaining valid in place through destruction while safe APIs prevent moves and invalidation.
+- [[rust-send-sync-and-thread-safety]] — Rust thread-safety boundaries arise from what ownership and shared-reference capabilities a type exposes, with Send and Sync auto traits turning representation, generic bounds, hidden aliases, and destructor context into auditable soundness contracts.
+- [[rust-trait-coherence-and-implementation-ownership]] — Rust trait coherence assigns implementation authority across the crate graph, using overlap and orphan checks to preserve one selectable meaning while making blanket impls and extension points semver-sensitive API decisions.
+- [[rust-unsafe-validity-and-undefined-behavior]] — Rust unsafe code is sound only when its hidden representation, aliasing, validity, lifetime, ABI, and destruction invariants make undefined behavior unreachable through every safe client and foreign boundary.
 - [[speech-to-text]] — Speech-to-text quality is shaped as much by capture conditions, output structure, and diarization choices as by the base transcription model.
 - [[synthetic-voices]] — Synthetic voices create powerful accessibility and product opportunities, but they also demand consent, disclosure, provenance, and strong anti-impersonation controls.
 - [[text-to-speech]] — Text-to-speech is an output design problem as much as an API call, balancing latency, style control, markup, and disclosure requirements.
+- [[token-launchpad-microstructure]] — Bonding-curve launchpads convert token creation into a sub-1% lottery whose outcome is best predicted by accumulation velocity, and whose migration step creates a depth discontinuity that makes pre-graduation dumping structurally rational.
+- [[typescript-conditional-types]] — TypeScript conditional types encode generic input-output relations through structural tests, inference, and deliberate union distribution, but public helpers must stay explainable, declaration-safe, measured, and aligned with runtime behavior.
+- [[typescript-generic-api-design]] — TypeScript generics are safest when each parameter preserves a real caller-visible relation, inference does most of the work, constraints expose minimal capabilities, and packed-consumer tests verify declarations, variance, runtime alignment, and checker cost.
+- [[typescript-mapped-types]] — TypeScript mapped types derive property-wise API projections from owned key vocabularies, but modifiers, remapping, filtering, declaration cost, and runtime realization must remain explicit.
+- [[typescript-template-literal-types]] — TypeScript template literal types derive bounded string protocols from owned vocabularies, but union multiplication, runtime erasure, locale behavior, declarations, and extension ownership must remain explicit.
+- [[typescript-module-systems]] — TypeScript module correctness comes from making compiler resolution, runtime loading, package export maps, declaration files, and workspace topology describe the same public module graph.
+- [[typescript-control-flow-narrowing]] — TypeScript narrowing is safest when runtime evidence admits values into domain-owned discriminated unions and exhaustive control flow preserves state-payload correlations without assertions.
+- [[typescript-structural-compatibility]] — TypeScript structural compatibility enables low-coupling JavaScript-style composition, but API safety depends on variance-aware callbacks, truthful declarations, strict settings, runtime admission, and executable assignability tests.
 - [[voice-ai]] — Voice AI is a full interaction stack spanning speech I/O, runtime control, tools, personalization, telephony, and trust controls.
 - [[voice-dictation]] — Voice dictation systems optimize for fast cursor-level text entry and editing, which makes them a distinct product shape from conversational voice agents.
 - [[web-agents]] — Web agents are agents that operate over browser environments, where the browser can be both the primary task world and a fallback integration layer for systems without clean APIs.
@@ -104,6 +124,12 @@ For the chronological history of ingest, query, lint, and maintenance events, se
 
 ## Summaries
 
+- [[2026-08-07-onchain-launch-manipulation-and-measurement]] — Three 2025–2026 papers on pump.fun and cross-chain meme coins converge on one operational conclusion: onchain activity is cheap to fabricate, manipulation runs as a sequence rather than an event, and naive effect estimates over-state coordination by roughly an order of magnitude unless the manipulators' own transactions are excluded from the outcome.
+- [[2026-08-02-explicit-state-and-enforced-boundaries-weekly]] — This week's strongest agent-systems evidence converges on one rule: make useful state explicit and inspectable, while enforcing authority, scope, and isolation outside the model's beliefs.
+- [[2026-08-01-proprietary-amm-expert-handbook]] — An evidence-ranked expert handbook on proprietary AMMs: dealer theory, CFMM mathematics, LVR, Solana architecture and venues, routing, MEV, execution measurement, security, and due diligence.
+- [[2026-08-01-effective-go-applied-to-zappx-server]] — A complete 60-section Effective Go audit of the Zappx backend finds strong modern player-auth code, but material lifecycle, worker-ownership, legacy error-boundary, wallet-durability, documentation, and capacity-evidence gaps remain.
+- [[2026-07-31-kery-beyond-hermes-evidence-locked-financial-agent]] — Kery can exceed Hermes in a high-assurance financial domain by preserving deterministic authority isolation while adding iterative evidence tools, durable runs, provenance-preserving context, progressive disclosure, and finance-specific evaluation.
+- [[2026-07-30-harness-context-continuity-and-trust-boundaries]] — Retained reasoning and compaction can sharply improve agent performance, but state continuity must preserve authority and provenance or it can also preserve and propagate attacker influence.
 - [[2026-06-20-loop-engineer-template-ingest-assessment]] — JayZeeDesign/loop-engineer-template is worth a selective repo-level ingest for its compact loop-memory schema and Claude Code harness skills, but not worth copying wholesale because the KB already covers stronger harness-engineering and Claude Code skill sources.
 - [[2026-06-12-vertical-agent-context-cache-hierarchy]] — Peter Wang's vertical-agent article is best preserved as a design rule: encode the domain task distribution into L1 always-resident wrappers, L2 fetched specs/tool schemas, and L3 raw-reference escape hatches so the model stays accurate without bloated context.
 - [[2026-06-04-claude-code-dynamic-workflows-operating-patterns]] — A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills.
@@ -160,26 +186,31 @@ These per-collection sub-index pages in `wiki/index/` enumerate notes within a s
 - [[claude-blog]] — Sub-index for `raw/articles/claude-blog/` posts.
 - [[design-systems]] — Sub-index for `raw/articles/design-systems/` notes covering component libraries, themes, UI references, and design-system calibration sources.
 - [[github-repos]] — Sub-index for `raw/articles/github-repos/` teardowns.
+- [[hci-research]] — Sub-index for peer-reviewed and institutionally reviewed human-computer interaction research.
 - [[internal-codebases]] — Sub-index for local internal repository teardowns used to preserve reusable architecture, convention, structure, dependency, and project-memory patterns.
 - [[kb-system]] — Overview of the KB tooling, schema, and MCP surface.
 - [[momo-research]] — Sub-index for `raw/articles/momo-research/` memory/context notes.
-- [[official-docs]] — Sub-index for `raw/articles/official-docs/` framework and protocol docs.
+- [[official-docs]] — Sub-index for `raw/articles/official-docs/` language, runtime, framework, protocol, platform, and compliance documentation.
+- [[openai]] — Sub-index for primary OpenAI research and engineering publications.
 - [[paid-growth-sources]] — Sub-index for `raw/articles/paid-growth/` source notes covering paid acquisition, Meta Ads, Google Ads, UGC, copywriting, content strategy, policy, and measurement.
+- [[security-research]] — Sub-index for technical AI-security research, vulnerability analysis, and coordinated disclosures.
 - [[textbooks]] — Sub-index for official AI/ML textbook source notes used to ground the KB's ML foundations layer.
 - [[user-provided]] — Sub-index for user-provided source notes, screenshots, pasted prompts, transcripts, and local captures.
 - [[voice-ai-sources]] — Sub-index for `raw/articles/voice-ai/` product and architecture notes.
 
 ## Source Collections
 
-Counts as of `2026-06-17`. Folders under `raw/articles/`.
+Counts as of `2026-08-07`. Folders under `raw/articles/`.
 
 - `addy-osmani` (1)
-- `anthropic-engineering` (22)
-- `arxiv` (29)
+- `anthropic-engineering` (23)
+- `arxiv` (32)
 - `voice-ai` (33)
-- `official-docs` (19)
+- `official-docs` (35)
+- `openai` (1)
 - `textbooks` (16)
-- `github-repos` (19)
+- `github-repos` (20)
+- `hci-research` (7)
 - `internal-codebases` (6)
 - `design-systems` (3)
 - `enterprise-ai` (12)
@@ -188,6 +219,7 @@ Counts as of `2026-06-17`. Folders under `raw/articles/`.
 - `user-provided` (14)
 - `business-strategy` (4)
 - `paid-growth` (26)
+- `security-research` (1)
 - `browserbase-docs` (3)
 - `langchain-blog` (2)
 - `akitaonrails` (1)

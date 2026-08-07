@@ -7,8 +7,8 @@ source_count: 6
 summary: Research workflows in this KB are compounding loops of ingest, retrieval, synthesis, and maintenance rather than one-shot question answering.
 canonical_for: [research workflows, repo ingest workflow, github repo teardown, skills repo ingest, source teardown workflow]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.84"
 ---
 

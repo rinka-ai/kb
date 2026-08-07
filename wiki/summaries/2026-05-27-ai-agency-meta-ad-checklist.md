@@ -6,9 +6,9 @@ tags: [paid-growth, meta-ads, ai-agency, copywriting, performance-creative]
 summary: "A tactical checklist for AI-agency Meta ads: call out the niche before the cutoff, make the AI mechanism legible, sell appointment/result outcomes, use simple high-contrast creative, and constrain proof or ROI claims to what can be substantiated."
 source_count: 9
 canonical_for: [ai agency meta ads checklist, ai agency facebook ads, local business ai ads, meta ads for ai agency]
-review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.65"
 ---
 

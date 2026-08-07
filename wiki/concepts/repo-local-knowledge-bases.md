@@ -7,8 +7,8 @@ source_count: 5
 summary: Repo-local knowledge bases are committed project-memory layers that help coding agents and humans reuse product, codebase, design, decision, progress, verification, and handoff knowledge without rereading the whole source tree.
 canonical_for: [repo-local knowledge base, project knowledge vault, codebase knowledge vault, repository memory]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.83"
 ---
 

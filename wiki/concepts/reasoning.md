@@ -7,8 +7,8 @@ source_count: 6
 summary: Reasoning in agent loops is the deliberation layer that decides what to do next, when to gather more evidence, how uncertainty changes the plan, and which action is worth taking.
 canonical_for: [reasoning, reasoning and acting, react, think tool]
 review_status: reviewed
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.8"
 ---
 

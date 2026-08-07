@@ -7,8 +7,8 @@ source_count: 15
 summary: Claude Code is best understood as an agentic coding operating environment with explicit surfaces for permissions, context management, tool orchestration, hooks, MCP tools, skills, delegated work, append-oriented session state, reviewable collaboration artifacts, and practical product-building workflows.
 canonical_for: [claude code, agentic coding, claude code hooks, claude code subagents, claude code skills]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.88"
 ---
 

@@ -7,8 +7,8 @@ source_count: 33
 summary: Voice AI is a full interaction stack spanning speech I/O, runtime control, tools, personalization, telephony, and trust controls.
 canonical_for: [voice agents, conversational voice ai, elevenlabs voice agents, voice agent tool testing, deterministic voice workflows, voice agent deterministic workflow]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.89"
 ---
 

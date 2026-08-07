@@ -7,8 +7,8 @@ source_count: 23
 summary: LLM agents are systems where models act over time with tools, memory, and structured runtime control rather than producing a single standalone response.
 canonical_for: [llm agents, tool-using agents, autonomous model agents]
 review_status: reviewed
-last_reviewed: 2026-06-12
-review_due: 2026-07-12
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.88"
 ---
 

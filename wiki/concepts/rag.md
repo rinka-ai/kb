@@ -7,8 +7,8 @@ source_count: 26
 summary: RAG is a full retrieval and evidence-assembly pipeline that combines search, representation, ranking, uncertainty, and generation rather than a synonym for vector search alone.
 canonical_for: [retrieval augmented generation, graph rag, corrective rag, contextual retrieval]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.9"
 ---
 

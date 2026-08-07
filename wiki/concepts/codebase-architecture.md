@@ -3,12 +3,12 @@ id: concept-codebase-architecture
 type: concept
 title: Codebase Architecture
 tags: [software-architecture, codebase-architecture, monorepo, monorepos, conventions, source-organization]
-source_count: 5
+source_count: 9
 summary: Codebase architecture is the durable organization of product scope, package boundaries, runtime state, provider adapters, tests, docs, and agent instructions so future changes inherit the right constraints.
 canonical_for: [codebase architecture, source architecture, repo architecture, monorepo architecture, codebase organization, module depth, deep modules, seam adapter architecture, codebase organization for agents]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-08-04
+review_due: 2026-11-04
 confidence: "0.86"
 ---
 
@@ -32,6 +32,10 @@ The internal Aya and Conformis repos make this concrete. Aya organizes an AI voi
 - Skillized engineering procedures should reinforce architecture instead of creating a second instruction system; diagnosis, TDD, triage, and architecture-review skills work best when they reference local boundaries and verification habits.
 - A module should earn its interface. If deleting it merely pushes complexity into callers, it was probably shallow; if deleting it spreads real complexity across call sites, it was probably hiding something useful.
 - A seam is justified by variation. One adapter is a hypothetical seam; two adapters make the seam real.
+- TypeScript package boundaries are executable architecture: `module`/`moduleResolution`, file extensions, declarations, package export maps, and the runtime or bundler must describe the same graph. Use workspaces—not `paths` aliases—to exercise sibling packages through their real public API.
+- TypeScript state boundaries should use domain-owned discriminated unions of complete variants rather than tags plus loosely related optional fields. Validate unknown data before admission, then require exhaustive handling where the application owns the state vocabulary.
+- TypeScript structural interfaces are low-coupling package seams only when they are minimal and truthful. Preserve domain identity deliberately, review callback variance from producer/consumer ownership, and type-test the packaged declarations rather than relying on source aliases.
+- TypeScript conditional types belong to the package that owns the input-output relation. Keep them named and bounded, choose union distribution intentionally, mirror the relation at runtime, and include downstream checker cost and diagnostics in the public API budget.
 
 ## Boundary Styles
 
@@ -79,6 +83,10 @@ Uniswap demonstrates a **product-UX source architecture** style:
 - [[agent-harnesses]]
 - [[managed-agents]]
 - [[research-workflows]]
+- [[typescript-module-systems]]
+- [[typescript-control-flow-narrowing]]
+- [[typescript-structural-compatibility]]
+- [[typescript-conditional-types]]
 
 ## Source Notes
 
@@ -88,3 +96,7 @@ Uniswap demonstrates a **product-UX source architecture** style:
 - [[2026-05-09-mnimiy-claude-md-12-rules]]
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]]
 - [[2026-06-04-mattpocock-skills]]
+- [[2026-08-01-typescript-modules-reference]]
+- [[2026-08-02-typescript-narrowing]]
+- [[2026-08-03-typescript-type-compatibility]]
+- [[2026-08-04-typescript-conditional-types]]

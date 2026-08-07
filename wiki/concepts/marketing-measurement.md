@@ -6,9 +6,9 @@ tags: [paid-growth, marketing-measurement, attribution, incrementality, experime
 source_count: 5
 summary: Marketing measurement separates optimization, attribution, funnel quality, and causal incrementality so paid growth decisions are not overfit to platform dashboards.
 canonical_for: [marketing measurement, incrementality, conversion lift, ROAS, attribution, paid media measurement]
-review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

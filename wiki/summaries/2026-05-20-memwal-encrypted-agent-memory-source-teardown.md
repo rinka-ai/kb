@@ -6,9 +6,9 @@ tags: [agent-memory, agent-security, agent-protocols, rag, personal-knowledge-ba
 summary: "MemWal adds a user-owned encrypted memory pattern: durable Walrus blobs, rebuildable vector indexes, Sui delegate-key access, SDK/MCP/harness integrations, and explicit relayer trust trade-offs."
 source_count: 1
 canonical_for: [memwal, encrypted agent memory, user-owned agent memory, walrus memory]
-review_status: draft
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.78"
 ---
 

@@ -4,9 +4,9 @@ type: summary
 title: AI Aristotle Agency Build Plan
 tags: [business-strategy, ai-agency, local-business, gtm, sales, compliance]
 summary: "The Middleton video should become a validation-backed agency build plan: sell one sequenced local-business acquisition system, verify compliance and niche economics, and use the KB as the operating memory for scripts, SOPs, ads, metrics, and case studies."
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.61"
 ---
 
@@ -81,7 +81,10 @@ The Pavlo website-agency interview is adjacent rather than identical. It suggest
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-30-website-agency-operator-playbook]]
+- [[2026-04-18-outbound-ai-agent-kb-upgrades]]
+
+## Related
+
 - [[ai-agency-strategy]]
 - [[ai-saas-strategy]]
-- [[2026-04-18-outbound-ai-agent-kb-upgrades]]
 - [[enterprise-agent-deployment-failure-modes]]

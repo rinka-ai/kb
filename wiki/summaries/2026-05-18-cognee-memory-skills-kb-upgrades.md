@@ -6,9 +6,9 @@ tags: [agent-memory, agent-skills, cognee, rag, harnesses]
 summary: The Cognee bundle reframes memory as a control plane spanning graph memory, session memory, retrieval routing, eval-driven tuning, feedback promotion, and proposal-first skill mutation.
 source_count: 3
 canonical_for: [cognee memory skills, skills as memory, memory skills same harness]
-review_status: draft
-last_reviewed: 2026-05-18
-review_due: 2026-06-18
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.78"
 ---
 

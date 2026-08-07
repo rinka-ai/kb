@@ -7,8 +7,8 @@ source_count: 4
 summary: Computer-use agents extend web agents into full operating-system environments, where grounding, application knowledge, and multi-app coordination become first-class problems.
 canonical_for: [computer use, computer-use agents, gui agents, desktop agents]
 review_status: reviewed
-last_reviewed: 2026-06-03
-review_due: 2026-07-03
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.80"
 ---
 

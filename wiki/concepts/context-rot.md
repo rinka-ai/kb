@@ -7,8 +7,8 @@ source_count: 7
 summary: Context rot is performance degradation caused by overly long, noisy, or repeatedly rewritten context that erodes semantic discrimination.
 canonical_for: [context rot]
 review_status: reviewed
-last_reviewed: 2026-05-16
-review_due: 2026-06-16
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.82"
 ---
 

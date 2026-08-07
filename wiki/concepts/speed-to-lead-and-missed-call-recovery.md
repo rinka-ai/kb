@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, local-business, lead-nurturing, workflows]
 source_count: 3
 summary: "Speed-to-lead and missed-call recovery protect organic and paid demand by responding quickly, booking or rescheduling prospects, and handing edge cases to humans before lead value decays."
 canonical_for: [speed to lead, missed call text back, missed-call recovery, website lead nurturing, AI lead follow-up]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.68"
 ---
 
@@ -75,6 +75,7 @@ The core principle is that paid ads should not be scaled until inbound demand ca
 - [[ai-agency-paid-ads-process]]
 - [[sales-coaching-gpt]]
 - [[marketing-measurement]]
+- [[ai-agency-strategy]]
 - [[workflows]]
 
 ## Source Notes
@@ -83,5 +84,3 @@ The core principle is that paid ads should not be scaled until inbound demand ca
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
-- [[ai-agency-strategy]]
-- [[workflows]]

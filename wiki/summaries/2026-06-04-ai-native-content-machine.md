@@ -6,9 +6,9 @@ tags: [content-creation, ai-content, workflows, agent-skills, agent-memory, crea
 summary: "Alex Lieberman's content-machine digest is best preserved as an AI-native creator workflow: human first/final mile, skillized middle steps, raw source preservation, critique routing, platform-native repurposing, and a learning loop that turns final edits into creator memory."
 source_count: 6
 canonical_for: [ai-native content machine, AI content workflow, creator content pipeline, content skills pipeline]
-review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.72"
 ---
 

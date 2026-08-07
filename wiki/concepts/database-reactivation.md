@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, local-business, lead-nurturing, compliance]
 source_count: 2
 summary: "Database reactivation re-engages dormant leads or former customers through permission-aware conversations, booking paths, and outcome tracking before a local business increases paid acquisition spend."
 canonical_for: [database reactivation, old lead reactivation, lead reactivation, dormant lead campaign]
-review_status: draft
-last_reviewed: 2026-05-27
-review_due: 2026-06-27
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.62"
 ---
 
@@ -80,5 +80,4 @@ For a new agency, reactivation is attractive because it can create proof before 
 - [[2026-02-27-how-i-made-25m-selling-just-one-ai-system]]
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
-- [[ai-agency-strategy]]
 - [[2026-04-18-outbound-ai-agent-kb-upgrades]]

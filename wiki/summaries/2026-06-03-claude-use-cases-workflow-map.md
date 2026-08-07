@@ -7,8 +7,8 @@ summary: "Anthropic's Claude use-case digest is best preserved as a workflow-pac
 source_count: 7
 canonical_for: [Claude use cases, Claude workflow map, Claude Cowork use cases, Claude in Chrome use cases, Dispatch computer control]
 review_status: reviewed
-last_reviewed: 2026-06-05
-review_due: 2026-07-05
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.8"
 ---
 

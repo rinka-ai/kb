@@ -4,10 +4,10 @@ type: summary
 title: Backend Stack And Patterns Blueprint
 tags: [backend, backend-stack, api-architecture, hono, bun, postgres, drizzle, redis, queues, outbox, idempotency, security, blueprint]
 summary: "A retrieve-before-you-build backend blueprint for new apps/features: default Bun/Hono/TypeScript stack, package boundaries, API/runtime composition, persistence, queues/outbox/idempotency, provider adapters, validation, security, test support, and authoritative resources distilled from Aya and Conformis."
-source_count: 4
+source_count: 8
 canonical_for: [backend blueprint, backend stack, backend patterns, api architecture, outbox pattern, provider adapters, domain stores, idempotent mutations, Bun Hono backend default]
 review_status: reviewed
-last_reviewed: 2026-05-30
+last_reviewed: 2026-08-04
 review_due: 2026-08-30
 confidence: "0.84"
 ---
@@ -37,7 +37,7 @@ Skip it for tiny scripts and pure one-off migrations where a full app boundary w
 |---|---|---|
 | Runtime | **Bun** | Use Bun for local dev, server runtime, scripts, and tests unless hosting constraints say otherwise. Keep `@types/bun` installed for TS projects. |
 | HTTP | **Hono** | Thin route composition; app-owned middleware/error envelopes; no framework magic as architecture. |
-| Language | **TypeScript strict** | Strict mode, named constants for enum-shaped values, branded IDs where domain identity matters. |
+| Language | **TypeScript strict** | Strict mode, named constants for enum-shaped values, branded IDs where domain identity matters, and named conditional helpers only for coherent input-output relations with matching runtime branches. |
 | Database | **Postgres + Drizzle ORM** | Schema and migrations are code-reviewed artifacts. Use transactions for multi-write invariants. Raw SQL only when it is the clearest expression or migration-level work. |
 | Coordination | **Redis via ioredis** | Idempotency leases, request locks, queues, rate/session primitives. |
 | Queue/workers | **BullMQ** when jobs/worker retries are real | Good fit for Aya-style async processing. Do not add a worker until a side effect or long-running process needs one. |
@@ -86,6 +86,18 @@ Package rules:
 - `infra/` wraps external/framework concerns: auth, idempotency, provider clients, health, storage adapters.
 - `domains/` owns product logic, state transitions, store/sink interfaces, policy checks, and named errors.
 - Shared contracts/constants used by client code must not import Zod. Put schemas in a validation package or server-only module.
+
+TypeScript module/package rules:
+
+- Choose `module` and `moduleResolution` from the execution host: direct Node uses a matching Node mode; Bun/raw-TypeScript or bundler pipelines use the corresponding preserve/bundler behavior and must verify any direct-Node compatibility separately.
+- Treat `package.json` `exports` and declarations as one public API. Test built packages through exported subpaths, including separate ESM/CommonJS consumers when both formats are promised.
+- Connect monorepo packages through package-manager workspaces. Do not use `tsconfig.paths` to impersonate package installation or bypass package export maps; `paths` does not rewrite emitted imports.
+
+TypeScript state/type-boundary rules:
+
+- Parse unknown HTTP, webhook, queue, provider, environment, and storage data before treating it as a domain type; narrowing consumes runtime evidence but does not validate by itself.
+- Encode application-owned lifecycle states as discriminated unions of complete variants, not a status field plus unrelated optional payloads. Keep provider vocabularies open at the adapter boundary and normalize recognized values into the closed domain union.
+- Require `never`-based exhaustive handling for closed domain states. Test custom predicates and assertion functions at runtime because their signatures are promises the compiler does not prove.
 
 ## Dependency Envelope
 
@@ -269,6 +281,8 @@ Provider SDK imports inside core/domain/handlers · direct external side effects
 Use primary docs first:
 
 - **Bun runtime/TypeScript/test docs** — https://bun.com/docs/runtime/typescript and https://bun.com/docs/test — runtime, TS compiler options, built-in tests, scripts.
+- **TypeScript modules reference** — https://www.typescriptlang.org/docs/handbook/modules/reference.html — host-matched module settings, type/runtime resolution, package exports/imports, declarations, and monorepo workspace guidance.
+- **TypeScript narrowing** — https://www.typescriptlang.org/docs/handbook/2/narrowing.html — runtime guards, control-flow analysis, type predicates, discriminated unions, and `never`-based exhaustiveness.
 - **Hono docs** — https://hono.dev/docs and https://hono.dev/docs/guides/middleware — routing, middleware, validation, error handling.
 - **Drizzle ORM docs** — https://orm.drizzle.team/docs and https://orm.drizzle.team/docs/transactions — schema, migrations, transactions.
 - **PostgreSQL docs** — https://www.postgresql.org/docs/current/tutorial-transactions.html and https://www.postgresql.org/docs/current/datatype-json.html — transactions, JSONB, indexing.
@@ -294,9 +308,15 @@ Use primary docs first:
 - [[2026-05-27-conformis]] — Conformis internal codebase source note.
 - [[2026-05-27-aya-conformis-internal-codebase-patterns]] — broader internal-codebase architecture synthesis.
 - [[2026-05-30-app-template-design-system-blueprint]] — frontend/design-system companion blueprint.
+- [[2026-08-01-typescript-modules-reference]] — official language reference grounding module, runtime, declaration, package-export, and workspace boundaries.
+- [[2026-08-02-typescript-narrowing]] — official language reference grounding runtime guards, state-payload correlations, custom-predicate limits, and exhaustive domain handling.
+- [[2026-08-04-typescript-conditional-types]] — official language reference grounding generic input-output relations, `infer`, deliberate union distribution, and package-consumer type tests.
 
 ## Related
 
 - [[codebase-architecture]]
 - [[internal-engineering-conventions]]
 - [[repo-local-knowledge-bases]]
+- [[typescript-module-systems]]
+- [[typescript-control-flow-narrowing]]
+- [[typescript-conditional-types]]

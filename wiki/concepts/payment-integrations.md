@@ -7,8 +7,8 @@ source_count: 3
 summary: Payment and value-transfer integrations should keep sensitive collection, credentials, and signing authority inside managed or policy-enforced surfaces while completing business logic from verified events.
 canonical_for: [payment integrations, stripe checkout, pci-safe payments, agent payments, agent wallets]
 review_status: reviewed
-last_reviewed: 2026-05-20
-review_due: 2026-06-20
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.78"
 ---
 

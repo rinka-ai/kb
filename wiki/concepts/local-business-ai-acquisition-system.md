@@ -6,9 +6,9 @@ tags: [business-strategy, ai-agency, local-business, acquisition, workflows, pai
 source_count: 3
 summary: "A local-business AI acquisition system sequences reactivation, reputation/referrals, speed-to-lead, sales coaching, and paid ads into one measurable workflow so new demand enters a less leaky funnel."
 canonical_for: [local business AI acquisition system, AI Aristotle offer, AI agency offer pillars, full-funnel local business AI]
-review_status: draft
-last_reviewed: 2026-05-30
-review_due: 2026-06-30
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.65"
 ---
 
@@ -86,6 +86,8 @@ The Pavlo source shows a lower-friction entry offer for contractors: website, mi
 - [[ai-agency-paid-ads-process]]
 - [[paid-growth]]
 - [[marketing-measurement]]
+- [[meta-ads]]
+- [[enterprise-agent-deployment-failure-modes]]
 - [[workflows]]
 
 ## Source Notes
@@ -94,8 +96,3 @@ The Pavlo source shows a lower-friction entry offer for contractors: website, mi
 - [[2026-04-22-ai-business-zero-employees-jp-middleton]]
 - [[2026-05-29-how-he-makes-500k-mo-selling-websites]]
 - [[2026-05-27-ai-aristotle-agency-build-plan]]
-- [[ai-agency-strategy]]
-- [[enterprise-agent-deployment-failure-modes]]
-- [[paid-growth]]
-- [[marketing-measurement]]
-- [[meta-ads]]

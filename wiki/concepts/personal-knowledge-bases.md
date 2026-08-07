@@ -7,8 +7,8 @@ source_count: 7
 summary: Personal knowledge bases turn one-off research into durable, cumulative assets by preserving raw material, synthesis, and reusable outputs together.
 canonical_for: [personal knowledge base, markdown knowledge base]
 review_status: reviewed
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.83"
 ---
 

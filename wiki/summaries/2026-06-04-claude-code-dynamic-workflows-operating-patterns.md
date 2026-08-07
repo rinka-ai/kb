@@ -6,9 +6,9 @@ tags: [claude-code, workflows, dynamic-workflows, agent-harnesses, subagents, ag
 summary: "A user-provided Dynamic Workflows digest is best preserved as an operating-pattern map: use model-written workflow harnesses for parallel, long-running, adversarial, or structured tasks; control cost with goals and budgets; quarantine untrusted input; save proven workflows as skills."
 source_count: 1
 canonical_for: [claude code dynamic workflows, dynamic workflows patterns, ultracode workflow patterns]
-review_status: draft
-last_reviewed: 2026-06-04
-review_due: 2026-07-04
+review_status: reviewed
+last_reviewed: 2026-08-07
+review_due: 2026-11-07
 confidence: "0.78"
 ---
 

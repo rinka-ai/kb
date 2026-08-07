@@ -8,7 +8,7 @@ title: ArXiv
 
 ## Overview
 
-This index groups primary research papers added to strengthen the KB's coverage of agent reasoning, memory, security, and realistic evaluation environments.
+This index groups primary research papers added to strengthen the KB's coverage of agent reasoning, memory, security, and realistic evaluation environments, plus onchain market microstructure and manipulation evidence.
 
 ## By Theme
 
@@ -41,6 +41,12 @@ This index groups primary research papers added to strengthen the KB's coverage 
   [[2026-04-10-osworld-benchmarking-multimodal-agents-for-open-ended-tasks-in-real-computer-environments]]
 - Multi-agent orchestration benchmarks:
   [[2026-03-24-benchmarking-multi-agent-llm-architectures-financial-document-processing]]
+- Coordinated wallet detection and contamination-adjusted causal design:
+  [[2026-07-02-coordinated-sniper-cohorts-on-pump-fun]]
+- Bonding-curve launchpad success prediction:
+  [[2026-02-16-predicting-the-success-of-new-crypto-tokens-the-pump-fun-case]]
+- Cross-chain market manipulation census:
+  [[2025-04-16-a-midsummer-memes-dream-market-manipulations-in-the-meme-coin-ecosystem]]
 
 ## Why This Collection Matters
 
